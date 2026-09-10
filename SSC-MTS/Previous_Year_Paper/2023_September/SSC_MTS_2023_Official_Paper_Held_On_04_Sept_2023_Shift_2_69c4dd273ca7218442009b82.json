@@ -1,0 +1,3542 @@
+{
+  "test_id": "69c4dd273ca7218442009b82",
+  "title": "SSC MTS 2023 Official Paper (Held On: 04 Sept, 2023 Shift 2)",
+  "series_slug": "ssc-mts",
+  "series_name": "SSC MTS & Havaldar Mock Test Series 2026",
+  "section": "Previous Year Paper",
+  "subsection": "2023 (September)",
+  "subject": "general",
+  "duration_min": 90,
+  "max_marks": 270.0,
+  "question_count": 90,
+  "languages": [
+    "English",
+    "Hindi",
+    "Marathi",
+    "Bengali",
+    "Gujarati",
+    "Tamil",
+    "Telugu",
+    "Kannada",
+    "Punjabi",
+    "Oria"
+  ],
+  "scraped_at": "2026-09-05T01:32:09.336024+00:00",
+  "questions": [
+    {
+      "qid": "650af4fe52c24bfb5b86404e",
+      "n": 1,
+      "type": "mcq",
+      "concept": "Compound Interest",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "A sum invested at the rate of 6% simple interest per annum grows to Rs. 1,13,880 in 5 years. What is the simple interest, If the same amount is invested for 8 years at the rate of 9% per annum?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Rs. 63,072"
+        },
+        {
+          "label": "2",
+          "text": "Rs. 60,565"
+        },
+        {
+          "label": "3",
+          "text": "Rs. 65,392"
+        },
+        {
+          "label": "4",
+          "text": "Rs. 58,050"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nFinal amount after 5 years = Rs. 1,13,880\n\nRate of interest for first investment = 6% per annum\n\nTime period for first investment = 5 years\n\nRate of interest for second investment = 9% per annum\n\nTime period for second investment = 8 years\n\n**Formula Used:**\n\nSimple Interest = Principal × Rate × Time / 100\n\nAmount = Principal + Simple Interest\n\n**Calculation:**\n\nLet the principal amount be P.\n\nAmount after 5 years at 6% per annum = P + (P × 6 × 5 / 100)\n\n⇒ 1,13,880 = P + (P × 30 / 100)\n\n⇒ 1,13,880 = P + (3P / 10)\n\n⇒ 1,13,880 = (10P + 3P) / 10\n\n⇒ 1,13,880 = 13P / 10\n\n⇒ P = 1,13,880 × 10 / 13\n\n⇒ P = Rs. 87,600\n\nNow, calculating simple interest for 8 years at 9% per annum:\n\nSimple Interest = 87,600 × 9 × 8 / 100\n\n⇒ Simple Interest = 87,600 × 72 / 100\n\n⇒ Simple Interest = Rs. 63,072\n\n**Therefore, the simple interest for 8 years at 9% per annum is Rs. 63,072.**",
+      "tags": [
+        "Compound Interest"
+      ]
+    },
+    {
+      "qid": "650af5328f37cfe6b3e6973c",
+      "n": 2,
+      "type": "mcq",
+      "concept": "Compound Interest",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Find the compound interest (Compounded annually) on Rs. 2,000 for 2(1)/(2) years at 10% per annum.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Rs. 561"
+        },
+        {
+          "label": "2",
+          "text": "Rs. 500"
+        },
+        {
+          "label": "3",
+          "text": "Rs. 521"
+        },
+        {
+          "label": "4",
+          "text": "Rs. 541"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nPrincipal (P) = Rs. 2,000\n\nTime (T) = 2(1)/(2) years = 2.5 years\n\nRate (R) = 10% per annum\n\n**Formula Used:**\n\nCompound Interest = P(1 + R/100)T - P\n\n**Calculation:**\n\nSince the interest is compounded annually, but the time is 2.5 years, we calculate interest for 2 years and then for the remaining 0.5 year.\n\nFor the first 2 years:\n\n⇒ A = 2000(1 + 10/100)²\n\n⇒ A = 2000(1 + 0.1)²\n\n⇒ A = 2000(1.1)²\n\n⇒ A = 2000 × 1.21\n\n⇒ A = Rs. 2420\n\nFor the next 0.5 year, the interest is calculated on Rs. 2420:\n\nThe interest for the next 0.5 year is calculated simply as simple interest, as it is not a complete year.\n\n⇒ Interest for 0.5 year = P × R × T / 100\n\n⇒ Interest for 0.5 year = 2420 × 10 × 0.5 / 100\n\n⇒ Interest for 0.5 year = Rs. 121\n\nTotal amount after 2.5 years = Amount after 2 years + Interest for 0.5 year\n\n⇒ Total amount = 2420 + 121\n\n⇒ Total amount = Rs. 2541\n\nTherefore, Compound Interest = Total amount - Principal\n\n⇒ Compound Interest = 2541 - 2000\n\n⇒ Compound Interest = Rs. 541\n\n**The compound interest for the given period is Rs. 541.**",
+      "tags": [
+        "Compound Interest"
+      ]
+    },
+    {
+      "qid": "650af5c952c24bfb5b865659",
+      "n": 3,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Study the given table and answer the question that follows.\n\nThe table shows the number of voters in four different villages P, Q, R, S.\n\n \n \n\n **Villages**\n **Total number of registered voters**\n **Percentage of people who voted (Out of the total number of registered voters)**\n \n \n\n P\n 1100\n 68\n \n \n\n Q\n 1450\n 62\n \n \n\n R\n 1200\n 73\n \n \n\n S\n 1124\n 87\n \n \n\nThe number of people who did not vote in village P is what percentage more than that who did not vote in village R?",
+      "options": [
+        {
+          "label": "1",
+          "text": "6 (52)/(81) \\%"
+        },
+        {
+          "label": "2",
+          "text": "8 (52)/(81) \\%"
+        },
+        {
+          "label": "3",
+          "text": "7 (52)/(81) \\%"
+        },
+        {
+          "label": "4",
+          "text": "9 (52)/(81) \\%"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\n \n• Number of voters in village P = 1100\n \n• Percentage of people who voted in village P = 68%\n \n• Number of voters in village R = 1200\n \n• Percentage of people who voted in village R = 73%\n\n**Formula Used:**\n\nNumber of people who did not vote = Total number of registered voters - (Percentage of people who voted × Total number of registered voters)/100\n\nPercentage difference = [(Value1 - Value2) / Value2] × 100\n\n**Calculation:**\n\nNumber of people who did not vote in village P = 1100 - (68 × 1100)/100\n\n⇒ 1100 - 748 = 352\n\nNumber of people who did not vote in village R = 1200 - (73 × 1200)/100\n\n⇒ 1200 - 876 = 324\n\nPercentage difference = [(352 - 324) / 324] × 100\n\n⇒ (28 / 324) × 100\n\n⇒ 8.64%\n\n⇒ 8(52)/(81)% (Converting the decimal into fraction for the given options)\n\n**The number of people who did not vote in village P is 8(52)/(81)% more than that who did not vote in village R.**"
+    },
+    {
+      "qid": "650af5eb229c90676eb55c62",
+      "n": 4,
+      "type": "mcq",
+      "concept": "Solid Figures",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Find the total surface area of a cuboid whose dimensions are 18 m, 6 m and 3 m.",
+      "options": [
+        {
+          "label": "1",
+          "text": "90 m2"
+        },
+        {
+          "label": "2",
+          "text": "180 m2"
+        },
+        {
+          "label": "3",
+          "text": "324 m2"
+        },
+        {
+          "label": "4",
+          "text": "360 m2"
+        }
+      ],
+      "correct": "4",
+      "solution": "[IMAGE: https://cdn.repeatermock.com/tb/ca81259519cadfb2d5350673c220e419e60378e9770ad26512fc8e826a8d93f1.png] __Shortcut Trick__\n\nTotal Surface Area (TSA) of a cuboid = 2 × (lb + bh + hl)\n\nHere, l = 18, b = 6, and h = 3.\n\nTSA = 2 × (18 × 6 + 6 × 3 + 3 × 18)\n\nTSA = 2 × (108 + 18 + 54) = 2 × 180 = 360 m²\n\n**∴ The correct answer is 360 m².**\n\n [IMAGE: https://cdn.repeatermock.com/tb/c76c13ba2d2ab46b47f8a931ae621dac081a0cb266b142dc23f58659fac4a466.png] **__Alternate Method__**\n\n**Given:**\n\nLength (l) = 18 m\n\nBreadth (b) = 6 m\n\nHeight (h) = 3 m\n\n**Formula Used:**\n\nTotal Surface Area of Cuboid = 2 × (Length × Breadth + Breadth × Height + Height × Length)\n\n [IMAGE: https://cdn.repeatermock.com/tb/d5ff50ab3fc84ec35f2674b2382c8902caf38cf348ac197baadbb28f3dfee57e.png] \n\n**Calculations:**\n\n⇒ Total Surface Area = 2 × (l × b + b × h + h × l)\n\n⇒ Total Surface Area = 2 × (18 × 6 + 6 × 3 + 3 × 18)\n\n⇒ Total Surface Area = 2 × (108 + 18 + 54)\n\n⇒ Total Surface Area = 2 × 180\n\n⇒ Total Surface Area = 360 m²\n\n⇒ Therefore, **Option (4)** is the correct value.\n\n**∴ The correct answer is 360 m².**\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\nLateral Surface Area (LSA)\n\nThe area of the four side walls is given by 2 × h × (l + b).\n\nVolume of a Cuboid\n\nThe total space enclosed within the cuboid is V = l × b × h.\n\nLength of Diagonal\n\nThe distance between the two farthest corners is √(l² + b² + h²).</p",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/ca81259519cadfb2d5350673c220e419e60378e9770ad26512fc8e826a8d93f1.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/c76c13ba2d2ab46b47f8a931ae621dac081a0cb266b142dc23f58659fac4a466.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/d5ff50ab3fc84ec35f2674b2382c8902caf38cf348ac197baadbb28f3dfee57e.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Solid Figures"
+      ]
+    },
+    {
+      "qid": "650af615c126fdd7616ec971",
+      "n": 5,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Yug covers a certain distance with a speed of 56 km/h in (3)/(2) hours. If he wants to cover the same distance in 7 hours, what would be his speed (in km/h)?",
+      "options": [
+        {
+          "label": "1",
+          "text": "16"
+        },
+        {
+          "label": "2",
+          "text": "20"
+        },
+        {
+          "label": "3",
+          "text": "14"
+        },
+        {
+          "label": "4",
+          "text": "12"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nSpeed = 56 km/h, Time = (3)/(2) hours.\n\n**Formula Used:**\n\nDistance = Speed × Time\n\nSpeed = Distance / Time\n\n**Calculation:**\n\nDistance covered in (3)/(2) hours = 56 × (3)/(2)\n\nDistance = (56 × 3)/(2) = (168)/(2) = 84 km\n\nTo cover the same distance in 7 hours, speed = (Distance)/(Time) = (84)/(7)\n\nSpeed = 12 km/h\n\n**The speed required to cover the same distance in 7 hours is 12 km/h.**\n\n5"
+    },
+    {
+      "qid": "650af6347b129955e118a84e",
+      "n": 6,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Vikram saves 13% of his monthly salary. If his monthly expenditure is Rs. 5,220, then his monthly savings is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Rs. 680"
+        },
+        {
+          "label": "2",
+          "text": "Rs. 580"
+        },
+        {
+          "label": "3",
+          "text": "Rs. 349"
+        },
+        {
+          "label": "4",
+          "text": "Rs. 780"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nMonthly expenditure = Rs. 5,220.\n\nSavings percentage = 13%.\n\n**Formula Used:**\n\nSavings = Salary × Savings percentage.\n\nExpenditure + Savings = Salary.\n\n**Calculation:**\n\nLet the monthly salary be Rs. x.\n\n⇒ Expenditure + Savings = Salary\n\n⇒ Rs. 5,220 + 0.13x = x\n\n⇒ 0.13x = x - Rs. 5,220\n\n⇒ 0.13x = x - 5,220\n\n⇒ 0.13x = 1x - 5,220\n\n⇒ 5,220 = (1 - 0.13)x\n\n⇒ 5,220 = 0.87x\n\n⇒ x = 5,220 / 0.87\n\n⇒ x = Rs. 6,000\n\nSo, the monthly savings = 0.13 × 6,000\n\n⇒ Rs. 780\n\n**The monthly savings is Rs. 780.**"
+    },
+    {
+      "qid": "650af648126e2bd6347441c9",
+      "n": 7,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "20 men can complete a piece of work in 40 days, and 40 women can do the same work in 60 days. If 10 men and 20 women work together, then in how many days will the work be completed?",
+      "options": [
+        {
+          "label": "1",
+          "text": "60"
+        },
+        {
+          "label": "2",
+          "text": "50"
+        },
+        {
+          "label": "3",
+          "text": "48"
+        },
+        {
+          "label": "4",
+          "text": "40"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\n20 men can complete a piece of work in 40 days.\n\n40 women can do the same work in 60 days.\n\n10 men and 20 women work together.\n\n**Formula Used:**\n\nWork done by 1 man in 1 day = Total work / (Number of men × Number of days)\n\nWork done by 1 woman in 1 day = Total work / (Number of women × Number of days)\n\nTotal work done in 1 day by 10 men and 20 women = (Work done by 1 man in 1 day × 10 men) + (Work done by 1 woman in 1 day × 20 women)\n\nNumber of days to complete the work = Total work / Tota"
+    },
+    {
+      "qid": "650af6977b129955e118b7d0",
+      "n": 8,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "A grocery seller mixes two varieties of tea costing Rs. 300 per kg and Rs. 160 per kg in such a ratio that by selling this mixture at the rate of Rs. 187 per kg the shopkeeper earns 10% profit. In what respective ratio does the grocery seller mix the two varieties of tea?",
+      "options": [
+        {
+          "label": "1",
+          "text": "2 ∶ 13"
+        },
+        {
+          "label": "2",
+          "text": "13 ∶ 3"
+        },
+        {
+          "label": "3",
+          "text": "13 ∶ 2"
+        },
+        {
+          "label": "4",
+          "text": "1 ∶ 13"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nA grocery seller mixes two varieties of tea costing Rs. 300 per kg and Rs. 160 per kg in such a ratio that by selling this mixture at the rate of Rs. 187 per kg the shopkeeper earns 10% profit.\n\n**Formula Used:**\n\nLet the cost price of the mixture be C.\n\nSelling price = Cost price + Profit\n\nProfit = 10% of Cost price\n\nUsing the weighted average formula for the two varieties of tea:\n\n C = ((300 times x + 160 times y))/(x + y) \n\nGiven selling price = Rs. 187 per kg\n\nProfit = 10%\n\nSo, Selling price = Cost price × 1.10\n\n⇒ 187 = C × 1.10\n\n⇒ C = 1871.10\" id=\"MathJax-Element-79-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">1871.10 1871.10 \\frac{187}{1.10}\n\n**Calculation:**\n\n⇒ C = 170\n\nUsing the weighted average formula:\n\n 170 = ((300 times x + 160 times y))/(x + y) \n\n⇒ 170(x + y) = 300x + 160y\n\n⇒ 170x + 170y = 300x + 160y\n\n⇒ 170y - 160y = 300x - 170x\n\n⇒ 10y = 130x\n\n⇒ y/x = 13/1\n\n**∴ The correct answer is 1 ∶ 13.**"
+    },
+    {
+      "qid": "650af6c4c126fdd7616ee94a",
+      "n": 9,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "The following bar graph indicates the production of cement by 3 companies X, Y and Z during the years 2000 - 2003. The quantity is in lakh bags. Study the bar graph carefully and answer the question.\n\n [IMAGE: https://cdn.repeatermock.com/tb/7e3c77619fed3ae21be52fb0f9fb69bc866a5cb5d4cab4af2f0b46af2d18abce.png] \n\nWhat is the ratio of the average production of company X during the period 2000-2003 to the production of company Y during the same period (in lakh bags).",
+      "options": [
+        {
+          "label": "1",
+          "text": "17 ∶ 16"
+        },
+        {
+          "label": "2",
+          "text": "8 ∶ 7"
+        },
+        {
+          "label": "3",
+          "text": "12 ∶ 17"
+        },
+        {
+          "label": "4",
+          "text": "10 ∶ 7"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nThe question is based on a bar graph that is not visually provided, but it involves calculating the ratio of the average production of company X during 2000-2003 to the production of company Y during the same period.\n\n**Formula Used:**\n\nAverage Production = (Sum of productions over the years) / Number of years\n\nRatio = Quantity 1 : Quantity 2\n\n**Calculation:**\n\nAverage production of company X = (30 + 40 + 50 + 50 ) / 4 = 170/4\n\nTotal production of company Y = 40 + 40 + 50 + 30 = 160/4\n\nThe ratio is 17 : 16.\n\n**The ratio of the average production of company X during the period 2000-2003 to the production of company Y during the same period is 17 : 16.**",
+      "images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/7e3c77619fed3ae21be52fb0f9fb69bc866a5cb5d4cab4af2f0b46af2d18abce.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650af6ed7b129955e118c7dd",
+      "n": 10,
+      "type": "mcq",
+      "concept": "Identities",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "The least common multiple (LCM) of p and q is r. The LCM of p2q and pq2 is __________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "pqr3"
+        },
+        {
+          "label": "2",
+          "text": "pqr"
+        },
+        {
+          "label": "3",
+          "text": "pq"
+        },
+        {
+          "label": "4",
+          "text": "pqr2"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nThe least common multiple (LCM) of ( p ) and ( q ) is ( r ).\n\n**Formula Used:**\n\nTo find the LCM of two expressions, take the highest powers of all prime factors involved.\n\n**Calculation:**\n\nLCM) of p and q is r. The LCM of p2q and pq2\n\nTherefore, the LCM of pqr.\n\n**∴ The answer is pqr.**",
+      "tags": [
+        "Identities"
+      ]
+    },
+    {
+      "qid": "650af712d9c156e8500f1605",
+      "n": 11,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Two trains started from a station, at the same time in the same direction, at speeds of 90 km/h and 80 km/h. What will be the distance between the two trains after 5 hours?",
+      "options": [
+        {
+          "label": "1",
+          "text": "55 km"
+        },
+        {
+          "label": "2",
+          "text": "50 km"
+        },
+        {
+          "label": "3",
+          "text": "45 km"
+        },
+        {
+          "label": "4",
+          "text": "40 km"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nSpeed of the first train = 90 km/h.\n\nSpeed of the second train = 80 km/h.\n\nTime = 5 hours.\n\n**Formula Used:**\n\nDistance = Speed × Time\n\n**Calculation:**\n\nDistance covered by the first train in 5 hours = 90 km/h × 5 = 450 km\n\nDistance covered by the second train in 5 hours = 80 km/h × 5 = 400 km\n\nDifference in distances = 450 km - 400 km = 50 km\n\n**The distance between the two trains after 5 hours is 50 km.**"
+    },
+    {
+      "qid": "650af72b125560e4c362f40f",
+      "n": 12,
+      "type": "mcq",
+      "concept": "Solid Figures",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "A solid piece of metal, cuboidal in shape, with dimensions 12 cm, 9 cm and 2 cm is recast into a cube. What is the lateral surface area (in cm²) of the cube?",
+      "options": [
+        {
+          "label": "1",
+          "text": "144"
+        },
+        {
+          "label": "2",
+          "text": "216"
+        },
+        {
+          "label": "3",
+          "text": "204"
+        },
+        {
+          "label": "4",
+          "text": "162"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nDimensions of the cuboidal metal piece are 12 cm, 9 cm, and 2 cm.\n\n**Formula Used:**\n\nVolume of cuboid = length × breadth × height\n\nVolume of cube = side³\n\nLateral surface area of cube = 4 × side²\n\n**Calculation:**\n\nVolume of the cuboidal metal piece = 12 cm × 9 cm × 2 cm\n\n&rArr",
+      "tags": [
+        "Solid Figures"
+      ]
+    },
+    {
+      "qid": "650af74e7b129955e118da87",
+      "n": 13,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "A person buys a table fan for Rs. 2,800 and sells it at a loss of 12%. What is the selling price of the table fan?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Rs. 2,466"
+        },
+        {
+          "label": "2",
+          "text": "Rs. 2,468"
+        },
+        {
+          "label": "3",
+          "text": "Rs. 2,462"
+        },
+        {
+          "label": "4",
+          "text": "Rs. 2,464"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nCost price of the table fan = Rs. 2,800.\n\nLoss percentage = 12%.\n\n**Formula Used:**\n\nSelling Price = Cost Price × (1 - Loss %)\n\n**Calculation:**\n\n⇒ Selling Price = 2800 × (1 - 12/100)\n\n⇒ Selling Price = 2800 × (1 - 0.12)\n\n⇒ Selling Price = 2800 × 0.88\n\n⇒ Selling Price = Rs. 2,464\n\n**The selling price of the table fan is Rs. 2,464.**"
+    },
+    {
+      "qid": "650af781d9c156e8500f276b",
+      "n": 14,
+      "type": "mcq",
+      "concept": "Simple Ratios",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "If A ∶ B = 7 ∶ 9 and B ∶ C = 5 ∶ 6, Find the ratio of C and A respectively.",
+      "options": [
+        {
+          "label": "1",
+          "text": "15 ∶ 14"
+        },
+        {
+          "label": "2",
+          "text": "14 ∶ 15"
+        },
+        {
+          "label": "3",
+          "text": "54 ∶ 35"
+        },
+        {
+          "label": "4",
+          "text": "35 ∶ 54"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nA ∶ B = 7 ∶ 9 and B ∶ C = 5 ∶ 6.\n\n**Formula Used:**\n\nTo find the combined ratio of A ∶ C, we multiply the individual ratios.\n\n**Calculation:**\n\nA ∶ B = 7 ∶ 9 ⇒ To make the B's in both ratios equal, find a common multiple of the B values (9 and 5).\n\nB's LCM = 45 (as 9 × 5 = 45)\n\nTo make B in A ∶ B = 45, multiply both sides by 5 ⇒ A ∶ B = 35 ∶ 45\n\nTo make B in B ∶ C = 45, multiply both sides by 9 ⇒ B ∶ C = 45 ∶ 54\n\nNow, A ∶ B ∶ C = 35 ∶ 45 ∶ 54\n\nTherefore, the ratio of C ∶ A = 54 ∶ 35.\n\n**The correct ratio of C and A respectively is 54 ∶ 35.**",
+      "tags": [
+        "Simple Ratios"
+      ]
+    },
+    {
+      "qid": "650af79e7b129955e118e7a4",
+      "n": 15,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "The average weight of 17 men is 63 kg and the average weight of 36 women is 54 kg. What is the average weight (in kg) of all the men and women together? (Rounded off to the nearest integer)",
+      "options": [
+        {
+          "label": "1",
+          "text": "59"
+        },
+        {
+          "label": "2",
+          "text": "62"
+        },
+        {
+          "label": "3",
+          "text": "57"
+        },
+        {
+          "label": "4",
+          "text": "52"
+        }
+      ],
+      "correct": "3",
+      "solution": "__Shortcut Trick__\n\nUsing the assumed mean (deviation) method to simplify the calculation.\n\nAssume the base average = 54 kg.\n\nDeviation for 17 men = 17 × (63 − 54) = 17 × 9 = +153 kg.\n\nAverage deviation per person = +153 ÷ (17 + 36) = 153 ÷ 53 ≈ +2.88 kg.\n\nCombined average = Base average + Average deviation = 54 + 2.88 = 56.88 kg.\n\nRounding off to the nearest integer gives 57.\n\n**∴ The correct answer is 57 kg.**\n\n**__Alternate Method__**\n\n**Given:**\n\nNumber of men (n₁) = 17, Average weight (A₁) = 63 kg\n\nNumber of women (n₂) = 36, Average weight (A₂) = 54 kg\n\n Weighted Average Visualized as a Balance Scale\n \n \n• \n \n \n 36 W\n 54 kg\n \n \n 17 M\n 63 kg\n \n \n\n Avg ≈ 57 kg\n \n \n• \n \n• \n Ratio: 17 parts\n Ratio: 36 parts\n\n**Formula Used:**\n\nWeighted Average = (n₁ × A₁ + n₂ × A₂) ÷ (n₁ + n₂)\n\n**Calculations:**\n\n⇒ Total weight of men = 17 × 63 = 1071 kg\n\n⇒ Total weight of women = 36 × 54 = 1944 kg\n\n⇒ Total combined weight = 1071 + 1944 = 3015 kg\n\n⇒ Total number of people = 17 + 36 = 53\n\n⇒ Combined average weight = 3015 ÷ 53\n\n⇒ Combined average weight = 56.886... kg\n\n⇒ Rounding off to the nearest integer, we get 57 kg.\n\n**∴ The correct answer is 57 kg.**\n\n**__Additional Information__**\n\nWeighted Average\n\nWhen two or more groups with different quantities are combined, their average is given by Aw = (n₁A₁ + n₂A₂) ÷ (n₁ + n₂).\n\nDeviation Method\n\nInstead of calculating huge products, assume one value as base average. The true average is Base + (∑ Net Deviations ÷ Total Quantity).\n\nAlligation Rule\n\nAlligation is the reverse visual concept of weighted average. It helps find the ratio in which two groups must be mixed to get a desired average: Ratio = (A₂ − Aw) : (Aw − A₁).\n</p"
+    },
+    {
+      "qid": "650af7dec8f5315e5a70799a",
+      "n": 16,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "A vessel contains liquid A and liquid B in the ratio 4 ∶ 9. If 8 litres of liquid A is added to the vessel, the new ratio becomes 8 ∶ 9. Find the quantity of liquid A (in litres) in the original mixture.",
+      "options": [
+        {
+          "label": "1",
+          "text": "12"
+        },
+        {
+          "label": "2",
+          "text": "9"
+        },
+        {
+          "label": "3",
+          "text": "8"
+        },
+        {
+          "label": "4",
+          "text": "6"
+        }
+      ],
+      "correct": "3",
+      "solution": "[IMAGE: https://cdn.repeatermock.com/tb/ca81259519cadfb2d5350673c220e419e60378e9770ad26512fc8e826a8d93f1.png] __Shortcut Trick__\n\nInitial Ratio **A : B** = 4 : 9\n\nFinal Ratio **A : B** = 8 : 9\n\nSince only **Liquid A** is added, **Liquid B** remains constant (9 units).\n\nIncrease in A = 8 − 4 = 4 units → 8 litres.\n\n1 unit = 2 litres ∴ Original A = 4 units = 4 × 2 = 8 litres.\n\n**∴ The correct answer is 8 litres.**\n\n [IMAGE: https://cdn.repeatermock.com/tb/c76c13ba2d2ab46b47f8a931ae621dac081a0cb266b142dc23f58659fac4a466.png] **__Alternate Method__**\n\n**Given:**\n\nInitial Ratio of **Liquid A** and **Liquid B** = 4 : 9\n\nAmount of **Liquid A** added = 8 litres\n\nNew Ratio of **Liquid A** and **Liquid B** = 8 : 9\n\n [IMAGE: https://cdn.repeatermock.com/tb/da704161afa79dd3f9b061e66c6b9f38a0e9837c8b3790bea18b2d00534a6557.png] \n\n**Formula Used:**\n\nQuantity of substance = Ratio part × Constant factor (x)\n\n**Calculations:**\n\nLet the initial quantities of **Liquid A** and **Liquid B** be 4x and 9x respectively.\n\n⇒ (4x + 8) / 9x = 8 / 9\n\n⇒ 9 × (4x + 8) = 8 × 9x\n\n⇒ 36x + 72 = 72x\n\n⇒ 72x − 36x = 72\n\n⇒ 36x = 72\n\n⇒ x = 2\n\n⇒ Original quantity of **Liquid A** = 4x = 4 × 2 = 8 litres\n\n**∴ The correct answer is 8 litres.**\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\nRatio Balancing Method\n\nWhen one quantity in a ratio remains constant, multiply the ratios by suitable numbers to keep that quantity's units equal across both states.\n\nPercentage to Ratio Conversion\n\nMixture problems often use percentages. Remember that x% = x/100, which can be simplified to a ratio for faster calculation.\n\nReplacement Formula\n\nFinal Quantity = Initial Quantity × (1 − x/V)ⁿ, where x is the volume replaced and V is the total volume.</p",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/ca81259519cadfb2d5350673c220e419e60378e9770ad26512fc8e826a8d93f1.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/c76c13ba2d2ab46b47f8a931ae621dac081a0cb266b142dc23f58659fac4a466.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/da704161afa79dd3f9b061e66c6b9f38a0e9837c8b3790bea18b2d00534a6557.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650af882c126fdd7616f36f3",
+      "n": 17,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Which of the following expressions has value equal to 0?",
+      "options": [
+        {
+          "label": "1",
+          "text": "(2 × 3 + 5 - (1 - 2(3 - 2 × 2)))"
+        },
+        {
+          "label": "2",
+          "text": "(2 × 3 - 5 - (1 + 2(3 - 2 × 2)))"
+        },
+        {
+          "label": "3",
+          "text": "(2 × 3 - 5 + (1 + 2(3 - 2 × 2)))"
+        },
+        {
+          "label": "4",
+          "text": "(2 × 3 - 5 - (1 - 2(3 - 2 × 2)))"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nWe need to find which expression equals 0.\n\n**Formula Used:**\n\nArithmetic operations\n\n**Calculation:**\n\nLet's calculate each option:\n\n1) ⇒ (2 × 3 + 5 - (1 - 2(3 - 2 × 2)))\n\n⇒ 6 + 5 - (1 - 2(3 - 4))\n\n⇒ 11 - (1 - 2(-1))\n\n⇒ 11 - (1 + 2)\n\n⇒ 11 - 3\n\n⇒ 8\n\n2) ⇒ (2 × 3 - 5 - (1 + 2(3 - 2 × 2)))\n\n⇒ 6 - 5 - (1 + 2(3 - 4))\n\n⇒ 1 - (1 + 2(-1))\n\n⇒ 1 - (1 - 2)\n\n⇒ 1 - (-1)\n\n⇒ 2\n\n3) ⇒ (2 × 3 - 5 + (1 + 2(3 - 2 × 2)))\n\n⇒ 6 - 5 + (1 + 2(3 - 4))\n\n⇒ 1 + (1 + 2(-1))\n\n⇒ 1 + (1 - 2)\n\n⇒ 1 - 1\n\n⇒ 0\n\n4) ⇒ (2 × 3 - 5 - (1 - 2(3 - 2 × 2)))\n\n⇒ 6 - 5 - (1 - 2(3 - 4))\n\n⇒ 1 - (1 - 2(-1))\n\n⇒ 1 - (1 + 2)\n\n⇒ 1 - 3\n\n⇒ -2\n\n**The expression that has a value equal to 0 is option 3.**"
+    },
+    {
+      "qid": "650af8a7d9c156e8500f570f",
+      "n": 18,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Two numbers are in the ratio of 6 ∶ 7. If the difference between these numbers is 16, then find the numbers.",
+      "options": [
+        {
+          "label": "1",
+          "text": "96, 112"
+        },
+        {
+          "label": "2",
+          "text": "80, 96"
+        },
+        {
+          "label": "3",
+          "text": "120, 136"
+        },
+        {
+          "label": "4",
+          "text": "104, 120"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nThe ratio of two numbers = 6 ∶ 7\n\nThe difference between the numbers = 16\n\n**Formula Used:**\n\nIf two numbers are in the ratio a:b, then the numbers can be written as 6x and 7x, where x is a common multiplier.\n\nThe difference between the numbers = (7x - 6x)\n\n**Calculation:**\n\nLet the numbers be 6x and 7x.\n\nAccording to the question,\n\n⇒ 7x - 6x = 16\n\n⇒ x = 16\n\nTherefore, the numbers are:\n\n⇒ 6x = 6 × 16 = 96\n\n⇒ 7x = 7 × 16 = 112\n\n**The numbers are 96 and 112.**"
+    },
+    {
+      "qid": "650af914d48edf591e27b639",
+      "n": 19,
+      "type": "mcq",
+      "concept": "Work Efficiency",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "A, B and C can complete a work in 10, 15 and 20 days, respectively. They work on alternate days such that 1st day A, 2ⁿd day B and 3rd day C. Again 4th day A, 5th day B and so on. If they work in the same way, in how many days will the work be completed?",
+      "options": [
+        {
+          "label": "1",
+          "text": "13(1)/(4)"
+        },
+        {
+          "label": "2",
+          "text": "15"
+        },
+        {
+          "label": "3",
+          "text": "14"
+        },
+        {
+          "label": "4",
+          "text": "13(1)/(2)"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nA, B, and C can complete a work in 10, 15, and 20 days, respectively. They work on alternate days such that 1st day A, 2ⁿd day B, and 3rd day C. Again 4th day A, 5th day B, and so on.\n\n**Formula Used:**\n\nWork done by A in 1 day = 1/10\n\nWork done by B in 1 day = 1/15\n\nWork done by C in 1 day = 1/20\n\nTotal work done in 3 days = Work done by A + Work done by B + Work done by C\n\n**Calculation:**\n\nLCM of 10, 15 and 20 is 60.\n\nA will work = 60/10 = 6\n\nB will work = 60/15 = 4\n\nC will work = 60/20 = 3\n\n3 days work = 13 unit.\n\n12 days work = 13 × 4 = 52.\n\n13 day work = 52 + 6 = 58.\n\nso 2 unit is left and it will be done by B in 2/4 = 1/ 2 days.\n\nTotal work done in 13 + 1/2 = 13(1)/(2)\n\n**∴ The correct answer is 13(1)/(2) days.**",
+      "tags": [
+        "Work Efficiency"
+      ]
+    },
+    {
+      "qid": "650af953061f430b8b65a816",
+      "n": 20,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "A grocer purchased 50 kg of sugar at Rs. 40 per kg and mixed with 70 kg of sugar at Rs. ​30 per kg. At what rate should he sell the mixture (per kg) to gain 20%?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Rs. 60"
+        },
+        {
+          "label": "2",
+          "text": "Rs. 20"
+        },
+        {
+          "label": "3",
+          "text": "Rs. 35"
+        },
+        {
+          "label": "4",
+          "text": "Rs. 41"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nCost price of 5\n0 kg sugar at Rs. 40/kg = 50 × 40.\n\nCost price of 70 kg sugar at Rs. 30/kg = 70 × 30.\n\nTotal weight of sugar = 50 kg + 70 kg.\n\nGain = 20%.\n\n**Formula Used:**\n\nTotal Cost Price = Sum of the cost prices of both types of sugar.\n\nSelling Price = Total Cost Price + Gain% of Total Cost P"
+    },
+    {
+      "qid": "650af9785a5a9d2df190a1d6",
+      "n": 1,
+      "type": "mcq",
+      "concept": "Alphabet/Word Test",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "2 is related to 40 following a certain logic. Following the same logic, 5 is related to 250. To which of the following is 7 related to, following the same logic?",
+      "options": [
+        {
+          "label": "1",
+          "text": "470"
+        },
+        {
+          "label": "2",
+          "text": "490"
+        },
+        {
+          "label": "3",
+          "text": "450"
+        },
+        {
+          "label": "4",
+          "text": "400"
+        }
+      ],
+      "correct": "2",
+      "solution": "The logic follows here:\n\n**(Number) x (Number) x 10 = Related Number.**\n\nGiven:\n\n2 is related to 40\n\n2 x 2 x 10 = 40\n\nSimilarly,\n\n5 is related to 250\n\n5 x 5 x 10 = 250\n\nSimilarly,\n\n7 : ?\n\n7 x 7 x 10 = 490 = Related Number\n\nHence, the correct answer is **\"490\"**.",
+      "tags": [
+        "Letter and Number Based"
+      ]
+    },
+    {
+      "qid": "650af9aacb93614c4268bc15",
+      "n": 2,
+      "type": "mcq",
+      "concept": "Alphabet Series",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Select the combination of letters that when sequentially placed in the blanks of the given series, will complete the series.\n\nR _ _ RT _ R _ R _ TR",
+      "options": [
+        {
+          "label": "1",
+          "text": "RTRRT"
+        },
+        {
+          "label": "2",
+          "text": "TTTRR"
+        },
+        {
+          "label": "3",
+          "text": "TRRTR"
+        },
+        {
+          "label": "4",
+          "text": "RTTTR"
+        }
+      ],
+      "correct": "3",
+      "solution": "Given : R _ _ RT _ R _ R _ TR\n\nBy checking options :\n\n \n• RTRRT → R __**R**__ __**T**__ RT __**R**__ R __**R**__ R __**T**__ TR → (It doesn't Follows the pattern)\n \n• TTTRR → R __T__ __T__ RT __T__ R __R__ R __R__ TR → (It doesn't Follows the pattern)\n \n• TRRTR → R __T__ __R__ RT __R__ R __T__ R __R__ TR → (It follows the pattern of : RTR - RTR - RTR - RTR)\n \n• RTTTR → R __R__ __T__ RT __T__ R __T__ R __R__ TR → (It doesn't Follows the pattern)\n\n⇒Option - (3) gives the pattern of \" R __T__ __R__ - RT __R__ - R __T__ R - __R__ TR \"\n\nHence, \"**TRRTR**\" is the correct answer.",
+      "tags": [
+        "Alphabet Series"
+      ]
+    },
+    {
+      "qid": "650af9ded48edf591e27dc38",
+      "n": 3,
+      "type": "mcq",
+      "concept": "Circular Arrangement",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "J, K, P, Q, R and M are sitting around a circular table facing the centre.\n\nJ is sitting to the immediate left of M. R is sitting 2nd to the left of J. K is sitting 3rd to the right of J. P sits to the immediate right of R.\n\nWho sits 2nd to the left of K?",
+      "options": [
+        {
+          "label": "1",
+          "text": "R"
+        },
+        {
+          "label": "2",
+          "text": "Q"
+        },
+        {
+          "label": "3",
+          "text": "M"
+        },
+        {
+          "label": "4",
+          "text": "P"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given :** J, K, P, Q, R and M are sitting around a circular table facing the centre.\n\n**Explanation :**\n\n1) J is sitting to the immediate left of M.\n\n [IMAGE: https://cdn.repeatermock.com/tb/0de43dbee79b1bd6a0a4d622f5f382dc97bdaa399ebd2150f4a6898621295444.png] \n\n2) R is sitting 2nd to the left of J.\n\n3) P sits to the immediate right of R.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f8a56bb285652f2bafaa73fe6b78bf0fb15aac2ae36bfa06c5099b13bdc6cbee.png] \n\n4) K is sitting 3rd to the right of J.\n\nAfter positioning K only one position is left which will be occupied by the only person left i.e Q.\n\n [IMAGE: https://cdn.repeatermock.com/tb/82ce03cbc652e1c097c57fc34bfb5b6c7c162030ba2046f6eb80e546aeea4991.png] \n\nThus, according to the final arrangement M sits 2nd to the left of K.\n\nHence, **\"M\"** is the correct answer.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/0de43dbee79b1bd6a0a4d622f5f382dc97bdaa399ebd2150f4a6898621295444.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f8a56bb285652f2bafaa73fe6b78bf0fb15aac2ae36bfa06c5099b13bdc6cbee.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/82ce03cbc652e1c097c57fc34bfb5b6c7c162030ba2046f6eb80e546aeea4991.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Circular Arrangement"
+      ]
+    },
+    {
+      "qid": "650af9f8553072b0e2dbb592",
+      "n": 4,
+      "type": "mcq",
+      "concept": "Number Series",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "What should come in place of '?' in the given series?\n\n3, 20, 54, ?, 258, 530, 1074",
+      "options": [
+        {
+          "label": "1",
+          "text": "122"
+        },
+        {
+          "label": "2",
+          "text": "128"
+        },
+        {
+          "label": "3",
+          "text": "118"
+        },
+        {
+          "label": "4",
+          "text": "124"
+        }
+      ],
+      "correct": "1",
+      "solution": "The logic followed here is: [IMAGE: https://cdn.repeatermock.com/tb/7e88c6f9d1425076ac41d0249630a89f1c14f7bf5b5461f4fb009a4cbb047148.png] \n\nSo, **122** will come next in the given series.\n\nHence, the correct answer is ***'Option 1'.***",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/7e88c6f9d1425076ac41d0249630a89f1c14f7bf5b5461f4fb009a4cbb047148.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Number Series"
+      ]
+    },
+    {
+      "qid": "650afa1c5a5a9d2df190b799",
+      "n": 5,
+      "type": "mcq",
+      "concept": "Conventional Syllogism",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Read the given statements and conclusions carefully. You have to take the given statements to be true even if they seem to be at variance from commonly known facts. You have to decide which conclusion's logically follow/s from the given statements.\n\nStatements: All crows are sparrows. Some sparrows are parrots. All parrots are yellow.\n\nConclusion I: Some crows are parrots.\n\nConclusion II: Some yellow are parrots.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Only conclusion (II) is follow."
+        },
+        {
+          "label": "2",
+          "text": "Both conclusions (I) and (II) are follow."
+        },
+        {
+          "label": "3",
+          "text": "Only conclusion (I) is follow."
+        },
+        {
+          "label": "4",
+          "text": "Neither conclusion (I) nor (II) is follow."
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nStatements:\n\nAll crows are sparrows.\n\nSome sparrows are parrots.\n\nAll parrots are yellow.\n\nThe least possible Venn diagram is:\n\n<img alt=\"\" src=\"https://cdn.repeatermock.com/tb/84b7bd0f3e44958f483903",
+      "tags": [
+        "Conventional Syllogism"
+      ]
+    },
+    {
+      "qid": "650afa95d48edf591e27f7a1",
+      "n": 6,
+      "type": "mcq",
+      "concept": "Dictionary or Alphabet Based",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "The position of how many letters will remain unchanged if each of the letter in the word 'CATEGORY' is arranged in alphabetical order?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Three"
+        },
+        {
+          "label": "2",
+          "text": "Two"
+        },
+        {
+          "label": "3",
+          "text": "None"
+        },
+        {
+          "label": "4",
+          "text": "One"
+        }
+      ],
+      "correct": "4",
+      "solution": "[IMAGE: https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png] \n\nGiven : word → CATEGORY\n\nSo, according to question rearranging the word in alphabetic order: \n\n \n \n\n Word before rearrangement\n C\n A\n T\n E\n G\n O\n R\n **Y**\n \n \n\n After rearrangement\n A\n C\n E\n G\n O\n R\n T\n **Y**\n \n \n\nThus, according to the final arrangement one letter i.e **Y** remains unchanged.\n\nHence, \"**One**\" is the correct answer.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Dictionary or Alphabet Based"
+      ]
+    },
+    {
+      "qid": "650afaab396327821a8f41cf",
+      "n": 7,
+      "type": "mcq",
+      "concept": "Number Series",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "What should come in place of ? in the given series?\n\n978, 967, 956, 945, 934, ?",
+      "options": [
+        {
+          "label": "1",
+          "text": "922"
+        },
+        {
+          "label": "2",
+          "text": "923"
+        },
+        {
+          "label": "3",
+          "text": "921"
+        },
+        {
+          "label": "4",
+          "text": "924"
+        }
+      ],
+      "correct": "2",
+      "solution": "The logic followed here is:\n\nThe series is decreasing by 11 at each step: 978 - 11 = 967, 967 - 11 = 956, 956 - 11 = 945, 945 - 11 = 934, 934 - 11 = 923.\n\n [IMAGE: https://cdn.repeatermock.com/tb/49f4ee31cc04aa148d24afa2991484a478ff6620388e382c6da95d93100f57f1.png] \n\nSo, **923 **will come next in the given series.\n\nHence, the correct answer is ***'Option 2'.***",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/49f4ee31cc04aa148d24afa2991484a478ff6620388e382c6da95d93100f57f1.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Number Series"
+      ]
+    },
+    {
+      "qid": "650afabec8f5315e5a70f20d",
+      "n": 8,
+      "type": "mcq",
+      "concept": "Alphabet Series",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "What should come in place of ? in the given series based on the English alphabetical order?\n\nETM, AWO, WZQ, SCS, ?",
+      "options": [
+        {
+          "label": "1",
+          "text": "MEU"
+        },
+        {
+          "label": "2",
+          "text": "NFV"
+        },
+        {
+          "label": "3",
+          "text": "OFU"
+        },
+        {
+          "label": "4",
+          "text": "MEV"
+        }
+      ],
+      "correct": "3",
+      "solution": "[IMAGE: https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png] \n\nLogic : \n\n \n• First letter → (4) is subtracted from the position value according to English alphabetic series.\n \n• Second letter → (3) is added to the position value according to English alphabetic series.\n \n• Third letter → (2) is added to the position value according to English alphabetic series.\n\n​​So,\n\n​ [IMAGE: https://cdn.repeatermock.com/tb/aa221d488b3d72c6466f5ba1d5b7caec8730c5c6c4befa3937ff21c63d27e65a.png] \n\nHence, \"**OFU**\" is the correct answer.\n\nca:T",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/aa221d488b3d72c6466f5ba1d5b7caec8730c5c6c4befa3937ff21c63d27e65a.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Alphabet Series"
+      ]
+    },
+    {
+      "qid": "650afaf8126e2bd6347509d2",
+      "n": 9,
+      "type": "mcq",
+      "concept": "Coding Letters of a Word",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "In a certain code language. 'YJM' is coded as '26 - 11 - 14' and 'SOP' is coded as '20-16-17'. What is the code for 'BTX' in the given code language?",
+      "options": [
+        {
+          "label": "1",
+          "text": "3 - 21 - 25"
+        },
+        {
+          "label": "2",
+          "text": "5 - 22 - 24"
+        },
+        {
+          "label": "3",
+          "text": "5 - 23 - 25"
+        },
+        {
+          "label": "4",
+          "text": "4 - 22 - 24"
+        }
+      ],
+      "correct": "1",
+      "solution": "[IMAGE: https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png] \n\nLogic : (1) is added to the position value according to the English alphabetic series.\n\nSo,\n\n \n• 'YJM' is coded as '26 - 11 - 14'\n\n [IMAGE: https://cdn.repeatermock.com/tb/907eba7af6f0aebdbbe9c12f246489526113564413a67e004387228bd8d799d6.png] \n\nAnd, \n\n \n• 'SOP' is coded as '20-16-17'\n\n [IMAGE: https://cdn.repeatermock.com/tb/392dff59864311c04e56b5c6f44967885f92e251124433bf4521f71ef44cf1f9.png] \n\nSimilarly,\n\n \n• 'BTX' is coded as:\n\n [IMAGE: https://cdn.repeatermock.com/tb/165e0f02a8de1253e6f1aa97976cf67832928c58ae79eaab8430d450ae06b57c.png] \n\nHence, \"**3 - 21 - 25**\" is the correct answer.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/907eba7af6f0aebdbbe9c12f246489526113564413a67e004387228bd8d799d6.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/392dff59864311c04e56b5c6f44967885f92e251124433bf4521f71ef44cf1f9.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/165e0f02a8de1253e6f1aa97976cf67832928c58ae79eaab8430d450ae06b57c.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Coding Letters of a Word"
+      ]
+    },
+    {
+      "qid": "650afb41c8f5315e5a710b49",
+      "n": 10,
+      "type": "mcq",
+      "concept": "Puzzle",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "If G means '-', D means '×', A means '÷' B means '+' then what will come in place of the question mark (?) in the following equation?\n\n19 D 6 B 34 A 2 G 27 = ?",
+      "options": [
+        {
+          "label": "1",
+          "text": "126"
+        },
+        {
+          "label": "2",
+          "text": "104"
+        },
+        {
+          "label": "3",
+          "text": "65"
+        },
+        {
+          "label": "4",
+          "text": "83"
+        }
+      ],
+      "correct": "2",
+      "solution": "Given Equation: 19 D 6 B 34 A 2 G 27 = ?\n\nBODMAS Rule:\n\n [IMAGE: https://cdn.repeatermock.com/tb/a45b5b9191c13cd4da310eb8df100becb078c240f4b0e763420ec154fb42a5fd.png] \n\nDecoding the given information:\n\n \n \n\n Alphabet\n A\n B\n D\n G\n \n \n \n \n\n **Meaning**\n ÷\n +\n ×\n -\n \n \n\n \n\nNow replacing the sign from left to right using BODMAS Rule, we get:\n\n⇒ 19 × 6 + __**34 ÷ 2**__ - 27\n\n⇒** __19 × 6__** +17 - 27\n\n⇒ __**114**__ + __**17**__ - 27\n\n⇒ __**131 - 27**__ =** 104**\n\nHence, the correct option is **\"Option 2\"**.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/a45b5b9191c13cd4da310eb8df100becb078c240f4b0e763420ec154fb42a5fd.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Logical Puzzle"
+      ]
+    },
+    {
+      "qid": "650afb58c8f5315e5a710f8f",
+      "n": 11,
+      "type": "mcq",
+      "concept": "Coding Letters of a Word",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "In a certain code language, 'LIAR' is coded as '5148' and 'REAL' is coded as '1582'. What is the code for 'E' in the given code language?",
+      "options": [
+        {
+          "label": "1",
+          "text": "5"
+        },
+        {
+          "label": "2",
+          "text": "8"
+        },
+        {
+          "label": "3",
+          "text": "2"
+        },
+        {
+          "label": "4",
+          "text": "1"
+        }
+      ],
+      "correct": "3",
+      "solution": "[IMAGE: https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png] \n\nLogic : No specific pattern is followed here, random digits are assigned to each letter.\n\nSo,\n\n \n• 'LIAR' is coded as '5148'\n \n• 'REAL' is coded as '1582'\n\nAs some letters are common, so the codes will be :\n\n \n \n\n Letters\n L / A / R\n I\n E\n \n \n\n Codes\n 5 / 1 / 8\n 4\n 2\n \n \n\n​Therefore,\n\n \n• 'E' will be coded as:\n\n'E' is coded as '2'.\n\n​Hence, \"2\" is the correct answer.\n\ne8",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4a5b7cf84abd4e09a63d504f404b2035f579e6a3a005e11d54e3ca50bd42a099.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Coding Letters of a Word"
+      ]
+    },
+    {
+      "qid": "650afb7e716e36ab84d84ebf",
+      "n": 12,
+      "type": "mcq",
+      "concept": "Alphabet Series",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Select the combination of letters that when sequentially placed in the blanks of the given series will make it logically complete.\n\nKC_OK_PO_YSOKWV_K_YO",
+      "options": [
+        {
+          "label": "1",
+          "text": "MDHTV"
+        },
+        {
+          "label": "2",
+          "text": "LJMST"
+        },
+        {
+          "label": "3",
+          "text": "KJNVL"
+        },
+        {
+          "label": "4",
+          "text": "MAKOU"
+        }
+      ],
+      "correct": "4",
+      "solution": "Given : KC_OK_PO_YSOKWV_K_YO\n\nBy checking options :\n\n \n• MDHTV → KC__**M**__OK__**D**__PO__**H**__YSOKWV__**T**__K__**V**__YO → (It doesn't Follows the pattern)\n \n• LJMST → KC__L__OK__J__POM&",
+      "tags": [
+        "Alphabet Series"
+      ]
+    },
+    {
+      "qid": "650afb9c553072b0e2dbf5c2",
+      "n": 13,
+      "type": "mcq",
+      "concept": "Alphabet/Word Test",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "In the following number-pairs, the second number is obtained by applying certain mathematical operations to the first number. Select the set in which the numbers are related in the same way as are the numbers of the following sets. (NOTE: Operations should be performed on the whole numbers, without breaking down the numbers into its constituent digits. E.g. 13 - Operations on 13 such as adding/subtracting/multiplying etc. to 13 can be performed. Breaking down 13 into 1 and 3 and then performing mathematical operations on 1 and 3 is not allowed)\n\n65, 74\n\n87, 96",
+      "options": [
+        {
+          "label": "1",
+          "text": "75, 123"
+        },
+        {
+          "label": "2",
+          "text": "63, 157"
+        },
+        {
+          "label": "3",
+          "text": "81, 156"
+        },
+        {
+          "label": "4",
+          "text": "92, 101"
+        }
+      ],
+      "correct": "4",
+      "solution": "The logic followed here is,\n\nLogic: **Second Number = First Number + 9**\n\n**65, 74**\n\n→ 74 = 65 + 9\n\n**87, 96**\n\n→ 96 = 87 + 9\n\nLet's check each option as per the logic,\n\n**1) 75, 123**\n\n→ 123 ≠ 75 + 9\n\n**2) 63, 157**\n\n→ 157 ≠ 63 + 9\n\n**3) 81, 156**\n\n→ 156 ≠ 81 + 9\n\n**4) 92, 101**\n\n→ 101 = 92 + 9 ⇒ **Satisfies the logic.**\n\nHence, the correct answer is **\"92, 101\"**.",
+      "tags": [
+        "Letter and Number Based"
+      ]
+    },
+    {
+      "qid": "650afbb7061f430b8b660f2f",
+      "n": 14,
+      "type": "mcq",
+      "concept": "Number Series",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "What should come in place of '?' in the given series?\n\n13, 52, 169, 520, 1573, ?",
+      "options": [
+        {
+          "label": "1",
+          "text": "4781"
+        },
+        {
+          "label": "2",
+          "text": "4732"
+        },
+        {
+          "label": "3",
+          "text": "4895"
+        },
+        {
+          "label": "4",
+          "text": "4863"
+        }
+      ],
+      "correct": "2",
+      "solution": "The logic followed here is:\n\nThe series follows the pattern where each number is multiplied by 3 and then 13 is added.\n\n [IMAGE: https://cdn.repeatermock.com/tb/e07d734e9c37a48306f54b98db4b66cb3e25275393fc9fd41be1b2b0f95328e3.png] \n\nSo, **4732 **will come next in the given series.\n\nHence, the correct answer is ***'Option 2'.***",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/e07d734e9c37a48306f54b98db4b66cb3e25275393fc9fd41be1b2b0f95328e3.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Number Series"
+      ]
+    },
+    {
+      "qid": "650afbe97b129955e119942f",
+      "n": 15,
+      "type": "mcq",
+      "concept": "Image Based",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Which figure should replace the question mark (?) if the following figure series were to be continued?\n\n [IMAGE: https://cdn.repeatermock.com/tb/b487598a532128f10b39bd80ee8c8be6db2f7c4748f91a0d4feed92c64425e1c.png]",
+      "options": [
+        {
+          "label": "1",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/4052ef10ee34825c4d5a8bf57d8a0d6fe4acb6c6f484214a4d9e496b7756fa1e.png]"
+        },
+        {
+          "label": "2",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/d3148616d39aa7f389e5efb22a84ee6a34492af648a5053bf7be8cee59a28c73.png]"
+        },
+        {
+          "label": "3",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/78aebaa2e5fc678a444a9a56d4aee144807dc5e1d545223274e0a06ccaeecd7c.png]"
+        },
+        {
+          "label": "4",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/9f196acd7c2e486ba7742d94c39b6652c8a00a9f7d038b0bc0b911f59ef9e15e.png]"
+        }
+      ],
+      "correct": "2",
+      "solution": "The figure that will replace the question mark (?) in the following figure series is shown below:\n\n1) First box alternate series : \n\n \n• Alternately top left corner element, center element and bottom left corner element shifts in clockwise direction.\n \n• Alternately bottom center element, bottom right corner element, top right corner element and top center element shifts in clockwise direction.\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/e04a4ccf9f7ef0d12a36070697300acd76c257055f9cf127fc855dc31efa2929.png] \n\n2) Second box alternate series :\n\n \n• Alternately top corner elements interchange positions while top center element remains constant.\n \n• Alternately bottom elements shift one position in anti-clockwise direction horizontally.\n \n• Alternately center element replaced by new element i.e ' [IMAGE: https://cdn.repeatermock.com/tb/813561694e59fae7f2297a6ab0af174bb79759df8f151bd5a08b3b1d77eebd44.png] ' is replaced by ' [IMAGE: https://cdn.repeatermock.com/tb/5ce66f20539f21ce484affa74907870d7c82ee4ab0ccd8152b17599c56646ffd.png] ' and ' [IMAGE: https://cdn.repeatermock.com/tb/ff4e7c3d49cae80abf597fcf5698013fcad2e4f10703573c6f8bc7022dbec6d6.png] ' is replaced by ' [IMAGE: https://cdn.repeatermock.com/tb/e6f3fb50fb21a0d86de2f821b3e16c0c5b38c9532aba87ccd4a5c18f9f7ca9d5.png] '.\n\n [IMAGE: https://cdn.repeatermock.com/tb/8f6e856b5489535525823d0a107120ec38f22f303d98d93b393ebb1f61c593b2.png] \n\nThe final series is :\n\n [IMAGE: https://cdn.repeatermock.com/tb/e1dc34a8d782becc429794e132c714f5e01be5ccb16a180b91b327bc7f3715f6.png] \n\nHence, ‘option - (2)’ is the correct answer.",
+      "images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/b487598a532128f10b39bd80ee8c8be6db2f7c4748f91a0d4feed92c64425e1c.png",
+          "alt": ""
+        }
+      ],
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/e04a4ccf9f7ef0d12a36070697300acd76c257055f9cf127fc855dc31efa2929.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/813561694e59fae7f2297a6ab0af174bb79759df8f151bd5a08b3b1d77eebd44.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/5ce66f20539f21ce484affa74907870d7c82ee4ab0ccd8152b17599c56646ffd.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/ff4e7c3d49cae80abf597fcf5698013fcad2e4f10703573c6f8bc7022dbec6d6.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/e6f3fb50fb21a0d86de2f821b3e16c0c5b38c9532aba87ccd4a5c18f9f7ca9d5.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/8f6e856b5489535525823d0a107120ec38f22f303d98d93b393ebb1f61c593b2.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/e1dc34a8d782becc429794e132c714f5e01be5ccb16a180b91b327bc7f3715f6.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Image Based"
+      ]
+    },
+    {
+      "qid": "650afc1152c24bfb5b870eba",
+      "n": 16,
+      "type": "mcq",
+      "concept": "Meaning Based",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Select the word pair that best represents the same relationship as the one expressed in the given word pair.\n\nThe word pairs should be considered as meaningful Hindi words and should not be related to each other based on the number of letters/consonants/vowels in the word.\n\nApplaud : Praise",
+      "options": [
+        {
+          "label": "1",
+          "text": "Host : Entertain"
+        },
+        {
+          "label": "2",
+          "text": "Coax : Reject"
+        },
+        {
+          "label": "3",
+          "text": "Beautify : Refresh"
+        },
+        {
+          "label": "4",
+          "text": "Teach : Learn"
+        }
+      ],
+      "correct": "1",
+      "solution": "The logic followed here is:\n\nLogic: **Both words have a similar meaning or use.**\n\n**For, **Applaud : Praise\n\n⇒ Applaud is a form of showing** Praise.**\n\nSimilarly, \n\n**For, **Host : ?\n\nHost means to** Entertain.**\n\nHence, the correct answer is **\"Option 1\".**",
+      "tags": [
+        "Meaning Based"
+      ]
+    },
+    {
+      "qid": "650afc395a5a9d2df19111d5",
+      "n": 17,
+      "type": "mcq",
+      "concept": "Conventional Syllogism",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Read the given statement(s) and conclusions carefully. Assuming that the information given in the statements is true, even if it appears to be at variance with commonly known facts, decide which of the given conclusions logically follow(s) from the statement(s).\n\n**Statements:** All the actors are girls. All the girls are beautiful.\n\n**Conclusions: **\n\n(I) All the actors are beautiful.\n\n(II) Some girls are actors.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Both conclusions (1) and (II) are follows."
+        },
+        {
+          "label": "2",
+          "text": "Only conclusion (II) is follows."
+        },
+        {
+          "label": "3",
+          "text": "Only conclusion (I) is follows."
+        },
+        {
+          "label": "4",
+          "text": "Neither conclusion (I) nor (II) is follows."
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nStatements:\n\nAll the actors are girls.\n\nAll the girls are beautiful.\n\nThe least possible Venn diagram is:\n\n<img alt=\"\" src=\"https://cdn.repeatermock.com/tb/457a21f191bfe397284da9963d52669e7ade",
+      "tags": [
+        "Conventional Syllogism"
+      ]
+    },
+    {
+      "qid": "650afcd8d9c156e8501010b6",
+      "n": 18,
+      "type": "mcq",
+      "concept": "Paper Folding/Cutting",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "The sequence of folding a piece of paper and the manner in which the folded paper is cut is shown in the following figures. How would this paper look when unfolded?\n\n [IMAGE: https://cdn.repeatermock.com/tb/94d9555b59d250c2a6d377a0dbea41b615bbbca20ff8db0ad3161229fdabd5cb.png]",
+      "options": [
+        {
+          "label": "1",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/141bf692e763256ad78859b2b401eccb30895e6ea68c44b92ba10d843096f8ca.png]"
+        },
+        {
+          "label": "2",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/f738626fa2226cf9487fc7a00bd3150ddf5937b78a6709894382fd80ce61868c.png]"
+        },
+        {
+          "label": "3",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/2c7da96cdf09560027a0bc3f78f7bc31bdb6b232beb4e93fc065e4a498f1107d.png]"
+        },
+        {
+          "label": "4",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/f36a07e9603091d23e617d2cd19e6de5e473c5774980640013e1871eee7101a3.png]"
+        }
+      ],
+      "correct": "2",
+      "solution": "​When folded paper is opened, the cuts will appear as follows: [IMAGE: https://cdn.repeatermock.com/tb/e6fc3d76580d54af67817d24389043355dec6a65e07dd39fd0cd507cc8be450b.png] \n\n \n\nHence, correct answer is in option 2.",
+      "images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/94d9555b59d250c2a6d377a0dbea41b615bbbca20ff8db0ad3161229fdabd5cb.png",
+          "alt": ""
+        }
+      ],
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/e6fc3d76580d54af67817d24389043355dec6a65e07dd39fd0cd507cc8be450b.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Paper Folding and Cutting"
+      ]
+    },
+    {
+      "qid": "650afd2e716e36ab84d89cf9",
+      "n": 19,
+      "type": "mcq",
+      "concept": "Puzzle",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "What will come in place of '?' in the following equation, if '+' and '×' are interchanged and '-' and '÷' are interchanged?\n\n18 - 9 ÷ 4 × 3 + 5 = ?",
+      "options": [
+        {
+          "label": "1",
+          "text": "17"
+        },
+        {
+          "label": "2",
+          "text": "13"
+        },
+        {
+          "label": "3",
+          "text": "18"
+        },
+        {
+          "label": "4",
+          "text": "19"
+        }
+      ],
+      "correct": "2",
+      "solution": "BODMAS Rule:\n\n [IMAGE: https://cdn.repeatermock.com/tb/2042326d26ec7b593e52bbbdd22d890b59b1e59f92be81a7235509e9af1c4625.png] \n\nAccording to the given question:\n\n \n \n\n Symbols\n Interchanged with\n \n \n\n **+**\n **×**\n \n \n\n -\n **÷**\n \n \n\n \n\nGiven equation : 18 - 9 ÷ 4 × 3 + 5 = ?\n\nNow if '+' and '×' are interchanged with '÷' and '-' respectively then:\n\n⇒ __**18 ÷ 9 -**__ 4 + 3 × 5 = ?\n\n⇒ 2 - 4 + __**3 × 5**__ = ?\n\n⇒ 2 - 4 + 1__**5**__ = ?\n\n⇒ 17 - 4 = 13\n\nHence, the correct answer is *'Option 2'.*",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/2042326d26ec7b593e52bbbdd22d890b59b1e59f92be81a7235509e9af1c4625.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Logical Puzzle"
+      ]
+    },
+    {
+      "qid": "650afe8e229c90676eb6d36d",
+      "n": 20,
+      "type": "mcq",
+      "concept": "Mirror/Water Image",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 0.0,
+      "question": "Select the correct mirror image of the given figure when the mirror is placed at MN as shown below.\n\n [IMAGE: https://cdn.repeatermock.com/tb/8063065d7761c32825fa537f439399b15648ddfaaeef1a3f722bc2ec562d1c19.png]",
+      "options": [
+        {
+          "label": "1",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/a1bc98730bb70e0c3b559be6e9da728d1b4818a5ea504ec740e74f0d5ae96cde.png]"
+        },
+        {
+          "label": "2",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/c22e8d3cd101e354dd226ad9598659570c4f277b45d50b818fb61c02d65bdfc3.png]"
+        },
+        {
+          "label": "3",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/6302d9733ed509e206b7d9ea513dbc1ae2d477944b93fb636f103aa41147a76c.png]"
+        },
+        {
+          "label": "4",
+          "text": "[IMAGE: https://cdn.repeatermock.com/tb/e439bf82483e22345d5b624e348cc5c39d9669ab16c727ff948764cfc90f4696.png]"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct mirror image of the given figure is:\n\n [IMAGE: https://cdn.repeatermock.com/tb/5ec9660e58c72366c024017170ea1362cef3ac7ce939674a243fae9d60ad57db.png] \n\nHence, the correct answer is ***'Option 4'.***",
+      "images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/8063065d7761c32825fa537f439399b15648ddfaaeef1a3f722bc2ec562d1c19.png",
+          "alt": ""
+        }
+      ],
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/5ec9660e58c72366c024017170ea1362cef3ac7ce939674a243fae9d60ad57db.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Mirror Image"
+      ]
+    },
+    {
+      "qid": "650afeadc126fdd761704b46",
+      "n": 1,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The Gua and Noamundi mines are located in with state of India?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Assam"
+        },
+        {
+          "label": "2",
+          "text": "Haryana"
+        },
+        {
+          "label": "3",
+          "text": "Rajasthan"
+        },
+        {
+          "label": "4",
+          "text": "Jharkhand"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **Jharkhand**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• **Gua and Noamundi** are famous for their iron ore mines.\n \n• These mines are located in the state of **Jharkhand**.\n \n• Jharkhand is known for its rich mineral resources, especially iron ore.\n \n• Th",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650afecb229c90676eb6dc8f",
+      "n": 2,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "What is a fiscal year?",
+      "options": [
+        {
+          "label": "1",
+          "text": "A year that represents the financial reporting period for the government"
+        },
+        {
+          "label": "2",
+          "text": "A year with a surplus in government revenue"
+        },
+        {
+          "label": "3",
+          "text": "A year with a deficit in government revenue"
+        },
+        {
+          "label": "4",
+          "text": "A year in which tax rates are increased"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **A year that represents the financial reporting period for the government**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **A fiscal year** is a one-year period that governments and businesses use for financial reporting and budgeting.\n \n• The fiscal year may not align with the calendar year.\n \n• Different countries and organizations may have different start and end dates for their fiscal years.\n \n• It is used for accounting purposes to prepare financial statements and reports.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1\n This is the correct definition of a fiscal year. It is used for financial reporting and budgeting by governments and businesses.\n \n \n\n Option 2\n This option incorrectly defines a fiscal year as a year with a surplus in government revenue.\n \n \n\n Option 3\n This option incorrectly defines a fiscal year as a year with a deficit in government revenue.\n \n \n\n Option 4\n This option incorrectly defines a fiscal year as a year in which tax rates are increased.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650afee2553072b0e2dc87ca",
+      "n": 3,
+      "type": "mcq",
+      "concept": "Constitution of India",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The Constitution (Scheduled Castes and Scheduled Tribes) Order (Second Amendment) Bill, 2022, was passed in December 2022 and is related to which state?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Bihar"
+        },
+        {
+          "label": "2",
+          "text": "Uttarakhand"
+        },
+        {
+          "label": "3",
+          "text": "Uttar Pradesh"
+        },
+        {
+          "label": "4",
+          "text": "Karnataka"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is **Uttar Pradesh**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **The Constitution (Scheduled Castes and Scheduled Tribes) Order (Second Amendment) Bill, 2022** was passed in December 2022.\n \n• **The Bill aims to modify the list of Scheduled Castes (SCs) and Scheduled Tribes (STs)** in Uttar Pradesh.\n \n• This amendment was necessary to accommodate **various communities' demands** for inclusion or exclusion in the SC/ST list.\n \n• **Uttar Pradesh** has a significant population of SCs and STs, making such amendments crucial for social justice and representation.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Bihar\n Bihar has its own distinct set of SCs and STs, but this particular amendment does not pertain to Bihar.\n \n \n\n Uttarakhand\n Uttarakhand also has SCs and STs, but this amendment is not related to this state.\n \n \n\n Uttar Pradesh\n This state is the focus of The Constitution (Scheduled Castes and Scheduled Tribes) Order (Second Amendment) Bill, 2022.\n \n \n\n Karnataka\n Karnataka has a different set of issues and amendments related to SCs and STs, not connected to this bill.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Constitution of India"
+      ]
+    },
+    {
+      "qid": "650afefe126e2bd63475afff",
+      "n": 4,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Identify the Kuchipudi dancer from following, who was awarded with 'Padma Shri' in the year 2022.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Vidyanand Sarek"
+        },
+        {
+          "label": "2",
+          "text": "Padmaja Reddy"
+        },
+        {
+          "label": "3",
+          "text": "Dr. Veeraswamy Seshiah"
+        },
+        {
+          "label": "4",
+          "text": "KV Rabiya"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is **Padmaja Reddy**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• **Padmaja Reddy** is a renowned Kuchipudi dancer.\n \n• She was awarded the **Padma Shri** in the year **2022**.\n \n• The Padma Shri is the fourth highest civilian award in India.\n \n• Padmaja Reddy has significa",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650aff17d48edf591e28ada0",
+      "n": 5,
+      "type": "mcq",
+      "concept": "Buddhism",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Buddha Purnima is marked on a full moon day in the Hindu month of ____________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Vaisakh"
+        },
+        {
+          "label": "2",
+          "text": "Jyaistha"
+        },
+        {
+          "label": "3",
+          "text": "Bhadra"
+        },
+        {
+          "label": "4",
+          "text": "Ashadha"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **Vaisakh**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• **Buddha Purnima** is celebrated to mark the birth, enlightenment, and death anniversary of Lord Buddha.\n \n• It is observed on the full moon day in the Hindu month of **Vaisakh**.\n \n• Vaisakh</s",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Buddhism"
+      ]
+    },
+    {
+      "qid": "650aff2c52c24bfb5b876679",
+      "n": 6,
+      "type": "mcq",
+      "concept": "Language and Literature",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Which of the following is the official language of Afghanistan?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Sinhala"
+        },
+        {
+          "label": "2",
+          "text": "Burmese"
+        },
+        {
+          "label": "3",
+          "text": "Dari"
+        },
+        {
+          "label": "4",
+          "text": "Dzongkha"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is **Dari**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Dari** is one of the two official languages of Afghanistan, the other being Pashto.\n \n• Dari is a variety of the Persian language and is also known as Afghan Persian.\n \n• It is widely spoken by about half of the population of Afghanistan.\n \n• Dari serves as the lingua franca in Afghanistan, facilitating communication among different ethnic groups.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1 (Sinhala)\n Sinhala is the official language of Sri Lanka.\n \n \n\n Option 2 (Burmese)\n Burmese is the official language of Myanmar.\n \n \n\n Option 3 (Dari)\n Dari is one of the two official languages of Afghanistan.\n \n \n\n Option 4 (Dzongkha)\n Dzongkha is the official language of Bhutan.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Language and Literature"
+      ]
+    },
+    {
+      "qid": "650aff3f553072b0e2dc9491",
+      "n": 7,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Who started the temple entry movement in 1927?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Mahadev Govind Ranade"
+        },
+        {
+          "label": "2",
+          "text": "Bhimrao Ambedkar"
+        },
+        {
+          "label": "3",
+          "text": "Mahatma Gandhi"
+        },
+        {
+          "label": "4",
+          "text": "Annie Besant"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is **Bhimrao Ambedkar**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Bhimrao Ambedkar** led the temple entry movement in 1927 to allow untouchables to enter Hindu temples.\n \n• This movement was part of his broader efforts to fight against caste discrimination and social injustice.\n \n• Ambedkar and his followers entered the Kalaram Temple in Nashik, which was a significant act of defiance against the caste system.\n \n• The movement highlighted the plight of Dalits and aimed to ensure equal rights and social acceptance for them.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1\n Mahadev Govind Ranade was a social reformer but not involved in the temple entry movement of 1927.\n \n \n\n Option 2\n Bhimrao Ambedkar led the temple entry movement in 1927 to fight against caste discrimination.\n \n \n\n Option 3\n Mahatma Gandhi supported the temple entry movement but did not start it.\n \n \n\n Option 4\n Annie Besant was a prominent theosophist and social reformer but not involved in this specific movement.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650aff52061f430b8b66b04c",
+      "n": 8,
+      "type": "mcq",
+      "concept": "Indian Rivers and Water Resources",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "In which state is Gobind Sagar (Bhakra Nangal Project) located?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Himachal Pradesh"
+        },
+        {
+          "label": "2",
+          "text": "Gujarat"
+        },
+        {
+          "label": "3",
+          "text": "Rajasthan"
+        },
+        {
+          "label": "4",
+          "text": "Punjab"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **Himachal Pradesh**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Gobind Sagar** is a man-made reservoir situated in Himachal Pradesh.\n \n• It is part of the **Bhakra Nangal Project**, one of India's largest and most important multipurpose river valley projects.\n \n• The reservoir is formed by the **Bhakra Dam**, which is built across the Sutlej River.\n \n• The Bhakra Dam is one of the highest gravity dams in the world, with a height of 225.5 meters.\n \n• The Gobind Sagar reservoir provides water for irrigation, drinking, and hydroelectric power generation.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n \n\n Feature\n Description\n \n \n \n \n\n **Bhakra Dam**\n A concrete gravity dam on the Sutlej River in Bilaspur, Himachal Pradesh.\n \n \n\n **Construction Period**\n The dam was constructed between 1948 and 1963.\n \n \n\n **Capacity**\n The Gobind Sagar reservoir has a gross storage capacity of about 9.34 billion cubic meters.\n \n \n\n **Hydroelectric Power**\n The project includes hydroelectric power stations with a total installed capacity of 1,325 MW.\n \n \n\n **Irrigation**\n Provides irrigation to the states of Punjab, Haryana, and Rajasthan.\n \n \n\n **Tourism**\n The Gobind Sagar reservoir is a popular tourist destination, known for its scenic beauty and water sports.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Indian Rivers and Water Resources"
+      ]
+    },
+    {
+      "qid": "650aff63126e2bd63475c53e",
+      "n": 9,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Pandit Ravi Shankar is known worldwide for playing which of the following musical instruments?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Mohan Veena"
+        },
+        {
+          "label": "2",
+          "text": "Sarod"
+        },
+        {
+          "label": "3",
+          "text": "Been"
+        },
+        {
+          "label": "4",
+          "text": "Sitar"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **Sitar**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Pandit Ravi Shankar** was a legendary Indian musician and composer, known for his profound influence on the world of music.\n \n• He played the **Sitar**, a plucked stringed instrument used mainly in Indian classical music.\n \n• Ravi Shankar's performances and collaborations helped popularize the sitar and Indian classical music globally.\n \n• He trained under **Ustad Allauddin Khan** and was associated with several international artists, including George Harrison of The Beatles.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1: Mohan Veena\n The Mohan Veena is a modified slide guitar used in Indian classical music, popularized by Pandit Vishwa Mohan Bhatt.\n \n \n\n Option 2: Sarod\n The Sarod is another stringed instrument used in Indian classical music, known for its deep, weighty, introspective sound.\n \n \n\n Option 3: Been\n The Been, also known as the Rudra Veena, is an ancient Indian plucked string instrument, mainly used in Hindustani classical music.\n \n \n\nRelated personalititws:\n\n \n \n\n Instrument\n Artist\n \n \n \n \n\n Mohan Veena\n Vishwa Mohan Bhatt\n \n \n\n Sarod\n Amjad Ali Khan\n \n \n\n Been\n Ustad Bismillah Khan\n \n \n\n Sitar\n Ravi Shankar",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650aff78c8f5315e5a71bccb",
+      "n": 10,
+      "type": "mcq",
+      "concept": "Indian Rivers and Water Resources",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The Arabian Sea is an extension of which of the following oceans?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Pacific Ocean"
+        },
+        {
+          "label": "2",
+          "text": "Southern Ocean"
+        },
+        {
+          "label": "3",
+          "text": "Arctic Ocean"
+        },
+        {
+          "label": "4",
+          "text": "Indian ocean"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **Indian Ocean**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The Arabian Sea is a region of the northern Indian Ocean.\n \n• It is bounded on the west by the Arabian Peninsula and on the northeast by the Indian subcontinent.\n \n• The Arabian Sea has been historically significant for maritime trade routes connecting the Middle East, Africa, and India.\n \n• It is an important region for monsoon winds, which influence the climate of surrounding regions.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Pacific Ocean\n Largest and deepest ocean, located to the east of Asia and west of the Americas.\n \n \n\n Southern Ocean\n Encircles Antarctica and merges with the southern parts of the Atlantic, Pacific, and Indian Oceans.\n \n \n\n Arctic Ocean\n Smallest and shallowest ocean, located in the Arctic region and surrounded by Eurasia and North America.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Indian Rivers and Water Resources"
+      ]
+    },
+    {
+      "qid": "650aff8f609bb6212f0f7ba8",
+      "n": 11,
+      "type": "mcq",
+      "concept": "Money and Banking",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Which of the following is a dimension of microfinance institutions (MFIs) in India?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Outreach to rural areas"
+        },
+        {
+          "label": "2",
+          "text": "Loan interest rates"
+        },
+        {
+          "label": "3",
+          "text": "Investment in the stock market"
+        },
+        {
+          "label": "4",
+          "text": "Availability of credit cards"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **Outreach to rural areas**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Outreach to rural areas**: One of the primary goals of Microfinance Institutions (MFIs) in India is to extend financial services to underserved rural areas.\n \n• **Financial Inclusion**: MFIs play a crucial role in promoting financial inclusion by providing credit to those who lack access to traditional banking services.\n \n• **Poverty Alleviation**: By providing small loans to rural entrepreneurs, MFIs help in alleviating poverty and improving the standard of living.\n \n• **Women Empowerment**: Many MFIs focus on lending to women, thereby empowering them economically and socially.\n \n• **Sustainable Development**: MFIs contribute to sustainable development by supporting small-scale businesses and agriculture in rural areas.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n \n\n Aspect\n Description\n \n \n \n \n\n **Microfinance**\n A set of financial services aimed at low-income individuals or those who do not have access to typical banking services.\n \n \n\n **MFIs**\n Organizations that provide microfinance services, including loans, savings, and insurance, primarily to the rural poor.\n \n \n\n **SHGs**\n Self-Help Groups are small voluntary associations of people, typically from rural areas, who come together for the purpose of solving their common problems through self-help and mutual help.\n \n \n\n **JLGs**\n Joint Liability Groups are informal groups of 4-10 individuals who come together for the purpose of availing bank loans either singly or through the group mechanism against mutual guarantee.\n \n \n\n **Financial Literacy**\n Efforts made by MFIs to educate and empower rural populations about financial products and services.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Money and Banking"
+      ]
+    },
+    {
+      "qid": "650aff9f5ed5ce04b45068c9",
+      "n": 12,
+      "type": "mcq",
+      "concept": "Dances",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Shambhu Maharaj was a renowned guru of which of the following Gharanas of Kathak?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Lucknow"
+        },
+        {
+          "label": "2",
+          "text": "Jaipur"
+        },
+        {
+          "label": "3",
+          "text": "Raigarh"
+        },
+        {
+          "label": "4",
+          "text": "Banaras"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **Lucknow Gharana**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• **Shambhu Maharaj** was a legendary Kathak dancer and guru from the **Lucknow Gharana**.\n \n• He was known for his mastery in **abhinaya** (expressive acting) and intricate **footwork**.\n \n• Shambhu Maharaj received numerous awards, including the **Sangeet Natak Akademi Award** and the <stro",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Dances"
+      ]
+    },
+    {
+      "qid": "650affb1126e2bd63475d223",
+      "n": 13,
+      "type": "mcq",
+      "concept": "Architecture",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Which is the oldest Stupa of the Buddhist Period?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Dhamek Stupa"
+        },
+        {
+          "label": "2",
+          "text": "Mahabodhi Stupa"
+        },
+        {
+          "label": "3",
+          "text": "Kesariya Stupa"
+        },
+        {
+          "label": "4",
+          "text": "Sanchi Stupa"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **Sanchi Stupa**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Sanchi Stupa** is one of the oldest stone structures in India and was originally commissioned by Emperor Ashoka in the 3rd century BCE.\n \n• This stupa is a central part of the Buddhist architecture and serves as a significant monument for the followers of Buddhism.\n \n• The stupa consists of a hemispherical dome containing relics of the Buddha.\n \n• It has been a UNESCO World Heritage site since 1989.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1: Dhamek Stupa\n Located in Sarnath, Uttar Pradesh, it marks the spot where Buddha gave his first sermon.\n \n \n\n Option 2: Mahabodhi Stupa\n Located in Bodh Gaya, Bihar, it commemorates the enlightenment of Buddha.\n \n \n\n Option 3: Kesariya Stupa\n Located in Bihar, it is one of the tallest and largest Buddhist stupas in the world.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Architecture"
+      ]
+    },
+    {
+      "qid": "650affc3126e2bd63475d5fa",
+      "n": 14,
+      "type": "mcq",
+      "concept": "Political dimensions",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Who conducts elections for both the houses of Parliament in India?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Ministry of Parliamentary Affairs"
+        },
+        {
+          "label": "2",
+          "text": "Election Commission"
+        },
+        {
+          "label": "3",
+          "text": "President"
+        },
+        {
+          "label": "4",
+          "text": "Prime Minister"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is **Election Commission**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• The **Election Commission of India** is an autonomous constitutional authority responsible for administering election processes in India at both the national and state levels.\n \n• It ensures **free and fair elections** to the Lok Sabha, Rajya Sabha, and State Legislative Assemblies, as well as the offices of the President and Vice President in the country.\n \n• It was establis",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Political dimensions"
+      ]
+    },
+    {
+      "qid": "650affd2553072b0e2dca9ca",
+      "n": 15,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The third battle of Panipat was fought in which of the following years?",
+      "options": [
+        {
+          "label": "1",
+          "text": "1761"
+        },
+        {
+          "label": "2",
+          "text": "1707"
+        },
+        {
+          "label": "3",
+          "text": "1786"
+        },
+        {
+          "label": "4",
+          "text": "1751"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **1761**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The Third Battle of Panipat was fought on 14 January 1761.\n \n• The battle was fought between the Maratha Empire and the Durrani Empire (Afghan Empire) led by Ahmad Shah Abdali.\n \n• The battle is one of the largest and bloodiest fought in the 18th century, resulting in a decisive victory for Ahmad Shah Abdali.\n \n• The defeat weakened the Maratha Empire, paving the way for the British East India Company to expand its influence in India.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n \n\n Aspect\n Details\n \n \n \n \n\n Location\n Panipat, a historic town in Haryana, India.\n \n \n\n Combatants\n Maratha Empire vs. Durrani Empire.\n \n \n\n Significance\n Marked the end of Maratha ascendancy and the beginning of British dominance in India.\n \n \n\n Casualties\n One of the highest casualties in any battle in the 18th century.\n \n \n\n Outcome\n Decisive victory for Ahmad Shah Abdali.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650affe3125560e4c364705d",
+      "n": 16,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "'Untouchable' is a novel written by:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Mulk Raj Anand"
+        },
+        {
+          "label": "2",
+          "text": "RC Majumdar"
+        },
+        {
+          "label": "3",
+          "text": "Premchand"
+        },
+        {
+          "label": "4",
+          "text": "Bankim Chandra Chattopadhyay"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **Mulk Raj Anand**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• **Untouchable** is a novel written by **Mulk Raj Anand**, an Indian writer in English.\n \n• The novel was published in **1935**.\n \n• It deals with the issues of",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650afff4c8f5315e5a71d247",
+      "n": 17,
+      "type": "mcq",
+      "concept": "Dances",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Which dance form is associated with Natwari Dance?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Kathak"
+        },
+        {
+          "label": "2",
+          "text": "Kuchipudi"
+        },
+        {
+          "label": "3",
+          "text": "Odissi"
+        },
+        {
+          "label": "4",
+          "text": "Kathakali"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **Kathak**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Natwari Dance** is another name for Kathak.\n \n• Kathak is a classical dance form that originated in northern India.\n \n• The dance form is characterized by intricate footwork and spins.\n \n• It tells stories through expressive gestures and facial expressions.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1\n Kathak is a classical Indian dance form known for its intricate footwork and spins.\n \n \n\n Option 2\n Kuchipudi is a classical dance form from Andhra Pradesh, characterized by its graceful movements and strong narrative/dramatic character.\n \n \n\n Option 3\n Odissi is a classical dance form from Odisha, known for its fluid movements and sculpturesque poses.\n \n \n\n Option 4\n Kathakali is a classical dance-drama from Kerala, noted for its elaborate costumes and facial makeup.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Dances"
+      ]
+    },
+    {
+      "qid": "650b0003553072b0e2dcb09a",
+      "n": 18,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Birsa Munda hockey stadium is one of the India’s largest hockey stadium. In which state is this stadium situated?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Madhya Pradesh"
+        },
+        {
+          "label": "2",
+          "text": "Bihar"
+        },
+        {
+          "label": "3",
+          "text": "Odisha"
+        },
+        {
+          "label": "4",
+          "text": "Chhattisgarh"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is **Odisha**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Birsa Munda Hockey Stadium** is located in Rourkela, Odisha.\n \n• It is one of the largest hockey stadiums in India.\n \n• The stadium is named after the tribal freedom fighter **Birsa Munda**.\n \n• It is a key venue for national and international hockey tournaments.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n \n\n Aspect\n Description\n \n \n \n \n\n **Location**\n The stadium is situated in **Rourkela**, Odisha.\n \n \n\n **Capacity**\n It has a seating capacity of approximately **20,000** spectators.\n \n \n\n **Significance**\n Named after **Birsa Munda**, a tribal freedom fighter and folk hero.\n \n \n\n **Events**\n Hosts national and international **hockey tournaments**.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b0013c8f5315e5a71d754",
+      "n": 19,
+      "type": "mcq",
+      "concept": "Polity",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The directive principles are largely classified into three broad categories. Which of the following is NOT the part of this classification?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Liberal"
+        },
+        {
+          "label": "2",
+          "text": "Socialistic"
+        },
+        {
+          "label": "3",
+          "text": "Gandhian"
+        },
+        {
+          "label": "4",
+          "text": "Authoritative"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **Authoritative**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Directive Principles of State Policy** are guidelines for the framing of laws by the government.\n \n• They are classified into three broad categories: **Liberal**, **Socialistic**, and **Gandhian**.\n \n• **Authoritative** is not a classification of Directive Principles.\n \n• The purpose of these principles is to create social and economic conditions under which citizens can lead a good life.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Liberal\n Emphasizes individual freedoms and rights.\n \n \n\n Socialistic\n Aims at providing social and economic justice.\n \n \n\n Gandhian\n Based on the principles advocated by Mahatma Gandhi, focusing on rural development and self-sufficiency.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Basics of Constitution"
+      ]
+    },
+    {
+      "qid": "650b0025396327821a8fe1f0",
+      "n": 20,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Which of the following countries did India defeat to clinch its maiden Women's Junior Hockey Asia Cup title?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Japan"
+        },
+        {
+          "label": "2",
+          "text": "Chinese Taipei"
+        },
+        {
+          "label": "3",
+          "text": "Malaysia"
+        },
+        {
+          "label": "4",
+          "text": "South Korea"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **South Korea**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **India** defeated **South Korea** to clinch its maiden Women's Junior Hockey Asia Cup title.\n \n• The match was a significant milestone in the history of **Indian women's hockey**.\n \n• The victory showcased the rising talent and potential of **India's junior women hockey players**.\n \n• This achievement has boosted the morale of the team and the entire **hockey community in India**.\n \n• The tournament win is expected to inspire more young girls to take up **hockey** in India.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n \n\n Category\n Description\n \n \n \n \n\n Women's Junior Hockey Asia Cup\n A prestigious tournament organized by the **Asian Hockey Federation** for junior women's teams.\n \n \n\n Significance\n Winning the title is a major achievement for the **Indian women's junior hockey team**.\n \n \n\n Previous Winners\n Countries like **China** and **South Korea** have traditionally dominated the tournament.\n \n \n\n Future Prospects\n This victory is expected to pave the way for more international successes for **India's women's hockey**.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b003f125560e4c3647f26",
+      "n": 21,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Who among the following is the author of the book 'Sita : An Illustrated Retelling of the Ramayana'?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Ravinder Singh"
+        },
+        {
+          "label": "2",
+          "text": "Devdutt Pattanaik"
+        },
+        {
+          "label": "3",
+          "text": "Amish Tripathi"
+        },
+        {
+          "label": "4",
+          "text": "Durjoy Datta"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is **Devdutt Pattanaik**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Devdutt Pattanaik** is a renowned Indian author known for his writings on mythology.\n \n• His book **'Sita: An Illustrated Retelling of the Ramayana'** provides a unique perspective on the Ramayana from Sita's point of view.\n \n• Devdutt Pattanaik uses illustrations and narratives to make ancient texts accessible to modern readers.\n \n• He has written several other books on Indian mythology, bringing ancient stories to contemporary relevance.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n**'Sita: An Illustrated Retelling of the Ramayana'** is a book that retells the epic Ramayana from the perspective of Sita, the wife of Rama. It provides insights into her thoughts, emotions, and the trials she faced.\n\n \n \n\n Character\n Description\n \n \n \n \n\n **Sita**\n The central character of the book, known for her strength and resilience.\n \n \n\n **Rama**\n Sita's husband and the protagonist of the Ramayana.\n \n \n\n **Ravana**\n The antagonist who kidnaps Sita, leading to the epic battle in the Ramayana.\n \n \n\n **Hanuman**\n A devoted follower of Rama who plays a crucial role in Sita's rescue.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b007e7b129955e11a6873",
+      "n": 22,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Which soft metal in group 1 of the periodic table tarnishes within a few seconds of exposure to air?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Barium"
+        },
+        {
+          "label": "2",
+          "text": "Sodium"
+        },
+        {
+          "label": "3",
+          "text": "Strontium"
+        },
+        {
+          "label": "4",
+          "text": "Francium"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is **Sodium**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• **Sodium** is a soft metal in group 1 of the periodic table.\n \n• It tarnishes within a few seconds of exposure to air due to the formation of sodium oxide.\n \n• This rapid tarnishing is due to its high reactivity with oxygen and moisture in the air.\n \n• To prevent tarnishing, sodium is often stored in oil or an inert atmosphere.<",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b0091396327821a8fefb2",
+      "n": 23,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The ‘Ka Shad Mastieh’ or victory dance of the____________ tribe of Meghalaya is an ancient war dance performed during the prominent festival of the tribe.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Bhoi"
+        },
+        {
+          "label": "2",
+          "text": "War"
+        },
+        {
+          "label": "3",
+          "text": "Khasi"
+        },
+        {
+          "label": "4",
+          "text": "Jaintia"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is **Khasi**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The 'Ka Shad Mastieh' or victory dance is a significant cultural dance of the **Khasi** tribe.\n \n• This dance is an ancient war dance performed during the prominent festival of the Khasi tribe.\n \n• It symbolizes victory and is an integral part of the Khasi's cultural heritage.\n \n• The festival and the dance reflect the rich traditions and historical significance of the Khasi tribe in Meghalaya.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1\n The Bhoi tribe is another tribe in Meghalaya but they do not perform the 'Ka Shad Mastieh' dance.\n \n \n\n Option 2\n The War tribe is known for different cultural practices and does not perform the 'Ka Shad Mastieh' dance.\n \n \n\n Option 3\n The Khasi tribe performs the 'Ka Shad Mastieh' dance as part of their cultural festivities.\n \n \n\n Option 4\n The Jaintia tribe has its own distinct cultural dances and does not perform the 'Ka Shad Mastieh'.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b00a8c126fdd76170a526",
+      "n": 24,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "What is the weight of the ball in handball for men?",
+      "options": [
+        {
+          "label": "1",
+          "text": "425 to 475 gm"
+        },
+        {
+          "label": "2",
+          "text": "325 to 375 gm"
+        },
+        {
+          "label": "3",
+          "text": "525 to 575 gm"
+        },
+        {
+          "label": "4",
+          "text": "225 to 275 gm"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is **425 to 475 gm**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Handball** is a team sport where players use their hands to hit a small ball into the opponent's goal.\n \n• The weight of the ball used in **men's handball** is between **425 to 475 grams**.\n \n• **Women's handball** uses a slightly lighter ball, weighing between **325 to 375 grams**.\n \n• The official size of the ball for men's handball is about **58-60 cm** in circumference.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n \n\n Aspect\n Description\n \n \n \n \n\n History\n **Handball** has roots tracing back to ancient Greece and Rome.\n \n \n\n Olympic Inclusion\n **Handball** became an official Olympic sport in the 1936 Berlin Games.\n \n \n\n Field Dimensions\n A **handball court** is 40 meters long and 20 meters wide.\n \n \n\n Game Duration\n A standard **handball game** lasts for 60 minutes, divided into two 30-minute halves.\n \n \n\n Team Composition\n A **handball team** consists of 7 players on the court, including a goalkeeper.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b00bbc126fdd76170a8c5",
+      "n": 25,
+      "type": "mcq",
+      "concept": "Biomolecules",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Which vitamin is needed for a healthy immune system, low-light vision, and healthy skin?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Vitamin K"
+        },
+        {
+          "label": "2",
+          "text": "Vitamin B2"
+        },
+        {
+          "label": "3",
+          "text": "Vitamin B9"
+        },
+        {
+          "label": "4",
+          "text": "Vitamin A"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **Vitamin A**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Vitamin A** is essential for maintaining a healthy immune system.\n \n• It plays a crucial role in low-light vision, allowing the eyes to function properly in dim light.\n \n• Vitamin A is vital for healthy skin as it helps in the maintenance and repair of skin tissues.\n \n• A deficiency in Vitamin A can lead to night blindness and an increased risk of infections.\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n \n\n Option\n Details\n \n \n\n Option 1 (Vitamin K)\n Vitamin K is important for blood clotting and bone health.\n \n \n\n Option 2 (Vitamin B2)\n Vitamin B2, or riboflavin, helps in energy production and the metabolism of fats, drugs, and steroids.\n \n \n\n Option 3 (Vitamin B9)\n Vitamin B9, or folate, is essential for DNA synthesis and repair, and is crucial during periods of rapid growth such as pregnancy.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Biomolecules"
+      ]
+    },
+    {
+      "qid": "650b00cd553072b0e2dcd71a",
+      "n": 1,
+      "type": "mcq",
+      "concept": "OWS",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the option that can be used as a one-word substitute for the given group of words.\n\nStudy of sound and sound waves",
+      "options": [
+        {
+          "label": "1",
+          "text": "Botany"
+        },
+        {
+          "label": "2",
+          "text": "Physics"
+        },
+        {
+          "label": "3",
+          "text": "Demography"
+        },
+        {
+          "label": "4",
+          "text": "Acoustics"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is: Acoustics.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The word **\"Acoustics\"** refers to the science concerned with the study of sound and sound waves. (ध्वनिकी)\n \n• **\"Acoustics\" **is the branch of physics that deals with the study and understanding of sound, including its production, transmission, and effects.\n \n \n• **Example: **The engineer specialized in **acoustics **to improve the sound quality of the auditorium.\n \n \n \n• Hence, the one-word substitute for the study of sound and sound waves is **'Acoustics'**.\n\nTherefore, the correct answer is: **Option 4**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Botany **(वनस्पति विज्ञान): The scientific study of plants.\n\n \n \n• **Example:** She decided to pursue a career in **botany **to explore the diverse plant species in tropical rainforests.\n \n \n \n• **Physics **(भौतिकी ): The natural science that involves the study of matter, its motion, and behaviour through space and time.\n \n \n• **Example: Physics **explains how gravity works and why objects fall to the ground.\n \n \n \n• **Demography** (जनसांख्यिकी): The statistical study of populations, especially human beings.\n \n \n• **Example:** The **demography **of the region has changed significantly over the past decade due to migration.\n \n \n\n20f:Te46,\nThe",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "One Word Substitution"
+      ]
+    },
+    {
+      "qid": "650b00ddc126fdd76170ae7a",
+      "n": 2,
+      "type": "mcq",
+      "concept": "Fill in the Blanks",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option to fill in the blank.\n\nThe students of class 7 gave their teacher a gift, which was ________ to her.",
+      "options": [
+        {
+          "label": "1",
+          "text": "revealing"
+        },
+        {
+          "label": "2",
+          "text": "shocking"
+        },
+        {
+          "label": "3",
+          "text": "confusing"
+        },
+        {
+          "label": "4",
+          "text": "surprising"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **Surprising.**\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The sentence indicates that the gift given by the students was unexpected to the teacher.\n \n• The word **\"surprising\" **(आश्‍चर्यजनक) means causing surprise or wonder, which fits the context of the gift being unexpected or not anticipated by the teacher.\n \n• The words **\"revealing,\" \"shocking,\"** and **\"confusing\"** do not fit as well in this context because they convey different meanings that are not implied by the sentence.\n \n• Understanding the meaning of **\"surprising\"** in the context of the sentence helps to clarify that the gift was unexpected and caused a sense of surprise for the teacher.\n\nTherefore, the** **correct answer is **Option 4**.\n\n \n\n**Correct Answer**: *The students of class 7 gave their teacher a gift, which was surprising__ to her.*\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **Revealing** means making something known or visible (प्रकट करना).\n \n• **Shocking** means causing intense surprise, disgust, or horror (चौंकाने वाला).\n \n• **Confusing** means causing bewilderment or perplexity (उलझन में डालने वाला).\n\n210:Tcc8,\n\nThe correct answer is: <span style=\"font-weight: bolder;\"&",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Fill in the Blanks"
+      ]
+    },
+    {
+      "qid": "650b00efd48edf591e2901b3",
+      "n": 3,
+      "type": "mcq",
+      "concept": "Synonym",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate synonym of the given word.\n\nObsession",
+      "options": [
+        {
+          "label": "1",
+          "text": "Discrimination"
+        },
+        {
+          "label": "2",
+          "text": "Fascination"
+        },
+        {
+          "label": "3",
+          "text": "Unconcern"
+        },
+        {
+          "label": "4",
+          "text": "Sympathy"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is: Fascination.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The word **\"Obsession\"** means an idea or thought that continually preoccupies or intrudes on a person's mind. (जुनून)\n\n \n \n• **Example:** His **obsession **with cleanliness made it difficult for him to relax.\n \n \n \n• **\"Fascination\"** refers to the state of being intensely interested or attracted to something. (मोह)\n \n \n• **Example:** The **fascination **with space exploration has led to many scientific discoveries.\n \n \n\nTherefore, the correct answer is: **Option 2**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Discrimination** (भेदभाव): The unjust or prejudicial treatment of different categories of people or things, especially on the grounds of race, age, or sex.\n\n \n \n• **Example:** The company was accused of **discrimination **against older workers.\n \n \n \n• **Unconcern** (उदासीनता): A lack of worry or interest, especially when it is surprising or callous.\n \n \n• **Example:** His **unconcern **for the poor conditions of the workers was shocking.\n \n \n \n• **Sympathy** (सहानुभूति): Feelings of pity and sorrow for someone else's misfortune.\n \n \n• **Example:** She expressed her **sympathy **to the family of the deceased.\n \n \n\n211:T1045,\n\nThe correct answer is",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Synonyms or Antonyms"
+      ]
+    },
+    {
+      "qid": "650b010a3025ec88b929ef9f",
+      "n": 4,
+      "type": "mcq",
+      "concept": "Error Detection",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The following sentence has been split into four segments. Identify the segment that contains a grammatical error and select the option which rectifies that error.\n\nA lot of adulterants / are chemicals that can lead / to an range of health problems / in both children and adults.",
+      "options": [
+        {
+          "label": "1",
+          "text": "to a range of health problems"
+        },
+        {
+          "label": "2",
+          "text": "are chemical that can lead"
+        },
+        {
+          "label": "3",
+          "text": "A lot of adulterant"
+        },
+        {
+          "label": "4",
+          "text": "in both children and adult."
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is 'to a range of health problems'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**</",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Error Spotting"
+      ]
+    },
+    {
+      "qid": "650b01328f37cfe6b3e8a13b",
+      "n": 5,
+      "type": "mcq",
+      "concept": "Sentence",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option that can substitute the underlined segment in the given sentence.\n\nThey would find someone __drive the__ wagon back across the desert.",
+      "options": [
+        {
+          "label": "1",
+          "text": "in drive in the"
+        },
+        {
+          "label": "2",
+          "text": "to drive"
+        },
+        {
+          "label": "3",
+          "text": "to drive the"
+        },
+        {
+          "label": "4",
+          "text": "in driving"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is 'to drive the'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The original sentence is missing the infinitive form \"**to drive**\" which is needed to indicate purpose or intention.\n \n• \"**Find someone to do something**\" is the correct construction to express finding a person for a specific task.\n \n• The phrase \"**drive the wagon**\" is the task that someone is supposed to perform, so \"**to drive the wagon**\" is appropriate.\n \n• Using \"**to drive the wagon**\" ensures the sentence is grammatically correct and conveys the intended meaning properly.\n\nTherefore, the correct answer is option 3.\n\nCorrect sentence: *They would find someone **to drive the__** wagon back across the desert*.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **Option 1: \"in drive in the\"** is incorrect because it is grammatically incorrect and does not convey a clear meaning.\n \n• **Option 2: \"to drive\"** is incomplete as it does not include the object \"the wagon\".\n \n• **Option 4: \"in driving\"** is incorrect because it suggests ongoing action rather than the purpose of finding someone to perform a task.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Sentence"
+      ]
+    },
+    {
+      "qid": "650b014d52c24bfb5b87a76b",
+      "n": 6,
+      "type": "mcq",
+      "concept": "Error Detection",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The following sentence has been split into four segments. Identify the segment that contains a grammatical error.\n\nThe ball / I kicked / went highly / in the sky.",
+      "options": [
+        {
+          "label": "1",
+          "text": "The ball"
+        },
+        {
+          "label": "2",
+          "text": "went highly"
+        },
+        {
+          "label": "3",
+          "text": "in the sky"
+        },
+        {
+          "label": "4",
+          "text": "I kicked"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is **'**went highly'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The phrase \"**went highly**\" is grammatically incorrect.\n \n• The correct adverb to use with \"**went**\" in this context is \"**high**,\" not \"**highly**.\"\n \n• \"**Highly**\" is used to modify adjectives or other adverbs, not verbs.\n \n• The correct phrase should be \"**went high in the sky**.\"\n\nHence, the correct answer is option 2.\n\nCorrect sentence: *The ball I kicked went high__ in the sky.*\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **Option 1: \"The ball\" -** This is the subject of the sentence and is grammatically correct.\n \n• **Option 3: \"in the sky\" - **This phrase correctly indicates the location where the ball went.\n \n• **Option 4: \"I kicked\" -** This phrase correctly describes the action performed.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Error Spotting"
+      ]
+    },
+    {
+      "qid": "650b0169c126fdd76170c79c",
+      "n": 7,
+      "type": "mcq",
+      "concept": "Idioms",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate idiom to fill in the blank.\n\nRajat is known for his notorious nature. He will be friendly to your face but likes ____________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "to blow his trumpet"
+        },
+        {
+          "label": "2",
+          "text": "to stab you in the back"
+        },
+        {
+          "label": "3",
+          "text": "to paint the whole town red"
+        },
+        {
+          "label": "4",
+          "text": "to get all bent out of the shape"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is: **'****to stab you in the back****'**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The idiom **\"to stab you in the back\"** means to betray someone who trusts you. (पीठ में छुरा घोंपना)\n\n \n \n• **Example: **Despite their friendship, he stabbed him in the back by revealing his secrets.\n \n \n \n• Rajat is known for his notorious nature. He will be friendly to your face but likes to stab you in the back. This means Rajat pretends to be friendly but actually betrays people. (राजत अपने चेहरे पर दोस्ताना दिखता है लेकिन पीठ में छुरा घोंपता है)\n\n**​**Therefore, the correct answer is: **Option 2**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **To blow his trumpet **(अपनी बड़ाई करना): To boast about one's own achievements.\n\n \n \n• **Example:** He never misses an opportunity **to blow his own trumpet**.\n \n \n \n• **To paint the whole town red **(जश्न मनाना): To go out and enjoy oneself flamboyantly.\n \n \n• **Example: **After winning the match, the team decided **to paint the whole town red**.\n \n \n \n• **To get all bent out of shape** (नाराज होना): To get very angry or upset.\n \n \n• **Example:** He **got all bent out of shape** when he heard the news.\n \n \n\n215:Td2a,\n\nThe correct answer is: **'**To be mistaken, to be looking for solutions in the wrong place",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Phrase or Idiom Meaning"
+      ]
+    },
+    {
+      "qid": "650b01885ed5ce04b450bee1",
+      "n": 8,
+      "type": "mcq",
+      "concept": "Idioms",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate meaning of the given idiom.\n\nBarking up the wrong tree",
+      "options": [
+        {
+          "label": "1",
+          "text": "Provoke trouble"
+        },
+        {
+          "label": "2",
+          "text": "To make a bad situation worse"
+        },
+        {
+          "label": "3",
+          "text": "Getting a good start is important"
+        },
+        {
+          "label": "4",
+          "text": "To be mistaken, to be looking for solutions in the wrong place"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is: **'****To be mistaken, to be looking for solutions in the wrong place****'**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The idiom **\"Barking up the wrong tree\"** means to be mistaken, or to be looking for solutions in the wrong place. (गलत जगह पर समाधान ढूंढना)\n \n• **​\"Mistaken\"** refers to being wrong about something, often due to a misunderstanding or incorrect information. (गलतफहमी)\n \n \n• **Example: **She was mistaken about the meeting time, thinking it was an hour later than it actually was.\n \n \n\nTherefore, the correct answer is: **Option 4**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Provoke trouble** (मुसीबत पैदा करना): To cause problems or conflict.\n\n \n \n• **Example:** His rude comments were only meant to **provoke trouble** among the team members.\n \n \n \n• **To make a bad situation worse** (खराब स्थिति को और बिगाड़ना): To take actions that exacerbate an already negative situation.\n \n \n• **Example: **By lying to cover up his mistake, he only **made a bad situation worse**.\n \n \n \n• **Getting a good start is important** (अच्छी शुरुआत महत्वपूर्ण है): Emphasizes the importance of starting something well.\n \n \n• **Example:** In any race, **getting a good start is important** to increase your chances of winning.\n \n \n\n216:Taba,\n\nThe correct answer is: **Parasite**.\n\n<img",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Phrase or Idiom Meaning"
+      ]
+    },
+    {
+      "qid": "650b019e125560e4c364bea2",
+      "n": 9,
+      "type": "mcq",
+      "concept": "OWS",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the option that can be used as a one-word substitute for the given group of words.\n\nA creature which depends on others",
+      "options": [
+        {
+          "label": "1",
+          "text": "Microbes"
+        },
+        {
+          "label": "2",
+          "text": "Virus"
+        },
+        {
+          "label": "3",
+          "text": "Parasite"
+        },
+        {
+          "label": "4",
+          "text": "Bacteria"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is: **Parasite**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The word **\"Parasite\"** means a creature that depends on others for its survival. (परजीवी)\n \n• **​\"Parasite\" **refers to an organism that lives on or in a host organism and gets its food from or at the expense of its host.\n \n \n• **Example: **Ticks are **parasites **that can transmit diseases to animals and humans.\n \n \n\nTherefore, the correct answer is: **Option 3**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Microbes **(सूक्ष्मजीव): Microorganisms, especially bacteria, that cause disease or fermentation.\n\n \n \n• **Example:** The scientist studied various **microbes **under the microscope.\n \n \n \n• **Virus **(विषाणु): A small infectious agent that replicates only inside the living cells of an organism.\n \n \n• **Example: **The flu is caused by a type of **virus**.\n \n \n \n• **Bacteria** (जीवाणु): Single-celled microorganisms that can exist either as independent organisms or as parasites.\n \n \n• **Example:** **Bacteria **in the gut help in the digestion of food.\n \n \n\n217:Tbe1,\n\nThe correct answer is: &",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "One Word Substitution"
+      ]
+    },
+    {
+      "qid": "650b01b85ed5ce04b450c6f0",
+      "n": 10,
+      "type": "mcq",
+      "concept": "Idioms",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate idiom to fill in the blank.\n\nThe play I saw last night was a ________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "hit the road"
+        },
+        {
+          "label": "2",
+          "text": "hit the hay"
+        },
+        {
+          "label": "3",
+          "text": "smash hit"
+        },
+        {
+          "label": "4",
+          "text": "hit the roof"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is: **'****smash hit****'**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The phrase **\"smash hit\"** means something that is a great success, especially a play, film, or song. (बड़ी सफलता)\n \n• **​**The correct word **\"smash hit\"** refers to a production or performance that is extremely successful.\n \n \n• **Example: **The new movie became a **smash hit** and broke all box office records\n \n \n\nTherefore, the correct answer is: **Option 3**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Hit the road **(रास्ते पर निकलना): To begin a journey or leave a place.\n\n \n \n• **Example:** We need to **hit the road** early if we want to reach the campsite before dark.\n \n \n \n• **Hit the hay **(सोने जाना): To go to bed.\n \n \n• **Example: **After a long day at work, I decided to **hit the hay** early.\n \n \n \n• **Hit the roof** (गुस्से से उबलना): To become very angry.\n \n \n• **Example:** When he found out about the broken vase, he **hit the roof**.\n \n \n\n218:Ta1b,\n<meta name=\"viewport\" conte",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Phrase or Idiom Meaning"
+      ]
+    },
+    {
+      "qid": "650b01cb716e36ab84d95b97",
+      "n": 11,
+      "type": "mcq",
+      "concept": "Fill in the Blanks",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option to fill in the blank.\n\nHe is _________ of many chain snatching cases in Dariyaganj.",
+      "options": [
+        {
+          "label": "1",
+          "text": "ackused"
+        },
+        {
+          "label": "2",
+          "text": "acxused"
+        },
+        {
+          "label": "3",
+          "text": "akused"
+        },
+        {
+          "label": "4",
+          "text": "accused"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is **'accused'.**\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__** \n\n__\n \n• The sentence indicates that the person is being charged with or blamed for multiple chain snatching incidents in Dariyaganj.\n \n• The word **\"accused\"** (अभियुक्त) means someone who is charged with a crime or a wrongdoing, which fits the context of the sentence.\n \n• The other options such as \"**ackused**,\" \"**acxused**,\" and \"**akused**\" are incorrect spellings and do not convey the intended meaning.\n \n• Understanding the meaning of **\"accused\"** in the context of the sentence helps to clarify that the person is being blamed for the chain snatching cases.\n\nTherefore, the correct answer is **Option 4**.\n\n \n\n**Complete Sentence**: *He is accused__ of many chain snatching cases in Dariyaganj.*\n\n219:T111c,\n<",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Fill in the Blanks"
+      ]
+    },
+    {
+      "qid": "650b01e1061f430b8b671ae7",
+      "n": 12,
+      "type": "mcq",
+      "concept": "Error Detection",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The following sentence has been split into four segments. Identify the segment that contains a grammatical error.\n\nDespite the setbacks and obstacles we faced, / our team rallied together and achieved our goals, / which teach us the importance of / teamwork, resilience, and determination.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Despite the setbacks and obstacles we faced,"
+        },
+        {
+          "label": "2",
+          "text": "teamwork, resilience, and determination"
+        },
+        {
+          "label": "3",
+          "text": "which teach us the importance of"
+        },
+        {
+          "label": "4",
+          "text": "our team rallied together and achieved our goals,"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is '**which teach us the importance of**'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The segment 'which teach us the importance of' contains a grammatical error.\n \n• The verb 'teach' should be in its singular form 'teaches' to match the singular antecedent 'which'.\n \n• In this context, 'which' refers to the entire preceding clause, which is treated as a singular entity.\n \n• Therefore, the correct form should be 'which teaches us the importance of'.\n\nHence, the correct answer is option 3.\n\nCorrect sentence: *Despite the setbacks and obstacles we faced, our team rallied together and achieved our goals, **which teaches us the importance of** teamwork, resilience, and determination*.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n• **Option 1:** 'Despite the setbacks and obstacles we faced,' - This segment is grammatically correct and sets up the context for the sentence.\n \n• **Option 2:** 'teamwork, resilience, and determination,' - This segment is a correct listing of the qualities mentioned in the sentence.\n \n• **Option 4:** 'our team rallied together and achieved our goals,' - This segment correctly describes the actions taken by the team without any grammatical errors.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Error Spotting"
+      ]
+    },
+    {
+      "qid": "650b01fa716e36ab84d96247",
+      "n": 13,
+      "type": "mcq",
+      "concept": "Error Detection",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the option that correctly rectifies the spelling error that is underlined.\n\nThe __questionaire__ used by the researcher was of top quality.",
+      "options": [
+        {
+          "label": "1",
+          "text": "quesstionnaire"
+        },
+        {
+          "label": "2",
+          "text": "questionnaire"
+        },
+        {
+          "label": "3",
+          "text": "questionnairre"
+        },
+        {
+          "label": "4",
+          "text": "questionnairee"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is: '**questionnaire**'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• The word **\"**questionnaire**\"** is the correct spelling. (प्रश्नावली)\n \n• **\"Questionnaire\"** refers to a set of printed or written questions with a choice of answers, devised for the purposes of a survey or statistical study. (प्रश्नावली)\n \n \n• **Example: **The researcher prepared a detailed **questionnaire **to gather data from the participants.\n \n \n \n• Hence, we can infer that the correct spelling is **'questionnaire'**.\n\nTherefore, the correct answer is: **Option 2.**\n\n21b:Tf9a,",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Error Spotting"
+      ]
+    },
+    {
+      "qid": "650b0212126e2bd634763f48",
+      "n": 14,
+      "type": "mcq",
+      "concept": "Error Detection",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "The given sentence contains an error. Select the option that correctly rectifies the error.\n\nThat career competition was the difficultest exam he had ever given.",
+      "options": [
+        {
+          "label": "1",
+          "text": "That career competition was the difficultest exam than any he had ever given."
+        },
+        {
+          "label": "2",
+          "text": "That career competition was the most difficult exam than any he had ever given."
+        },
+        {
+          "label": "3",
+          "text": "That career competition was the most difficultest exam he had ever given."
+        },
+        {
+          "label": "4",
+          "text": "That career competition was the most difficult exam he had ever given."
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is '**That career competition was the most difficult exam he had ever given**'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The word \"**difficultest**\" is incorrect. The correct superlative form of \"**difficult**\" is \"**most difficult**.\"\n \n• The sentence should use \"**the most difficult**\" instead of \"**the difficultest**.\"\n \n• **Option 4** correctly uses \"**most difficult**\" to form the superlative degree.\n \n• The phrase \"**had ever given**\" is correctly placed and does not need any changes.\n\nHence, the correct answer is option 4.\n\nCorrect sentence: *That career competition was the most difficult exam he had ever given*.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n• **Option 1:** \"That career competition was the difficultest exam than any he had ever given.\" - This option incorrectly uses \"difficultest\" and awkwardly structures the comparison.\n \n• **Option 2:** \"That career competition was the most difficult exam than any he had ever given.\" - This option correctly uses \"most difficult,\" but the phrase \"than any\" is redundant and incorrect.\n \n• **Option 3:** \"That career competition was the most difficultest exam he had ever given.\" - This option incorrectly combines \"most\" and \"difficultest,\" which is grammatically incorrect.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Error Spotting"
+      ]
+    },
+    {
+      "qid": "650b022a7b129955e11ab6f9",
+      "n": 15,
+      "type": "mcq",
+      "concept": "Idioms",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate idiom for the following sentence.\n\nShweta organises the sale of handmade pottery at a cheap rate.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Hush money"
+        },
+        {
+          "label": "2",
+          "text": "Go for a song"
+        },
+        {
+          "label": "3",
+          "text": "Having one’s cake and eating it too"
+        },
+        {
+          "label": "4",
+          "text": "Making a fuss out of something"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is: **'****Go for a song****'**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The idiom **\"Go for a song\"** means to be sold very cheaply. (बहुत सस्ते में बेचना)\n\n \n \n• **Example:** The antique vase **went for a song** at the auction.\n \n \n \n• **\"Go for a song\"** refers to selling something at a very low price, which aligns with the context of Shweta organizing the sale of handmade pottery at a cheap rate.\n\n**​**Therefore, the correct answer is: **Option 2**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Hush money** (चुप रहने के लिए दी गई रिश्वत): Money paid to someone to keep them silent about something.\n\n \n \n• **Example:** The company paid **hush money** to the whistleblower to prevent the scandal from coming to light.\n \n \n \n• **Having one’s cake and eating it too** (दोनों चीज़ें एक साथ चाहना): Trying to have two incompatible things at the same time.\n \n \n• **Example:** You can't be in a relationship and flirt with others; that's **having one’s cake and eating it too**.\n \n \n \n• **Making a fuss out of something** (किसी बात को लेकर हंगामा करना): Complaining or getting upset about something trivial.\n \n \n• **Example:** She’s always **making a fuss out of nothing**; it's really annoying.\n \n \n\n21d:Tcad,\n\nThe correct answer is: **'****Innocent**'.\n\n<span style=\"display",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Phrase or Idiom Meaning"
+      ]
+    },
+    {
+      "qid": "650b023c553072b0e2dd1c08",
+      "n": 16,
+      "type": "mcq",
+      "concept": "Antonym",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate ANTONYM of the given word.\n\nGuilty",
+      "options": [
+        {
+          "label": "1",
+          "text": "Responsible"
+        },
+        {
+          "label": "2",
+          "text": "Innocent"
+        },
+        {
+          "label": "3",
+          "text": "Criminal"
+        },
+        {
+          "label": "4",
+          "text": "Patient"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is: **'****Innocent**'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The word **\"Guilty\"** means responsible for a specified wrongdoing or offense. (दोषी)\n\n \n \n• **Example: **She felt **guilty **for lying to her friend.\n \n \n \n• **\"Innocent\"** refers to someone who is not guilty of a crime or offense. (निर्दोष)\n \n \n• **Example: **The jury found him **innocent **of all charges.\n \n \n \n• Hence, we can infer that the opposite of **'Guilty'** is **'Innocent'**.\n\nTherefore, the correct answer is: **Option 2**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Responsible** (जिम्मेदार): Having an obligation to do something or having control over or care for someone.\n\n \n \n• **Example:** Parents are **responsible **for their children's well-being.\n \n \n \n• **Criminal** (अपराधी): A person who has committed a crime.\n \n \n• **Example:** The **criminal **was finally caught by the police.\n \n \n \n• **Patient** (धैर्यवान): Able to accept or tolerate delays, problems, or suffering without becoming annoyed or anxious.\n \n \n• **Example:** You need to be **patient **while learning a new skill.\n \n \n\n21e:Tc53,\n\nThe correct answer is: '</b",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Synonyms or Antonyms"
+      ]
+    },
+    {
+      "qid": "650b024f609bb6212f0feea1",
+      "n": 17,
+      "type": "mcq",
+      "concept": "Error Detection",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Identify the INCORRECTLY spelt word in the following sentence and select its correct spelling from the given options.\n\nThe colours of the rainbow seemed to shine through the trianguler prism as the sun hit the object.",
+      "options": [
+        {
+          "label": "1",
+          "text": "rainbouw"
+        },
+        {
+          "label": "2",
+          "text": "son"
+        },
+        {
+          "label": "3",
+          "text": "triangular"
+        },
+        {
+          "label": "4",
+          "text": "objact"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is: **'**triangular**'**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The word **\"trianguler\"** is incorrectly spelt.\n \n• The correct spelling is \"**triangular**\". (त्रिकोणीय)\n \n \n• **Example:** The **triangular **shape of the pyramid was fascinating to the students.\n \n \n\nTherefore, the correct answer is: **Option 3**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **rainbouw**: This is an incorrect spelling of the word \"**rainbow**\" (इंद्रधनुष).\n\n \n \n• **Example:** The **rainbow** appeared after the heavy rain.\n \n \n \n• **son** (पुत्र): Refers to a male child.\n \n \n• **Example:** His **son **graduated from college last year.\n \n \n \n• **objact**: This is an incorrect spelling of the word \"**object**\" (वस्तु).\n \n \n• **Example:** The **object **on the table was a beautifully carved statue.\n \n \n\n21f:Td2c,\n\nThe correct answ",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Error Spotting"
+      ]
+    },
+    {
+      "qid": "650b0271d9c156e850110e8a",
+      "n": 18,
+      "type": "mcq",
+      "concept": "Sentence",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option that can substitute the underlined segment in the given sentence.\n\nThe intrepid group of adventurers climbed the mountain __despite of__ bad weather and road closures.",
+      "options": [
+        {
+          "label": "1",
+          "text": "despite"
+        },
+        {
+          "label": "2",
+          "text": "in spite"
+        },
+        {
+          "label": "3",
+          "text": "in view of"
+        },
+        {
+          "label": "4",
+          "text": "due to"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is 'despite'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The phrase **'despite of'** is grammatically incorrect.\n \n• The correct phrase is **'despite'** without the preposition '**of**'.\n \n• '**Despite**' is used to show contrast and is followed directly by a noun or pronoun.\n \n• The correct usage should be **'despite bad weather and road closures'**.\n \n• Using '**despite**' correctly makes the sentence grammatically correct and meaningful.\n\nTherefore, the correct answer is Option 1.\n\n**Correct Sentence**: *The intrepid group of adventurers climbed the mountain **despite__ **bad weather and road closures.*\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **Option 2: in spite** - 'In spite' should be followed by 'of', making it 'in spite of', which is not the case here.\n \n• **Option 3: in view of** - This phrase means 'because of' or 'considering', which does not fit the context of showing contrast in the sentence.\n \n• **Option 4: due to** - This phrase means 'because of' and is used to show cause, not contrast.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Sentence"
+      ]
+    },
+    {
+      "qid": "650b028a7b129955e11ac7b3",
+      "n": 19,
+      "type": "mcq",
+      "concept": "Sentence",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option that can substitute the underlined segment in the given sentence.\n\nThe airplane __flowed over__ the mountains, offering the passengers a breath-taking view of the majestic peaks below.",
+      "options": [
+        {
+          "label": "1",
+          "text": "flew beyond"
+        },
+        {
+          "label": "2",
+          "text": "flew over"
+        },
+        {
+          "label": "3",
+          "text": "flowed above"
+        },
+        {
+          "label": "4",
+          "text": "flowed beyond"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is 'flew over'.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The original sentence contains the verb \"**flowed**\" which is incorrect in the context of an airplane's movement.\n \n• The verb \"**flowed**\" is typically used to describe the movement of liquids, not objects like airplanes.\n \n• The correct verb for describing the movement of an airplane is \"**flew**.\"\n \n• Using \"**flew over**\" accurately conveys the action of the airplane traveling above the mountains.\n\nTherefore, the correct answer is Option 2.\n\nCorrect sentence: *The airplane **flew over**__ the mountains, offering the passengers a breath-taking view of the majestic peaks below*.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **Option 1: flew beyond** - This phrase suggests that the airplane flew past or farther than the mountains, which changes the intended meaning of the sentence.\n \n• **Option 3: flowed above** - The verb \"flowed\" is incorrect for describing the movement of an airplane, as previously mentioned.\n \n• **Option 4: flowed beyond** - Similar to Option 3, \"flowed\" is not appropriate for an airplane, and \"beyond\" changes the intended meaning.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Sentence"
+      ]
+    },
+    {
+      "qid": "650b02a1d9c156e850111789",
+      "n": 20,
+      "type": "mcq",
+      "concept": "Antonym",
+      "confidence": "high",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate ANTONYM of the given word.\n\nEcstasy",
+      "options": [
+        {
+          "label": "1",
+          "text": "Euphoria"
+        },
+        {
+          "label": "2",
+          "text": "Coarse"
+        },
+        {
+          "label": "3",
+          "text": "Natural"
+        },
+        {
+          "label": "4",
+          "text": "Despair"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is: **Despair**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The word **\"Ecstasy\"** means an overwhelming feeling of great happiness or joyful excitement. (परमानंद)\n\n \n \n• **Example: **She was in a state of **ecstasy **when she heard the news of her promotion.\n \n \n \n• **\"Despair\"** refers to the complete loss or absence of hope. (निराशा)\n \n \n• **Example: **He fell into **despair **after losing his job.\n \n \n \n• Hence, we can infer that the opposite of **'Ecstasy'** is **'Despair'**.\n\nTherefore, the correct answer is: **Option 4**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\nHere are the other options explained along with their Hindi meanings and example sentences:\n\n \n• **Euphoria** (आनंद): A feeling or state of intense excitement and happiness.\n\n \n \n• **Example:** The **euphoria **of winning the championship was overwhelming.\n \n \n \n• **Coarse** (अशिष्ट): Rough or harsh in texture.\n \n \n• **Example:** The **coarse **fabric was uncomfortable to wear.\n \n \n\n222:T119e,\n<span style=\"&",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Synonyms or Antonyms"
+      ]
+    },
+    {
+      "qid": "650b02fb061f430b8b67500f",
+      "n": 21,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option to fill in blank number 1.",
+      "options": [
+        {
+          "label": "1",
+          "text": "before"
+        },
+        {
+          "label": "2",
+          "text": "behind"
+        },
+        {
+          "label": "3",
+          "text": "by dint of"
+        },
+        {
+          "label": "4",
+          "text": "below"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is '**behind**'.\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The context of the passage suggests that the boy was exploring around his area, which includes the land surrounding a bungalow.\n \n• The word '**behind**' (पीछे) fits logically with the action of pushing through bushes and stumbling upon an unexpected object, indicating a hidden or less visible area.\n \n• The term '**behind**' gives a clear spatial reference to the location where the boy made his discovery.\n \n• It sets a narrative path that he went to a less frequented part of the bungalow, adding to the mystery of finding the gravestone.\n\nTherefore, the correct answer is '**Option 2**'.\n\n \n\n**Complete Sentence**: \"*As a boy, I was always exploring lonely places—neglected gardens and orchards, unoccupied houses, patches of scrub or wasteland, the fields outside the town, the fringes of the forest. On one of my rambles **behind__* *the bungalow, I pushed my way through a thicket of lantana bushes and stumbled over a thick stone slab, twisting my ankle slightly as I fell. For some time, I sat on the grass massaging my foot. When the pain eased, I looked more (2)________ at the stone slab and was surprised to find that it was a gravestone. It was almost entirely covered by ivy; obviously no one had been near it for years. I tugged at the ivy and some of it came away in my hands. There was some (3)________ lettering on the grave, half-obscured by grass and moss. I could make out a name—Rose—but little more. I sat there for some time, (4)________ over my discovery. I was wondering why ‘Rose’ should have been buried at so lonely a spot when there was a (5)________ not far away.*\"\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **before (सामने)**: This option is not appropriate because it suggests a location in front of the bungalow, which usually implies a more visible and perhaps maintained area, opposite of the neglected spot being described.\n \n• **by dint of (के कारण)**: This means 'by means of' or 'because of.' It's not suitable as it does not fit the context of a spatial location.\n \n• **below (नीचे)**: This option implies a vertical arrangement and is not appropriate for describing a lateral exploration around the bungalow.\n\n223:T1274,\n<span style",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b02fb061f430b8b675010",
+      "n": 22,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option to fill in blank number 2.",
+      "options": [
+        {
+          "label": "1",
+          "text": "closely"
+        },
+        {
+          "label": "2",
+          "text": "emptily"
+        },
+        {
+          "label": "3",
+          "text": "frankly"
+        },
+        {
+          "label": "4",
+          "text": "lawfully"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is '**closely**.'\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• The context of the passage implies that the protagonist carefully examines the inscription on the gravestone.\n \n• '**Closely**' (गौर से) fits this context as it means paying careful attention to details.\n \n• Observing something '**closely**' highlights the attention to detail necessary for deciphering potentially worn or intricate text on the gravestone.<",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b02fb061f430b8b675011",
+      "n": 23,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option to fill in blank number 3.",
+      "options": [
+        {
+          "label": "1",
+          "text": "idiotic"
+        },
+        {
+          "label": "2",
+          "text": "sturdy"
+        },
+        {
+          "label": "3",
+          "text": "blurred"
+        },
+        {
+          "label": "4",
+          "text": "nomadic"
+        }
+      ],
+      "correct": "3",
+      "solution": "The correct answer is '**blurred**.'\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The context of the passage implies that the inscription on the gravestone is difficult to read due to wear and tear.\n \n• '**Blurred**' (धुधला) is most fitting here since it means unclear or difficult to distinguish.\n \n• Describing the inscription as '**blurred**' aligns well with the idea of a faint and possibly weathered engraving.\n \n• The word '**blurred**' effectively conveys the challenge the protagonist faces in trying to decipher the text on the gravestone.\n\nTherefore, the correct answer is '**Option 3**'.\n\n \n\nComplete Sentence: \"*As a boy, I was always exploring lonely places—neglected gardens and orchards, unoccupied houses, patches of scrub or wasteland, the fields outside the town, the fringes of the forest. On one of my rambles **behind__* *the bungalow, I pushed my way through a thicket of lantana bushes and stumbled over a thick stone slab, twisting my ankle slightly as I fell. For some time, I sat on the grass massaging my foot. When the pain eased, I looked more **__closely__ at the stone slab and was surprised to find that it was a gravestone. It was almost entirely covered by ivy; obviously no one had been near it for years. I tugged at the ivy and some of it came away in my hands. There was some *__*blurred*__* lettering on the grave, half-obscured by grass and moss. I could make out a name—Rose—but little more. I sat there for some time, (4)________ over my discovery. I was wondering why ‘Rose’ should have been buried at so lonely a spot when there was a (5)________ not far away.*\"\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **idiotic **(मूर्खतापूर्ण): This means foolish or stupid, which does not describe the state of the inscription.\n \n• **sturdy **(मजबूत): This means strong and solidly built, which is not relevant to the condition of the writing.\n \n• **nomadic **(घुमंतू): This refers to a lifestyle of moving from place to place, which does not apply to the description of the inscription.\n\n225:T1277,\nT",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b02fb061f430b8b675012",
+      "n": 24,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option to fill in blank number 4.",
+      "options": [
+        {
+          "label": "1",
+          "text": "sleeping"
+        },
+        {
+          "label": "2",
+          "text": "pondering"
+        },
+        {
+          "label": "3",
+          "text": "being"
+        },
+        {
+          "label": "4",
+          "text": "pulling"
+        }
+      ],
+      "correct": "2",
+      "solution": "The correct answer is '**pondering**.'\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• The protagonist is reflecting on and considering the significance of the discovery of the gravestone.\n \n• '**Pondering**' (विचार करते हुए) fits the context of thinking deeply about the situation.\n \n• Therefore, the most appropriate word to complete the sentence is: Pondering.\n\n<p",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "650b02fb061f430b8b675013",
+      "n": 25,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 3.0,
+      "marks_neg": 1.0,
+      "question": "Select the most appropriate option to fill in blank number 5.",
+      "options": [
+        {
+          "label": "1",
+          "text": "dormitory"
+        },
+        {
+          "label": "2",
+          "text": "kennel"
+        },
+        {
+          "label": "3",
+          "text": "sanctuary"
+        },
+        {
+          "label": "4",
+          "text": "cemetery"
+        }
+      ],
+      "correct": "4",
+      "solution": "The correct answer is '**cemetery**.'\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• The context of the passage is about examining a gravestone, which is typically found in a cemetery.\n \n• A **cemetery **(कब्रिस्तान) is the appropriate setting for gravestones.\n \n• The word '**cemetery**' directly relates to the theme of graves and gravestones.\n\nTherefore, the correct answer is '**Option 4**'.\n\n \n\nComplete Sentence: \"*As a boy, I was always exploring lonely places—neglected gardens and orchards, unoccupied houses, patches of scrub or wasteland, the fields outside the town, the fringes of the forest. On one of my rambles **behind__* *the bungalow, I pushed my way through a thicket of lantana bushes and stumbled over a thick stone slab, twisting my ankle slightly as I fell. For some time, I sat on the grass massaging my foot. When the pain eased, I looked more **__closely__ at the stone slab and was surprised to find that it was a gravestone. It was almost entirely covered by ivy; obviously no one had been near it for years. I tugged at the ivy and some of it came away in my hands. There was some *__*blurred*__* lettering on the grave, half-obscured by grass and moss. I could make out a name—Rose—but little more. I sat there for some time, **__pondering__ over my discovery. I was wondering why ‘Rose’ should have been buried at so lonely a spot when there was a *__*cemetery*__* not far away.*\"\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• **dormitory **(छात्रावास): This refers to a large bedroom for multiple people, typically students, and is not relevant to the context.\n \n• **kennel **(कुत्ते का घर): This refers to a shelter for dogs, which is not appropriate here.\n \n• **sanctuary **(आश्रय स्थल): This typically refers to a place of refuge or safety, which does not fit the context of gravestones and burial.\n\ne:[\"$\",\"$L2d\",null,{\"testData\":{\"title\":\"SSC MTS 2023 Official Paper (Held",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    }
+  ]
+}

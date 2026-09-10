@@ -1,0 +1,3439 @@
+{
+  "test_id": "69611929dc7cc52942604aae",
+  "title": "SSC CGL Tier-II (JSO) 2017 Official Paper ( Held On: 22 Feb 2018 )",
+  "series_slug": "ssc-cgl",
+  "series_name": "SSC CGL Mock Test Series 2026 (Tier I & Tier II)",
+  "section": "Previous Year Paper (Tier II)",
+  "subsection": "Paper II: Statistics",
+  "subject": "general",
+  "duration_min": 120,
+  "max_marks": 200.0,
+  "question_count": 100,
+  "languages": [
+    "English",
+    "Hindi"
+  ],
+  "scraped_at": "2026-09-05T05:27:51.394287+00:00",
+  "questions": [
+    {
+      "qid": "6082838781edab791da2d277",
+      "n": 1,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For the mid values 30, 39, 48, 57 and 66 the second class of the distribution is ________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "34 - 44"
+        },
+        {
+          "label": "2",
+          "text": "34.5 - 43.5"
+        },
+        {
+          "label": "3",
+          "text": "33.5 - 44.5"
+        },
+        {
+          "label": "4",
+          "text": "34 - 45"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nMid values = 30, 39, 48, 57, 66\n\nFormula used\n\nMid value of class interval = (L₁ + L₂)/2\n\nL₁ = Lower limit\n\nL₂ = Upper limit\n\n**Calculation**\n\nFor Second class mid value would be (L₁ + L₂)/2\n\nHere L₁ and L₂ are Lower value and upper value of class interval\n\n Mid point of 30 and 39 = (L₁ + L₂)/2\n\n⇒ (30 + 39)/2 = 34.5\n\n⇒ Mid point of 39 and 48",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082850f85d1ae3c919021e4",
+      "n": 2,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The following frequency distribution is of which type?\n\n \n \n\n **Class**\n **Frequency**\n \n \n\n 0-5\n 4\n \n \n\n 0-10\n 7\n \n \n\n 0-15\n 11\n \n \n\n 0-20\n 16\n \n \n\n 0-25\n 23",
+      "options": [
+        {
+          "label": "1",
+          "text": "Less than cumulative frequency ​"
+        },
+        {
+          "label": "2",
+          "text": "More than cumulative frequency"
+        },
+        {
+          "label": "3",
+          "text": "discrete frequency distribution"
+        },
+        {
+          "label": "4",
+          "text": "Individual series"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\n \n \n\n \n \nFrequency\n\n \n \n \n4\n\n \n \n \n7\n\n \n \n \n11\n\n \n \n \n16\n\n \n \n \n23\n\n \n \n \n\n \n \nClass interval\n\n \n \n \n0 - 5\n\n \n \n \n0 - 10\n\n \n \n \n0 - 15",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082862085d1ae3c91902f6e",
+      "n": 3,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For how many days were the number of road accident patients treated less than 4?\n\n \n \n\n \n \n**Number of road accidents patients treated by a hospital emergency ward for 120 days are given below:**\n\n \n \n \n\n \n \n**Number of patients**\n\n \n \n \n0\n\n \n \n \n1\n\n \n \n \n2\n\n \n \n \n3\n\n \n \n \n4\n\n \n \n \n5\n\n \n \n \n6\n\n \n \n \n7\n\n \n \n \n\n \n \n**Days**\n\n \n \n \n11\n\n \n \n \n16\n\n \n \n \n21\n\n \n \n \n23\n\n \n \n \n20\n\n \n \n \n17\n\n \n \n \n7\n\n \n \n \n5",
+      "options": [
+        {
+          "label": "1",
+          "text": "71"
+        },
+        {
+          "label": "2",
+          "text": "48"
+        },
+        {
+          "label": "3",
+          "text": "69"
+        },
+        {
+          "label": "4",
+          "text": "46"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Calculation**\n\n \n \n\n \n \nNo. off patient\n\n \n \n \nDays\n\n \n \n \n\n \n \n0\n\n \n \n \n11\n\n \n \n \n\n \n \n1\n\n \n \n \n16\n\n \n \n \n\n \n \n2\n\n \n \n \n21\n\n \n \n \n\n \n \n3\n\n \n \n \n23\n\n \n \n \n\n \n \n4\n\n \n \n \n20\n\n \n \n \n\n \n \n5\n\n \n \n \n17\n\n \n \n \n\n \n \n6\n\n \n \n \n7\n\n \n \n \n\n \n \n7\n\n \n \n \n5\n\n \n \n \n\n \n\n**the number of road accident patients treated less than 4 = 11 + 16 + 21 + 23 = 71**",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "608286542fdb5a83b7d2af8b",
+      "n": 4,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a pie chart depicting total expenses of a company for the year 2016, raw material had a central angle of 45o. If total expenses were Rs 504 Lakhs, what were the company's expense on raw materials (in Rs lakhs)?",
+      "options": [
+        {
+          "label": "1",
+          "text": "45"
+        },
+        {
+          "label": "2",
+          "text": "112"
+        },
+        {
+          "label": "3",
+          "text": "63"
+        },
+        {
+          "label": "4",
+          "text": "72"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given**\n\nTotal expenses = 504 lakhs\n\nRaw material had a central angle 45° \n\n**Concept used**\n\nIn the pie chart overall angle is 360°\n\n**Calculation**\n\nThe total expenses = 504 lakhs\n\n⇒ 360° = 504 lakhs\n\n⇒ 1° = 1.4 lakh\n\n⇒ 45° = 63 lakh\n\n**∴ the company's expense on raw materials (in Rs lakhs) - is 63 lakhs**",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "60828741fac67aa8cd98981b",
+      "n": 5,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "How many per cent of employees get salaries less than Rs 30,000?\n\nThe following data shows the salaries of all the employees of a company.\n\n \n \n\n \n \n**Salary **\n\n \n**(In Rs.)**\n\n \n \n \n0-10,000\n\n \n \n \n10,001-20,000\n\n \n <td style=\"width:61px;height:",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.756"
+        },
+        {
+          "label": "2",
+          "text": "0.78 ​"
+        },
+        {
+          "label": "3",
+          "text": "0.867"
+        },
+        {
+          "label": "4",
+          "text": "0.72"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Calculation**\n\nNo of employees whose salary lies from 0 - 10,000 = 235\n\nNo of employees whose salary lies from 10,001 - 20,000 = 105\n\nNo of employees whose salary lies from 20,001 - 30,000 = 50\n\nTotal employs whose salary lies from 0 - 30,000 = 235 + 105 + 50\n\n⇒ 390\n\nTotal number of employs = 450\n\n⇒ 390/450 = 0.867\n\n**∴ 86.7% employees get salaries less than Rs 30,000**",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "608287e34d3a373b770149e1",
+      "n": 6,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the frequency density of the class 20 - 40?\n\n \n \n\n \n \n**Class**\n\n \n \n \n0-10\n\n \n \n \n10-20\n\n \n \n \n20-40\n\n \n \n \n40-60\n\n \n \n \n\n \n \n**Frequency**\n\n \n \n \n12\n\n \n \n \n16\n\n \n \n \n14\n\n \n \n \n8",
+      "options": [
+        {
+          "label": "1",
+          "text": "1.4"
+        },
+        {
+          "label": "2",
+          "text": "2.8"
+        },
+        {
+          "label": "3",
+          "text": "0.28"
+        },
+        {
+          "label": "4",
+          "text": "0.7"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\nFrequency density is actually the frequency per unit width.\n\nFrequency of class interval 20 - 40 = 14\n\n**Formula used**\n\nFrequency ~density = (Frequency)/((upper ~limit – lower~ limit) ) \n\n**Calculation**\n\n⇒(14)/(40-20)\n\n⇒(14)/(20)=0.7\n\n**∴**** Frequency density is 0.7 **",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "608288ca33784c738fd8a50f",
+      "n": 7,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The following data shows runs scored by a batsmen in 72 matches that he played in his carrer.\n\n \n \n\n \n \n95\n\n \n \n \n23\n\n \n \n \n60\n\n \n \n \n26\n\n \n \n \n34\n\n \n \n \n113\n\n \n \n \n92\n\n \n \n \n\n \n \n103\n\n \n \n \n84\n\n \n \n \n32\n\n \n \n \n90\n\n \n \n \n118\n\n \n \n \n62\n\n \n \n \n7\n\n \n \n \n\n \n \n5\n\n \n \n \n45\n\n \n \n \n51\n\n \n \n \n14\n\n \n \n \n68\n\n \n \n \n83\n\n \n \n \n87\n\n \n \n \n\n \n \n98\n\n \n \n \n116\n\n \n \n \n86\n\n \n \n \n36\n\n \n \n \n103\n\n \n \n \n102\n\n \n \n \n23\n\n \n \n \n\n \n \n36\n\n \n \n \n83\n\n \n \n \n22\n\n \n \n \n74\n\n \n \n \n28\n\n \n \n \n12\n\n \n \n \n56\n\n \n \n \n\n \n \n24\n\n \n \n \n5\n\n \n \n \n17\n\n \n \n \n45\n\n \n \n \n7\n\n \n \n \n83\n\n \n \n \n88\n\n \n \n \n\nHow many times did he score less than 25 runs?",
+      "options": [
+        {
+          "label": "1",
+          "text": "9"
+        },
+        {
+          "label": "2",
+          "text": "8"
+        },
+        {
+          "label": "3",
+          "text": "7"
+        },
+        {
+          "label": "4",
+          "text": "11"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Calculation**\n\n**We divide these runs into class interval and frequencies**\n\n \n \n\n \n \nClass interval\n\n \n \n \nFrequency\n\n \n \n \n\n \n \n0 -6\n\n \n \n \n2\n\n \n \n \n\n \n \n7 - 12\n\n \n \n \n3\n\n \n \n \n\n \n \n13 - 18\n\n \n \n \n2\n\n \n \n \n\n \n \n19 - 24\n\n \n \n \n4\n\n \n \n \n\n \n \n25 - 30\n\n \n \n \n2\n\n \n \n \n\n \n \nAnd so on ---\n\n \n \n \nAnd so on\n\n \n \n \n\n \n\n∴ There are (2 + 3 + 2 + 4) = 11 times he scored less than 25",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "60828918df76353b4308d774",
+      "n": 8,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the harmonic mean of 3, 6 and 10.",
+      "options": [
+        {
+          "label": "1",
+          "text": "6.33"
+        },
+        {
+          "label": "2",
+          "text": "5"
+        },
+        {
+          "label": "3",
+          "text": "5.6"
+        },
+        {
+          "label": "4",
+          "text": "4.5"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nObservations = 3, 6, 10\n\n**Formula used**\n\nHarmonic mean = n/Σ1/xᵢ where i = 1, 2, 3, 4 ------\n\nn = number of observation\n\nx = observations value\n\n**Calculation**\n\nxᵢ = 3, 6, 10\n\n⇒ Σ1/xi = 1/3 + 1/6 + 1/10 = 3/5\n\n⇒ number of observation = 3\n\n⇒ Harmonic mean = 3/3/5 = (3 × 5)/3\n\n**∴ Harmonic mean = 5**\n\n** [IMAGE: https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png] __Important Points__**\n\n**The harmonic mean** it is defined as the reciprocal of the arithmetic mean of the observations of a set\n\nHarmonic mean = n/Σ1/xi where i = 1, 2, 3, 4 ------\n\nn = number of observation\n\nx = observations value\n\n**Geometric mean = **it** ** is defined as the n-th root of the product of the n observations.\n\nGM = n(√x₁ × x₂--------xₙ₎",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "608289bf20f192bdd5be7934",
+      "n": 9,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Identify the two unknown frequencies in the following table if the mean of the values is 21.5?\n\n \n \n\n \n \n**Class**\n\n \n \n \n**Frequency**\n\n \n \n \n\n \n \n0 - 10\n\n \n \n \nF1\n\n \n </tr&",
+      "options": [
+        {
+          "label": "1",
+          "text": "5 and 15"
+        },
+        {
+          "label": "2",
+          "text": "10 and 20"
+        },
+        {
+          "label": "3",
+          "text": "5 and 10"
+        },
+        {
+          "label": "4",
+          "text": "10 and 15"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nMean = 21.5\n\nTotal frequency = 40\n\n**Formula**\n\nMean (x̅) = Σfx/Σf\n\n**Calculation**\n\n \n \n\n \n \n**Class interval**\n\n \n \n \n**Frequency (f)**\n\n \n \n \n**x**\n\n \n \n \n**fx**\n\n \n \n \n\n \n \n**0 - 10**\n\n \n \n \nf₁\n\n \n \n \n5\n\n \n \n \n5f₁",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "608289ffe9109b50edfdbf0b",
+      "n": 10,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Calculate the median using the following data. \n\nLower class boundary of the median class = 40 \n\nTotal frequency = 120 \n\nFrequency of the median class = 35 \n\nLess than cumulative frequency of the post median class = 37 \n\nClass width = 20",
+      "options": [
+        {
+          "label": "1",
+          "text": "48.23"
+        },
+        {
+          "label": "2",
+          "text": "49.14"
+        },
+        {
+          "label": "3",
+          "text": "54.23"
+        },
+        {
+          "label": "4",
+          "text": "53.14"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Formula used**\n\n**Median = L + (N/2 - C)/F × H for group data**\n\nL = lower class limit of the median class = 40\n\nN = total frequency = 120\n\nC = cumulative frequency of the pre median class = 37\n\nF = frequency of the median class = 35\n\nH = width of median class = 20\n\n**Calculation**\n\nMedian = 40 + (120/2 - 37)/35 × 20\n\n⇒ 40 + 60 - 37)/35 × 20\n\n⇒ 40 + 13.14\n\n**∴ Median = 53.14**\n\n** [IMAGE: https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png] __Important Points__**\n\n**Median = **Median is that value of the variable which divides the whole distribution into two equal parts\n\nMedian for ungrouped data = (n + 1)th/2 when n = odd\n\n[(n/2)th + (n/2 + 1)th]2 observation when n = even",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "60828a71736ad19e9c5f078f",
+      "n": 11,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Use the following table to find the mean.\n\n \n \n\n \n \n**Age (in years)**\n\n \n \n \n**Number of students**\n\n \n \n \n\n \n \n0 – 5\n\n \n \n \n80\n\n \n \n \n\n \n \n5 – 10\n\n \n \n \n120\n\n \n \n \n\n \n \n10 – 15\n\n \n \n \n160\n\n \n \n \n\n \n \n15 – 20\n\n \n \n \n40\n\n \n \n \n\n \n \n**Total**\n\n \n \n \n400",
+      "options": [
+        {
+          "label": "1",
+          "text": "8.5"
+        },
+        {
+          "label": "2",
+          "text": "7.5"
+        },
+        {
+          "label": "3",
+          "text": "9.5"
+        },
+        {
+          "label": "4",
+          "text": "10.5"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Calculation**\n\n \n \n\n \n \n**Age**\n\n \n \n \n**Number of student = f**\n\n \n \n \n**x**\n\n \n \n \nfx\n\n \n \n \n\n \n \n**0 - 5**\n\n \n \n \n80",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "60828ad2707d4027a8fb0ffe",
+      "n": 12,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the mode from the following table.\n\n \n \n\n \n \n**Class**\n\n \n \n \n**Frequency**\n\n \n \n \n\n \n \n0 - 10\n\n \n \n \n15\n\n \n \n \n\n \n \n10 – 20\n\n \n \n \n25\n\n \n \n \n\n \n \n20 – 30\n\n \n \n \n30\n\n \n \n \n\n \n \n30 – 40\n\n \n \n \n20",
+      "options": [
+        {
+          "label": "1",
+          "text": "22.44"
+        },
+        {
+          "label": "2",
+          "text": "23.33"
+        },
+        {
+          "label": "3",
+          "text": "25.55"
+        },
+        {
+          "label": "4",
+          "text": "26.66"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Formula used**\n\n Mode =L + left [ (f1 - f0)/(2f1 - f0 - f2) right ]× i\n\ni = class interval or class size\n\nf1 = frequency of modal class\n\nfo = frequency of pre modal class\n\nf2 = frequency of success modal class\n\nL = lower limit of modal class\n\n__Calculation:__\n\nHere maximum frequency is 30 ,the class corresponding to this 20-30\n\nSo modal class is 20 - 30\n\nNow lower limit of modal class (l) = 20\n\nFrequency (f1) of modal class = 30\n\nfrequency (f0) of preceding the modal class = 25\n\nfrequency (f2) of the class succeeding the modal class = 20\n\nClass size = 10\n\n⇒ Mode = 20 + ([30 - 25)/(2 × 30 - 25 - 20)] × 10\n\n⇒ Mode = 20 + 10/3\n\n**∴ Mode is 23.33**\n\n** [IMAGE: https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png] __Important Points__**\n\nAnother formula to calculate mode = 3 Median - 2 Mean ** **",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "60828b09fac67aa8cd98c161",
+      "n": 13,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Compute the standard deviation of the following numbers: 5, 6, 4 and 2",
+      "options": [
+        {
+          "label": "1",
+          "text": "1.7"
+        },
+        {
+          "label": "2",
+          "text": "2.7"
+        },
+        {
+          "label": "3",
+          "text": "1.2"
+        },
+        {
+          "label": "4",
+          "text": "2.2"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nNumber = 5, 6, 4, and 2\n\n**Formula used**\n\nσ = √[x – x̅)²/n]\n\nx̅ = (x₁ + x₂ + x₃ + x₄)/4\n\nσ = Standard deviation\n\nx̅ = Mean\n\n**Calculation**\n\nMean = x̅ = (5 + 6 + 4 + 2)/4 = 4.25\n\n \n \n\n \n \n**x**\n\n \n \n \n**x – x̅ **\n\n **⇒**** (x – 4.25)**\n\n \n \n \n**(X – x̅)²**\n\n \n \n \n\n \n \n**5**\n\n \n \n \n0.75\n\n \n \n \n0.5625\n\n \n \n \n\n \n \n**6**\n\n \n \n \n1.75\n\n \n \n \n3.0625\n\n \n \n \n\n \n \n**4**\n\n \n \n \n-0.25\n\n \n \n \n0.0625\n\n \n \n \n\n \n \n**2**\n\n \n \n \n-2.25\n\n \n \n \n5.0625\n\n \n \n \n\n \n \n**Total**\n\n \n \n \n \n\n \n \n \n8.75\n\n \n \n \n\n⇒ σ = √(8.75)/4\n\n⇒ √2.1875)\n\n**∴**** Standard deviation of these values is 1.479**\n\n [IMAGE: https://cdn.repeatermock.com/tb/efb90c3647c276e117dc17fb6439410dad00fafe8f511a89c38f32cba7de65df.png] \n\nStandard deviation = It is the square root of the arithmetic mean of the square of deviation of the items from their mean value\n\n**σ = √[x – x̅)²/n]**\n\n`\n\n7c:T1",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/efb90c3647c276e117dc17fb6439410dad00fafe8f511a89c38f32cba7de65df.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "60828b33b7545c5269e240f5",
+      "n": 14,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Calculate the standard deviation if the mean of a certain set of observations is 20 and the mean of the squares of the same observations is 500.",
+      "options": [
+        {
+          "label": "1",
+          "text": "5"
+        },
+        {
+          "label": "2",
+          "text": "20"
+        },
+        {
+          "label": "3",
+          "text": "10"
+        },
+        {
+          "label": "4",
+          "text": "25"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given**\n\nMean of certain number = 20\n\nMean of square of same observation = 500\n\n**Formula used**\n\n**σ = √[(**∑x²/n –(∑x/n)²]\n\n(∑x/n) = mean\n\n<",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "60828b5581edab791da32548",
+      "n": 15,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Calculate the coefficient of range for the following set of data. 3, 6, 6, 8, 9 and 12",
+      "options": [
+        {
+          "label": "1",
+          "text": "22.2"
+        },
+        {
+          "label": "2",
+          "text": "44.4"
+        },
+        {
+          "label": "3",
+          "text": "50"
+        },
+        {
+          "label": "4",
+          "text": "0.6"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Formula **\n\nCoefficient of range = (maximum range - minimum range)/(maximum range + minimum range)\n\nRange = Maximum value - minimum value\n\n**Calculation**\n\nMaximum range = 12 and minimum range = 3\n\n⇒ Coefficient of range = (12 - 3)/12 + 3\n\n**∴ Coefficient of range = 0.6**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60828b7b85d1ae3c91906a91",
+      "n": 16,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean and variance of the marks of Division 1 which has 60 students is 45 and 4 respectively and the mean and variance of the marks of Division 2 which has 40 students is 55 and 9 respectively. What will be the variance of the marks of the two divisions combined?",
+      "options": [
+        {
+          "label": "1",
+          "text": "30"
+        },
+        {
+          "label": "2",
+          "text": "20"
+        },
+        {
+          "label": "3",
+          "text": "10"
+        },
+        {
+          "label": "4",
+          "text": "40"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nn₁ = 60\n\nn₂ = 40\n\nx̅₁ = 45\n\nx̅₂ = 55\n\nσ²₁ = 4\n\n**σ²₂ = 9**\n\n**Formula used**\n\nCombined mean = X̅ = (n₁ × x̅₁ + n₂ × x̅ ₂)/(n₁ + n₂)\n\nVariance of combined mean = n₁(σ²₁ + d²₁) + n₂(σ²₂ + d²₂)/(n₁ + n₂)\n\nn₁ and n₂ are group 1 and group 2 observation\n\nx̅₁ and x̅₂ are mean of group 1 and group 2\n\nσ²₁ and σ²₂ are variance of group 1 and group 2\n\nd₁ = x̅₁ – X̅\n\nd₂ = x̅₂ – X̅\n\n**Calculation**\n\nThe combined mean is X̅\n\n⇒ (60 × 45 + 40 × 55)/(60 + 40)\n\n⇒ (2700 + 2200)/100\n\n∴ Combined mean is 49\n\n⇒ d₁ = 45 – 49\n\n⇒ d₁ = -4\n\n⇒ d²₁ = 16\n\n⇒ d₂ = 55 – 49 = 6\n\n⇒ d²₂ = 36\n\nThe combined variance of both group\n\n⇒ 60(4 + 16) + 40(9 + 36)/(60 + 40)\n\n⇒ (60 × 20 + 40 × 45)/(100)\n\n⇒ (1200 + 1800)/100\n\n⇒ 3000/100\n\n**∴ The combined variance is 30**\n\n80:T102e,",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "60828b9cb7545c5269e2463a",
+      "n": 17,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the mean of a certain set of data is 16 and variance is 4 then find the coefficient of variance.",
+      "options": [
+        {
+          "label": "1",
+          "text": "25"
+        },
+        {
+          "label": "2",
+          "text": "12.5"
+        },
+        {
+          "label": "3",
+          "text": "10"
+        },
+        {
+          "label": "4",
+          "text": "20"
+        }
+      ],
+      "correct": "2",
+      "solution": "Given\n\nArithmetic mean = (μ) = 16\n\nvariance = σ² = 4\n\nFormula\n\nStandard deviation = σ = √variance\n\nCV = Coefficient of variation = σ/μ\n\nσ = Standard deviation\n\nμ = Mean\n\nCalculation\n\nStandard deviation = σ = √4 = 2\n\n⇒ CV = (σ/μ) × 100\n\n⇒ CV = (2/16) × 100\n\n**∴ Coefficient of variation is 12.5**",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "60828bc285d1ae3c91906c26",
+      "n": 18,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If a set of points represent probability density, then the third central moment is the ______________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "skewness"
+        },
+        {
+          "label": "2",
+          "text": "kurtosis"
+        },
+        {
+          "label": "3",
+          "text": "mean"
+        },
+        {
+          "label": "4",
+          "text": "variance"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Explaination**\n\nWe all know that a measure of skewness is obtained by the use of the third moment about the mean (Third central mean)\n\n** [IMAGE: https://cdn.repeatermock.com/tb/efb90c3647c276e117dc17fb6439410dad00fafe8f511a89c38f32cba7de65df.png] **\n\nSkewness is measured by the term β₁\n\n⇒ μ²₃/μ²₂\n\nThe first moment about the origin is the measure of the mean\n\nThe second moment about the mean measures the variance \n\nThe third moment about the mean measures **the skewness **",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/efb90c3647c276e117dc17fb6439410dad00fafe8f511a89c38f32cba7de65df.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "60828eb6b7545c5269e26909",
+      "n": 19,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which formula represents the 2nd moment around the mean?",
+      "options": [
+        {
+          "label": "1",
+          "text": "$3f"
+        },
+        {
+          "label": "2",
+          "text": "$40"
+        },
+        {
+          "label": "3",
+          "text": "$41"
+        },
+        {
+          "label": "4",
+          "text": "$42"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Calculaton**\n\nMoment about mean = The rth moments of a variable about the mean μᵣ denoted by μ =(1/N)[∑fi(xi - μₓ )r \n\n⇒ Put r = 2\n\n∴ ∑fi(xi - μx )² represents the 2nd moment around the mean",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "60828ee433784c738fd8e5a9",
+      "n": 20,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Calculate skewness using Bowley's formula given lower quartile, upper quartile and median values of a data set are 16, 40 and 24.",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.33"
+        },
+        {
+          "label": "2",
+          "text": "0.44"
+        },
+        {
+          "label": "3",
+          "text": "0.55"
+        },
+        {
+          "label": "4",
+          "text": "0.67"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nQ₁ = 16\n\nQ₃ = 40\n\nMd = 24\n\nFormula \n\nabsolute measure of skewness = = Bowley's measure of skewness Sq = (Q₃ - 2Md + Q₁)(/Q₃ - Q₁)\n\nQ₁ = Upper quartile\n\nQ₃ = Upper quartile\n\nMd = Median\n\n**Calculation**\n\nBowley's measure of skewness = (40 + 16 - 2 × 24)/(40 - 16)\n\n⇒ (56 - 48)/24\n\n**∴ Bowley's measure of skewness is 8/24 or 0.33**\n\n** [IMAGE: https://cdn.repeatermock.com/tb/efb90c3647c276e117dc17fb6439410dad00fafe8f511a89c38f32cba7de65df.png] **\n\nBowley's measure of skewness = This measure is based on quartiles. For a symmetrical distribution, Q1 and Q3 are equidistance from median\n\n⇒ absolute measure of skewness = (Q3 - Md) - (Md - Q1)\n\n⇒ A relative measure of skewness is called Bowley's coefficient and it is denotted by SQ\n\n⇒ SQ = [(Q3 - Md) - (Md - Q1)]/[(Q3 - Md) + (Md - Q1)]\n\n⇒ SQ = (Q3 - 2Md + Q1)(/Q3 - Q1)",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/efb90c3647c276e117dc17fb6439410dad00fafe8f511a89c38f32cba7de65df.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "60829288e9109b50edfe147e",
+      "n": 21,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the mean of a data if its Pearson's coefficient of skewness is 0.25, standard deviation is 6 and mode is 18?",
+      "options": [
+        {
+          "label": "1",
+          "text": "16.5"
+        },
+        {
+          "label": "2",
+          "text": "10.5"
+        },
+        {
+          "label": "3",
+          "text": "21.5"
+        },
+        {
+          "label": "4",
+          "text": "19.5"
+        }
+      ],
+      "correct": "4",
+      "solution": "**1 - Given**\n\nPearson’s coefficient of skewness = 0.25\n\nStandard deviation = 6\n\nMode = 18\n\n**Formula**\n\nSK = (Mean – Mode)/Standard deviation\n\nSₖ = Karl pearson’s coefficient\n\n**Calculation**\n\nKarl pearson’s measure of skewness is based upon the divergence of mean from mode in a skewed distribution\n\nLet mean be x\n\n⇒ Sₖ = (Mean – Mode)/Standard deviation\n\n⇒ 0.25 = (x – 18)/6\n\n⇒ x = 0.25 × 6 + 1\n\n⇒ x = 19.5\n\n**∴ Mean is 19.5**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a156cc0d727c65adf673",
+      "n": 22,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which condition has to be met to say that a series has positive skewness?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Mode > Mean > Median"
+        },
+        {
+          "label": "2",
+          "text": "Median > Mode > Mean"
+        },
+        {
+          "label": "3",
+          "text": "Mode > Median > Mean"
+        },
+        {
+          "label": "4",
+          "text": "Mean > Median > Mode"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Calculaton**\n\nFor the positive skewed distribution the frequency curve has longer tail towards the right\n\nKarl pearson’s measure of skewness is based upon the divergence of mean from mode in a skewed distribution\n\n⇒ Sₖ = (Mean – Mode)/Standard deviation\n\nThe sign Sₖ gives the direction and its magnitude gives the extent of skewness\n\nIf Sₖ > 0 the distribution is positive skewed\n\nIf Sₖ 0 we have one condition\n\n**∴**** Mean > Median > Mode**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a1b6fac67aa8cd99b764",
+      "n": 23,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The kurtosis of any univariate normal distribution is ________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "2"
+        },
+        {
+          "label": "2",
+          "text": "3"
+        },
+        {
+          "label": "3",
+          "text": "1"
+        },
+        {
+          "label": "4",
+          "text": "0"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Explaination**\n\nKurtosis measure the shape of a distribution or in other word kurtosis measures the peakness of its frequency distribution\n\nThe measures of kurtosis is given by β₂ = μ₄/μ²₂\n\n [IMAGE: https://cdn.repeatermock.com/tb/1ea9aadc8af4d3726f6a95a435d7135930658298e4985c7168df11a9336b4005.png] \n\n⇒ β₂ =3 for mesokurtic\n\n⇒ β₂ > 3, the curve is more peaked than mesokurtic and called leptokurtic\n\n⇒ β₂ < 3, the curve is les\ns peaked than mesokurtic and called platykurtic.\n\n**∴ For normal distribution the kurtosis β₂ =3**",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/1ea9aadc8af4d3726f6a95a435d7135930658298e4985c7168df11a9336b4005.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a1f44d3a373b7702615a",
+      "n": 24,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Characteristics of a leptokurtic distribution are _________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "1)Positive excess kurtosis, 2) Slender in shape and 3)Fatter tails"
+        },
+        {
+          "label": "2",
+          "text": "1)Negative excess kurtosis, 2) Slender in shape and 3)Fatter tails"
+        },
+        {
+          "label": "3",
+          "text": "1)Positive excess kurtosis, 2) Thicker in shape and 3)Thinner tails"
+        },
+        {
+          "label": "4",
+          "text": "1)Negative excess kurtosis, 2) Thicker in shape and 3)Thinner tails"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Explaintaion**\n\nKurtosis measure the shape of a distribution or in other word kurtosis measures the peakness of its frequency distribution\n\nThe measures of kurtosis is given by β₂ = \\Meu₄/meu²₂\n\n⇒ β₂ =3 for mesokurtic\n\n⇒ β₂ > 3, the curve is more peaked than mesokurtic and called leptokurtic\n\n⇒ β₂ < 3, the curve is less peaked than mesokurtic and called platykurtic.\n\n [IMAGE: https://cdn.repeatermock.com/tb/a8de2deaa4959becd744240954adbc368bd762701089ce108c9a162e749b1448.png] \n\nFrom this diagram it is shown that character of a leptokurtic distribution are\n\n⇒ Positive excess kurtosis\n\n⇒ Slender in shape\n\n⇒ Fatter tails\n\n**∴**** Option 1 is correct**",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/a8de2deaa4959becd744240954adbc368bd762701089ce108c9a162e749b1448.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a25033784c738fd9b19f",
+      "n": 25,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Coefficient of Kurtosis β2 <span style=\" background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap",
+      "options": [
+        {
+          "label": "1",
+          "text": "(mu₂)/(mu₄²)"
+        },
+        {
+          "label": "2",
+          "text": "(mu₄²)/(mu₂)"
+        },
+        {
+          "label": "3",
+          "text": "(mu₄)/(mu₂²)"
+        },
+        {
+          "label": "4",
+          "text": "(mu₂²)/(mu₄)"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Explanation **\n\nKurtosis measure the shape of distribution or in other word kurtosis measures the peakness of its frequency distribution\n\n**∴The measures of kurtosis is given by:**\n\n**beta₂=(mu₄)/(mu₂²)**\n\n****\n\n [IMAGE: https://cdn.repeatermock.com/tb/279597d72343cebc8c824b10b8241ec5f16453b38498944d96e0aaa6361d4990.png] \n\nIf the curve has much flatness then the normal curve is called a Leptokurtic curve\n\nIf the curve has lesser flatness than the normal curve then it is called a platykurtic curve\n\nIf the curve is equally flat as a normal curve then it is called a Mesokurtic curve\n\n** **",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/8810882b6a9cbbd1e9de482475cc2355f574cf79527e3e33e15a4bf82d848d9f.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/279597d72343cebc8c824b10b8241ec5f16453b38498944d96e0aaa6361d4990.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a27c2fdb5a83b7d3d5cc",
+      "n": 26,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the coefficient of correlation if the two regression coefficients are 0.5 and 4.5.",
+      "options": [
+        {
+          "label": "1",
+          "text": "1.5"
+        },
+        {
+          "label": "2",
+          "text": "2.5"
+        },
+        {
+          "label": "3",
+          "text": "3.5"
+        },
+        {
+          "label": "4",
+          "text": "2.25"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\n**bₓy = 0.5**\n\n**byₓ = 405**\n\n**Formula**\n\nThe correlation coefficient is the geometric mean of two regression coefficient\n\nr = √(bₓy × byx)\n\nr = correlation coefficient\n\n**Calculation**\n\nr = √(0.5 × 4.5)\n\nr = 1.5\n\n**∴**** Correlation coefficient is 1.5**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a307af6ec273ca7803a1",
+      "n": 27,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Pearson's correlation coefficient = _________________. (S represents standard deviation)",
+      "options": [
+        {
+          "label": "1",
+          "text": "(Sₓ.Sy)/Covariance(x,y)"
+        },
+        {
+          "label": "2",
+          "text": "Covariance²(x,y)/(Sₓ.Sy)"
+        },
+        {
+          "label": "3",
+          "text": "(Sₓ.Sy)²/Covariance(x,y)"
+        },
+        {
+          "label": "4",
+          "text": "Covariance(x,y)/(Sₓ.Sy)"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Calculation**\n\n∴ The Karl Pearson's coefficient of correlation is denotted by r(x, y) is defined as\n\nr(x, y) = cov(x,y)/√σₓ² × √σy²\n\n⇒ cov(x,y)/σₓ × σy\n\n⇒ cov(x,, y)/SₓSy\n\n \n\n<img height=\"26px\" src=\"https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082a3e12fdb5a83b7d3e6ab",
+      "n": 28,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The range of values that coefficient of correlation can take are _____________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "0 ≤ r ≤ +1"
+        },
+        {
+          "label": "2",
+          "text": "-1"
+        },
+        {
+          "label": "3",
+          "text": "0"
+        },
+        {
+          "label": "4",
+          "text": "-1 ≤ r ≤ +1"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Explaination**\n\nRemember the result that the range of values that coefficient of correlation can take are** -1 ≤ r ≤ +1 **\n\n** [IMAGE: https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png] __Important Points__** \n\nBasically, Correlation refers to the relationship of variables . There are 3 types of correlation\n\n1 - Positive or negative correlation\n\n2 - Simple, partial or multiple\n\n3 - Linear or non linear",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/4f750a2730aad0987b5e719f277ddc90129c657928205c4d3b5aa23049023fa5.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a43433784c738fd9c467",
+      "n": 29,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Spearman's rank correlation coefficient is given by _____________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "1 + 6∑dᵢ²/[n(n²-1)]"
+        },
+        {
+          "label": "2",
+          "text": "1 - 6∑dᵢ/[n(n²-1)]"
+        },
+        {
+          "label": "3",
+          "text": "1 - 6∑dᵢ²/[n(n²-1)]"
+        },
+        {
+          "label": "4",
+          "text": "1 + 6∑dᵢ/[n(n²-1)]"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Calculation**\n\n**The spearman's rank correlation is denotted by ρ**\n\n**⇒ ρ = 1 - 6∑d²/n(n² - 1)**\n\nwhere as,\n\nd = difference between the ranks of paired items of X and Y variables\n\n∑d = total of squares of rank differences\n\n&l",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082a45c4d3a373b77028058",
+      "n": 30,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If Coefficient of correlation r = 0.5 then coefficient of non-determination is __________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.5"
+        },
+        {
+          "label": "2",
+          "text": "0.25"
+        },
+        {
+          "label": "3",
+          "text": "1"
+        },
+        {
+          "label": "4",
+          "text": "0.75"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\n**Coefficient of correlation r = 0.5**\n\nFormula\n\nCoefficient of determination = r²\n\nCoefficient of non determination = 1 - coefficient of determination\n\n**Calculation**\n\nr = 0.5\n\n⇒ r² = 0.25\n\n∴ The coefficient of determination = 0.25\n\n**∴ The coefficient of non determination is s1 - 0.25 = 0.75**",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082a48fcc0d727c65ae1d13",
+      "n": 31,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If x = 3u + 1 and y = 4v + 2 and the regression coefficient between u and v is 1.2, then find regression coefficient between x and y?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.8"
+        },
+        {
+          "label": "2",
+          "text": "1"
+        },
+        {
+          "label": "3",
+          "text": "0.9"
+        },
+        {
+          "label": "4",
+          "text": "1.5"
+        }
+      ],
+      "correct": "3",
+      "solution": "**1 - Given**\n\nX = 3u + 1\n\nY = 4v + 2\n\nRegression coefficient between x and y = (bᵤv) = 1.2\n\n**Formula**\n\nRegression coefficient are independent of origin but depend on scale\n\nIf u = ax + b and v = cy + d\n\nThen bᵤv = (a/c) × bₓy\n\n**Calculation**\n\nAccording to the question\n\nx = 3u + 1\n\n⇒ u = x/3 – 1/3\n\nSimilarly\n\nv = y/4 – 1/2\n\nBy using bᵤv = (a/c) × bₓy\n\n⇒ 1.2 = (1/3)/(1/4)bₓy\n\n⇒ 1.2 = (4/3)bₓy\n\n⇒ bₓy = 3 × 1.2/4\n\n**∴**** Regression coefficient between x and y is 0.9**",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082a4c620f192bdd5bfb6b9",
+      "n": 32,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Calculate the correlation coefficient between the following values : \n\nx: 3, 5, 1, 7, 5 \n\ny: 4, 3, 0, 8, 2",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.9"
+        },
+        {
+          "label": "2",
+          "text": "0.8"
+        },
+        {
+          "label": "3",
+          "text": "0.7"
+        },
+        {
+          "label": "4",
+          "text": "0.6"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given **\n\n \n \n\n \n \n**x**\n\n \n \n \n3\n\n \n \n \n5\n\n \n \n \n1\n\n \n \n \n7\n\n \n \n \n5\n\n \n \n \n\n \n \n**y**\n\n \n \n \n4\n\n \n \n \n3\n\n \n \n \n0\n\n \n \n \n8\n\n \n \n \n2\n\n \n \n \n\n \n\n**Formula**\n\nCorrelation coefficient = n∑xy – (∑x × ∑ y)/√{[n∑x² – (∑x)²] × [n∑y&l",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a4f00692f21d4b914f4c",
+      "n": 33,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the sum of the squares of difference of ranks of 6 candidates in two criteria is 21, the rank correlation coefficient is __________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.5"
+        },
+        {
+          "label": "2",
+          "text": "0.6"
+        },
+        {
+          "label": "3",
+          "text": "0.4"
+        },
+        {
+          "label": "4",
+          "text": "0.7"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Formula**\n\nSpearman’s rank correlation coefficient is denoted by ρ\n\nρ = 1 – [6∑d²/n(n² – 1)]\n\nd = difference between rank of paied items of x and y variables\n\n∑d² = total of squares of rank differences\n\nn =",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082a51de9109b50edfedcdd",
+      "n": 34,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If 4y = 15 + 6x is the regression line of y on x, and coefficient of correlation between x and y is 0.9, then regression coefficient of x on y is equal to _______.",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.54"
+        },
+        {
+          "label": "2",
+          "text": "0.45"
+        },
+        {
+          "label": "3",
+          "text": "0.81"
+        },
+        {
+          "label": "4",
+          "text": "0.72"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nRegression line of y on x\n\n4y = 15 + 6x\n\ny = 15/4 + (6/4)x\n\nCoefficient of correlation between x and y = ρₓy = 0.9\n\n**Formula**\n\nIf the regression coefficient of x on y be bₓy, then\n\n&l",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082a577e9109b50edfee5db",
+      "n": 35,
+      "type": "mcq",
+      "concept": "Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find regression coefficient of y on x (byx) if correlation coefficient between x and y values is 0.75 and standard deviation of x and y are 5 and 6.4 respectively.",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.96"
+        },
+        {
+          "label": "2",
+          "text": "0.59"
+        },
+        {
+          "label": "3",
+          "text": "1.04"
+        },
+        {
+          "label": "4",
+          "text": "1.7"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given **\n\nCorrelation coefficient between x on y = 0.75\n\nStandard deviation of x and y = 5 and 6.4\n\n**Formula **\n\nCorrelation coefficient ‘r’ = Cov(x,y)/SₓSy\n\nCov(x,y) = Coveriance of x and y\n\nSₓ = Standard deviation of x\n\nSy = Standard deviation of y\n\nCorrelation coefficient of y on x = byₓ = Cov(x,y)/Sₓ²\n\n**Calculation**\n\n0.75 = Cov(x,y)/5 × 6.4\n\n⇒ Cov(x,y) = 0.75 × 5 × 6.4\n\n⇒ Cov(x,y) = 24\n\n⇒ byₓ = 24/5²\n\n∴ byₓ = 24/25\n\n**∴**** correlation coefficient of y on x is 0.96**",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "qid": "6082a692206a2b97fe0849f3",
+      "n": 36,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If a box contains 4 red balls and 6 blue balls then what is the probability of picking 2 balls of the same colour?",
+      "options": [
+        {
+          "label": "1",
+          "text": "8/15"
+        },
+        {
+          "label": "2",
+          "text": "12/25"
+        },
+        {
+          "label": "3",
+          "text": "13/25"
+        },
+        {
+          "label": "4",
+          "text": "7/15"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\nRed ball = 4 and blue balls = 6\n\n**Formula**\n\nP(E) = P(E₁) + P(E₂)\n\nⁿCᵣ = n!/r!(n – r)!\n\n**Calculation**\n\nProbability when 2 red balls are drawn then the probability\n\n⇒ P(E₁) = ⁴C₂/¹⁰C₂\n\nProbability when 2 blue balls are drawn\n\nP(E₂) = ⁶C₂/¹⁰C₂\n\n⇒ P(E) = = ⁴C₂/¹⁰C₂ + ⁶C₂/¹⁰C₂\n\n⇒ (⁴C₂ + ⁶C₂)/¹⁰C₂\n\n⇒ [4!/2!(4 – 2)! + 6!/2!(6 – 2)!]/10!/2!(10 – 2)!\n\n⇒ (6 + 15)/10!/2! × 8!\n\n⇒ (21 × 2)/(10 × 9)\n\n⇒ 42/90\n\n⇒ P(E) = 7/15\n\n**∴ The probability of picking 2 balls of the same order is 7/15**",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6082a6b920f192bdd5bfd57f",
+      "n": 37,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A doctor finds of all patients that visits his clinic the probability that a patient is alcoholic given that the patient has liver disease is 0.08. The probability that a patient is alcoholic is 0.06 and the probability that a patient has liver disease is 0.12. Find the probability that a patient has liver disease given that he or she is alcoholic?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.04"
+        },
+        {
+          "label": "2",
+          "text": "0.09"
+        },
+        {
+          "label": "3",
+          "text": "0.16"
+        },
+        {
+          "label": "4",
+          "text": "0.24"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given**\n\nProbability that patient is alcoholic P(A) = 0.06\n\nProbability that a patient has lever disease P(L) = 0.12\n\nProbability that the patient is alcoholic given that the patient has lever disease = P(A/B) = 0.08\n\n**Formula**\n\nProbability that the patient has lever disease given that he or she is alcoholic\n\nP(L/A) = P(A ∩ L)/P(L)\n\nP(A ∩ L) = P(A/L) × P(L)\n\nP(L/A)_ = P(A ∩ L)/P(A)\n\nCalculation\n\nP(A ∩ L) = 0.08 × 0.12\n\nP(L/A)_= 0.08 × 0.12/0.06\n\n⇒ 0.16\n\n**∴**** The probability that the patient has liver disease given that he or she is alcoholic is 0.16**",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6082a6f7322fc014435eb3b8",
+      "n": 38,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the probability that a number selected randomly from 1 to 500 is a multiple of 3 or 7?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.428"
+        },
+        {
+          "label": "2",
+          "text": "0.474"
+        },
+        {
+          "label": "3",
+          "text": "0.512"
+        },
+        {
+          "label": "4",
+          "text": "0.576"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Calculation**\n\nThe numbers which are multiples of 3 from 1 to 500 are\n\n⇒ 3, 6, ------498\n\n⇒ 498 = 3 + (n – 1) × 3\n\n⇒ n – 1 = 495/3\n\n⇒ n = 166\n\nThe numbers which are divisible by 7\n\n7, 14, ---------497",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6082a7272007618d1546a24c",
+      "n": 39,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If P(A) = 2/3 and P(B) = 5/8 and find probability of only B occurring if probability of only A occurring is 1/6?",
+      "options": [
+        {
+          "label": "1",
+          "text": "1/8"
+        },
+        {
+          "label": "2",
+          "text": "1/9"
+        },
+        {
+          "label": "3",
+          "text": "1/6"
+        },
+        {
+          "label": "4",
+          "text": "2/9"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nP(A) = 2/3\n\nP(B) = 5/8\n\nP(Only A occurring) = 1/6\n\n**Calculation**\n\n [IMAGE: https://cdn.repeatermock.com/tb/e99c50b03d71a014c64d52762d9d462aae41de75ff252962a983d3fcb2cefd21.png] \n\nP(A ∩ B) = P(A) – P(Only A occurring)\n\n⇒ 2/3 – 1/6\n\nP(A ∩ B) = ½\n\nProbability of only B occurring = P(B) - P(A ∩ B)\n\n⇒ 5/8 – 1/2\n\n**∴ Probability of only B occurring is 1/8**",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/e99c50b03d71a014c64d52762d9d462aae41de75ff252962a983d3fcb2cefd21.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a751cc0d727c65ae46f5",
+      "n": 40,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find P(A'/B'), given P(A) = 3/4, P(B) = 9/20 and P(A∩B) = 1/4?",
+      "options": [
+        {
+          "label": "1",
+          "text": "1/20"
+        },
+        {
+          "label": "2",
+          "text": "1/9"
+        },
+        {
+          "label": "3",
+          "text": "1/11"
+        },
+        {
+          "label": "4",
+          "text": "1/12"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nP(A) = 3/4\n\nP(B) = 9/20\n\nP(A ∩ B) = 1/4\n\n**Calculation:**\n\nP(A ∪ B) = P(A) + P(B) – P(A ∩ B)\n\n= 3/4 + 9/20 – 1/4\n\n= 19/20\n\nP(A'/B') = P(A' ∩ B')/P(B')= 1 – P(A ∪ B)'/[1 – P(B)]\n\n= [1 – 19/20]/[1 – 9/20]\n\n=1/11\n\n**∴ Probability P(A'/B') is 1/11.**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a779206a2b97fe08555d",
+      "n": 41,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A and B are independent events. The odds in favour of A and B are 1:1 and 3:2 respectively. Find the probability that only one of the two events occurs?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.6"
+        },
+        {
+          "label": "2",
+          "text": "0.7"
+        },
+        {
+          "label": "3",
+          "text": "0.8"
+        },
+        {
+          "label": "4",
+          "text": "0.5"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\nOdds in favour of A and B are 1 : 1 and 3 : 2\n\nP(A) = 1/2\n\nP(B) = 3/5\n\n**Calculation**\n\n<img alt=\"\" src=\"https://cdn.repeatermock.com/tb/e99c50b03d71a014c64d52762d9d462aae41de75ff252962a983d3fcb2cefd21.png\" style=\"width: 191px; height: 150px;\" /&",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a7acb7545c5269e3a2fc",
+      "n": 42,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "There are five cards with the numbers 1, 3, 5, 6 and 9. Find the probability that a 5 digit number formed by using these cards is divisible by 4?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.1"
+        },
+        {
+          "label": "2",
+          "text": "0.3"
+        },
+        {
+          "label": "3",
+          "text": "0.2"
+        },
+        {
+          "label": "4",
+          "text": "0.4"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Explanation:**\n\nThe total number of 5 digit numbers that can be formed by using the five cards\n\n⇒ 5! = 120\n\n**Divisibility of 4:**\n\nA number is divisible by 4 if it's last two digit is divisible by 4\n\nNow, The numbers of number formed by these 5 digits which is divisible by 4 \n\nCase 1. When the last two digit is 16 \n\nThe numbers of number formed = 3! = 6\n\nCase 2. When the last two digit is 36 \n\nThe numbers of number formed = 3! = 6\n\nCase 3. When the last two digit is 56\n\nThe numbers of number formed = 3! = 6\n\nCase 4. When the last two digit is 96\n\nThe numbers of number formed = 3! = 6\n\nSo, The total numbers of number formed by these 5 digits which is divisible by 4 is 24\n\n**∴ The probability P(E) IS 24/120 = 0.2**",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6082a7decc0d727c65ae4d63",
+      "n": 43,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If 3 dice are thrown what is the probability of getting same digits on atleast two dices?",
+      "options": [
+        {
+          "label": "1",
+          "text": "1/36"
+        },
+        {
+          "label": "2",
+          "text": "7/36"
+        },
+        {
+          "label": "3",
+          "text": "27/216"
+        },
+        {
+          "label": "4",
+          "text": "1/6"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Explanation**\n\nWhen 3 dice dice thrown the total outcomes n(s) = 216\n\nTotal outcomes having all the same digits are\n\n{(1, 1, 1), (2, 2, 2), .....(6, 6, 6)} = 6 outcomes\n\nTotal outcomes having two same digits are\n\n(1, 1, 2), (1, 1, 3), (1, 1, 4), (1, 1, 5), (1, 1, 6) = 5 outcomes\n\n<span st",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6082a805fac67aa8cd9a0018",
+      "n": 44,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a family of three children, what is probability that the third child is a girl given that the other two are also girls?",
+      "options": [
+        {
+          "label": "1",
+          "text": "frac 13"
+        },
+        {
+          "label": "2",
+          "text": "frac 23"
+        },
+        {
+          "label": "3",
+          "text": "frac 14"
+        },
+        {
+          "label": "4",
+          "text": "frac 16"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Formula**\n\nProbability = Favourable outcome/total outcome\n\n**Calculation**\n\nFamily of 3 children = G, G, G whereas G = Girls\n\nWe can select girl as ³C₁ = (3 !)/(1! (3-1)!) = 3\n\nNo of possible ways to select the girls b",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6082a82d0692f21d4b918489",
+      "n": 45,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A, B and C are three mutually exclusive and exhaustive events. P(A) = 2P(B) = 6P(C). Find P(B).",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.1"
+        },
+        {
+          "label": "2",
+          "text": "0.3"
+        },
+        {
+          "label": "3",
+          "text": "0.6"
+        },
+        {
+          "label": "4",
+          "text": "0.4"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nP(A) = 2P(B) = 6P(C)\n\n**Concept**\n\nWhen event are mutually exclusive and exhaustive\n\nP(A) + P(B) + P(C) = 1\n\n**Calculation**\n\nLet P(A) be k\n\n⇒ P(B) = k/2\n\n⇒ P(C) = k/6\n\nSo according to the concept\n\n⇒ k + k/2 + k/6 = 1\n\n⇒ 10k/6 = 1\n\n⇒ k = 3/5\n\n**∴ P(B) is k/2 = 3/(5 × 2) = 0.3**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a8a7b7545c5269e3b44f",
+      "n": 46,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the expected value of a random variable which has the following probability distribution?\n\n \n \n\n **X:**\n 2\n 4\n <td s",
+      "options": [
+        {
+          "label": "1",
+          "text": "5.2"
+        },
+        {
+          "label": "2",
+          "text": "5.4"
+        },
+        {
+          "label": "3",
+          "text": "5.6"
+        },
+        {
+          "label": "4",
+          "text": "5.8"
+        }
+      ],
+      "correct": "3",
+      "solution": "__**Calculation**__\n\nWe know expected value of random variable\n\nf(x) = ∑xᵢpᵢ\n\nwhere I = 1, 2, 3,-----n\n\nf(x) = P₁x₁ + P₂x₂ + P₃x₃ + P₄x₄ + P₅x₅\n\n⇒ f(x) = 0.1 × 2 + 0.3 × 4 + 0.4 × 6 + 0.1 × 8 + 0.1 × 10\n\n⇒ 0.2 + 1.2 + 2.4 + 0.8 + 1\n\n**∴**** f(x) = 5.6**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a8cc2fdb5a83b7d41eee",
+      "n": 47,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a box of 100 bulbs 30 are defective. What is the probability of getting more than 2 defective bulbs if 5 are chosen randomly from the box?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.124"
+        },
+        {
+          "label": "2",
+          "text": "0.213"
+        },
+        {
+          "label": "3",
+          "text": "0.264"
+        },
+        {
+          "label": "4",
+          "text": "0.163"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Calculation**\n\nTotal number of bulbs = 100\n\nDefective bulb = 30\n\nProbability of defective bulb = p = 30/100\n\n⇒ p = 3/10\n\n⇒ q = 1 – p\n\n⇒ q = 1 – 3/10 = 7/10\n\nWhen 5 bulb are chosen random, n = 5\n\nP(X = x) = ⁿcₓpxqⁿ – x\n\n⇒ ⁵cₓpxq⁵ – x\n\nGetting more than 2 defective bulbs, x = 3, 4, 5\n\n⇒ ⁵c₃(3/10)³(7/10)² + ⁵c₄(3/10)⁴(7/10) + ⁵c₅(3/10)⁵(7/10)⁵ – ⁵\n\n⇒ 0.1323 + (5 × 81 × 7)/100000 + (243/100000)\n\n⇒ 0.1323 + 0.02835 + 0.00243\n\n⇒ 0.163\n\n**∴ Probability of getting more than 2 defective bulbs if 5 are chosen randomly from the box is 0.163**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a8f3af6ec273ca7851b0",
+      "n": 48,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean and variance of a binomial distribution are 5 and 4 respectively. What is the probability of success?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.3"
+        },
+        {
+          "label": "2",
+          "text": "0.2"
+        },
+        {
+          "label": "3",
+          "text": "0.4"
+        },
+        {
+          "label": "4",
+          "text": "0.1"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nMean of binomial distribution = np = 5\n\nVariance of binomial distribution = npq = 4\n\n**Calculation**\n\nnpq = 4 and np = 5\n\n⇒ 5q = 4\n\n⇒ q = 4/5\n\n⇒ p = 1 – q\n\n⇒ p = 1 – 4/5\n\n**∴ Probability of success = 1/5 = 0.2**",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6082a9452fdb5a83b7d42722",
+      "n": 49,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the mean of a Poisson distribution is 9 then its variance is equal to ________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "3"
+        },
+        {
+          "label": "2",
+          "text": "9"
+        },
+        {
+          "label": "3",
+          "text": "6"
+        },
+        {
+          "label": "4",
+          "text": "81"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nMean of poisson distribution = 9\n\n**Calculation**\n\nIn poisson distribution mean is equal to variance\n\n**∴**** Variance is 9**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6082a96633784c738fda1933",
+      "n": 50,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the mean of x if x is a Poisson variate satisfying the condition P(3) = P(4)?",
+      "options": [
+        {
+          "label": "1",
+          "text": "2"
+        },
+        {
+          "label": "2",
+          "text": "8"
+        },
+        {
+          "label": "3",
+          "text": "4"
+        },
+        {
+          "label": "4",
+          "text": "16"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given**\n\nP(3) = P(4)\n\n**Concept**\n\nIn poisson distribution = it is also a discrete distribution. Poisson distribution fulfil the limitation of nomal distribution\n\nPoisson distribution is given by f(x) = (e⁻λ × λx)/x!\n\nWhere x = 0, 1, 2, 3---- and λ = mean\n\n**Calculation**\n\nHere x = 3 and 4\n\n**⇒** (e⁻λ × λ³)/3! = (e⁻λ × λ⁴)/4!\n\n⇒ λ = 4!/3!\n\n⇒ λ = 4\n\n∴ **mean of x in poisson distribution is 4**",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6086521f2832a2bc3d7b7ee5",
+      "n": 51,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For a standard normal distribution P(-1",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.68"
+        },
+        {
+          "label": "2",
+          "text": "0.34"
+        },
+        {
+          "label": "3",
+          "text": "0.99"
+        },
+        {
+          "label": "4",
+          "text": "0.49"
+        }
+      ],
+      "correct": "1",
+      "solution": "__**Calculation**__\n\n [IMAGE: https://cdn.repeatermock.com/tb/50b4e026d29b493e257262c730cc17d1255e785f03e7617d449bc1ee18b1c9c6.png] \n\nP(- 1 [IMAGE: https://cdn.repeatermock.com/tb/c76c13ba2d2ab46b47f8a931ae621dac081a0cb266b142dc23f58659fac4a466.png] **__Alternate Method__**\n\n \n• Normal (Gaussian) Distribution:\n\n \n \n• The normal distribution is another limiting form of the binomial distribution under the following conditions:\n\n \n \n• The number of trials 'n' is definitely large.\n \n• Neither p nor q is very small.(p = event will happen, q = event will not happen)\n \n \n \n• ​The normal probability density function with mean μ and standard deviation σ is given by \n \n \n• (1)/({sigma sqrt {2pi ) }}{e⁽ {frac{{ ⁻ {{⁽ {X ⁻ μ )}²}}}{{2{sigma ²}}}} )}}​--------1\n \n \n \n• The maximum probability occurs at the point x=μ and is given by :\n \n \n• (1)/({sigma sqrt {2pi ) }}--------2\n \n \n \n• From equation 2 it signifies that smaller the values of standard deviation produce larger values of maximum probability this is called a measure of the precision of data or precision index.\n \n \n\n​ [IMAGE: https://cdn.repeatermock.com/tb/034fa3cc7c376e5c8d4b97903fd30b6074937c5dc5703b9fe9f8ad966fb32431.png] \n\nb6:T1",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/50b4e026d29b493e257262c730cc17d1255e785f03e7617d449bc1ee18b1c9c6.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/c76c13ba2d2ab46b47f8a931ae621dac081a0cb266b142dc23f58659fac4a466.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/034fa3cc7c376e5c8d4b97903fd30b6074937c5dc5703b9fe9f8ad966fb32431.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "60865249bc1128b8980b4bb4",
+      "n": 52,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If x follows normal distribution with mean = 20 and variance = 25. What is P(x ≥ 25)? Given P(z ≤ 1) = 0.841, P(z ≤ 2) = 0.977",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.023"
+        },
+        {
+          "label": "2",
+          "text": "0.16"
+        },
+        {
+          "label": "3",
+          "text": "0.32"
+        },
+        {
+          "label": "4",
+          "text": "0.046"
+        }
+      ],
+      "correct": "2",
+      "solution": "Given\n\nμ = mean = 20\n\nσ2 = variance = 25\n\nFormula\n\nP(z ≤ 1) = 0.841\n\nP(z ≤ 2) = 0.977\n\nIn normal distribution\n\nz = (x - μ)/σ\n\nCalculation\n\nAccording to question, here x = 25\n\nStandard deviation = √σ = 5\n\n⇒ z = (25 - 20)/5\n\n⇒ z = 1\n\n [IMAGE: https://cdn.repeatermock.com/tb/8241760e0c499bc0c8056755060fe78ca8c6b38c1254e1a25dbb085051184230.png] \n\n⇒ P(x ≥ 25) = P(z ≥ 1)\n\n⇒ 1 - P(z ≤ 1)\n\n⇒ 1 - 0.841\n\n⇒ 0.16\n\n∴ The value of P(x ≥ 25) is 0.16",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/8241760e0c499bc0c8056755060fe78ca8c6b38c1254e1a25dbb085051184230.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "6086526f2c8d1a50783edd78",
+      "n": 53,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "10% of people in a village are afflicted with a viral disease. What size of sample should be taken to ensure that error of estimation of the proportion is not more than 5% with 95% confidence?",
+      "options": [
+        {
+          "label": "1",
+          "text": "138"
+        },
+        {
+          "label": "2",
+          "text": "238"
+        },
+        {
+          "label": "3",
+          "text": "38"
+        },
+        {
+          "label": "4",
+          "text": "338"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\n10% people of the village are affected with viral disease\n\nerror margin = 5% or 5/100\n\n**Formula**\n\nError margin ≤ z × √(pq/n)\n\np denotes the probability of a success on one trial and q denotes the probability of a failure on one trial\n\nn = size of the sample\n\n**Calculation**\n\n**p = 10% = 10/100**\n\n**⇒ p = 0.1**\n\n**We know that q = 1 - p**\n\n**⇒ q = 1 - 0.1**\n\n**⇒ q = 0.9**\n\nAccording to formula\n\n⇒ 5/100 ≤ 1.96 × √(0.1 × 0.9/n)\n\n⇒ 5/100 = 1.96 × 0.3/√n\n\n⇒ 5√n = 196 × 0.3\n\n⇒ √n = 58.8/5\n\n⇒ n = 138\n\n**∴ Size of the sample should taken as 138**\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] __Additional Information__**z - Values for Selected (Percentage) Confidence Levels:\n\n \n \n\n \n \n**Percentage **\n\n \n**Confidence**\n\n \n **z-value**\n \n \n\n 80\n 1.28\n \n \n\n 90\n 1.645\n \n \n\n 95\n 1.96\n \n \n\n 98\n 2.33\n \n \n\n 99\n 2.58",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086529dbc1128b8980b4e23",
+      "n": 54,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A random sample of 100 articles from a large batch of articles contains 10 defective articles. What is the standard error of estimation of the sample proportion?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.02"
+        },
+        {
+          "label": "2",
+          "text": "0.01"
+        },
+        {
+          "label": "3",
+          "text": "0.04"
+        },
+        {
+          "label": "4",
+          "text": "0.03"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\n**n = 100**\n\np = 10/100 = 0.1\n\nq = 1- p = 1 - 0.1 = 0.9\n\n**Formula**\n\nStandard error of estimation = SEₚ = √[(pq)/n]\n\n**Calculation**\n\nSEP = √(0.1 × 0.9)/100]\n\n⇒ 0.03\n\n**∴ Standard error of estimation is 0.03**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608652c2a5cbc1f03c28b8c9",
+      "n": 55,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A statistician estimated that the standard deviation of her measurements is 2 cm. What should be the size of the sample in order to be 99% confident that the error of her estimates of mean does not exceed 0.43 cm? (z* = 2.58, for 99% confidence level)",
+      "options": [
+        {
+          "label": "1",
+          "text": "144"
+        },
+        {
+          "label": "2",
+          "text": "121"
+        },
+        {
+          "label": "3",
+          "text": "169"
+        },
+        {
+          "label": "4",
+          "text": "196"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nStandard deviation σ = 2 cm\n\nz = 2.58 for 99% confident level\n\n**Formula**\n\nStandard error = σ/√n\n\n**Calculation**\n\n**SE= σ/√n**\n\n⇒ 2.58 × &",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608652ff9afa72d761d306ec",
+      "n": 56,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The standard error =__________. ( s is the standard deviation of the sample, N is the population size, and n is the sample size. N >20n)",
+      "options": [
+        {
+          "label": "1",
+          "text": "s/√n"
+        },
+        {
+          "label": "2",
+          "text": "s/√N"
+        },
+        {
+          "label": "3",
+          "text": "√(s/n)"
+        },
+        {
+          "label": "4",
+          "text": "√(s/N)"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Explanation**\n\nWhen the standard deviation of the population is known( then for the large samples\n\n**Standard error = s/√n**\n\ns = standard deviation for large sample\n\nn = number of obserbvations",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608653328ecdd375037f8bf0",
+      "n": 57,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A random sample of 2 items is picked out from a population of 15 items. The number of all such samples is ________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "105"
+        },
+        {
+          "label": "2",
+          "text": "60"
+        },
+        {
+          "label": "3",
+          "text": "210"
+        },
+        {
+          "label": "4",
+          "text": "90"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nTotal items = 15\n\nSelect = 2\n\n**Formula**\n\n**ⁿCᵣ = n!/r!(n - r)!**\n\n**Calculation**\n\nThe number of such samples = ¹⁵C₂ = 15!/2!(15 - 2)!\n\n⇒ 15 × 14 × 13!/2 × 13!\n\n⇒ 15 × 7 = 105\n\n**∴ The number of all such samples is 105.**",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "60865365e38e9ca13ab98017",
+      "n": 58,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The average length of a sample of 50 leaves measured by a botanist was 40 mm with a standard deviation of 21 mm. Assuming normal deviation find the limits which have a 95% chance of including the expected length of the leaf.",
+      "options": [
+        {
+          "label": "1",
+          "text": "42.35 - 37.65"
+        },
+        {
+          "label": "2",
+          "text": "34.12 - 45.88"
+        },
+        {
+          "label": "3",
+          "text": "43.12 - 36.88"
+        },
+        {
+          "label": "4",
+          "text": "44.58 - 35.42"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nSample size = 50 mm\n\nMean = x̅ = 40 mm\n\nStandard deviation = σ = 21 mm\n\n**Concept**\n\nFor the population means μ (or expected length; the standard is normal and it is given by\n\nx̅ ± 1.96 σ/√n\n\n**Calculation**\n\n**40 **± (1.96 × 21)/√50\n\n⇒ 40 ± 5.88\n\n⇒ 34.12 or 45.88\n\n**∴ The limits which have a 95% chance of including the expected length of the leaf was &\namp;nbsp;34.12 or 45.88**\n\nb",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086538ad8ad9566c97e65b6",
+      "n": 59,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The 95% confidence level limits to a population mean are 94.12 - 105.88. Find population standard deviation if sample size is 100.",
+      "options": [
+        {
+          "label": "1",
+          "text": "15"
+        },
+        {
+          "label": "2",
+          "text": "30"
+        },
+        {
+          "label": "3",
+          "text": "45"
+        },
+        {
+          "label": "4",
+          "text": "60"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nConfidence level limits = 94.12 - 105.88\n\nSample size = 100\n\n**Concept **\n\n**p **± 1.96 SE\n\nSE = 1.96 σ/√n\n\n**Calculation**\n\n<",
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "608653acb6372c4a0262f0e0",
+      "n": 60,
+      "type": "mcq",
+      "concept": "Probability and Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a particular study if the sample size was 50, then standard error was 8 units. How much would be the standard error if sample size was increased to 200?",
+      "options": [
+        {
+          "label": "1",
+          "text": "4"
+        },
+        {
+          "label": "2",
+          "text": "2"
+        },
+        {
+          "label": "3",
+          "text": "16"
+        },
+        {
+          "label": "4",
+          "text": "8"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nn = 50\n\nS = 8\n\nn = sample size\n\nS = Standard deviation\n\n**Formula**\n\nS = ρ/√n\n\n**Calculation**\n\nWe know that from the upper formula, ρ = S√n\n\n⇒ 8 × √50\n\nAccording to the question, if the sample size increased by 200\n\n⇒ new n = 200\n\n⇒ Standard error = ρ/√n\n\n⇒ (8 × √50)/√200\n\n⇒ 4\n\n**∴ The standard error is 4 if sample size was increased to 200.**\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] __Additional Information__** \n\n \n• **Standard Deviation (S. D): **\n\n \n \n• A standard deviation denoted by σ is a measurement of the spread of a dataset around its mean**. \n \n• Low standard deviation means data are clustered around the mean, and high standard deviation indicates data are more spread out.\n \n \n \n• ​**Standard Error (S. E): **\n \n \n• The standard error of the mean, or simply standard error, indicates** how different the population mean is likely to be from a sample mean**. \n \n• It tells you how much the sample mean would vary if you were to repeat a study using new samples from within a single population.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Probability and Statistics"
+      ]
+    },
+    {
+      "qid": "608653d6d8ad9566c97e67c0",
+      "n": 61,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A random sample of 200 articles taken from a large batch of articles contains 15 defective articles. What is the estimate of the sample proportion of defective articles?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.186"
+        },
+        {
+          "label": "2",
+          "text": "0.054"
+        },
+        {
+          "label": "3",
+          "text": "0.0816"
+        },
+        {
+          "label": "4",
+          "text": "0.54"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given**\n\nNumber of defective bulbs = 15\n\nTotal sample = 200\n\n**Calculation**\n\nThe estimation of sample proportion = Number of defective bulbs/(Total sample - Number of defective bulbs)\n\n⇒ 15/(200 - 15)\n\n⇒ 15/185\n\n⇒ 0.0816\n\n**∴ The estimate of the sample proportion of defective articles is 0.0816**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865413c185344f39775574",
+      "n": 62,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A factory manufactures 10,000 bolts per day. From a sample of 500 bolts, 4% were of unacceptable quality. Estimate the interval of a number of bolts that would be of unacceptable quality produced per day at 95% confidence.",
+      "options": [
+        {
+          "label": "1",
+          "text": "(313, 487)"
+        },
+        {
+          "label": "2",
+          "text": "(305, 495)"
+        },
+        {
+          "label": "3",
+          "text": "(328, 472)"
+        },
+        {
+          "label": "4",
+          "text": "(233, 567)"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\nTotal manufactures bulbs = N = 10,000\n\nSample = n = 500\n\nDefective pairs = 4%\n\n**Calculation**\n\n**Here**\n\n⇒ p = 4% = .04\n\n⇒ q = 1 - p\n\n⇒ q = 1 - 0.04\n\n⇒ q = .96\n\n⇒ Estimation of error = SE = √pq/sample\n\n⇒ √(.04 × .96)/500\n\n⇒ SE = .0087\n\n⇒ Zα = 1.96 (Given value)\n\n⇒ SE × Zα = .0087 × 1.96\n\n⇒ 0.0167\n\n⇒ p ± SE × Zα \n\n⇒ 0.4 ± 0.167\n\n⇒ 0.4 + 0.167 = 0.0567\n\n⇒ 0.4 - 0.167 = .0233\n\n⇒ Number of bolts can be expected to be spoiled = 10000 × 0.0567\n\n⇒ 567\n\n⇒ Number of bolts can be expected to be spoiled = 10000 × 0.0233\n\n⇒ 233\n\n**⇒ the interval of a number of bolts that would be of unacceptable quality produced per day at 95% confidence is 233, 567**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086545d3ee63106f1882ceb",
+      "n": 63,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean pay of 15 H1-B visa holders was found to be Rs 65 lakhs/yr with a standard deviation of Rs 6 lakhs. What are the 99% confidence limits (in Rs lakhs) for the mean pay of the population of H1-B visa holders assuming it to be normal? (The upper 0.5% of t-distribution with 14 degrees of freedom is 2.98)",
+      "options": [
+        {
+          "label": "1",
+          "text": "(61.88 , 68.12)"
+        },
+        {
+          "label": "2",
+          "text": "(60.22 , 69.77)"
+        },
+        {
+          "label": "3",
+          "text": "(62.55 , 67.45)"
+        },
+        {
+          "label": "4",
+          "text": "(59.33 , 70.67)"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Calculation**\n\nn = sample size = 15\n\nMean = x̅ = 65 lakhs\n\nStandard deviation = S = 6 lakh\n\n**Concept**\n\nConfidence interval = x̅ - tα/₂₎S/√n α/2)S/√n\n\nt(α/₂₎&nbs",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608654acc185344f39775ae2",
+      "n": 64,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The standard error of the mean decreases if the population standard deviation ______________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "increases or if sample size increases"
+        },
+        {
+          "label": "2",
+          "text": "decreases or if sample size increases"
+        },
+        {
+          "label": "3",
+          "text": "decreases or if sample size decreases"
+        },
+        {
+          "label": "4",
+          "text": "increases or if sample size decreases"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Explaination**\n\nStandard error of the mean = SEₓ- = σρ/√n\n\nHence SEₓ- decreases when population standard deviation(σρ) decreases or if sample size (n) increase",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608654e7bc1128b8980b66ce",
+      "n": 65,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A confidence interval increases in width as the ________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "sample size is increased"
+        },
+        {
+          "label": "2",
+          "text": "degrees of freedom is increased"
+        },
+        {
+          "label": "3",
+          "text": "level of confidence increases"
+        },
+        {
+          "label": "4",
+          "text": "sample standard deviation is decreased"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Explaination**\n\nAccording to the definition and the adjacent figure a confidence interval increases on width as the level of confidence increases\n\n [IMAGE: https://cdn.repeatermock.com/tb/e1307e3167c65f1f778d46abe8fa2af7476018cea19de2498ce6c3e2227ea1f7.png]",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/e1307e3167c65f1f778d46abe8fa2af7476018cea19de2498ce6c3e2227ea1f7.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865516fb46113c47c46dc5",
+      "n": 66,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the value of the z-score for x = 125 if population mean and variance are 121 and 4 respectively.",
+      "options": [
+        {
+          "label": "1",
+          "text": "2"
+        },
+        {
+          "label": "2",
+          "text": "1"
+        },
+        {
+          "label": "3",
+          "text": ".2"
+        },
+        {
+          "label": "4",
+          "text": ".1"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Formula**\n\nZ- score = ( x - μ)/σ\n\nμ = mean\n\nσ = Standard deviation\n\nStandard deviation = √(variance)\n\nx = 125\n\nμ = 121\n\nVariance = 4\n\n**Calculation**\n\n [IMAGE: https://cdn.repeatermock.com/tb/2f7b0ab8a5b7e0afead4fa55de9ed03ea6486bb1878227f494fd03faf57c0014.png] \n\nStandard deviation = √4\n\n⇒ 2\n\nZ- score = ( 125 - 121)/2\n\n⇒ 4/2\n\n**∴ Z - score is 2**",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/2f7b0ab8a5b7e0afead4fa55de9ed03ea6486bb1878227f494fd03faf57c0014.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086558cf6cda4f32eda08b2",
+      "n": 67,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In statistical hypothesis testing, a type I error is the _____________ a false null hypothesis.",
+      "options": [
+        {
+          "label": "1",
+          "text": "incorrectly retaining of a true null hypothesis, while a type II error is incorrectly retaining"
+        },
+        {
+          "label": "2",
+          "text": "incorrect rejection of a true null hypothesis, while a type II error is incorrectly retaining"
+        },
+        {
+          "label": "3",
+          "text": "incorrect rejection of a true null hypothesis, while a type II error is incorrect rejection"
+        },
+        {
+          "label": "4",
+          "text": "incorrectly retaining of a true null hypothesis, while a type II error is incorrect rejection"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Explaination**\n\nIn statistical in inferences, according to testing of hypothesis, rejecting a null hypothesis whenit is true while type 11 error is incorrectly retaining of a false hypothersis. So, second option is the correct answer.",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608655be8ecdd375037fa4c9",
+      "n": 68,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If, Sample from Population #1: \n\n3,5,8 \n\nSample from Population #2: \n\n2,4,8 \n\nSample from Population #3: \n\n3,6,7 \n\nThen what is the number of degrees of freedom of treatment?",
+      "options": [
+        {
+          "label": "1",
+          "text": "3"
+        },
+        {
+          "label": "2",
+          "text": "1"
+        },
+        {
+          "label": "3",
+          "text": "4"
+        },
+        {
+          "label": "4",
+          "text": "2"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\n \n \n\n \n \n \n\n \n \n \nSample\n\n \n 1\n\n \n \n \nSample\n\n \n 2\n\n \n \n \nSample\n\n \n 3\n\n \n \n \n\n \n \n \n\n \n \n \nX₁\n\n \n \n \nX₂\n\n \n \n \nX₃\n\n \n \n \n\n \n \n \n\n \n \n \n3\n\n \n \n \n2\n\n \n \n \n3\n\n \n \n \n\n \n <p s",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086560bfb46113c47c47ace",
+      "n": 69,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If we have to test if there’s a difference between two groups of patients from different hospitals trying two different therapies, then we need to use ___________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Two way ANOVA without replication"
+        },
+        {
+          "label": "2",
+          "text": "One way ANOVA with replication"
+        },
+        {
+          "label": "3",
+          "text": "Two way ANOVA with replication"
+        },
+        {
+          "label": "4",
+          "text": "One way ANOVA without replication"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Explaination**\n\nWhen it is believed that two independent factors might have as effect on the response variables of interest. It is possible to design the test so that an analysis if variance can be used to test for the effect of the factors simultaneously with the two factors analysis of variance, we can test two sets hypothesis with the same data at the same times.\n\n**∴ Option 3 is correct **",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608656333ee63106f18840b1",
+      "n": 70,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If confidence level is 90% then two tailed alpha would be ________ %.",
+      "options": [
+        {
+          "label": "1",
+          "text": "10"
+        },
+        {
+          "label": "2",
+          "text": "45"
+        },
+        {
+          "label": "3",
+          "text": "2.5"
+        },
+        {
+          "label": "4",
+          "text": "5"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\nConfidence level = 90%\n\n**Calculation**\n\n [IMAGE: https://cdn.repeatermock.com/tb/7ec612bc492fcca3c6356a4534b7ce2b63a68474de4bd22cf099279065790974.png] \n\n⇒ One level alpha = 100 - 90 \n\n⇒ 10%\n\n**∴ Two level alpha 10%/2 is 5%**",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/7ec612bc492fcca3c6356a4534b7ce2b63a68474de4bd22cf099279065790974.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865677fb46113c47c47ddf",
+      "n": 71,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The smaller the alpha level, the _________ the null hypothesis.",
+      "options": [
+        {
+          "label": "1",
+          "text": "greater the area where you would reject"
+        },
+        {
+          "label": "2",
+          "text": "smaller the area where you would reject"
+        },
+        {
+          "label": "3",
+          "text": "smaller the area where you would accept"
+        },
+        {
+          "label": "4",
+          "text": "greater the area where you would accept"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Explanation**\n\nSmaller the value of α level, the confidence level will be high and hence smaller will be the level of null hypothesis\n\n**∴ Smaller will be the area of rejection**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608656afbc1128b8980b7c03",
+      "n": 72,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean square of error denoted as MSE = ___________. Where SSE is the sum of squares of error, n is number of data points and m is number of samples.",
+      "options": [
+        {
+          "label": "1",
+          "text": "SSE/(n - m - 2)"
+        },
+        {
+          "label": "2",
+          "text": "SSE/(n + m)"
+        },
+        {
+          "label": "3",
+          "text": "SSE/(n + m - 2)"
+        },
+        {
+          "label": "4",
+          "text": "SSE/(n - m)"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Formula**\n\nMSE = SSE/Degree of freedom\n\nMSE = Variance within the samples\n\nSSE = Sum of the squares of the error\n\n**Calculation** \n\nFor one - way classification model degree of freedom = n - m\n\nn = Number of data\n\nm = number of sample\n\n**∴ MSE = SSE/(n - m)**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608656d5fb46113c47c4821c",
+      "n": 73,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean square for treatment is 9. The mean square for error is 4. Calculate the F-statistic.",
+      "options": [
+        {
+          "label": "1",
+          "text": "1.5"
+        },
+        {
+          "label": "2",
+          "text": "2.25"
+        },
+        {
+          "label": "3",
+          "text": "0.44"
+        },
+        {
+          "label": "4",
+          "text": "0.66"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nS₁² = 9\n\nS₂² = 4\n\nS₁² = mean square for treatment\n\nS₂² = Mean square for error\n\n**Formula**\n\nF - statistic = S₁²/S₂²\n\n**Calculation**\n\nF - statistic = 9/4\n\n**∴ **F - statistic is 2.25",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865713e38e9ca13ab9a252",
+      "n": 74,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "An ANOVA procedure is used for data that was obtained from four sample groups each comprised of five observations. The degrees of freedom dF1 and dF2 for the critical value of F are _________ respectively.",
+      "options": [
+        {
+          "label": "1",
+          "text": "3 and 16"
+        },
+        {
+          "label": "2",
+          "text": "3 and 19"
+        },
+        {
+          "label": "3",
+          "text": "4 and 16"
+        },
+        {
+          "label": "4",
+          "text": "4 and 19"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Calculation**\n\nDegree of freedom df₁ = (c - 1)\n\n⇒ (4 - 1)\n\n∴ Degree of freedom df1 = 3\n\n⇒ Degree of freedom df₂ = c(r - 1)\n\n⇒ 4(5 - 1)\n\n∴ Degree of freedom df₂ = 16\n\n∴ The degrees of freedom dF1 and dF2 for the critical value of F are 3 and 16",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086574cff72e3ac3297c14b",
+      "n": 75,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "When an analysis of variance is performed on samples drawn from k populations, the mean square between treatments (MSTR) is ___________. (Where SSTR is treatment sum of squares and SST is total sum of squares.)",
+      "options": [
+        {
+          "label": "1",
+          "text": "SSTR/(k - 1)"
+        },
+        {
+          "label": "2",
+          "text": "SST/(k - 1)"
+        },
+        {
+          "label": "3",
+          "text": "SSTR/(k+1)"
+        },
+        {
+          "label": "4",
+          "text": "SST/k"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Concept**\n\nIn one way classification model of ANOVA MSC = SSC/C - 1\n\nMSC = mean sum of square between samples\n\nSSC = sum of squares between samples\n\nc = number of populations\n\nUsing the formula MSC = SSC/(C - 1) we can write\n\n**∴ MSTR = SSTR/(K - 1)**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086577fe38e9ca13ab9a741",
+      "n": 76,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Convert the annual trend equation Y = a + bX into monthly trend equation.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Y = a/12 + (b/12)X"
+        },
+        {
+          "label": "2",
+          "text": "Y = 12a + bX"
+        },
+        {
+          "label": "3",
+          "text": "Y = a/12 + (b/144)X"
+        },
+        {
+          "label": "4",
+          "text": "Y = a + 12bX"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Concept**\n\nFrom annual trend equations, we can obtain monthly trend equations without any loss in accuracy. When Y units are annual totals then an\n\nannual trend equation can be converted into an equations of monthly totals by dividing the computed constant a by 12 and value of b by 144\n\nbecause the data are sums of 12 months hence, 'a' and 'b' must be divided by 12 and 'b; is again divided by 12 so that the time units (X will\n\nbe months as well as, 'b' would give monthly increments)\n\n**∴ The monthly trend equation becomes y = (a/12) + (b/144)X**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608657b1a5cbc1f03c28e5ef",
+      "n": 77,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the shape of the second degree trend equation?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Hyperbolic"
+        },
+        {
+          "label": "2",
+          "text": "Parabolic"
+        },
+        {
+          "label": "3",
+          "text": "Exponential"
+        },
+        {
+          "label": "4",
+          "text": "Sinusoidal"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Explanation**\n\nThe second degree trend equation is given by Y = a + bx + Cx²\n\n**∴ The shape of the second degree trend equation is barabolic**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608657ea3ee63106f1884f9a",
+      "n": 78,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the sales (Y) Vs time (X) trendline with 2010 as origin is Y = 16.25 + 1.25X, then what will be the trendline with 2015 as origin?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Y = 10 + 1.25X"
+        },
+        {
+          "label": "2",
+          "text": "Y = 22.5 + 6.25X"
+        },
+        {
+          "label": "3",
+          "text": "Y = 10 + 6.25X"
+        },
+        {
+          "label": "4",
+          "text": "Y = 22.5 + 1.25X"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Explanation**\n\nWith 2010 as origin the trendline equation is given Y = 16.25 + 1.25x\n\nNow if we take 2015 as the origin then the difference is 2015 - 2010 = 5\n\n∴ The equation of the trendline will be Y = 16.25 + 1.25(x + 5)\n\n**∴ The equation of the trendline will be Y = 22.50 + 1.25x**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086580f2832a2bc3d7bb8be",
+      "n": 79,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the sales (Y) trend is captured by the equation Y = 500 + 20t - t<span style=\" background-color: transparent; font-variant-numeric: normal; font-varia",
+      "options": [
+        {
+          "label": "1",
+          "text": "20"
+        },
+        {
+          "label": "2",
+          "text": "5"
+        },
+        {
+          "label": "3",
+          "text": "15"
+        },
+        {
+          "label": "4",
+          "text": "10"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Explanation**\n\nFor the sales Y, the trend equation is given by\n\n⇒ y = 500 + 20t - t²\n\n⇒ dy/dt = 20 - 2t\n\nFor maximum sales dy/dt = 0\n\n⇒ 20 - 2t = 0\n\n⇒ t = 10\n\n**∴ The maximum sales will be achieved when time is 10 years**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086583be38e9ca13ab9b2f8",
+      "n": 80,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Y = 500 + 0.75 t - 2.5 t<span",
+      "options": [
+        {
+          "label": "1",
+          "text": "185.5"
+        },
+        {
+          "label": "2",
+          "text": "346.5"
+        },
+        {
+          "label": "3",
+          "text": "257.5"
+        },
+        {
+          "label": "4",
+          "text": "742.5"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Explanation**\n\nThe trend equation for output of a copper mine with 2010 as origin is given as\n\n⇒ Y = 500 + 0.75t - 2.5t²\n\nNow, new origin 2020, then trendline\n\n⇒ replace t = t + 10\n\n⇒ Y = 500 + 0.75(t + 10) - 2.5(t + 10)²\n\n⇒ Y = 500 + 0.75t + 7.5 -2.5(t² + 100 + 20t)\n\n⇒ Y = 500 + 0.75t + 7.5 - 2.5t² - 250 - 50t\n\n⇒ Y = 257.5 - 49.2t - 2.5t²\n\n∴ This is origin 2.20 trendline. So to calculate production at this origin take t = 0\n\n**⇒ Y = 257.5 tonnes**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086587b0fec554da51f6736",
+      "n": 81,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The fitted annual sales trend is Yt<span style=\" back",
+      "options": [
+        {
+          "label": "1",
+          "text": "rising by a declining"
+        },
+        {
+          "label": "2",
+          "text": "falling by a declining"
+        },
+        {
+          "label": "3",
+          "text": "falling by an increasing"
+        },
+        {
+          "label": "4",
+          "text": "rising by an increasing"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Explanation**\n\nThe fitted annual sales trend is Yₜ = 180e⁰.²t\n\nThe t is always positive\n\n⇒ ex = 1 + x + x²/2! + x³/3! + -------\n\n**∴ Yₜ is rising by a increasing absolute amount**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608658a7f6cda4f32eda2a07",
+      "n": 82,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A pattern of variation of a time series that repeats every year is called ___________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Cyclical"
+        },
+        {
+          "label": "2",
+          "text": "Trend"
+        },
+        {
+          "label": "3",
+          "text": "Hyperbolic"
+        },
+        {
+          "label": "4",
+          "text": "Seasonal"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Explanation**\n\nSeasonal variations are those periodic movements in business activity which occur regularly every year and have their origin in the nature of the year itself\n\n∴ Those variations appear during a period of 12 months they can be predicted fairly accurately\n\n**∴ Option (4) is correct option**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086594f9afa72d761d34913",
+      "n": 83,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the moving average for the year 2010 is 23.6, calculate the moving average for the year 2011 using the data from the given table?\n\n \n \n\n **Year**\n **Sales (in Rs Lakhs)**\n \n \n\n 2005\n 20\n \n \n\n 2006\n 22\n \n \n\n 2007\n 23\n \n \n\n 2008\n 24\n \n \n\n 2009\n 21\n \n \n\n 2010\n 24\n \n \n\n 2011\n 27\n \n \n\n 2012\n 22\n \n \n\n 2013\n 30\n \n \n\n 2014\n 28\n \n \n\n 2015\n 32",
+      "options": [
+        {
+          "label": "1",
+          "text": "24.33"
+        },
+        {
+          "label": "2",
+          "text": "24"
+        },
+        {
+          "label": "3",
+          "text": "26.33"
+        },
+        {
+          "label": "4",
+          "text": "24.8"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\n \n \n\n \n \nYears\n\n \n \n \nSales ( in Rs.lakhs)\n\n \n \n \n\n \n \n2005\n\n \n \n \n20\n\n \n \n \n\n \n \n2006\n\n \n \n \n22\n\n \n \n \n\n \n \n2007\n\n \n \n \n23\n\n \n \n \n\n \n \n2008\n\n \n \n \n24\n\n \n \n \n\n \n \n2009\n\n \n \n \n21\n\n \n \n \n\n \n \n2010\n\n \n \n \n24\n\n \n \n \n\n \n \n2011\n\n \n \n \n27\n\n \n \n \n\n \n \n2012\n\n \n \n \n22\n\n \n \n \n\n \n \n2013\n\n \n \n \n30\n\n \n \n \n\n \n \n2014\n\n \n \n \n28\n\n \n \n \n\n \n \n2015\n\n \n \n \n32\n\n \n \n \n\nMoving average for the year 2010 = 23.6\n\n**Calculation**\n\nNumber of years from 2005 to 2010 = 6\n\n⇒ Hence moving average for the year 2011 = (23.6 × 6 + 27)/7\n\n⇒ (141.6 + 27)/7\n\n⇒ 168.6/7\n\n**∴ The moving average for the year 2011 using the data from the given table 24.8**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "6086597ebc1128b8980b97da",
+      "n": 84,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The linear trend equation developed for the annual sales Y (in Rs lakhs) of ABC Manufacturing Company is Y = 500 + 6t, where t is in years. By how much are sales increasing per year?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Rs 6,00,000"
+        },
+        {
+          "label": "2",
+          "text": "6 percent"
+        },
+        {
+          "label": "3",
+          "text": "6 times the number of years"
+        },
+        {
+          "label": "4",
+          "text": "in multiples of 6"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Explanation**\n\nThe trend equations for the annual sales is given as Y = 500 + 6t\n\nCompare this equation with linea trend equation y = a + bt\n\nb = The average change in the dependent variable for each unit change in time\n\n**∴ Increase in sales per year = 6 lakhs**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608659a350296c8594d1a78a",
+      "n": 85,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For the linear trend equation Y = a + bt, which symbol represents the average change in the dependent variable for each unit change in time?",
+      "options": [
+        {
+          "label": "1",
+          "text": "a"
+        },
+        {
+          "label": "2",
+          "text": "t"
+        },
+        {
+          "label": "3",
+          "text": "Y"
+        },
+        {
+          "label": "4",
+          "text": "b"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given**\n\nThe linear trend equation Y = a + bt\n\n**Calculation**\n\nAfter differentiate\n\ndy/dt = b\n\n**∴ The average change in the dependent variable (y) for each unit change in time is b**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608659c6f6cda4f32eda35cd",
+      "n": 86,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the trend equation to forecast demand Y (in Rs lakhs) for the required month (t) is Y = 100 + 20t - 5t2. What is the seasonally adjusted demand forecast for month 3 for which the corresponding seasonal index is 1.25?",
+      "options": [
+        {
+          "label": "1",
+          "text": "143.75"
+        },
+        {
+          "label": "2",
+          "text": "115"
+        },
+        {
+          "label": "3",
+          "text": "92"
+        },
+        {
+          "label": "4",
+          "text": "123.25"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given**\n\nSeasonal index = 1.25\n\ny = 100 + 20t - 5t²\n\n**Formula**\n\nSeasonal index = Seasonal adjusted demand/cast demand\n\n**Calculation**\n\nAccording to question\n\nt = 3, putting t",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "608659f9f6cda4f32eda37e3",
+      "n": 87,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Y = 100 - 0.4 t - t<span style=&q",
+      "options": [
+        {
+          "label": "1",
+          "text": "8.9% greater"
+        },
+        {
+          "label": "2",
+          "text": "9.8% lesser"
+        },
+        {
+          "label": "3",
+          "text": "8.9% lesser"
+        },
+        {
+          "label": "4",
+          "text": "9.8% greater"
+        }
+      ],
+      "correct": "3",
+      "solution": "**1 - Given**\n\nY = 100 - 0.4t - t²\n\n**Calculation**\n\nSales of day 1 = 100 - 0.4 × 1 - 1\n\n⇒ 100 - 1.4\n\n⇒ 98.6 unit\n\nSales of days 3\n\n⇒ 100 - 0.4 × 3 - 9\n\n⇒ 100 - 10.2\n\n⇒ 89.8 units\n\nHence, the sales of day 3 is lesser than that of the day 1 and less percentage\n\n⇒ (98.6 - 89.8)/98.6 × 100\n\n**∴ 8.9% lesser **",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865a2b0fec554da51f7936",
+      "n": 88,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the quarterly trend equation is given as Y = a + bX, then the annual trend equation will be ______________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "Y = 4a + 4bX"
+        },
+        {
+          "label": "2",
+          "text": "Y = 4a + bX"
+        },
+        {
+          "label": "3",
+          "text": "Y = a + 4bX"
+        },
+        {
+          "label": "4",
+          "text": "Y = 4a + 48bX"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Explanation**\n\nThe given trend quarterly equation is given as y = a + bx\n\nFor determining the annual trend equation a will be multiplied by 4 and b will be multiplied by 4 × 12 = 48\n\n**∴ The annual trend equation will be Y = 4a + 48bX**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865a4ffb46113c47c4a853",
+      "n": 89,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The last period’s sales forecast was Rs 100 lakhs and demand was Rs 90 lakhs. What is the simple exponential smoothing sales forecast (in Rs lakhs) with alpha of 0.4 for the next period?",
+      "options": [
+        {
+          "label": "1",
+          "text": "94"
+        },
+        {
+          "label": "2",
+          "text": "106"
+        },
+        {
+          "label": "3",
+          "text": "96"
+        },
+        {
+          "label": "4",
+          "text": "104"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given**\n\nLast period sales forecast = 100 lakhs\n\nSimple exponential sales forecast (α) = 0.4 for next year\n\n**Calculation**\n\nError in forecast = 90 - 100\n\n⇒ - 10\n\n⇒ Sₜ = Sₜ ₋ ₁ + α(eₜ)\n\n⇒ 100 + (0.4)( - 10)\n\n⇒ Sₜ = 100 - 4\n\n**∴ The simple exponential smoothing sales forecast (in Rs lakhs) with alpha of 0.4 for the next period is 96**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865a843ee63106f1886cd0",
+      "n": 90,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the trendline with 2016 as origin is Y = 125 - 3t -2t2, then what will be the trendline with 2014 as origin?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Y = 127 + 5t -2t2"
+        },
+        {
+          "label": "2",
+          "text": "Y = 123 + 5t -2t2"
+        },
+        {
+          "label": "3",
+          "text": "Y = 125 + 7t -2t2"
+        },
+        {
+          "label": "4",
+          "text": "Y = 127 + 7t -2t2"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nTrendline with 2016 as origin Y = 125 - 3t - 2t²\n\n**Calculation**\n\nSince (2016 - 2014) = 2\n\nThe origin is shifted backyard by 2 years\n\n∴ The trend equation w.r.t. 2014 as the origin will be\n\n⇒ Y = 125 - 3(t - 2) -2(t - 2)²\n\n⇒ y = 125 - 3t + 6 - 2(t² - 4t + 4)\n\n**∴ y = 123 + 5t - 2t²**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865b04c185344f397792a6",
+      "n": 91,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Use the data given in the table to calculate the Price Index using Laspeyres Formula.\n\n \n \n\n **Item**\n **P0**\n **Q0**\n **P1**\n **Q1**&",
+      "options": [
+        {
+          "label": "1",
+          "text": "137.6"
+        },
+        {
+          "label": "2",
+          "text": "72.65"
+        },
+        {
+          "label": "3",
+          "text": "122.3"
+        },
+        {
+          "label": "4",
+          "text": "81.7"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Formula**\n\nLaspeyres index = ∑(p₁qₒ/∑pₒqₒ) ×100\n\n**Calculation**\n\n∑p₁qₒ = 15 + 30+ 40\n\n⇒ 85\n\n∑pₒqₒ = 24 + 45 + 48\n\n⇒ 117\n\n⇒ Price index = (85/117) × 100\n\n**∴The Price Index using Laspeyres Formula is ****72.65**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865b293ee63106f1887326",
+      "n": 92,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "From the prices and quantities of the base and current year Laspeyres and Bowley Price Indices were calculated as 124 and 130 respectively. Find the Paasche price index for the same data.",
+      "options": [
+        {
+          "label": "1",
+          "text": "127"
+        },
+        {
+          "label": "2",
+          "text": "136"
+        },
+        {
+          "label": "3",
+          "text": "118"
+        },
+        {
+          "label": "4",
+          "text": "121"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nLaspeyres and Bowley Price Indices are 124 and 130\n\n**Concept**\n\nAccording to Dorbish and bowley the simple arithmetic mean of two indices namely Laspeyres and Passche gives the Bowley price index\n\nP₀₁ = (L + P)/2\n\nP₀₁ = Bowley price indices\n\nL = Laspeyres Index\n\nP = Passche INDEX\n\n**Calculation**\n\n**According to question**\n\n⇒ 130 = (124 + P)/2\n\n⇒ 260 = 124 + P\n\n⇒ P = 136\n\n**∴ The Paasche price index for the same data IS 136**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865b633ee63106f1887509",
+      "n": 93,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Paasche Quantity Index is given by the formula ___________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "$5a"
+        },
+        {
+          "label": "2",
+          "text": "$5b"
+        },
+        {
+          "label": "3",
+          "text": "$5c"
+        },
+        {
+          "label": "4",
+          "text": "$5d"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Calculation**\n\nIn constructing quantity index number, we measure the changes in quantities and when we use price or value as weight. Quantity indices can be easily obtained by changing p to q and q to p \n\n**∴ Paasche quantity indices is (∑QnPn)/(∑QoPn**) \n\nQₙ = Current year quantity\n\nPₙ = Price index for current year\n\nQO = Quantity for base year",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865b822c8d1a50783f4005",
+      "n": 94,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The index number for the price of diesel in 2015 was 125 and in 2016, it was 140, on a base year of 2011. What is the percent increase in price of diesel from 2015 to 2016?",
+      "options": [
+        {
+          "label": "1",
+          "text": "25"
+        },
+        {
+          "label": "2",
+          "text": "40"
+        },
+        {
+          "label": "3",
+          "text": "12"
+        },
+        {
+          "label": "4",
+          "text": "15"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given**\n\nThe index number for the price of diesel in 2015 was 125 and in 2016, it was 140, on a base year of 2011\n\n**Formula**\n\n% change = [(Final - initial)/initial] × 100\n\nCalculation\n\n% change = (140 - 125)/125] × 100\n\n⇒ [15/125] × 100\n\n**∴ The percent increase in price of diesel from 2015 to 2016 is 12%**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865bb3fb46113c47c4b70e",
+      "n": 95,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A worker earned Rs 15,000 per month in 2015, when the Consumer Price Index was 250. If the base period is 2000, what are his earnings per month in 2015 in terms of value of Rs. in the year 2000?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Rs 37,500"
+        },
+        {
+          "label": "2",
+          "text": "Rs 6,000"
+        },
+        {
+          "label": "3",
+          "text": "Rs 10,000"
+        },
+        {
+          "label": "4",
+          "text": "Rs 27,500"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nA worker earned Rs 15,000 per month in 2015\n\nthe Consumer Price Index was 250\n\n**Calculation**\n\nLet the earning per month be x\n\nAccording to question\n\n⇒ 1500 = x × 250/100\n\n⇒ x = (15000 × 100)/250\n\n⇒ x = Rs.6000\n\n**∴ His earnings per month in 2015 in terms of value of Rs. in the year 2000 is Rs.6000**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865be0e38e9ca13ab9da15",
+      "n": 96,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The price index in 2016 is 116 using 2011 as base year. What will be 2011 price index if base year is changed to 2016?",
+      "options": [
+        {
+          "label": "1",
+          "text": "134.5"
+        },
+        {
+          "label": "2",
+          "text": "86.2"
+        },
+        {
+          "label": "3",
+          "text": "84"
+        },
+        {
+          "label": "4",
+          "text": "132"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given**\n\nThe price index in 2016 is 116 using 2011 as base year\n\n**Formula**\n\nIndex number = (index number for base year/index number of current year) × 100\n\n**Calculation**\n\nCase 1 - Base year = 2011\n\n⇒ Current year = 2016\n\n⇒ Pr",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865c1cff72e3ac3297f86d",
+      "n": 97,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The Fisher's Index __________.",
+      "options": [
+        {
+          "label": "1",
+          "text": "satisfies neither the Time Reversal Test nor the Factor Reversal Test"
+        },
+        {
+          "label": "2",
+          "text": "satisfies the Time Reversal Test but not the Factor Reversal Test"
+        },
+        {
+          "label": "3",
+          "text": "satisfies both the Time Reversal Test as well as the Factor Reversal Test"
+        },
+        {
+          "label": "4",
+          "text": "satisfies the Factor Reversal Test but not the Time Reversal Test"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Explanation**\n\nFisher price index = √(Laspeyres × paasche's index)\n\n⇒ √(∑(pₙqₒ/∑pₒqₒ) × ∑(pₙqₙ/∑pₒqₙ) × 100\n\nHere,pₙ = Price for current year\n\nPₒ = Price for base year\n\nQₙ = Quantity for current year\n\nQₒ = Quantity for base year\n\n⇒ Fisher's ideal index = P₀₁ × P₁₀ = 1\n\n**∴ Fisher's ideal index satisfy the time-reversal test**\n\n⇒ P01 × P10 = ∑P₁Q₀/∑P₀Q₀\n\n**∴ The factor reversal test is satisfied by Fisher's ideal index**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865c6450296c8594d1c119",
+      "n": 98,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Calculate Fisher's Price Index (in %) using the following data: \n\n∑QoPn = 2700, \n\n∑QnPn= 2250, \n\n∑QoPo= 2750 and \n\n∑QnPo= 2100",
+      "options": [
+        {
+          "label": "1",
+          "text": "157.1"
+        },
+        {
+          "label": "2",
+          "text": "63.6"
+        },
+        {
+          "label": "3",
+          "text": "102.5"
+        },
+        {
+          "label": "4",
+          "text": "95"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Formula **\n\nFisher price index = √(Laspeyres × paasche's index)\n\n⇒ √(∑(pnqo/∑poqo) × ∑(pnqn/∑poqn) × 100\n\nHere,pn = Price for current year\n\nPo = Price for base year\n\nQn = Quantity for current year\n\nQo = Quantity for base year\n\n**Calculation**\n\nFisher's price index = √(2700/2750 × 2250/2100) × 100\n\n⇒ √(0.982 × 1.071) × 100\n\n⇒ 1.025 × 100\n\n**∴ Fisher's price index is 102.5**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865cb6cb33069969e06868",
+      "n": 99,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the Value Index (in %) using the following data: \n\n∑QoPn = 2500, \n\n∑QnPn = 2750, \n\n∑QoPo = 2250 and \n\n∑QnPo = 2000.",
+      "options": [
+        {
+          "label": "1",
+          "text": "122.2"
+        },
+        {
+          "label": "2",
+          "text": "125"
+        },
+        {
+          "label": "3",
+          "text": "112.5"
+        },
+        {
+          "label": "4",
+          "text": "137.5"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Formula **\n\nValue index = (∑QnPₙ /∑QoPₒ) × 100\n\nQₙ = Quantity at current price\n\nQₒ = Quantity at base price\n\nPₒ = Price at base price\n\nPₙ = Price at current price\n\n**Calculation**\n\nValue index = 2750/2250 × 100\n\n**∴ Value index is 122.2**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    },
+    {
+      "qid": "60865d4ff6cda4f32eda5e3c",
+      "n": 100,
+      "type": "mcq",
+      "concept": "Elementary Statistics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the ratio Laspeyres and Paasche price indices is 75 : 77, then find the value of P using the data given in the table.\n\n \n \n\n \n \n**Item**\n\n \n \n \n**Base Year**\n\n \n \n \n**Current year**\n\n \n \n \n\n \n \n \n\n \n \n \n**Price**\n\n \n \n \n**Quantity**\n\n \n \n \n**Price**\n\n \n \n \n**Quantity**\n\n \n \n \n\n \n \nX\n\n \n \n \n10\n\n \n \n \n8\n\n \n \n \n12\n\n \n \n \n10\n\n \n \n \n\n \n \nY\n\n \n \n \n5\n\n \n \n \n6\n\n \n \n \nP\n\n \n \n \n5",
+      "options": [
+        {
+          "label": "1",
+          "text": "5"
+        },
+        {
+          "label": "2",
+          "text": "6"
+        },
+        {
+          "label": "3",
+          "text": "4"
+        },
+        {
+          "label": "4",
+          "text": "7"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Calculation**\n\n \n \n\n \n \nitems\n\n \n \n \nP₀\n\n \n \n \nQ₀\n\n \n \n \nPₙ\n\n \n \n \nQₙ\n\n \n \n \nPₙQ₀\n\n \n \n \nP₀Q₀\n\n \n \n \nPₙQₙ\n\n \n \n \nP₀Qₙ\n\n \n \n \n\n \n \nx\n\n \n \n \n10\n\n \n \n \n8\n\n \n \n \n12\n\n \n \n \n10\n\n \n \n \n96\n\n \n \n \n80\n\n \n \n \n120\n\n \n \n \n100\n\n \n \n \n\n \n \ny\n\n \n \n \n5\n\n \n \n \n6\n\n \n \n \nP\n\n \n \n \n5\n\n \n \n \n6p\n\n \n \n \n30\n\n \n \n \n5p\n\n \n \n \n25\n\n \n \n \n\n \n \nTotal\n\n \n \n \n15\n\n \n \n \n18\n\n \n \n \nP + 12\n\n \n \n \n15\n\n \n \n \n96 + 6p\n\n \n \n \n110\n\n \n \n \n120 + 5p\n\n \n \n \n125\n\n \n \n \n\nLespeyre's index L = (∑PnQ₀/∑P0Q₀) × 100\n\n⇒ L = [(96 + 6p)/110)] × 110\n\nPaasche's index P= ∑PnQₙ/∑P0Qₙ] × 100\n\n⇒ P = [(120 + 5p)/125] × 100\n\nGiven = L/P = 75/77\n\n⇒ [(96 + 6p)/110)] × 110/ [(120 + 5p)/125] × 100 = 75/77\n\n⇒ 125(96 + 6p)/110(120 + 5p) = 75/77\n\n⇒ 7(96 + 6p) = 6(120 + 5p)\n\n⇒ 672 + 42p = 720 + 30p\n\n⇒ 12p = 48\n\n**∴ The value of p is 4**",
+      "tags": [
+        "Elementary Statistics"
+      ]
+    }
+  ]
+}

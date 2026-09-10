@@ -1,0 +1,3249 @@
+{
+  "test_id": "6961192d2ba086d1322ed986",
+  "title": "SSC CGL 2024 Tier-II (Statistics) Official Paper-II (Held On: 19 Jan, 2025)",
+  "series_slug": "ssc-cgl",
+  "series_name": "SSC CGL Mock Test Series 2026 (Tier I & Tier II)",
+  "section": "Previous Year Paper (Tier II)",
+  "subsection": "Paper II: Statistics",
+  "subject": "general",
+  "duration_min": 120,
+  "max_marks": 200.0,
+  "question_count": 100,
+  "languages": [
+    "English"
+  ],
+  "scraped_at": "2026-09-05T05:26:55.548522+00:00",
+  "questions": [
+    {
+      "qid": "683ff5229d849059316f384c",
+      "n": 1,
+      "type": "mcq",
+      "concept": "Two Dimensional Random Variables",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For the bivariate random variable (X,Y), let the joint probability density function be f(x.y)=(9(1+x+y))/(2(1+x)⁴(1+y)⁴) for 0 < x < ∞, 0 <y < ∞. The marginal pdf of X is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(3(2x+3))/(2(1+x))"
+        },
+        {
+          "label": "2",
+          "text": "(3(2x+1))/(4(1+x)⁴)"
+        },
+        {
+          "label": "3",
+          "text": "(3(2x+3))/((1+x)⁴)"
+        },
+        {
+          "label": "4",
+          "text": "(3(2x+3))/(4(1+x)⁴)"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nThe joint probability density function for the bivariate random variable (X, Y) is:\n\nf(x,y)=9(1+x+y)2(1+x)4(1+y)4\" id=\"MathJax-Element-35-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">f(x,y)=9(1+x+y)2(1+x)4(1+y)4f(x,y)=9(1+x+y)2(1+x)4(1+y)4\nf(x, y) = \\frac{9(1 + x + y)}{2(1 + x)⁴(1 + y)⁴}\n, for 0x∞,0y∞\" id=\"MathJax-Element-36-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">0x∞,0y∞0x∞,0y∞\n0 \n.\n\nWe need to find the marginal probability density function of X\" id=\"MathJax-Element-37-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">XX\nX\n.\n\n**Concept:**\n\nThe marginal probability density function of X\" id=\"MathJax-Element-38-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">XX\nX\nis obtained by integrating the joint probability density function f(x,y)\" id=\"MathJax-Element-39-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">f(x,y)f(x,y)\nf(x, y)\nover all values of y\" id=\"MathJax-Element-40-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">yy\ny\n:\n\nfX(x)=∫0∞f(x,y)dy\" id=\"MathJax-Element-41-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=∫∞0f(x,y)dyfX(x)=∫0∞f(x,y)dy\nf_X(x) = \\int₀^{\\infty} f(x, y) \\, dy\n.\n\n**Calculation:**\n\nWe start with:\n\nfX(x)=∫0∞9(1+x+y)2(1+x)4(1+y)4dy\" id=\"MathJax-Element-42-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=∫∞09(1+x+y)2(1+x)4(1+y)4dyfX(x)=∫0∞9(1+x+y)2(1+x)4(1+y)4dy\nf_X(x) = \\int₀^{\\infty} \\frac{9(1 + x + y)}{2(1 + x)⁴(1 + y)⁴} \\, dy\n.\n\n⇒ Split the numerator 1+x+y\" id=\"MathJax-Element-43-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">1+x+y1+x+y\n1 + x + y\ninto 1+x\" id=\"MathJax-Element-44-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">1+x1+x\n1 + x\nand y\" id=\"MathJax-Element-45-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">yy\ny\n:\n\nfX(x)=92(1+x)4∫0∞(1+x)(1+y)4dy+92(1+x)4∫0∞y(1+y)4dy.\" id=\"MathJax-Element-46-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=92(1+x)4∫∞0(1+x)(1+y)4dy+92(1+x)4∫∞0y(1+y)4dy.fX(x)=92(1+x)4∫0∞(1+x)(1+y)4dy+92(1+x)4∫0∞y(1+y)4dy.\nf_X(x) = \\frac{9}{2(1 + x)⁴} \\int₀^{\\infty} \\frac{(1 + x)}{(1 + y)⁴} \\, dy + \\frac{9}{2(1 + x)⁴} \\int₀^{\\infty} \\frac{y}{(1 + y)⁴} \\, dy.\n\n⇒ Evaluate the integrals separately:\n\n∫0∞1(1+y)4dy=13\" id=\"MathJax-Element-47-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫∞01(1+y)4dy=13∫0∞1(1+y)4dy=13\n\\int₀^{\\infty} \\frac{1}{(1 + y)⁴} \\, dy = \\frac{1}{3}\n(standard integration result).\n\n∫0∞y(1+y)4dy=16\" id=\"MathJax-Element-48-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫∞0y(1+y)4dy=16∫0∞y(1+y)4dy=16\n\\int₀^{\\infty} \\frac{y}{(1 + y)⁴} \\, dy = \\frac{1}{6}\n(standard integration result).\n\n⇒ Substitute these values back:\n\nfX(x)=92(1+x)4[(1+x)3+16].\" id=\"MathJax-Element-49-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=92(1+x)4[(1+x)3+16].fX(x)=92(1+x)4[(1+x)3+16].\nf_X(x) = \\frac{9}{2(1 + x)⁴} \\left[\\frac{(1 + x)}{3} + \\frac{1}{6}\\right].\n\n⇒ Combine the terms inside the brackets:\n\nfX(x)=92(1+x)4[2(1+x)+16].\" id=\"MathJax-Element-50-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=92(1+x)4[2(1+x)+16].fX(x)=92(1+x)4[2(1+x)+16].\nf_X(x) = \\frac{9}{2(1 + x)⁴} \\left[\\frac{2(1 + x) + 1}{6}\\right].\n\n⇒ Simplify further:\n\nfX(x)=912(1+x)4[2x+3].\" id=\"MathJax-Element-51-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=912(1+x)4[2x+3].fX(x)=912(1+x)4[2x+3].\nf_X(x) = \\frac{9}{12(1 + x)⁴} \\left[2x + 3\\right].\n\n⇒ fX(x)=3(2x+3)4(1+x)4.\" id=\"MathJax-Element-52-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=3(2x+3)4(1+x)4.fX(x)=3(2x+3)4(1+x)4.\nf_X(x) = \\frac{3(2x + 3)}{4(1 + x)⁴}.\n\n**∴ The marginal probability density function of X\" id=\"MathJax-Element-53-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">XX\nX\nis:**\n\nfX(x)=3(2x+3)4(1+x)4.\" id=\"MathJax-Element-54-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">fX(x)=3(2x+3)4(1+x)4.fX(x)=3(2x+3)4(1+x)4.\nf_X(x) = \\frac{3(2x + 3)}{4(1 + x)⁴}.",
+      "tags": [
+        "Two Dimensional Random Variables"
+      ]
+    },
+    {
+      "qid": "683ff535ed034951e38673c0",
+      "n": 2,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Monthly sales data (in units) shows the following trend-adjusted ratios for three months: January (1.1), February (0.9), and March (1.0). What is the average seasonal index for this quarter?",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.95"
+        },
+        {
+          "label": "2",
+          "text": "0.9"
+        },
+        {
+          "label": "3",
+          "text": "1.0"
+        },
+        {
+          "label": "4",
+          "text": "1.1"
+        }
+      ],
+      "correct": "3",
+      "solution": "__**Calculation:**__\n\nGiven trend-adjusted ratios:\n\nJanuary = 1.1, February = 0.9, March = 1.0\n\nAverage seasonal index for the quarter:\n\n {Average} = (1.1 + 0.9 + 1.0)/(3) = (3.0)/(3) = 1.0 \n\n**The Correct answer is 1.0**"
+    },
+    {
+      "qid": "683ff545ac24fa93bafd5c15",
+      "n": 3,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Duncan’s Multiple Range Test makes use of which statistical measure?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Standard Error of the Means"
+        },
+        {
+          "label": "2",
+          "text": "Regression Coefficient"
+        },
+        {
+          "label": "3",
+          "text": "Range Statistic (R)"
+        },
+        {
+          "label": "4",
+          "text": "F-statistic"
+        }
+      ],
+      "correct": "3",
+      "solution": "[IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n__\n \n• **Range Statistic (R):**\n\n \n\nWhat it is: Difference between the largest and smallest means being compared.\n\nWhere it is used: In multiple comparison tests, especially Duncan’s test.\n\nRelation to DMRT: DMRT is based on the studentized range statistic (R)\n\nUsed to decide whether the difference between means is significant.\n\n∴ **It is applicable to DMRT **\n\n** [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] Additional Information__**\n\n \n• **Standard Error of the Means**\n\n \n \n• **What it is**: Measures how much the sample mean varies from the population mean.\n \n• **Where it is used**: Common in t-tests, confidence intervals, and ANOVA.\n \n• **Relation to DMRT**: DMRT does not directly use standard error as the decision statistic.\n \n \n \n• **Regression Coefficient**\n \n \n• **What it is: **Indicates the relationship between dependent and independent variables.\n \n• **Where it is used: **In regression analysis.\n \n• **Relation to DMRT:** DMRT compares group means, not relationships between variables.\n \n \n \n• **F-statistic**\n \n \n• **What it is**: Ratio of variance between groups to variance within groups.\n \n• **Where it is used: **In ANOVA to test overall significance.\n \n• Relation to DMRT: ⚠ ANOVA must be significant before applying DMRT, but DMRT itself does not use F-statistic.\n \n \n\n**So, The Correct Answer is: Range Statistic (R).**",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "683ff5ddc2eefef9b50f27c1",
+      "n": 4,
+      "type": "mcq",
+      "concept": "Correlation Analysis",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For three random variables X₁, X₂ and X₃, the correlation coefficients between pairs of random variables are r₁₂ = r₁₃ = r₂₃ = r ≠ 1. For R₁.₂₃ (multiple correlation coefficient), 1 - R²₁.₂₃ is written as:",
+      "options": [
+        {
+          "label": "1",
+          "text": "((1+r)(1+2r))/(1-r)"
+        },
+        {
+          "label": "2",
+          "text": "((1+2r))/(1+r)"
+        },
+        {
+          "label": "3",
+          "text": "((1-r)(1+2r))/(1-r)"
+        },
+        {
+          "label": "4",
+          "text": "((1+r)(1-2r))/(1-r)"
+        }
+      ],
+      "correct": "3",
+      "solution": "__**Calculation:**__\n\nGiven: r₁₂ = r₁₃ = r₂₃ = r neq 1 \n\nFormula for multiple correlation coefficient:\n\n R²₁.₂₃ = frac{r₁₂² + r₁₃² - 2r₁₂r₁₃r₂₃}{1 - r₂₃²} \n\nSubstitute given values: R²₁.₂₃ = (r² + r² - 2r³)/(1 - r²) \n\nSimplify: R²₁.₂₃ = (2r²(1-r))/((1-r)(1+r)) \n\n R²₁.₂₃ = (2r²)/(1+r) \n\nNow find: 1 - R²₁.₂₃ = 1 - (2r²)/(1+r) \n\n = (1+r-2r²)/(1+r) \n\nFactor the numerator: = ((1-r)(1+2r))/(1-r) \n\n**Hence, the correct answer is ((1-r)(1+2r))/(1-r)**",
+      "tags": [
+        "Correlation Analysis"
+      ]
+    },
+    {
+      "qid": "683ff5f0d18cf239e211c6e4",
+      "n": 5,
+      "type": "mcq",
+      "concept": "Methods of Estimation",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the primary challenge in using the free-hand curve method for trend estimation?",
+      "options": [
+        {
+          "label": "1",
+          "text": "It is time-consuming and computationally intensive"
+        },
+        {
+          "label": "2",
+          "text": "It is subjective and may lead to inconsistent results."
+        },
+        {
+          "label": "3",
+          "text": "It cannot identify cyclical patterns"
+        },
+        {
+          "label": "4",
+          "text": "It requires advanced statistical knowledge."
+        }
+      ],
+      "correct": "2",
+      "solution": "**The Correct Answer is**__** : **__It is subjective and may lead to inconsistent results.\n\n__**Explanation:**__\n\n__** [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] Key Points__****It is subjective and may lead to inconsistent results**. Because the free-hand curve method depends on the analyst’s personal judgment while drawing the trend line. Different people may draw different curves for the same data, leading to subjective and inconsistent outcomes.So, it is correct.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__**\n\n \n• It is time-consuming and computationally intensive\n \n \n• The free-hand curve method does not involve calculations or complex procedures.\n \n• It is actually quick and simple, not computationally intensive. \n \n \n \n• It cannot identify cyclical patterns\n \n \n• ​Although it is crude, the free-hand curve can still **visually show cycles **and general movements in the data. It is not completely incapable of doing so.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        },
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Methods of Estimation"
+      ]
+    },
+    {
+      "qid": "683ff6017ce74b7b6f0dfec9",
+      "n": 6,
+      "type": "mcq",
+      "concept": "Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the critical region is evenly distributed, then the test is referred to as:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Three tailed"
+        },
+        {
+          "label": "2",
+          "text": "Zero tailed"
+        },
+        {
+          "label": "3",
+          "text": "One tailed"
+        },
+        {
+          "label": "4",
+          "text": "Two tailed"
+        }
+      ],
+      "correct": "4",
+      "solution": "__**Explanation:**__ \n\nIf the **critical region is evenly distributed on both sides** of the sampling distribution, the test is called a **two-tailed test**.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] <",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Distribution"
+      ]
+    },
+    {
+      "qid": "683ff614f0aac0da6404f98b",
+      "n": 7,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is NOT true for seasonal variation?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Caused by public holidays"
+        },
+        {
+          "label": "2",
+          "text": "Caused by rainfall"
+        },
+        {
+          "label": "3",
+          "text": "Repeated irregularly"
+        },
+        {
+          "label": "4",
+          "text": "Variation in a time series within one year"
+        }
+      ],
+      "correct": "3",
+      "solution": "**The Correct Answer is: **Repeated irregularly \n\n__**Explanation:**__ \n\n**Seasonal variation:**\n\n__\n \n• ​Occurs regularly\n \n• Repeats in a fixed pattern every year\n \n• Is caused by factors like public holidays and rainfall\n \n• Represents variation within one year\n\n \n\n“Repeated irregularly” describes irregular (random) variation, not seasonal.\n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **Additional Information__**\n\n \n• 1) **Caused by public holidays **\n\nPublic holidays create predictable changes in activities, sales, or traffic every year.\n\nExample: Retail sales spike every December due to Christmas.\n\nThis is seasonal because it repeats at the same time every year.\n\n \n• 2) **Caused by rainfall **\n\nRainfall affects crops, tourism, or demand for certain goods (like umbrellas).\n\nExample: Monsoon season increases water-related activities in India.\n\nSeasonal variation is caused by natural cycles like weather, which are predictable and recurring.\n\n \n• 4)** Variation in a time series within one year **\n\nSeasonal variation occurs within a year, not over multiple years.\n\nExample: Monthly temperature changes in a year (summer hotter, winter colder).\n\nThis distinguishes it from trend (long-term changes) or cyclical variations (longer than a year).",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "683ff624d18cf239e211c944",
+      "n": 8,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a two-way ANOVA, how many hypotheses are tested?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Three"
+        },
+        {
+          "label": "2",
+          "text": "One"
+        },
+        {
+          "label": "3",
+          "text": "Four"
+        },
+        {
+          "label": "4",
+          "text": "Two"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is : Three**\n\n__**Explanation:**__\n\nIn a **two-way ANOVA**, we test **three hypotheses**:\n\n \n• \n <p data-end=\"85\" d"
+    },
+    {
+      "qid": "683ff63a06a62f9c288957ac",
+      "n": 9,
+      "type": "mcq",
+      "concept": "Experimental Designs",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In ANCOVA, what happens when the covariate is not linearly related to the dependent variable?",
+      "options": [
+        {
+          "label": "1",
+          "text": "The results of ANCOVA may be biased."
+        },
+        {
+          "label": "2",
+          "text": "The covariate becomes irrelevant"
+        },
+        {
+          "label": "3",
+          "text": "All assumptions of ANCOVA are met."
+        },
+        {
+          "label": "4",
+          "text": "The F-statistic becomes insignificant."
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is :The results of ANCOVA may be biased.**\n\n**Explanation:**\n\n \n \n\n The results of ANCOVA may be biased is correct\n If the covariate is not linearly related, the adjustment is wrong, leading to biased group comparisons.\n \n \n\n The covariate becomes irrelevant is wrong\n The covariate still affects the dependent variable, but ANCOVA cannot properly adjust for it if the relationship is non-linear.\n \n \n\n All assumptions of ANCOVA are met is wrong\n One key assumption—linear relationship between covariate and dependent variable—is violated.\n \n \n\n The F-statistic becomes insignificant is wrong\n The F-statistic may or may not be insignificant; the main issue is bias, not automatic loss of significance",
+      "tags": [
+        "Experimental Designs"
+      ]
+    },
+    {
+      "qid": "683ff6514e1536fa5a04b628",
+      "n": 10,
+      "type": "mcq",
+      "concept": "Discrete Distributions",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Let X and Y be two independent Poisson variates with rate 5 and 10, respectively, then the E(XY=2) is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.5"
+        },
+        {
+          "label": "2",
+          "text": "5"
+        },
+        {
+          "label": "3",
+          "text": "10"
+        },
+        {
+          "label": "4",
+          "text": "2"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nX and Y are independent Poisson variates with rates 5 and 10, respectively. We need to find E(XY=2).\n\n**Concept:**\n\nIf X and Y are independent Poisson random variables, the expectation of their product, E(XY), is given by:\n\nE(XY) = E(X) × E(Y)\n\nAlso, the expectation of a Poisson random variable is equal to its rate parameter (λ).\n\n**Calculation:**\n\nGiven:\n\n⇒ X ~ Poisson(λ = 5), Y ~ Poisson(λ = 10)\n\n⇒ E(X) = 5, E(Y) = 10\n\nUsing the formula for the expectation of the product of independent Poisson variates:\n\n⇒ E(XY) = E(X) × E(Y)\n\n⇒ E(XY) = 5 × 10\n\n⇒ E(XY) = 50\n\nNow, we are given that E(XY=2) is to be calculated. Since E(XY=2) is a condition applied, we consider it proportionally using the given information.\n\n⇒ Divide E(XY) by the total rate (5+10 = 15) to adjust for the rate proportion, and then multiply by the rate of Y (10):\n\n⇒ E(XY=2) = (50 ÷ 15) × 10\n\n⇒ E(XY=2) = (10 ÷ 3) × 10\n\n⇒ E(XY=2) = 5\n\n**∴ The correct answer is 5.**",
+      "tags": [
+        "Discrete Distributions"
+      ]
+    },
+    {
+      "qid": "683ff8702a1d073fab2532be",
+      "n": 11,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean of a residual error in a one way classified data analysis is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "2"
+        },
+        {
+          "label": "2",
+          "text": "0"
+        },
+        {
+          "label": "3",
+          "text": "-1"
+        },
+        {
+          "label": "4",
+          "text": "1"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nThe mean of residual error in a one-way classified data analysis is 0.\n\n**Concept:**\n\nResidual error refers to the difference between the observed values and the predicted values in a statistical model. In a one-way classified data analysis, residuals represent deviations from the group mean.\n\nThe mean of residual errors is always zero because residuals are calculated as the difference from the predicted mean, which ensures their sum is zero.\n\n**Formula Used:**\n\nResidual error: rᵢ = yᵢ - ŷᵢ\n\nMean of residual error: (Σrᵢ) / n = 0\n\n**Calculation:**\n\nLet the observed values be y₁, y₂, ..., yₙ, and the predicted group mean be ŷ.\n\n⇒ Residual error, rᵢ = yᵢ - ŷ\n\n⇒ Σrᵢ = Σ(yᵢ - ŷ) = Σyᵢ - nŷ\n\n⇒ Since ŷ is the group mean, Σyᵢ = nŷ.\n\n⇒ Σrᵢ = nŷ - nŷ = 0\n\n⇒ Mean of residual error = (Σrᵢ) / n = 0\n\n**∴ The mean of residual error is 0. Correct answer is Option 2.**\n\n42:Tb7a"
+    },
+    {
+      "qid": "683ff882acf3b5cd64e27b92",
+      "n": 12,
+      "type": "mcq",
+      "concept": "Correlation and Regression",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the angle between two lines of regression is 90°, then correlation coefficient is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "label": "2",
+          "text": "(1)/(2)"
+        },
+        {
+          "label": "3",
+          "text": "0"
+        },
+        {
+          "label": "4",
+          "text": "-1"
+        }
+      ],
+      "correct": "4",
+      "solution": "**The Correct Answer is : -1**\n\n**Explanation:**\n\n__**Concept Used:**__\n\nThe angle theta between two regression lines is related to the correlation coefficient r by the formula:\n\n tan theta = (2rsigma_x sigma_y)/(sigma_x² - sigma_y²) \n\nBut in simpler terms, if the lines are <",
+      "tags": [
+        "Correlation and Regression"
+      ]
+    },
+    {
+      "qid": "683ff8f9cadf8da54e5c7796",
+      "n": 13,
+      "type": "mcq",
+      "concept": "Inference from Sample Statistics and Margin of Error",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For a monthly data, the link relative for any month is given by:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(Current month's Value — Previous month value )/(2)times 100"
+        },
+        {
+          "label": "2",
+          "text": "(Current month's Value + Previous month value )/(2)times 100"
+        },
+        {
+          "label": "3",
+          "text": "(Previous month's Value)/(Current month's value)times 100"
+        },
+        {
+          "label": "4",
+          "text": "(Current month's Value)/(Previous month's value)times 100"
+        }
+      ],
+      "correct": "4",
+      "solution": "__**Explanation:**__\n\nFor monthly time-series data, the link relative measures the percentage change of the current month relative to the immediately preceding month.\n\nThe standard formula is\n\n (Current month's Value)/(Previous month's value)times 100\n\n \n• It directly compares current period value with the previous period value.\n \n• Multiplying by 100 expresses the change in percentage terms.\n \n• This concept is commonly used in index numbers and time series analysis.\n\n \n\n∴ **The Correct Answer is: (Current month's Value)/(Previous month's value)times 100**",
+      "tags": [
+        "Inference from Sample Statistics and Margin of Error"
+      ]
+    },
+    {
+      "qid": "683ff916e7b5c04268a37b34",
+      "n": 14,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "On fitting of a trend line Y = a + bt on a time series (with year as a unit of time), the monthly increment/decrement is given by",
+      "options": [
+        {
+          "label": "1",
+          "text": "b/12"
+        },
+        {
+          "label": "2",
+          "text": "a/12"
+        },
+        {
+          "label": "3",
+          "text": "a"
+        },
+        {
+          "label": "4",
+          "text": "b"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nTrend line: Y = a + bt, where t is in years.\n\nFind the monthly increment/decrement of Y.\n\n**Concept Used:**\n\nIn a linear trend Y = a + bt, b represents the increment/decrement per unit of time t.\n\nIf t is in years, b is the annual increment. To find the monthly increment, divide b by 12.\n\n**Formula Used:**\n\nMonthly increment = Annual increment ÷ 12\n\n**Calculation:**\n\nAnnual increment = b\n\n⇒ Monthly increment = b ÷ 12\n\n⇒ Monthly increment = b/12\n\n**∴ Monthly increment/decrement = b/12**"
+    },
+    {
+      "qid": "683ff95615af3309348474a5",
+      "n": 15,
+      "type": "mcq",
+      "concept": "Basics of Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If M: Mean, Md: Median, Mo: Mode, Q₁: First Quartile and Q₃: Third Quartile, then which of the following is an absolute measure of skewness?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Q₁ - Q₃ / Md"
+        },
+        {
+          "label": "2",
+          "text": "M - Md"
+        },
+        {
+          "label": "3",
+          "text": "M + Mo"
+        },
+        {
+          "label": "4",
+          "text": "(Q₃+Q₁-2Md)/(Q₃-Q1)"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nM = Mean, Md = Median, Mo = Mode\n\nQ₁ = First Quartile, Q₃ = Third Quartile\n\nThe question asks for an **absolute measure of skewness**.\n\n**Concept Used:**\n\nAbsolute measures of skewness are expressed in the **same units as data**.\n\nThey are obtained using **simple differences**, not ratios.\n\nRelative measures of skewness are expressed as **ratios or coefficients**.\n\n**Calculation:**\n\nOption 1: (Q₁ − Q₃) / Md\n\nIt is a ratio. Hence, it is a relative measure\n\n**Not an absolute measure**\n\nOption 2: M − Md\n\nIt is a simple difference. Expressed in original units\n\n**Hence, it is an absolute measure**\n\nOption 3: M + Mo\n\nIt is only a sum.\n\n**Not a measure of skewness**\n\nOption 4: (Q₃ + Q₁ − 2Md) / (Q₃ − Q₁)\n\nIt is a coefficient (Bowley’s measure)\n\n**Hence, a relative measure**\n\n**∴ The absolute measure of skewness is M − Md.**",
+      "tags": [
+        "Basics of Probability"
+      ]
+    },
+    {
+      "qid": "683ff96d90e4dd23acdfc124",
+      "n": 16,
+      "type": "mcq",
+      "concept": "Histogram",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is NOT true?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Frequency polygon facilitates the comparison of more than one series of data"
+        },
+        {
+          "label": "2",
+          "text": "Histograms are constructed using cumulative frequencies"
+        },
+        {
+          "label": "3",
+          "text": "Histogram consists of a set of rectangles with bases on horizontal axes"
+        },
+        {
+          "label": "4",
+          "text": "Histogram consists of a set of rectangles with not centres at class marks"
+        }
+      ],
+      "correct": "2",
+      "solution": "**The Correct Option is: Histograms are constructed using cumulative frequencies**\n\n**Explanation:**\n\n1) Frequency polygon facilitates the comparison of more than one series of data\n\n Frequency polygons are drawn using points at class marks and connected by lines, making it easy to compare multiple data sets on the same graph.\n\n∴ It is True\n\n2) Histograms are constructed using cumulative frequencies\n\nHistograms use class frequencies, not cumulative frequencies. Cumulative frequency graphs are called ogives, not histograms.\n\n∴ It is Not true\n\n3) Histogram consists of a set of rectangles with bases on horizontal axes\n\nThe width of each rectangle corresponds to the class interval, and the height corresponds to frequency.\n\n∴ It is True\n\n4) Histogram not consists of a set of rectangles with not centres at class marks\n\nIt Is also true.",
+      "tags": [
+        "Histogram"
+      ]
+    },
+    {
+      "qid": "683ff99d58bdef9e60246390",
+      "n": 17,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For a two-way classification with p treatments, q blocks and r observations per cell, the degrees of freedom for error and total, respectively, are:",
+      "options": [
+        {
+          "label": "1",
+          "text": "pq - 1 and pq (r - 1)"
+        },
+        {
+          "label": "2",
+          "text": "(p - 1)(q - 1) and pqr - 1"
+        },
+        {
+          "label": "3",
+          "text": "pq (r - 1) and pqr - 1"
+        },
+        {
+          "label": "4",
+          "text": "p - 1 and pq(r - 1)"
+        }
+      ],
+      "correct": "3",
+      "solution": "__**Calculation:**__:\n\nTotal number of observations:\n\n N = pqr \n\nDegrees of freedom for Total:\n\n {Total d.f.} = N - 1 = pqr - 1 \n\nDegrees of freedom for Error:\n\n {Error d.f.} = pq(r - 1) \n\nThus,\n\n {Error d.f.} = pq(r - 1) \n\n {Total d.f.} = pqr - 1 \n\n**Hence, the correct answer is option 3.**"
+    },
+    {
+      "qid": "683ff9bb16257dddfbc1a3b0",
+      "n": 18,
+      "type": "mcq",
+      "concept": "Correlation Analysis",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Let X and Y be two independent Poisson variates with rate 5 and 10, respectively, then the distribution of Z = X + Y is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Poisson distribution with rate 15"
+        },
+        {
+          "label": "2",
+          "text": "Exponential distribution with rate 15"
+        },
+        {
+          "label": "3",
+          "text": "Normal distribution with mean 15 and variance 1"
+        },
+        {
+          "label": "4",
+          "text": "Gamma distribution with rate 5 and shape 10"
+        }
+      ],
+      "correct": "1",
+      "solution": "__**Calculation:**__\n\nLet X and Y be independent Poisson variates:\n\n X sim {Poisson}(5), Y sim {Poisson}(10) \n\nDefine the new random variable:\n\n Z = X + Y \n\nUse the property of Poisson distribution:\n\nHere, lambda₁ = 5, lambda₂ = 10 \n\nAdd the rates: lambda = 5 + 10 = 15 \n\nTherefore, Z sim {Poisson}(15) \n\nSo, Option 1 is correct\n\nOption 2 (Exponential) \n\nExponential distributions model waiting times, not counts.\n\nOption 3 (Normal) \n\nA normal distribution can approximate a Poisson for large rates, but Z is exactly Poisson, not normal.\n\nOption 4 (Gamma) \n\nGamma distributions arise as sums of exponential variables, not Poisson counts.",
+      "tags": [
+        "Correlation Analysis"
+      ]
+    },
+    {
+      "qid": "683ff9ecf3c2e629a4c4946b",
+      "n": 19,
+      "type": "mcq",
+      "concept": "Binomial Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The second central moment of the Binomial distribution B(1,(1)/(2)) is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(1)/(8)"
+        },
+        {
+          "label": "2",
+          "text": "(1)/(4)"
+        },
+        {
+          "label": "3",
+          "text": "1"
+        },
+        {
+          "label": "4",
+          "text": "(1)/(2)"
+        }
+      ],
+      "correct": "2",
+      "solution": "__**Calculation:**__\n\nConsider the binomial distribution: B(1,tfrac{1}{2}) \n\nSecond central moment means variance.\n\nVariance of binomial distribution: sigma² = npq \n\nWhere, n = 1, p = tfrac{1}{2} q = 1 - p = tfrac{1}{2} \n\nSubstitute the values: sigma² = 1 times tfrac{1}{2} times tfrac{1}{2} = tfrac{1}{4} \n\n**Hence, the correct answer is option 2.**",
+      "tags": [
+        "Binomial Distribution"
+      ]
+    },
+    {
+      "qid": "683ff9fde47f1925e30b7905",
+      "n": 20,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "10-15 is the model class with 25 as its frequency. Also if the frequency of the class preceding and succeeding the model class is 10 and 15, respectively, then the value of mode is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "12"
+        },
+        {
+          "label": "2",
+          "text": "13"
+        },
+        {
+          "label": "3",
+          "text": "10"
+        },
+        {
+          "label": "4",
+          "text": "15"
+        }
+      ],
+      "correct": "2",
+      "solution": "__**Calculation:**__\n\nGiven: Modal class = 10 – 15\n\nFrequency of modal class ( f₁ ) = 25\n\nFrequency of preceding class ( f₀ ) = 10\n\nFrequency of succeeding class ( f₂ ) = 15\n\nClass width ( h ) = 15 − 10 = 5\n\nLower limit of modal class ( L ) = 10\n\nFormula for Mode:\n\n {Mode} = L + ((f₁ - f₀))/((2f₁ - f₀ - f₂)) times h \n\nSubstitute the values:\n\n {Mode} = 10 + ((25 - 10))/((2 times 25 - 10 - 15)) times 5 \n\n = 10 + (15)/(25) times 5 = 10 + 3 = 13 \n\n**Hence, the correct answer is 13**"
+    },
+    {
+      "qid": "683ffa14e7b5c04268a38432",
+      "n": 21,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is NOT true about ungrouped frequency distribution?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Frequency of an observation is the number of times it occurs"
+        },
+        {
+          "label": "2",
+          "text": "Tally marks are used for finding frequencies"
+        },
+        {
+          "label": "3",
+          "text": "Used for putting raw data in a condensed form"
+        },
+        {
+          "label": "4",
+          "text": "Used when number of observations in data set is very large"
+        }
+      ],
+      "correct": "4",
+      "solution": "**The Correct answer:** ** Used when number of observations in data set is very large**\n\n__**Explanation:**__\nAn **ungrouped frequency distribution** is used when the data set is **small or manageable**. Each individual observation is listed separately with its frequency.\n\n**Other options (why they are true):**\n\n \n• \n \n Frequency = number of times an observation occurs\n\n \n \n• \n \nTally marks are commonly used to count frequencies\n\n \n \n• \n \n It helps arrange raw data in a **condensed and systematic form**\n\n \n\n [IMAGE: https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png] **__Additional Information__** When the number of observations is **very large**, we use a **grouped frequency distribution**, not an ungrouped one.",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/f13e2ad6582c16aa62a83672e2547ad20a01fddb61962a1acce42eb9a1a99caa.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "683ffa263e9b18a9ce00ed80",
+      "n": 22,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What does the third moment measure?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Variance"
+        },
+        {
+          "label": "2",
+          "text": "Mean"
+        },
+        {
+          "label": "3",
+          "text": "Skewness"
+        },
+        {
+          "label": "4",
+          "text": "Kurtosis"
+        }
+      ],
+      "correct": "3",
+      "solution": "**The Correct Answer is : Skewness **\n\n__**Explanation:**__\n\nThe **third moment** (about the mean) measures **skewness** — that is, the **asymmetry of a distribution**.\n\n**Why the others are incorrect:**\n\n \n• \n \n**Mean** → measured by the **first moment**\n\n \n \n• \n \n**Variance** → measured by the **second moment**\n\n \n \n• \n \n**Kurtosis** → measured by the **fourth moment**\n\n \n\nSo, third moment = **Skewness**"
+    },
+    {
+      "qid": "683ffa3dc2eefef9b50f4fef",
+      "n": 23,
+      "type": "mcq",
+      "concept": "Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For testing whether two independent Normal populations (with unknown and equal variances) have same mean, one uses:",
+      "options": [
+        {
+          "label": "1",
+          "text": "t distribution"
+        },
+        {
+          "label": "2",
+          "text": "Standard Normal Distribution"
+        },
+        {
+          "label": "3",
+          "text": "Chi Square Distribution"
+        },
+        {
+          "label": "4",
+          "text": "F distribution"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is :t distribution**\n\n**Explanation:**\n\nWhen testing whether the means of two independent Normal populations are equal, with unknown but equal variances, we use the two-sample Student’s t-test.\n\nHence, the test statistic follows a t distribution.",
+      "tags": [
+        "Distribution"
+      ]
+    },
+    {
+      "qid": "683ffa5410d1715ea13a5cb6",
+      "n": 24,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The following data represents a time series.\n\nPeriod : 1 2 3 4 5\n\nObserved values : 150 140 160 170 180\n\nCompute the first-order and second-order differences for period 3.",
+      "options": [
+        {
+          "label": "1",
+          "text": "First-Order: 20, Second-Order: −30"
+        },
+        {
+          "label": "2",
+          "text": "First-Order: −10, Second-Order: −10"
+        },
+        {
+          "label": "3",
+          "text": "First-Order: −10, Second-Order: 20"
+        },
+        {
+          "label": "4",
+          "text": "First-Order: 20, Second-Order: 10"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is : First-Order: 20, Second-Order: −30**\n\n**Explanation:**\n\n \n \n\n Period\n 1\n 2\n 3\n 4\n 5\n \n \n \n \n\n Value\n 150\n 140\n 160\n 170\n 180\n \n \n\n**Concept Used:**\n\nFirst-order difference is the difference between consecutive values.\n\nSecond-order difference is the difference of first-order differences.\n\n**Calculation:**\n\nObserved values: Y₁ = 150 ,Y₂ = 140 , Y₃ = 160 , Y₄ = 170 , Y₅ = 180\n\n**First-order differences:** ΔY₂ = 140 − 150 = −10 , ΔY₃ = 160 − 140 = 20 , \n\nΔY₄ = 170 − 160 = 10 , ΔY₅ = 180 − 170 = 10\n\nFirst-order difference at period 3 = 20\n\n**Second-order differences:** Δ²Y₃ = ΔY₃ − ΔY₂ , Δ²Y₃ = 20 − (−10)\n\n, Δ²Y₃ = 30\n\nTaking backward second difference:\n\nΔ²Y₃ = ΔY₂ − ΔY₃ ,Δ²Y₃ = −10 − 20 , Δ²Y₃ = −30\n\n**∴ First-order difference = 20 and Second-order difference = −30.**"
+    },
+    {
+      "qid": "683ffa66ccaa93c8dcf318ed",
+      "n": 25,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The relative frequency of a class is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "frequency of the class added to total frequency of all classes"
+        },
+        {
+          "label": "2",
+          "text": "frequency of the class multiplied by total frequency of all classes"
+        },
+        {
+          "label": "3",
+          "text": "frequency of the class subtracted from total frequency of all classes"
+        },
+        {
+          "label": "4",
+          "text": "frequency of the class divided by total frequency of all classes"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Concept:**\n\nRelative frequency is a way to measure how often a particular event occurs compared to the total number of occurrences. It is given by the formula:\n\n**Formula Used:**\n\nRelative frequency = Frequency of the class / Total frequency of all classes\n\nCalcu"
+    },
+    {
+      "qid": "683ffad5dbe9f61f9da40feb",
+      "n": 26,
+      "type": "mcq",
+      "concept": "Continuous Distributions",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Tet (X, Y) have the probability density function (pdf) as \n\n f(x,y)=[begin{matrix}c(x+2y)&if 0\n\nThe value of c is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(1)/(2)"
+        },
+        {
+          "label": "2",
+          "text": "(3)/(4)"
+        },
+        {
+          "label": "3",
+          "text": "(1)/(4)"
+        },
+        {
+          "label": "4",
+          "text": "1"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nThe probability density function (pdf) is:\n\n\\(\\rm f(x,y)=\\left[\\begin{matrix}c(x+2y)&\\text{if } 0 \n\nWe need to find the value of c\" id=\"MathJax-Element-21-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">cc\nc\n.\n\n**Concept:**\n\nThe total probability over the defined range of a probability density function must equal 1.\n\n**Formula Used:**\n\nTotal Probability: ∫xminxmax∫yminymaxf(x,y)dydx=1\" id=\"MathJax-Element-22-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫xmaxxmin∫ymaxyminf(x,y)dydx=1∫xminxmax∫yminymaxf(x,y)dydx=1\n\\int_{x_{min}}^{x_{max}} \\int_{y_{min}}^{y_{max}} f(x, y) \\,dy\\,dx = 1\n\n**Calculation:**\n\nGiven range: 0x2,0y1\" id=\"MathJax-Element-23-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">0x2,0y10x2,0y1\n0 \n\n⇒ ∫02∫01c(x+2y)dydx=1\" id=\"MathJax-Element-24-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫20∫10c(x+2y)dydx=1∫02∫01c(x+2y)dydx=1\n\\int₀² \\int₀¹ c(x+2y) \\,dy\\,dx = 1\n\nStep 1: Solve inner integral (∫01c(x+2y)dy\" id=\"MathJax-Element-25-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫10c(x+2y)dy∫01c(x+2y)dy\n\\int₀¹ c(x+2y) \\,dy\n):\n\n⇒ ∫01c(x+2y)dy=c∫01(x+2y)dy\" id=\"MathJax-Element-26-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫10c(x+2y)dy=c∫10(x+2y)dy∫01c(x+2y)dy=c∫01(x+2y)dy\n\\int₀¹ c(x+2y) \\,dy = c\\int₀¹ (x+2y) \\,dy\n\n⇒ c[∫01xdy+∫012ydy]\" id=\"MathJax-Element-27-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[∫10xdy+∫102ydy]c[∫01xdy+∫012ydy]\nc \\left[\\int₀¹ x \\,dy + \\int₀¹ 2y \\,dy\\right]\n\n⇒ c[x∫01dy+2∫01ydy]\" id=\"MathJax-Element-28-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[x∫10dy+2∫10ydy]c[x∫01dy+2∫01ydy]\nc \\left[x \\int₀¹ dy + 2 \\int₀¹ y \\,dy\\right]\n\n⇒ c[x×1+2×y22|01]\" id=\"MathJax-Element-29-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[x×1+2×y22∣∣10]c[x×1+2×y22|01]\nc \\left[x \\times 1 + 2 \\times \\frac{y²}{2} \\Big|_0¹ \\right]\n\n⇒ c[x+y2|01]\" id=\"MathJax-Element-30-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[x+y2∣∣10]c[x+y2|01]\nc \\left[x + y² \\Big|_0¹\\right]\n\n⇒ c[x+12−02]\" id=\"MathJax-Element-31-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[x+12−02]c[x+12−02]\nc \\left[x + 1² - 0²\\right]\n\n⇒ c(x+1)\" id=\"MathJax-Element-32-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c(x+1)c(x+1)\nc(x + 1)\n\nStep 2: Solve outer integral (∫02c(x+1)dx\" id=\"MathJax-Element-33-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫20c(x+1)dx∫02c(x+1)dx\n\\int₀² c(x+1) \\,dx\n):\n\n⇒ ∫02c(x+1)dx=c∫02(x+1)dx\" id=\"MathJax-Element-34-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">∫20c(x+1)dx=c∫20(x+1)dx∫02c(x+1)dx=c∫02(x+1)dx\n\\int₀² c(x+1) \\,dx = c\\int₀² (x+1) \\,dx\n\n⇒ c[∫02xdx+∫021dx]\" id=\"MathJax-Element-35-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[∫20xdx+∫201dx]c[∫02xdx+∫021dx]\nc \\left[\\int₀² x \\,dx + \\int₀² 1 \\,dx\\right]\n\n⇒ c[x22|02+x|02]\" id=\"MathJax-Element-36-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[x22∣∣20+x∣∣20]c[x22|02+x|02]\nc \\left[\\frac{x²}{2} \\Big|_0² + x \\Big|_0²\\right]\n\n⇒ c[222−022+2−0]\" id=\"MathJax-Element-37-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[222−022+2−0]c[222−022+2−0]\nc \\left[\\frac{2²}{2} - \\frac{0²}{2} + 2 - 0\\right]\n\n⇒ c[42+2]\" id=\"MathJax-Element-38-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c[42+2]c[42+2]\nc \\left[\\frac{4}{2} + 2\\right]\n\n⇒ c×(2+2)\" id=\"MathJax-Element-39-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c×(2+2)c×(2+2)\nc \\times (2 + 2)\n\n⇒ c×4\" id=\"MathJax-Element-40-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c×4c×4\nc \\times 4\n\nStep 3: Set total probability equal to 1:\n\n⇒ c×4=1\" id=\"MathJax-Element-41-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c×4=1c×4=1\nc \\times 4 = 1\n\n⇒ c=14\" id=\"MathJax-Element-42-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">c=14c=14\nc = \\frac{1}{4}\n\n**∴ The value of c\" id=\"MathJax-Element-43-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">cc\nc\nis 14\" id=\"MathJax-Element-44-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">1414\n\\frac{1}{4}\n.**\n\n55:T20731,\n<",
+      "tags": [
+        "Continuous Distributions"
+      ]
+    },
+    {
+      "qid": "683ffb1bbe1f047258d6fc56",
+      "n": 27,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "A model being fitted is said to be adequate if the residual plot:",
+      "options": [
+        {
+          "label": "1",
+          "text": "is quadratic"
+        },
+        {
+          "label": "2",
+          "text": "is non-linear"
+        },
+        {
+          "label": "3",
+          "text": "is U-shaped"
+        },
+        {
+          "label": "4",
+          "text": "displays random pattern"
+        }
+      ],
+      "correct": "4",
+      "solution": "**The Correct Answer is: displays random pattern**\n\n**Explanation:**\n\n \n• \n \nResiduals are the differences between observed and predicted values.\n\n \n \n• \n \nWhen fitting a model, the residual plot is used to check **model adequacy**.\n\n \n \n• \n \n**Adequate model:** Residuals should have **no pattern**, i.e., they are randomly scattered around zero.\n\n \n \n• \n \n**If residuals show a pattern** (like quadratic, U-shaped, or non-linear), it indicates the model is **not capturing the relationship properly**.\n\n \n\nHence\n\n \n• \n \nQuadratic → model misspecified\n\n \n \n• \n \nNon-linear → model misspecified\n\n \n \n• \n \nU-shaped → systematic pattern, model inadequate\n\n \n \n• \n \n**Random pattern → model adequate**"
+    },
+    {
+      "qid": "683ffb30f156f351ccc04b01",
+      "n": 28,
+      "type": "mcq",
+      "concept": "Continuous Distributions",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For a normal distribution, the mean deviation is minimum when deviations are taken from:",
+      "options": [
+        {
+          "label": "1",
+          "text": "mode"
+        },
+        {
+          "label": "2",
+          "text": "median"
+        },
+        {
+          "label": "3",
+          "text": "Geometric mean"
+        },
+        {
+          "label": "4",
+          "text": "Mean"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Concept:**\n\nMean deviation measures the average absolute deviation from a central value. For a normal distribution, the median is the central value where the sum of absolute deviations is minimized compared to other measures such as mode or mean.\n\n**Calculation:**\n\n⇒ Mean deviation = Σ|xᵢ - measure| / n\n\nWhere:\n\nxᵢ = data points\n\nmeasure = chosen central value (mean, median, mode, etc.)\n\nn = number of data points\n\n⇒ For a normal distribution:\n\n- Mean deviation from the median minimizes Σ|xᵢ - measure|.\n\n- Mean deviation from the mean or mode results in higher values of Σ|xᵢ - measure|.\n\nHence, for a normal distribution, deviations are smallest when taken from the median.\n\n**∴ Mean deviation is minimum when deviations are taken from the median.**",
+      "tags": [
+        "Continuous Distributions"
+      ]
+    },
+    {
+      "qid": "683ffb4720bf252f0474da77",
+      "n": 29,
+      "type": "mcq",
+      "concept": "Probability of Random Experiments",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which definition of probability is NOT applicable if the events of a random experiment are not equally likely?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Empirical definition"
+        },
+        {
+          "label": "2",
+          "text": "Axiomatic definition"
+        },
+        {
+          "label": "3",
+          "text": "Classical definition"
+        },
+        {
+          "label": "4",
+          "text": "Bayesian definition"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nWhich definition of probability is NOT applicable if the events of a random experiment are not equally likely?\n\nOptions:\n\n \n• Option 1: Empirical definition\n \n• Option 2: Axiomatic definition\n \n• Option 3: Classical definition\n \n• Option 4: Bayesian definition\n\nCorrect Answer: Option 3 (Classical definition)\n\n**Concept:**\n\nThe classical definition of probability assumes that all events of a random experiment are equally likely to occur. If th\nis condition is not satisfied, the classical definition cannot be applied.\n\n**Calculation:**\n\n⇒ Classical probability = (Number of favorable outcomes) / (Total number of equally likely outcomes)\n\n⇒ If the outcomes are not equally likely, the numerator and denominator become inconsistent, and the classical definition fails.\n\n**∴ Option 3 is the correct answer.**",
+      "tags": [
+        "Probability of Random Experiments"
+      ]
+    },
+    {
+      "qid": "683ffbdfe01ede9a96a92b01",
+      "n": 30,
+      "type": "mcq",
+      "concept": "Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the joint distribution of two random variables X₁ and X₂ is \n\n f(x₁,x₂)=left{begin{matrix}x₁+x₂;0 then P (0 < X₂ < 0.5) is equal to",
+      "options": [
+        {
+          "label": "1",
+          "text": "3/8"
+        },
+        {
+          "label": "2",
+          "text": "1/2"
+        },
+        {
+          "label": "3",
+          "text": "3/4"
+        },
+        {
+          "label": "4",
+          "text": "1/4"
+        }
+      ],
+      "correct": "1",
+      "solution": "__**Calculation:**__\n\nLet the joint pdf be\n\n f(x₁, x₂) = x₁ + x₂ { for } 0 \n\nWe are asked to find\n\n P(0 \n\n**Step 1: Find the marginal pdf of X2\" id=\"MathJax-Element-23-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">X2X2\nX_2\n**\n\n fX₂(x₂) = int₀¹ (x₁ + x₂) dx₁ \n\n = [ (x₁²)/(2) + x₂ x₁ ]₀¹ = (1)/(2) + x₂. \n\n**Step 2: Compute the required probability**\n\n P(0 \n\n = [ (x₂)/(2) + (x₂²)/(2) ]₀⁰.⁵ \n\n = (0.5)/(2) + ((0.5)²)/(2) = 0.25 + 0.125 = 0.375. \n\n P(0 \n\n**Correct option: 1) 3/8**",
+      "tags": [
+        "Distribution"
+      ]
+    },
+    {
+      "qid": "683ffc0df6129be2650fa867",
+      "n": 31,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the probability that there may be 53 Sundays in a leap year",
+      "options": [
+        {
+          "label": "1",
+          "text": "(2)/(7)"
+        },
+        {
+          "label": "2",
+          "text": "(3)/(7)"
+        },
+        {
+          "label": "3",
+          "text": "(5)/(7)"
+        },
+        {
+          "label": "4",
+          "text": "(1)/(7)"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nLeap year has 366 days. Total weeks in a leap year = 52 weeks + 2 extra days.\n\n**Concept:**\n\nProbability is calculated as favorable outcomes divided by total outcomes.\n\nLeap year has 2 extra days, and these extra days determine the probability of 53 Sundays.\n\n**Calculation:**\n\nTotal days in a week = 7.\n\nExtra days in a leap year = 2. Possible combinations of extra days:\n\n⇒ {Sunday, Monday}, {Monday, Tuesday}, {Tuesday, Wednesday}, {Wednesday, Thursday}, {Thursday, Friday}, {Friday, Saturday}, {Saturday, Sunday}\n\nFavorable outcomes for 53 Sundays = {Sunday, Monday}, {Saturday, Sunday}.\n\nTotal outcomes = 7.\n\nFavorable outcomes = 2.\n\nProbability of 53 Sundays = Favorable outcomes ÷ Total outcomes\n\n⇒ Probability = 2 ÷ 7\n\n⇒ Probability = 27\" id=\"MathJax-Element-26-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">2727\n\\frac{2}{7}\n\n**∴ The probability that there are 53 Sundays in a leap year is 27\" id=\"MathJax-Element-27-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">2727\n\\frac{2}{7}\n.**"
+    },
+    {
+      "qid": "683ffc1b5398b84d1ede4ffa",
+      "n": 32,
+      "type": "mcq",
+      "concept": "Correlation and Regression",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For two random variables X and Y, how many lines of regression are possible?",
+      "options": [
+        {
+          "label": "1",
+          "text": "1"
+        },
+        {
+          "label": "2",
+          "text": "3"
+        },
+        {
+          "label": "3",
+          "text": "2"
+        },
+        {
+          "label": "4",
+          "text": "0"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nThe question asks about the number of regression lines possible for two random variables X and Y.\n\n**Concept:**\n\nRegression lines are used to describe the relationship between two variables in a bivariate data set. For two random variables, we have:\n\n \n• A regression line of Y on X (Y = aX + b).\n \n• A regression line of X on Y (X = cY + d).\n\nHence, there are two regression lines: one predicting Y from X and the other predicting X from Y.\n\n**Calculation:**\n\n⇒ For two random variables X and Y:\n\n \n• Regression line 1: Y = aX + b\n \n• Regression line 2: X = cY + d\n\n⇒ Total regression lines = 2\n\n**∴ The correct answer is option 3: 2 regression lines.**",
+      "tags": [
+        "Correlation and Regression"
+      ]
+    },
+    {
+      "qid": "683ffc2d90e4dd23acdfdd12",
+      "n": 33,
+      "type": "mcq",
+      "concept": "Measures of Central Tendency",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Out of 100 numbers, 20 are 4’s, 40 are 5’s, 30 are 6’s and the remaining are 7’s. The arithmetic mean of the numbers is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "5.8"
+        },
+        {
+          "label": "2",
+          "text": "4.6"
+        },
+        {
+          "label": "3",
+          "text": "5.3"
+        },
+        {
+          "label": "4",
+          "text": "1.9"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nTotal numbers = 100\n\n20 numbers are 4's, 40 numbers are 5's, 30 numbers are 6's, and 10 numbers are 7's.\n\n**Concept:**\n\nThe arithmetic mean is calculated by summing up all values and dividing by the total count.\n\n**Formula Used:**\n\nArithmetic Mean = (Σx) ÷ n\n\n**Calculation:**\n\nStep 1: Calculate the total sum of numbers.\n\n⇒ Sum = (20 × 4) + (40 × 5) + (30 × 6) + (10 × 7)\n\n⇒ Sum = 80 + 200 + 180 + 70\n\n⇒ Sum = 530\n\nStep 2: Divide the sum by the total count.\n\n⇒ Arithmetic Mean = 530 ÷ 100\n\n⇒ Arithmetic Mean = 5.3\n\n**&\namp;there4; The arithmetic mean of the numbers is 5.3.**",
+      "tags": [
+        "Measures of Central Tendency"
+      ]
+    },
+    {
+      "qid": "683ffc42fba60a06ab273ee2",
+      "n": 34,
+      "type": "mcq",
+      "concept": "Measurement and Analysis of Data",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Level of significance is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Probability of Type I Error"
+        },
+        {
+          "label": "2",
+          "text": "1 − Probability of Type I Error"
+        },
+        {
+          "label": "3",
+          "text": "1 − Probability of Type II Error"
+        },
+        {
+          "label": "4",
+          "text": "Probability of Type II Error"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is :Probability of Type I Error**\n\n__**Explanation:**__\n\nThe **level of significance** in hypothesis testing is the **probability of rejecting the null hypothesis when it is actually true**, which is exactly the **Probability of Type I Error**.\n\n∴** Probability of Type I Error**\n\n**Explanation of other options:**\n\n \n• \n \n**2) 1 − Probability of Type I Error** → This is the **confidence level**, not the level of significance.\n\n \n \n• \n \n**3) 1 − Probability of Type II Error** → This is the **power of the test**, the chance of correctly rejecting a false null.\n\n \n \n• \n \n**4) Probability of Type II Error** → This is **β**, the probability of failing to reject a false null.\n\n \n\nSo level of significance = **α = P(Type I Error)**.",
+      "tags": [
+        "Measurement and Analysis of Data"
+      ]
+    },
+    {
+      "qid": "683ffc726524bd03d95ceef6",
+      "n": 35,
+      "type": "mcq",
+      "concept": "Discrete Distributions",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Let X follow Poisson distribution with mean λ. If P(X=2)=(1)/(2)P(X=3), then the value of λ is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "4"
+        },
+        {
+          "label": "2",
+          "text": "6"
+        },
+        {
+          "label": "3",
+          "text": "7"
+        },
+        {
+          "label": "4",
+          "text": "2"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nX follows Poisson distribution with mean λ. It is given that P(X=2)=12P(X=3)\" id=\"MathJax-Element-30-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">P(X=2)=12P(X=3)P(X=2)=12P(X=3)\" id=\"MathJax-Element-37-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">P(X=2)=12P(X=3)P(X=2)=12P(X=3)\nP(X=2)=12P(X=3)\n P(X=2) = \\frac{1}{2}P(X=3) .\n\n**Concept:**\n\nFor a Poisson distribution, the probability mass function is:\n\nP(X=k)=e−λλkk!\" id=\"MathJax-Element-31-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">P(X=k)=e−λλkk!P(X=k)=e−λλkk!\" id=\"MathJax-Element-38-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">P(X=k)=e−λλkk!P(X=k)=e−λλkk!\nP(X=k)=e−λλkk!\n P(X=k) = \\frac{e^{-\\lambda} \\lambda^k}{k!}\n\nUsing the given condition, we can find λ.\n\n**Calculation:**\n\nFrom the given condition:\n\nP(X=2)=12P(X=3)\" id=\"MathJax-Element-32-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">P(X=2)=12P(X=3)P(X=2)=12P(X=3)\" id=\"MathJax-Element-39-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">P(X=2)=12P(X=3)P(X=2)=12P(X=3)\nP(X=2)=12P(X=3)\n P(X=2) = \\frac{1}{2}P(X=3)\n\nUsing the Poisson probability formula:\n\ne−λλ22!=12e−λλ33!\" id=\"MathJax-Element-33-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">e−λλ22!=12e−λλ33!e−λλ22!=12e−λλ33!\" id=\"MathJax-Element-40-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">e−λλ22!=12e−λλ33!e−λλ22!=12e−λλ33!\ne−λλ22!=12e−λλ33!\n \\frac{e^{-\\lambda} \\lambda²}{2!} = \\frac{1}{2} \\frac{e^{-\\lambda} \\lambda³}{3!}\n\n⇒ λ22=12λ36\" id=\"MathJax-Element-34-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">λ22=12λ36λ22=12λ36\" id=\"MathJax-Element-41-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">λ22=12λ36λ22=12λ36\nλ22=12λ36\n \\frac{\\lambda²}{2} = \\frac{1}{2} \\frac{\\lambda³}{6}\n\n⇒ λ2×6=λ3×2\" id=\"MathJax-Element-35-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">λ2×6=λ3×2λ2×6=λ3×2\" id=\"MathJax-Element-42-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">λ2×6=λ3×2λ2×6=λ3×2\nλ2×6=λ3×2\n \\lambda² × 6 = \\lambda³ × 2\n\n⇒ 6=2λ\" id=\"MathJax-Element-36-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">6=2λ6=2λ\" id=\"MathJax-Element-43-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">6=2λ6=2λ\n6=2λ\n 6 = 2λ\n\n⇒ λ=3\" id=\"MathJax-Element-37-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">λ=3λ=3\" id=\"MathJax-Element-44-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">λ=3λ=3\nλ=3\n λ = 3\n\n∴ The value of λ is 6.\n\n67:T143ba,\n\n&l",
+      "tags": [
+        "Discrete Distributions"
+      ]
+    },
+    {
+      "qid": "683ffc9c29b0add33d8959d7",
+      "n": 36,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is the relative measure of skewness?",
+      "options": [
+        {
+          "label": "1",
+          "text": "β₂"
+        },
+        {
+          "label": "2",
+          "text": "β₁"
+        },
+        {
+          "label": "3",
+          "text": "(X - μ)/σ"
+        },
+        {
+          "label": "4",
+          "text": "(Q₃-2Q₂+Q₁)/(Q₃-Q₁)"
+        }
+      ],
+      "correct": "4",
+      "solution": "The Correct Answer is : (Q₃-2Q₂+Q₁)/(Q₃-Q₁)\n\n**Explanation:**\n\nA *relative measure of skewness* is a **dimensionless coefficient** that indicates the **degree and direction of asymmetry** in a distribution, independent of units.\n\n (Q₃-2Q₂+Q₁)/(Q₃-Q₁) represents Bowley’s coefficient of skewness, which is a relative measure based on quartiles.\n\nWhy others are incorrect:\n\nβ₁ → Moment-based coefficient related to skewness, but usually discussed in advanced moment analysis, not the standard relative measure asked in basic MCQs.\n\nβ₂ → Measures kurtosis, not skewness.\n\n(X − μ)/σ → Standardized value (z-score), not a skewness measure.\n\n69"
+    },
+    {
+      "qid": "683ffcad3956067e550fd7ed",
+      "n": 37,
+      "type": "mcq",
+      "concept": "Mean Deviation",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean absolute deviation of 25, 30, 27, 40 and 35 is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "3.58"
+        },
+        {
+          "label": "2",
+          "text": "4.88"
+        },
+        {
+          "label": "3",
+          "text": "5.28"
+        },
+        {
+          "label": "4",
+          "text": "4.67"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nNumbers: 25, 30, 27, 40, 35\n\n**Concept:**\n\nThe mean absolute deviation (MAD) is the average of the absolute differences between each data point and the mean of the data set.\n\n**Formula Used:**\n\nMean (x̄) = (Sum of all data points) ÷ (Number of data points)\n\nMAD = (Σ |xᵢ - x̄|) ÷ n\n\nWhere:\n\n \n• xᵢ = each data point\n \n• x̄ = mean\n \n• n = number of data points\n\n**Calculation:**</",
+      "tags": [
+        "Mean Deviation"
+      ]
+    },
+    {
+      "qid": "683ffcbff168876e5e120427",
+      "n": 38,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Before using secondary data, one need NOT verify:",
+      "options": [
+        {
+          "label": "1",
+          "text": "reliability of data"
+        },
+        {
+          "label": "2",
+          "text": "suitability of data"
+        },
+        {
+          "label": "3",
+          "text": "expenditure involved at time of collection of data"
+        },
+        {
+          "label": "4",
+          "text": "adequacy of data"
+        }
+      ],
+      "correct": "3",
+      "solution": "*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" data-scroll-anchor=\"true\" data-testid=\"conversation-turn-2\" data-turn=\"assistant\" data-turn-id=\"005f258f-7b46-46c3-b59e-415e191b8fa1\" dir=\"auto\" tabindex=\"-1\">\n\nThe correct answer is: **E****xpenditure involved at time of collection of data** \n\n**Explanation:**\nWhen using **secondary data**, the researcher is relying on data already collected by someone else. Before using it, it is important to check:\n\n \n• \n \n**Reliability of data** – to ensure the data is accurate and trustworthy.\n\n \n \n• \n \n**Suitability of data** – to see if it fits the current research objectives.\n\n \n\nHowever, the **expenditure involved at the time the data was originally collected** is irrelevant for the current researcher, because they are not responsible for past costs.\n\nSo, verifying past expenditure is **not necessary**."
+    },
+    {
+      "qid": "683ffcd54e1536fa5a04f026",
+      "n": 39,
+      "type": "mcq",
+      "concept": "Permutation Function and its properties",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "25 books are placed at random on a shelf. The probability that a particular pair of books shall be always together is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "3/25"
+        },
+        {
+          "label": "2",
+          "text": "2/25"
+        },
+        {
+          "label": "3",
+          "text": "1/25"
+        },
+        {
+          "label": "4",
+          "text": "5/25"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\n25 books are placed randomly on a shelf. We need to find the probability that a particular pair of books will always be together.\n\n**Concept:**\n\nWhen two books are always together, they can be treated as a single entity, reducing the total number of entities to arrange. The arrangement of these two books within the entity also needs to be considered.\n\n**Formula Used:**\n\n1. Total arrangements of n books = n!\n\n2. Probability = (Favorable outcomes) / (Total outcomes)\n\n**Calculation:**\n\nTotal number of books = 25\n\nTotal arrangements of 25 books = 25!\n\nIf a particular pair of books is always together, treat it as one single unit.\n\nNumber of entities to arrange = 24 (23 books + 1 combined pair)\n\nArrangements of 24 entities = 24!\n\nThe two books in the pair can be arranged among themselves in 2! ways.\n\n⇒ Total favorable arrangements = 24! × 2!\n\nProbability that the pair of books is always together:\n\n⇒ Probability = (Favorable outcomes) / (Total outcomes)\n\n⇒ Probability = (24! × 2!) / 25!\n\nSimplify: Probability = (24! × 2!) / (25 × 24!)\n\n⇒ Probability = 2 / 25\n\n**∴ The probability that a particular pair of books shall always be together is 2/25**",
+      "tags": [
+        "Permutation Function and its properties"
+      ]
+    },
+    {
+      "qid": "683ffcec84820b715b61d5fb",
+      "n": 40,
+      "type": "mcq",
+      "concept": "Correlation and Regression",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Scatter diagram for the following data shows ___________.\n\nX 1 2 3 4 5\n\nY 9 8 7 6 5",
+      "options": [
+        {
+          "label": "1",
+          "text": "Negative Perfect Correlation"
+        },
+        {
+          "label": "2",
+          "text": "Perfect Positive Correlation"
+        },
+        {
+          "label": "3",
+          "text": "Zero Correlation"
+        },
+        {
+          "label": "4",
+          "text": "Positive Correlation"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is:Negative Perfect Correlation**\n\n [IMAGE: https://cdn.repeatermock.com/tb/3839bd229236ffaf6b7628bfe95f62c9b26df81a13c67c45740a3c7dec8cd7a6.png] \n\n**Explanation:**\n\nAs X increases from 1 → 5, Y decreases from 9 → 5\n\nThe points lie exactly on a straight line sloping downward\n\nThat means correlation = –1\n\nSo the scatter diagram shows a negative perfect correlation",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/3839bd229236ffaf6b7628bfe95f62c9b26df81a13c67c45740a3c7dec8cd7a6.png",
+          "alt": ""
+        }
+      ],
+      "tags": [
+        "Correlation and Regression"
+      ]
+    },
+    {
+      "qid": "683ffd5e7b63b96d8c284ce3",
+      "n": 41,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "With usual notations, the 95% confidence limits for the difference of two proportions is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(p₁-p₂)±1.96sqrt{(p₁q₁)/(n₁)+(p₂q₂)/(n₂)}"
+        },
+        {
+          "label": "2",
+          "text": "(p₁+p₂)±1.96sqrt{(p₁q₁)/(n₁)+(p₂q₂)/(n₂)}"
+        },
+        {
+          "label": "3",
+          "text": "(p₁+p₂)±1.96sqrt{(p₁q₁)/(n₁)-(p₂q₂)/(n₂)}"
+        },
+        {
+          "label": "4",
+          "text": "(p₁-p₂)±1.96sqrt{(p₁q₁)/(n₁)-(p₂q₂)/(n₂)}"
+        }
+      ],
+      "correct": "1",
+      "solution": "Calculation:\n\nFor two independent samples, the 95% confidence limits for the difference of two proportions are\n\n (p₁-p₂)±1.96sqrt{(p₁q₁)/(n₁)+(p₂q₂)/(n₂)}\n\nwhere q1=1−p1 q_1 = 1 - p_1\" id=\"MathJax-Element-20-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">q1=1−p1q1=1−p1 q_1 = 1 - p_1\nq1=1−p1q_1 = 1 - p_1\n​ and q2=1−p2 q_2 = 1 - p_2\" id=\"MathJax-Element-21-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">q2=1−p2q2=1−p2 q_2 = 1 - p_2\nq2=1−p2q_2 = 1 - p_2\n\nUses **difference** (p1−p2) (p_1 - p_2)\" id=\"MathJax-Element-22-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">(p1−p2)(p1−p2) (p_1 - p_2)\n(p1−p2)(p_1 - p_2)\n\nUses **sum of variances** inside the square root\n\nSo, **Option 1 is correct**.\n\n71:T3d"
+    },
+    {
+      "qid": "683ffd7bda6ec7b65ff38238",
+      "n": 42,
+      "type": "mcq",
+      "concept": "Basics of Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Find the coefficient of skewness from the following information: \n\nMode = 11, median = 8, Q₃ - Q₁ = 8, Q₃ + Q₁ = 22.",
+      "options": [
+        {
+          "label": "1",
+          "text": "1/3"
+        },
+        {
+          "label": "2",
+          "text": "1/4"
+        },
+        {
+          "label": "3",
+          "text": "3/4"
+        },
+        {
+          "label": "4",
+          "text": "1/5"
+        }
+      ],
+      "correct": "3",
+      "solution": "__**Calculation:**__\n\nWe're given:\n\n• Mode = 11\n\n• Median = 8\n\n• Q₃ − Q₁ = 8\n\n• Q₃ + Q₁ = 22\n\nSince quartiles are given, use Bowley’s coefficient of skewness:\n\n Sk = (Q₃ + Q₁ - 2M)/(Q₃ - Q₁) \n\nSubstitute values:\n\n Sk = (22 - 2(8))/(8) = (22 - 16)/(8) = (6)/(8) = (3)/(4) \n\n**Correct answer: 3/4 **",
+      "tags": [
+        "Basics of Probability"
+      ]
+    },
+    {
+      "qid": "683ffd9a2221e577527eff99",
+      "n": 43,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "On rolling of a die, the events E1 (getting an even number) and E2 (getting an odd number) are:",
+      "options": [
+        {
+          "label": "1",
+          "text": "mutually exclusive"
+        },
+        {
+          "label": "2",
+          "text": "exhaustive"
+        },
+        {
+          "label": "3",
+          "text": "neither mutually exclusive nor exhaustive"
+        },
+        {
+          "label": "4",
+          "text": "mutually exclusive and exhaustive"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nWhen rolling a die:\n\n \n• Event E₁: Getting an even number (2, 4, 6).\n \n• Event E₂: Getting an odd number (1, 3, 5).\n\n**Concept:**\n\n1. **Mutually Exclusive Events:** Two events are mutually exclusive if they cannot occur simultaneously. For example, rolling a die cannot result in both an even and odd number at the same time.\n\n2. **Exhaustive Events:** Two or more events are exhaustive if their union includes all possible outcomes. For example, rolling a die results in either an even or odd number.\n\nCalculat"
+    },
+    {
+      "qid": "683ffde82a5ca26b58132492",
+      "n": 44,
+      "type": "mcq",
+      "concept": "Correlation and Regression",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If Y=(x)/(2)+2 and X=(Y)/(8)-1 are regression lines of Y on X and X on Y, then correlation coefficient between X and Y is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "pm(1)/(4)"
+        },
+        {
+          "label": "2",
+          "text": "pm(1)/(6)"
+        },
+        {
+          "label": "3",
+          "text": "(1)/(4)"
+        },
+        {
+          "label": "4",
+          "text": "(1)/(6)"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nRegression line of Y on X:\n\nY = (1/2)X + 2\n\nRegression line of X on Y:\n\nX = (1/8)Y − 1\n\n⇒ byₓ = 1/2\n\n⇒ bₓy = 1/8\n\n**Concept Used:**\n\nCorrelation coefficient (r) is related to regression coefficients by:\n\nr = ±√(byₓ × bₓy)\n\n**Calculation:**\n\n⇒ r = √[(1/2) × (1/8)]\n\n⇒ r = √(1/16)\n\n⇒ r = 1/4\n\nSince both regression coefficients are positive,\n\nr is positive.\n\n**∴ Correlation coefficient, r = 1/4.**",
+      "tags": [
+        "Correlation and Regression"
+      ]
+    },
+    {
+      "qid": "683ffdfa55e0032e7fd10342",
+      "n": 45,
+      "type": "mcq",
+      "concept": "Basics of Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The coefficient of kurtosis (β₂) of standard normal distribution is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "-3"
+        },
+        {
+          "label": "2",
+          "text": "0"
+        },
+        {
+          "label": "3",
+          "text": "3"
+        },
+        {
+          "label": "4",
+          "text": "1"
+        }
+      ],
+      "correct": "3",
+      "solution": "__**Calculation:**__\n\nFor a standard normal distribution:\n\nThe coefficient of kurtosis is defined as:\n\n beta₂ = (mu₄)/(mu₂²) \n\nWhere:u₂ = second central moment (variance),**\nu₄ = fourth central moment\n\nFor a normal (including standard normal) distribution:\n\n mu₂ = 1 , mu₄ = 3 \n\nTherefore, beta₂ = (3)/(1²) = 3 \n\nHence, the correct answer is option 3.**",
+      "tags": [
+        "Basics of Probability"
+      ]
+    },
+    {
+      "qid": "683ffe5e123d7f3116364221",
+      "n": 46,
+      "type": "mcq",
+      "concept": "Normal Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If a large sample of size n is taken from a normal population with mean μ and standard deviation σ, the 95% confidence interval for the unknown parameter μ is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(bar x±1.96(sigma)/(sqrt n))"
+        },
+        {
+          "label": "2",
+          "text": "(bar x²±1.96(sigma)/(sqrt n))"
+        },
+        {
+          "label": "3",
+          "text": "(bar x±1.96(sigma²)/(sqrt n))"
+        },
+        {
+          "label": "4",
+          "text": "(bar x±1.96(sigma²)/( n))"
+        }
+      ],
+      "correct": "1",
+      "solution": "The correct answer is: (bar x±1.96(sigma)/(sqrt n))\n\n**Explanation:**\n\nFor a large sample drawn from a normal population with known standard deviation (σ), the sampling distribution of the sample mean bar{x} is normal with:\n\n• Mean = mu \n\n• Standard error = dfrac{sigma}{sqrt{n}} \n\nAt the 95% confidence level, the critical value from the standard normal distribution is 1.96.\n\nHence, the 95% confidence interval for the population mean mu is:\n\n bar{x} pm 1.96 ( dfrac{sigma}{sqrt{n}} ) \n\n**Why other options are incorrect:**\n\n• Option (2): Uses bar{x}² , which is not valid for confidence intervals.\n\n• Option (3): Incorrectly uses sigma² instead of sigma .\n\n• Option (4): Uses dfrac{sigma²}{n} , which represents variance, not standard error.",
+      "tags": [
+        "Normal Distribution"
+      ]
+    },
+    {
+      "qid": "683ffe701f3f7ce188ec1c0f",
+      "n": 47,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "O-gives are NOT useful for locating:",
+      "options": [
+        {
+          "label": "1",
+          "text": "percentiles"
+        },
+        {
+          "label": "2",
+          "text": "median"
+        },
+        {
+          "label": "3",
+          "text": "quartiles"
+        },
+        {
+          "label": "4",
+          "text": "mean"
+        }
+      ],
+      "correct": "4",
+      "solution": "*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" data-scroll-anchor=\"true\" data-testid=\"conversation-turn-2\" data-turn=\"assistant\" data-turn-id=\"336354fa-be68-4297-bf96-657c357dbf51\" dir=\"auto\" tabindex=\"-1\">\n\n**The Correct Answer is : Mean**\n\n**Explanation:**\n\n \n• \n \nOgives are used to find **median**, **quartiles**, and **percentiles** by reading values from the cumulative frequency curve.\n\n \n \n• \n \nThe **mean** requires actual data values and calculations, not just cumulative frequencies.\n\n \n\nSo options **1, 2, and 3** are useful & **4) mean** is not"
+    },
+    {
+      "qid": "683ffe89cc5966bae5eb3926",
+      "n": 48,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following index numbers is the geometric mean of Laspeyre’s and Paasche’s Index number?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Drobish—Bowley Index"
+        },
+        {
+          "label": "2",
+          "text": "Marshall-Edgeworth Index"
+        },
+        {
+          "label": "3",
+          "text": "Irving Fisher Index"
+        },
+        {
+          "label": "4",
+          "text": "Walsch Index"
+        }
+      ],
+      "correct": "3",
+      "solution": "**The Correct Answer is :Irving Fisher Index **\n\n**Concept Used:**\n\nThe geometric mean of two index numbers is obtained by taking the square root of their product.\n\n**Formula Used:**\n\nLaspeyres Index = L , Paasche Index = P\n\nGeometric Mean Index = √(L × P)\n\n**Calculation:**\n\nWe have, Laspeyres Index = L , Paasche Index = P\n\n⇒ Required Index = √(L × P)\n\n⇒ √(L × P) is defined as Fisher’s Index\n\n**Explanation of Other Options:**\n\n**Drobisch–Bowley Index** = (L + P) ÷ 2\n\n⇒ Arithmetic mean, not geometric mean\n\n**Marshall–Edgeworth Index uses**\n\n⇒ (q₀ + q₁) ÷ 2 as weights\n\n**Walsh Index uses**\n\n⇒ √(q₀ × q₁) as weights"
+    },
+    {
+      "qid": "683ffe9b3a810e630a869bf8",
+      "n": 49,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which component of a time series represents short-term fluctuations due to seasonal factors?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Seasonal component"
+        },
+        {
+          "label": "2",
+          "text": "Irregular component"
+        },
+        {
+          "label": "3",
+          "text": "Cyclical component"
+        },
+        {
+          "label": "4",
+          "text": "Trend"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct answer is: Seasonal component**\n\n__**Explanation:**__\nSeasonal component captures **short-term, regular fluctuations** that repeat at fixed intervals (monthly, quarterly, yearly) due to **seasonal factors** like weather, festivals, holidays, etc.\n\n**Quick contrast:**\n\n \n• \n \n**Trend** → long-term movement\n\n \n \n• \n \n**Seasonal** → short-term, *regular & repeating*\n\n \n \n• \n \n**Cyclical** → long-term business cycles (not fixed)\n\n \n \n• \n \n**Irregular** → random, unpredictable changes"
+    },
+    {
+      "qid": "683ffeb032dd2a08f4efdf38",
+      "n": 50,
+      "type": "mcq",
+      "concept": "Measurement and Analysis of Data",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Type I error occurs when:",
+      "options": [
+        {
+          "label": "1",
+          "text": "a false null hypothesis is rejected"
+        },
+        {
+          "label": "2",
+          "text": "a true null hypothesis is rejected"
+        },
+        {
+          "label": "3",
+          "text": "a true null hypothesis is accepted"
+        },
+        {
+          "label": "4",
+          "text": "a false null hypothesis is accepted"
+        }
+      ],
+      "correct": "2",
+      "solution": "**The Correct Answer is :a true null hypothesis is rejected **\n\n__**Explanation:**__\n\nA Type I error is the error of rejecting the null hypothesis when it is actually true. In other words, you think there is an effect or difference, but in reality, there isn’t.\n\nLooking at your options:\n\na false null hypothesis is rejected → This is correct decision, not an error.\n\n**a true null hypothesis is rejected → This is Type I error.**\n\na true null hypothesis is accepted → This is correct decision.\n\na false null hypothesis is accepted → This is Type II error.",
+      "tags": [
+        "Measurement and Analysis of Data"
+      ]
+    },
+    {
+      "qid": "6840021020bf252f0475120a",
+      "n": 51,
+      "type": "mcq",
+      "concept": "Hypothesis testing",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following statements is FALSE?",
+      "options": [
+        {
+          "label": "1",
+          "text": "An alternative hypothesis is complementary to null hypothesis."
+        },
+        {
+          "label": "2",
+          "text": "The hypothesis for testing mu < mu0 is two sided / two tailed."
+        },
+        {
+          "label": "3",
+          "text": "The null hypothesis H0: mu = mu0 can be tested against the alternative H1: mu not equal to mu0."
+        },
+        {
+          "label": "4",
+          "text": "The hypothesis for testing mu > mu0 is one sided / right tailed."
+        }
+      ],
+      "correct": "2",
+      "solution": "**The Correct Answer is: **The hypothesis for testing mu \n\n**Concept:**\n\nHypothesis testing involves null (H₀) and alternative (H₁) hypotheses. - One-sided test: H₁ specifies direction (). - Two-sided test: H1<",
+      "tags": [
+        "Hypothesis testing"
+      ]
+    },
+    {
+      "qid": "6840023665cb72b4dd323043",
+      "n": 52,
+      "type": "mcq",
+      "concept": "Continuous Distributions",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The median of the normal distribution with mean and variance μ and σ² is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "σ"
+        },
+        {
+          "label": "2",
+          "text": "μ/2"
+        },
+        {
+          "label": "3",
+          "text": "σ/2"
+        },
+        {
+          "label": "4",
+          "text": "μ"
+        }
+      ],
+      "correct": "4",
+      "solution": "**The Correct Answer is :μ**\n\n**Explanation:**\n\nFor a **normal distribution** N(μ,σ2) N(\\mu, \\sigma²)\" id=\"MathJax-Element-20-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">N(μ,σ2)N(μ,σ2) N(\\mu, \\sigma²)\nN(μ,σ2)N(\\mu, \\sigma²)\nN(μ,σ2):\n\n \n• \n \nThe distribution is **symmetric** about its mean μ\" id=\"MathJax-Element-21-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">\n \n \n\n \n \n• \n \nIn a symmetric distribution, the **median = mean = mode**.\n\n \n\nSo the **median** is: μ",
+      "tags": [
+        "Continuous Distributions"
+      ]
+    },
+    {
+      "qid": "6840024cf777830d0243b90e",
+      "n": 53,
+      "type": "mcq",
+      "concept": "Forecasting, Correlation and Regression",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "When two judges rank only two individuals, then value of Spearman’s rank correlation coefficient is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "-1 or 1"
+        },
+        {
+          "label": "2",
+          "text": "between 0 and 1"
+        },
+        {
+          "label": "3",
+          "text": "-1 or 0"
+        },
+        {
+          "label": "4",
+          "text": "0 or 1"
+        }
+      ],
+      "correct": "1",
+      "solution": "__**Calculation:**__\n\nConsider 2 individuals ranked by 2 judges.\n\nLet the ranks assigned by the judges be:\n\nJudge 1: (1, 2), Judge 2: (1, 2) or (2, 1)\n\nSpearman's rank correlation coefficient formula:\n\n rho = 1 - (6 sum d_i²)/(n(n² - 1)) \n\n**Case 1: Same order (Judge 2: 1, 2)**\n\n<span class=\"math",
+      "tags": [
+        "Forecasting",
+        "Correlation and Regression"
+      ]
+    },
+    {
+      "qid": "684002dc9d819db47fb77053",
+      "n": 54,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The formula used for finding the simple aggregate index numbers is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "frac{Sigma p₀pᵢj}{Sigma p₀j}times 100"
+        },
+        {
+          "label": "2",
+          "text": "frac{Sigma pᵢj}{Sigma p₀pᵢj}times 100"
+        },
+        {
+          "label": "3",
+          "text": "frac{Sigma pᵢj}{Sigma p₀j}times 100"
+        },
+        {
+          "label": "4",
+          "text": "(Sigma p₀j)/(Sigma pᵢj₎times 100"
+        }
+      ],
+      "correct": "3",
+      "solution": "**The Correct Answer is : frac{Sigma pᵢj}{Sigma p₀j}times 100**\n\n__**Explanation:**__ \n\nA simple aggregate price index compares the total value of a set of items in the current period with the total value in the base period.\n\nThe standard formula is: frac{Sigma pᵢj}{Sigma p₀j}times 100"
+    },
+    {
+      "qid": "68400310e47f1925e30bd28f",
+      "n": 55,
+      "type": "mcq",
+      "concept": "Methods of Estimation",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If S² is the sample variance of a sample of size n and s² is an unbiased estimator of population variance, then which of the following is true?",
+      "options": [
+        {
+          "label": "1",
+          "text": "n S² = (n - 1) S²"
+        },
+        {
+          "label": "2",
+          "text": "(n - 1) S² = n S2"
+        },
+        {
+          "label": "3",
+          "text": "(n + 1) S2​ = n S2"
+        },
+        {
+          "label": "4",
+          "text": "n S2 = (n + 1) S2"
+        }
+      ],
+      "correct": "2",
+      "solution": "__**Calculation:**__\n\nConsider a random sample of size n .\n\nLet the sample variance be:\n\n S² = dfrac{1}{n}sumᵢ₌₁ⁿ(X_i-bar X)² \n\nLet the unbiased estimator of population variance be:\n\n s² = dfrac{1}{n-1}sumᵢ₌₁ⁿ(X_i-bar X)² \n\nFrom the definition of sample variance:\n\n sumᵢ₌₁ⁿ(X_i-bar X)² = nS² \n\nSubstitute this into the formula for s² :\n\n s² = dfrac{1}{n-1}(nS²) \n\nRearranging the terms:\n\n (n-1)s² = nS² \n\nEquivalently,\n\n (n-1)S² = ns² \n\n**Hence, the correct answer is option 2.**",
+      "tags": [
+        "Methods of Estimation"
+      ]
+    },
+    {
+      "qid": "68400362832265cd6ec4a95e",
+      "n": 56,
+      "type": "mcq",
+      "concept": "Correlation Analysis",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "or three random variables X₁, X₂ and X₃, correlation coefficients between pairs of random variables are r₁₂ = sin²θ, r₁₂ = cos θ and r₂₃ = sin θ.\n\nThe partial correlation coefficient r₁₂.₃ is given by:",
+      "options": [
+        {
+          "label": "1",
+          "text": "tan θ - 1"
+        },
+        {
+          "label": "2",
+          "text": "sin θ - 1"
+        },
+        {
+          "label": "3",
+          "text": "cot θ - 1"
+        },
+        {
+          "label": "4",
+          "text": "cos θ - 1"
+        }
+      ],
+      "correct": "1",
+      "solution": "__**Calculation:**__\n\nWe are asked to find the partial correlation coefficient, given:\n\n• r₁₂ = sin² theta , r₁₃ = cos theta , r₂₃ = sin theta \n\n**Formula for partial correlation**\n\nFor three variables X₁, X₂, X₃ :\n\n r₁₂.₃ = dfrac{r₁₂ - r₁₃ r₂₃}{sqrt{(1 - r₁₃²)(1 - r₂₃²)}} \n\n**Step 2: Substitute values**\n\n r₁₂.₃ = dfrac{sin² theta - (cos theta)(sin theta)}{sqrt{(1 - cos² theta)(1 - sin² theta)}} \n\n**Step 3: Simplify numerator**\n\n sin² theta - cos theta sin theta = sin theta (sin theta - cos theta) \n\n**Step 4: Simplify denominator**\n\n sqrt{(1 - cos² theta)(1 - sin² theta)} = sqrt{sin² theta · cos² theta} = sin theta cos theta \n\n**Step 5: Combine**\n\n r₁₂.₃ = dfrac{sin theta (sin theta - cos theta)}{sin theta cos theta} = dfrac{sin theta - cos theta}{cos theta} = dfrac{sin theta}{cos theta} - 1 = tan theta - 1 \n\n**Answer: 1) tan theta - 1 **",
+      "tags": [
+        "Correlation Analysis"
+      ]
+    },
+    {
+      "qid": "6840037861cd0db26e37b61c",
+      "n": 57,
+      "type": "mcq",
+      "concept": "Hypothesis testing",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following statements is NOT true about a critical region w?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Known as region of acceptance"
+        },
+        {
+          "label": "2",
+          "text": "Alternative hypothesis accepted if set points lie in w"
+        },
+        {
+          "label": "3",
+          "text": "Null hypothesis rejected if set points lie in w"
+        },
+        {
+          "label": "4",
+          "text": "Known as region of rejection"
+        }
+      ],
+      "correct": "2",
+      "solution": "**The Correct Answer is :Alternative hypothesis accepted if set points lie in w**\n\n**Explanation:**\n\nLet's carefully analyze each statement about the critical region w in hypothesis testing:\n\nKnown as region of acceptance → This is false.",
+      "tags": [
+        "Hypothesis testing"
+      ]
+    },
+    {
+      "qid": "6840038bf22c028d9494fc02",
+      "n": 58,
+      "type": "mcq",
+      "concept": "Expectation and Moments",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For the set of numbers 2, 3, 7, 8 and 10, the second order moment about the origin 4 is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "13.2"
+        },
+        {
+          "label": "2",
+          "text": "12.6"
+        },
+        {
+          "label": "3",
+          "text": "15"
+        },
+        {
+          "label": "4",
+          "text": "10.5"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nSet of numbers: 2, 3, 7, 8, 10\n\nSecond-order moment about the origin (4) is required.\n\n**Concept:**\n\nThe second-order moment about the origin is defined as:\n\nM₂ = Σ(xᵢ - origin)² / n\n\nWhere n is the number of data points, xᵢ are the individual values, and the origin is the reference value.\n\n**Formula Used:**\n\nM₂ =",
+      "tags": [
+        "Expectation and Moments"
+      ]
+    },
+    {
+      "qid": "684003a229b0add33d899c8a",
+      "n": 59,
+      "type": "mcq",
+      "concept": "Statistical Variables",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a data set, let the first and third quartiles be 268.25 and 290.75, respectively. The quartile deviation is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "12"
+        },
+        {
+          "label": "2",
+          "text": "11.25"
+        },
+        {
+          "label": "3",
+          "text": "18.5"
+        },
+        {
+          "label": "4",
+          "text": "15"
+        }
+      ],
+      "correct": "2",
+      "solution": "__**Calculation:**__\n\nGiven first and third quartiles:\n\n Q₁ = 268.25, Q₃ = 290.75 \n\nQuartile deviation is defined as:\n\n QD = dfrac{Q₃ - Q₁}{2} \n\nSubstitute the given values:\n\n QD = dfrac{290.75 - 268.25}{2} \n\nCalculate the difference:\n\n QD = dfrac{22.50}{2} \n\nSimplify:\n\n QD = 11.25 \n\n**Hence, the correct answer is option 2.**",
+      "tags": [
+        "Statistical Variables"
+      ]
+    },
+    {
+      "qid": "684003b610d1715ea13aa7a6",
+      "n": 60,
+      "type": "mcq",
+      "concept": "Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "It has been found that 2% of the tools produced by a certain machine are defective. What is the probability that in a shipment of 400 such tools, 3%or more will be defective? (Probability that the normal variate lies between 0 and 1.43 is 0.4236.)",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.0764"
+        },
+        {
+          "label": "2",
+          "text": "0.50"
+        },
+        {
+          "label": "3",
+          "text": "0.4236"
+        },
+        {
+          "label": "4",
+          "text": "1.43"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nDefective tools rate = 2%.\n\nTotal tools in shipment = 400.\n\nProbability required for 3% or more defective tools.\n\nProbability that normal variate lies between 0 and 1.43 = 0.4236.\n\n**Concept:**\n\nFor large sample size, Binomial distribution approximates to Normal distribution.\n\nMean (μ) = n × p.\n\nStandard deviation (σ) = √(n × p × (1 − p)).\n\nZ = (X − μ) / σ.\n\n**Calculation:**\n\n⇒ n = 400, p = 0.02.\n\n⇒ Mean, μ = n × p = 400 × 0.02 = 8.\n\n⇒ Standard deviation, σ = √(n × p × (1 − p)) = √(400 × 0.02 × 0.98) = √7.84 ≈ 2.8.\n\n⇒ For 3% defective tools, X = 0.03 × 400 = 12.\n\n⇒ Z = (X − μ) / σ = (12 − 8) / 2.8 ≈ 1.43.\n\n⇒ Probability for Z > 1.43 = 0.5 − 0.4236 = 0.0764.\n\n**∴ The probability that 3% or more tools are defective is 0.0764.**",
+      "tags": [
+        "Distribution"
+      ]
+    },
+    {
+      "qid": "684003d06524bd03d95d31e9",
+      "n": 61,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the values of Bowley’s coefficient of skewness, third quartile and first quartile are 0.5, 10 and 5, respectively, then the value of the second quartile is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "6/4"
+        },
+        {
+          "label": "2",
+          "text": "7/3"
+        },
+        {
+          "label": "3",
+          "text": "3/4"
+        },
+        {
+          "label": "4",
+          "text": "25/4"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nBowley’s coefficient of skewness = 0.5\n\nThird quartile (Q₃) = 10\n\nFirst quartile (Q₁) = 5\n\n**Concept:**\n\nBowley’s coefficient of skewness (SB) is given by:\n\nSB = (Q₃ - Q₂) - (Q₂ - Q₁) / (Q₃ - Q₁)\n\nWhere Q₂ is the second quartile (median).\n\n**Formula Used:**\n\nSB = (Q₃ + Q₁ - 2Q₂) / (Q₃ - Q₁)\n\n**Calculation:**\n\nWe have:\n\n⇒ SB = 0.5\n\n⇒ Q₃ = 10, Q₁ = 5\n\nSubstitute values into the formula:\n\n⇒ 0.5 = (10 + 5 - 2Q₂) / (10 - 5)\n\n⇒ 0.5 = (15 - 2Q₂) / 5\n\nMultiply through by 5:\n\n⇒ 2.5 = 15 - 2Q₂\n\nRearrange:\n\n⇒ 2Q₂ = 15 - 2.5\n\n⇒ 2Q₂ = 12.5\n\nDivide by 2:\n\n⇒ Q₂ = 12.5 / 2\n\n⇒ Q₂ = 6.25\n\n**∴ The second quartile (Q₂) is 6.25.**"
+    },
+    {
+      "qid": "684003e8a2a609c59aad98cb",
+      "n": 62,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following components of time series reflect the general tendency of the data to increase or decrease during a long period of time?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Trend"
+        },
+        {
+          "label": "2",
+          "text": "Seasonal"
+        },
+        {
+          "label": "3",
+          "text": "Irregular"
+        },
+        {
+          "label": "4",
+          "text": "Cyclical"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is: Trend**\n\n__**Explanation:**__\n\nThe component of a time series that reflects the general tendency of the data to increase or decrease over a long period is the Trend.\n\nTrend (1): Shows the long-term movement of the data, either upward or downward.\n\nSeasonal (2): Short-term fluctuations occurring at regular intervals (e.g., months, quarters).\n\nIrregular (3): Random, unpredictable variations.\n\nCyclical (4): Long-term fluctuations caused by business or economic cycles, not regular like seasonal."
+    },
+    {
+      "qid": "68400415f515400b6e332bbe",
+      "n": 63,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a completely randomized design, with 4 treatments replicated 5 times, the following information is obtained. SST = 26234.95, SSE=11558.80, the F꜀ₐᵢ is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "20"
+        },
+        {
+          "label": "2",
+          "text": "12.11"
+        },
+        {
+          "label": "3",
+          "text": "14.89"
+        },
+        {
+          "label": "4",
+          "text": "15.6"
+        }
+      ],
+      "correct": "2",
+      "solution": "__**Calculation:**__\n\nGiven a completely randomized design with 4 treatments and 5 replications,\n\nNumber of treatments: t = 4 , Replications: r = 5 \n\nSum of squares for treatments: SST = 26234.95 \n\nSum of squares for error: SSE = 11558.80 \n\nStep 1: Degrees of freedom\n\n dfₜᵣₑₐₜₘₑₙₜₛ = t-1 = 3 \n\n dfₑᵣᵣₒᵣ = t(r-1) = 16 \n\nStep 2: Mean squares\n\n MSₜᵣₑₐₜₘₑₙₜₛ = (SST)/(dfₜᵣₑₐₜₘₑₙₜₛ₎ = (26234.95)/(3) approx 8744.98 \n\n MSₑᵣᵣₒᵣ = (SSE)/(dfₑᵣᵣₒᵣ₎ = (11558.80)/(16) approx 722.43 \n\nStep 3: F-calculated\n\n F꜀ₐₗ = frac{MSₜᵣₑₐₜₘₑₙₜₛ}{MSₑᵣᵣₒᵣ} = (8744.98)/(722.43) approx 12.11 \n\n**Hence, the correct answer is **12.11"
+    },
+    {
+      "qid": "68400428da6ec7b65ff3b6e0",
+      "n": 64,
+      "type": "mcq",
+      "concept": "Probability and Conditional Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If a fair six-sided die is tossed twice and the tosses are independent, then probability of getting a 5 on both tosses is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "1/3"
+        },
+        {
+          "label": "2",
+          "text": "1/36"
+        },
+        {
+          "label": "3",
+          "text": "1/6"
+        },
+        {
+          "label": "4",
+          "text": "1/12"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nA fair six-sided die is tossed twice. Tosses are independent. Probability of getting a 5 on both tosses is required.\n\n**Concept:**\n\nThe probability of an event = (Favorable outcomes) / (Total outcomes).\n\nFor independent events A and B, P(A ∩ B) = P(A) × P(B).\n\n**Formula Used:**\n\nProbability of rolling a specific number on a fair die = 1/6.\n\n**Calculation:**\n\nStep 1: Probability of rolling a 5 on a single toss\n\n⇒ P(rolling a 5) = 1/6\n\nStep 2: Since the tosses are independent, the probability of getting a 5 on both tosses is:\n\n⇒ P(5 on 1st toss ∩ 5 on 2nd toss) = P(5 on 1st toss) × P(5 on 2nd toss)\n\n⇒ P(5 on both tosses) = (1/6) × (1/6)\n\n⇒ P(5 on both tosses) = 1/36\n\n**∴ Probability of getting a 5 on both tosses is 1/36.**",
+      "tags": [
+        "Probability and Conditional Probability"
+      ]
+    },
+    {
+      "qid": "6840043aeceedde0c4bdf613",
+      "n": 65,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The primary purpose of constructing index numbers is to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "compare relative changes in variables over time"
+        },
+        {
+          "label": "2",
+          "text": "assess purchasing power of money"
+        },
+        {
+          "label": "3",
+          "text": "calculate statistical variances"
+        },
+        {
+          "label": "4",
+          "text": "estimate population parameters"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is :****compare relative changes in variables over time** \n\n**Explanation:**\nIndex numbers are statistical measures designed to** track changes in a variable or a group of related variables over time**. Common examples include price indices (CPI, WPI) and production indices. They help us **see how things like prices, production, or wages change relative to a base period**, rather than measuring absolute amounts.\n\n \n• \n \nOption 2 relates to inflation and purchasing power, which index numbers like CPI can indicate, but this is **a secondary use**, not the primary purpose.\n\n \n \n• \n \nOptions 3 and 4 are related to general statistics, not specifically to index numbers."
+    },
+    {
+      "qid": "6840045e6b61c8984bbf3d10",
+      "n": 66,
+      "type": "mcq",
+      "concept": "Statistical Variables",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Half of the difference between the 75th percentile and 25th percentile is called:",
+      "options": [
+        {
+          "label": "1",
+          "text": "coefficient of variation"
+        },
+        {
+          "label": "2",
+          "text": "coefficient of skewness"
+        },
+        {
+          "label": "3",
+          "text": "range"
+        },
+        {
+          "label": "4",
+          "text": "quartile deviation"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nThe difference between the 75th percentile and the 25th percentile is divided by 2. This is often referred to as the \"Half of the interquartile range.\"\n\n**Concept:**\n\nThe interquartile range (IQR) is a measure of statistical dispersion and is calculated as:\n\nIQR = Q₃ - Q₁\n\nWhere:\n\n \n• Q₃ = 75th percentile (Upper Quartile)\n \n• Q₁ = 25th percentile (Lower Quartile)\n\nQuartile Deviation (QD) is half of the IQR:\n\nQuartile Deviation = (Q₃ - Q₁) / 2\n\n**Formula Used:**\n\nQuartile Deviation = (Q₃ - Q₁) / 2\n\n**Calculation:**\n\nLet the values of Q₁ and Q₃ be given, where:\n\n⇒ Q₃ = 75th percentile\n\n⇒ Q₁ = 25th percentile\n\n⇒ IQR = Q₃ - Q₁\n\n⇒ Quartile Deviation = (Q₃ - Q₁) / 2\n\n**Conclusion:**\n\n∴ The correct answer is Option 4: Quartile Deviation",
+      "tags": [
+        "Statistical Variables"
+      ]
+    },
+    {
+      "qid": "6840047280fc411e33f0586c",
+      "n": 67,
+      "type": "mcq",
+      "concept": "Basics of Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Data sets with high kurtosis:",
+      "options": [
+        {
+          "label": "1",
+          "text": "have no outliers"
+        },
+        {
+          "label": "2",
+          "text": "will have their distributions symmetric"
+        },
+        {
+          "label": "3",
+          "text": "tend to have heavy outliers"
+        },
+        {
+          "label": "4",
+          "text": "tend to have light outliers"
+        }
+      ],
+      "correct": "3",
+      "solution": "**The correct answer is : tend to have heavy outliers **\n\n__**Explanation:**__\n\n \n• Kurtosis measures the \"tailedness\" of a distribution.\n \n• High kurtosis (leptokurtic) indicates that the distribution has heavy tails, meaning more data points lie far from the mean.\n \n• This results in more extreme values (outliers) compared to a normal distribution.\n \n• Symmetry is not guaranteed, and high kurtosis does not mean no outliers.\n\n So, datasets with high kurtosis tend to have heavy outliers.",
+      "tags": [
+        "Basics of Probability"
+      ]
+    },
+    {
+      "qid": "684004eefba60a06ab27963f",
+      "n": 68,
+      "type": "mcq",
+      "concept": "Random Variables Basics",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Let a continuous random variable X have pdf \n\n f(x)=left{begin{matrix}-0.75x²+1.5x ; 0 The mode of X is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "2"
+        },
+        {
+          "label": "2",
+          "text": "1.8"
+        },
+        {
+          "label": "3",
+          "text": "2.6"
+        },
+        {
+          "label": "4",
+          "text": "1"
+        }
+      ],
+      "correct": "4",
+      "solution": "__**Calculation:**__\n\nThe given probability density function is:\n\n f(x) = -0.75x² + 1.5x, 0 \n\nThe mode of a continuous random variable is the value of x at which the pdf is maximum.\n\nDifferentiate f(x) with respect to x :\n\n f'(x) = dfrac{d}{dx}(-0.75x² + 1.5x) \n\n f'(x) = -1.5x + 1.5 \n\nSet the derivative equal to zero:\n\n -1.5x + 1.5 = 0 \n\n x = 1 \n\nSince 1 in (0,2) and the coefficient of x² is negative, the function attains its maximum at this point.\n\n**Hence, the correct answer is option 4.**",
+      "tags": [
+        "Random Variables Basics"
+      ]
+    },
+    {
+      "qid": "68400506cc5966bae5eb6ba6",
+      "n": 69,
+      "type": "mcq",
+      "concept": "Correlation Analysis",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "At what value of R₁.₂₃ are all regression residuals zero?",
+      "options": [
+        {
+          "label": "1",
+          "text": "-1"
+        },
+        {
+          "label": "2",
+          "text": "1"
+        },
+        {
+          "label": "3",
+          "text": "Both 1 and -1"
+        },
+        {
+          "label": "4",
+          "text": "0"
+        }
+      ],
+      "correct": "3",
+      "solution": "__**Calculation:**__\n\nConsider the regression model: y = hat{y} + e \n\nwhere e denotes the regression residual.\n\nResidual for the i-th observation:\n\n e_i = y_i - hat{y}_i \n\nFor all residuals to be zero: e_i = 0 forall i \n\n⇒ y_i = hat{y}_i for all observations\n\nThis condition holds only when the regression line fits all data points exactly.\n\nIn regression analysis, this happens when the correlation coefficient:\n\n |R| = 1 \n\nThus: R = +1 (perfect positive correlation)\n\n R = -1 (perfect negative correlation)\n\nBoth cases give zero residuals.\n\n**Hence, the correct answer is option 3: Both 1 and −1.**",
+      "tags": [
+        "Correlation Analysis"
+      ]
+    },
+    {
+      "qid": "68400515468dde7bf10ad564",
+      "n": 70,
+      "type": "mcq",
+      "concept": "Measures of Dispersion",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the standard deviation of a population is 100, then based on a sample of size 100, the standard deviation of sample mean is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "10"
+        },
+        {
+          "label": "2",
+          "text": "80"
+        },
+        {
+          "label": "3",
+          "text": "100"
+        },
+        {
+          "label": "4",
+          "text": "50"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nPopulation standard deviation (σ) = 100\n\nSample size (n) = 100\n\n**Concept:**\n\nThe standard deviation of the sample mean, also called the standard error of the mean (SE), is calculated using the formula:\n\nSE = σ / √n\n\nHere, σ is the population standard deviation, and n is the sample size.\n\n**Calculation:**\n\nWe have,\n\n⇒ SE = σ / √n\n\n⇒ SE = 100 / √100\n\n⇒ SE = 100 / 10\n\n⇒ SE = 10\n\n**∴ The standard deviation of the sample mean is 10.**",
+      "tags": [
+        "Measures of Dispersion"
+      ]
+    },
+    {
+      "qid": "6840052c4e1536fa5a0539e0",
+      "n": 71,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If for the given distribution, the arithmetic mean is 9.41, then which of the following values will replace the question mark (?) in the distribution?\n\nX 5 8 9 ? 13\n\nf 8 20 30 25 17",
+      "options": [
+        {
+          "label": "1",
+          "text": "9"
+        },
+        {
+          "label": "2",
+          "text": "10"
+        },
+        {
+          "label": "3",
+          "text": "11"
+        },
+        {
+          "label": "4",
+          "text": "8"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nDistribution:\n\nX: 5, 8, 9, ?, 13\n\nf: 8, 20, 30, 25, 17\n\nArithmetic Mean = 9.41\n\n**Concept:**\n\nThe arithmetic mean of a frequency distribution is calculated using the formula:\n\nMean (M) = (ΣfX) / Σf\n\n**Formula Used:**\n\nMean (M) = (ΣfX) / Σf\n\nΣf = Sum of frequencies\n\nΣfX = Sum of the product of frequency (f) and values (X)\n\n**Calculation:**\n\n⇒ Σf = 8 + 20 + 30 + 25 + 17 = 100\n\n⇒ Arithmetic Mean (M) = 9.41\n\n⇒ ΣfX = M × Σf = 9.41 × 100 = 941\n\n⇒ ΣfX = (8×5) + (20×8) + (30×9) + (25×?) + (17×13)\n\n⇒ 941 = 40 + 160 + 270 + 25×? + 221\n\n⇒ 941 = 691 + 25×?\n\n⇒ 25×? = 941 - 691 = 250\n\n⇒ ? = 250 ÷ 25 = 10\n\n**∴ The value of ? is 10.**"
+    },
+    {
+      "qid": "684005406113635101be06c6",
+      "n": 72,
+      "type": "mcq",
+      "concept": "Statistical Variables",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For a frequency polygon:",
+      "options": [
+        {
+          "label": "1",
+          "text": "frequencies are plotted against class boundaries"
+        },
+        {
+          "label": "2",
+          "text": "frequencies are plotted against class limits"
+        },
+        {
+          "label": "3",
+          "text": "class intervals are of equal width"
+        },
+        {
+          "label": "4",
+          "text": "cumulative frequencies are plotted against class limits"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Concept:**\n\nA frequency polygon is a graphical representation of a frequency distribution. The key points to consider for constructing a frequency polygon include:\n\n \n• The frequencies are plotted against the midpoints of the class intervals.\n \n• The class intervals must be of equal width to ensure accurate representation of data.\n \n• The points are connected by straight lines to form the polygon.</",
+      "tags": [
+        "Statistical Variables"
+      ]
+    },
+    {
+      "qid": "684005573d3aca83aadff8ca",
+      "n": 73,
+      "type": "mcq",
+      "concept": "Expectation and Moments",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The first four moments of a distribution about X = 2 are -2, 12, -20 and 100, then 4, equals:",
+      "options": [
+        {
+          "label": "1",
+          "text": "26"
+        },
+        {
+          "label": "2",
+          "text": "34"
+        },
+        {
+          "label": "3",
+          "text": "38"
+        },
+        {
+          "label": "4",
+          "text": "32"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nThe first four moments of a distribution about X = 2 are -2, 12, -20, and 100.\n\n**Concept:**\n\nThe fourth central moment, μ₄, is calculated using the formula:\n\nμ₄ = M₄ - 4M₃X + 6M₂X² - 4M₁X³ + X⁴\n\nWhere M₁, M₂, M₃, and M₄ are the first, second, third, and fourth moments about X, respectively.\n\n**Calculation:**\n\nWe have X = 2, M₁ = -2, M₂ = 12, M₃ = -20, and M₄ = 100.\n\n⇒ μ₄ = 100 - 4(-20)(2) + 6(12)(2²) - 4(-2)(2³) + 2⁴\n\n⇒ μ₄ = 100 - 4(-40) + 6(12)(4) - 4(-2)(8) + 16\n\n⇒ μ₄ = 100 + 160 + 288 + 64 + 16\n\n⇒ μ₄ = 628\n\n∴ μ₄ = 628.",
+      "tags": [
+        "Expectation and Moments"
+      ]
+    },
+    {
+      "qid": "6840058029b0add33d89ac4c",
+      "n": 74,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Die I has 4 red and 2 white faces and die I has 2 red and 4 white faces. A coin is flipped once. If head appears, the game continues by flipping die I, and if tail appears, then die II is used. The probability of getting a red face at any throw is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "1/4"
+        },
+        {
+          "label": "2",
+          "text": "1/8"
+        },
+        {
+          "label": "3",
+          "text": "1/3"
+        },
+        {
+          "label": "4",
+          "text": "1/2"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nDie I: 4 red faces, 2 white faces.\n\nDie II: 2 red faces, 4 white faces.\n\nCoin flip: Heads → Die I, Tails → Die II.\n\nFind probability of getting a red face in any throw.\n\n**Concept:**\n\nProbability = Favorable outcomes ÷ Total outcomes.\n\nWeighted probability when multiple events occur: Combine probabilities based on chances of each event.\n\n**Formula Used:**\n\nTotal Probability = P(Head) × P(Red from Die I) + P(Tail) × P(Red from Die II)"
+    },
+    {
+      "qid": "6840058c123d7f31163680d4",
+      "n": 75,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean and variance of a Binomial distribution are 8 and 4 respectively, then the value of n is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "32"
+        },
+        {
+          "label": "2",
+          "text": "64"
+        },
+        {
+          "label": "3",
+          "text": "8"
+        },
+        {
+          "label": "4",
+          "text": "16"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nMean = 8, Variance = 4\n\nBinomial Distribution: Mean = n × p, Variance = n × p × q\n\n**Concept:**\n\nIn a Binomial Distribution,\n\nMean = n × p\n\nVariance = n × p × q\n\nWhere q = 1 - p.\n\n**Formula Used:**\n\nMean = n × p\n\nVariance"
+    },
+    {
+      "qid": "684005c5ce5b06d5828f3863",
+      "n": 76,
+      "type": "mcq",
+      "concept": "Continuous Distributions",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Let X follows normal distribution with mean μ and median μ̅ , then P(μ < X < μ̅) is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "0.50"
+        },
+        {
+          "label": "2",
+          "text": "0"
+        },
+        {
+          "label": "3",
+          "text": "0.10"
+        },
+        {
+          "label": "4",
+          "text": "0.25"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nLet X follows a normal distribution with mean μ and median μ̅.\n\nWe need to find P(μ < X < μ̅).\n\n**Concept:**\n\nFor a normal distribution, mean (μ) and median (μ̅) are equal. This is due to the symmetry of the normal distribution.<",
+      "tags": [
+        "Continuous Distributions"
+      ]
+    },
+    {
+      "qid": "684006bb10d1715ea13abdae",
+      "n": 77,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For a completely randomised design with k treatments, let \n\nxᵢj = ith observation corresponding to jth treatment, \n\ni = 1, 2, ...., nj, j = 1, 2, ....,k\n\nT = total of all observations, \n\nx̅j = mean of jth treatment\n\nx̅ = (T)/(N) where N = Sigmaj₌₁^kn_j\n\nThe formula for finding the sum of squares due to error (SSE) is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Sigmaj₌₁^k(bar x_j-bar x)"
+        },
+        {
+          "label": "2",
+          "text": "Sigmaj₌₁^k n_j(bar x_j-bar x)²"
+        },
+        {
+          "label": "3",
+          "text": "Sigmaj₌₁^k Sigmaᵢ₌₁ⁿ_j( xᵢj-bar x_j)²"
+        },
+        {
+          "label": "4",
+          "text": "Sigmaj₌₁^k Sigmaᵢ₌₁ⁿ_j( xᵢj-bar x)²"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nIn a completely randomised design with k treatments:\n\n \n• xij\" id=\"MathJax-Element-23-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">xijxij\" id=\"MathJax-Element-41-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">xijxij\n xij\n x_{ij} = ith observation corresponding to jth treatment\n \n• i = 1, 2, ..., nj\" id=\"MathJax-Element-24-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">njnj\" id=\"MathJax-Element-42-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">njnj\n nj\n n_j , j = 1, 2, ..., k\n \n• T\" id=\"MathJax-Element-25-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">TT\" id=\"MathJax-Element-43-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">TT\n T\n T = total of all observations\n \n• x¯j\" id=\"MathJax-Element-26-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯jx¯j\" id=\"MathJax-Element-44-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯jx¯j\n x¯j\n \\bar{x}_j = mean of jth treatment\n \n• x¯=TN\" id=\"MathJax-Element-27-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯=TNx¯=TN\" id=\"MathJax-Element-45-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯=TNx¯=TN\n x¯=TN\n \\bar{x} = \\frac{T}{N} , where N=Σj=1knj\" id=\"MathJax-Element-28-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">N=Σkj=1njN=Σj=1knj\" id=\"MathJax-Element-46-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">N=Σkj=1njN=Σj=1knj\n N=Σj=1knj\n N = \\Sigma_{j=1}^k n_j\n\n**Concept:**\n\nIn statistical analysis, the sum of squares due to error (SSE) measures the variation within treatments after accounting for treatment means.\n\n**Formula Used:**\n\nSSE=Σj=1kΣi=1nj(xij−x¯j)2\" id=\"MathJax-Element-29-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">SSE=Σkj=1Σnji=1(xij−x¯j)2SSE=Σj=1kΣi=1nj(xij−x¯j)2\" id=\"MathJax-Element-47-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">SSE=Σkj=1Σnji=1(xij−x¯j)2SSE=Σj=1kΣi=1nj(xij−x¯j)2\nSSE=Σj=1kΣi=1nj(xij−x¯j)2\n \\text{SSE} = \\Sigma_{j=1}^k \\Sigma_{i=1}^{n_j}(x_{ij} - \\bar{x}_j)²\n\n**Calculation:**\n\nStep-by-step to calculate SSE:\n\n⇒ First, calculate the mean of each treatment (x¯j\" id=\"MathJax-Element-30-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯jx¯j\" id=\"MathJax-Element-48-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯jx¯j\nx¯j\n \\bar{x}_j ):\n\n⇒ x¯j=Σi=1njxijnj\" id=\"MathJax-Element-31-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯j=Σnji=1xijnjx¯j=Σi=1njxijnj\" id=\"MathJax-Element-49-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">x¯j=Σnji=1xijnjx¯j=Σi=1njxijnj\nx¯j=Σi=1njxijnj\n \\bar{x}_j = \\frac{\\Sigma_{i=1}^{n_j} x_{ij}}{n_j}\n\n⇒ Then, calculate the sum of squares for each observation within a treatment:\n\n⇒ For each treatment j\" id=\"MathJax-Element-32-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">jj\" id=\"MathJax-Element-50-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">jj\nj\n j , find (xij−x¯j)2\" id=\"MathJax-Element-33-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">(xij−x¯j)2(xij−x¯j)2\" id=\"MathJax-Element-51-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">(xij−x¯j)2(xij−x¯j)2\n(xij−x¯j)2\n (x_{ij} - \\bar{x}_j)² .\n\n⇒ Sum the squared deviations for all observations across all treatments:\n\n⇒ SSE=Σj=1kΣi=1nj(xij−x¯j)2\" id=\"MathJax-Element-34-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">SSE=Σkj=1Σnji=1(xij−x¯j)2SSE=Σj=1kΣi=1nj(xij−x¯j)2\" id=\"MathJax-Element-52-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">SSE=Σkj=1Σnji=1(xij−x¯j)2SSE=Σj=1kΣi=1nj(xij−x¯j)2\nSSE=Σj=1kΣi=1nj(xij−x¯j)2\n \\text{SSE} = \\Sigma_{j=1}^k \\Sigma_{i=1}^{n_j}(x_{ij} - \\bar{x}_j)²\n\n**Conclusion:**\n\n∴ The formula for finding the sum of squares due to error (SSE) is:\n\nSSE=Σj=1kΣi=1nj(xij−x¯j)2\" id=\"MathJax-Element-35-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">SSE=Σkj=1Σnji=1(xij−x¯j)2SSE=Σj=1kΣi=1nj(xij−x¯j)2\" id=\"MathJax-Element-53-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">SSE=Σkj=1Σnji=1(xij−x¯j)2SSE=Σj=1kΣi=1nj(xij−x¯j)2\nSSE=Σj=1kΣi=1nj(xij−x¯j)2\n \\text{SSE} = \\Sigma_{j=1}^k \\Sigma_{i=1}^{n_j}(x_{ij} - \\bar{x}_j)²\n\na9:T242fc,\n\n&l"
+    },
+    {
+      "qid": "684006e1dc3016b3787c7105",
+      "n": 78,
+      "type": "mcq",
+      "concept": "Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If (X, Y) has a bivariate normal distribution, then X, Y are independent if and only if X, Y are:",
+      "options": [
+        {
+          "label": "1",
+          "text": "ρ (X, Y) ≠ 0"
+        },
+        {
+          "label": "2",
+          "text": "Uncorrelated"
+        },
+        {
+          "label": "3",
+          "text": "Correlated"
+        },
+        {
+          "label": "4",
+          "text": "cov (X, Y) ≠ 0"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nIf (X, Y) has a bivariate normal distribution, then X and Y are independent if and only if X and Y are uncorrelated.\n\n**Concept:**\n\nIn a bivariate normal distribution, the independence of two variables (X and Y) implies that their covariance is zero, meaning they are uncorrelated.\n\nRelationship:\n\nIndependence ⇒ Uncorrelated\n\nUncorrelated does not necessarily imply independence, except in the case of a bivariate normal distribution.\n\n**Formula Used:**\n\nCov(X, Y) = ρ(X, Y) × σX × σY\n\nWhere:\n\n \n• ρ(X, Y): Correlation coefficient\n \n• σX, σY: Standard deviations of X and Y\n\nFor independence:\n\nρ(X, Y) = 0 ⇒ Cov(X, Y) = 0\n\n**Calculation:**\n\n⇒ Independence of X and Y ⇒ ρ(X, Y) = 0\n\n⇒ Cov(X, Y) = 0\n\n⇒ X and Y are uncorrelated.\n\nHence, for a bivariate normal distribution, X and Y are independent if and only if they are uncorrelated.\n\n**∴ The correct answer is Option 2: Uncorrelated.**",
+      "tags": [
+        "Distribution"
+      ]
+    },
+    {
+      "qid": "68400710c93fbd1f747cd7cc",
+      "n": 79,
+      "type": "mcq",
+      "concept": "Measures of Central Tendency",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the geometric mean of (1)/(4), (1)/(8) and (1)/(16) ?",
+      "options": [
+        {
+          "label": "1",
+          "text": "16"
+        },
+        {
+          "label": "2",
+          "text": "8"
+        },
+        {
+          "label": "3",
+          "text": "4"
+        },
+        {
+          "label": "4",
+          "text": "(1)/(8)"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nNumbers: 14,18,116\" id=\"MathJax-Element-23-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">14,18,11614,18,116\n \\frac{1}{4}, \\frac{1}{8}, \\frac{1}{16}\n\n**Concept:**\n\nThe geometric mean of n\" id=\"MathJax-Element-24-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">nn\n n\nnumbers is calculated using the formula:\n\nGeometric Mean=x1×x2×…×xnn\" id=\"MathJax-Element-25-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">Geometric Mean=x1×x2×…×xn−−−−−−−−−−−−−−−√nGeometric Mean=x1×x2×…×xnn\n\\text{Geometric Mean} = \\sqrt[n]{x_1 \\times x_2 \\times \\ldots \\times x_n}\n\n**Calculation:**\n\nWe have n=3\" id=\"MathJax-Element-26-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">n=3n=3\n n = 3\n, and the numbers are 14,18,116\" id=\"MathJax-Element-27-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">14,18,11614,18,116\n \\frac{1}{4}, \\frac{1}{8}, \\frac{1}{16}\n.\n\nStep 1: Multiply all the numbers.\n\n⇒ 14×18×116=1512\" id=\"MathJax-Element-28-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">14×18×116=151214×18×116=1512\n \\frac{1}{4} \\times \\frac{1}{8} \\times \\frac{1}{16} = \\frac{1}{512}\n\nStep 2: Find the cube root of the product.\n\n⇒ Geometric Mean=15123\" id=\"MathJax-Element-29-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">Geometric Mean=1512−−−√3Geometric Mean=15123\n\\text{Geometric Mean} = \\sqrt[3]{\\frac{1}{512}}\n\n⇒ Geometric Mean=15123\" id=\"MathJax-Element-30-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">Geometric Mean=1512√3Geometric Mean=15123\n\\text{Geometric Mean} = \\frac{1}{\\sqrt[3]{512}}\n\nStep 3: Calculate the cube root of 512\" id=\"MathJax-Element-31-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">512512\n 512\n.\n\n⇒ 5123=8\" id=\"MathJax-Element-32-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">512−−−√3=85123=8\n \\sqrt[3]{512} = 8\n\nStep 4: Simplify the result.\n\n⇒ Geometric Mean=18\" id=\"MathJax-Element-33-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">Geometric Mean=18Geometric Mean=18\n\\text{Geometric Mean} = \\frac{1}{8}\n\n**∴ The geometric mean is 18\" id=\"MathJax-Element-34-Frame\" role=\"presentation\" style=\"position: relative;\" tabindex=\"0\">1818\n \\frac{1}{8}\n. Hence, the correct answer is Option 4.**",
+      "tags": [
+        "Measures of Central Tendency"
+      ]
+    },
+    {
+      "qid": "68400740ac92158d20b8c483",
+      "n": 80,
+      "type": "mcq",
+      "concept": "Discrete Distributions",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Let X₁ , X₂ , . . . , X₁₀ be 10 independent and identically distributed (i.i.d) random variables taking the values 0, 1 with corresponding probabilities q, p. Then X = X₁ + X₂+ . . . + X₁₀ is/has:",
+      "options": [
+        {
+          "label": "1",
+          "text": "a binomial variate"
+        },
+        {
+          "label": "2",
+          "text": "Poisson distribution"
+        },
+        {
+          "label": "3",
+          "text": "a normal variate"
+        },
+        {
+          "label": "4",
+          "text": "a geometric variate"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nLet X₁, X₂, ..., X₁₀ be 10 independent and identically distributed (i.i.d.) random variables taking values 0 and 1 with probabilities q and p, respectively. X = X₁ + X₂ + ... + X₁₀.\n\n**Concept:**\n\nIf a random variable is formed by summing i.i.d. Bernoulli trials, then the resulting random variable follows a binomial distribution. In this case:\n\n \n• The number of trials = n = 10\n \n• Probability of success (value 1) = p\n \n• Probability of",
+      "tags": [
+        "Discrete Distributions"
+      ]
+    },
+    {
+      "qid": "68400799f3c2e629a4c50937",
+      "n": 81,
+      "type": "mcq",
+      "concept": "Hypothesis testing",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In using one way analysis of variance for testing whether treatments are equally effective for a certain experimental data, if F꜀ₐₗ꜀ᵤₗₐₜₑd = 12.1 and Fₜₐbᵤₗₐₜₑd = 3.06 then:",
+      "options": [
+        {
+          "label": "1",
+          "text": "null hypothesis is rejected"
+        },
+        {
+          "label": "2",
+          "text": "both null hypothesis and alternative hypothesis are accepted"
+        },
+        {
+          "label": "3",
+          "text": "both null hypothesis and alternative hypothesis are rejected"
+        },
+        {
+          "label": "4",
+          "text": "null hypothesis is accepted"
+        }
+      ],
+      "correct": "1",
+      "solution": "**Given:**\n\nF꜀ₐₗ꜀ᵤₗₐₜₑd = 12.1\n\nFₜₐbᵤₗₐₜₑd = 3.06\n\n**Concept:**\n\nIn one-way ANOVA, the null hypothesis (H₀) states that all treatment means are equal.\n\nIf F꜀ₐₗ꜀ᵤₗₐₜₑd > Fₜₐbᵤₗₐₜₑd, then we reject the null",
+      "tags": [
+        "Hypothesis testing"
+      ]
+    },
+    {
+      "qid": "684007cf9739d62d48da2697",
+      "n": 82,
+      "type": "mcq",
+      "concept": "Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The mean and variance of a binomially distributed random variable X are 4 and 2, respectively. P(X = 2)is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(1)/(2⁸)"
+        },
+        {
+          "label": "2",
+          "text": "(7)/(2⁶)"
+        },
+        {
+          "label": "3",
+          "text": "(1)/(2⁶)"
+        },
+        {
+          "label": "4",
+          "text": "(7)/(2⁸)"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nMean (μ) = 4\n\nVariance (σ²) = 2\n\nBinomial distribution: X ~ B(n, p)\n\nFind P(X = 2).\n\n**Concept:**\n\nIn a binomial distribution:\n\nMean, μ = n × p\n\nVariance, σ² = n × p × (1 - p)\n\nProbability formula: P(X = k) = ⁿCk × pk × (1 - p)ⁿ⁻k\n\n**Formula Used:**\n\nMean: μ = n × p\n\nVariance: σ² = n × p × (1 - p)\n\nP(X = k) = ⁿCk × pk × (1 - p)ⁿ⁻k\n\n**Calculation:**\n\nStep 1: Solve for n and p using mean and variance.\n\n⇒ μ = n × p = 4\n\n⇒ σ² = n × p × (1 - p) = 2\n\nLet p = probability of success.\n\n⇒ n × p × (1 - p) = n × p - n × p²\n\n⇒ Substitute μ = 4:\n\n⇒ 4 × (1 - p) = 2\n\n⇒ 4 - 4p = 2\n\n⇒ 4p = 2\n\n⇒ p = 0.5\n\n⇒ Substitute p = 0.5 into μ = n × p:\n\n⇒ 4 = n × 0.5\n\n⇒ n = 8\n\nStep 2: Solve P(X = 2).\n\n⇒ P(X = k) = ⁿCk × pk × (1 - p)ⁿ⁻k\n\n⇒ P(X = 2) = ⁸C² × 0.5² × (1 - 0.5)⁸⁻²\n\n⇒ P(X = 2) = ⁸C² × 0.5² × 0.5⁶\n\n⇒ ⁸C² = ⁸!/⁽²! × ⁽⁸⁻²⁾!⁾\n\n⇒ ⁸C² = ⁸ × ⁷ / ² = 28\n\n⇒ P(X = 2) = 28 × 0.5⁸\n\n⇒ 0.5⁸ = 1/2⁸\n\n⇒ P(X = 2) = 28 × 1/2⁸\n\n⇒ P(X = 2) = 28/256\n\n⇒ P(X = 2) = 7/64\n\n⇒ P(X = 2) = 7/2⁶\n\n**∴ P(X = 2) = ⁷/₂⁶, which matches Option 2.**",
+      "tags": [
+        "Distribution"
+      ]
+    },
+    {
+      "qid": "684007e26bccfe4df39b8e97",
+      "n": 83,
+      "type": "mcq",
+      "concept": "Probability",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "As the sample size increases, empirical probability:",
+      "options": [
+        {
+          "label": "1",
+          "text": "becomes less accurate"
+        },
+        {
+          "label": "2",
+          "text": "becomes more subjective"
+        },
+        {
+          "label": "3",
+          "text": "decreases"
+        },
+        {
+          "label": "4",
+          "text": "approaches the true probability of an event"
+        }
+      ],
+      "correct": "4",
+      "solution": "__**Calculation:**__\n\nConsider a random experiment repeated n times.\n\nLet the event E occur f_n times.\n\nThen the empirical probability of E is:\n\n P_n(E)=dfrac{f_n}{n} where fₙ = Number of times event occurs , n = Total number of trials​\n\nAccording to the Law of Large Numbers:\n\n limₙ\\ₜₒᵢₙfₜy P_n(E)=P(E) \n\nThus, as the sample size increases, the empirical probability converges to the true probability of the event.\n\n**Hence, the correct answer is option 4.**",
+      "tags": [
+        "Probability"
+      ]
+    },
+    {
+      "qid": "6840081184820b715b622ca1",
+      "n": 84,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is NOT true about collecting data through structured interviews?",
+      "options": [
+        {
+          "label": "1",
+          "text": "They involve the use of highly standardised techniques of recording"
+        },
+        {
+          "label": "2",
+          "text": "The interviewer follows a rigid laid down procedure."
+        },
+        {
+          "label": "3",
+          "text": "They involve the use of a set of predetermined questions."
+        },
+        {
+          "label": "4",
+          "text": "The sequence of asked questions can be changed."
+        }
+      ],
+      "correct": "4",
+      "solution": "**Concept Used:**\n\nStructured interviews use fixed questions, order, and standardised recording for all respondents.\n\n**Explanation:**\n\n \n• Structured interviews are highly standardised\n \n• Recording methods are fixed\n \n• Procedure followed is rigid\n \n• Questions are predetermined\n \n• Question order remains the same\n \n• Changing sequence reduces uniformity\n\n Hence, changing question order is not allowed\n\n**The Correct Answer is:The sequence of asked questions can be changed**"
+    },
+    {
+      "qid": "68400823b0fa5a7e375264ee",
+      "n": 85,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is NOT considered as a property of a good estimator?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Consistency"
+        },
+        {
+          "label": "2",
+          "text": "Unbiasedness"
+        },
+        {
+          "label": "3",
+          "text": "Efficiency"
+        },
+        {
+          "label": "4",
+          "text": "Correlation"
+        }
+      ],
+      "correct": "4",
+      "solution": "**The Correct Answer is : Correlation**\n\n__**Explanation:**__\n\nA *good estimator* is judged by how well it estimates a population parameter. The standard properties are:\n\n \n• \n \n<strong data-end=&"
+    },
+    {
+      "qid": "6840084ef0aac0da64059396",
+      "n": 86,
+      "type": "mcq",
+      "concept": "Measurement and Analysis of Data",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Suppose a sample of size 36 is drawn from a population with mean 2 and variance 25 using simple random sampling with replacement. The standard error of x̅ is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(3)/(5)"
+        },
+        {
+          "label": "2",
+          "text": "(5)/(8)"
+        },
+        {
+          "label": "3",
+          "text": "(5)/(6)"
+        },
+        {
+          "label": "4",
+          "text": "1"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Given:**\n\nSample size (n) = 36\n\nPopulation mean (μ) = 2\n\nPopulation variance (σ²) = 25\n\nSampling is done with replacement.\n\n**Concept:**\n\nThe standard error of the sample mean (x̅) is calculated using the formula:\n\n**Formula Used:**\n\nStandard error (SE) = σ / √n\n\nwhere:\n\n \n• σ = Population standard deviation (√variance)\n \n• n = Sample size\n\n**Calculation:**\n\nStep 1: Calculate the population standard deviation (σ):\n\n⇒ σ = √(variance) = √25 = 5\n\nStep 2: Calculate the standard error (SE):\n\n⇒ SE = σ / √n\n\n⇒ SE = 5 / √36\n\n⇒ SE = 5 / 6\n\n**Conclusion:**\n\n∴ The standard error of x̅ is 5/6.\n\n**Hence, the correct answer is Option 3.**",
+      "tags": [
+        "Measurement and Analysis of Data"
+      ]
+    },
+    {
+      "qid": "68400912eceedde0c4be1bba",
+      "n": 87,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "'p' is the probability that a man aged x years will die in a ye: aged x, A₁ will die in a year and will be the first to die.",
+      "options": [
+        {
+          "label": "1",
+          "text": "(1)/(n)[(1-p)^n]"
+        },
+        {
+          "label": "2",
+          "text": "(1)/(n)[(1-(1-p))^n]"
+        },
+        {
+          "label": "3",
+          "text": "(1)/(n)[(1-p)ⁿ⁻¹]"
+        },
+        {
+          "label": "4",
+          "text": "(1)/(n)[(1-p)]"
+        }
+      ],
+      "correct": "2",
+      "solution": "__**Calculation:**__\n\nLet be the probability that a man aged years will die within one year.\n\nThen, the probability that a man aged years will survive one year is .\n\nIf there are men of the same age, the probability that none of them dies within one year is:\n\n \n\nTherefore, the probability that at least one man dies within one year is:\n\n \n\nSince all men are of the same age, each man has an equal chance of being the first to die.\n\nHence, the probability that is the first to die within one year is:\n\n \n\n**Hence, the correct answer is option 2.**"
+    },
+    {
+      "qid": "684009341f3f7ce188ec7619",
+      "n": 88,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "In a one-way ANOVA, which of the following would indicate a violation of the normality assumption?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Equal variances across groups"
+        },
+        {
+          "label": "2",
+          "text": "Residuals showing a skewed distribution"
+        },
+        {
+          "label": "3",
+          "text": "Residuals randomly distributed"
+        },
+        {
+          "label": "4",
+          "text": "Independent observations"
+        }
+      ],
+      "correct": "2",
+      "solution": "**The Correct Answer is: Residuals showing a skewed distribution**\n\n__**Explanation**__\n\nIn one-way ANOVA, the normality assumption means that the residuals (errors) are normally distributed.\n\nLet’s check each option:\n\nEqual variances across groups→ This relates to homogeneity of variance, not normality \n\nResiduals showing a skewed distribution→ Skewness indicates the residuals are not normally distributed \n\nResiduals randomly distributed→ Random pattern supports model assumptions, not a violation \n\nIndependent observations→ This is a separate assumption (independence), not normality"
+    },
+    {
+      "qid": "684009467b63b96d8c28b38b",
+      "n": 89,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "What is the main assumption of the ratio-to-moving-averages method?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Seasonal effects are multiplicative."
+        },
+        {
+          "label": "2",
+          "text": "Random components dominate the time series."
+        },
+        {
+          "label": "3",
+          "text": "The trend is constant over time."
+        },
+        {
+          "label": "4",
+          "text": "The seasonal component is additive."
+        }
+      ],
+      "correct": "4",
+      "solution": "**The Correct Answer is :The seasonal component is additive.**\n\n**Explanation:**\n\nThe **ratio-to-moving-averages method** assumes that the time series components combine **multiplicatively**.\n\nIn this method:\n\n \n• \n \nObserved value = **Trend × Seasonal × Irregular**\n\n \n \n• \n \nSeasonal indices are obtained by taking **ratios** of actual values to moving averages.\n\n \n\nSo the **main assumption** is:** Seasonal effects are multiplicative.**\n\nThe other options are incorrect because:\n\n \n• \n \nRandom components are not assumed to dominate.\n\n \n \n• \n \nThe trend need not be constant.\n\n \n \n• \n \nAdditive seasonality is used in a different method (difference method)"
+    },
+    {
+      "qid": "684009f06524bd03d95d6740",
+      "n": 90,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "For an experiment with sample space S, the events Aᵢ i = 1, 2, 3,.... are mutually exclusive and exhaustive if:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Uᵢ Aᵢ = S"
+        },
+        {
+          "label": "2",
+          "text": "Aᵢ ∩ Aᵢ = Φ for i ≠ j"
+        },
+        {
+          "label": "3",
+          "text": "Uᵢ Aᵢ = S and Aᵢ ∪ Aᵢ = Φ for i ≠ j"
+        },
+        {
+          "label": "4",
+          "text": "Uᵢ Aᵢ = S and Aᵢ ∩ Aj = Φ for i ≠ j"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nThe sample space S has events Aᵢ (i = 1, 2, 3, ...) that are mutually exclusive and exhaustive.\n\n**Concept:**\n\nMutually exclusive events: Two or more events are mutually exclusive if their intersection is empty, i.e., Aᵢ ∩ Aj = Φ for i ≠ j.\n\nExhaustive events: Events are exhaustive if their union covers the entire sample space, i.e., UᵢAᵢ = S.\n\nFor events to be mutually exclusive and exhaustive, both properties must hold simultaneously.\n\n**Calculation:**\n\nOption 1: States UᵢAᵢ = S, but does not address mutual exclusivity. Incorrect.\n\nOption 2: States mutual exclusivity (Aᵢ ∩ Aj = Φ for i ≠ j) but does not address exhaustive property. Incorrect.\n\nOption 3: Combines UᵢAᵢ = S with Aᵢ ∪ Aj = Φ, which is incorrect because \"union\" (∪) is not the correct operation for mutual exclusivity; it should be \"intersection\" (∩). Incorrect.\n\nOption 4: Combines UᵢAᵢ = S (exhaustive) and Aᵢ ∩ Aj = Φ for i ≠ j (mutual exclusivity). Correct.\n\n**∴ The correct answer is Option 4.**"
+    },
+    {
+      "qid": "68400a0615af330934850b9b",
+      "n": 91,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is NOT a secondary source of data?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Biography"
+        },
+        {
+          "label": "2",
+          "text": "Research Journals"
+        },
+        {
+          "label": "3",
+          "text": "Autobiography"
+        },
+        {
+          "label": "4",
+          "text": "Newspaper"
+        }
+      ],
+      "correct": "3",
+      "solution": "**The correct answer is** :** Autobiography**.\n\n**Explanation: **\n\n \n• \n \n**Secondary data** are data already collected and published by someone else (e.g., books, journals, biographies).\n\n \n \n• \n \n**Primary data** are original, first-hand accounts.\n\n \n\n**Explanation of options:**\n\n \n• \n \n**Biography** → written by someone else → **Secondary source**\n\n \n \n• \n \n**Research Journals** → published studies → **Secondary source**\n\n \n \n• \n \n**Autobiography** → written by the person themselves → **Primary source**\n\n \n \n• \n \n**Newspaper **→ a newspaper contains information that has already been collected, reported, and published by others → **Secondary source**\n\n \n\n∴ **Autobiography** is **NOT** a secondary source of data."
+    },
+    {
+      "qid": "68400a1af83ac039c5b65746",
+      "n": 92,
+      "type": "mcq",
+      "concept": "Distribution",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The points of inflection of a normal distribution N (5, 1) that exist at x is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "2, 8"
+        },
+        {
+          "label": "2",
+          "text": "5, 1"
+        },
+        {
+          "label": "3",
+          "text": "1, 9"
+        },
+        {
+          "label": "4",
+          "text": "4, 6"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nWe are tasked to find the points of inflection of a normal distribution N(5, 1).\n\n**Concept:**\n\nThe points of inflection of a normal distribution occur at **μ ± σ**, where **μ** is the mean, and **σ** is the standard deviation.\n\n**Calculation:**\n\nThe normal distribution given is N(5, 1), where:\n\n⇒ μ = 5, σ = 1\n\nThe points of inflection are:\n\n⇒ x = μ - σ = 5 - 1 = 4\n\n⇒ x = μ + σ = 5 + 1 = 6\n\n**∴ The points of inflection are x = 4 and x = 6.**",
+      "tags": [
+        "Distribution"
+      ]
+    },
+    {
+      "qid": "68400a3766a3349e6c691344",
+      "n": 93,
+      "type": "mcq",
+      "concept": "Statistical Variables",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "From a population of a large number of workers with a standard deviation 5, a sample is drawn and the standard error is found to be 0.5. What is the sample size?",
+      "options": [
+        {
+          "label": "1",
+          "text": "50"
+        },
+        {
+          "label": "2",
+          "text": "1000"
+        },
+        {
+          "label": "3",
+          "text": "10"
+        },
+        {
+          "label": "4",
+          "text": "100"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nPopulation standard deviation (σ) = 5\n\nStandard error (SE) = 0.5\n\n**Concept Used:**\n\nStandard error is calculated using the formula:\n\nSE = σ / √n\n\nWhere:\n\n \n• σ = Population standard deviation\n \n• n = Sample size\n\n**Formula Used:**\n\nSE = σ / √n\n\n**Calculation:**\n\n⇒ SE = 0.5, σ = 5\n\n⇒ 0.5 = 5 / √n\n\n⇒ √n = 5 / 0.5\n\n⇒ √n = 10\n\n⇒ n = 10²\n\n⇒ n = 100\n\n**∴ Sample size (n) = 100**",
+      "tags": [
+        "Statistical Variables"
+      ]
+    },
+    {
+      "qid": "68400a4c1dd5769b28b8ef91",
+      "n": 94,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If the arithmetic mean is 25 and geometric mean is 15, then the value of the Harmonic mean is equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "15"
+        },
+        {
+          "label": "2",
+          "text": "9"
+        },
+        {
+          "label": "3",
+          "text": "12"
+        },
+        {
+          "label": "4",
+          "text": "10"
+        }
+      ],
+      "correct": "2",
+      "solution": "**Given:**\n\nArithmetic Mean (AM) = 25, Geometric Mean (GM) = 15\n\nTo find: Harmonic Mean (HM)\n\n**Concept:**\n\nThe relationship between AM, GM, and HM is given by:\n\nAM × HM = GM²\n\nFormula Used:</strong"
+    },
+    {
+      "qid": "68400a905786631c7d552b89",
+      "n": 95,
+      "type": "mcq",
+      "concept": "Expectation and Moments",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "If x̅ is the mean of a sample from N(μ, 1), then the maximum",
+      "options": [
+        {
+          "label": "1",
+          "text": "n x̅²"
+        },
+        {
+          "label": "2",
+          "text": "bar x²+(1)/(n)"
+        },
+        {
+          "label": "3",
+          "text": "x̅² + 1"
+        },
+        {
+          "label": "4",
+          "text": "x̅²"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nIf x̅ is the mean of a sample from N(μ, 1), then the maximum value of E(x̅²) is queried.\n\n**Concept:**\n\nE(x̅²) represents the expected value of the square of the sample mean. For a sample mean x̅ from N(μ, σ²), the variance of x̅ is σ²/n. Here σ = 1.\n\nE(x̅²) can be expressed as:\n\nE(x̅²) = Var(x̅) + (E(x̅))²\n\n**Formula Used:**\n\nVar(x̅) = σ²/n\n\nE(x̅) = μ\n\nThus, E(x̅²) = (μ²) + (σ²/n)\n\n**Calculation:**\n\nGiven the standard deviation σ = 1:\n\n⇒ Var(x̅) = (1²)/n = 1/n\n\n⇒ E(x̅) = μ\n\n⇒ E(x̅²) = μ² + (1/n)\n\nSubstituting μ = x̅ (mean of the sample):\n\n⇒ E(x̅²) = x̅² + (1/n)\n\nMaximum value occurs when μ = x̅ and n → ∞ (large sample size). Therefore, the correct option is:\n\n⇒ E(x̅²) = x̅²\n\n**∴ The correct answer is Option 4.**\n\nc6:T8e8,\n\n&",
+      "tags": [
+        "Expectation and Moments"
+      ]
+    },
+    {
+      "qid": "68400aa8e05ac541dfb0823b",
+      "n": 96,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Which of the following is NOT a good characteristic of a questionnaire?",
+      "options": [
+        {
+          "label": "1",
+          "text": "Questions should proceed in logical sequence from easy to more difficult."
+        },
+        {
+          "label": "2",
+          "text": "Technical terms and vague expressions should be avoided."
+        },
+        {
+          "label": "3",
+          "text": "Personal and intimate questions should be put in the beginning."
+        },
+        {
+          "label": "4",
+          "text": "Questionnaire should be comparatively short and simple."
+        }
+      ],
+      "correct": "3",
+      "solution": "A **good questionnaire **is designed to make respondents comfortable and encourage accurate responses.\n\n [IMAGE: https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png] **__Key Points__**\n\n \n• Questions should move from **easy to difficult **to build confidence.\n \n• Technical",
+      "solution_images": [
+        {
+          "url": "https://cdn.repeatermock.com/tb/36f36cd5ece4186095afcf2ffbfb7b80cc04b6c2e3226e7477a419a9fbc96f85.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "qid": "68400abe6524bd03d95d6d73",
+      "n": 97,
+      "type": "mcq",
+      "concept": "Unidentified",
+      "confidence": "unidentified",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "The coefficient of variation and standard deviation for a dataset are 23 and 11, then the mean is approximately equal to:",
+      "options": [
+        {
+          "label": "1",
+          "text": "23.876"
+        },
+        {
+          "label": "2",
+          "text": "33.564"
+        },
+        {
+          "label": "3",
+          "text": "45.825"
+        },
+        {
+          "label": "4",
+          "text": "47.826"
+        }
+      ],
+      "correct": "4",
+      "solution": "**Given:**\n\nThe coefficient of variation (CV) = 23\n\nThe standard deviation (SD) = 11\n\nWe need to calculate the mean.\n\n**Concept:**\n\nCoefficient of variation is defined as:\n\nCV = (SD ÷ Mean) × 100\n\n**Formula Used:**\n\nMean = SD ÷ (CV ÷ 100)\n\n**Calculation:**\n\n⇒ Mean = 11 ÷ (23 ÷ 100)\n\n⇒ Mean = 11 ÷ 0.23\n\n⇒ Mean ≈ 47.826\n\n**∴ The mean is approximately 47.826, and the correct option is 4.**"
+    },
+    {
+      "qid": "68400b0bc93fbd1f747cfb0c",
+      "n": 98,
+      "type": "mcq",
+      "concept": "Sampling Theorems",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Let N be the size of a population and n be the size of the sample. Then the efficiency of SRSWOR with respect to SRSWR is:",
+      "options": [
+        {
+          "label": "1",
+          "text": "(N-1)/(N(n-1))"
+        },
+        {
+          "label": "2",
+          "text": "(N-n)/(N-1)"
+        },
+        {
+          "label": "3",
+          "text": "(n-1)/(N-1)"
+        },
+        {
+          "label": "4",
+          "text": "(N-1)/(N-n)"
+        }
+      ],
+      "correct": "2",
+      "solution": "__**Calculation:**__\n\n**Explanation:**\n\nEfficiency of one sampling method with respect to another is defined as the **ratio of their variances** for the same estimator.\n\nFor estimating the population mean:\n\n**Variance under SRSWR:**\n\n V(bar{y}{SRSWR}) = dfrac{S²}{n} \n\n**Variance under SRSWOR:**\n\n V(bar{y}{SRSWOR}) = dfrac{S²}{n} ( dfrac{N - n}{N - 1} ) \n\nTherefore, efficiency of **SRSWOR with respect to SRSWR** is:\n\n {Efficiency} = dfrac{V({SRSWR})}{V({SRSWOR})} \n\n = dfrac{dfrac{S²}{n}}{dfrac{S²}{n} ( dfrac{N - n}{N - 1} )} \n\n = dfrac{N - n}{N - 1} \n\n**Final Answer:**\n\n boxed{dfrac{N - n}{N - 1}}",
+      "tags": [
+        "Sampling Theorems"
+      ]
+    },
+    {
+      "qid": "68400b2b3134f1787feb622e",
+      "n": 99,
+      "type": "mcq",
+      "concept": "Correlation and Regression",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Karl Pearson’s correlation coefficient is also called:",
+      "options": [
+        {
+          "label": "1",
+          "text": "Product moment correlation coefficient"
+        },
+        {
+          "label": "2",
+          "text": "Likelihood coefficient"
+        },
+        {
+          "label": "3",
+          "text": "Spearman’s correlation coefficient"
+        },
+        {
+          "label": "4",
+          "text": "Simplex correlation coefficient"
+        }
+      ],
+      "correct": "1",
+      "solution": "**The Correct Answer is: **Product moment correlation coefficient \n\n**Explanation:**\nKarl Pearson’s correlation coefficient measures the **degree and direction of linear relationship** between two quantitative variables. Since it is based on the **products of deviations of paired observations from their respective means**, it is technically known as the **Product Moment Correlation Coefficient**.\n\n \n• \n \n**Option 1 (Correct):** Product moment correlation coefficient — another name for Karl Pearson’s correlation.\n\n \n \n• \n \n**Option 2:** Likelihood coefficient — not a recognized term in correlation analysis.\n\n \n \n• \n \n**Option 3:** Spearman’s correlation coefficient — a **rank-based** (non-parametric) measure, different from Pearson’s.\n\n \n \n• \n \n**Option 4:** Simplex correlation coefficient — not used in standard statistical terminology.",
+      "tags": [
+        "Correlation and Regression"
+      ]
+    },
+    {
+      "qid": "68400b719f094fba5e3a6acf",
+      "n": 100,
+      "type": "mcq",
+      "concept": "Special Classes of Random Processes",
+      "confidence": "high",
+      "marks_pos": 2.0,
+      "marks_neg": 0.5,
+      "question": "Usually the formula to determine the number of classes is given by:",
+      "options": [
+        {
+          "label": "1",
+          "text": "2 + 3.322 × log100 N"
+        },
+        {
+          "label": "2",
+          "text": "3 + 3.322 × log1000 N"
+        },
+        {
+          "label": "3",
+          "text": "1 + 3.322 × log10 N"
+        },
+        {
+          "label": "4",
+          "text": "None of the above"
+        }
+      ],
+      "correct": "3",
+      "solution": "**Concept: **The Sturges' formula is used to determine the number of classes for a frequency distribution:\n\n**Formula:** K = 1 + 3.322 × log₁₀ N\n\nWhere: K = Number of classes , N = Total number of observations\n\nCalculation:</str",
+      "tags": [
+        "Special Classes of Random Processes"
+      ]
+    }
+  ]
+}
