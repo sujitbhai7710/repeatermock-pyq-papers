@@ -31,3 +31,11 @@ __pycache__/
 Thumbs.db
 .idea/
 .vscode/
+
+# ── local scratch (never committed) ──
+reports/                    # engine/scratch logs — local only
+**/__pycache__/             # python bytecode
+*.pyc                       # python bytecode
+.env                        # local keys
+*.pre-acceptance-*          # acceptance backups
+*.acceptance-rerun-backup*  # acceptance backups
