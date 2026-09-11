@@ -1,33 +1,28 @@
 {
   "version": 1,
   "run_id": "run-20260911T211340Z-4039a9c3",
-  "phase": "phase1",
+  "phase": "phase5",
   "cursor": {
     "completed": [
-      "phase0"
+      "phase0",
+      "phase1",
+      "phase2",
+      "phase3",
+      "phase4",
+      "phase5"
     ],
-    "verify": {
-      "phase": "phase1",
-      "batch": 0,
-      "batches_done": 22,
-      "items_done": 440,
-      "items_total": 37990,
-      "state_file": "state/verify_state.json",
-      "started_wall": "2026-09-11T21:14:18Z"
-    }
+    "next": null
   },
   "status": "ai_unavailable",
-  "started_at": "2026-09-11T21:30:35Z",
-  "updated_at": "2026-09-11T21:30:35Z",
+  "started_at": "2026-09-11T21:31:35Z",
+  "updated_at": "2026-09-11T21:31:35Z",
   "window": {
     "max_seconds": 19800,
     "interval_seconds": 900,
-    "elapsed_seconds": 1011.21,
-    "remaining_seconds": 18788.79
+    "elapsed_seconds": 1071.133,
+    "remaining_seconds": 18728.867
   },
   "notes": [
-    "halted (AI unavailable): no healthy route for any candidate model of proposer (deepseek-v4-flash, deepseek-v4.1-flash:free, gpt-5.6-sol): deepseek-v4-flash: 6 consecutive failures for deepseek-v4-flash (threshold 6); last: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":null,\"last_status\":0,\"failover_count\":0,\"failed_keys\":0}}; deepseek-v4.1-flash:free: 6 consecutive failures for deepseek-v4.1-flash:free (threshold 6); last: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":\"auth-403\",\"last_status\":403,\"failover_count\":3,\"failed_keys\":3}}; gpt-5.6-sol: 6 consecutive failures for gpt-5.6-sol (threshold 6); last: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":null,\"last_status\":0,\"failover_count\":0,\"failed_keys\":0}}",
-    "same_model_fallback: true – proposer and critic were both served by gpt-5.6-sol; no second model had a working route",
-    "python extraction results were kept unchanged; the deterministic pipeline (database + mocks) still completes (exit 0)"
+    "no AI route available – the deterministic pipeline (phase0 + python extraction + database + mocks) completed anyway; only the AI verification step was skipped"
   ]
 }
