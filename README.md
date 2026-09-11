@@ -527,3 +527,12 @@ README, which replaces the original two-line one). Verify with:
 ```bash
 git status --porcelain
 ```
+
+---
+
+## Handover docs (read these first)
+
+- [`MEMORY.md`](MEMORY.md) — durable project memory: scope, invariants, data facts, per-exam
+  section layout table, commands, providers/secrets, and the things you must not "fix".
+- [`LESSONS.md`](LESSONS.md) — every problem hit so far with symptom -> cause -> fix -> verification,
+  plus a quick troubleshooting index.
