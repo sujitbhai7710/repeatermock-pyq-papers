@@ -650,3 +650,13 @@ git status --porcelain
   section layout table, commands, providers/secrets, and the things you must not "fix".
 - [`LESSONS.md`](LESSONS.md) — every problem hit so far with symptom -> cause -> fix -> verification,
   plus a quick troubleshooting index.
+
+---
+
+## Remote workers
+
+- **GitHub Actions** — the always-on worker: every 6 h it runs the pipeline and publishes the
+  generated tree to the `pyq-db` branch.
+- **OpenHands Cloud** — the agentic worker for bigger jobs. See
+  [`OPENHANDS.md`](OPENHANDS.md) for how it is wired, and [`TASK.md`](TASK.md) for the standing brief.
+
