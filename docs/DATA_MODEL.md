@@ -199,6 +199,7 @@ database/<subject>/<chapter>/[<topic>/]index.md
 database/<subject>/<chapter>/[<topic>/]<concept>/index.md
 database/<subject>/<chapter>/[<topic>/]<concept>/questions.jsonl
 database/<subject>/_unclassified/{index.md,questions.jsonl}
+database/english/grammar/<NN>-<slug>/{index.md,questions.jsonl,rule.json}
 ```
 
 * `<subject>` ∈ `maths`, `reasoning`, `gk`, `english`, `computer`;
@@ -211,6 +212,13 @@ database/<subject>/_unclassified/{index.md,questions.jsonl}
   gets one combined `index.md` (child table + own counts) and one
   `questions.jsonl`, so **every leaf concept owns exactly one of each**;
 * `_meta`, `mocks` and `english/_analysis` are reserved and are never leaves;
+* a **rule leaf** (`english/grammar/<NN>-<slug>/`, written by `agent.grammar`) is
+  the *one* home of the questions its rule owns: the English concept tree is
+  re-filed with those qids skipped, so a question never sits in two leaves (audit
+  rule 5) and a leaf whose questions are all rule-owned disappears (the
+  unassigned grammar questions stay where they are). The audit reads a rule leaf
+  as a leaf like any other, so its pointer records carry the match fields *and*
+  `subject`/`concept`;
 * a `concept` page lists counts by exam and year and up to 200 `qid`s;
 * `questions.jsonl` uses the **pointer schema**
   `qid, n, ordinal, exam, year, shift, subject, chapter, topic, concept,
@@ -230,16 +238,18 @@ violation.
 ### English analyses
 
 The vocabulary/grammar analyses are derived views, not question-tree nodes, and
-live under the reserved `english/_analysis/` directory — `english/grammar` is
-itself a concept leaf of the tree, so the rule-mapping output cannot share it.
+live under the reserved `english/_analysis/` directory: `english/grammar` is
+itself a concept leaf of the tree (one `index.md` + one `questions.jsonl`), so
+the analysis tables cannot sit next to it. The per-rule *leaves* are tree nodes
+and live under `english/grammar/<NN>-<slug>/` (see the rule-leaf bullet above).
 
 | File | Contents |
 |---|---|
 | `english/_analysis/vocabulary/all.json` | `{question_counts, distinct_entries, tables, repeats, items}`; `tables.<kind>[]` = `{rank, word, asMain, asOption, asOptionCorrect, total, importance, exams, years}` |
 | `english/_analysis/vocabulary/synonyms.md`, `antonyms.md`, `one-word-substitution.md`, `idioms.md`, `spelling.md`, `homonyms.md` | the same tables, ranked most-important → least |
 | `english/_analysis/grammar/rules.json` | the 129 rules with their title/topic keyword sets and per-rule question counts + exam breakdown |
-| `english/_analysis/grammar/questions.jsonl` | matched grammar questions: `{qid, exam, year, ordinal, concept_raw, question_type, rule, rule_title, score, matched_terms, type_hint}` |
-| `english/_analysis/grammar/unmapped.jsonl` | grammar questions with `score == 0` (never guessed) |
+| `english/_analysis/grammar/questions.jsonl` | matched grammar questions: `{qid, subject, exam, year, ordinal, concept, concept_raw, question_type, rule, rule_title, score, matched_terms, type_hint, match_breakdown, ai_*}` |
+| `english/_analysis/grammar/unassigned.jsonl` | grammar questions no rule claimed: the same identity fields with `rule: null`, `score: 0`, `reason`/`detail`, the AI verdict (`ai_rule`) and the top candidates |
 | `english/_analysis/grammar/rules.md` | rules ranked by question volume, plus rules with no questions |
 | `english/solved-items.json` | phase-1 summary: vocabulary + grammar counters and file lists |
 | `maths/analysis.json`, `reasoning/analysis.json`, `gk/analysis.json`, `computer/analysis.json` | per-subject chapter/topic/concept counters |

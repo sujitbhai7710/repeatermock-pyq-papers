@@ -98,6 +98,16 @@ META_DB_DIR: Path = DATABASE_DIR / "_meta"
 ANALYSIS_DB_DIR: Path = DATABASE_DIR / "english" / "_analysis"
 VOCAB_DB_DIR: Path = ANALYSIS_DB_DIR / "vocabulary"
 GRAMMAR_DB_DIR: Path = ANALYSIS_DB_DIR / "grammar"
+#: The per-rule browsable nodes of the question tree:
+#: ``database/english/grammar/<NN>-<slug>/{index.md,questions.jsonl,rule.json}``.
+#: A rule leaf is the *one* home of the questions its rule owns — the concept tree
+#: is re-filed without them (``agent.grammar.assigned_qids``, audit rule 5) — and
+#: its ``rule.json`` marker is what ``agent.grammar._prune_rule_leaves``
+#: recognises as a rule leaf when a rule is renamed or removed.
+GRAMMAR_RULES_DB_DIR: Path = DATABASE_DIR / "english" / "grammar"
+#: the chapter page that carries the rule matrix (written by ``agent.build_db``
+#: and extended in place by :mod:`agent.grammar`)
+GRAMMAR_CHAPTER_INDEX: Path = GRAMMAR_RULES_DB_DIR / "index.md"
 MOCKS_DIR: Path = DATABASE_DIR / "mocks"
 
 TAXONOMY_FILES = {
