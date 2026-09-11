@@ -1,21 +1,29 @@
 {
   "version": 1,
   "run_id": "run-20260911T161052Z-b0e5526c",
-  "phase": "phase0",
+  "phase": "phase1",
   "cursor": {
     "completed": [
       "phase0"
     ],
-    "next": "phase1"
+    "verify": {
+      "phase": "phase1",
+      "batch": 25,
+      "batches_done": 25,
+      "items_done": 500,
+      "items_total": 37990,
+      "state_file": "state/verify_state.json",
+      "started_wall": "2026-09-11T16:11:37Z"
+    }
   },
   "status": "ok",
-  "started_at": "2026-09-11T16:11:30Z",
-  "updated_at": "2026-09-11T16:11:30Z",
+  "started_at": "2026-09-11T16:27:29Z",
+  "updated_at": "2026-09-11T16:27:29Z",
   "window": {
     "max_seconds": 19800,
     "interval_seconds": 900,
-    "elapsed_seconds": 33.293,
-    "remaining_seconds": 19766.707
+    "elapsed_seconds": 992.341,
+    "remaining_seconds": 18807.659
   },
   "notes": []
 }

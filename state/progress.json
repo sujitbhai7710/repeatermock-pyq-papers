@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-11T16:11:29Z",
-  "updated_at": "2026-09-11T16:11:29Z",
+  "updated_at": "2026-09-11T16:27:29Z",
   "phases": {
     "phase0": {
       "started_at": "2026-09-11T16:11:29Z",
@@ -20,6 +20,28 @@
         "papers_placeable": 1322
       },
       "finished_at": "2026-09-11T16:11:29Z"
+    },
+    "phase1": {
+      "ai": {
+        "status": "ok",
+        "items_total": 37990,
+        "items_done": 500,
+        "items_done_before": 0,
+        "items_this_run": 500,
+        "items_remaining": 37490,
+        "items_corrected": 0,
+        "batches_total": 1900,
+        "batches_done": 25,
+        "batches_this_run": 25,
+        "batches_failed": 0,
+        "batch_size": 20,
+        "eta_seconds": 71328.07498853144,
+        "elapsed_seconds": 992.3,
+        "phase_seconds": 951.3,
+        "updated_at": "2026-09-11T16:27:29Z"
+      },
+      "ai_status": "ok",
+      "updated_at": "2026-09-11T16:27:29Z"
     }
   },
   "totals": {}
