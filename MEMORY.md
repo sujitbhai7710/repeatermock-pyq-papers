@@ -225,3 +225,27 @@ or `403`/`503` — the runner simply had **no keys in the environment**. With re
   the remaining 7,193 grammar questions. Parallel batching is the single biggest speedup available.
 - `state/progress.json` said `phase1 … status: ai_unavailable` and `items_done: 440/37,990`. That
   status means "no route answered **in that run**", not "the provider is gone".
+
+### 11.1 Live progress log
+
+| Time (UTC) | What happened |
+|---|---|
+| 2026-09-11 22:51 | `routes --probe` green: `ar-worker/deepseek-v4-flash`, `jw-worker/gpt-5.6-sol`, `justwoker/gpt-5.6-sol`. |
+| 2026-09-12 06:54 | First grammar smoke test: `0/20 answered` (critic had no route). |
+| 2026-09-12 07:00 | Re-run: `20/20 answered`, **17 assigned by AI** — AI layer proven working. |
+| 2026-09-12 07:1x | Full pass launched; stopped to add parallelism (it was ~11.5 h sequential). |
+| 2026-09-12 07:2x | `PYQ_AI_WORKERS=4` → ~3× speedup (4 batches in 192 s vs ~460 s). |
+| 2026-09-12 07:3x | Concurrency 4 caused `GLOBAL HALT (deepseek-v4-flash)` — every worker hammered `jw-worker`, which 503s for deepseek. Fixed by pinning `model_provider_orders` in `config/settings.json`. |
+| 2026-09-12 07:4x | Relaunched: **0 halts**, `deepseek-v4-flash via ar-worker` proposes, `gpt-5.6-sol via justwoker` judges, ~92 % assignment (110/120). |
+| 2026-09-12 07:5x | First checkpoint published to `pyq-db` (3,508 files; branch verified at 5,184 files, `database/` intact). `grammar_ai_state.json` is now on the branch — it never was before. |
+
+**Current state:** grammar AI pass running in the background — 357 batches total, resumable.
+Batches that return zero verdicts are retried automatically (they used to be stranded forever).
+
+### 11.2 Remaining work, in priority order
+
+1. **Grammar AI** — in progress, ~7,140 questions pending, resumable (no intervention needed).
+2. **AI verification** — `phase1` at 440/37,990. Biggest remaining item; run after grammar.
+3. **Notes** — `notes.md` per GK topic (563 topics / 34,578 questions) and grammar notes. Not yet generated.
+4. **4 flagged papers** — `database/_meta/flagged_papers.jsonl`, need AI review.
+5. `state/remaining.json` + `state/errors.jsonl` — not implemented in shipped code.

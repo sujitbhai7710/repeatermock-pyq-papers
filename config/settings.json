@@ -49,7 +49,23 @@
       "zen-rotator",
       "agentrouter"
     ],
-    "model_provider_orders": {}
+    "model_provider_orders": {
+      "_comment": "Per-model provider order, verified live 2026-09-12: deepseek-v4-flash is only served by ar-worker (justwoker returns 403, jw-worker 503 all_keys_exhausted); gpt-5.6-sol is served by jw-worker and justwoker (ar-worker returns 503). Trying the working route first avoids a burst of failures that trips the consecutive-failure breaker and halts the model.",
+      "deepseek-v4-flash": [
+        "ar-worker",
+        "justwoker",
+        "jw-worker",
+        "zen-rotator",
+        "agentrouter"
+      ],
+      "gpt-5.6-sol": [
+        "jw-worker",
+        "justwoker",
+        "ar-worker",
+        "zen-rotator",
+        "agentrouter"
+      ]
+    }
   },
   "providers": {
     "order": [
