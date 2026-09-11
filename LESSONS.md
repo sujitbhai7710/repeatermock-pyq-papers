@@ -255,6 +255,31 @@ clone commits just the runner's own tree, and the published `database/` then loo
 Fix: `git archive origin/pyq-db state database | tar -x -C <repo>` first, then work, then `publish`
 (which **merges**). Never publish from a tree you have not restored.
 
+## L24. `publish` replaced local `main` with an orphan commit
+
+Symptom: after `python -m agent.cli publish`, `git log` on `main` showed only 2–3 commits,
+`git merge-base HEAD origin/main` returned **nothing**, and the next `git push` was rejected
+`non-fast-forward`. `origin/main` still had all 53 commits.
+
+Cause: publish stages `state/` + `database/` with `git add -f` (both are gitignored on `main`) and
+lands them on an **orphan/root commit**. Local `main` then has no parent, so the real history is no
+longer reachable from the branch tip — only the remote still has it. Local-only work (untracked
+files, uncommitted edits) is what is actually at risk.
+
+Recovery — back up the generated tree **first**, then rewind (never force-push):
+
+```bash
+cp -r state database tools/ config/settings.json MEMORY.md LESSONS.md /tmp/pqy_backup/
+git reset --hard origin/main                              # drops the orphan, removes the tree
+cp -r /tmp/pqy_backup/state /tmp/pqy_backup/database .    # put the generated tree back
+```
+
+Rules:
+- Always copy `state/` and `database/` somewhere safe **before** any `git reset`, `checkout` or
+  `rebase` here — that tree is hours of AI work and is gitignored on `main`.
+- Recover with `reset --hard origin/<branch>`, never `git push --force`.
+- Publish is the only thing that should stage `state/` and `database/`.
+
 ## Quick troubleshooting index
 
 | Symptom | Go to |
@@ -280,6 +305,7 @@ Fix: `git archive origin/pyq-db state database | tar -x -C <repo>` first, then w
 | "N already decided" looks huge | L21 |
 | `not a git repository` / `Not a valid object name pyq-db` | L22 |
 | Published `database/` looks emptied | L23 |
+| `main` lost its history / push non-fast-forward | L24 |
 
 ## Conventions that keep this project healthy
 
