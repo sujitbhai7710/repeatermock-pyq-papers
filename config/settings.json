@@ -21,30 +21,38 @@
     "proposer_model": "deepseek-v4-flash",
     "critic_model": "gpt-5.6-sol",
     "proposer_models": [
+      "deepseek-v4.1-flash:free",
+      "deepseek-v4-flash:free",
       "deepseek-v4-flash",
-      "deepseek-v4-pro",
-      "gpt-5.6-sol",
-      "claude-sonnet-5"
+      "mimo-v2.5:free",
+      "muse-spark-1.2-contributor-free",
+      "gpt-5.6-sol"
     ],
     "critic_models": [
       "gpt-5.6-sol",
-      "claude-sonnet-5",
-      "deepseek-v4-pro",
-      "deepseek-v4-flash"
+      "muse-spark-1.2-contributor-free",
+      "ling-3.0-flash-fin-free",
+      "deepseek-v4.1-flash:free"
     ],
     "provider_order": [
+      "tokenharbor",
+      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
       "agentrouter"
     ],
     "proposer_provider_order": [
+      "tokenharbor",
+      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
       "agentrouter"
     ],
     "critic_provider_order": [
+      "tokenharbor",
+      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
@@ -54,6 +62,8 @@
   },
   "providers": {
     "order": [
+      "tokenharbor",
+      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
@@ -98,6 +108,24 @@
           "DEEPSEEK_KEYS"
         ],
         "path": "/messages"
+      },
+      "tokenharbor": {
+        "label": "TokenHarbor (free tier)",
+        "base_url": "https://tokenharbor.ai/v1",
+        "auth_style": "bearer",
+        "user_agent": "browser",
+        "env_keys": [
+          "TOKENHARBOR_KEYS"
+        ]
+      },
+      "zen-rotator": {
+        "label": "zen-rotator (Muse free)",
+        "base_url": "https://zen-rotator.opencode-5a3.workers.dev/v1",
+        "auth_style": "bearer",
+        "user_agent": "browser",
+        "env_keys": [
+          "ZEN_PROXY_TOKEN"
+        ]
       }
     }
   },
