@@ -1,0 +1,40 @@
+# circle
+
+- **Level**: topic
+- **Subject**: MATH
+- **Chapter**: Geometry
+- **Questions**: 13
+
+## By exam
+
+| Exam | Questions |
+|---|---|
+| CHSL | 12 |
+| MTS | 1 |
+
+## By year
+
+| Year | Questions |
+|---|---|
+| 2024 | 1 |
+| 2025 | 12 |
+
+## Question ids
+
+Resolve any id with `python tools/resolve.py <qid>`.
+
+```text
+66a2648dde2d7b36612d5f63  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_03_Jul_2024_Shift_3_67d9257b61124665b0f4c4de.json #56
+699d83702f00d6b4992827d0  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_25_Nov_2025_Shift_1_699139fa00b8600595dfcc3c.json #63
+699ddb5e1236cd044a5dcfbb  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_26_Nov_2025_Shift_1_699139fd63f8671dd7984b5c.json #54
+699ebbea9d327a45d9428afc  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_27_Nov_2025_Shift_1_699139fffe1e622799519adf.json #67
+69a037514be42daa8d66b994  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_28_Nov_2025_Shift_1_69913a0236d1ea3c72e13bea.json #65
+699d318d821e759f4822c646  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_19_Nov_2025_Shift_3_699139f65b7cd4b1eb8ba071.json #64
+693c11546df862733e833478  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_20_Nov_2025_Shift_3_699139ea73f524ea74184c6c.json #62
+693c1157e41942241b8cba1d  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_20_Nov_2025_Shift_3_699139ea73f524ea74184c6c.json #69
+699d8de4d7d6dcfb35f897de  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_22_Nov_2025_Shift_3_699139f883be60a89ad04506.json #65
+699f2cb0316066f5227a5f14  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_26_Nov_2025_Shift_3_699139fe3805537016416209.json #61
+699f2fca7ba8d59c8532ad12  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_26_Nov_2025_Shift_3_699139fe3805537016416209.json #66
+69b3e6a069005dc91ee5a534  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_27_Nov_2025_Shift_3_69913a0183be60a89ad04534.json #72
+69bcf03e026410e8871e9ca4  MTS 2025 SSC-MTS/Previous_Year_Paper/2025/SSC_MTS_2025_Official_Paper_Held_On_09_Feb_2026_Shift_3_69ccf671d018f038252c401c.json #8
+```
