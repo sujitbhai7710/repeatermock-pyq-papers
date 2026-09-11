@@ -43,9 +43,10 @@ state/manifest.json    files produced per phase (path, bytes)
 database/_meta/PROGRESS.md  human-readable roll-up of the above
 ```
 
-* The work window (`MAX_WORK_SECONDS`, default 19,800 s) is checked between
-  phases; when it expires the phase stops and the run ends with
-  `status=time_limit`.
+* The work window (`MAX_WORK_SECONDS`, default 19,800 s) spans the whole `run`
+  and is checked before every batch and phase; when it expires the run stops
+  cleanly with `status=time_limit` (exit code 4) after checkpointing — a started
+  batch is always allowed to finish.
 * `CHECKPOINT_INTERVAL_SECONDS` (default 1,800 s) controls how often the
   checkpoint is rewritten.
 * `run` skips phases already present in `cursor.completed`; `--fresh` clears
@@ -72,23 +73,35 @@ Rules enforced by the code:
 * missing keys are not an error: the AI steps report
   `status=skipped_no_keys` and the python extraction is kept.
 
-## 5. Rate limits — GLOBAL HALT
+## 5. Rate limits — provider failover + GLOBAL HALT
+
+Each request walks the configured provider order (`agentrouter` → `jw`). A
+provider that answers with a rate-limit / quota-exhaustion signal
+(`halt_on_any_rate_limit_signal`): HTTP 402 / 429 / 503, or a body containing
+`rate limit`, `rate-limit`, `ratelimit`, `too many requests`, `quota`,
+`exhausted`, `all_keys_exhausted`, `insufficient_quota`, `insufficient balance`,
+`no available`, `capacity`, `overloaded`, `temporarily unavailable`,
+`try again later`, `concurrency` — is treated as a **provider-level outage**:
+
+* its circuit breaker trips for `rate_limit.provider_cooldown_seconds`
+  (default 300 s, doubling per consecutive trip up to
+  `provider_cooldown_max_seconds`, default 3,600 s);
+* the request fails over to the next configured provider;
+* a tripped provider is skipped while cooling down (not retried per item) and is
+  probed exactly once after the cooldown — success closes the breaker, failure
+  re-opens it with a doubled cooldown.
 
 The router counts **consecutive** failures (one success resets the counter to 0).
-A halt is triggered by either of:
+A **global halt** happens only when no healthy provider is left:
 
-* **10 consecutive failures** (`rate_limit.consecutive_failure_threshold`), or
-* **any** response carrying a rate-limit / quota-exhaustion signal
-  (`halt_on_any_rate_limit_signal`): HTTP 402 / 429 / 503, or a body containing
-  `rate limit`, `rate-limit`, `ratelimit`, `too many requests`, `quota`,
-  `exhausted`, `insufficient_quota`, `insufficient balance`, `no available`,
-  `capacity`, `overloaded`, `temporarily unavailable`, `try again later`,
-  `concurrency`.
+* every configured provider is exhausted / cooling down / without credentials, or
+* **10 consecutive failures** (`rate_limit.consecutive_failure_threshold`) were
+  recorded and no healthy provider absorbed them.
 
 On halt: the in-flight item finishes, `GlobalHalt` is raised for everything
 after it, the phase checkpoints, and the run exits with
-`status=rate_limited` (exit code `3`). The next scheduled run resumes from the
-checkpoint.
+`status=rate_limited` (exit code `3`, a soft stop). The next scheduled run
+resumes from the checkpoint.
 
 ## 6. CI (`.github/workflows/pyq-agent.yml`)
 
@@ -98,7 +111,7 @@ checkpoint.
 | Timeout | `350` minutes |
 | Concurrency | group `pyq-agent`, `cancel-in-progress: false` |
 | Permissions | `contents: write` |
-| Steps | checkout (`fetch-depth: 0`) → setup-python 3.11 → `pip install -r requirements.txt` (a no-op: stdlib only) → `python -m agent.cli run` with `MAX_WORK_SECONDS=19800` and `AR_PROXY_TOKEN` / `JW_PROXY_TOKEN` / `MONID_API_KEY` → `python -m agent.cli audit` (fails the job on a structural defect) → `database/_meta/PROGRESS.md` + audit transcript in the job summary → `upload-artifact` (logs, checkpoint, coverage; 14 days) → commit the generated tree with `git add -f state database` and `git push origin HEAD:pyq-db` (branch created on the first run, fast-forward afterwards) |
+| Steps | checkout (`fetch-depth: 0`) → setup-python 3.11 → `pip install -r requirements.txt` (a no-op: stdlib only) → `python -m agent.cli run` with `MAX_WORK_SECONDS=19800` and `AR_PROXY_TOKEN` / `JW_PROXY_TOKEN` / `MONID_API_KEY` (exit 0/3/4 = ok/rate_limited/time_limit are all success; the run step maps them to `status=…` and exits 0 so the audit + publish steps run) → `python -m agent.cli audit` (fails the job on a structural defect) → `database/_meta/PROGRESS.md` + audit transcript in the job summary → `upload-artifact` (logs, checkpoint, coverage; 14 days) → commit the generated tree with `git add -f state database` and `git push origin HEAD:pyq-db` (branch created on the first run, fast-forward afterwards) |
 | Branches | `main` is code only (`/state/` and `/database/` are gitignored); all generated artefacts live on `pyq-db` and are marked generated in `.gitattributes` |
 
 Local sanity check of the workflow logic:
@@ -134,7 +147,7 @@ question text). `phase0` reads every paper once.
 | A paper is flagged `NEEDS_AI_REVIEW` | expected for 4 papers (1 layout mismatch + 3 with no usable labels); inspect `database/_meta/flagged_papers.jsonl` and confirm with `verify-db` |
 | `audit` fails | the tree has a structural defect; the report names the rule, the path and the detail. Re-run the affected phase (`python -m agent.cli phase N`) — the subject subtree is pruned and rewritten |
 | `coverage identity is NOT balanced` | a paper's `placeable` flag and its per-question `subject` disagree; the warning prints both sides. Re-run `phase0` and check `state/papers.json` |
-| `status=rate_limited` | a provider signalled rate limiting; wait for the next scheduled run — the checkpoint resumes automatically |
+| `status=rate_limited` | every configured provider is exhausted/rate limited; the circuit breaker skips the outages (a single healthy provider keeps the run going), the checkpoint resumes automatically. Exit code 3 is a soft stop — the job stays green |
 | `unittest` reports `Start directory is not importable` | run with `-t .` from the project root: `python -m unittest discover -s tests -t .` |
 | Mock pack id not found | ids are hierarchical slugs; use `python tools/mocks.py list --search <text>` |
 

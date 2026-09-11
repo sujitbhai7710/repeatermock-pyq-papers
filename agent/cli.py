@@ -154,14 +154,14 @@ def cmd_taxonomy(args: argparse.Namespace, settings: Settings, exams: ExamTable,
     tracking.record_files("taxonomy", [paths.TAXONOMY_JSON, paths.ALIAS_MAP_JSON, cache])
     return EXIT_OK
 
-def _make_context(settings: Settings, exams: ExamTable, log: Log, classifier: Classifier, run_id: str):
+def _make_context(settings: Settings, exams: ExamTable, log: Log, classifier: Classifier, run_id: str, window=None):
     from .phases import PipelineContext
 
     return PipelineContext(
         settings=settings,
         exams=exams,
         log=log,
-        window=checkpoint.make_window(settings),
+        window=window or checkpoint.make_window(settings),
         run_id=run_id,
         taxonomy=read_json(paths.TAXONOMY_JSON, default={"subjects": {}}),
         alias_map=read_json(paths.ALIAS_MAP_JSON, default={"map": {}}),
@@ -178,12 +178,19 @@ def os_environ_keys() -> List[str]:
             found.append(name)
     return found
 
-def cmd_phase(number: int, settings: Settings, exams: ExamTable, log: Log, run_id: str) -> int:
+def cmd_phase(
+    number: int,
+    settings: Settings,
+    exams: ExamTable,
+    log: Log,
+    run_id: str,
+    window=None,
+) -> int:
     from .phases import phase_module
 
     name = f"phase{number}"
     classifier = load_classifier(log)
-    ctx = _make_context(settings, exams, log, classifier, run_id)
+    ctx = _make_context(settings, exams, log, classifier, run_id, window=window)
     module = phase_module(name)
     result = module.run(ctx)
     tracking.save_progress(
@@ -191,7 +198,22 @@ def cmd_phase(number: int, settings: Settings, exams: ExamTable, log: Log, run_i
     )
     tracking.write_progress_md(extra=_coverage_extra(ctx))
     print(json.dumps(result.as_dict(), indent=2, ensure_ascii=False))
-    return EXIT_OK if result.status == "ok" else EXIT_ERROR
+    return exit_code_for_status(result.status)
+
+def exit_code_for_status(status: str) -> int:
+    """Phase/verify status -> process exit code.
+
+    ``rate_limited`` (3) and ``time_limit`` (4) are **soft stops**: the phase
+    checkpointed and published, so the shell must not treat them as failures.
+    """
+
+    if status in ("ok", "done", "complete"):
+        return EXIT_OK
+    if status == checkpoint.STATUS_RATE_LIMITED:
+        return EXIT_RATE_LIMITED
+    if status == checkpoint.STATUS_TIME_LIMIT:
+        return EXIT_TIME_LIMIT
+    return EXIT_ERROR
 
 def _coverage_extra(ctx) -> Optional[Dict[str, Any]]:
     coverage = getattr(ctx, "coverage", None)
@@ -255,24 +277,60 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
         )
 
     phases = [f"phase{args.phase}"] if args.phase is not None else list(PHASE_ORDER)
+    # One work window spans the whole run (not one per phase): MAX_WORK_SECONDS
+    # bounds the job, and a spent window stops the run cleanly with exit code 4.
+    window = checkpoint.make_window(settings)
     exit_code = EXIT_OK
 
     for name in phases:
         if name in completed and resume:
             log.info(f"{name}: already complete (checkpoint), skipping")
             continue
+        if window.expired():
+            note = f"work window expired after {window.elapsed():.0f}s – phase not started"
+            log.warn(f"{name}: {note} – checkpointing")
+            checkpoint.save_checkpoint(
+                checkpoint.new_checkpoint(
+                    name,
+                    run_id,
+                    {"completed": completed, "next": name},
+                    window,
+                    status=checkpoint.STATUS_TIME_LIMIT,
+                    notes=[note],
+                ),
+                paths.CHECKPOINT_JSON,
+            )
+            tracking.save_progress(tracking.record_phase(name, checkpoint.STATUS_TIME_LIMIT, notes=[note]))
+            tracking.write_progress_md(extra=None)
+            exit_code = EXIT_TIME_LIMIT
+            break
         checkpoint.save_checkpoint(
-            checkpoint.new_checkpoint(name, run_id, {"completed": completed}, checkpoint.make_window(settings)),
+            checkpoint.new_checkpoint(name, run_id, {"completed": completed}, window),
             paths.CHECKPOINT_JSON,
         )
-        code = cmd_phase(int(name[-1]), settings, exams, log, run_id)
+        code = cmd_phase(int(name[-1]), settings, exams, log, run_id, window=window)
         if code != EXIT_OK:
             exit_code = code
+            soft_status = {
+                EXIT_RATE_LIMITED: checkpoint.STATUS_RATE_LIMITED,
+                EXIT_TIME_LIMIT: checkpoint.STATUS_TIME_LIMIT,
+            }.get(code, checkpoint.STATUS_ERROR)
+            checkpoint.save_checkpoint(
+                checkpoint.new_checkpoint(
+                    name,
+                    run_id,
+                    {"completed": completed, "next": name},
+                    window,
+                    status=soft_status,
+                ),
+                paths.CHECKPOINT_JSON,
+            )
+            tracking.write_progress_md(extra=None)
             break
         completed.append(name)
         checkpoint.save_checkpoint(
             checkpoint.new_checkpoint(
-                name, run_id, {"completed": completed, "next": _next_phase(completed)}, checkpoint.make_window(settings)
+                name, run_id, {"completed": completed, "next": _next_phase(completed)}, window
             ),
             paths.CHECKPOINT_JSON,
         )
@@ -312,17 +370,14 @@ def cmd_verify_db(args: argparse.Namespace, settings: Settings, exams: ExamTable
         batch_size=args.batch_size,
         report_only=args.report_only,
         log=log,
+        window=checkpoint.make_window(settings),
     )
     print(json.dumps(result.as_dict(), indent=2, ensure_ascii=False))
     # ``skipped_no_keys`` is an expected, successful outcome (python extraction is
     # kept); only a real failure or a halt is an error for the shell.
     if result.status in ("ok", verify.STATUS_SKIPPED):
         return EXIT_OK
-    if result.status == verify.STATUS_RATE_LIMITED:
-        return EXIT_RATE_LIMITED
-    if result.status == verify.STATUS_TIME_LIMIT:
-        return EXIT_TIME_LIMIT
-    return EXIT_ERROR
+    return exit_code_for_status(result.status)
 
 def cmd_audit(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
     """``tools/audit_db.py`` — structural self-check; non-zero exit on violation."""

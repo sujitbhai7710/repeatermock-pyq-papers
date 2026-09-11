@@ -29,6 +29,7 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from . import debate as debate_mod
 from . import indexer, llm, paths, router as router_mod
+from .checkpoint import WorkWindow
 from .config import Settings
 from .util import Log, append_jsonl, chunked, now_iso, read_json, write_json
 
@@ -147,8 +148,15 @@ def verify_database(
     report_only: bool = False,
     log: Optional[Log] = None,
     papers: Optional[Sequence[Any]] = None,
+    window: Optional[WorkWindow] = None,
 ) -> VerifyResult:
-    """Re-check python-extracted items; resumable and idempotent."""
+    """Re-check python-extracted items; resumable and idempotent.
+
+    When *window* is given the budget is checked **before every batch**: once it
+    is spent the loop stops cleanly with ``status=time_limit`` (exit code 4) so
+    the caller checkpoints instead of being killed mid-run.  A batch that has
+    started is always allowed to finish.
+    """
 
     logger = log or Log("verify")
     if not settings.verify.enabled:
@@ -174,6 +182,7 @@ def verify_database(
     corrections: List[Dict[str, Any]] = []
     counters: Counter = Counter()
     halted_reason = ""
+    time_reason = ""
 
     router = router_mod.get_router(settings, log=logger)
     session = debate_mod.Debate(settings, router, log=logger)
@@ -194,6 +203,14 @@ def verify_database(
         logger.info(f"{phase_name}: {len(subset)} items in {len(batches)} batches ({len(done)} already verified)")
 
         for index, group in enumerate(batches):
+            if window is not None and window.expired():
+                time_reason = (
+                    f"work window expired after {window.elapsed():.0f}s "
+                    f"(limit {window.max_seconds}s) – {len(batches) - index} batch(es) not attempted"
+                )
+                counters["batches_not_attempted"] = len(batches) - index
+                logger.warn(f"{phase_name}: {time_reason}")
+                break
             if router.halted:
                 halted_reason = router.stats.halt_reason
                 break
@@ -265,7 +282,7 @@ def verify_database(
             else:
                 counters["batches_without_items"] += 1
 
-        if halted_reason:
+        if halted_reason or time_reason:
             break
 
     corrections_file: Optional[Path] = None
@@ -277,11 +294,19 @@ def verify_database(
 
     save_state(state)
     counters["corrections"] = len(corrections)
-    status = STATUS_RATE_LIMITED if halted_reason else STATUS_OK
+    if halted_reason:
+        status = STATUS_RATE_LIMITED
+    elif time_reason:
+        status = STATUS_TIME_LIMIT
+    else:
+        status = STATUS_OK
     notes: List[str] = []
     if halted_reason:
         notes.append(f"halted: {halted_reason}")
+    if time_reason:
+        notes.append(time_reason)
     notes.append(f"router: {json.dumps(router.stats.as_dict(), sort_keys=True)}")
+    notes.append(f"providers: {json.dumps(router.provider_report(), sort_keys=True)}")
     return VerifyResult(status, dict(counters), notes, corrections_file)
 
 

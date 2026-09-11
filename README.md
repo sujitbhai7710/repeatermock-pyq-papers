@@ -358,8 +358,10 @@ published checkpoint unless `--fresh` is requested locally.
 
 ## 6. Checkpoint, resume and the work window
 
-* Work window: `MAX_WORK_SECONDS` (default **19,800 s = 5.5 h**). When it expires
-  the current phase stops and the run exits with `status=time_limit`.
+* Work window: `MAX_WORK_SECONDS` (default **19,800 s = 5.5 h**), applied to the
+  whole `run`, not per phase. The budget is checked before every batch/phase;
+  when it is spent the run stops cleanly with `status=time_limit` (exit code 4)
+  instead of being killed mid-flight.
 * Checkpoint every `CHECKPOINT_INTERVAL_SECONDS` (default **1,800 s**):
   `state/checkpoint.json` records `{run_id, phase, cursor.completed, status}`.
 * `python -m agent.cli run` **resumes**: phases already listed in
@@ -369,6 +371,9 @@ published checkpoint unless `--fresh` is requested locally.
 * `state/verify_state.json` stores the verified **batch fingerprints** per
   phase, so `verify-db` resumes and is idempotent: re-applying a correction is a
   set operation on the index record.
+* **Soft stops**: `status=rate_limited` (exit 3) and `status=time_limit`
+  (exit 4) still write the checkpoint, progress and database slice. In CI they
+  leave the job green so the publish step runs; only other non-zero exits fail it.
 
 ---
 
@@ -395,20 +400,33 @@ produces a complete database.
 
 ---
 
-## 8. Rate-limit policy (GLOBAL HALT)
+## 8. Rate-limit policy (provider failover + GLOBAL HALT)
 
-* every failure increments a **consecutive-failure** counter;
-* **one success resets it to zero**;
-* at **10 consecutive failures** — *or immediately when any worker response
-  carries a rate-limit / quota-exhaustion signal* (HTTP 402/429/503, or bodies
-  containing `rate limit`, `quota`, `exhausted`, `insufficient_quota`,
-  `no available`, `overloaded`, `capacity`, `concurrency`, …) — the router sets a
-  **global halt**:
-  1. the in-flight item is allowed to finish,
-  2. no further requests are made (`GlobalHalt` is raised),
-  3. the phase checkpoints and the run exits with **`status=rate_limited`**.
+The rule "if a worker is rate limited, stop — don't keep hammering" is applied at
+the level of the **provider chain**, not the individual request:
 
-`status` values: `ok`, `rate_limited`, `time_limit`, `error`.
+* every request walks the configured provider order (`agentrouter`, then `jw`);
+* a provider that answers with a rate-limit / quota-exhaustion signal
+  (HTTP 402/429/503, or bodies such as `all_keys_exhausted` / "all upstream keys
+  failed", `quota`, `insufficient_quota`, `no available`, `overloaded`, …) is a
+  **provider-level outage**:
+  1. its circuit breaker trips (`rate_limit.provider_cooldown_seconds`, default
+     300 s, doubling per consecutive trip up to `provider_cooldown_max_seconds`);
+  2. the request **fails over to the next configured provider**;
+  3. while the breaker is open the exhausted provider is skipped — it is not
+     retried on every item — and is probed exactly once after the cooldown;
+* every failure increments a **consecutive-failure** counter and one success
+  resets it to zero;
+* **`GlobalHalt` is raised only when no healthy provider is left**: either every
+  configured provider is exhausted / cooling down / unkeyed, or
+  `rate_limit.consecutive_failure_threshold` (default **10**) consecutive
+  failures were recorded and no provider could absorb them;
+* on halt the in-flight item finishes, the phase checkpoints, and the run exits
+  with **`status=rate_limited`** (exit code `3`).
+
+`status` values: `ok`, `rate_limited` (exit 3), `time_limit` (exit 4), `error`
+(exit 1). Exit codes 3 and 4 are soft stops: the generated tree is still
+published and the GitHub job stays green.
 
 ---
 

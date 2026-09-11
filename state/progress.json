@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "created_at": "2026-09-11T01:02:19Z",
-  "updated_at": "2026-09-11T01:02:42Z",
+  "created_at": "2026-09-11T01:36:36Z",
+  "updated_at": "2026-09-11T02:07:17Z",
   "phases": {
     "phase0": {
-      "started_at": "2026-09-11T01:02:19Z",
+      "started_at": "2026-09-11T01:36:36Z",
       "status": "ok",
-      "updated_at": "2026-09-11T01:02:19Z",
+      "updated_at": "2026-09-11T01:36:36Z",
       "counters": {
         "papers_in_scope": 1322,
         "papers_out_of_scope": 287,
@@ -22,12 +22,12 @@
       "notes": [
         "coverage identity holds"
       ],
-      "finished_at": "2026-09-11T01:02:19Z"
+      "finished_at": "2026-09-11T01:36:36Z"
     },
     "phase1": {
-      "started_at": "2026-09-11T01:02:42Z",
+      "started_at": "2026-09-11T02:07:17Z",
       "status": "rate_limited",
-      "updated_at": "2026-09-11T01:02:42Z",
+      "updated_at": "2026-09-11T02:07:17Z",
       "counters": {
         "eng_questions": 37990,
         "eng_chapters": 15,
@@ -38,8 +38,9 @@
         "db_files": 156
       },
       "notes": [
-        "halted: rate-limit/exhaustion signal from jw: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":\"auth-403\",\"last_status\":403,\"failover_count\":3,\"failed_keys\":3}}",
-        "router: {\"consecutive_failures\": 2, \"failures\": 2, \"halt_reason\": \"rate-limit/exhaustion signal from jw: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\\\"error\\\":{\\\"type\\\":\\\"all_keys_exhausted\\\",\\\"message\\\":\\\"All upstream keys failed or are on cooldown. Try again later or add more keys.\\\",\\\"last_error\\\":\\\"auth-403\\\",\\\"last_status\\\":403,\\\"failover_count\\\":3,\\\"failed_keys\\\":3}}\", \"halted\": true, \"halted_at\": \"2026-09-11T01:02:33Z\", \"per_provider\": {\"agentrouter\": {\"fail\": 1, \"ok\": 0}, \"jw\": {\"fail\": 1, \"ok\": 0}}, \"rate_limit_signals\": 1, \"requests\": 2, \"successes\": 0}"
+        "halted: all providers exhausted after 1 attempt(s): tried agentrouter; agentrouter: cooling down for 300s after HTTP 200: {\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"ok\\\": true, \\\"concept\\\": null, \\\"chapter\\\": null, \\\"topic\\\": null, \\\"reason\\\": \\\"All 20 items in the batch are consistent: each concept_raw matches the python_result.concept, and chapter values are correctly assigned (null for Vocabu; jw: cooling down for 111s after HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":\"auth-403\",\"last_status\":403,\"failover_count\":3,\"failed_keys\":3}}",
+        "router: {\"consecutive_failures\": 1, \"failures\": 6, \"halt_reason\": \"all providers exhausted after 1 attempt(s): tried agentrouter; agentrouter: cooling down for 300s after HTTP 200: {\\\"choices\\\":[{\\\"index\\\":0,\\\"message\\\":{\\\"role\\\":\\\"assistant\\\",\\\"content\\\":\\\"{\\\\\\\"ok\\\\\\\": true, \\\\\\\"concept\\\\\\\": null, \\\\\\\"chapter\\\\\\\": null, \\\\\\\"topic\\\\\\\": null, \\\\\\\"reason\\\\\\\": \\\\\\\"All 20 items in the batch are consistent: each concept_raw matches the python_result.concept, and chapter values are correctly assigned (null for Vocabu; jw: cooling down for 111s after HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\\\"error\\\":{\\\"type\\\":\\\"all_keys_exhausted\\\",\\\"message\\\":\\\"All upstream keys failed or are on cooldown. Try again later or add more keys.\\\",\\\"last_error\\\":\\\"auth-403\\\",\\\"last_status\\\":403,\\\"failover_count\\\":3,\\\"failed_keys\\\":3}}\", \"halted\": true, \"halted_at\": \"2026-09-11T02:07:09Z\", \"per_provider\": {\"agentrouter\": {\"fail\": 4, \"ok\": 22, \"rate_limited\": 1, \"trips\": 1}, \"jw\": {\"fail\": 2, \"ok\": 0, \"rate_limited\": 2, \"trips\": 2}}, \"rate_limit_signals\": 3, \"requests\": 28, \"successes\": 22}",
+        "providers: {\"agentrouter\": {\"cooldown_seconds\": 300.0, \"last_reason\": \"HTTP 200: {\\\"choices\\\":[{\\\"index\\\":0,\\\"message\\\":{\\\"role\\\":\\\"assistant\\\",\\\"content\\\":\\\"{\\\\\\\"ok\\\\\\\": true, \\\\\\\"concept\\\\\\\": null, \\\\\\\"chapter\\\\\\\": null, \\\\\\\"topic\\\\\\\": null, \\\\\\\"reason\\\\\\\": \\\\\\\"All 20 items in the batch are consistent: each concept_raw matches the python_result.concept, and chapter values are correctly assigned (null for Vocabu\", \"probes\": 0, \"retry_in_seconds\": 300.0, \"state\": \"open\", \"trips\": 1}, \"jw\": {\"cooldown_seconds\": 600.0, \"last_reason\": \"HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\\\"error\\\":{\\\"type\\\":\\\"all_keys_exhausted\\\",\\\"message\\\":\\\"All upstream keys failed or are on cooldown. Try again later or add more keys.\\\",\\\"last_error\\\":\\\"auth-403\\\",\\\"last_status\\\":403,\\\"failover_count\\\":3,\\\"failed_keys\\\":3}}\", \"probes\": 1, \"retry_in_seconds\": 110.7, \"state\": \"open\", \"trips\": 2}}"
       ]
     }
   },

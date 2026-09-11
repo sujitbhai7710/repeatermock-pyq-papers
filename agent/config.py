@@ -44,9 +44,18 @@ class YearRange:
 @dataclass(frozen=True)
 class RateLimitPolicy:
     consecutive_failure_threshold: int = 10
+    #: when true (default) a rate-limit/exhaustion signal trips the *provider's*
+    #: circuit breaker and the request fails over; a global halt only happens
+    #: once no healthy provider is left (or the consecutive-failure threshold is
+    #: reached).  When false the provider stays in rotation and only the
+    #: consecutive-failure counter applies.
     halt_on_any_rate_limit_signal: bool = True
     request_timeout_seconds: int = 120
     max_retries_per_request: int = 1
+    #: circuit-breaker cooldown for an exhausted provider (doubles per
+    #: consecutive trip, capped by ``provider_cooldown_max_seconds``)
+    provider_cooldown_seconds: int = 300
+    provider_cooldown_max_seconds: int = 3600
 
 
 @dataclass(frozen=True)
@@ -125,11 +134,21 @@ def load_settings(path: Optional[Path] = None) -> Settings:
     env_threshold = _env_int("RATE_LIMIT_THRESHOLD")
     if env_threshold is not None:
         threshold = env_threshold
+    cooldown = int(rl.get("provider_cooldown_seconds", 300))
+    env_cooldown = _env_int("PROVIDER_COOLDOWN_SECONDS")
+    if env_cooldown is not None:
+        cooldown = env_cooldown
+    cooldown_max = int(rl.get("provider_cooldown_max_seconds", 3600))
+    env_cooldown_max = _env_int("PROVIDER_COOLDOWN_MAX_SECONDS")
+    if env_cooldown_max is not None:
+        cooldown_max = env_cooldown_max
     rate_limit = RateLimitPolicy(
         consecutive_failure_threshold=threshold,
         halt_on_any_rate_limit_signal=bool(rl.get("halt_on_any_rate_limit_signal", True)),
         request_timeout_seconds=int(rl.get("request_timeout_seconds", 120)),
         max_retries_per_request=int(rl.get("max_retries_per_request", 1)),
+        provider_cooldown_seconds=cooldown,
+        provider_cooldown_max_seconds=cooldown_max,
     )
 
     db = raw.get("debate", {})

@@ -11,7 +11,9 @@
     "consecutive_failure_threshold": 10,
     "halt_on_any_rate_limit_signal": true,
     "request_timeout_seconds": 120,
-    "max_retries_per_request": 1
+    "max_retries_per_request": 1,
+    "provider_cooldown_seconds": 300,
+    "provider_cooldown_max_seconds": 3600
   },
   "debate": {
     "max_rounds": 1,

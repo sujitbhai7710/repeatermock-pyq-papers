@@ -1,8 +1,14 @@
 """OpenAI-compatible chat client (stdlib only).
 
 No key ever reaches a log line: keys are masked to ``<provider>#<n>`` in every
-message.  Rate-limit / quota signals are turned into :class:`LlmRateLimited`
-which the router converts into a global halt.
+message.  Rate-limit / quota signals are turned into :class:`LlmRateLimited`,
+which the router treats as a provider-level outage (circuit breaker + failover);
+only a fully exhausted provider chain becomes a global halt.
+
+Reasoning models (``deepseek-v4-flash``) may spend the whole completion budget
+on ``reasoning_content`` and truncate before writing ``content`` — such a reply
+is retried with a larger ``max_tokens`` (see :func:`chat_completion`) instead of
+being reported as a provider failure.
 """
 
 from __future__ import annotations
@@ -133,36 +139,20 @@ def detect_rate_limit(status: Optional[int], body: str) -> bool:
     return any(signal in lowered for signal in RATE_LIMIT_SIGNALS)
 
 
-def chat_completion(
+def _post_chat(
     *,
     base_url: str,
+    payload: Dict[str, Any],
     api_key: str,
-    model: str,
-    messages: Sequence[ChatMessage],
-    timeout: int = 120,
-    temperature: float = 0.0,
-    max_tokens: Optional[int] = None,
-    extra: Optional[Dict[str, Any]] = None,
-) -> ChatResult:
-    """POST ``/chat/completions`` and return the assistant text.
+    timeout: int,
+) -> tuple:
+    """One ``POST /chat/completions``; returns ``(status, body)``.
 
-    Raises :class:`LlmRateLimited` when a rate-limit signal is seen and
-    :class:`LlmError` for any other failure.
+    Raises :class:`LlmRateLimited` on a rate-limit signal and :class:`LlmError`
+    for every other HTTP/transport failure.
     """
 
-    import time
-
     url = base_url.rstrip("/") + "/chat/completions"
-    payload: Dict[str, Any] = {
-        "model": model,
-        "messages": [m.as_dict() for m in messages],
-        "temperature": temperature,
-    }
-    if max_tokens:
-        payload["max_tokens"] = max_tokens
-    if extra:
-        payload.update(extra)
-
     data = json.dumps(payload).encode("utf-8")
     request = urllib.request.Request(url, data=data, method="POST")
     request.add_header("Content-Type", "application/json")
@@ -172,11 +162,10 @@ def chat_completion(
     # workers are called with a browser user agent (see agent.util.user_agent).
     request.add_header("User-Agent", user_agent())
 
-    started = time.monotonic()
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             body = response.read().decode("utf-8", errors="replace")
-            status = response.status
+            return response.status, body
     except urllib.error.HTTPError as exc:  # noqa: PERF203
         body = ""
         try:
@@ -191,37 +180,122 @@ def chat_completion(
     except (urllib.error.URLError, socket.timeout, TimeoutError, OSError) as exc:
         raise LlmError(f"transport error to {base_url}: {exc}") from exc
 
-    latency_ms = int((time.monotonic() - started) * 1000)
-    if detect_rate_limit(status, body):
-        raise LlmRateLimited(f"HTTP {status}: {_short(body)}", status=status)
 
-    try:
-        parsed = json.loads(body)
-    except json.JSONDecodeError as exc:
-        raise LlmError(f"invalid JSON from {base_url}: {_short(body)}") from exc
+#: hard cap for the escalated retry budget of a truncated reasoning reply
+MAX_ESCALATED_TOKENS = 16384
 
-    if isinstance(parsed, dict) and parsed.get("error"):
-        message = json.dumps(parsed["error"])[:400]
-        if detect_rate_limit(status, message):
-            raise LlmRateLimited(message, status=status)
-        raise LlmError(message, status=status)
 
-    text = extract_text(parsed)
-    if not text:
-        raise LlmError("empty completion", status=status)
+def _truncated_without_text(parsed: Any) -> bool:
+    """True when the completion hit the token cap before writing any content.
 
-    usage = {}
-    if isinstance(parsed, dict) and isinstance(parsed.get("usage"), dict):
-        usage = parsed["usage"]
-    return ChatResult(
-        text=text,
-        model=model,
-        provider="",
-        key_ref=_mask(api_key),
-        latency_ms=latency_ms,
-        usage=usage,
-        raw=parsed if isinstance(parsed, dict) else {},
-    )
+    ``deepseek-v4-flash`` is a reasoning model: it streams its chain of thought
+    into ``reasoning_content`` and only then writes ``content``.  With a small
+    ``max_tokens`` the whole budget can be spent on the reasoning and the
+    message comes back with ``content == ""``, ``finish_reason == "length"`` —
+    a client-side truncation, not a provider failure.
+    """
+
+    if not isinstance(parsed, dict):
+        return False
+    choices = parsed.get("choices")
+    if not isinstance(choices, list) or not choices:
+        return False
+    first = choices[0]
+    if not isinstance(first, dict) or str(first.get("finish_reason") or "") != "length":
+        return False
+    message = first.get("message")
+    if not isinstance(message, dict):
+        return False
+    content = message.get("content")
+    return not (isinstance(content, str) and content.strip())
+
+
+def _escalated_budget(current: Optional[int]) -> int:
+    base = int(current or 700)
+    return min(max(base * 4, 4096), MAX_ESCALATED_TOKENS)
+
+
+def chat_completion(
+    *,
+    base_url: str,
+    api_key: str,
+    model: str,
+    messages: Sequence[ChatMessage],
+    timeout: int = 120,
+    temperature: float = 0.0,
+    max_tokens: Optional[int] = None,
+    extra: Optional[Dict[str, Any]] = None,
+    truncation_retries: int = 0,
+) -> ChatResult:
+    """POST ``/chat/completions`` and return the assistant text.
+
+    Raises :class:`LlmRateLimited` when a rate-limit signal is seen and
+    :class:`LlmError` for any other failure.
+
+    When a reasoning model truncates before emitting any ``content``, the call
+    is repeated with a larger ``max_tokens`` (at most *truncation_retries*
+    extra attempts) instead of being reported as a provider failure.
+    """
+
+    import time
+
+    budget = max_tokens
+    attempt = 0
+    started = time.monotonic()
+    while True:
+        payload: Dict[str, Any] = {
+            "model": model,
+            "messages": [m.as_dict() for m in messages],
+            "temperature": temperature,
+        }
+        if budget:
+            payload["max_tokens"] = budget
+        if extra:
+            payload.update(extra)
+
+        status, body = _post_chat(
+            base_url=base_url, payload=payload, api_key=api_key, timeout=timeout
+        )
+
+        if detect_rate_limit(status, body):
+            raise LlmRateLimited(f"HTTP {status}: {_short(body)}", status=status)
+
+        try:
+            parsed = json.loads(body)
+        except json.JSONDecodeError as exc:
+            raise LlmError(f"invalid JSON from {base_url}: {_short(body)}") from exc
+
+        if isinstance(parsed, dict) and parsed.get("error"):
+            message = json.dumps(parsed["error"])[:400]
+            if detect_rate_limit(status, message):
+                raise LlmRateLimited(message, status=status)
+            raise LlmError(message, status=status)
+
+        text = extract_text(parsed)
+        if not text:
+            if attempt < truncation_retries and _truncated_without_text(parsed):
+                attempt += 1
+                budget = _escalated_budget(budget)
+                continue
+            raise LlmError(
+                "empty completion"
+                + (" (reasoning truncated at max_tokens)" if budget else ""),
+                status=status,
+            )
+
+        latency_ms = int((time.monotonic() - started) * 1000)
+        usage = {}
+        if isinstance(parsed, dict) and isinstance(parsed.get("usage"), dict):
+            usage = parsed["usage"]
+        return ChatResult(
+            text=text,
+            model=model,
+            provider="",
+            key_ref=_mask(api_key),
+            latency_ms=latency_ms,
+            usage=usage,
+            raw=parsed if isinstance(parsed, dict) else {},
+        )
 
 
 def extract_text(parsed: Dict[str, Any]) -> str:
