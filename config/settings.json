@@ -8,14 +8,13 @@
   "work_window_seconds": 19800,
   "checkpoint_interval_seconds": 900,
   "rate_limit": {
-    "consecutive_failure_threshold": 10,
-    "halt_on_any_rate_limit_signal": true,
+    "consecutive_failure_threshold": 6,
+    "halt_on_any_rate_limit_signal": false,
     "request_timeout_seconds": 120,
     "max_retries_per_request": 1,
     "provider_cooldown_seconds": 300,
     "provider_cooldown_max_seconds": 3600,
-    "provider_error_strike_limit": 3,
-    "consecutive_failures": 6
+    "provider_error_strike_limit": 3
   },
   "debate": {
     "max_rounds": 1,
