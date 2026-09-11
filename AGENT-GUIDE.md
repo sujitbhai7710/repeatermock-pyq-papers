@@ -118,6 +118,37 @@ Machine-readable equivalents: `state/distribution.json`.
 - `python -m agent.cli audit` → **VIOLATIONS: 0**
 - `python -m unittest discover -s tests -t .` → **192 tests, OK**
 
+### 3.6 Per-subject breakdown (published on `pyq-db`)
+
+Every subject is already built. This is exactly what each one contains today:
+
+| Subject | Taxonomy source | Top-level nodes | Leaf nodes (`index.md`) | `questions.jsonl` | Mocks | Status |
+|---|---|---|---|---|---|---|
+| **English** | `english-grammar-rules.md` (129 rules) | 6 (`grammar`, `vocabulary`, `verbal-ability`, `active-and-passive-voice`, `_analysis`, `_unclassified`) | **161** (of which **134 are the grammar rules**) | 158 | yes | ✅ built |
+| **Maths** | `SSC_CGL_Maths_...Improved.md` (30 chapters) | **32** | **163** | 136 | yes | ✅ built |
+| **Reasoning** | `SSC_Reasoning_Master_Syllabus.md` (77 sections / 5 families) | **32** | **140** | 100 | yes | ✅ built |
+| **GK / GS** | `SSC_GK_GS_Master_Syllabus.md` (domains 0–106) | **49** | **704** | 563 | yes | ✅ built |
+| **Computer** | derived (CGL Tier-II §Computer) | **9** (`computer-fundamentals`, `computer-hardware`, `computer-software`, `internet-and-networking`, `ms-office`, `operating-systems`, …) | **22** | 13 | yes | ✅ built |
+
+Totals: **1,190 leaf nodes**, **970 `questions.jsonl` link files**, **1,171 mock packs**.
+
+**English inside-out** (the most customised subject):
+- `english/grammar/` — **134 leaves** (all 129 rules + index + `_unclassified`); each rule links its own questions
+- `english/vocabulary/` — synonym / antonym / OWS / idioms / spelling / homonyms (4-bucket counting)
+- `english/verbal-ability/` — cloze test, para jumbles, reading comprehension, fill-in-the-blanks, etc.
+
+**What is still missing per subject** (same for all five):
+
+| Item | Applies to |
+|---|---|
+| AI verification of that subject's questions (`phase` step) | English (phase1) 440/37,990; GK, Maths, Reasoning, Computer not started |
+| Notes — **GK/GS topic notes**, **grammar notes** | GK/GS and English |
+| Anything unclassifiable | lands in `database/<subject>/_unclassified/` (already present for every subject) |
+
+**Where the counts live:** `database/_meta/distribution.md` (per-subject trends + priority),
+`database/_meta/coverage.md` (coverage identity), `state/distribution.json` (machine-readable),
+`python -m agent.cli stats --top 20` (live counts).
+
 ---
 
 ## 4. WHAT IS **NOT** DONE (the actual work left)
