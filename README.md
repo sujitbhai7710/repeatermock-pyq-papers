@@ -653,3 +653,9 @@ git status --porcelain
 
 ---
 
+---
+
+## For AI agents
+
+- [`AGENT-GUIDE.md`](AGENT-GUIDE.md) — complete handover: what is done, what is left, the exact order of work, and every failure we hit.
+- [`AI-APIS.txt`](AI-APIS.txt) — every AI provider, endpoint, auth style and copy-paste request example.

@@ -1,0 +1,175 @@
+================================================================================
+ AI-APIS.txt — every AI provider this project can use, and how to call it
+================================================================================
+ Companion to AGENT-GUIDE.md .
+ Keys are NOT in this file (it lives in a public repo). Read them from environment
+ variables / the secret store. See section 9 for the variable names.
+
+ GOLDEN RULES
+   1. Always send a browser User-Agent to the worker endpoints, else Cloudflare
+      answers "403 error code: 1010".
+   2. From CI / cloud runners, ALWAYS use the *workers* or the third-party APIs —
+      agentrouter.org direct is behind Aliyun WAF and returns HTML captcha there.
+   3. Reasoning models (deepseek*) need max_tokens >= 8192, else you get
+      content:"" with finish_reason:"length". Escalate and retry the same provider.
+   4. Fail over per (provider, model): one worker can serve one model and 503 another.
+   5. You only need TWO working models: one proposer (deepseek-class) + one judge
+      (gpt-5.6-sol).
+================================================================================
+
+
+--------------------------------------------------------------------------------
+ 1. ar-rotator  (WORKER over agentrouter.org) — DeepSeek, free, RECOMMENDED proposer
+--------------------------------------------------------------------------------
+ Base URL : https://ar-rotator.opencode-5a3.workers.dev/v1
+ Auth     : Authorization: Bearer <AR_PROXY_TOKEN>
+ Protocol : OpenAI Chat Completions (the worker injects "User-Agent: cline/2.0.0" upstream)
+ Best model: deepseek-v4-flash        (also: glm-5.3 — slow, avoid; gpt-5.6-sol/claude-opus -> 402)
+
+ curl -X POST https://ar-rotator.opencode-5a3.workers.dev/v1/chat/completions \
+   -H "Authorization: Bearer $AR_PROXY_TOKEN" \
+   -H "Content-Type: application/json" \
+   -H "User-Agent: Mozilla/5.0" \
+   -d '{"model":"deepseek-v4-flash","max_tokens":8192,
+        "messages":[{"role":"user","content":"Answer with one word: PONG"}]}'
+
+ Response (OpenAI shape, plus a reasoning field):
+   {"choices":[{"message":{"role":"assistant","content":"PONG",
+                           "reasoning_content":"..."},"finish_reason":"stop"}],
+    "usage":{...}}
+   NOTE: the worker auto-bumps max_tokens to 8192 and retries with 16384 if content is
+   empty; headers x-ar-max-tokens-bumped / x-ar-max-tokens-retried show what it did.
+
+
+--------------------------------------------------------------------------------
+ 2. jw-rotator  (WORKER over api.justwoker.icu) — GPT-5.6, RECOMMENDED judge
+--------------------------------------------------------------------------------
+ Base URL : https://jw-rotator.opencode-5a3.workers.dev/v1
+ Auth     : Authorization: Bearer <JW_PROXY_TOKEN>
+ Protocol : OpenAI Chat Completions  (worker translates OpenAI <-> Anthropic)
+ Best model: gpt-5.6-sol  (fast, no reasoning overhead)
+             also available: gpt-5.6-terra/luna, gpt-5.5*, claude-sonnet-5,
+             claude-opus-5, claude-haiku-4-5, gemini-3.5-flash, grok-4.6,
+             deepseek-v4-pro/flash, kimi-k3, qwen3.6-plus
+
+ curl -X POST https://jw-rotator.opencode-5a3.workers.dev/v1/chat/completions \
+   -H "Authorization: Bearer $JW_PROXY_TOKEN" \
+   -H "Content-Type: application/json" \
+   -H "User-Agent: Mozilla/5.0" \
+   -d '{"model":"gpt-5.6-sol","max_tokens":1500,
+        "messages":[{"role":"user","content":"Answer with one word: PONG"}]}'
+
+ Expect ~13-15 s for a paragraph. Streams SSE if "stream": true.
+
+
+--------------------------------------------------------------------------------
+ 3. api.justwoker.icu — DIRECT (Anthropic Messages API)
+--------------------------------------------------------------------------------
+ Endpoint : https://api.justwoker.icu/v1/messages
+ Auth     : x-api-key: <JUSTWOKER_KEYS, any of them>
+ Also     : anthropic-version: 2023-06-01 , Content-Type: application/json
+ Models   : gpt-5.6-sol works; most others return 403/model_not_found
+ WARNING  : /v1/chat/completions (OpenAI style) on this host returns
+            "403 Attention Required | Cloudflare". Use /v1/messages instead.
+
+ curl -X POST https://api.justwoker.icu/v1/messages \
+   -H "x-api-key: $JUSTWOKER_KEY" \
+   -H "anthropic-version: 2023-06-01" \
+   -H "Content-Type: application/json" \
+   -H "User-Agent: Mozilla/5.0" \
+   -d '{"model":"gpt-5.6-sol","max_tokens":200,
+        "messages":[{"role":"user","content":"Say PONG"}]}'
+
+ Response (Anthropic shape):
+   {"content":[{"type":"text","text":"PONG"}],"stop_reason":"end_turn",
+    "usage":{"input_tokens":..,"output_tokens":..,"cost":..}}
+
+
+--------------------------------------------------------------------------------
+ 4. zen-rotator  (WORKER) — Muse, free tier only
+--------------------------------------------------------------------------------
+ Base URL : https://zen-rotator.opencode-5a3.workers.dev/v1
+ Auth     : Authorization: Bearer <ZEN_PROXY_TOKEN>
+ Protocol : OpenAI Chat Completions
+ Works    : muse-spark-1.2-contributor-free  |  ling-3.0-flash-fin-free
+ Dead     : muse-spark-1.3-*, any paid model -> 503 all_keys_exhausted
+
+ curl -X POST https://zen-rotator.opencode-5a3.workers.dev/v1/chat/completions \
+   -H "Authorization: Bearer $ZEN_PROXY_TOKEN" -H "Content-Type: application/json" \
+   -H "User-Agent: Mozilla/5.0" \
+   -d '{"model":"muse-spark-1.2-contributor-free",
+        "messages":[{"role":"user","content":"Say PONG"}]}'
+
+
+--------------------------------------------------------------------------------
+ 5. agentrouter.org — DIRECT (OpenAI-compatible) — usually NOT usable
+--------------------------------------------------------------------------------
+ Endpoint : https://agentrouter.org/v1/chat/completions
+ Auth     : Authorization: Bearer <AGENTROUTER_KEYS, any of 3>
+ REQUIRED : User-Agent: cline/2.0.0   (without it -> 401)
+ Models   : deepseek-v4-flash (free) · glm-5.3 (free, slow)
+             gpt-5.6-sol / claude-opus-5 -> 402 credits-exhausted
+ PROBLEM  : behind Aliyun WAF — non-Cloudflare IPs get HTTP 200 with an HTML
+            captcha instead of JSON. Use the ar-rotator worker (section 1).
+
+ curl -X POST https://agentrouter.org/v1/chat/completions \
+   -H "Authorization: Bearer $AGENTROUTER_KEY" -H "User-Agent: cline/2.0.0" \
+   -H "Content-Type: application/json" \
+   -d '{"model":"deepseek-v4-flash","max_tokens":8192,
+        "messages":[{"role":"user","content":"Say PONG"}]}'
+
+
+--------------------------------------------------------------------------------
+ 6. Monid (TinyFish) — web SEARCH + FETCH for the agent
+--------------------------------------------------------------------------------
+ Endpoint : https://api.monid.ai/v1/{inspect,run,discover}
+ Auth     : Authorization: Bearer <MONID_API_KEY>
+ Cost     : free
+ Search:
+   POST https://api.monid.ai/v1/run
+   -H "Authorization: Bearer $MONID_API_KEY" -H "Content-Type: application/json"
+   -d '{"provider":"tinyfish","endpoint":"/search",
+        "input":{"queryParams":{"query":"SSC CGL 2024 paper analysis"}}}'
+ Fetch up to 10 URLs -> markdown:
+   POST https://api.monid.ai/v1/run
+   -d '{"provider":"tinyfish","endpoint":"/fetch",
+        "input":{"body":{"urls":["https://..."],"format":"markdown"}}}'
+
+
+--------------------------------------------------------------------------------
+ 7. REMOVED — do not use
+--------------------------------------------------------------------------------
+ TokenHarbor (https://tokenharbor.ai/v1)
+   - very small free quota
+   - its keys start with "thk_", and OpenHands' LiteLLM proxy only accepts "sk_" keys,
+     which breaks cloud agents
+   -> removed from this project.
+
+
+--------------------------------------------------------------------------------
+ 8. What to use for what
+--------------------------------------------------------------------------------
+ proposer (first opinion) : deepseek-v4-flash   @ ar-rotator        (section 1)
+ judge    (final verdict) : gpt-5.6-sol         @ jw-rotator        (section 2)
+ last-resort judge        : gpt-5.6-sol         @ api.justwoker.icu (section 3)
+ alternate proposer       : muse-spark-1.2-contributor-free @ zen-rotator (section 4)
+ web search / fetch       : Monid (section 6)
+
+ Order to try, per request:  ar-worker/deepseek-v4-flash
+                          -> justwoker or jw-worker/gpt-5.6-sol
+                          -> zen-rotator/muse-spark-1.2
+ If nothing answers: stop after saving, mark ai_unavailable, exit 0.
+
+
+--------------------------------------------------------------------------------
+ 9. Environment variables (set these; never hard-code them)
+--------------------------------------------------------------------------------
+ AGENTROUTER_KEYS   comma-separated, 3 keys      -> section 5
+ JUSTWOKER_KEYS     comma-separated, 3-4 keys    -> section 3
+ AR_PROXY_TOKEN     single token                 -> section 1
+ JW_PROXY_TOKEN     single token                 -> section 2
+ ZEN_PROXY_TOKEN    single token                 -> section 4
+ MONID_API_KEY      single key                   -> section 6
+
+ On GitHub: repo Settings -> Secrets and variables -> Actions.
+ Check what is alive at any time with:   python -m agent.cli routes --probe
