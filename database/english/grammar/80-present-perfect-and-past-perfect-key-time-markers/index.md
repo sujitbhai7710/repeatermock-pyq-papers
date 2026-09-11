@@ -1,7 +1,7 @@
 # Rule 80: Present Perfect and Past Perfect: Key Time Markers
 
 - **Topic**: Tense
-- **Questions**: 50
+- **Questions**: 52
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -35,15 +35,15 @@ Words: `after`, `already`, `before`, `just`, `lately`, `recently`, `yet`
 | CHSL | 11 |
 | GD | 10 |
 | STENO | 7 |
+| CGL | 5 |
 | CPO | 4 |
-| CGL | 3 |
 | SELECTION_POST | 3 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 5 |
+| 2019 | 7 |
 | 2020 | 2 |
 | 2021 | 4 |
 | 2022 | 12 |
@@ -64,6 +64,8 @@ Trend: **▼ -3**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e859dd8f60d5d10bc8cbc3e | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_2_6a0f3d9a0a97601eb8f3767d.json` #76 | Error Detection | ai |
+| 5e8ee17af61bed727620da40 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #78 | Sentence Improvement | ai |
 | 63a99736f9d2932c7e1a6652 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_13_Dec_2022_Shift_3_6a0f3e56b835398b15c9cb67.json` #78 | Error Detection | keyword |
 | 65429976660e71560d0d95c2 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_II/2023_-_2024/SSC_CGL_Tier-II_2023_Official_Paper-I_Held_On_26_Oct_2023_69611916ff6bb82bbdbfaf09.json` #82 | Error Detection | keyword |
 | 690b29ca9b71212a5ba0705f | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_19_Sept_2025_Shift_1_6a0f3f1cdaa906308e01eb50.json` #85 | Error Detection | keyword |

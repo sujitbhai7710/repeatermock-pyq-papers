@@ -1,7 +1,7 @@
 # Rule 83: Use Tense According to Meaning
 
 - **Topic**: Tense
-- **Questions**: 21
+- **Questions**: 23
 - **Top exam**: CHSL
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -29,9 +29,9 @@ Words: `meaning`, `tense`
 |---|---|
 | CHSL | 5 |
 | MTS | 5 |
+| CGL | 4 |
 | CPO | 3 |
 | GD | 3 |
-| CGL | 2 |
 | SELECTION_POST | 2 |
 | STENO | 1 |
 
@@ -39,8 +39,8 @@ Words: `meaning`, `tense`
 
 | Year | Questions |
 |---|---|
-| 2019 | 2 |
-| 2020 | 3 |
+| 2019 | 3 |
+| 2020 | 4 |
 | 2021 | 4 |
 | 2022 | 5 |
 | 2023 | 1 |
@@ -60,6 +60,8 @@ Trend: **▼ -4**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e9d70cff60d5d4fde78ca25 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_2_6a0f3db2d5b80365e231c518.json` #88 | Sentence Improvement | ai |
+| 614d90e6148795ec44f3958e | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_2_6a0f3dbecda5e733b2faba6f.json` #85 | Direct and Indirect Speech | ai |
 | 63a495a75db927c0ec8514cb | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_4_6a0f3e40d50c12865dcf32c8.json` #81 | Sentence Improvement | keyword |
 | 690c6cea704b612b5c1ed303 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_23_Sept_2025_Shift_3_6a0f3f38dbd2173b22e422ce.json` #90 | Error Detection | keyword |
 | 5fcdfb5a8ed24b4e42037bd6 | CHSL | 2020 | `SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_22_Held_On_16_Oct_2020_Shift_1_67d9260ba818a7f86caed750.json` #17 | Error Detection | keyword |

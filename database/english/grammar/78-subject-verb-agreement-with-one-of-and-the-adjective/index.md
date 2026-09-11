@@ -1,7 +1,7 @@
 # Rule 78: Subject–Verb Agreement with “One of” and “The + Adjective”
 
 - **Topic**: Subject, Verb and Agreement
-- **Questions**: 26
+- **Questions**: 27
 - **Top exam**: STENO
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -34,15 +34,15 @@ Words: `agreement`
 | STENO | 9 |
 | GD | 5 |
 | MTS | 5 |
+| CGL | 3 |
 | CPO | 3 |
-| CGL | 2 |
 | CHSL | 2 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 2 |
+| 2019 | 3 |
 | 2020 | 2 |
 | 2021 | 5 |
 | 2022 | 5 |
@@ -63,6 +63,7 @@ Trend: **▼ -5**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e84a20df60d5d3f31801d82 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_1_6a0f3d9898950246b8cbc430.json` #96 | Error Detection | ai |
 | 61cad5c7ac7a0783b6752608 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_3_6a0f3dccb835398b15c9c432.json` #76 | Error Detection | keyword |
 | 62760d12fcc7601b35133cb2 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_20_April_2022_Shift_1_6a0f3dfe01dbc5dc46abb084.json` #93 | Active and Passive Voice | keyword |
 | 61a4ab0e99fee06d5828d087 | CHSL | 2021 | `SSC-CHSL/PYP_Tier_I/2021/SSC_CHSL_2020_Official_Paper_12_Held_On_16_April_2021_Shift_3_67d925e8c8ae540b4bc03f86.json` #11 | Active and Passive Voice | keyword |

@@ -1,7 +1,7 @@
 # Rule 14: Quantity Determiners
 
 - **Topic**: Determiners and Quantifiers
-- **Questions**: 68
+- **Questions**: 70
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -36,14 +36,14 @@ Words: `any`, `enough`, `few`, `little`, `many`, `much`, `some`
 | CPO | 10 |
 | GD | 10 |
 | STENO | 10 |
-| CGL | 4 |
+| CGL | 6 |
 | SELECTION_POST | 2 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 10 |
+| 2019 | 12 |
 | 2020 | 1 |
 | 2021 | 15 |
 | 2022 | 13 |
@@ -64,6 +64,8 @@ Trend: **▼ -7**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e8ef43455a06d0d30cfc5d7 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_2_6a0f3da6d464e6c08627de87.json` #100 | Error Detection | ai |
+| 5e86f5fff60d5d125034ef62 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #94 | Sentence Improvement | ai |
 | 6273fffaa4e93f69e8106ab4 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_1_6a0f3dec9f2d708abd18d6a5.json` #85 | Error Detection | keyword |
 | 64cb98158cd39c9d6a7b0b18 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_18_Jul_2023_Shift_3_6a0f3e6e6470e02c4ea850f2.json` #76 | Error Detection | keyword |
 | 64ccd31a11b26489f79b7f27 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_20_Jul_2023_Shift_1_6a0f3e7a8d0a5c66cc0dbcf4.json` #80 | Error Detection | keyword |

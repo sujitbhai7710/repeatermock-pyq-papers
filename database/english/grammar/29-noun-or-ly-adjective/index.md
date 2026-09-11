@@ -1,7 +1,7 @@
 # Rule 29: Noun or -ly Adjective
 
 - **Topic**: Nouns vs Adjectives
-- **Questions**: 5
+- **Questions**: 6
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `-ly`, `adjective`, `costly`, `friendly`, `lovely`, `orderly`
 
 | Exam | Questions |
 |---|---|
-| CGL | 2 |
+| CGL | 3 |
 | MTS | 1 |
 | SELECTION_POST | 1 |
 | STENO | 1 |
@@ -40,7 +40,7 @@ Words: `-ly`, `adjective`, `costly`, `friendly`, `lovely`, `orderly`
 
 | Year | Questions |
 |---|---|
-| 2019 | 1 |
+| 2019 | 2 |
 | 2022 | 1 |
 | 2023 | 1 |
 | 2024 | 1 |
@@ -59,6 +59,7 @@ Trend: **→ flat**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e82f791f60d5d7277ffa325 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_2_6a0f3d94d464e6c08627dd92.json` #77 | Error Detection | ai |
 | 6715fb5a61fe4d1848f926e8 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_13_Sept_2024_Shift_1_6a0f3ec1205404a71f2a03d8.json` #79 | Sentence Improvement | keyword |
 | 690c7203c94cd1f4f71b6ce3 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_24_Sept_2025_Shift_2_6a0f3f3cd50c12865dcf3f3e.json` #97 | Direct and Indirect Speech | keyword |
 | 649ec510a4dfe0c9c16264b9 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_08_May_2023_Shift_1_69c4dd3ee7391208d448d61f.json` #80 | Fill in the Blanks | keyword |

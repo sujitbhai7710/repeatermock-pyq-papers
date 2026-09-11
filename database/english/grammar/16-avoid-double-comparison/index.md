@@ -1,7 +1,7 @@
 # Rule 16: Avoid Double Comparison
 
 - **Topic**: Degrees of Comparison
-- **Questions**: 11
+- **Questions**: 12
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,8 +32,8 @@ Words: `-er/-est`, `beautifuler`, `best`, `better`, `far`, `more`, `most`, `much
 | Exam | Questions |
 |---|---|
 | MTS | 5 |
+| CGL | 2 |
 | CHSL | 2 |
-| CGL | 1 |
 | CPO | 1 |
 | SELECTION_POST | 1 |
 | STENO | 1 |
@@ -42,6 +42,7 @@ Words: `-er/-est`, `beautifuler`, `best`, `better`, `far`, `more`, `most`, `much
 
 | Year | Questions |
 |---|---|
+| 2020 | 1 |
 | 2022 | 3 |
 | 2023 | 1 |
 | 2024 | 4 |
@@ -60,6 +61,7 @@ Trend: **▼ -1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 61cad6cc4ae4543a2c33666e | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_3_6a0f3dccb835398b15c9c432.json` #84 | Error Detection | ai |
 | 690c6ce9c94cd1f4f71b11c3 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_23_Sept_2025_Shift_3_6a0f3f38dbd2173b22e422ce.json` #88 | - | keyword |
 | 62f383925c1c84ab0d3374c2 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_2_June_2022_Shift_2_67d925d5f5fc414ccc7272da.json` #12 | Sentence Improvement | keyword |
 | 66a337f8cafb1a2a2fd104fe | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_09_Jul_2024_Shift_3_67d925878b3fddc188ffcb92.json` #1 | Sentence Improvement | keyword |

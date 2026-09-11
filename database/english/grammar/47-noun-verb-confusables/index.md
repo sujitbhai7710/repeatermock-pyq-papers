@@ -1,7 +1,7 @@
 # Rule 47: Noun–Verb Confusables
 
 - **Topic**: Confusable Words
-- **Questions**: 56
+- **Questions**: 57
 - **Top exam**: GD
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -34,7 +34,7 @@ Words: `advice`, `advise`, `affect`, `effect`, `influence`, `practice`, `practis
 | GD | 16 |
 | MTS | 15 |
 | CHSL | 10 |
-| CGL | 6 |
+| CGL | 7 |
 | SELECTION_POST | 6 |
 | CPO | 2 |
 | STENO | 1 |
@@ -43,7 +43,7 @@ Words: `advice`, `advise`, `affect`, `effect`, `influence`, `practice`, `practis
 
 | Year | Questions |
 |---|---|
-| 2019 | 8 |
+| 2019 | 9 |
 | 2021 | 10 |
 | 2022 | 12 |
 | 2023 | 9 |
@@ -63,6 +63,7 @@ Trend: **▼ -9**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e82f7fdf60d5d7277ffa33d | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_2_6a0f3d94d464e6c08627dd92.json` #79 | Sentence Improvement | ai |
 | 62746e54af0fc33d28172ab5 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_1_6a0f3e0483407d249217506c.json` #94 | Direct and Indirect Speech | keyword |
 | 64cbcb95a1c41f623bacf442 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_20_Jul_2023_Shift_3_6a0f3e7edaa906308e01e55d.json` #80 | Error Detection | keyword |
 | 671604f2b3225d59c728d291 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_24_Sept_2024_Shift_2_6a0f3ee1ebc71a5ff0019c26.json` #81 | Sentence Improvement | keyword |

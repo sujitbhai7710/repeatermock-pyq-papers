@@ -1,12 +1,12 @@
 # PYQ Agent — Progress
 
-_generated 2026-09-11T21:31:35Z_
+_generated 2026-09-11T23:12:00Z_
 
 ## Run status
 
-- status: **`ai_unavailable`**
+- status: **`time_limit`**
 - meaning: no AI route available – the deterministic pipeline (phase0 + python extraction + database + mocks) completed anyway; only the AI verification step was skipped
-- recorded: 2026-09-11T21:31:35Z
+- recorded: 2026-09-11T23:12:00Z
 - route health last updated: 2026-09-11T21:31:28Z
 
 ## Last checkpoint
@@ -66,6 +66,18 @@ _Items = questions the phase must cover (AI verification for phases 1-5, extract
 | `zen-rotator/deepseek-v4-flash` | unconfigured | 0 | 0 | 0 | 0 | - | - | - |
 | `zen-rotator/deepseek-v4.1-flash:free` | unconfigured | 0 | 0 | 0 | 0 | - | - | - |
 | `zen-rotator/gpt-5.6-sol` | unconfigured | 0 | 0 | 0 | 0 | - | - | - |
+
+## Coverage
+
+- papers: 1322
+- questions: 142090
+- placed: 130020
+- unclassified: 8614
+- skipped_hindi: 3456
+- flagged_papers_questions: 0
+- identity: placed(130020) + skipped_hindi(3456) + unclassified(8614) + flagged(0) = 142090
+- papers_validated: 1318
+- papers_flagged: 4
 
 ## Artifacts per phase
 

@@ -190,3 +190,38 @@ No secrets ⇒ no-op dry run, exit 0, `status=skipped_no_keys`.
 - 1 `qid` is reused by the source papers for two different questions — a **source-data quirk**,
   reported as a warning, not a violation.
 - 13 CHSL/MTS papers are flagged `NEEDS_AI_REVIEW` by design; `verify-db` (with keys) closes them.
+
+## 11. Session log — live AI run (agent with keys, 2026-09-11 → 2026-09-12)
+
+Status of the run that finally had working API keys. **Read this before assuming anything is dead.**
+
+| Item | Value |
+|---|---|
+| Local clone | `/workspace/repeatermock-pyq-papers` (branch `main`) |
+| `pyq-db` | remote-only — always reference it as **`origin/pyq-db`**; a fresh clone has no local `pyq-db` branch |
+| Restore step | `git archive origin/pyq-db state database \| tar -x -C <repo>` → `state/` 108 MB, `database/` 116 MB |
+| `audit` on restore | **VIOLATIONS: 0** (3,486 files, 138,634 pointer records) |
+
+**The external providers are NOT dead.** Every one of them answered `401 Invalid or missing API key`
+or `403`/`503` — the runner simply had **no keys in the environment**. With real keys set,
+`python -m agent.cli routes --probe` is green:
+
+| Route | Verdict |
+|---|---|
+| `ar-worker/deepseek-v4-flash` | **ok** — proposer |
+| `jw-worker/gpt-5.6-sol` | **ok** — judge |
+| `justwoker/gpt-5.6-sol` | **ok** — judge (direct, Anthropic `/v1/messages`) |
+| `agentrouter` direct | dead — Aliyun WAF returns HTML captcha |
+| `zen-rotator` | dead — `503 all_keys_exhausted` |
+| `justwoker/deepseek-v4-flash` | dead — HTTP 403 |
+| `ar-worker/gpt-5.6-sol` | dead — `503 all_keys_exhausted` |
+
+- Keys are kept **outside** the repo at `/root/ai_env.sh`; `source /root/ai_env.sh` before any
+  command. They are never committed and never logged.
+- Grammar AI proven end-to-end: one batch of 20 → **`20/20 answered`, 17 assigned by AI**
+  (5,294 assigned / 7,193 unassigned overall). The full pass was launched in the background; it is
+  resumable, so stopping costs time, never work.
+- **Timing:** ~115 s per 20-question batch (deepseek ≈ 81 s + judge ≈ 33 s) ⇒ roughly **11 h** for
+  the remaining 7,193 grammar questions. Parallel batching is the single biggest speedup available.
+- `state/progress.json` said `phase1 … status: ai_unavailable` and `items_done: 440/37,990`. That
+  status means "no route answered **in that run**", not "the provider is gone".

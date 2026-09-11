@@ -1,7 +1,7 @@
 # Rule 62: Reflexive Pronouns after Certain Verbs
 
 - **Topic**: Pronoun
-- **Questions**: 16
+- **Questions**: 17
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,9 +31,9 @@ Words: `herself`, `himself`, `itself`, `myself`, `ourselves`, `reflexive`, `them
 |---|---|
 | MTS | 5 |
 | GD | 4 |
+| CGL | 2 |
 | CHSL | 2 |
 | STENO | 2 |
-| CGL | 1 |
 | CPO | 1 |
 | SELECTION_POST | 1 |
 
@@ -41,7 +41,7 @@ Words: `herself`, `himself`, `itself`, `myself`, `ourselves`, `reflexive`, `them
 
 | Year | Questions |
 |---|---|
-| 2019 | 3 |
+| 2019 | 4 |
 | 2020 | 1 |
 | 2021 | 2 |
 | 2022 | 2 |
@@ -62,6 +62,7 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e86f68af60d5d125034ef88 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #78 | Sentence Improvement | ai |
 | 64cb87ff8f783dec567f2310 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_26_Jul_2023_Shift_4_6a0f3ea1cf23a15bf6d543e9.json` #80 | Shuffling of Sentence parts | keyword |
 | 642cfb91c56a4b4c497fd269 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_20_March_2023_Shift_4_67d925c075dbb33f27660222.json` #87 | Fill in the Blanks | keyword |
 | 699ff985ef8feb7c2a7c917b | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_28_Nov_2025_Shift_1_69913a0236d1ea3c72e13bea.json` #16 | Sentence Improvement | keyword |

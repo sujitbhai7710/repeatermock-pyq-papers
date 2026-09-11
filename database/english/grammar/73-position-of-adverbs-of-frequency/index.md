@@ -1,7 +1,7 @@
 # Rule 73: Position of Adverbs of Frequency
 
 - **Topic**: Adverb
-- **Questions**: 74
+- **Questions**: 75
 - **Top exam**: CHSL
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -34,7 +34,7 @@ Words: `always`, `be`, `never`, `often`, `rarely`, `seldom`, `sometimes`, `usual
 | CHSL | 17 |
 | MTS | 16 |
 | GD | 15 |
-| CGL | 13 |
+| CGL | 14 |
 | STENO | 10 |
 | CPO | 3 |
 
@@ -42,7 +42,7 @@ Words: `always`, `be`, `never`, `often`, `rarely`, `seldom`, `sometimes`, `usual
 
 | Year | Questions |
 |---|---|
-| 2019 | 4 |
+| 2019 | 5 |
 | 2020 | 3 |
 | 2021 | 10 |
 | 2022 | 17 |
@@ -63,6 +63,7 @@ Trend: **▼ -6**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e84bdd7f60d5d276d184a00 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_3_6a0f3d96471ce89a8c64ed49.json` #78 | Sentence Improvement | ai |
 | 62743ec9292c4dfc2e69a098 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_20_April_2022_Shift_3_6a0f3e026470e02c4ea84baf.json` #92 | Sentence Improvement | keyword |
 | 63a4064afa91172fdd6619a7 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_2_6a0f3e14b835398b15c9c749.json` #76 | Sentence Improvement | keyword |
 | 63a3d22b3e06396b5271d800 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_03_Dec_2022_Shift_2_6a0f3e1ccda5e733b2fabe0d.json` #81 | - | keyword |

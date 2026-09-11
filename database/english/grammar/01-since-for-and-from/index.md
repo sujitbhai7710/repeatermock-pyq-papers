@@ -1,7 +1,7 @@
 # Rule 1: Since, For, and From
 
 - **Topic**: Prepositions of Time
-- **Questions**: 24
+- **Questions**: 26
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `for`, `from`, `since`, `till`, `to`, `until`
 
 | Exam | Questions |
 |---|---|
-| CGL | 7 |
+| CGL | 9 |
 | STENO | 6 |
 | GD | 4 |
 | MTS | 3 |
@@ -43,7 +43,7 @@ Words: `for`, `from`, `since`, `till`, `to`, `until`
 | Year | Questions |
 |---|---|
 | 2019 | 2 |
-| 2020 | 1 |
+| 2020 | 3 |
 | 2022 | 9 |
 | 2023 | 2 |
 | 2024 | 3 |
@@ -63,6 +63,8 @@ Trend: **▲ +4**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 61c9849309f44394f1c66e35 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_2_6a0f3dd07fa7782b08e61ee6.json` #79 | Sentence Improvement | keyword |
+| 61c5aa03193c83aab7b41d5b | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_2_6a0f3dcab835398b15c9c42c.json` #81 | Sentence Improvement | ai |
+| 613f2dad2a19324a85646a52 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_2_6a0f3dc4c6516817f8809bc2.json` #85 | Error Detection | ai |
 | 6410b5049c8fcf227b7879ad | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json` #62 | Direct and Indirect Speech | keyword |
 | 63a5a2860f06d44d80a8d666 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_3_6a0f3e3ec36c311e7bb05e6a.json` #90 | Error Detection | keyword |
 | 67050419b9a1517270066007 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_10_Sept_2024_Shift_1_6a0f3eafcf23a15bf6d5443f.json` #78 | Sentence Improvement | keyword |

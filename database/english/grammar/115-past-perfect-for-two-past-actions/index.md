@@ -1,7 +1,7 @@
 # Rule 115: Past Perfect for Two Past Actions
 
 - **Topic**: Tenses
-- **Questions**: 16
+- **Questions**: 18
 - **Top exam**: GD
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,12 +32,14 @@ Words: `after`, `before`, `had`
 | GD | 6 |
 | MTS | 5 |
 | STENO | 3 |
+| CGL | 2 |
 | CHSL | 2 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
+| 2019 | 2 |
 | 2021 | 4 |
 | 2022 | 3 |
 | 2023 | 2 |
@@ -57,6 +59,8 @@ Trend: **▼ -1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e9d4e4ff60d5d4fde78b98c | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_3_6a0f3db4a61a5fe8f645c19f.json` #76 | Sentence Improvement | ai |
+| 5e8c385a7495200d2bd62d71 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_3_6a0f3da27fa7782b08e61c5c.json` #80 | Error Detection | ai |
 | 6997177cf4e0ff6e51fe9557 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_17_Nov_2025_Shift_2_699139f17e64c196e89b5357.json` #1 | Error Detection | keyword |
 | 699e5c989de00f5cb9c953d1 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_25_Nov_2025_Shift_2_699139fb3a38ef8f9a2ea9f3.json` #2 | Error Detection | keyword |
 | 624d6495e642cafedb9f5d71 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_30th_November_2021_Shift_1_68e366500137adf867c3bdab.json` #79 | Fill in the Blanks | keyword |

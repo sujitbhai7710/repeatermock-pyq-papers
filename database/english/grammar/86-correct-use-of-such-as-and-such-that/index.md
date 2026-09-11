@@ -1,7 +1,7 @@
 # Rule 86: Correct Use of Such–As and Such–That
 
 - **Topic**: Correlative Conjunctions
-- **Questions**: 11
+- **Questions**: 12
 - **Top exam**: STENO
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,7 +30,7 @@ Words: `as`, `such…as`, `such…that`, `that`, `which`, `who`
 | Exam | Questions |
 |---|---|
 | STENO | 4 |
-| CGL | 2 |
+| CGL | 3 |
 | MTS | 2 |
 | CHSL | 1 |
 | CPO | 1 |
@@ -40,7 +40,7 @@ Words: `as`, `such…as`, `such…that`, `that`, `which`, `who`
 
 | Year | Questions |
 |---|---|
-| 2019 | 2 |
+| 2019 | 3 |
 | 2021 | 2 |
 | 2022 | 2 |
 | 2023 | 2 |
@@ -59,6 +59,7 @@ Trend: **▲ new**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e8fb2a03ab0500d2e50833f | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_3_6a0f3da8b6389f13cda38db4.json` #89 | Error Detection | ai |
 | 6909e00dde2e978921883dd1 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_13_Sept_2025_Shift_2_6a0f3ef9124e5a0e8bedb8eb.json` #82 | - | keyword |
 | 690b31e73a23b940210fdc97 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_21_Sept_2025_Shift_2_6a0f3f2a8d0a5c66cc0dc6d2.json` #89 | - | keyword |
 | 62c69c4422df4b10252bdf4d | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_24_May_2022_Shift_3_67d925c51b7267ea6c955670.json` #20 | Fill in the Blanks | keyword |

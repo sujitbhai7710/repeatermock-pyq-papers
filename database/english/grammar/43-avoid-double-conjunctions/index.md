@@ -1,7 +1,7 @@
 # Rule 43: Avoid Double Conjunctions
 
 - **Topic**: Conjunctions
-- **Questions**: 33
+- **Questions**: 34
 - **Top exam**: STENO
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -28,9 +28,9 @@ Words: `although`, `as`, `because`, `but`, `so`, `that`, `therefore`, `though`
 | Exam | Questions |
 |---|---|
 | STENO | 11 |
+| CGL | 5 |
 | CPO | 5 |
 | SELECTION_POST | 5 |
-| CGL | 4 |
 | GD | 4 |
 | CHSL | 3 |
 | MTS | 1 |
@@ -40,7 +40,7 @@ Words: `although`, `as`, `because`, `but`, `so`, `that`, `therefore`, `though`
 | Year | Questions |
 |---|---|
 | 2019 | 3 |
-| 2020 | 1 |
+| 2020 | 2 |
 | 2021 | 7 |
 | 2022 | 9 |
 | 2023 | 5 |
@@ -60,6 +60,7 @@ Trend: **→ flat**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 614c28f1798a7bb40e4397db | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_3_6a0f3dba3b5bc48ebebf5fef.json` #83 | Sentence Improvement | ai |
 | 6275004fcd4240fad98a7063 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_2_6a0f3dfad464e6c08627e254.json` #79 | Error Detection | keyword |
 | 63a55e595262eb164ff7c843 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_03_Dec_2022_Shift_4_6a0f3e20d5b80365e231ca7e.json` #87 | Error Detection | keyword |
 | 6410a2bc3fbb9cb29a23c6e5 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json` #89 | Direct and Indirect Speech | keyword |

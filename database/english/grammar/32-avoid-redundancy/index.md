@@ -1,7 +1,7 @@
 # Rule 32: Avoid Redundancy
 
 - **Topic**: Redundancy and Superfluous Words
-- **Questions**: 46
+- **Questions**: 47
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,7 +32,7 @@ Words: `again`, `because`, `redundancy`, `repeat`, `so`
 | Exam | Questions |
 |---|---|
 | MTS | 14 |
-| CGL | 11 |
+| CGL | 12 |
 | GD | 6 |
 | STENO | 6 |
 | CHSL | 5 |
@@ -43,7 +43,7 @@ Words: `again`, `because`, `redundancy`, `repeat`, `so`
 
 | Year | Questions |
 |---|---|
-| 2019 | 5 |
+| 2019 | 6 |
 | 2021 | 13 |
 | 2022 | 4 |
 | 2023 | 3 |
@@ -63,6 +63,7 @@ Trend: **▲ +1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e8ee113f61bed727620cfe9 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #76 | Error Detection | ai |
 | 5e943d87f60d5d0d0ba57d12 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_2_6a0f3dac6470e02c4ea84669.json` #82 | Sentence Improvement | keyword |
 | 5e943c41f60d5d0d0ba57ca4 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_2_6a0f3dac6470e02c4ea84669.json` #85 | Error Detection | keyword |
 | 6278c342d835553bf425b6a9 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_12_April_2022_Shift_2_6a0f3de8f886fe6323e1334b.json` #76 | Fill in the Blanks | keyword |

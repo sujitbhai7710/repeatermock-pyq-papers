@@ -195,14 +195,14 @@ class CandidateConfigTests(unittest.TestCase):
         policy = config.load_settings().debate
         self.assertEqual(
             list(policy.candidates_for("proposer")),
-            [PROPOSER, "deepseek-v4.1-flash:free", CRITIC],
+            [PROPOSER, CRITIC],
         )
         self.assertEqual(
             list(policy.candidates_for("critic")),
-            [CRITIC, "deepseek-v4.1-flash:free"],
+            [CRITIC, PROPOSER],
         )
         self.assertEqual(policy.all_models()[0], PROPOSER)
-        self.assertEqual(len(policy.all_models()), 3, "the union de-duplicates gpt-5.6-sol")
+        self.assertEqual(len(policy.all_models()), 2, "two models: one proposer, one judge")
         # both roles carry a fallback beyond their primary model: a single model
         # going dark must cost one candidate, not the whole role
         for role in ("proposer", "critic"):

@@ -1,7 +1,7 @@
 # Rule 37: No Extra Preposition
 
 - **Topic**: Prepositions
-- **Questions**: 31
+- **Questions**: 33
 - **Top exam**: CPO
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `discuss`, `order`, `preposition`, `reach`
 |---|---|
 | CPO | 8 |
 | CHSL | 7 |
-| CGL | 4 |
+| CGL | 6 |
 | GD | 4 |
 | MTS | 4 |
 | STENO | 4 |
@@ -40,7 +40,7 @@ Words: `discuss`, `order`, `preposition`, `reach`
 
 | Year | Questions |
 |---|---|
-| 2019 | 3 |
+| 2019 | 5 |
 | 2020 | 5 |
 | 2021 | 6 |
 | 2022 | 3 |
@@ -61,6 +61,8 @@ Trend: **▼ -4**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e84a257f60d5d276d184695 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_1_6a0f3d9898950246b8cbc430.json` #78 | Sentence Improvement | ai |
+| 5e8fc0ea3ab0500d2e511e20 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_1_6a0f3daadaa906308e01db76.json` #90 | Error Detection | ai |
 | 627492f2bf00052a1676b32c | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_2_6a0f3df46f9594e2cd05cb14.json` #86 | Sentence Improvement | keyword |
 | 627407c86ba9735b4979e696 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_2_6a0f3dee9636bcffad5cbcb5.json` #91 | Sentence Improvement | keyword |
 | 6412b00f9a7d91f2bcb0ac11 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json` #66 | Fill in the Blanks | keyword |

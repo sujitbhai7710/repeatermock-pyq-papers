@@ -1,7 +1,7 @@
 # Rule 50: If, Whether, and That
 
 - **Topic**: Conjunctions
-- **Questions**: 51
+- **Questions**: 54
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `ask`, `if`, `that`, `whether`
 
 | Exam | Questions |
 |---|---|
-| CGL | 12 |
+| CGL | 15 |
 | CHSL | 11 |
 | STENO | 10 |
 | SELECTION_POST | 8 |
@@ -43,7 +43,7 @@ Words: `ask`, `if`, `that`, `whether`
 
 | Year | Questions |
 |---|---|
-| 2019 | 2 |
+| 2019 | 5 |
 | 2020 | 5 |
 | 2021 | 8 |
 | 2022 | 10 |
@@ -64,6 +64,9 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e822331f60d5d5b2b1e3fb1 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_1_6a0f3d920f618830b205ae83.json` #94 | Direct and Indirect Speech | ai |
+| 5e9d5294f60d5d4fde78bb3d | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_3_6a0f3db4a61a5fe8f645c19f.json` #96 | Sentence Improvement | ai |
+| 5e85c163f60d5d42b920685c | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_3_6a0f3d9c0f618830b205af1c.json` #99 | Direct and Indirect Speech | ai |
 | 617facb7e8986aebcd604668 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_3_6a0f3dc083407d2492174d14.json` #78 | Direct and Indirect Speech | keyword |
 | 62740558864f48054c79451b | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_2_6a0f3dee9636bcffad5cbcb5.json` #84 | Error Detection | keyword |
 | 63a539abbc80190bd8798e2f | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_4_6a0f3e189f2d708abd18d89d.json` #84 | Direct and Indirect Speech | keyword |

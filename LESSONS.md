@@ -200,6 +200,61 @@ endpoint. Never re-paste secrets into chat.
 
 ---
 
+## L19. `ai_unavailable` usually means *no keys*, not *dead providers*
+
+Symptom: `state/progress.json` shows `phase1.status = ai_unavailable`, and every probe answers
+`401 Invalid or missing API key`, `403`, or `503 all_keys_exhausted`.
+
+Cause: the runner had **no keys in its environment**. The endpoints were alive and answering with
+well-formed JSON. A truly dead host returns an HTML WAF page or nothing — not a clean 401.
+
+Fix: export the keys, then run `python -m agent.cli routes --probe` **before** concluding anything is
+broken. With keys present, `ar-worker/deepseek-v4-flash`, `jw-worker/gpt-5.6-sol` and
+`justwoker/gpt-5.6-sol` all report `ok`.
+
+Rule: a clean `{"error":{"type":"unauthorized"}}` + HTTP 401 means **reachable, key missing/wrong**.
+Only call a provider dead after you have sent it a *valid* key.
+
+## L20. `grammar --ai` showing `0/20 answered` — look at who served the judge
+
+Symptom: `batch 1/1 — deepseek-v4-flash via ar-worker proposed, gpt-5.6-sol via - judged, 0/20 answered`.
+
+Cause: the **critic** had no healthy route (`via -` = no provider served it), so the final verdict was
+empty and `parse_ai_reply()` found no `items`. The proposer had actually worked.
+
+Fix: re-run it. The next attempt logged `gpt-5.6-sol via justwoker judged, 20/20 answered` and
+assigned 17 rules. The pass is resumable, so a retry costs only time.
+
+Rule: **`via -` in the `served` log is the tell.** A `0/N answered` batch is a route failure, not a
+prompt or schema bug — do not start rewriting the schema hint.
+
+## L21. "N already decided" in the grammar log is misleading
+
+`grammar AI pass: 7210 pending, 7190 already decided, 1 batch(es) to send` does **not** mean 7,190
+questions were decided earlier. The number is `len(pending) - len(outstanding)`, and `outstanding`
+has already been truncated by `--limit`. With `--limit 20` it just prints `7210 - 20 = 7190`.
+
+Rule: to see how much AI work is genuinely done, read `state/grammar_ai_state.json` and count
+`questions` — never trust this log line.
+
+## L22. Fresh clone: `pyq-db` is remote-only, and the shell does not stay in the repo
+
+Two time-wasters:
+
+- After a clone only `main` exists locally, so `git ls-tree pyq-db` fails with
+  `fatal: Not a valid object name pyq-db`. Use **`origin/pyq-db`**.
+- Each shell call starts in the workspace root, not the clone. Prefix commands with
+  `cd /workspace/repeatermock-pyq-papers && …`, otherwise `git` answers
+  `fatal: not a git repository` and the command appears to do nothing.
+
+## L23. Restore the generated tree before you publish
+
+`state/` and `database/` are gitignored on `main` and exist only on `pyq-db`. Publishing from a bare
+clone commits just the runner's own tree, and the published `database/` then looks wiped.
+
+Fix: `git archive origin/pyq-db state database | tar -x -C <repo>` first, then work, then `publish`
+(which **merges**). Never publish from a tree you have not restored.
+
 ## Quick troubleshooting index
 
 | Symptom | Go to |
@@ -220,6 +275,11 @@ endpoint. Never re-paste secrets into chat.
 | "It said it worked" | L16 |
 | Secrets appear truncated | L17 |
 | Cannot set a repo secret | L18 |
+| `ai_unavailable` / all routes 401 | L19 |
+| `0/N answered` after a batch | L20 |
+| "N already decided" looks huge | L21 |
+| `not a git repository` / `Not a valid object name pyq-db` | L22 |
+| Published `database/` looks emptied | L23 |
 
 ## Conventions that keep this project healthy
 
