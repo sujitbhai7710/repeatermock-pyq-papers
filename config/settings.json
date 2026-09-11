@@ -24,15 +24,13 @@
       "deepseek-v4-flash",
       "deepseek-v4-pro",
       "gpt-5.6-sol",
-      "claude-sonnet-5",
-      "glm-5.3"
+      "claude-sonnet-5"
     ],
     "critic_models": [
       "gpt-5.6-sol",
-      "claude-opus-5",
       "claude-sonnet-5",
-      "gemini-3.5-flash",
-      "grok-4.6"
+      "deepseek-v4-pro",
+      "deepseek-v4-flash"
     ],
     "provider_order": [
       "agentrouter",
