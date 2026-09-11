@@ -1,0 +1,71 @@
+# course-of-action
+
+- **Level**: concept
+- **Subject**: REAS
+- **Chapter**: LOGICAL STATEMENT QUESTIONS
+- **Questions**: 39
+
+## By exam
+
+| Exam | Questions |
+|---|---|
+| CGL | 21 |
+| CHSL | 3 |
+| CPO | 2 |
+| SELECTION_POST | 11 |
+| STENO | 2 |
+
+## By year
+
+| Year | Questions |
+|---|---|
+| 2022 | 4 |
+| 2023 | 1 |
+| 2024 | 2 |
+| 2025 | 32 |
+
+## Question ids
+
+Resolve any id with `python tools/resolve.py <qid>`.
+
+```text
+64107ec333de4c1115329d79  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json #35
+64108b1b3fbb9cb29a20f415  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json #36
+6410b33fc3ddb4a7c58a90d0  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json #51
+6797574022b6252424c4825d  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_20_Jan_2025_696119182d2e7bac49658f70.json #54
+690b2c279731082a68b9427a  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_20_Sept_2025_Shift_1_6a0f3f229e39867c389a7fa1.json #19
+690c7c7126bf51479e5b2e50  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_26_Sept_2025_Shift_1_6a0f3f46461696fe4dabfdad.json #11
+690b2a99ae7bb993e02c1f33  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_19_Sept_2025_Shift_2_6a0f3f1e33a6a35112cee8b4.json #8
+690b2d8c9b71212a5ba0be00  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_20_Sept_2025_Shift_2_6a0f3f24d50c12865dcf3e35.json #21
+690b31e6b4e4ad62c8512c68  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_21_Sept_2025_Shift_2_6a0f3f2a8d0a5c66cc0dc6d2.json #6
+690b31eafe8107c7f920a884  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_21_Sept_2025_Shift_2_6a0f3f2a8d0a5c66cc0dc6d2.json #17
+690b31ebfe8107c7f920a88c  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_21_Sept_2025_Shift_2_6a0f3f2a8d0a5c66cc0dc6d2.json #19
+690c76dc02a86f57445ce09d  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_25_Sept_2025_Shift_2_6a0f3f420f618830b205c349.json #12
+690c76e0c10fde365b133535  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_25_Sept_2025_Shift_2_6a0f3f420f618830b205c349.json #23
+690b217f9b71212a5b9fca50  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_17_Sept_2025_Shift_3_6a0f3f13471ce89a8c64fdbb.json #4
+690b2e56569f092a366b40e4  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_20_Sept_2025_Shift_3_6a0f3f26d5b80365e231d3dc.json #6
+690b2e5ae5487d5c9d20cb75  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_20_Sept_2025_Shift_3_6a0f3f26d5b80365e231d3dc.json #16
+690b2e5c9731082a68b96ce4  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_20_Sept_2025_Shift_3_6a0f3f26d5b80365e231d3dc.json #20
+690c5616ebc32ff12ec4d7bb  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_22_Sept_2025_Shift_3_6a0f3f329636bcffad5cca11.json #5
+690c561a3040bbea8de9c971  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_22_Sept_2025_Shift_3_6a0f3f329636bcffad5cca11.json #16
+690c7e81ce29a1f2f645737c  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_26_Sept_2025_Shift_3_6a0f3f4a0a97601eb8f3884e.json #11
+690c7e859ee0c7422b59a1ca  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_26_Sept_2025_Shift_3_6a0f3f4a0a97601eb8f3884e.json #22
+64a69cb784b15f0850b8d162  CHSL 2022 SSC-CHSL/PYP_Tier_II/SSC_CHSL_2022_Tier-II_Official_Paper_Held_On_26_Jun_2023_Shift_1_67d0f2e7e530f382c2c7539a.json #43
+65a6875fc9969b74aa19cc47  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #42
+6749ca3da7e3769d547ec366  CHSL 2024 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Tier-II_Exam_2024_Official_Paper_Held_On_18_Nov_2024_67d0f3cc35e5b86eef7117a1.json #53
+69873173bab7111e9aa6408e  CPO 2025 SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_12_Dec_2025_Shift_2_69c66a62bf28bd9b3d2bc01d.json #38
+6987364b6fe8ac1e9618999f  CPO 2025 SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_12_Dec_2025_Shift_2_69c66a62bf28bd9b3d2bc01d.json #47
+69cd019affcb8d171be598be  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_25_Jul_2025_S_69df4526d8d712be7b13ef16.json #20
+69cd019a9e61dd8de90d422d  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_25_Jul_2025_S_69df4526d8d712be7b13ef16.json #21
+69cd019bec7c50e6d1b8a277  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_25_Jul_2025_S_69df4526d8d712be7b13ef16.json #22
+69cd019b952db87d66d39448  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_25_Jul_2025_S_69df4526d8d712be7b13ef16.json #23
+69ca1c6236c19165ccab361f  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_28_Jul_2025_S_69df45273bb1fd08b7565575.json #20
+69ca1c634294c23a9ade7f13  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_28_Jul_2025_S_69df45273bb1fd08b7565575.json #21
+69ca0d1cb479a34d80a5996a  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_29_Jul_2025_S_69df4528c951cbb7b9e0af3f.json #18
+69ca0e9363ce5fbe896b4107  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_29_July_20_69df454a94ed56bd00ca7e77.json #23
+69c8011d443cc77fab14bfe5  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_01_Aug_2025_S_69df452b132d80d4876c18c0.json #16
+69ccf33168b35e416db906f7  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_25_Jul_2025_Shift__69df4562f9b3acbfe801e2f6.json #21
+69ccf332751e280656e32847  SELECTION_POST 2025 SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_25_Jul_2025_Shift__69df4562f9b3acbfe801e2f6.json #23
+68b0e1708f17ec780300a68f  STENO 2025 SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_06_Aug_2025_Shift_3_69f44e749ac6ad777c87f54b.json #26
+68b24dacebfd5c45dfe9bdf2  STENO 2025 SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_3_69f44e7a4f39b0d99ed0e767.json #4
+```
