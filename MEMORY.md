@@ -239,13 +239,35 @@ or `403`/`503` — the runner simply had **no keys in the environment**. With re
 | 2026-09-12 07:4x | Relaunched: **0 halts**, `deepseek-v4-flash via ar-worker` proposes, `gpt-5.6-sol via justwoker` judges, ~92 % assignment (110/120). |
 | 2026-09-12 07:5x | First checkpoint published to `pyq-db` (3,508 files; branch verified at 5,184 files, `database/` intact). `grammar_ai_state.json` is now on the branch — it never was before. |
 
-**Current state:** grammar AI pass running in the background — 357 batches total, resumable.
-Batches that return zero verdicts are retried automatically (they used to be stranded forever).
+| 2026-09-12 08:0x | `tools/gen_notes.py` written — **697 `notes.md`** (563 GK topics + 134 grammar rules). `audit` still `VIOLATIONS: 0`. |
+| 2026-09-12 08:1x | `git push` rejected: `publish` had replaced local `main` with an **orphan commit** (3 commits vs 53). Recovered with backup + `reset --hard origin/main` — see **L24**. Switched to `/root/publish_pyqdb.sh` (detached worktree on `pyq-db`; never touches `main`). |
+| 2026-09-12 08:2x | Safe publish: 700 files → `pyq-db` at 5,881 files, 697 notes present, `database/` 4,183 (= 3,486 + 697). No loss. |
+| 2026-09-12 08:4x | Grammar AI at **300 decisions / 247 with a rule (91 %)** = 4.2 % of the 7,140 pending. Measured **~9 questions/min** ⇒ **~12–13 h** more for the full pass. |
+
+**Current state:** grammar AI pass is resumable — stop it any time, re-run `grammar --ai` and it
+continues from `state/grammar_ai_state.json`. Batches that returned zero verdicts are retried
+automatically (they used to be stranded forever).
+
+**Throughput reality:** the free-tier judge (`gpt-5.6-sol`) intermittently 503s, so roughly 1 batch
+in 3 comes back `0/20` and is retried. Expect ~9 questions/min, not ~20.
 
 ### 11.2 Remaining work, in priority order
 
-1. **Grammar AI** — in progress, ~7,140 questions pending, resumable (no intervention needed).
-2. **AI verification** — `phase1` at 440/37,990. Biggest remaining item; run after grammar.
-3. **Notes** — `notes.md` per GK topic (563 topics / 34,578 questions) and grammar notes. Not yet generated.
-4. **4 flagged papers** — `database/_meta/flagged_papers.jsonl`, need AI review.
+1. **Grammar AI** — in progress: 300/7,140 done (4.2 %). Resumable, ~12–13 h to finish.
+2. **AI verification** — `phase1` at 440/37,990. By far the biggest item; run after grammar.
+3. **Notes** — ✅ **DONE**: 697 `notes.md` (563 GK topics + 134 grammar rules) via
+   `python3 tools/gen_notes.py`. Re-run it any time; it is idempotent.
+4. **4 flagged papers** — ✅ effectively resolved: all four already carry
+   `status: resolved-by-detected-layout` and each has 100 questions present in the index.
 5. `state/remaining.json` + `state/errors.jsonl` — not implemented in shipped code.
+
+### 11.3 How to continue (copy-paste)
+
+```bash
+cd /workspace/repeatermock-pyq-papers
+source /root/ai_env.sh                  # the API keys (never commit these)
+export PYQ_AI_WORKERS=2                 # 4 is faster but trips the judge's rate limit
+python3 -m agent.cli grammar --ai       # resumable: keeps going from state/
+/root/publish_pyqdb.sh                  # save to pyq-db WITHOUT orphaning main
+python3 -m agent.cli audit              # must print VIOLATIONS: 0
+```
