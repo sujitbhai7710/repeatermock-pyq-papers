@@ -30,8 +30,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
@@ -1211,7 +1213,23 @@ def run_ai_pass(
     if limit:
         outstanding = outstanding[:limit]
     groups = list(chunked(outstanding, batch_size))
-    todo = [group for group in groups if batch_fingerprint(group) not in batches]
+
+    def _settled(entry: Any) -> bool:
+        """A batch counts as done only when the judge actually answered it.
+
+        Zero parsed verdicts means the critic had no healthy route
+        (``served_by.judge`` shows ``… via -``).  Marking such a batch done would
+        strand its questions forever, so it stays in the queue and is retried.
+        Entries written before ``answered`` existed default to settled.
+        """
+        if not isinstance(entry, dict):
+            return False
+        try:
+            return int(entry.get("answered", 1)) > 0
+        except (TypeError, ValueError):
+            return True
+
+    todo = [group for group in groups if not _settled(batches.get(batch_fingerprint(group)))]
 
     logger.info(
         f"grammar AI pass: {len(pending)} pending, {len(pending) - len(outstanding)} already decided, "
@@ -1249,41 +1267,13 @@ def run_ai_pass(
     proposer_model = settings.debate.proposer_model
     critic_model = settings.debate.critic_model
 
-    for index, group in enumerate(todo):
-        if window is not None and getattr(window, "expired", lambda: False)():
-            status = STATUS_TIME_LIMIT
-            notes.append(f"work window expired after {len(group)} question(s) stayed pending")
-            logger.warn("grammar AI pass: work window expired – stopping (resumable)")
-            break
-        if "*" in (router.halt_report() or {}):
-            status = STATUS_AI_UNAVAILABLE
-            notes.append("router halted mid-run; questions left unassigned")
-            break
-        down = [role for role in roles if not router.role_available(role)]
-        if down:
-            status = STATUS_AI_UNAVAILABLE
-            notes.append(f"no healthy route for the {', '.join(down)} role(s) mid-run")
-            logger.warn(f"grammar AI pass: {notes[-1]} – stopping")
-            break
+    # ``PYQ_AI_WORKERS`` > 1 runs the batches concurrently.  Batches are independent
+    # (each is keyed by its own fingerprint), so the only shared state is the state
+    # file, which is written by this thread alone.
+    max_workers = max(1, int(os.environ.get("PYQ_AI_WORKERS", "1") or 1))
 
-        fingerprint = batch_fingerprint(group)
-        try:
-            outcome = session.run(
-                item_id=fingerprint,
-                task=AI_TASK,
-                payload=_ai_payload(group),
-                vocabulary=vocabulary,
-                max_tokens=600 + 160 * len(group),
-            )
-        except router_mod.GlobalHalt as exc:
-            status = STATUS_AI_UNAVAILABLE
-            notes.append(f"router halted: {exc}")
-            break
-        except llm.LlmError as exc:
-            counters["batches_failed"] += 1
-            logger.warn(f"grammar AI pass: batch {index} failed: {exc}")
-            continue
-
+    def _merge(group, fingerprint, outcome, done: int) -> None:
+        """Fold one finished batch into the counters/decisions (main thread only)."""
         final = outcome.final if isinstance(outcome.final, dict) else {}
         parsed = parse_ai_reply(final, group, len(rules))
         provenance = outcome.provenance or {}
@@ -1304,6 +1294,7 @@ def run_ai_pass(
             "verdict": outcome.verdict,
             "rounds": outcome.rounds,
             "served_by": served,
+            "answered": len(parsed),
         }
         for item in group:
             decision = parsed.get(item.qid)
@@ -1330,14 +1321,104 @@ def run_ai_pass(
             decisions[item.qid] = record
             if len(examples) < max_examples:
                 examples.append(record)
+        logger.info(
+            f"grammar AI pass: batch {done}/{len(todo)} — {served['proposer']} proposed, "
+            f"{served['judge']} judged, {len(parsed)}/{len(group)} answered"
+        )
+
+    def _persist() -> None:
         state["questions"] = decisions
         state["batches"] = batches
         state["score_version"] = SCORE_VERSION
         save_ai_state(state, target)
-        logger.info(
-            f"grammar AI pass: batch {index + 1}/{len(todo)} — {served['proposer']} proposed, "
-            f"{served['judge']} judged, {len(parsed)}/{len(group)} answered"
+
+    def _call(group):
+        """Run one batch.
+
+        With several workers each thread builds **its own** router so the breaker /
+        cooldown bookkeeping of concurrent calls cannot race on shared state.
+        """
+        fingerprint = batch_fingerprint(group)
+        if max_workers > 1:
+            worker_router = router_mod.get_router(settings, log=logger)
+            worker_session = debate_mod.Debate(settings, worker_router, log=logger)
+        else:
+            worker_session = session
+        outcome = worker_session.run(
+            item_id=fingerprint,
+            task=AI_TASK,
+            payload=_ai_payload(group),
+            vocabulary=vocabulary,
+            max_tokens=600 + 160 * len(group),
         )
+        return fingerprint, outcome
+
+    def _guards(group):
+        """Shared stop conditions.  Returns True when the loop must break."""
+        nonlocal status
+        if window is not None and getattr(window, "expired", lambda: False)():
+            notes.append(f"work window expired after {len(group)} question(s) stayed pending")
+            logger.warn("grammar AI pass: work window expired – stopping (resumable)")
+            status = STATUS_TIME_LIMIT
+            return True
+        if "*" in (router.halt_report() or {}):
+            notes.append("router halted mid-run; questions left unassigned")
+            status = STATUS_AI_UNAVAILABLE
+            return True
+        down = [role for role in roles if not router.role_available(role)]
+        if down:
+            notes.append(f"no healthy route for the {', '.join(down)} role(s) mid-run")
+            logger.warn(f"grammar AI pass: {notes[-1]} – stopping")
+            status = STATUS_AI_UNAVAILABLE
+            return True
+        return False
+
+    if max_workers == 1:
+        for index, group in enumerate(todo):
+            if _guards(group):
+                break
+            try:
+                fingerprint, outcome = _call(group)
+            except router_mod.GlobalHalt as exc:
+                status = STATUS_AI_UNAVAILABLE
+                notes.append(f"router halted: {exc}")
+                break
+            except llm.LlmError as exc:
+                counters["batches_failed"] += 1
+                logger.warn(f"grammar AI pass: batch {index} failed: {exc}")
+                continue
+            _merge(group, fingerprint, outcome, index + 1)
+            _persist()
+    else:
+        logger.info(
+            f"grammar AI pass: {len(todo)} batch(es) over {max_workers} parallel worker(s)"
+        )
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = {pool.submit(_call, group): group for group in todo}
+            done = 0
+            for future in as_completed(futures):
+                group = futures[future]
+                done += 1
+                if _guards(group):
+                    for pending in futures:
+                        pending.cancel()
+                    break
+                try:
+                    fingerprint, outcome = future.result()
+                except router_mod.GlobalHalt as exc:
+                    status = STATUS_AI_UNAVAILABLE
+                    notes.append(f"router halted: {exc}")
+                    break
+                except llm.LlmError as exc:
+                    counters["batches_failed"] += 1
+                    logger.warn(f"grammar AI pass: batch failed: {exc}")
+                    continue
+                except Exception as exc:  # one worker must never kill the whole pass
+                    counters["batches_failed"] += 1
+                    logger.warn(f"grammar AI pass: batch failed: {exc}")
+                    continue
+                _merge(group, fingerprint, outcome, done)
+                _persist()
 
     state["questions"] = decisions
     state["batches"] = batches
