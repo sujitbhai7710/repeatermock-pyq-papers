@@ -41,30 +41,67 @@ CRITIC = "gpt-5.6-sol"
 # ---------------------------------------------------------------------------
 
 
+#: the four routes the fallback scenarios exercise, in the order they walk them
+FIXTURE_PROVIDERS: Tuple[str, ...] = ("agentrouter", "ar-worker", "jw-worker", "justwoker")
+
+#: candidate models per role, in failover order.  The scenarios pin the same
+#: matrix test_failover.py uses so a dead ``deepseek-v4-flash`` has a defined
+#: place to fall to (``deepseek-v4-pro``), and the critic still ends up on the
+#: proposer's model last (``same_model_fallback``).
+FIXTURE_PROPOSER_MODELS: Tuple[str, ...] = (PROPOSER, "deepseek-v4-pro", CRITIC, "claude-sonnet-5")
+FIXTURE_CRITIC_MODELS: Tuple[str, ...] = (CRITIC, "claude-sonnet-5", "deepseek-v4-pro", PROPOSER)
+
+
 def make_settings(**policy_overrides: Any) -> config.Settings:
-    # Pin the canonical four-route chain for the fallback mechanics;the shipped
-    # default order is asserted in test_failover.ChainConfigTests.
+    """A settings object pinned to the fallback fixture, not to the shipped file.
 
-    # Pin the role-level provider orders too: role_routes reads the debate
-    # policy (from settings.json),not the top-level ``provider_order``,so
-    # scenario tests stay immune to shipped reorders.
+    ``config/settings.json`` is a production knob — routes and candidate models
+    are added, dropped and reordered as providers come and go — while these tests
+    are about the *mechanics* of the candidate walk.  So: start from the shipped
+    settings, then pin the four fixture routes (in the fixture's walk order, any
+    route the fixture does not name filtered out) and the candidate model lists of
+    both roles, including the role-level provider orders that ``role_routes``
+    actually reads.
 
+    ``halt_on_any_rate_limit_signal`` is pinned **on**: every scenario here relies
+    on a rate-limit signal taking a route out of rotation, so the fixture fixes
+    that policy rather than inheriting whatever the shipped file says (the tests
+    that need the opposite pass the flag explicitly).
 
-    order = policy_overrides.pop("provider_order", ("agentrouter", "ar-worker", "jw-worker", "justwoker"))
+    A shipped edit that drops one of the fixture routes fails here loudly instead
+    of surfacing as an unrelated ``unknown provider`` deep inside a scenario.
+    """
+
+    order = tuple(policy_overrides.pop("provider_order", FIXTURE_PROVIDERS))
+    policy: Dict[str, Any] = {"halt_on_any_rate_limit_signal": True}
+    policy.update(policy_overrides)
     base = config.load_settings()
-    if policy_overrides:
-        base = replace(base, rate_limit=replace(base.rate_limit, **policy_overrides))
+    missing = [name for name in order if base.provider_by_name(name) is None]
+    if missing:
+        raise AssertionError(
+            "the fallback fixture needs route(s) that config/settings.json no longer "
+            f"declares: {', '.join(missing)} (fixture: {', '.join(order)})"
+        )
     return replace(
         base,
-        provider_order=tuple(order),
-        providers=tuple(sorted(base.providers, key=lambda p: order.index(p.name))),
+        rate_limit=replace(base.rate_limit, **policy),
+        provider_order=order,
+        # keep the shipped specs (base_url / auth / user agent / path), drop the
+        # routes the fixture does not exercise
+        providers=tuple(p for name in order for p in base.providers if p.name == name),
         debate=replace(
             base.debate,
-            provider_order=tuple(order),
-            proposer_provider_order=tuple(order),
-            critic_provider_order=tuple(order),
+            proposer_model=PROPOSER,
+            critic_model=CRITIC,
+            proposer_models=FIXTURE_PROPOSER_MODELS,
+            critic_models=FIXTURE_CRITIC_MODELS,
+            provider_order=order,
+            proposer_provider_order=order,
+            critic_provider_order=order,
+            model_provider_orders={},
         ),
     )
+
 
 def all_keys() -> Dict[str, List[str]]:
     return {
@@ -152,18 +189,24 @@ class RouteTestCase(unittest.TestCase):
 
 
 class CandidateConfigTests(unittest.TestCase):
+    """The shipped candidate lists — the scenarios pin their own (``make_settings``)."""
+
     def test_settings_declare_the_candidate_models(self) -> None:
         policy = config.load_settings().debate
         self.assertEqual(
             list(policy.candidates_for("proposer")),
-            ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-5.6-sol", "claude-sonnet-5"],
+            [PROPOSER, "deepseek-v4.1-flash:free", CRITIC],
         )
         self.assertEqual(
             list(policy.candidates_for("critic")),
-            ["gpt-5.6-sol", "claude-sonnet-5", "deepseek-v4-pro", "deepseek-v4-flash"],
+            [CRITIC, "deepseek-v4.1-flash:free"],
         )
         self.assertEqual(policy.all_models()[0], PROPOSER)
-        self.assertEqual(len(policy.all_models()), 4, "the union de-duplicates gpt-5.6-sol")
+        self.assertEqual(len(policy.all_models()), 3, "the union de-duplicates gpt-5.6-sol")
+        # both roles carry a fallback beyond their primary model: a single model
+        # going dark must cost one candidate, not the whole role
+        for role in ("proposer", "critic"):
+            self.assertGreater(len(policy.candidates_for(role)), 1, role)
 
     def test_primary_model_always_leads_its_candidates(self) -> None:
         policy = replace(

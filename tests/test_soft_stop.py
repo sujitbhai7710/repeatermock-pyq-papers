@@ -14,6 +14,7 @@ from pathlib import Path
 from unittest import mock
 
 from agent import checkpoint, cli, config, llm, paths, verify
+from agent import router as router_mod
 from agent.phases import PhaseResult
 from agent.util import Log
 
@@ -136,7 +137,13 @@ class VerifyWindowTests(unittest.TestCase):
                 "chapter": "Grammar",
             }
         ]
-        keys = {"agentrouter": ["k"], "ar-worker": ["k"], "jw-worker": ["k"], "justwoker": ["k"]}
+        # every *configured* route is keyed and rate limited, and the route breaker
+        # is pinned on: the total outage has to be reached whatever the shipped
+        # policy says about a lone rate-limit signal
+        outage = settings(provider_cooldown_seconds=300, halt_on_any_rate_limit_signal=True)
+        keys = {provider.name: ["k"] for provider in outage.providers}
+        router_mod.reset_router()
+        self.addCleanup(router_mod.reset_router)
         with mock.patch.object(llm, "provider_keys", return_value=keys), mock.patch.object(
             llm, "chat_completion", side_effect=chat
         ), mock.patch.object(verify.indexer, "read_index", return_value=records), mock.patch.object(
@@ -152,9 +159,7 @@ class VerifyWindowTests(unittest.TestCase):
         ), mock.patch.object(
             verify.tracking, "write_progress_md"
         ):
-            result = verify.verify_database(
-                settings(provider_cooldown_seconds=300), phase="phase1", log=QUIET
-            )
+            result = verify.verify_database(outage, phase="phase1", log=QUIET)
 
         self.assertEqual(result.status, verify.STATUS_AI_UNAVAILABLE)
         self.assertEqual(cli.exit_code_for_status(result.status), cli.EXIT_OK)

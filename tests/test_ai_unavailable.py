@@ -64,13 +64,14 @@ class VerifyUnavailableTests(unittest.TestCase):
         self.addCleanup(router_mod.reset_router)
         self.enterContext(mock.patch.object(llm, "provider_keys", return_value=None))
 
-    def _run(self, *, chat_effect, records, window=None, batch_size=None):
-        with mock.patch.object(llm, "provider_keys", return_value={
-            "agentrouter": ["k"],
-            "ar-worker": ["t"],
-            "jw-worker": ["t"],
-            "justwoker": ["k"],
-        }), mock.patch.object(llm, "chat_completion", side_effect=chat_effect), mock.patch.object(
+    def _run(self, *, chat_effect, records, window=None, batch_size=None, **policy):
+        settings = make_settings(provider_cooldown_seconds=300, **policy)
+        # a credential for *every* configured route: an outage scenario must not
+        # silently mean "every route the fixture happened to key"
+        keys = {provider.name: ["k"] for provider in settings.providers}
+        with mock.patch.object(llm, "provider_keys", return_value=keys), mock.patch.object(
+            llm, "chat_completion", side_effect=chat_effect
+        ), mock.patch.object(
             verify.indexer, "read_index", return_value=records
         ), mock.patch.object(verify, "load_state", return_value={"phases": {}}), mock.patch.object(
             verify, "save_state"
@@ -82,7 +83,7 @@ class VerifyUnavailableTests(unittest.TestCase):
             verify.debate_mod, "append_jsonl"
         ):
             result = verify.verify_database(
-                make_settings(provider_cooldown_seconds=300),
+                settings,
                 phase="phase1",
                 batch_size=batch_size,
                 window=window,
@@ -94,8 +95,14 @@ class VerifyUnavailableTests(unittest.TestCase):
         def chat(**kwargs: Any):
             raise llm.LlmRateLimited(f"HTTP 503 from {kwargs['base_url']}: all_keys_exhausted")
 
+        # Every configured route is keyed and rate limited, so every route is out
+        # of rotation.  The route breaker is pinned on for that: the shipped
+        # policy may deliberately keep a rate-limited route in rotation (a single
+        # blip is not an outage there), and this test describes the *total* one.
         result, save_checkpoint, record_ai, record_routes = self._run(
-            chat_effect=chat, records=records_for("ENG", 3)
+            chat_effect=chat,
+            records=records_for("ENG", 3),
+            halt_on_any_rate_limit_signal=True,
         )
 
         self.assertEqual(result.status, verify.STATUS_AI_UNAVAILABLE)
