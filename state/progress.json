@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "created_at": "2026-09-11T01:02:19Z",
+  "updated_at": "2026-09-11T01:02:42Z",
+  "phases": {
+    "phase0": {
+      "started_at": "2026-09-11T01:02:19Z",
+      "status": "ok",
+      "updated_at": "2026-09-11T01:02:19Z",
+      "counters": {
+        "papers_in_scope": 1322,
+        "papers_out_of_scope": 287,
+        "questions_in_scope": 142090,
+        "placed": 120671,
+        "unclassified": 17963,
+        "skipped_hindi": 3456,
+        "flagged_papers_questions": 0,
+        "papers_validated": 1318,
+        "papers_flagged": 4,
+        "papers_placeable": 1322
+      },
+      "notes": [
+        "coverage identity holds"
+      ],
+      "finished_at": "2026-09-11T01:02:19Z"
+    },
+    "phase1": {
+      "started_at": "2026-09-11T01:02:42Z",
+      "status": "rate_limited",
+      "updated_at": "2026-09-11T01:02:42Z",
+      "counters": {
+        "eng_questions": 37990,
+        "eng_chapters": 15,
+        "eng_unclassified": 8496,
+        "eng_with_image": 34817,
+        "verification": "rate_limited",
+        "corrections_applied": 0,
+        "db_files": 156
+      },
+      "notes": [
+        "halted: rate-limit/exhaustion signal from jw: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":\"auth-403\",\"last_status\":403,\"failover_count\":3,\"failed_keys\":3}}",
+        "router: {\"consecutive_failures\": 2, \"failures\": 2, \"halt_reason\": \"rate-limit/exhaustion signal from jw: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\\\"error\\\":{\\\"type\\\":\\\"all_keys_exhausted\\\",\\\"message\\\":\\\"All upstream keys failed or are on cooldown. Try again later or add more keys.\\\",\\\"last_error\\\":\\\"auth-403\\\",\\\"last_status\\\":403,\\\"failover_count\\\":3,\\\"failed_keys\\\":3}}\", \"halted\": true, \"halted_at\": \"2026-09-11T01:02:33Z\", \"per_provider\": {\"agentrouter\": {\"fail\": 1, \"ok\": 0}, \"jw\": {\"fail\": 1, \"ok\": 0}}, \"rate_limit_signals\": 1, \"requests\": 2, \"successes\": 0}"
+      ]
+    }
+  },
+  "totals": {}
+}

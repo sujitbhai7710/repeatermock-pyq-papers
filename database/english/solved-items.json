@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "generated_by": "agent.phases.phase1",
+  "vocabulary": {
+    "status": "ok",
+    "counters": {
+      "vocabulary_items": 10592,
+      "synonym_questions": 2083,
+      "antonym_questions": 3256,
+      "ows_questions": 1529,
+      "idiom_questions": 2678,
+      "spelling_questions": 907,
+      "homonym_questions": 139,
+      "distinct_synonym_words": 5415,
+      "distinct_antonym_words": 7070,
+      "distinct_ows_entries": 5395,
+      "distinct_idioms": 11530
+    },
+    "files": [
+      "database/english/_analysis/vocabulary/all.json",
+      "database/english/_analysis/vocabulary/synonyms.md",
+      "database/english/_analysis/vocabulary/antonyms.md",
+      "database/english/_analysis/vocabulary/one-word-substitution.md",
+      "database/english/_analysis/vocabulary/idioms.md",
+      "database/english/_analysis/vocabulary/spelling.md",
+      "database/english/_analysis/vocabulary/homonyms.md"
+    ],
+    "notes": []
+  },
+  "grammar": {
+    "status": "ok",
+    "counters": {
+      "rules": 0
+    },
+    "files": [],
+    "notes": [
+      "taxonomy has no ENG rules"
+    ]
+  }
+}

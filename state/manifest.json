@@ -1,0 +1,746 @@
+{
+  "version": 1,
+  "updated_at": "2026-09-11T01:02:42Z",
+  "phases": {
+    "phase0": {
+      "files": [
+        {
+          "path": "database/_meta/coverage.md",
+          "bytes": 3479
+        },
+        {
+          "path": "database/_meta/distribution.md",
+          "bytes": 14019
+        },
+        {
+          "path": "database/_meta/flagged_papers.jsonl",
+          "bytes": 2398
+        },
+        {
+          "path": "database/_meta/papers.jsonl",
+          "bytes": 776276
+        },
+        {
+          "path": "database/_meta/schema.md",
+          "bytes": 6121
+        },
+        {
+          "path": "state/distribution.json",
+          "bytes": 164977
+        },
+        {
+          "path": "state/index/computer.1.jsonl",
+          "bytes": 176816
+        },
+        {
+          "path": "state/index/eng.1.jsonl",
+          "bytes": 26213869
+        },
+        {
+          "path": "state/index/eng.2.jsonl",
+          "bytes": 2966642
+        },
+        {
+          "path": "state/index/gk.1.jsonl",
+          "bytes": 26214296
+        },
+        {
+          "path": "state/index/gk.2.jsonl",
+          "bytes": 1288344
+        },
+        {
+          "path": "state/index/manifest.json",
+          "bytes": 2559
+        },
+        {
+          "path": "state/index/manifest.json",
+          "bytes": 2559
+        },
+        {
+          "path": "state/index/math.1.jsonl",
+          "bytes": 25229585
+        },
+        {
+          "path": "state/index/reas.1.jsonl",
+          "bytes": 26213863
+        },
+        {
+          "path": "state/index/reas.2.jsonl",
+          "bytes": 266473
+        },
+        {
+          "path": "state/papers.json",
+          "bytes": 2155980
+        },
+        {
+          "path": "state/subject_keywords.json",
+          "bytes": 10202
+        }
+      ],
+      "count": 18,
+      "bytes": 111708458
+    },
+    "phase1": {
+      "files": [
+        {
+          "path": "database/english/_analysis/vocabulary/all.json",
+          "bytes": 17505119
+        },
+        {
+          "path": "database/english/_analysis/vocabulary/antonyms.md",
+          "bytes": 311699
+        },
+        {
+          "path": "database/english/_analysis/vocabulary/homonyms.md",
+          "bytes": 19444
+        },
+        {
+          "path": "database/english/_analysis/vocabulary/idioms.md",
+          "bytes": 657463
+        },
+        {
+          "path": "database/english/_analysis/vocabulary/one-word-substitution.md",
+          "bytes": 271319
+        },
+        {
+          "path": "database/english/_analysis/vocabulary/spelling.md",
+          "bytes": 138396
+        },
+        {
+          "path": "database/english/_analysis/vocabulary/synonyms.md",
+          "bytes": 227316
+        },
+        {
+          "path": "database/english/_unclassified/correct-usage-of-word/index.md",
+          "bytes": 892
+        },
+        {
+          "path": "database/english/_unclassified/correct-usage-of-word/questions.jsonl",
+          "bytes": 1995
+        },
+        {
+          "path": "database/english/_unclassified/english-spoken-english/index.md",
+          "bytes": 851
+        },
+        {
+          "path": "database/english/_unclassified/english-spoken-english/questions.jsonl",
+          "bytes": 1600
+        },
+        {
+          "path": "database/english/_unclassified/english/index.md",
+          "bytes": 34860
+        },
+        {
+          "path": "database/english/_unclassified/english/questions.jsonl",
+          "bytes": 1111541
+        },
+        {
+          "path": "database/english/_unclassified/figures-of-speech/index.md",
+          "bytes": 491
+        },
+        {
+          "path": "database/english/_unclassified/figures-of-speech/questions.jsonl",
+          "bytes": 528
+        },
+        {
+          "path": "database/english/_unclassified/general-aptitude/index.md",
+          "bytes": 480
+        },
+        {
+          "path": "database/english/_unclassified/general-aptitude/questions.jsonl",
+          "bytes": 519
+        },
+        {
+          "path": "database/english/_unclassified/index.md",
+          "bytes": 683
+        },
+        {
+          "path": "database/english/_unclassified/literature/index.md",
+          "bytes": 463
+        },
+        {
+          "path": "database/english/_unclassified/literature/questions.jsonl",
+          "bytes": 502
+        },
+        {
+          "path": "database/english/_unclassified/logical-reasoning/index.md",
+          "bytes": 482
+        },
+        {
+          "path": "database/english/_unclassified/logical-reasoning/questions.jsonl",
+          "bytes": 522
+        },
+        {
+          "path": "database/english/_unclassified/match-the-following/index.md",
+          "bytes": 6005
+        },
+        {
+          "path": "database/english/_unclassified/match-the-following/questions.jsonl",
+          "bytes": 18309
+        },
+        {
+          "path": "database/english/_unclassified/odd-man-out/index.md",
+          "bytes": 625
+        },
+        {
+          "path": "database/english/_unclassified/odd-man-out/questions.jsonl",
+          "bytes": 973
+        },
+        {
+          "path": "database/english/_unclassified/polity/index.md",
+          "bytes": 447
+        },
+        {
+          "path": "database/english/_unclassified/polity/questions.jsonl",
+          "bytes": 486
+        },
+        {
+          "path": "database/english/_unclassified/professions-and-fields-of-study/index.md",
+          "bytes": 496
+        },
+        {
+          "path": "database/english/_unclassified/professions-and-fields-of-study/questions.jsonl",
+          "bytes": 535
+        },
+        {
+          "path": "database/english/_unclassified/spoken-english/index.md",
+          "bytes": 649
+        },
+        {
+          "path": "database/english/_unclassified/spoken-english/questions.jsonl",
+          "bytes": 1031
+        },
+        {
+          "path": "database/english/_unclassified/time-and-work/index.md",
+          "bytes": 469
+        },
+        {
+          "path": "database/english/_unclassified/time-and-work/questions.jsonl",
+          "bytes": 503
+        },
+        {
+          "path": "database/english/_unclassified/unidentified/index.md",
+          "bytes": 32241
+        },
+        {
+          "path": "database/english/_unclassified/unidentified/questions.jsonl",
+          "bytes": 1245074
+        },
+        {
+          "path": "database/english/_unclassified/vocabulary/index.md",
+          "bytes": 35012
+        },
+        {
+          "path": "database/english/_unclassified/vocabulary/questions.jsonl",
+          "bytes": 1899469
+        },
+        {
+          "path": "database/english/active-and-passive-voice/_other/index.md",
+          "bytes": 209
+        },
+        {
+          "path": "database/english/active-and-passive-voice/_other/voice/index.md",
+          "bytes": 3358
+        },
+        {
+          "path": "database/english/active-and-passive-voice/_other/voice/questions.jsonl",
+          "bytes": 8596
+        },
+        {
+          "path": "database/english/active-and-passive-voice/index.md",
+          "bytes": 26598
+        },
+        {
+          "path": "database/english/active-and-passive-voice/questions.jsonl",
+          "bytes": 95136
+        },
+        {
+          "path": "database/english/antonym/index.md",
+          "bytes": 34835
+        },
+        {
+          "path": "database/english/antonym/questions.jsonl",
+          "bytes": 1158351
+        },
+        {
+          "path": "database/english/cloze-test/_other/fill-in-the-blanks-cloze-test/index.md",
+          "bytes": 822
+        },
+        {
+          "path": "database/english/cloze-test/_other/fill-in-the-blanks-cloze-test/questions.jsonl",
+          "bytes": 1680
+        },
+        {
+          "path": "database/english/cloze-test/_other/index.md",
+          "bytes": 259
+        },
+        {
+          "path": "database/english/cloze-test/_other/vocabulary-cloze-test/index.md",
+          "bytes": 488
+        },
+        {
+          "path": "database/english/cloze-test/_other/vocabulary-cloze-test/questions.jsonl",
+          "bytes": 554
+        },
+        {
+          "path": "database/english/cloze-test/index.md",
+          "bytes": 35437
+        },
+        {
+          "path": "database/english/cloze-test/questions.jsonl",
+          "bytes": 2587791
+        },
+        {
+          "path": "database/english/direct-and-indirect-speech/_other/index.md",
+          "bytes": 215
+        },
+        {
+          "path": "database/english/direct-and-indirect-speech/_other/narration/index.md",
+          "bytes": 4631
+        },
+        {
+          "path": "database/english/direct-and-indirect-speech/_other/narration/questions.jsonl",
+          "bytes": 12897
+        },
+        {
+          "path": "database/english/direct-and-indirect-speech/index.md",
+          "bytes": 18211
+        },
+        {
+          "path": "database/english/direct-and-indirect-speech/questions.jsonl",
+          "bytes": 66413
+        },
+        {
+          "path": "database/english/error-detection/index.md",
+          "bytes": 31360
+        },
+        {
+          "path": "database/english/error-detection/questions.jsonl",
+          "bytes": 461329
+        },
+        {
+          "path": "database/english/fill-in-the-blanks/index.md",
+          "bytes": 31475
+        },
+        {
+          "path": "database/english/fill-in-the-blanks/questions.jsonl",
+          "bytes": 418978
+        },
+        {
+          "path": "database/english/grammar/_other/grammar-vocabulary/index.md",
+          "bytes": 1885
+        },
+        {
+          "path": "database/english/grammar/_other/grammar-vocabulary/questions.jsonl",
+          "bytes": 4820
+        },
+        {
+          "path": "database/english/grammar/_other/index.md",
+          "bytes": 447
+        },
+        {
+          "path": "database/english/grammar/_other/literature-verbal-ability/index.md",
+          "bytes": 846
+        },
+        {
+          "path": "database/english/grammar/_other/literature-verbal-ability/questions.jsonl",
+          "bytes": 1663
+        },
+        {
+          "path": "database/english/grammar/_other/ratio-and-proportion-grammar/index.md",
+          "bytes": 535
+        },
+        {
+          "path": "database/english/grammar/_other/ratio-and-proportion-grammar/questions.jsonl",
+          "bytes": 594
+        },
+        {
+          "path": "database/english/grammar/_other/sentence/index.md",
+          "bytes": 17170
+        },
+        {
+          "path": "database/english/grammar/_other/sentence/questions.jsonl",
+          "bytes": 53482
+        },
+        {
+          "path": "database/english/grammar/_other/verbal-ability-literature/index.md",
+          "bytes": 826
+        },
+        {
+          "path": "database/english/grammar/_other/verbal-ability-literature/questions.jsonl",
+          "bytes": 1656
+        },
+        {
+          "path": "database/english/grammar/_other/verbal-ability/index.md",
+          "bytes": 33152
+        },
+        {
+          "path": "database/english/grammar/_other/verbal-ability/questions.jsonl",
+          "bytes": 979836
+        },
+        {
+          "path": "database/english/grammar/_other/vocabulary-grammar/index.md",
+          "bytes": 1981
+        },
+        {
+          "path": "database/english/grammar/_other/vocabulary-grammar/questions.jsonl",
+          "bytes": 4853
+        },
+        {
+          "path": "database/english/grammar/index.md",
+          "bytes": 35285
+        },
+        {
+          "path": "database/english/grammar/questions.jsonl",
+          "bytes": 4145994
+        },
+        {
+          "path": "database/english/homophones/_other/fill-in-the-blanks-homophones/index.md",
+          "bytes": 604
+        },
+        {
+          "path": "database/english/homophones/_other/fill-in-the-blanks-homophones/questions.jsonl",
+          "bytes": 1068
+        },
+        {
+          "path": "database/english/homophones/_other/homophones-fill-in-the-blanks/index.md",
+          "bytes": 1759
+        },
+        {
+          "path": "database/english/homophones/_other/homophones-fill-in-the-blanks/questions.jsonl",
+          "bytes": 5340
+        },
+        {
+          "path": "database/english/homophones/_other/index.md",
+          "bytes": 269
+        },
+        {
+          "path": "database/english/homophones/index.md",
+          "bytes": 5286
+        },
+        {
+          "path": "database/english/homophones/questions.jsonl",
+          "bytes": 16359
+        },
+        {
+          "path": "database/english/idioms/_other/fill-in-the-blanks-idioms/index.md",
+          "bytes": 1023
+        },
+        {
+          "path": "database/english/idioms/_other/fill-in-the-blanks-idioms/questions.jsonl",
+          "bytes": 2600
+        },
+        {
+          "path": "database/english/idioms/_other/grammar-idioms/index.md",
+          "bytes": 475
+        },
+        {
+          "path": "database/english/idioms/_other/grammar-idioms/questions.jsonl",
+          "bytes": 537
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-and-phrases-idioms/index.md",
+          "bytes": 698
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-and-phrases-idioms/questions.jsonl",
+          "bytes": 1114
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-and-phrases/index.md",
+          "bytes": 1858
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-and-phrases/questions.jsonl",
+          "bytes": 4712
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-fill-in-the-blanks/index.md",
+          "bytes": 1206
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-fill-in-the-blanks/questions.jsonl",
+          "bytes": 3135
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-grammar/index.md",
+          "bytes": 662
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-grammar/questions.jsonl",
+          "bytes": 1054
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-idioms-and-phrases/index.md",
+          "bytes": 705
+        },
+        {
+          "path": "database/english/idioms/_other/idioms-idioms-and-phrases/questions.jsonl",
+          "bytes": 1122
+        },
+        {
+          "path": "database/english/idioms/_other/index.md",
+          "bytes": 631
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement-grammar/index.md",
+          "bytes": 454
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement-grammar/questions.jsonl",
+          "bytes": 526
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement-idioms/index.md",
+          "bytes": 649
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement-idioms/questions.jsonl",
+          "bytes": 1090
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement-spelling/index.md",
+          "bytes": 471
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement-spelling/questions.jsonl",
+          "bytes": 545
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement/index.md",
+          "bytes": 31040
+        },
+        {
+          "path": "database/english/idioms/_other/sentence-improvement/questions.jsonl",
+          "bytes": 262462
+        },
+        {
+          "path": "database/english/idioms/index.md",
+          "bytes": 34970
+        },
+        {
+          "path": "database/english/idioms/questions.jsonl",
+          "bytes": 1296277
+        },
+        {
+          "path": "database/english/index.md",
+          "bytes": 728
+        },
+        {
+          "path": "database/english/ows/_other/grammar-ows/index.md",
+          "bytes": 658
+        },
+        {
+          "path": "database/english/ows/_other/grammar-ows/questions.jsonl",
+          "bytes": 1037
+        },
+        {
+          "path": "database/english/ows/_other/index.md",
+          "bytes": 224
+        },
+        {
+          "path": "database/english/ows/_other/ows-grammar/index.md",
+          "bytes": 1166
+        },
+        {
+          "path": "database/english/ows/_other/ows-grammar/questions.jsonl",
+          "bytes": 2560
+        },
+        {
+          "path": "database/english/ows/index.md",
+          "bytes": 35071
+        },
+        {
+          "path": "database/english/ows/questions.jsonl",
+          "bytes": 765073
+        },
+        {
+          "path": "database/english/para-jumbles/_other/index.md",
+          "bytes": 226
+        },
+        {
+          "path": "database/english/para-jumbles/_other/para-jumbles-information-and-ideas/index.md",
+          "bytes": 474
+        },
+        {
+          "path": "database/english/para-jumbles/_other/para-jumbles-information-and-ideas/questions.jsonl",
+          "bytes": 554
+        },
+        {
+          "path": "database/english/para-jumbles/index.md",
+          "bytes": 35147
+        },
+        {
+          "path": "database/english/para-jumbles/questions.jsonl",
+          "bytes": 602253
+        },
+        {
+          "path": "database/english/reading-comprehension/index.md",
+          "bytes": 29142
+        },
+        {
+          "path": "database/english/reading-comprehension/questions.jsonl",
+          "bytes": 169747
+        },
+        {
+          "path": "database/english/sentence-improvement/index.md",
+          "bytes": 11645
+        },
+        {
+          "path": "database/english/sentence-improvement/questions.jsonl",
+          "bytes": 36276
+        },
+        {
+          "path": "database/english/solved-items.json",
+          "bytes": 1107
+        },
+        {
+          "path": "database/english/spelling/_other/error-detection-spelling/index.md",
+          "bytes": 797
+        },
+        {
+          "path": "database/english/spelling/_other/error-detection-spelling/questions.jsonl",
+          "bytes": 1610
+        },
+        {
+          "path": "database/english/spelling/_other/fill-in-the-blanks-spelling/index.md",
+          "bytes": 797
+        },
+        {
+          "path": "database/english/spelling/_other/fill-in-the-blanks-spelling/questions.jsonl",
+          "bytes": 1612
+        },
+        {
+          "path": "database/english/spelling/_other/grammar-spelling/index.md",
+          "bytes": 995
+        },
+        {
+          "path": "database/english/spelling/_other/grammar-spelling/questions.jsonl",
+          "bytes": 2131
+        },
+        {
+          "path": "database/english/spelling/_other/index.md",
+          "bytes": 454
+        },
+        {
+          "path": "database/english/spelling/_other/sentence-spelling/index.md",
+          "bytes": 459
+        },
+        {
+          "path": "database/english/spelling/_other/sentence-spelling/questions.jsonl",
+          "bytes": 521
+        },
+        {
+          "path": "database/english/spelling/_other/spelling-error-detection/index.md",
+          "bytes": 637
+        },
+        {
+          "path": "database/english/spelling/_other/spelling-error-detection/questions.jsonl",
+          "bytes": 1070
+        },
+        {
+          "path": "database/english/spelling/_other/spelling-fill-in-the-blanks/index.md",
+          "bytes": 943
+        },
+        {
+          "path": "database/english/spelling/_other/spelling-fill-in-the-blanks/questions.jsonl",
+          "bytes": 2168
+        },
+        {
+          "path": "database/english/spelling/_other/spelling-grammar/index.md",
+          "bytes": 1760
+        },
+        {
+          "path": "database/english/spelling/_other/spelling-grammar/questions.jsonl",
+          "bytes": 4290
+        },
+        {
+          "path": "database/english/spelling/index.md",
+          "bytes": 33030
+        },
+        {
+          "path": "database/english/spelling/questions.jsonl",
+          "bytes": 542312
+        },
+        {
+          "path": "database/english/synonym/_other/antonym-fill-in-the-blanks/index.md",
+          "bytes": 625
+        },
+        {
+          "path": "database/english/synonym/_other/antonym-fill-in-the-blanks/questions.jsonl",
+          "bytes": 1078
+        },
+        {
+          "path": "database/english/synonym/_other/antonym/index.md",
+          "bytes": 31171
+        },
+        {
+          "path": "database/english/synonym/_other/antonym/questions.jsonl",
+          "bytes": 258744
+        },
+        {
+          "path": "database/english/synonym/_other/fill-in-the-blanks-antonym/index.md",
+          "bytes": 625
+        },
+        {
+          "path": "database/english/synonym/_other/fill-in-the-blanks-antonym/questions.jsonl",
+          "bytes": 1077
+        },
+        {
+          "path": "database/english/synonym/_other/fill-in-the-blanks-synonym/index.md",
+          "bytes": 467
+        },
+        {
+          "path": "database/english/synonym/_other/fill-in-the-blanks-synonym/questions.jsonl",
+          "bytes": 539
+        },
+        {
+          "path": "database/english/synonym/_other/index.md",
+          "bytes": 507
+        },
+        {
+          "path": "database/english/synonym/_other/sentence-improvement-antonym/index.md",
+          "bytes": 469
+        },
+        {
+          "path": "database/english/synonym/_other/sentence-improvement-antonym/questions.jsonl",
+          "bytes": 543
+        },
+        {
+          "path": "database/english/synonym/_other/sentence-improvement-synonym/index.md",
+          "bytes": 471
+        },
+        {
+          "path": "database/english/synonym/_other/sentence-improvement-synonym/questions.jsonl",
+          "bytes": 544
+        },
+        {
+          "path": "database/english/synonym/_other/synonym-antonym/index.md",
+          "bytes": 14892
+        },
+        {
+          "path": "database/english/synonym/_other/synonym-antonym/questions.jsonl",
+          "bytes": 48073
+        },
+        {
+          "path": "database/english/synonym/_other/synonym-fill-in-the-blanks/index.md",
+          "bytes": 625
+        },
+        {
+          "path": "database/english/synonym/_other/synonym-fill-in-the-blanks/questions.jsonl",
+          "bytes": 1077
+        },
+        {
+          "path": "database/english/synonym/index.md",
+          "bytes": 34971
+        },
+        {
+          "path": "database/english/synonym/questions.jsonl",
+          "bytes": 1153121
+        }
+      ],
+      "count": 164,
+      "bytes": 39333131
+    }
+  }
+}

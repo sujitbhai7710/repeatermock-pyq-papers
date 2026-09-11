@@ -1,0 +1,8240 @@
+{
+  "version": 1,
+  "year_range": [
+    2019,
+    2025
+  ],
+  "latest_year": 2025,
+  "last_2y_years": [
+    2025,
+    2024
+  ],
+  "weights": {
+    "recency": 0.5,
+    "frequency": 0.35,
+    "trend": 0.15,
+    "recency_by_year": {
+      "0": 1.0,
+      "1": 0.75,
+      "2": 0.5
+    },
+    "recency_default": 0.3
+  },
+  "totals": {
+    "questions_indexed": 138634,
+    "by_subject": {
+      "COMPUTER": 220,
+      "ENG": 37990,
+      "GK": 34578,
+      "MATH": 32100,
+      "REAS": 33746
+    },
+    "by_year": {
+      "2019": 17200,
+      "2020": 9400,
+      "2021": 17898,
+      "2022": 30013,
+      "2023": 20479,
+      "2024": 22825,
+      "2025": 20819
+    }
+  },
+  "coverage": {
+    "papers": 1322,
+    "questions": 142090,
+    "placed": 120671,
+    "unclassified": 17963,
+    "skipped_hindi": 3456,
+    "flagged_papers_questions": 0,
+    "accounted": 142090,
+    "balanced": true,
+    "papers_validated": 1318,
+    "papers_flagged": 4,
+    "papers_placeable": 1322,
+    "min_agreement": 0.95,
+    "min_section_agreement": 0.95
+  },
+  "by_exam": {
+    "CGL": {
+      "questions": 23899,
+      "year:2019": 1900,
+      "year:2020": 2200,
+      "year:2021": 2200,
+      "year:2022": 4699,
+      "year:2023": 4250,
+      "year:2024": 4000,
+      "year:2025": 4650
+    },
+    "CHSL": {
+      "questions": 30413,
+      "year:2019": 2400,
+      "year:2020": 3600,
+      "year:2021": 3600,
+      "year:2022": 7835,
+      "year:2023": 4270,
+      "year:2024": 3735,
+      "year:2025": 4973
+    },
+    "CPO": {
+      "questions": 12997,
+      "year:2019": 4000,
+      "year:2020": 1200,
+      "year:2021": 400,
+      "year:2022": 2000,
+      "year:2023": 2000,
+      "year:2024": 1800,
+      "year:2025": 1597
+    },
+    "GD": {
+      "questions": 22579,
+      "year:2019": 2600,
+      "year:2021": 6299,
+      "year:2022": 6080,
+      "year:2024": 4240,
+      "year:2025": 3360
+    },
+    "MTS": {
+      "questions": 27749,
+      "year:2019": 3900,
+      "year:2021": 4200,
+      "year:2022": 4799,
+      "year:2023": 7560,
+      "year:2024": 5850,
+      "year:2025": 1440
+    },
+    "SELECTION_POST": {
+      "questions": 11999,
+      "year:2019": 1200,
+      "year:2020": 1200,
+      "year:2022": 3400,
+      "year:2023": 1199,
+      "year:2024": 2000,
+      "year:2025": 3000
+    },
+    "STENO": {
+      "questions": 8998,
+      "year:2019": 1200,
+      "year:2020": 1200,
+      "year:2021": 1199,
+      "year:2022": 1200,
+      "year:2023": 1200,
+      "year:2024": 1200,
+      "year:2025": 1799
+    }
+  },
+  "by_exam_year": {
+    "CGL|2019": 1900,
+    "CGL|2020": 2200,
+    "CGL|2021": 2200,
+    "CGL|2022": 4699,
+    "CGL|2023": 4250,
+    "CGL|2024": 4000,
+    "CGL|2025": 4650,
+    "CHSL|2019": 2400,
+    "CHSL|2020": 3600,
+    "CHSL|2021": 3600,
+    "CHSL|2022": 7835,
+    "CHSL|2023": 4270,
+    "CHSL|2024": 3735,
+    "CHSL|2025": 4973,
+    "CPO|2019": 4000,
+    "CPO|2020": 1200,
+    "CPO|2021": 400,
+    "CPO|2022": 2000,
+    "CPO|2023": 2000,
+    "CPO|2024": 1800,
+    "CPO|2025": 1597,
+    "GD|2019": 2600,
+    "GD|2021": 6299,
+    "GD|2022": 6080,
+    "GD|2024": 4240,
+    "GD|2025": 3360,
+    "MTS|2019": 3900,
+    "MTS|2021": 4200,
+    "MTS|2022": 4799,
+    "MTS|2023": 7560,
+    "MTS|2024": 5850,
+    "MTS|2025": 1440,
+    "SELECTION_POST|2019": 1200,
+    "SELECTION_POST|2020": 1200,
+    "SELECTION_POST|2022": 3400,
+    "SELECTION_POST|2023": 1199,
+    "SELECTION_POST|2024": 2000,
+    "SELECTION_POST|2025": 3000,
+    "STENO|2019": 1200,
+    "STENO|2020": 1200,
+    "STENO|2021": 1199,
+    "STENO|2022": 1200,
+    "STENO|2023": 1200,
+    "STENO|2024": 1200,
+    "STENO|2025": 1799
+  },
+  "by_exam_shift": {
+    "CGL|2019|0": 100,
+    "CGL|2019|1": 600,
+    "CGL|2019|2": 600,
+    "CGL|2019|3": 600,
+    "CGL|2020|0": 100,
+    "CGL|2020|1": 700,
+    "CGL|2020|2": 700,
+    "CGL|2020|3": 700,
+    "CGL|2021|0": 100,
+    "CGL|2021|1": 700,
+    "CGL|2021|2": 700,
+    "CGL|2021|3": 700,
+    "CGL|2022|0": 700,
+    "CGL|2022|1": 1000,
+    "CGL|2022|2": 1000,
+    "CGL|2022|3": 1000,
+    "CGL|2022|4": 999,
+    "CGL|2023|0": 150,
+    "CGL|2023|1": 1100,
+    "CGL|2023|2": 1100,
+    "CGL|2023|3": 1000,
+    "CGL|2023|4": 900,
+    "CGL|2024|0": 400,
+    "CGL|2024|1": 1200,
+    "CGL|2024|2": 1200,
+    "CGL|2024|3": 1200,
+    "CGL|2025|0": 150,
+    "CGL|2025|1": 1500,
+    "CGL|2025|2": 1500,
+    "CGL|2025|3": 1500,
+    "CHSL|2019|1": 800,
+    "CHSL|2019|2": 800,
+    "CHSL|2019|3": 800,
+    "CHSL|2020|1": 1200,
+    "CHSL|2020|2": 1200,
+    "CHSL|2020|3": 1200,
+    "CHSL|2021|1": 1200,
+    "CHSL|2021|2": 1200,
+    "CHSL|2021|3": 1200,
+    "CHSL|2022|1": 2335,
+    "CHSL|2022|2": 2300,
+    "CHSL|2022|3": 2300,
+    "CHSL|2022|4": 900,
+    "CHSL|2023|1": 1270,
+    "CHSL|2023|2": 1000,
+    "CHSL|2023|3": 1000,
+    "CHSL|2023|4": 1000,
+    "CHSL|2024|0": 135,
+    "CHSL|2024|1": 900,
+    "CHSL|2024|2": 900,
+    "CHSL|2024|3": 900,
+    "CHSL|2024|4": 900,
+    "CHSL|2025|1": 1593,
+    "CHSL|2025|2": 1690,
+    "CHSL|2025|3": 1690,
+    "CPO|2019|0": 200,
+    "CPO|2019|1": 1800,
+    "CPO|2019|2": 1800,
+    "CPO|2019|3": 200,
+    "CPO|2020|1": 600,
+    "CPO|2020|2": 600,
+    "CPO|2021|0": 400,
+    "CPO|2022|1": 600,
+    "CPO|2022|2": 800,
+    "CPO|2022|3": 600,
+    "CPO|2023|0": 200,
+    "CPO|2023|1": 600,
+    "CPO|2023|2": 600,
+    "CPO|2023|3": 600,
+    "CPO|2024|1": 600,
+    "CPO|2024|2": 600,
+    "CPO|2024|3": 600,
+    "CPO|2025|1": 798,
+    "CPO|2025|2": 799,
+    "GD|2019|1": 1200,
+    "GD|2019|2": 700,
+    "GD|2019|3": 700,
+    "GD|2021|1": 2100,
+    "GD|2021|2": 2099,
+    "GD|2021|3": 2100,
+    "GD|2022|1": 1520,
+    "GD|2022|2": 1520,
+    "GD|2022|3": 1520,
+    "GD|2022|4": 1520,
+    "GD|2024|1": 1120,
+    "GD|2024|2": 1040,
+    "GD|2024|3": 1040,
+    "GD|2024|4": 1040,
+    "GD|2025|1": 1120,
+    "GD|2025|2": 1120,
+    "GD|2025|3": 1120,
+    "MTS|2019|1": 1300,
+    "MTS|2019|2": 1400,
+    "MTS|2019|3": 1200,
+    "MTS|2021|1": 1400,
+    "MTS|2021|2": 1400,
+    "MTS|2021|3": 1400,
+    "MTS|2022|1": 1599,
+    "MTS|2022|2": 1600,
+    "MTS|2022|3": 1600,
+    "MTS|2023|1": 2520,
+    "MTS|2023|2": 2520,
+    "MTS|2023|3": 2520,
+    "MTS|2024|1": 1980,
+    "MTS|2024|2": 1980,
+    "MTS|2024|3": 1890,
+    "MTS|2025|1": 360,
+    "MTS|2025|2": 450,
+    "MTS|2025|3": 630,
+    "SELECTION_POST|2019|0": 400,
+    "SELECTION_POST|2019|1": 300,
+    "SELECTION_POST|2019|2": 300,
+    "SELECTION_POST|2019|3": 200,
+    "SELECTION_POST|2020|1": 500,
+    "SELECTION_POST|2020|2": 200,
+    "SELECTION_POST|2020|3": 500,
+    "SELECTION_POST|2022|1": 1000,
+    "SELECTION_POST|2022|2": 800,
+    "SELECTION_POST|2022|3": 1300,
+    "SELECTION_POST|2022|4": 300,
+    "SELECTION_POST|2023|1": 300,
+    "SELECTION_POST|2023|2": 299,
+    "SELECTION_POST|2023|3": 300,
+    "SELECTION_POST|2023|4": 300,
+    "SELECTION_POST|2024|1": 500,
+    "SELECTION_POST|2024|2": 500,
+    "SELECTION_POST|2024|3": 500,
+    "SELECTION_POST|2024|4": 500,
+    "SELECTION_POST|2025|1": 1000,
+    "SELECTION_POST|2025|2": 1000,
+    "SELECTION_POST|2025|3": 1000,
+    "STENO|2019|1": 400,
+    "STENO|2019|2": 800,
+    "STENO|2020|1": 600,
+    "STENO|2020|2": 600,
+    "STENO|2021|1": 600,
+    "STENO|2021|2": 599,
+    "STENO|2022|1": 400,
+    "STENO|2022|2": 400,
+    "STENO|2022|3": 400,
+    "STENO|2023|1": 400,
+    "STENO|2023|2": 400,
+    "STENO|2023|3": 400,
+    "STENO|2024|1": 400,
+    "STENO|2024|2": 400,
+    "STENO|2024|3": 400,
+    "STENO|2025|1": 600,
+    "STENO|2025|2": 599,
+    "STENO|2025|3": 600
+  },
+  "by_exam_subject": {
+    "CGL|COMPUTER": 160,
+    "CGL|ENG": 5860,
+    "CGL|GK": 5800,
+    "CGL|MATH": 6339,
+    "CGL|REAS": 5740,
+    "CHSL|COMPUTER": 60,
+    "CHSL|ENG": 7635,
+    "CHSL|GK": 7536,
+    "CHSL|MATH": 7594,
+    "CHSL|REAS": 7588,
+    "CPO|ENG": 4000,
+    "CPO|GK": 2998,
+    "CPO|MATH": 2999,
+    "CPO|REAS": 3000,
+    "GD|ENG": 5645,
+    "GD|GK": 5645,
+    "GD|MATH": 5644,
+    "GD|REAS": 5645,
+    "MTS|ENG": 7350,
+    "MTS|GK": 7350,
+    "MTS|MATH": 6524,
+    "MTS|REAS": 6525,
+    "SELECTION_POST|ENG": 3000,
+    "SELECTION_POST|GK": 3000,
+    "SELECTION_POST|MATH": 3000,
+    "SELECTION_POST|REAS": 2999,
+    "STENO|ENG": 4500,
+    "STENO|GK": 2249,
+    "STENO|REAS": 2249
+  },
+  "top_chapters": [
+    {
+      "key": [
+        "ENG",
+        "Grammar"
+      ],
+      "count": 10043
+    },
+    {
+      "key": [
+        "ENG",
+        "_unclassified"
+      ],
+      "count": 8496
+    },
+    {
+      "key": [
+        "REAS",
+        "SERIES"
+      ],
+      "count": 6124
+    },
+    {
+      "key": [
+        "ENG",
+        "Cloze Test"
+      ],
+      "count": 4977
+    },
+    {
+      "key": [
+        "MATH",
+        "_unclassified"
+      ],
+      "count": 4560
+    },
+    {
+      "key": [
+        "REAS",
+        "ANALOGY"
+      ],
+      "count": 4142
+    },
+    {
+      "key": [
+        "REAS",
+        "NON-VERBAL SERIES"
+      ],
+      "count": 4019
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified"
+      ],
+      "count": 3709
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE"
+      ],
+      "count": 3503
+    },
+    {
+      "key": [
+        "REAS",
+        "CODING-DECODING"
+      ],
+      "count": 3344
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System"
+      ],
+      "count": 3311
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN POLITY & CONSTITUTION"
+      ],
+      "count": 3269
+    },
+    {
+      "key": [
+        "ENG",
+        "Idioms"
+      ],
+      "count": 3092
+    },
+    {
+      "key": [
+        "MATH",
+        "Mensuration 2D & 3D"
+      ],
+      "count": 3044
+    },
+    {
+      "key": [
+        "REAS",
+        "PUZZLES"
+      ],
+      "count": 3031
+    },
+    {
+      "key": [
+        "MATH",
+        "Profit & Loss"
+      ],
+      "count": 3003
+    },
+    {
+      "key": [
+        "ENG",
+        "Synonym"
+      ],
+      "count": 2889
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN GEOGRAPHY"
+      ],
+      "count": 2600
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY"
+      ],
+      "count": 2453
+    },
+    {
+      "key": [
+        "REAS",
+        "Logical Reasoning"
+      ],
+      "count": 2412
+    },
+    {
+      "key": [
+        "MATH",
+        "Data Interpretation"
+      ],
+      "count": 2327
+    },
+    {
+      "key": [
+        "GK",
+        "SPORTS — STATIC GK"
+      ],
+      "count": 2289
+    },
+    {
+      "key": [
+        "ENG",
+        "Antonym"
+      ],
+      "count": 2266
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry"
+      ],
+      "count": 2075
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS"
+      ],
+      "count": 1793
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Distance"
+      ],
+      "count": 1766
+    },
+    {
+      "key": [
+        "GK",
+        "Static GK"
+      ],
+      "count": 1759
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Work"
+      ],
+      "count": 1681
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY"
+      ],
+      "count": 1675
+    },
+    {
+      "key": [
+        "REAS",
+        "SYLLOGISM"
+      ],
+      "count": 1625
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — BIOLOGY"
+      ],
+      "count": 1623
+    },
+    {
+      "key": [
+        "MATH",
+        "Trigonometry"
+      ],
+      "count": 1589
+    },
+    {
+      "key": [
+        "MATH",
+        "Ratio & Proportion"
+      ],
+      "count": 1561
+    },
+    {
+      "key": [
+        "ENG",
+        "OWS"
+      ],
+      "count": 1545
+    },
+    {
+      "key": [
+        "MATH",
+        "Algebra"
+      ],
+      "count": 1544
+    },
+    {
+      "key": [
+        "REAS",
+        "CLASSIFICATION / ODD ONE OUT"
+      ],
+      "count": 1531
+    },
+    {
+      "key": [
+        "REAS",
+        "ALPHABET TEST"
+      ],
+      "count": 1516
+    },
+    {
+      "key": [
+        "MATH",
+        "Percentage"
+      ],
+      "count": 1341
+    },
+    {
+      "key": [
+        "GK",
+        "AWARDS — STATIC"
+      ],
+      "count": 1300
+    },
+    {
+      "key": [
+        "MATH",
+        "Average"
+      ],
+      "count": 1281
+    },
+    {
+      "key": [
+        "REAS",
+        "SEATING ARRANGEMENT"
+      ],
+      "count": 1280
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — CHEMISTRY"
+      ],
+      "count": 1209
+    },
+    {
+      "key": [
+        "REAS",
+        "_unclassified"
+      ],
+      "count": 1171
+    },
+    {
+      "key": [
+        "ENG",
+        "Para Jumbles"
+      ],
+      "count": 1152
+    },
+    {
+      "key": [
+        "REAS",
+        "BLOOD RELATIONS"
+      ],
+      "count": 1137
+    },
+    {
+      "key": [
+        "ENG",
+        "Spelling"
+      ],
+      "count": 1092
+    },
+    {
+      "key": [
+        "GK",
+        "ANCIENT INDIAN HISTORY"
+      ],
+      "count": 1008
+    },
+    {
+      "key": [
+        "MATH",
+        "Simple Interest"
+      ],
+      "count": 1002
+    },
+    {
+      "key": [
+        "GK",
+        "WORLD GEOGRAPHY"
+      ],
+      "count": 959
+    },
+    {
+      "key": [
+        "GK",
+        "MEDIEVAL INDIAN HISTORY"
+      ],
+      "count": 915
+    },
+    {
+      "key": [
+        "ENG",
+        "Error Detection"
+      ],
+      "count": 882
+    },
+    {
+      "key": [
+        "GK",
+        "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC"
+      ],
+      "count": 881
+    },
+    {
+      "key": [
+        "GK",
+        "STATIC GK"
+      ],
+      "count": 813
+    },
+    {
+      "key": [
+        "MATH",
+        "Compound Interest"
+      ],
+      "count": 800
+    },
+    {
+      "key": [
+        "ENG",
+        "Fill in the Blanks"
+      ],
+      "count": 785
+    },
+    {
+      "key": [
+        "GK",
+        "BOOKS & AUTHORS — STATIC"
+      ],
+      "count": 763
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — PHYSICS"
+      ],
+      "count": 751
+    },
+    {
+      "key": [
+        "REAS",
+        "VENN DIAGRAM"
+      ],
+      "count": 541
+    },
+    {
+      "key": [
+        "MATH",
+        "Statistics"
+      ],
+      "count": 433
+    },
+    {
+      "key": [
+        "REAS",
+        "MATHEMATICAL OPERATIONS"
+      ],
+      "count": 413
+    },
+    {
+      "key": [
+        "GK",
+        "ENVIRONMENT & ECOLOGY"
+      ],
+      "count": 400
+    },
+    {
+      "key": [
+        "GK",
+        "SCIENTISTS, INVENTIONS & DISCOVERIES"
+      ],
+      "count": 349
+    },
+    {
+      "key": [
+        "MATH",
+        "Mixture & Alligation"
+      ],
+      "count": 334
+    },
+    {
+      "key": [
+        "ENG",
+        "Reading Comprehension"
+      ],
+      "count": 320
+    },
+    {
+      "key": [
+        "REAS",
+        "LOGICAL STATEMENT QUESTIONS"
+      ],
+      "count": 300
+    },
+    {
+      "key": [
+        "REAS",
+        "RANKING / ORDER / POSITION"
+      ],
+      "count": 277
+    },
+    {
+      "key": [
+        "GK",
+        "IMPORTANT REPORTS & INDICES"
+      ],
+      "count": 244
+    },
+    {
+      "key": [
+        "MATH",
+        "Discount"
+      ],
+      "count": 233
+    },
+    {
+      "key": [
+        "REAS",
+        "MIRROR IMAGE"
+      ],
+      "count": 229
+    },
+    {
+      "key": [
+        "REAS",
+        "NUMBER / DIGIT OPERATIONS"
+      ],
+      "count": 229
+    },
+    {
+      "key": [
+        "ENG",
+        "Active & Passive Voice"
+      ],
+      "count": 193
+    },
+    {
+      "key": [
+        "GK",
+        "COMPUTER / TECHNOLOGY OVERLAP"
+      ],
+      "count": 192
+    },
+    {
+      "key": [
+        "REAS",
+        "CLOCK"
+      ],
+      "count": 156
+    },
+    {
+      "key": [
+        "ENG",
+        "Direct & Indirect Speech"
+      ],
+      "count": 147
+    },
+    {
+      "key": [
+        "GK",
+        "DEFENCE & SECURITY — STATIC GK"
+      ],
+      "count": 107
+    },
+    {
+      "key": [
+        "MATH",
+        "Age"
+      ],
+      "count": 97
+    },
+    {
+      "key": [
+        "MATH",
+        "Partnership"
+      ],
+      "count": 70
+    },
+    {
+      "key": [
+        "REAS",
+        "FIGURE COUNTING"
+      ],
+      "count": 67
+    },
+    {
+      "key": [
+        "REAS",
+        "PAPER FOLDING"
+      ],
+      "count": 67
+    },
+    {
+      "key": [
+        "ENG",
+        "Sentence Improvement"
+      ],
+      "count": 66
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Computer Fundamentals"
+      ],
+      "count": 57
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Internet & Networking"
+      ],
+      "count": 56
+    },
+    {
+      "key": [
+        "ENG",
+        "Homophones"
+      ],
+      "count": 45
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "MS Office"
+      ],
+      "count": 44
+    },
+    {
+      "key": [
+        "MATH",
+        "Probability"
+      ],
+      "count": 44
+    },
+    {
+      "key": [
+        "REAS",
+        "DICE"
+      ],
+      "count": 40
+    },
+    {
+      "key": [
+        "REAS",
+        "WORD / DICTIONARY ORDER"
+      ],
+      "count": 37
+    },
+    {
+      "key": [
+        "REAS",
+        "MISSING NUMBER"
+      ],
+      "count": 28
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "_unclassified"
+      ],
+      "count": 27
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Computer Hardware"
+      ],
+      "count": 21
+    },
+    {
+      "key": [
+        "REAS",
+        "INPUT-OUTPUT / MACHINE TYPE REASONING"
+      ],
+      "count": 18
+    },
+    {
+      "key": [
+        "GK",
+        "CENSUS & DEMOGRAPHY"
+      ],
+      "count": 10
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Computer Software"
+      ],
+      "count": 9
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Operating Systems"
+      ],
+      "count": 6
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN SPACE & NUCLEAR PROGRAMME"
+      ],
+      "count": 4
+    },
+    {
+      "key": [
+        "REAS",
+        "FLOOR / BUILDING ARRANGEMENT"
+      ],
+      "count": 4
+    },
+    {
+      "key": [
+        "REAS",
+        "SCHEDULING / DAY / MONTH ARRANGEMENT"
+      ],
+      "count": 4
+    },
+    {
+      "key": [
+        "REAS",
+        "AGE-BASED REASONING"
+      ],
+      "count": 3
+    },
+    {
+      "key": [
+        "MATH",
+        "Permutation & Combination"
+      ],
+      "count": 2
+    },
+    {
+      "key": [
+        "MATH",
+        "Race & Circular Motion"
+      ],
+      "count": 2
+    }
+  ],
+  "top_topics": [
+    {
+      "key": [
+        "ENG",
+        "Grammar",
+        ""
+      ],
+      "count": 10043
+    },
+    {
+      "key": [
+        "ENG",
+        "_unclassified",
+        ""
+      ],
+      "count": 8496
+    },
+    {
+      "key": [
+        "REAS",
+        "SERIES",
+        ""
+      ],
+      "count": 6124
+    },
+    {
+      "key": [
+        "ENG",
+        "Cloze Test",
+        ""
+      ],
+      "count": 4977
+    },
+    {
+      "key": [
+        "MATH",
+        "_unclassified",
+        ""
+      ],
+      "count": 4560
+    },
+    {
+      "key": [
+        "REAS",
+        "ANALOGY",
+        ""
+      ],
+      "count": 4142
+    },
+    {
+      "key": [
+        "REAS",
+        "NON-VERBAL SERIES",
+        ""
+      ],
+      "count": 4019
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        ""
+      ],
+      "count": 3709
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE",
+        ""
+      ],
+      "count": 3503
+    },
+    {
+      "key": [
+        "REAS",
+        "CODING-DECODING",
+        ""
+      ],
+      "count": 3344
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        ""
+      ],
+      "count": 3311
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN POLITY & CONSTITUTION",
+        ""
+      ],
+      "count": 3269
+    },
+    {
+      "key": [
+        "ENG",
+        "Idioms",
+        ""
+      ],
+      "count": 3092
+    },
+    {
+      "key": [
+        "MATH",
+        "Mensuration 2D & 3D",
+        ""
+      ],
+      "count": 3044
+    },
+    {
+      "key": [
+        "REAS",
+        "PUZZLES",
+        ""
+      ],
+      "count": 3031
+    },
+    {
+      "key": [
+        "MATH",
+        "Profit & Loss",
+        ""
+      ],
+      "count": 3003
+    },
+    {
+      "key": [
+        "ENG",
+        "Synonym",
+        ""
+      ],
+      "count": 2889
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN GEOGRAPHY",
+        ""
+      ],
+      "count": 2600
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY",
+        ""
+      ],
+      "count": 2453
+    },
+    {
+      "key": [
+        "REAS",
+        "Logical Reasoning",
+        ""
+      ],
+      "count": 2412
+    },
+    {
+      "key": [
+        "MATH",
+        "Data Interpretation",
+        ""
+      ],
+      "count": 2327
+    },
+    {
+      "key": [
+        "GK",
+        "SPORTS — STATIC GK",
+        ""
+      ],
+      "count": 2289
+    },
+    {
+      "key": [
+        "ENG",
+        "Antonym",
+        ""
+      ],
+      "count": 2266
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry",
+        ""
+      ],
+      "count": 2075
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        ""
+      ],
+      "count": 1793
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Distance",
+        ""
+      ],
+      "count": 1766
+    },
+    {
+      "key": [
+        "GK",
+        "Static GK",
+        ""
+      ],
+      "count": 1759
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Work",
+        ""
+      ],
+      "count": 1681
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        ""
+      ],
+      "count": 1675
+    },
+    {
+      "key": [
+        "REAS",
+        "SYLLOGISM",
+        ""
+      ],
+      "count": 1625
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — BIOLOGY",
+        ""
+      ],
+      "count": 1623
+    },
+    {
+      "key": [
+        "MATH",
+        "Trigonometry",
+        ""
+      ],
+      "count": 1589
+    },
+    {
+      "key": [
+        "MATH",
+        "Ratio & Proportion",
+        ""
+      ],
+      "count": 1561
+    },
+    {
+      "key": [
+        "ENG",
+        "OWS",
+        ""
+      ],
+      "count": 1545
+    },
+    {
+      "key": [
+        "MATH",
+        "Algebra",
+        ""
+      ],
+      "count": 1544
+    },
+    {
+      "key": [
+        "REAS",
+        "CLASSIFICATION / ODD ONE OUT",
+        ""
+      ],
+      "count": 1531
+    },
+    {
+      "key": [
+        "REAS",
+        "ALPHABET TEST",
+        ""
+      ],
+      "count": 1516
+    },
+    {
+      "key": [
+        "MATH",
+        "Percentage",
+        ""
+      ],
+      "count": 1341
+    },
+    {
+      "key": [
+        "GK",
+        "AWARDS — STATIC",
+        ""
+      ],
+      "count": 1300
+    },
+    {
+      "key": [
+        "MATH",
+        "Average",
+        ""
+      ],
+      "count": 1281
+    },
+    {
+      "key": [
+        "REAS",
+        "SEATING ARRANGEMENT",
+        ""
+      ],
+      "count": 1280
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — CHEMISTRY",
+        ""
+      ],
+      "count": 1209
+    },
+    {
+      "key": [
+        "REAS",
+        "_unclassified",
+        ""
+      ],
+      "count": 1171
+    },
+    {
+      "key": [
+        "ENG",
+        "Para Jumbles",
+        ""
+      ],
+      "count": 1152
+    },
+    {
+      "key": [
+        "REAS",
+        "BLOOD RELATIONS",
+        ""
+      ],
+      "count": 1137
+    },
+    {
+      "key": [
+        "ENG",
+        "Spelling",
+        ""
+      ],
+      "count": 1092
+    },
+    {
+      "key": [
+        "GK",
+        "ANCIENT INDIAN HISTORY",
+        ""
+      ],
+      "count": 1008
+    },
+    {
+      "key": [
+        "MATH",
+        "Simple Interest",
+        ""
+      ],
+      "count": 1002
+    },
+    {
+      "key": [
+        "GK",
+        "WORLD GEOGRAPHY",
+        ""
+      ],
+      "count": 959
+    },
+    {
+      "key": [
+        "GK",
+        "MEDIEVAL INDIAN HISTORY",
+        ""
+      ],
+      "count": 915
+    },
+    {
+      "key": [
+        "ENG",
+        "Error Detection",
+        ""
+      ],
+      "count": 882
+    },
+    {
+      "key": [
+        "GK",
+        "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+        ""
+      ],
+      "count": 881
+    },
+    {
+      "key": [
+        "GK",
+        "STATIC GK",
+        ""
+      ],
+      "count": 813
+    },
+    {
+      "key": [
+        "MATH",
+        "Compound Interest",
+        ""
+      ],
+      "count": 800
+    },
+    {
+      "key": [
+        "ENG",
+        "Fill in the Blanks",
+        ""
+      ],
+      "count": 785
+    },
+    {
+      "key": [
+        "GK",
+        "BOOKS & AUTHORS — STATIC",
+        ""
+      ],
+      "count": 763
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — PHYSICS",
+        ""
+      ],
+      "count": 751
+    },
+    {
+      "key": [
+        "REAS",
+        "VENN DIAGRAM",
+        ""
+      ],
+      "count": 541
+    },
+    {
+      "key": [
+        "MATH",
+        "Statistics",
+        ""
+      ],
+      "count": 433
+    },
+    {
+      "key": [
+        "REAS",
+        "MATHEMATICAL OPERATIONS",
+        ""
+      ],
+      "count": 413
+    },
+    {
+      "key": [
+        "GK",
+        "ENVIRONMENT & ECOLOGY",
+        ""
+      ],
+      "count": 400
+    },
+    {
+      "key": [
+        "GK",
+        "SCIENTISTS, INVENTIONS & DISCOVERIES",
+        ""
+      ],
+      "count": 349
+    },
+    {
+      "key": [
+        "MATH",
+        "Mixture & Alligation",
+        ""
+      ],
+      "count": 334
+    },
+    {
+      "key": [
+        "ENG",
+        "Reading Comprehension",
+        ""
+      ],
+      "count": 320
+    },
+    {
+      "key": [
+        "REAS",
+        "LOGICAL STATEMENT QUESTIONS",
+        ""
+      ],
+      "count": 300
+    },
+    {
+      "key": [
+        "REAS",
+        "RANKING / ORDER / POSITION",
+        ""
+      ],
+      "count": 277
+    },
+    {
+      "key": [
+        "GK",
+        "IMPORTANT REPORTS & INDICES",
+        ""
+      ],
+      "count": 244
+    },
+    {
+      "key": [
+        "MATH",
+        "Discount",
+        ""
+      ],
+      "count": 233
+    },
+    {
+      "key": [
+        "REAS",
+        "MIRROR IMAGE",
+        ""
+      ],
+      "count": 229
+    },
+    {
+      "key": [
+        "REAS",
+        "NUMBER / DIGIT OPERATIONS",
+        ""
+      ],
+      "count": 229
+    },
+    {
+      "key": [
+        "ENG",
+        "Active & Passive Voice",
+        ""
+      ],
+      "count": 193
+    },
+    {
+      "key": [
+        "GK",
+        "COMPUTER / TECHNOLOGY OVERLAP",
+        ""
+      ],
+      "count": 192
+    },
+    {
+      "key": [
+        "REAS",
+        "CLOCK",
+        ""
+      ],
+      "count": 156
+    },
+    {
+      "key": [
+        "ENG",
+        "Direct & Indirect Speech",
+        ""
+      ],
+      "count": 147
+    },
+    {
+      "key": [
+        "GK",
+        "DEFENCE & SECURITY — STATIC GK",
+        ""
+      ],
+      "count": 107
+    },
+    {
+      "key": [
+        "MATH",
+        "Age",
+        ""
+      ],
+      "count": 97
+    },
+    {
+      "key": [
+        "MATH",
+        "Partnership",
+        ""
+      ],
+      "count": 70
+    },
+    {
+      "key": [
+        "REAS",
+        "FIGURE COUNTING",
+        ""
+      ],
+      "count": 67
+    },
+    {
+      "key": [
+        "REAS",
+        "PAPER FOLDING",
+        ""
+      ],
+      "count": 67
+    },
+    {
+      "key": [
+        "ENG",
+        "Sentence Improvement",
+        ""
+      ],
+      "count": 66
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Computer Fundamentals",
+        ""
+      ],
+      "count": 57
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Internet & Networking",
+        ""
+      ],
+      "count": 56
+    },
+    {
+      "key": [
+        "ENG",
+        "Homophones",
+        ""
+      ],
+      "count": 45
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "MS Office",
+        ""
+      ],
+      "count": 44
+    },
+    {
+      "key": [
+        "MATH",
+        "Probability",
+        ""
+      ],
+      "count": 44
+    },
+    {
+      "key": [
+        "REAS",
+        "DICE",
+        ""
+      ],
+      "count": 40
+    },
+    {
+      "key": [
+        "REAS",
+        "WORD / DICTIONARY ORDER",
+        ""
+      ],
+      "count": 37
+    },
+    {
+      "key": [
+        "REAS",
+        "MISSING NUMBER",
+        ""
+      ],
+      "count": 28
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "_unclassified",
+        ""
+      ],
+      "count": 27
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Computer Hardware",
+        ""
+      ],
+      "count": 21
+    },
+    {
+      "key": [
+        "REAS",
+        "INPUT-OUTPUT / MACHINE TYPE REASONING",
+        ""
+      ],
+      "count": 18
+    },
+    {
+      "key": [
+        "GK",
+        "CENSUS & DEMOGRAPHY",
+        ""
+      ],
+      "count": 10
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Computer Software",
+        ""
+      ],
+      "count": 9
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "Operating Systems",
+        ""
+      ],
+      "count": 6
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN SPACE & NUCLEAR PROGRAMME",
+        ""
+      ],
+      "count": 4
+    },
+    {
+      "key": [
+        "REAS",
+        "FLOOR / BUILDING ARRANGEMENT",
+        ""
+      ],
+      "count": 4
+    },
+    {
+      "key": [
+        "REAS",
+        "SCHEDULING / DAY / MONTH ARRANGEMENT",
+        ""
+      ],
+      "count": 4
+    },
+    {
+      "key": [
+        "REAS",
+        "AGE-BASED REASONING",
+        ""
+      ],
+      "count": 3
+    },
+    {
+      "key": [
+        "MATH",
+        "Permutation & Combination",
+        ""
+      ],
+      "count": 2
+    },
+    {
+      "key": [
+        "MATH",
+        "Race & Circular Motion",
+        ""
+      ],
+      "count": 2
+    }
+  ],
+  "top_concepts": [
+    {
+      "key": [
+        "ENG",
+        "Grammar",
+        "",
+        "Grammar"
+      ],
+      "count": 8091
+    },
+    {
+      "key": [
+        "REAS",
+        "SERIES",
+        "",
+        "Series"
+      ],
+      "count": 5176
+    },
+    {
+      "key": [
+        "ENG",
+        "Cloze Test",
+        "",
+        "Cloze Test"
+      ],
+      "count": 4973
+    },
+    {
+      "key": [
+        "REAS",
+        "ANALOGY",
+        "",
+        "Analogy"
+      ],
+      "count": 4110
+    },
+    {
+      "key": [
+        "ENG",
+        "_unclassified",
+        "",
+        "Vocabulary"
+      ],
+      "count": 3774
+    },
+    {
+      "key": [
+        "REAS",
+        "NON-VERBAL SERIES",
+        "",
+        "Non Verbal Reasoning"
+      ],
+      "count": 3587
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN POLITY & CONSTITUTION",
+        "",
+        "Polity"
+      ],
+      "count": 3049
+    },
+    {
+      "key": [
+        "REAS",
+        "PUZZLES",
+        "",
+        "Puzzle"
+      ],
+      "count": 3027
+    },
+    {
+      "key": [
+        "REAS",
+        "CODING-DECODING",
+        "",
+        "Coding-Decoding"
+      ],
+      "count": 2952
+    },
+    {
+      "key": [
+        "MATH",
+        "Profit & Loss",
+        "",
+        "Profit & Loss"
+      ],
+      "count": 2776
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "Unidentified"
+      ],
+      "count": 2634
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE",
+        "",
+        "Art and Culture"
+      ],
+      "count": 2584
+    },
+    {
+      "key": [
+        "ENG",
+        "Idioms",
+        "",
+        "Idioms"
+      ],
+      "count": 2559
+    },
+    {
+      "key": [
+        "ENG",
+        "_unclassified",
+        "",
+        "Unidentified"
+      ],
+      "count": 2450
+    },
+    {
+      "key": [
+        "MATH",
+        "Mensuration 2D & 3D",
+        "",
+        "Mensuration"
+      ],
+      "count": 2372
+    },
+    {
+      "key": [
+        "ENG",
+        "Antonym",
+        "",
+        "Antonym"
+      ],
+      "count": 2266
+    },
+    {
+      "key": [
+        "ENG",
+        "Synonym",
+        "",
+        "Synonym"
+      ],
+      "count": 2266
+    },
+    {
+      "key": [
+        "REAS",
+        "Logical Reasoning",
+        "",
+        "Logical Reasoning"
+      ],
+      "count": 2220
+    },
+    {
+      "key": [
+        "ENG",
+        "_unclassified",
+        "",
+        "English"
+      ],
+      "count": 2218
+    },
+    {
+      "key": [
+        "MATH",
+        "_unclassified",
+        "",
+        "Quantitative Aptitude"
+      ],
+      "count": 2144
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN GEOGRAPHY",
+        "",
+        "Indian Geography"
+      ],
+      "count": 2079
+    },
+    {
+      "key": [
+        "GK",
+        "SPORTS — STATIC GK",
+        "",
+        "Sports"
+      ],
+      "count": 2055
+    },
+    {
+      "key": [
+        "MATH",
+        "_unclassified",
+        "",
+        "Unidentified"
+      ],
+      "count": 2051
+    },
+    {
+      "key": [
+        "ENG",
+        "Grammar",
+        "",
+        "Verbal Ability"
+      ],
+      "count": 1820
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY",
+        "",
+        "Economy"
+      ],
+      "count": 1803
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry",
+        "",
+        "Geometry"
+      ],
+      "count": 1713
+    },
+    {
+      "key": [
+        "MATH",
+        "Trigonometry",
+        "",
+        "Trigonometry"
+      ],
+      "count": 1589
+    },
+    {
+      "key": [
+        "ENG",
+        "OWS",
+        "",
+        "OWS"
+      ],
+      "count": 1538
+    },
+    {
+      "key": [
+        "REAS",
+        "CLASSIFICATION / ODD ONE OUT",
+        "",
+        "Classification"
+      ],
+      "count": 1529
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Distance",
+        "",
+        "Speed Time and Distance"
+      ],
+      "count": 1524
+    },
+    {
+      "key": [
+        "GK",
+        "Static GK",
+        "",
+        "General Knowledge"
+      ],
+      "count": 1510
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Work",
+        "",
+        "Time & Work"
+      ],
+      "count": 1494
+    },
+    {
+      "key": [
+        "REAS",
+        "ALPHABET TEST",
+        "",
+        "Alphabet/Word Test"
+      ],
+      "count": 1463
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        "",
+        "Number System"
+      ],
+      "count": 1455
+    },
+    {
+      "key": [
+        "MATH",
+        "Algebra",
+        "",
+        "Algebra"
+      ],
+      "count": 1432
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — BIOLOGY",
+        "",
+        "Biology"
+      ],
+      "count": 1421
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        "",
+        "Simplification"
+      ],
+      "count": 1393
+    },
+    {
+      "key": [
+        "REAS",
+        "SYLLOGISM",
+        "",
+        "Syllogism"
+      ],
+      "count": 1379
+    },
+    {
+      "key": [
+        "MATH",
+        "Percentage",
+        "",
+        "Percentage"
+      ],
+      "count": 1323
+    },
+    {
+      "key": [
+        "MATH",
+        "Ratio & Proportion",
+        "",
+        "Ratio & Proportion"
+      ],
+      "count": 1223
+    },
+    {
+      "key": [
+        "GK",
+        "AWARDS — STATIC",
+        "",
+        "Awards and Honours"
+      ],
+      "count": 1222
+    },
+    {
+      "key": [
+        "MATH",
+        "Average",
+        "",
+        "Average"
+      ],
+      "count": 1184
+    },
+    {
+      "key": [
+        "ENG",
+        "Para Jumbles",
+        "",
+        "Para Jumbles"
+      ],
+      "count": 1151
+    },
+    {
+      "key": [
+        "REAS",
+        "BLOOD RELATIONS",
+        "",
+        "Blood Relations"
+      ],
+      "count": 1086
+    },
+    {
+      "key": [
+        "ENG",
+        "Spelling",
+        "",
+        "Spelling"
+      ],
+      "count": 1067
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — CHEMISTRY",
+        "",
+        "Chemistry"
+      ],
+      "count": 1032
+    },
+    {
+      "key": [
+        "MATH",
+        "Simple Interest",
+        "",
+        "Simple Interest"
+      ],
+      "count": 997
+    },
+    {
+      "key": [
+        "MATH",
+        "Data Interpretation",
+        "",
+        "Bar Graph"
+      ],
+      "count": 923
+    },
+    {
+      "key": [
+        "ENG",
+        "Error Detection",
+        "",
+        "Error Detection"
+      ],
+      "count": 882
+    },
+    {
+      "key": [
+        "REAS",
+        "_unclassified",
+        "",
+        "Unidentified"
+      ],
+      "count": 876
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "Modern India (National Movement )"
+      ],
+      "count": 866
+    },
+    {
+      "key": [
+        "GK",
+        "WORLD GEOGRAPHY",
+        "",
+        "Geography (World Geography)"
+      ],
+      "count": 822
+    },
+    {
+      "key": [
+        "MATH",
+        "Compound Interest",
+        "",
+        "Compound Interest"
+      ],
+      "count": 800
+    },
+    {
+      "key": [
+        "ENG",
+        "Fill in the Blanks",
+        "",
+        "Fill in the Blanks"
+      ],
+      "count": 785
+    },
+    {
+      "key": [
+        "REAS",
+        "SEATING ARRANGEMENT",
+        "",
+        "Seating Arrangement"
+      ],
+      "count": 782
+    },
+    {
+      "key": [
+        "MATH",
+        "Data Interpretation",
+        "",
+        "Data Interpretation"
+      ],
+      "count": 778
+    },
+    {
+      "key": [
+        "GK",
+        "ANCIENT INDIAN HISTORY",
+        "",
+        "Ancient History"
+      ],
+      "count": 773
+    },
+    {
+      "key": [
+        "GK",
+        "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+        "",
+        "Government Policies and Schemes"
+      ],
+      "count": 757
+    },
+    {
+      "key": [
+        "GK",
+        "MEDIEVAL INDIAN HISTORY",
+        "",
+        "Medieval History"
+      ],
+      "count": 743
+    },
+    {
+      "key": [
+        "GK",
+        "BOOKS & AUTHORS — STATIC",
+        "",
+        "Books and Authors"
+      ],
+      "count": 719
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — PHYSICS",
+        "",
+        "Physics"
+      ],
+      "count": 550
+    },
+    {
+      "key": [
+        "REAS",
+        "VENN DIAGRAM",
+        "",
+        "Venn Diagram"
+      ],
+      "count": 524
+    },
+    {
+      "key": [
+        "ENG",
+        "Synonym",
+        "",
+        "Antonym"
+      ],
+      "count": 520
+    },
+    {
+      "key": [
+        "MATH",
+        "Data Interpretation",
+        "",
+        "Pie Chart"
+      ],
+      "count": 518
+    },
+    {
+      "key": [
+        "ENG",
+        "Idioms",
+        "",
+        "Sentence Improvement"
+      ],
+      "count": 502
+    },
+    {
+      "key": [
+        "GK",
+        "STATIC GK",
+        "",
+        "Famous People"
+      ],
+      "count": 496
+    },
+    {
+      "key": [
+        "REAS",
+        "SERIES",
+        "",
+        "Number Series"
+      ],
+      "count": 487
+    },
+    {
+      "key": [
+        "MATH",
+        "Mensuration 2D & 3D",
+        "",
+        "Solid Figures"
+      ],
+      "count": 456
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "Appointments and Resignations"
+      ],
+      "count": 442
+    },
+    {
+      "key": [
+        "REAS",
+        "SERIES",
+        "",
+        "Alphabet Series"
+      ],
+      "count": 379
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "Current Affairs"
+      ],
+      "count": 373
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "Modern India (Pre-Congress Phase)"
+      ],
+      "count": 363
+    },
+    {
+      "key": [
+        "ENG",
+        "Reading Comprehension",
+        "",
+        "Reading Comprehension"
+      ],
+      "count": 320
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE",
+        "",
+        "Dances"
+      ],
+      "count": 320
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN GEOGRAPHY",
+        "",
+        "Indian Economic and Human Geography"
+      ],
+      "count": 313
+    },
+    {
+      "key": [
+        "GK",
+        "ENVIRONMENT & ECOLOGY",
+        "",
+        "Ecology and Environment"
+      ],
+      "count": 279
+    },
+    {
+      "key": [
+        "REAS",
+        "NON-VERBAL SERIES",
+        "",
+        "Image Based"
+      ],
+      "count": 272
+    },
+    {
+      "key": [
+        "REAS",
+        "CODING-DECODING",
+        "",
+        "Coding and Decoding in Fictitious Language"
+      ],
+      "count": 257
+    },
+    {
+      "key": [
+        "MATH",
+        "Mixture & Alligation",
+        "",
+        "Mixture Problems"
+      ],
+      "count": 255
+    },
+    {
+      "key": [
+        "GK",
+        "STATIC GK",
+        "",
+        "Famous Places"
+      ],
+      "count": 249
+    },
+    {
+      "key": [
+        "REAS",
+        "SYLLOGISM",
+        "",
+        "Conventional Syllogism"
+      ],
+      "count": 245
+    },
+    {
+      "key": [
+        "GK",
+        "IMPORTANT REPORTS & INDICES",
+        "",
+        "Indexes and Reports"
+      ],
+      "count": 243
+    },
+    {
+      "key": [
+        "GK",
+        "Static GK",
+        "",
+        "General Science"
+      ],
+      "count": 234
+    },
+    {
+      "key": [
+        "MATH",
+        "Discount",
+        "",
+        "Discount and MP"
+      ],
+      "count": 233
+    },
+    {
+      "key": [
+        "REAS",
+        "MATHEMATICAL OPERATIONS",
+        "",
+        "Direction and Distance"
+      ],
+      "count": 232
+    },
+    {
+      "key": [
+        "REAS",
+        "MIRROR IMAGE",
+        "",
+        "Mirror/Water Image"
+      ],
+      "count": 229
+    },
+    {
+      "key": [
+        "REAS",
+        "NUMBER / DIGIT OPERATIONS",
+        "",
+        "Number System"
+      ],
+      "count": 229
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "National Affairs"
+      ],
+      "count": 222
+    },
+    {
+      "key": [
+        "REAS",
+        "SEATING ARRANGEMENT",
+        "",
+        "Circular Arrangement"
+      ],
+      "count": 218
+    },
+    {
+      "key": [
+        "MATH",
+        "Mensuration 2D & 3D",
+        "",
+        "Plane Figures"
+      ],
+      "count": 215
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "Days and Events"
+      ],
+      "count": 197
+    },
+    {
+      "key": [
+        "GK",
+        "SCIENTISTS, INVENTIONS & DISCOVERIES",
+        "",
+        "Science Technology and Inventions"
+      ],
+      "count": 192
+    },
+    {
+      "key": [
+        "REAS",
+        "RANKING / ORDER / POSITION",
+        "",
+        "Ordering and Ranking"
+      ],
+      "count": 190
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE",
+        "",
+        "Fairs and Festivals"
+      ],
+      "count": 183
+    },
+    {
+      "key": [
+        "REAS",
+        "SEATING ARRANGEMENT",
+        "",
+        "Arrangement and Pattern"
+      ],
+      "count": 180
+    },
+    {
+      "key": [
+        "ENG",
+        "Active & Passive Voice",
+        "",
+        "Active and Passive Voice"
+      ],
+      "count": 177
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE",
+        "",
+        "Music"
+      ],
+      "count": 174
+    },
+    {
+      "key": [
+        "MATH",
+        "Profit & Loss",
+        "",
+        "Successive Selling"
+      ],
+      "count": 167
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Work",
+        "",
+        "Work Efficiency"
+      ],
+      "count": 164
+    },
+    {
+      "key": [
+        "MATH",
+        "Statistics",
+        "",
+        "Elementary Statistics"
+      ],
+      "count": 157
+    },
+    {
+      "key": [
+        "REAS",
+        "NON-VERBAL SERIES",
+        "",
+        "Hidden Image"
+      ],
+      "count": 157
+    },
+    {
+      "key": [
+        "REAS",
+        "CLOCK",
+        "",
+        "Clock and Calendar"
+      ],
+      "count": 156
+    },
+    {
+      "key": [
+        "MATH",
+        "Statistics",
+        "",
+        "Statistics"
+      ],
+      "count": 153
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "States Affairs"
+      ],
+      "count": 145
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        "",
+        "LCM and HCF"
+      ],
+      "count": 140
+    },
+    {
+      "key": [
+        "REAS",
+        "_unclassified",
+        "",
+        "General Knowledge"
+      ],
+      "count": 136
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY",
+        "",
+        "Money and Banking"
+      ],
+      "count": 134
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        "",
+        "Bodmas Rule"
+      ],
+      "count": 133
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY",
+        "",
+        "Business and Economy"
+      ],
+      "count": 130
+    },
+    {
+      "key": [
+        "MATH",
+        "Ratio & Proportion",
+        "",
+        "Simple Ratios"
+      ],
+      "count": 128
+    },
+    {
+      "key": [
+        "ENG",
+        "Direct & Indirect Speech",
+        "",
+        "Direct and Indirect Speech"
+      ],
+      "count": 123
+    },
+    {
+      "key": [
+        "MATH",
+        "Ratio & Proportion",
+        "",
+        "Trigonometric Ratios and Identities"
+      ],
+      "count": 120
+    },
+    {
+      "key": [
+        "GK",
+        "SCIENTISTS, INVENTIONS & DISCOVERIES",
+        "",
+        "Science and Technology"
+      ],
+      "count": 115
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry",
+        "",
+        "Circles, Chords and Tangents"
+      ],
+      "count": 114
+    },
+    {
+      "key": [
+        "REAS",
+        "Logical Reasoning",
+        "",
+        "Similarity and Differences"
+      ],
+      "count": 108
+    },
+    {
+      "key": [
+        "ENG",
+        "Grammar",
+        "",
+        "Sentence"
+      ],
+      "count": 107
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Distance",
+        "",
+        "Relative Speed"
+      ],
+      "count": 98
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "Person in News"
+      ],
+      "count": 97
+    },
+    {
+      "key": [
+        "REAS",
+        "LOGICAL STATEMENT QUESTIONS",
+        "",
+        "Statements and Conclusions"
+      ],
+      "count": 97
+    },
+    {
+      "key": [
+        "ENG",
+        "Synonym",
+        "",
+        "Synonym/Antonym"
+      ],
+      "count": 94
+    },
+    {
+      "key": [
+        "GK",
+        "DEFENCE & SECURITY — STATIC GK",
+        "",
+        "Defence"
+      ],
+      "count": 92
+    },
+    {
+      "key": [
+        "REAS",
+        "_unclassified",
+        "",
+        "Completion of Incomplete Pattern"
+      ],
+      "count": 92
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN POLITY & CONSTITUTION",
+        "",
+        "Biology"
+      ],
+      "count": 90
+    },
+    {
+      "key": [
+        "MATH",
+        "Age",
+        "",
+        "Problem on Age"
+      ],
+      "count": 90
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE",
+        "",
+        "Architecture"
+      ],
+      "count": 88
+    },
+    {
+      "key": [
+        "REAS",
+        "SEATING ARRANGEMENT",
+        "",
+        "Linear Arrangement"
+      ],
+      "count": 87
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "International Affairs"
+      ],
+      "count": 86
+    },
+    {
+      "key": [
+        "GK",
+        "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+        "",
+        "Initiatives by Government"
+      ],
+      "count": 84
+    },
+    {
+      "key": [
+        "REAS",
+        "CODING-DECODING",
+        "",
+        "Coding Letters of a Word"
+      ],
+      "count": 78
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "Modern Indian History"
+      ],
+      "count": 74
+    },
+    {
+      "key": [
+        "MATH",
+        "Data Interpretation",
+        "",
+        "Line Graph"
+      ],
+      "count": 73
+    },
+    {
+      "key": [
+        "MATH",
+        "Partnership",
+        "",
+        "Partnership"
+      ],
+      "count": 70
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        "",
+        "Divisibility and Remainder"
+      ],
+      "count": 69
+    },
+    {
+      "key": [
+        "MATH",
+        "Average",
+        "",
+        "Average Speed"
+      ],
+      "count": 68
+    },
+    {
+      "key": [
+        "REAS",
+        "FIGURE COUNTING",
+        "",
+        "Figure Counting"
+      ],
+      "count": 67
+    },
+    {
+      "key": [
+        "REAS",
+        "PAPER FOLDING",
+        "",
+        "Paper Folding/Cutting"
+      ],
+      "count": 67
+    },
+    {
+      "key": [
+        "ENG",
+        "Sentence Improvement",
+        "",
+        "Sentence Improvement"
+      ],
+      "count": 66
+    },
+    {
+      "key": [
+        "GK",
+        "MEDIEVAL INDIAN HISTORY",
+        "",
+        "Mughal empire"
+      ],
+      "count": 66
+    },
+    {
+      "key": [
+        "MATH",
+        "Algebra",
+        "",
+        "Identities"
+      ],
+      "count": 66
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN GEOGRAPHY",
+        "",
+        "Indian Rivers and Water Resources"
+      ],
+      "count": 65
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry",
+        "",
+        "Triangles, Congruence and Similarity"
+      ],
+      "count": 65
+    },
+    {
+      "key": [
+        "GK",
+        "ART & CULTURE",
+        "",
+        "Art & Culture"
+      ],
+      "count": 63
+    },
+    {
+      "key": [
+        "REAS",
+        "SERIES",
+        "",
+        "Mixed Series"
+      ],
+      "count": 63
+    },
+    {
+      "key": [
+        "GK",
+        "SPORTS — STATIC GK",
+        "",
+        "Sports Terminology"
+      ],
+      "count": 60
+    },
+    {
+      "key": [
+        "REAS",
+        "MATHEMATICAL OPERATIONS",
+        "",
+        "Operations on Place Value"
+      ],
+      "count": 60
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY",
+        "",
+        "National Income Accounting"
+      ],
+      "count": 57
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "Important Historical Data"
+      ],
+      "count": 56
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Distance",
+        "",
+        "Problem on Trains"
+      ],
+      "count": 55
+    },
+    {
+      "key": [
+        "GK",
+        "COMPUTER / TECHNOLOGY OVERLAP",
+        "",
+        "Introduction to Computers"
+      ],
+      "count": 54
+    },
+    {
+      "key": [
+        "GK",
+        "WORLD GEOGRAPHY",
+        "",
+        "World Organisations"
+      ],
+      "count": 54
+    },
+    {
+      "key": [
+        "GK",
+        "SPORTS — STATIC GK",
+        "",
+        "Sports Personalities"
+      ],
+      "count": 52
+    },
+    {
+      "key": [
+        "REAS",
+        "LOGICAL STATEMENT QUESTIONS",
+        "",
+        "Situation Reaction Test"
+      ],
+      "count": 51
+    },
+    {
+      "key": [
+        "GK",
+        "GENERAL SCIENCE — BIOLOGY",
+        "",
+        "Cell"
+      ],
+      "count": 50
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "National movement (1919 - 1939)"
+      ],
+      "count": 50
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "Committees and Recommendation"
+      ],
+      "count": 49
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        "",
+        "Fractions"
+      ],
+      "count": 49
+    },
+    {
+      "key": [
+        "MATH",
+        "_unclassified",
+        "",
+        "Interest"
+      ],
+      "count": 49
+    },
+    {
+      "key": [
+        "REAS",
+        "CODING-DECODING",
+        "",
+        "Coding Decoding Based on Numbers"
+      ],
+      "count": 49
+    },
+    {
+      "key": [
+        "GK",
+        "CURRENT AFFAIRS",
+        "",
+        "Places in News"
+      ],
+      "count": 48
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "Socio - Religious Reform Movements in the 19th and 20th CE India"
+      ],
+      "count": 48
+    },
+    {
+      "key": [
+        "REAS",
+        "ALPHABET TEST",
+        "",
+        "Dictionary or Alphabet Based"
+      ],
+      "count": 48
+    },
+    {
+      "key": [
+        "REAS",
+        "Logical Reasoning",
+        "",
+        "Critical Reasoning"
+      ],
+      "count": 48
+    },
+    {
+      "key": [
+        "GK",
+        "AWARDS — STATIC",
+        "",
+        "National Awards"
+      ],
+      "count": 46
+    },
+    {
+      "key": [
+        "GK",
+        "STATIC GK",
+        "",
+        "Location(s)"
+      ],
+      "count": 46
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "India and World"
+      ],
+      "count": 45
+    },
+    {
+      "key": [
+        "MATH",
+        "Statistics",
+        "",
+        "Probability and Statistics"
+      ],
+      "count": 45
+    },
+    {
+      "key": [
+        "REAS",
+        "RANKING / ORDER / POSITION",
+        "",
+        "Order Based"
+      ],
+      "count": 45
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "Origin and evolution of Universe Solar system"
+      ],
+      "count": 44
+    },
+    {
+      "key": [
+        "COMPUTER",
+        "MS Office",
+        "",
+        "Microsoft Office"
+      ],
+      "count": 43
+    },
+    {
+      "key": [
+        "GK",
+        "MEDIEVAL INDIAN HISTORY",
+        "",
+        "Delhi Sultanate"
+      ],
+      "count": 43
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "Post Independence Events"
+      ],
+      "count": 43
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry",
+        "",
+        "Triangles"
+      ],
+      "count": 43
+    },
+    {
+      "key": [
+        "MATH",
+        "Mixture & Alligation",
+        "",
+        "To Make a Mixture from Two Mixtures"
+      ],
+      "count": 43
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "Summits and Conferences"
+      ],
+      "count": 42
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry",
+        "",
+        "Co-ordinate Geometry"
+      ],
+      "count": 41
+    },
+    {
+      "key": [
+        "REAS",
+        "BLOOD RELATIONS",
+        "",
+        "Coded Blood Relation Problems"
+      ],
+      "count": 41
+    },
+    {
+      "key": [
+        "REAS",
+        "RANKING / ORDER / POSITION",
+        "",
+        "Rank Based"
+      ],
+      "count": 41
+    },
+    {
+      "key": [
+        "GK",
+        "ANCIENT INDIAN HISTORY",
+        "",
+        "Prehistoric period"
+      ],
+      "count": 40
+    },
+    {
+      "key": [
+        "MATH",
+        "Time & Distance",
+        "",
+        "Boat and River"
+      ],
+      "count": 40
+    },
+    {
+      "key": [
+        "REAS",
+        "DICE",
+        "",
+        "Cube and Dice"
+      ],
+      "count": 40
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY",
+        "",
+        "Agriculture"
+      ],
+      "count": 39
+    },
+    {
+      "key": [
+        "GK",
+        "SPORTS — STATIC GK",
+        "",
+        "Sports Events"
+      ],
+      "count": 39
+    },
+    {
+      "key": [
+        "MATH",
+        "Number System",
+        "",
+        "Surds and Indices"
+      ],
+      "count": 39
+    },
+    {
+      "key": [
+        "REAS",
+        "LOGICAL STATEMENT QUESTIONS",
+        "",
+        "Course of Action"
+      ],
+      "count": 39
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "History"
+      ],
+      "count": 38
+    },
+    {
+      "key": [
+        "MATH",
+        "_unclassified",
+        "",
+        "Square and Square Root"
+      ],
+      "count": 38
+    },
+    {
+      "key": [
+        "REAS",
+        "MATHEMATICAL OPERATIONS",
+        "",
+        "Direction and Distance Turns"
+      ],
+      "count": 38
+    },
+    {
+      "key": [
+        "REAS",
+        "MATHEMATICAL OPERATIONS",
+        "",
+        "Simplification"
+      ],
+      "count": 38
+    },
+    {
+      "key": [
+        "ENG",
+        "_unclassified",
+        "",
+        "Match the Following"
+      ],
+      "count": 36
+    },
+    {
+      "key": [
+        "GK",
+        "MODERN INDIAN HISTORY",
+        "",
+        "India under East India Company’s Rule"
+      ],
+      "count": 35
+    },
+    {
+      "key": [
+        "MATH",
+        "Geometry",
+        "",
+        "Quadrilaterals"
+      ],
+      "count": 35
+    },
+    {
+      "key": [
+        "GK",
+        "ANCIENT INDIAN HISTORY",
+        "",
+        "Industrial Sector"
+      ],
+      "count": 34
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN ECONOMY",
+        "",
+        "RBI"
+      ],
+      "count": 34
+    },
+    {
+      "key": [
+        "GK",
+        "INDIAN GEOGRAPHY",
+        "",
+        "Indian Climate"
+      ],
+      "count": 34
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "Mapping"
+      ],
+      "count": 34
+    },
+    {
+      "key": [
+        "ENG",
+        "Homophones",
+        "",
+        "Homophones"
+      ],
+      "count": 33
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "Geomorphology"
+      ],
+      "count": 33
+    },
+    {
+      "key": [
+        "GK",
+        "BOOKS & AUTHORS — STATIC",
+        "",
+        "National Authors"
+      ],
+      "count": 32
+    },
+    {
+      "key": [
+        "GK",
+        "_unclassified",
+        "",
+        "State Government"
+      ],
+      "count": 32
+    },
+    {
+      "key": [
+        "REAS",
+        "LOGICAL STATEMENT QUESTIONS",
+        "",
+        "Analytical Decision Making"
+      ],
+      "count": 32
+    }
+  ],
+  "priority": {
+    "overall": [
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Grammar"
+        ],
+        "subject": "ENG",
+        "chapter": "Grammar",
+        "topic": null,
+        "concept": null,
+        "questions": 10043,
+        "recency": 5166.25,
+        "last_2y": 3175,
+        "prev_2y": 3122,
+        "delta_2y": 53,
+        "trend": 0.017,
+        "importance": 30.2513
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "_unclassified"
+        ],
+        "subject": "ENG",
+        "chapter": "_unclassified",
+        "topic": null,
+        "concept": null,
+        "questions": 8496,
+        "recency": 3499.5,
+        "last_2y": 1444,
+        "prev_2y": 3171,
+        "delta_2y": -1727,
+        "trend": -0.5446,
+        "importance": 20.3001
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "SERIES"
+        ],
+        "subject": "REAS",
+        "chapter": "SERIES",
+        "topic": null,
+        "concept": null,
+        "questions": 6124,
+        "recency": 3211.45,
+        "last_2y": 2048,
+        "prev_2y": 2459,
+        "delta_2y": -411,
+        "trend": -0.1671,
+        "importance": 20.2004
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "Logical Reasoning"
+        ],
+        "subject": "REAS",
+        "chapter": "Logical Reasoning",
+        "topic": null,
+        "concept": null,
+        "questions": 2412,
+        "recency": 845.45,
+        "last_2y": 175,
+        "prev_2y": 8,
+        "delta_2y": 167,
+        "trend": 1.0,
+        "importance": 19.4104
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "GK",
+          "_unclassified"
+        ],
+        "subject": "GK",
+        "chapter": "_unclassified",
+        "topic": null,
+        "concept": null,
+        "questions": 3709,
+        "recency": 2369.4,
+        "last_2y": 1840,
+        "prev_2y": 1511,
+        "delta_2y": 329,
+        "trend": 0.2177,
+        "importance": 18.6827
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "_unclassified"
+        ],
+        "subject": "MATH",
+        "chapter": "_unclassified",
+        "topic": null,
+        "concept": null,
+        "questions": 4560,
+        "recency": 2228.0,
+        "last_2y": 1227,
+        "prev_2y": 1075,
+        "delta_2y": 152,
+        "trend": 0.1414,
+        "importance": 18.5281
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "_unclassified"
+        ],
+        "subject": "REAS",
+        "chapter": "_unclassified",
+        "topic": null,
+        "concept": null,
+        "questions": 1171,
+        "recency": 899.6,
+        "last_2y": 764,
+        "prev_2y": 365,
+        "delta_2y": 399,
+        "trend": 1.0,
+        "importance": 18.4072
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Spelling"
+        ],
+        "subject": "ENG",
+        "chapter": "Spelling",
+        "topic": null,
+        "concept": null,
+        "questions": 1092,
+        "recency": 755.25,
+        "last_2y": 682,
+        "prev_2y": 358,
+        "delta_2y": 324,
+        "trend": 0.905,
+        "importance": 17.2485
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Mensuration 2D & 3D"
+        ],
+        "subject": "MATH",
+        "chapter": "Mensuration 2D & 3D",
+        "topic": null,
+        "concept": null,
+        "questions": 3044,
+        "recency": 1726.5,
+        "last_2y": 1266,
+        "prev_2y": 1049,
+        "delta_2y": 217,
+        "trend": 0.2069,
+        "importance": 16.3245
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Reading Comprehension"
+        ],
+        "subject": "ENG",
+        "chapter": "Reading Comprehension",
+        "topic": null,
+        "concept": null,
+        "questions": 320,
+        "recency": 317.5,
+        "last_2y": 315,
+        "prev_2y": 5,
+        "delta_2y": 310,
+        "trend": 1.0,
+        "importance": 16.1166
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "LOGICAL STATEMENT QUESTIONS"
+        ],
+        "subject": "REAS",
+        "chapter": "LOGICAL STATEMENT QUESTIONS",
+        "topic": null,
+        "concept": null,
+        "questions": 300,
+        "recency": 244.45,
+        "last_2y": 223,
+        "prev_2y": 47,
+        "delta_2y": 176,
+        "trend": 1.0,
+        "importance": 15.9091
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "NUMBER / DIGIT OPERATIONS"
+        ],
+        "subject": "REAS",
+        "chapter": "NUMBER / DIGIT OPERATIONS",
+        "topic": null,
+        "concept": null,
+        "questions": 229,
+        "recency": 197.55,
+        "last_2y": 225,
+        "prev_2y": 3,
+        "delta_2y": 222,
+        "trend": 1.0,
+        "importance": 15.7223
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Discount"
+        ],
+        "subject": "MATH",
+        "chapter": "Discount",
+        "topic": null,
+        "concept": null,
+        "questions": 233,
+        "recency": 181.0,
+        "last_2y": 180,
+        "prev_2y": 53,
+        "delta_2y": 127,
+        "trend": 1.0,
+        "importance": 15.6831
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Active & Passive Voice"
+        ],
+        "subject": "ENG",
+        "chapter": "Active & Passive Voice",
+        "topic": null,
+        "concept": null,
+        "questions": 193,
+        "recency": 190.9,
+        "last_2y": 190,
+        "prev_2y": 1,
+        "delta_2y": 189,
+        "trend": 1.0,
+        "importance": 15.6719
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Simple Interest"
+        ],
+        "subject": "MATH",
+        "chapter": "Simple Interest",
+        "topic": null,
+        "concept": null,
+        "questions": 1002,
+        "recency": 614.8,
+        "last_2y": 526,
+        "prev_2y": 302,
+        "delta_2y": 224,
+        "trend": 0.7417,
+        "importance": 15.5773
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Geometry"
+        ],
+        "subject": "MATH",
+        "chapter": "Geometry",
+        "topic": null,
+        "concept": null,
+        "questions": 2075,
+        "recency": 1212.15,
+        "last_2y": 870,
+        "prev_2y": 620,
+        "delta_2y": 250,
+        "trend": 0.4032,
+        "importance": 15.5732
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Direct & Indirect Speech"
+        ],
+        "subject": "ENG",
+        "chapter": "Direct & Indirect Speech",
+        "topic": null,
+        "concept": null,
+        "questions": 147,
+        "recency": 138.45,
+        "last_2y": 135,
+        "prev_2y": 9,
+        "delta_2y": 126,
+        "trend": 1.0,
+        "importance": 15.4938
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Partnership"
+        ],
+        "subject": "MATH",
+        "chapter": "Partnership",
+        "topic": null,
+        "concept": null,
+        "questions": 70,
+        "recency": 65.0,
+        "last_2y": 60,
+        "prev_2y": 10,
+        "delta_2y": 50,
+        "trend": 1.0,
+        "importance": 15.2327
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "FIGURE COUNTING"
+        ],
+        "subject": "REAS",
+        "chapter": "FIGURE COUNTING",
+        "topic": null,
+        "concept": null,
+        "questions": 67,
+        "recency": 58.0,
+        "last_2y": 67,
+        "prev_2y": 0,
+        "delta_2y": 67,
+        "trend": 1.0,
+        "importance": 15.2118
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "PAPER FOLDING"
+        ],
+        "subject": "REAS",
+        "chapter": "PAPER FOLDING",
+        "topic": null,
+        "concept": null,
+        "questions": 67,
+        "recency": 53.75,
+        "last_2y": 59,
+        "prev_2y": 8,
+        "delta_2y": 51,
+        "trend": 1.0,
+        "importance": 15.2008
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Sentence Improvement"
+        ],
+        "subject": "ENG",
+        "chapter": "Sentence Improvement",
+        "topic": null,
+        "concept": null,
+        "questions": 66,
+        "recency": 47.7,
+        "last_2y": 42,
+        "prev_2y": 14,
+        "delta_2y": 28,
+        "trend": 1.0,
+        "importance": 15.1843
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Homophones"
+        ],
+        "subject": "ENG",
+        "chapter": "Homophones",
+        "topic": null,
+        "concept": null,
+        "questions": 45,
+        "recency": 44.5,
+        "last_2y": 45,
+        "prev_2y": 0,
+        "delta_2y": 45,
+        "trend": 1.0,
+        "importance": 15.1566
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "WORD / DICTIONARY ORDER"
+        ],
+        "subject": "REAS",
+        "chapter": "WORD / DICTIONARY ORDER",
+        "topic": null,
+        "concept": null,
+        "questions": 37,
+        "recency": 36.75,
+        "last_2y": 37,
+        "prev_2y": 0,
+        "delta_2y": 37,
+        "trend": 1.0,
+        "importance": 15.1292
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "DICE"
+        ],
+        "subject": "REAS",
+        "chapter": "DICE",
+        "topic": null,
+        "concept": null,
+        "questions": 40,
+        "recency": 30.0,
+        "last_2y": 40,
+        "prev_2y": 0,
+        "delta_2y": 40,
+        "trend": 1.0,
+        "importance": 15.1145
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "MISSING NUMBER"
+        ],
+        "subject": "REAS",
+        "chapter": "MISSING NUMBER",
+        "topic": null,
+        "concept": null,
+        "questions": 28,
+        "recency": 24.0,
+        "last_2y": 20,
+        "prev_2y": 8,
+        "delta_2y": 12,
+        "trend": 1.0,
+        "importance": 15.0879
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "INPUT-OUTPUT / MACHINE TYPE REASONING"
+        ],
+        "subject": "REAS",
+        "chapter": "INPUT-OUTPUT / MACHINE TYPE REASONING",
+        "topic": null,
+        "concept": null,
+        "questions": 18,
+        "recency": 18.0,
+        "last_2y": 18,
+        "prev_2y": 0,
+        "delta_2y": 18,
+        "trend": 1.0,
+        "importance": 15.0632
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "GK",
+          "CENSUS & DEMOGRAPHY"
+        ],
+        "subject": "GK",
+        "chapter": "CENSUS & DEMOGRAPHY",
+        "topic": null,
+        "concept": null,
+        "questions": 10,
+        "recency": 8.75,
+        "last_2y": 9,
+        "prev_2y": 1,
+        "delta_2y": 8,
+        "trend": 1.0,
+        "importance": 15.0319
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "FLOOR / BUILDING ARRANGEMENT"
+        ],
+        "subject": "REAS",
+        "chapter": "FLOOR / BUILDING ARRANGEMENT",
+        "topic": null,
+        "concept": null,
+        "questions": 4,
+        "recency": 4.0,
+        "last_2y": 4,
+        "prev_2y": 0,
+        "delta_2y": 4,
+        "trend": 1.0,
+        "importance": 15.014
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "SCHEDULING / DAY / MONTH ARRANGEMENT"
+        ],
+        "subject": "REAS",
+        "chapter": "SCHEDULING / DAY / MONTH ARRANGEMENT",
+        "topic": null,
+        "concept": null,
+        "questions": 4,
+        "recency": 3.5,
+        "last_2y": 3,
+        "prev_2y": 1,
+        "delta_2y": 2,
+        "trend": 1.0,
+        "importance": 15.0127
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "GK",
+          "INDIAN SPACE & NUCLEAR PROGRAMME"
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN SPACE & NUCLEAR PROGRAMME",
+        "topic": null,
+        "concept": null,
+        "questions": 4,
+        "recency": 2.8,
+        "last_2y": 2,
+        "prev_2y": 1,
+        "delta_2y": 1,
+        "trend": 1.0,
+        "importance": 15.0109
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Permutation & Combination"
+        ],
+        "subject": "MATH",
+        "chapter": "Permutation & Combination",
+        "topic": null,
+        "concept": null,
+        "questions": 2,
+        "recency": 1.75,
+        "last_2y": 2,
+        "prev_2y": 0,
+        "delta_2y": 2,
+        "trend": 1.0,
+        "importance": 15.0064
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Race & Circular Motion"
+        ],
+        "subject": "MATH",
+        "chapter": "Race & Circular Motion",
+        "topic": null,
+        "concept": null,
+        "questions": 2,
+        "recency": 1.5,
+        "last_2y": 2,
+        "prev_2y": 0,
+        "delta_2y": 2,
+        "trend": 1.0,
+        "importance": 15.0057
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "REAS",
+          "BOX / STACK ARRANGEMENT"
+        ],
+        "subject": "REAS",
+        "chapter": "BOX / STACK ARRANGEMENT",
+        "topic": null,
+        "concept": null,
+        "questions": 1,
+        "recency": 1.0,
+        "last_2y": 1,
+        "prev_2y": 0,
+        "delta_2y": 1,
+        "trend": 1.0,
+        "importance": 15.0035
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Idioms"
+        ],
+        "subject": "ENG",
+        "chapter": "Idioms",
+        "topic": null,
+        "concept": null,
+        "questions": 3092,
+        "recency": 1696.25,
+        "last_2y": 1185,
+        "prev_2y": 1150,
+        "delta_2y": 35,
+        "trend": 0.0304,
+        "importance": 14.9672
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "GK",
+          "ART & CULTURE"
+        ],
+        "subject": "GK",
+        "chapter": "ART & CULTURE",
+        "topic": null,
+        "concept": null,
+        "questions": 3503,
+        "recency": 1933.7,
+        "last_2y": 1338,
+        "prev_2y": 1510,
+        "delta_2y": -172,
+        "trend": -0.1139,
+        "importance": 14.8778
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Synonym"
+        ],
+        "subject": "ENG",
+        "chapter": "Synonym",
+        "topic": null,
+        "concept": null,
+        "questions": 2889,
+        "recency": 1589.0,
+        "last_2y": 1123,
+        "prev_2y": 1044,
+        "delta_2y": 79,
+        "trend": 0.0757,
+        "importance": 14.8418
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "MATH",
+          "Number System"
+        ],
+        "subject": "MATH",
+        "chapter": "Number System",
+        "topic": null,
+        "concept": null,
+        "questions": 3311,
+        "recency": 1755.25,
+        "last_2y": 1182,
+        "prev_2y": 1228,
+        "delta_2y": -46,
+        "trend": -0.0375,
+        "importance": 14.8124
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "GK",
+          "SCIENTISTS, INVENTIONS & DISCOVERIES"
+        ],
+        "subject": "GK",
+        "chapter": "SCIENTISTS, INVENTIONS & DISCOVERIES",
+        "topic": null,
+        "concept": null,
+        "questions": 349,
+        "recency": 196.95,
+        "last_2y": 132,
+        "prev_2y": 72,
+        "delta_2y": 60,
+        "trend": 0.8333,
+        "importance": 14.5813
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "GK",
+          "INDIAN POLITY & CONSTITUTION"
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN POLITY & CONSTITUTION",
+        "topic": null,
+        "concept": null,
+        "questions": 3269,
+        "recency": 1744.7,
+        "last_2y": 1173,
+        "prev_2y": 1268,
+        "delta_2y": -95,
+        "trend": -0.0749,
+        "importance": 14.4655
+      },
+      {
+        "kind": "chapter",
+        "path": [
+          "ENG",
+          "Cloze Test"
+        ],
+        "subject": "ENG",
+        "chapter": "Cloze Test",
+        "topic": null,
+        "concept": null,
+        "questions": 4977,
+        "recency": 2208.1,
+        "last_2y": 1093,
+        "prev_2y": 2057,
+        "delta_2y": -964,
+        "trend": -0.4686,
+        "importance": 14.2855
+      }
+    ],
+    "concepts": [
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Grammar",
+          "",
+          "Grammar"
+        ],
+        "subject": "ENG",
+        "chapter": "Grammar",
+        "topic": "",
+        "concept": "Grammar",
+        "questions": 8091,
+        "recency": 4055.0,
+        "last_2y": 2405,
+        "prev_2y": 2517,
+        "delta_2y": -112,
+        "trend": -0.0445,
+        "importance": 25.1157
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "_unclassified",
+          "",
+          "Unidentified"
+        ],
+        "subject": "REAS",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": "Unidentified",
+        "questions": 876,
+        "recency": 699.1,
+        "last_2y": 627,
+        "prev_2y": 220,
+        "delta_2y": 407,
+        "trend": 1.0,
+        "importance": 17.6165
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Spelling",
+          "",
+          "Spelling"
+        ],
+        "subject": "ENG",
+        "chapter": "Spelling",
+        "topic": "",
+        "concept": "Spelling",
+        "questions": 1067,
+        "recency": 741.2,
+        "last_2y": 669,
+        "prev_2y": 346,
+        "delta_2y": 323,
+        "trend": 0.9335,
+        "importance": 17.4029
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Synonym",
+          "",
+          "Antonym"
+        ],
+        "subject": "ENG",
+        "chapter": "Synonym",
+        "topic": "",
+        "concept": "Antonym",
+        "questions": 520,
+        "recency": 380.0,
+        "last_2y": 369,
+        "prev_2y": 151,
+        "delta_2y": 218,
+        "trend": 1.0,
+        "importance": 16.4626
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Idioms",
+          "",
+          "Sentence Improvement"
+        ],
+        "subject": "ENG",
+        "chapter": "Idioms",
+        "topic": "",
+        "concept": "Sentence Improvement",
+        "questions": 502,
+        "recency": 369.25,
+        "last_2y": 374,
+        "prev_2y": 128,
+        "delta_2y": 246,
+        "trend": 1.0,
+        "importance": 16.4182
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Mensuration 2D & 3D",
+          "",
+          "Solid Figures"
+        ],
+        "subject": "MATH",
+        "chapter": "Mensuration 2D & 3D",
+        "topic": "",
+        "concept": "Solid Figures",
+        "questions": 456,
+        "recency": 345.75,
+        "last_2y": 354,
+        "prev_2y": 102,
+        "delta_2y": 252,
+        "trend": 1.0,
+        "importance": 16.315
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "SERIES",
+          "",
+          "Series"
+        ],
+        "subject": "REAS",
+        "chapter": "SERIES",
+        "topic": "",
+        "concept": "Series",
+        "questions": 5176,
+        "recency": 2499.55,
+        "last_2y": 1433,
+        "prev_2y": 2129,
+        "delta_2y": -696,
+        "trend": -0.3269,
+        "importance": 16.2862
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Reading Comprehension",
+          "",
+          "Reading Comprehension"
+        ],
+        "subject": "ENG",
+        "chapter": "Reading Comprehension",
+        "topic": "",
+        "concept": "Reading Comprehension",
+        "questions": 320,
+        "recency": 317.5,
+        "last_2y": 315,
+        "prev_2y": 5,
+        "delta_2y": 310,
+        "trend": 1.0,
+        "importance": 16.1166
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "INDIAN GEOGRAPHY",
+          "",
+          "Indian Economic and Human Geography"
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN GEOGRAPHY",
+        "topic": "",
+        "concept": "Indian Economic and Human Geography",
+        "questions": 313,
+        "recency": 234.5,
+        "last_2y": 236,
+        "prev_2y": 77,
+        "delta_2y": 159,
+        "trend": 1.0,
+        "importance": 15.8953
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "NON-VERBAL SERIES",
+          "",
+          "Image Based"
+        ],
+        "subject": "REAS",
+        "chapter": "NON-VERBAL SERIES",
+        "topic": "",
+        "concept": "Image Based",
+        "questions": 272,
+        "recency": 217.5,
+        "last_2y": 245,
+        "prev_2y": 27,
+        "delta_2y": 218,
+        "trend": 1.0,
+        "importance": 15.8135
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "CODING-DECODING",
+          "",
+          "Coding and Decoding in Fictitious Language"
+        ],
+        "subject": "REAS",
+        "chapter": "CODING-DECODING",
+        "topic": "",
+        "concept": "Coding and Decoding in Fictitious Language",
+        "questions": 257,
+        "recency": 188.0,
+        "last_2y": 228,
+        "prev_2y": 29,
+        "delta_2y": 199,
+        "trend": 1.0,
+        "importance": 15.7234
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "NUMBER / DIGIT OPERATIONS",
+          "",
+          "Number System"
+        ],
+        "subject": "REAS",
+        "chapter": "NUMBER / DIGIT OPERATIONS",
+        "topic": "",
+        "concept": "Number System",
+        "questions": 229,
+        "recency": 197.55,
+        "last_2y": 225,
+        "prev_2y": 3,
+        "delta_2y": 222,
+        "trend": 1.0,
+        "importance": 15.7223
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "_unclassified",
+          "",
+          "Unidentified"
+        ],
+        "subject": "GK",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": "Unidentified",
+        "questions": 2634,
+        "recency": 1710.7,
+        "last_2y": 1333,
+        "prev_2y": 1130,
+        "delta_2y": 203,
+        "trend": 0.1796,
+        "importance": 15.7017
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Discount",
+          "",
+          "Discount and MP"
+        ],
+        "subject": "MATH",
+        "chapter": "Discount",
+        "topic": "",
+        "concept": "Discount and MP",
+        "questions": 233,
+        "recency": 181.0,
+        "last_2y": 180,
+        "prev_2y": 53,
+        "delta_2y": 127,
+        "trend": 1.0,
+        "importance": 15.6831
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Mensuration 2D & 3D",
+          "",
+          "Plane Figures"
+        ],
+        "subject": "MATH",
+        "chapter": "Mensuration 2D & 3D",
+        "topic": "",
+        "concept": "Plane Figures",
+        "questions": 215,
+        "recency": 170.25,
+        "last_2y": 171,
+        "prev_2y": 44,
+        "delta_2y": 127,
+        "trend": 1.0,
+        "importance": 15.6387
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Active & Passive Voice",
+          "",
+          "Active and Passive Voice"
+        ],
+        "subject": "ENG",
+        "chapter": "Active & Passive Voice",
+        "topic": "",
+        "concept": "Active and Passive Voice",
+        "questions": 177,
+        "recency": 177.0,
+        "last_2y": 177,
+        "prev_2y": 0,
+        "delta_2y": 177,
+        "trend": 1.0,
+        "importance": 15.6212
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "SEATING ARRANGEMENT",
+          "",
+          "Circular Arrangement"
+        ],
+        "subject": "REAS",
+        "chapter": "SEATING ARRANGEMENT",
+        "topic": "",
+        "concept": "Circular Arrangement",
+        "questions": 218,
+        "recency": 151.5,
+        "last_2y": 149,
+        "prev_2y": 69,
+        "delta_2y": 80,
+        "trend": 1.0,
+        "importance": 15.593
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "SEATING ARRANGEMENT",
+          "",
+          "Arrangement and Pattern"
+        ],
+        "subject": "REAS",
+        "chapter": "SEATING ARRANGEMENT",
+        "topic": "",
+        "concept": "Arrangement and Pattern",
+        "questions": 180,
+        "recency": 140.6,
+        "last_2y": 131,
+        "prev_2y": 43,
+        "delta_2y": 88,
+        "trend": 1.0,
+        "importance": 15.5297
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Simple Interest",
+          "",
+          "Simple Interest"
+        ],
+        "subject": "MATH",
+        "chapter": "Simple Interest",
+        "topic": "",
+        "concept": "Simple Interest",
+        "questions": 997,
+        "recency": 611.05,
+        "last_2y": 522,
+        "prev_2y": 301,
+        "delta_2y": 221,
+        "trend": 0.7342,
+        "importance": 15.5067
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "ART & CULTURE",
+          "",
+          "Music"
+        ],
+        "subject": "GK",
+        "chapter": "ART & CULTURE",
+        "topic": "",
+        "concept": "Music",
+        "questions": 174,
+        "recency": 128.5,
+        "last_2y": 129,
+        "prev_2y": 45,
+        "delta_2y": 84,
+        "trend": 1.0,
+        "importance": 15.4929
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Profit & Loss",
+          "",
+          "Successive Selling"
+        ],
+        "subject": "MATH",
+        "chapter": "Profit & Loss",
+        "topic": "",
+        "concept": "Successive Selling",
+        "questions": 167,
+        "recency": 117.75,
+        "last_2y": 116,
+        "prev_2y": 51,
+        "delta_2y": 65,
+        "trend": 1.0,
+        "importance": 15.4586
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Direct & Indirect Speech",
+          "",
+          "Direct and Indirect Speech"
+        ],
+        "subject": "ENG",
+        "chapter": "Direct & Indirect Speech",
+        "topic": "",
+        "concept": "Direct and Indirect Speech",
+        "questions": 123,
+        "recency": 122.75,
+        "last_2y": 123,
+        "prev_2y": 0,
+        "delta_2y": 123,
+        "trend": 1.0,
+        "importance": 15.431
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Ratio & Proportion",
+          "",
+          "Trigonometric Ratios and Identities"
+        ],
+        "subject": "MATH",
+        "chapter": "Ratio & Proportion",
+        "topic": "",
+        "concept": "Trigonometric Ratios and Identities",
+        "questions": 120,
+        "recency": 112.0,
+        "last_2y": 120,
+        "prev_2y": 0,
+        "delta_2y": 120,
+        "trend": 1.0,
+        "importance": 15.4004
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Geometry",
+          "",
+          "Circles, Chords and Tangents"
+        ],
+        "subject": "MATH",
+        "chapter": "Geometry",
+        "topic": "",
+        "concept": "Circles, Chords and Tangents",
+        "questions": 114,
+        "recency": 100.5,
+        "last_2y": 114,
+        "prev_2y": 0,
+        "delta_2y": 114,
+        "trend": 1.0,
+        "importance": 15.3651
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "Logical Reasoning",
+          "",
+          "Similarity and Differences"
+        ],
+        "subject": "REAS",
+        "chapter": "Logical Reasoning",
+        "topic": "",
+        "concept": "Similarity and Differences",
+        "questions": 108,
+        "recency": 97.4,
+        "last_2y": 92,
+        "prev_2y": 8,
+        "delta_2y": 84,
+        "trend": 1.0,
+        "importance": 15.3516
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "SCIENTISTS, INVENTIONS & DISCOVERIES",
+          "",
+          "Science and Technology"
+        ],
+        "subject": "GK",
+        "chapter": "SCIENTISTS, INVENTIONS & DISCOVERIES",
+        "topic": "",
+        "concept": "Science and Technology",
+        "questions": 115,
+        "recency": 74.15,
+        "last_2y": 57,
+        "prev_2y": 12,
+        "delta_2y": 45,
+        "trend": 1.0,
+        "importance": 15.2979
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "INDIAN POLITY & CONSTITUTION",
+          "",
+          "Biology"
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN POLITY & CONSTITUTION",
+        "topic": "",
+        "concept": "Biology",
+        "questions": 90,
+        "recency": 73.25,
+        "last_2y": 70,
+        "prev_2y": 20,
+        "delta_2y": 50,
+        "trend": 1.0,
+        "importance": 15.2725
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Time & Distance",
+          "",
+          "Relative Speed"
+        ],
+        "subject": "MATH",
+        "chapter": "Time & Distance",
+        "topic": "",
+        "concept": "Relative Speed",
+        "questions": 98,
+        "recency": 69.75,
+        "last_2y": 70,
+        "prev_2y": 28,
+        "delta_2y": 42,
+        "trend": 1.0,
+        "importance": 15.2708
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+          "",
+          "Initiatives by Government"
+        ],
+        "subject": "GK",
+        "chapter": "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+        "topic": "",
+        "concept": "Initiatives by Government",
+        "questions": 84,
+        "recency": 72.85,
+        "last_2y": 76,
+        "prev_2y": 6,
+        "delta_2y": 70,
+        "trend": 1.0,
+        "importance": 15.2659
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "LOGICAL STATEMENT QUESTIONS",
+          "",
+          "Statements and Conclusions"
+        ],
+        "subject": "REAS",
+        "chapter": "LOGICAL STATEMENT QUESTIONS",
+        "topic": "",
+        "concept": "Statements and Conclusions",
+        "questions": 97,
+        "recency": 67.6,
+        "last_2y": 55,
+        "prev_2y": 15,
+        "delta_2y": 40,
+        "trend": 1.0,
+        "importance": 15.2643
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Partnership",
+          "",
+          "Partnership"
+        ],
+        "subject": "MATH",
+        "chapter": "Partnership",
+        "topic": "",
+        "concept": "Partnership",
+        "questions": 70,
+        "recency": 65.0,
+        "last_2y": 60,
+        "prev_2y": 10,
+        "delta_2y": 50,
+        "trend": 1.0,
+        "importance": 15.2327
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Algebra",
+          "",
+          "Identities"
+        ],
+        "subject": "MATH",
+        "chapter": "Algebra",
+        "topic": "",
+        "concept": "Identities",
+        "questions": 66,
+        "recency": 64.25,
+        "last_2y": 63,
+        "prev_2y": 3,
+        "delta_2y": 60,
+        "trend": 1.0,
+        "importance": 15.2271
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "ART & CULTURE",
+          "",
+          "Art & Culture"
+        ],
+        "subject": "GK",
+        "chapter": "ART & CULTURE",
+        "topic": "",
+        "concept": "Art & Culture",
+        "questions": 63,
+        "recency": 63.0,
+        "last_2y": 63,
+        "prev_2y": 0,
+        "delta_2y": 63,
+        "trend": 1.0,
+        "importance": 15.2211
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "SERIES",
+          "",
+          "Mixed Series"
+        ],
+        "subject": "REAS",
+        "chapter": "SERIES",
+        "topic": "",
+        "concept": "Mixed Series",
+        "questions": 63,
+        "recency": 62.0,
+        "last_2y": 63,
+        "prev_2y": 0,
+        "delta_2y": 63,
+        "trend": 1.0,
+        "importance": 15.2185
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "FIGURE COUNTING",
+          "",
+          "Figure Counting"
+        ],
+        "subject": "REAS",
+        "chapter": "FIGURE COUNTING",
+        "topic": "",
+        "concept": "Figure Counting",
+        "questions": 67,
+        "recency": 58.0,
+        "last_2y": 67,
+        "prev_2y": 0,
+        "delta_2y": 67,
+        "trend": 1.0,
+        "importance": 15.2118
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Number System",
+          "",
+          "Divisibility and Remainder"
+        ],
+        "subject": "MATH",
+        "chapter": "Number System",
+        "topic": "",
+        "concept": "Divisibility and Remainder",
+        "questions": 69,
+        "recency": 56.5,
+        "last_2y": 63,
+        "prev_2y": 6,
+        "delta_2y": 57,
+        "trend": 1.0,
+        "importance": 15.2098
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Geometry",
+          "",
+          "Triangles, Congruence and Similarity"
+        ],
+        "subject": "MATH",
+        "chapter": "Geometry",
+        "topic": "",
+        "concept": "Triangles, Congruence and Similarity",
+        "questions": 65,
+        "recency": 56.25,
+        "last_2y": 64,
+        "prev_2y": 1,
+        "delta_2y": 63,
+        "trend": 1.0,
+        "importance": 15.2055
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "PAPER FOLDING",
+          "",
+          "Paper Folding/Cutting"
+        ],
+        "subject": "REAS",
+        "chapter": "PAPER FOLDING",
+        "topic": "",
+        "concept": "Paper Folding/Cutting",
+        "questions": 67,
+        "recency": 53.75,
+        "last_2y": 59,
+        "prev_2y": 8,
+        "delta_2y": 51,
+        "trend": 1.0,
+        "importance": 15.2008
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "MEDIEVAL INDIAN HISTORY",
+          "",
+          "Mughal empire"
+        ],
+        "subject": "GK",
+        "chapter": "MEDIEVAL INDIAN HISTORY",
+        "topic": "",
+        "concept": "Mughal empire",
+        "questions": 66,
+        "recency": 54.0,
+        "last_2y": 58,
+        "prev_2y": 8,
+        "delta_2y": 50,
+        "trend": 1.0,
+        "importance": 15.2006
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "ENG",
+          "Sentence Improvement",
+          "",
+          "Sentence Improvement"
+        ],
+        "subject": "ENG",
+        "chapter": "Sentence Improvement",
+        "topic": "",
+        "concept": "Sentence Improvement",
+        "questions": 66,
+        "recency": 47.7,
+        "last_2y": 42,
+        "prev_2y": 14,
+        "delta_2y": 28,
+        "trend": 1.0,
+        "importance": 15.1843
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "CURRENT AFFAIRS",
+          "",
+          "International Affairs"
+        ],
+        "subject": "GK",
+        "chapter": "CURRENT AFFAIRS",
+        "topic": "",
+        "concept": "International Affairs",
+        "questions": 86,
+        "recency": 40.35,
+        "last_2y": 22,
+        "prev_2y": 11,
+        "delta_2y": 11,
+        "trend": 1.0,
+        "importance": 15.1837
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "LOGICAL STATEMENT QUESTIONS",
+          "",
+          "Situation Reaction Test"
+        ],
+        "subject": "REAS",
+        "chapter": "LOGICAL STATEMENT QUESTIONS",
+        "topic": "",
+        "concept": "Situation Reaction Test",
+        "questions": 51,
+        "recency": 51.0,
+        "last_2y": 51,
+        "prev_2y": 0,
+        "delta_2y": 51,
+        "trend": 1.0,
+        "importance": 15.179
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "SPORTS — STATIC GK",
+          "",
+          "Sports Terminology"
+        ],
+        "subject": "GK",
+        "chapter": "SPORTS — STATIC GK",
+        "topic": "",
+        "concept": "Sports Terminology",
+        "questions": 60,
+        "recency": 47.75,
+        "last_2y": 54,
+        "prev_2y": 6,
+        "delta_2y": 48,
+        "trend": 1.0,
+        "importance": 15.1789
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "Logical Reasoning",
+          "",
+          "Critical Reasoning"
+        ],
+        "subject": "REAS",
+        "chapter": "Logical Reasoning",
+        "topic": "",
+        "concept": "Critical Reasoning",
+        "questions": 48,
+        "recency": 47.05,
+        "last_2y": 47,
+        "prev_2y": 0,
+        "delta_2y": 47,
+        "trend": 1.0,
+        "importance": 15.166
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Time & Distance",
+          "",
+          "Problem on Trains"
+        ],
+        "subject": "MATH",
+        "chapter": "Time & Distance",
+        "topic": "",
+        "concept": "Problem on Trains",
+        "questions": 55,
+        "recency": 40.5,
+        "last_2y": 41,
+        "prev_2y": 14,
+        "delta_2y": 27,
+        "trend": 1.0,
+        "importance": 15.1555
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "RANKING / ORDER / POSITION",
+          "",
+          "Rank Based"
+        ],
+        "subject": "REAS",
+        "chapter": "RANKING / ORDER / POSITION",
+        "topic": "",
+        "concept": "Rank Based",
+        "questions": 41,
+        "recency": 40.0,
+        "last_2y": 39,
+        "prev_2y": 2,
+        "delta_2y": 37,
+        "trend": 1.0,
+        "importance": 15.1413
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "ALPHABET TEST",
+          "",
+          "Dictionary or Alphabet Based"
+        ],
+        "subject": "REAS",
+        "chapter": "ALPHABET TEST",
+        "topic": "",
+        "concept": "Dictionary or Alphabet Based",
+        "questions": 48,
+        "recency": 37.0,
+        "last_2y": 38,
+        "prev_2y": 10,
+        "delta_2y": 28,
+        "trend": 1.0,
+        "importance": 15.14
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "CODING-DECODING",
+          "",
+          "Coding Decoding Based on Numbers"
+        ],
+        "subject": "REAS",
+        "chapter": "CODING-DECODING",
+        "topic": "",
+        "concept": "Coding Decoding Based on Numbers",
+        "questions": 49,
+        "recency": 36.25,
+        "last_2y": 42,
+        "prev_2y": 7,
+        "delta_2y": 35,
+        "trend": 1.0,
+        "importance": 15.139
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Geometry",
+          "",
+          "Co-ordinate Geometry"
+        ],
+        "subject": "MATH",
+        "chapter": "Geometry",
+        "topic": "",
+        "concept": "Co-ordinate Geometry",
+        "questions": 41,
+        "recency": 38.25,
+        "last_2y": 41,
+        "prev_2y": 0,
+        "delta_2y": 41,
+        "trend": 1.0,
+        "importance": 15.1368
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "MATHEMATICAL OPERATIONS",
+          "",
+          "Direction and Distance Turns"
+        ],
+        "subject": "REAS",
+        "chapter": "MATHEMATICAL OPERATIONS",
+        "topic": "",
+        "concept": "Direction and Distance Turns",
+        "questions": 38,
+        "recency": 38.0,
+        "last_2y": 38,
+        "prev_2y": 0,
+        "delta_2y": 38,
+        "trend": 1.0,
+        "importance": 15.1334
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Number System",
+          "",
+          "Surds and Indices"
+        ],
+        "subject": "MATH",
+        "chapter": "Number System",
+        "topic": "",
+        "concept": "Surds and Indices",
+        "questions": 39,
+        "recency": 37.5,
+        "last_2y": 36,
+        "prev_2y": 3,
+        "delta_2y": 33,
+        "trend": 1.0,
+        "importance": 15.133
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Geometry",
+          "",
+          "Triangles"
+        ],
+        "subject": "MATH",
+        "chapter": "Geometry",
+        "topic": "",
+        "concept": "Triangles",
+        "questions": 43,
+        "recency": 35.6,
+        "last_2y": 39,
+        "prev_2y": 3,
+        "delta_2y": 36,
+        "trend": 1.0,
+        "importance": 15.1318
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "_unclassified",
+          "",
+          "Square and Square Root"
+        ],
+        "subject": "MATH",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": "Square and Square Root",
+        "questions": 38,
+        "recency": 37.25,
+        "last_2y": 37,
+        "prev_2y": 1,
+        "delta_2y": 36,
+        "trend": 1.0,
+        "importance": 15.1314
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "STATIC GK",
+          "",
+          "Location(s)"
+        ],
+        "subject": "GK",
+        "chapter": "STATIC GK",
+        "topic": "",
+        "concept": "Location(s)",
+        "questions": 46,
+        "recency": 34.25,
+        "last_2y": 36,
+        "prev_2y": 10,
+        "delta_2y": 26,
+        "trend": 1.0,
+        "importance": 15.131
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "MODERN INDIAN HISTORY",
+          "",
+          "Socio - Religious Reform Movements in the 19th and 20th CE India"
+        ],
+        "subject": "GK",
+        "chapter": "MODERN INDIAN HISTORY",
+        "topic": "",
+        "concept": "Socio - Religious Reform Movements in the 19th and 20th CE India",
+        "questions": 48,
+        "recency": 33.25,
+        "last_2y": 35,
+        "prev_2y": 13,
+        "delta_2y": 22,
+        "trend": 1.0,
+        "importance": 15.1303
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "_unclassified",
+          "",
+          "India and World"
+        ],
+        "subject": "GK",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": "India and World",
+        "questions": 45,
+        "recency": 33.95,
+        "last_2y": 29,
+        "prev_2y": 6,
+        "delta_2y": 23,
+        "trend": 1.0,
+        "importance": 15.1293
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "MATH",
+          "Mixture & Alligation",
+          "",
+          "To Make a Mixture from Two Mixtures"
+        ],
+        "subject": "MATH",
+        "chapter": "Mixture & Alligation",
+        "topic": "",
+        "concept": "To Make a Mixture from Two Mixtures",
+        "questions": 43,
+        "recency": 34.25,
+        "last_2y": 31,
+        "prev_2y": 12,
+        "delta_2y": 19,
+        "trend": 1.0,
+        "importance": 15.1283
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "MEDIEVAL INDIAN HISTORY",
+          "",
+          "Delhi Sultanate"
+        ],
+        "subject": "GK",
+        "chapter": "MEDIEVAL INDIAN HISTORY",
+        "topic": "",
+        "concept": "Delhi Sultanate",
+        "questions": 43,
+        "recency": 34.0,
+        "last_2y": 33,
+        "prev_2y": 10,
+        "delta_2y": 23,
+        "trend": 1.0,
+        "importance": 15.1276
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "GK",
+          "AWARDS — STATIC",
+          "",
+          "National Awards"
+        ],
+        "subject": "GK",
+        "chapter": "AWARDS — STATIC",
+        "topic": "",
+        "concept": "National Awards",
+        "questions": 46,
+        "recency": 32.75,
+        "last_2y": 34,
+        "prev_2y": 12,
+        "delta_2y": 22,
+        "trend": 1.0,
+        "importance": 15.1271
+      },
+      {
+        "kind": "concept",
+        "path": [
+          "REAS",
+          "LOGICAL STATEMENT QUESTIONS",
+          "",
+          "Course of Action"
+        ],
+        "subject": "REAS",
+        "chapter": "LOGICAL STATEMENT QUESTIONS",
+        "topic": "",
+        "concept": "Course of Action",
+        "questions": 39,
+        "recency": 35.2,
+        "last_2y": 34,
+        "prev_2y": 5,
+        "delta_2y": 29,
+        "trend": 1.0,
+        "importance": 15.127
+      }
+    ],
+    "topics": [
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Grammar",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Grammar",
+        "topic": "",
+        "concept": null,
+        "questions": 10043,
+        "recency": 5166.25,
+        "last_2y": 3175,
+        "prev_2y": 3122,
+        "delta_2y": 53,
+        "trend": 0.017,
+        "importance": 30.2513
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "_unclassified",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": null,
+        "questions": 8496,
+        "recency": 3499.5,
+        "last_2y": 1444,
+        "prev_2y": 3171,
+        "delta_2y": -1727,
+        "trend": -0.5446,
+        "importance": 20.3001
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "SERIES",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "SERIES",
+        "topic": "",
+        "concept": null,
+        "questions": 6124,
+        "recency": 3211.45,
+        "last_2y": 2048,
+        "prev_2y": 2459,
+        "delta_2y": -411,
+        "trend": -0.1671,
+        "importance": 20.2004
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "Logical Reasoning",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "Logical Reasoning",
+        "topic": "",
+        "concept": null,
+        "questions": 2412,
+        "recency": 845.45,
+        "last_2y": 175,
+        "prev_2y": 8,
+        "delta_2y": 167,
+        "trend": 1.0,
+        "importance": 19.4104
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "_unclassified",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": null,
+        "questions": 3709,
+        "recency": 2369.4,
+        "last_2y": 1840,
+        "prev_2y": 1511,
+        "delta_2y": 329,
+        "trend": 0.2177,
+        "importance": 18.6827
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "_unclassified",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": null,
+        "questions": 4560,
+        "recency": 2228.0,
+        "last_2y": 1227,
+        "prev_2y": 1075,
+        "delta_2y": 152,
+        "trend": 0.1414,
+        "importance": 18.5281
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "_unclassified",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "_unclassified",
+        "topic": "",
+        "concept": null,
+        "questions": 1171,
+        "recency": 899.6,
+        "last_2y": 764,
+        "prev_2y": 365,
+        "delta_2y": 399,
+        "trend": 1.0,
+        "importance": 18.4072
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Spelling",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Spelling",
+        "topic": "",
+        "concept": null,
+        "questions": 1092,
+        "recency": 755.25,
+        "last_2y": 682,
+        "prev_2y": 358,
+        "delta_2y": 324,
+        "trend": 0.905,
+        "importance": 17.2485
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Mensuration 2D & 3D",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Mensuration 2D & 3D",
+        "topic": "",
+        "concept": null,
+        "questions": 3044,
+        "recency": 1726.5,
+        "last_2y": 1266,
+        "prev_2y": 1049,
+        "delta_2y": 217,
+        "trend": 0.2069,
+        "importance": 16.3245
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Reading Comprehension",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Reading Comprehension",
+        "topic": "",
+        "concept": null,
+        "questions": 320,
+        "recency": 317.5,
+        "last_2y": 315,
+        "prev_2y": 5,
+        "delta_2y": 310,
+        "trend": 1.0,
+        "importance": 16.1166
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "LOGICAL STATEMENT QUESTIONS",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "LOGICAL STATEMENT QUESTIONS",
+        "topic": "",
+        "concept": null,
+        "questions": 300,
+        "recency": 244.45,
+        "last_2y": 223,
+        "prev_2y": 47,
+        "delta_2y": 176,
+        "trend": 1.0,
+        "importance": 15.9091
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "NUMBER / DIGIT OPERATIONS",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "NUMBER / DIGIT OPERATIONS",
+        "topic": "",
+        "concept": null,
+        "questions": 229,
+        "recency": 197.55,
+        "last_2y": 225,
+        "prev_2y": 3,
+        "delta_2y": 222,
+        "trend": 1.0,
+        "importance": 15.7223
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Discount",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Discount",
+        "topic": "",
+        "concept": null,
+        "questions": 233,
+        "recency": 181.0,
+        "last_2y": 180,
+        "prev_2y": 53,
+        "delta_2y": 127,
+        "trend": 1.0,
+        "importance": 15.6831
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Active & Passive Voice",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Active & Passive Voice",
+        "topic": "",
+        "concept": null,
+        "questions": 193,
+        "recency": 190.9,
+        "last_2y": 190,
+        "prev_2y": 1,
+        "delta_2y": 189,
+        "trend": 1.0,
+        "importance": 15.6719
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Simple Interest",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Simple Interest",
+        "topic": "",
+        "concept": null,
+        "questions": 1002,
+        "recency": 614.8,
+        "last_2y": 526,
+        "prev_2y": 302,
+        "delta_2y": 224,
+        "trend": 0.7417,
+        "importance": 15.5773
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Geometry",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Geometry",
+        "topic": "",
+        "concept": null,
+        "questions": 2075,
+        "recency": 1212.15,
+        "last_2y": 870,
+        "prev_2y": 620,
+        "delta_2y": 250,
+        "trend": 0.4032,
+        "importance": 15.5732
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Direct & Indirect Speech",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Direct & Indirect Speech",
+        "topic": "",
+        "concept": null,
+        "questions": 147,
+        "recency": 138.45,
+        "last_2y": 135,
+        "prev_2y": 9,
+        "delta_2y": 126,
+        "trend": 1.0,
+        "importance": 15.4938
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Partnership",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Partnership",
+        "topic": "",
+        "concept": null,
+        "questions": 70,
+        "recency": 65.0,
+        "last_2y": 60,
+        "prev_2y": 10,
+        "delta_2y": 50,
+        "trend": 1.0,
+        "importance": 15.2327
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "FIGURE COUNTING",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "FIGURE COUNTING",
+        "topic": "",
+        "concept": null,
+        "questions": 67,
+        "recency": 58.0,
+        "last_2y": 67,
+        "prev_2y": 0,
+        "delta_2y": 67,
+        "trend": 1.0,
+        "importance": 15.2118
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "PAPER FOLDING",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "PAPER FOLDING",
+        "topic": "",
+        "concept": null,
+        "questions": 67,
+        "recency": 53.75,
+        "last_2y": 59,
+        "prev_2y": 8,
+        "delta_2y": 51,
+        "trend": 1.0,
+        "importance": 15.2008
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Sentence Improvement",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Sentence Improvement",
+        "topic": "",
+        "concept": null,
+        "questions": 66,
+        "recency": 47.7,
+        "last_2y": 42,
+        "prev_2y": 14,
+        "delta_2y": 28,
+        "trend": 1.0,
+        "importance": 15.1843
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Homophones",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Homophones",
+        "topic": "",
+        "concept": null,
+        "questions": 45,
+        "recency": 44.5,
+        "last_2y": 45,
+        "prev_2y": 0,
+        "delta_2y": 45,
+        "trend": 1.0,
+        "importance": 15.1566
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "WORD / DICTIONARY ORDER",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "WORD / DICTIONARY ORDER",
+        "topic": "",
+        "concept": null,
+        "questions": 37,
+        "recency": 36.75,
+        "last_2y": 37,
+        "prev_2y": 0,
+        "delta_2y": 37,
+        "trend": 1.0,
+        "importance": 15.1292
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "DICE",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "DICE",
+        "topic": "",
+        "concept": null,
+        "questions": 40,
+        "recency": 30.0,
+        "last_2y": 40,
+        "prev_2y": 0,
+        "delta_2y": 40,
+        "trend": 1.0,
+        "importance": 15.1145
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "MISSING NUMBER",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "MISSING NUMBER",
+        "topic": "",
+        "concept": null,
+        "questions": 28,
+        "recency": 24.0,
+        "last_2y": 20,
+        "prev_2y": 8,
+        "delta_2y": 12,
+        "trend": 1.0,
+        "importance": 15.0879
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "INPUT-OUTPUT / MACHINE TYPE REASONING",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "INPUT-OUTPUT / MACHINE TYPE REASONING",
+        "topic": "",
+        "concept": null,
+        "questions": 18,
+        "recency": 18.0,
+        "last_2y": 18,
+        "prev_2y": 0,
+        "delta_2y": 18,
+        "trend": 1.0,
+        "importance": 15.0632
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "CENSUS & DEMOGRAPHY",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "CENSUS & DEMOGRAPHY",
+        "topic": "",
+        "concept": null,
+        "questions": 10,
+        "recency": 8.75,
+        "last_2y": 9,
+        "prev_2y": 1,
+        "delta_2y": 8,
+        "trend": 1.0,
+        "importance": 15.0319
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "FLOOR / BUILDING ARRANGEMENT",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "FLOOR / BUILDING ARRANGEMENT",
+        "topic": "",
+        "concept": null,
+        "questions": 4,
+        "recency": 4.0,
+        "last_2y": 4,
+        "prev_2y": 0,
+        "delta_2y": 4,
+        "trend": 1.0,
+        "importance": 15.014
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "SCHEDULING / DAY / MONTH ARRANGEMENT",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "SCHEDULING / DAY / MONTH ARRANGEMENT",
+        "topic": "",
+        "concept": null,
+        "questions": 4,
+        "recency": 3.5,
+        "last_2y": 3,
+        "prev_2y": 1,
+        "delta_2y": 2,
+        "trend": 1.0,
+        "importance": 15.0127
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "INDIAN SPACE & NUCLEAR PROGRAMME",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN SPACE & NUCLEAR PROGRAMME",
+        "topic": "",
+        "concept": null,
+        "questions": 4,
+        "recency": 2.8,
+        "last_2y": 2,
+        "prev_2y": 1,
+        "delta_2y": 1,
+        "trend": 1.0,
+        "importance": 15.0109
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Permutation & Combination",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Permutation & Combination",
+        "topic": "",
+        "concept": null,
+        "questions": 2,
+        "recency": 1.75,
+        "last_2y": 2,
+        "prev_2y": 0,
+        "delta_2y": 2,
+        "trend": 1.0,
+        "importance": 15.0064
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Race & Circular Motion",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Race & Circular Motion",
+        "topic": "",
+        "concept": null,
+        "questions": 2,
+        "recency": 1.5,
+        "last_2y": 2,
+        "prev_2y": 0,
+        "delta_2y": 2,
+        "trend": 1.0,
+        "importance": 15.0057
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "BOX / STACK ARRANGEMENT",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "BOX / STACK ARRANGEMENT",
+        "topic": "",
+        "concept": null,
+        "questions": 1,
+        "recency": 1.0,
+        "last_2y": 1,
+        "prev_2y": 0,
+        "delta_2y": 1,
+        "trend": 1.0,
+        "importance": 15.0035
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Idioms",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Idioms",
+        "topic": "",
+        "concept": null,
+        "questions": 3092,
+        "recency": 1696.25,
+        "last_2y": 1185,
+        "prev_2y": 1150,
+        "delta_2y": 35,
+        "trend": 0.0304,
+        "importance": 14.9672
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "ART & CULTURE",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "ART & CULTURE",
+        "topic": "",
+        "concept": null,
+        "questions": 3503,
+        "recency": 1933.7,
+        "last_2y": 1338,
+        "prev_2y": 1510,
+        "delta_2y": -172,
+        "trend": -0.1139,
+        "importance": 14.8778
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Synonym",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Synonym",
+        "topic": "",
+        "concept": null,
+        "questions": 2889,
+        "recency": 1589.0,
+        "last_2y": 1123,
+        "prev_2y": 1044,
+        "delta_2y": 79,
+        "trend": 0.0757,
+        "importance": 14.8418
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Number System",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Number System",
+        "topic": "",
+        "concept": null,
+        "questions": 3311,
+        "recency": 1755.25,
+        "last_2y": 1182,
+        "prev_2y": 1228,
+        "delta_2y": -46,
+        "trend": -0.0375,
+        "importance": 14.8124
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "SCIENTISTS, INVENTIONS & DISCOVERIES",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "SCIENTISTS, INVENTIONS & DISCOVERIES",
+        "topic": "",
+        "concept": null,
+        "questions": 349,
+        "recency": 196.95,
+        "last_2y": 132,
+        "prev_2y": 72,
+        "delta_2y": 60,
+        "trend": 0.8333,
+        "importance": 14.5813
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "INDIAN POLITY & CONSTITUTION",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN POLITY & CONSTITUTION",
+        "topic": "",
+        "concept": null,
+        "questions": 3269,
+        "recency": 1744.7,
+        "last_2y": 1173,
+        "prev_2y": 1268,
+        "delta_2y": -95,
+        "trend": -0.0749,
+        "importance": 14.4655
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Cloze Test",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Cloze Test",
+        "topic": "",
+        "concept": null,
+        "questions": 4977,
+        "recency": 2208.1,
+        "last_2y": 1093,
+        "prev_2y": 2057,
+        "delta_2y": -964,
+        "trend": -0.4686,
+        "importance": 14.2855
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "PUZZLES",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "PUZZLES",
+        "topic": "",
+        "concept": null,
+        "questions": 3031,
+        "recency": 1661.15,
+        "last_2y": 1139,
+        "prev_2y": 1200,
+        "delta_2y": -61,
+        "trend": -0.0508,
+        "importance": 14.2106
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "IMPORTANT REPORTS & INDICES",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "IMPORTANT REPORTS & INDICES",
+        "topic": "",
+        "concept": null,
+        "questions": 244,
+        "recency": 145.15,
+        "last_2y": 104,
+        "prev_2y": 58,
+        "delta_2y": 46,
+        "trend": 0.7931,
+        "importance": 14.0488
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "MIRROR IMAGE",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "MIRROR IMAGE",
+        "topic": "",
+        "concept": null,
+        "questions": 229,
+        "recency": 153.5,
+        "last_2y": 145,
+        "prev_2y": 84,
+        "delta_2y": 61,
+        "trend": 0.7262,
+        "importance": 13.5547
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Fill in the Blanks",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Fill in the Blanks",
+        "topic": "",
+        "concept": null,
+        "questions": 785,
+        "recency": 526.5,
+        "last_2y": 454,
+        "prev_2y": 302,
+        "delta_2y": 152,
+        "trend": 0.5033,
+        "importance": 13.3608
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "CODING-DECODING",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "CODING-DECODING",
+        "topic": "",
+        "concept": null,
+        "questions": 3344,
+        "recency": 1641.65,
+        "last_2y": 1031,
+        "prev_2y": 1324,
+        "delta_2y": -293,
+        "trend": -0.2213,
+        "importance": 13.17
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "NON-VERBAL SERIES",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "NON-VERBAL SERIES",
+        "topic": "",
+        "concept": null,
+        "questions": 4019,
+        "recency": 1815.3,
+        "last_2y": 993,
+        "prev_2y": 1636,
+        "delta_2y": -643,
+        "trend": -0.393,
+        "importance": 12.9534
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "ANALOGY",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "ANALOGY",
+        "topic": "",
+        "concept": null,
+        "questions": 4142,
+        "recency": 1891.2,
+        "last_2y": 940,
+        "prev_2y": 1767,
+        "delta_2y": -827,
+        "trend": -0.468,
+        "importance": 12.7007
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "INDIAN ECONOMY",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN ECONOMY",
+        "topic": "",
+        "concept": null,
+        "questions": 2453,
+        "recency": 1356.5,
+        "last_2y": 909,
+        "prev_2y": 984,
+        "delta_2y": -75,
+        "trend": -0.0762,
+        "importance": 12.6992
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "INDIAN GEOGRAPHY",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "INDIAN GEOGRAPHY",
+        "topic": "",
+        "concept": null,
+        "questions": 2600,
+        "recency": 1361.8,
+        "last_2y": 899,
+        "prev_2y": 998,
+        "delta_2y": -99,
+        "trend": -0.0992,
+        "importance": 12.676
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Profit & Loss",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Profit & Loss",
+        "topic": "",
+        "concept": null,
+        "questions": 3003,
+        "recency": 1515.8,
+        "last_2y": 971,
+        "prev_2y": 1294,
+        "delta_2y": -323,
+        "trend": -0.2496,
+        "importance": 12.3178
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "ANCIENT INDIAN HISTORY",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "ANCIENT INDIAN HISTORY",
+        "topic": "",
+        "concept": null,
+        "questions": 1008,
+        "recency": 575.6,
+        "last_2y": 429,
+        "prev_2y": 337,
+        "delta_2y": 92,
+        "trend": 0.273,
+        "importance": 11.9659
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "ALPHABET TEST",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "ALPHABET TEST",
+        "topic": "",
+        "concept": null,
+        "questions": 1516,
+        "recency": 859.4,
+        "last_2y": 637,
+        "prev_2y": 585,
+        "delta_2y": 52,
+        "trend": 0.0889,
+        "importance": 11.7877
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "SPORTS — STATIC GK",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "SPORTS — STATIC GK",
+        "topic": "",
+        "concept": null,
+        "questions": 2289,
+        "recency": 1192.95,
+        "last_2y": 777,
+        "prev_2y": 902,
+        "delta_2y": -125,
+        "trend": -0.1386,
+        "importance": 11.6571
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Mixture & Alligation",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Mixture & Alligation",
+        "topic": "",
+        "concept": null,
+        "questions": 334,
+        "recency": 220.45,
+        "last_2y": 181,
+        "prev_2y": 126,
+        "delta_2y": 55,
+        "trend": 0.4365,
+        "importance": 11.6521
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "ENG",
+          "Error Detection",
+          ""
+        ],
+        "subject": "ENG",
+        "chapter": "Error Detection",
+        "topic": "",
+        "concept": null,
+        "questions": 882,
+        "recency": 586.55,
+        "last_2y": 480,
+        "prev_2y": 401,
+        "delta_2y": 79,
+        "trend": 0.197,
+        "importance": 11.3083
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "SEATING ARRANGEMENT",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "SEATING ARRANGEMENT",
+        "topic": "",
+        "concept": null,
+        "questions": 1280,
+        "recency": 725.9,
+        "last_2y": 539,
+        "prev_2y": 514,
+        "delta_2y": 25,
+        "trend": 0.0486,
+        "importance": 10.9228
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "REAS",
+          "MATHEMATICAL OPERATIONS",
+          ""
+        ],
+        "subject": "REAS",
+        "chapter": "MATHEMATICAL OPERATIONS",
+        "topic": "",
+        "concept": null,
+        "questions": 413,
+        "recency": 238.45,
+        "last_2y": 159,
+        "prev_2y": 121,
+        "delta_2y": 38,
+        "trend": 0.314,
+        "importance": 10.853
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "GK",
+          "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+          ""
+        ],
+        "subject": "GK",
+        "chapter": "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+        "topic": "",
+        "concept": null,
+        "questions": 881,
+        "recency": 498.3,
+        "last_2y": 362,
+        "prev_2y": 315,
+        "delta_2y": 47,
+        "trend": 0.1492,
+        "importance": 10.7204
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Ratio & Proportion",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Ratio & Proportion",
+        "topic": "",
+        "concept": null,
+        "questions": 1561,
+        "recency": 839.55,
+        "last_2y": 567,
+        "prev_2y": 611,
+        "delta_2y": -44,
+        "trend": -0.072,
+        "importance": 10.571
+      },
+      {
+        "kind": "topic",
+        "path": [
+          "MATH",
+          "Probability",
+          ""
+        ],
+        "subject": "MATH",
+        "chapter": "Probability",
+        "topic": "",
+        "concept": null,
+        "questions": 44,
+        "recency": 24.1,
+        "last_2y": 18,
+        "prev_2y": 13,
+        "delta_2y": 5,
+        "trend": 0.3846,
+        "importance": 10.4875
+      }
+    ],
+    "by_subject": {
+      "COMPUTER": [
+        {
+          "kind": "chapter",
+          "path": [
+            "COMPUTER",
+            "Computer Hardware"
+          ],
+          "subject": "COMPUTER",
+          "chapter": "Computer Hardware",
+          "topic": null,
+          "concept": null,
+          "questions": 21,
+          "recency": 12.1,
+          "last_2y": 9,
+          "prev_2y": 12,
+          "delta_2y": -3,
+          "trend": -0.25,
+          "importance": 5.6757
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "COMPUTER",
+            "_unclassified"
+          ],
+          "subject": "COMPUTER",
+          "chapter": "_unclassified",
+          "topic": null,
+          "concept": null,
+          "questions": 27,
+          "recency": 15.25,
+          "last_2y": 11,
+          "prev_2y": 16,
+          "delta_2y": -5,
+          "trend": -0.3125,
+          "importance": 5.2206
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "COMPUTER",
+            "Internet & Networking"
+          ],
+          "subject": "COMPUTER",
+          "chapter": "Internet & Networking",
+          "topic": null,
+          "concept": null,
+          "questions": 56,
+          "recency": 30.0,
+          "last_2y": 22,
+          "prev_2y": 34,
+          "delta_2y": -12,
+          "trend": -0.3529,
+          "importance": 4.9822
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "COMPUTER",
+            "MS Office"
+          ],
+          "subject": "COMPUTER",
+          "chapter": "MS Office",
+          "topic": null,
+          "concept": null,
+          "questions": 44,
+          "recency": 23.0,
+          "last_2y": 15,
+          "prev_2y": 29,
+          "delta_2y": -14,
+          "trend": -0.4828,
+          "importance": 3.9794
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "COMPUTER",
+            "Operating Systems"
+          ],
+          "subject": "COMPUTER",
+          "chapter": "Operating Systems",
+          "topic": null,
+          "concept": null,
+          "questions": 6,
+          "recency": 3.5,
+          "last_2y": 2,
+          "prev_2y": 4,
+          "delta_2y": -2,
+          "trend": -0.5,
+          "importance": 3.7646
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "COMPUTER",
+            "Computer Fundamentals"
+          ],
+          "subject": "COMPUTER",
+          "chapter": "Computer Fundamentals",
+          "topic": null,
+          "concept": null,
+          "questions": 57,
+          "recency": 27.1,
+          "last_2y": 14,
+          "prev_2y": 43,
+          "delta_2y": -29,
+          "trend": -0.6744,
+          "importance": 2.5645
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "COMPUTER",
+            "Computer Software"
+          ],
+          "subject": "COMPUTER",
+          "chapter": "Computer Software",
+          "topic": null,
+          "concept": null,
+          "questions": 9,
+          "recency": 3.8,
+          "last_2y": 2,
+          "prev_2y": 7,
+          "delta_2y": -5,
+          "trend": -0.7143,
+          "importance": 2.161
+        }
+      ],
+      "ENG": [
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Grammar"
+          ],
+          "subject": "ENG",
+          "chapter": "Grammar",
+          "topic": null,
+          "concept": null,
+          "questions": 10043,
+          "recency": 5166.25,
+          "last_2y": 3175,
+          "prev_2y": 3122,
+          "delta_2y": 53,
+          "trend": 0.017,
+          "importance": 30.2513
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "_unclassified"
+          ],
+          "subject": "ENG",
+          "chapter": "_unclassified",
+          "topic": null,
+          "concept": null,
+          "questions": 8496,
+          "recency": 3499.5,
+          "last_2y": 1444,
+          "prev_2y": 3171,
+          "delta_2y": -1727,
+          "trend": -0.5446,
+          "importance": 20.3001
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Spelling"
+          ],
+          "subject": "ENG",
+          "chapter": "Spelling",
+          "topic": null,
+          "concept": null,
+          "questions": 1092,
+          "recency": 755.25,
+          "last_2y": 682,
+          "prev_2y": 358,
+          "delta_2y": 324,
+          "trend": 0.905,
+          "importance": 17.2485
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Reading Comprehension"
+          ],
+          "subject": "ENG",
+          "chapter": "Reading Comprehension",
+          "topic": null,
+          "concept": null,
+          "questions": 320,
+          "recency": 317.5,
+          "last_2y": 315,
+          "prev_2y": 5,
+          "delta_2y": 310,
+          "trend": 1.0,
+          "importance": 16.1166
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Active & Passive Voice"
+          ],
+          "subject": "ENG",
+          "chapter": "Active & Passive Voice",
+          "topic": null,
+          "concept": null,
+          "questions": 193,
+          "recency": 190.9,
+          "last_2y": 190,
+          "prev_2y": 1,
+          "delta_2y": 189,
+          "trend": 1.0,
+          "importance": 15.6719
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Direct & Indirect Speech"
+          ],
+          "subject": "ENG",
+          "chapter": "Direct & Indirect Speech",
+          "topic": null,
+          "concept": null,
+          "questions": 147,
+          "recency": 138.45,
+          "last_2y": 135,
+          "prev_2y": 9,
+          "delta_2y": 126,
+          "trend": 1.0,
+          "importance": 15.4938
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Sentence Improvement"
+          ],
+          "subject": "ENG",
+          "chapter": "Sentence Improvement",
+          "topic": null,
+          "concept": null,
+          "questions": 66,
+          "recency": 47.7,
+          "last_2y": 42,
+          "prev_2y": 14,
+          "delta_2y": 28,
+          "trend": 1.0,
+          "importance": 15.1843
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Homophones"
+          ],
+          "subject": "ENG",
+          "chapter": "Homophones",
+          "topic": null,
+          "concept": null,
+          "questions": 45,
+          "recency": 44.5,
+          "last_2y": 45,
+          "prev_2y": 0,
+          "delta_2y": 45,
+          "trend": 1.0,
+          "importance": 15.1566
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Idioms"
+          ],
+          "subject": "ENG",
+          "chapter": "Idioms",
+          "topic": null,
+          "concept": null,
+          "questions": 3092,
+          "recency": 1696.25,
+          "last_2y": 1185,
+          "prev_2y": 1150,
+          "delta_2y": 35,
+          "trend": 0.0304,
+          "importance": 14.9672
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Synonym"
+          ],
+          "subject": "ENG",
+          "chapter": "Synonym",
+          "topic": null,
+          "concept": null,
+          "questions": 2889,
+          "recency": 1589.0,
+          "last_2y": 1123,
+          "prev_2y": 1044,
+          "delta_2y": 79,
+          "trend": 0.0757,
+          "importance": 14.8418
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Cloze Test"
+          ],
+          "subject": "ENG",
+          "chapter": "Cloze Test",
+          "topic": null,
+          "concept": null,
+          "questions": 4977,
+          "recency": 2208.1,
+          "last_2y": 1093,
+          "prev_2y": 2057,
+          "delta_2y": -964,
+          "trend": -0.4686,
+          "importance": 14.2855
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Fill in the Blanks"
+          ],
+          "subject": "ENG",
+          "chapter": "Fill in the Blanks",
+          "topic": null,
+          "concept": null,
+          "questions": 785,
+          "recency": 526.5,
+          "last_2y": 454,
+          "prev_2y": 302,
+          "delta_2y": 152,
+          "trend": 0.5033,
+          "importance": 13.3608
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Error Detection"
+          ],
+          "subject": "ENG",
+          "chapter": "Error Detection",
+          "topic": null,
+          "concept": null,
+          "questions": 882,
+          "recency": 586.55,
+          "last_2y": 480,
+          "prev_2y": 401,
+          "delta_2y": 79,
+          "trend": 0.197,
+          "importance": 11.3083
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Antonym"
+          ],
+          "subject": "ENG",
+          "chapter": "Antonym",
+          "topic": null,
+          "concept": null,
+          "questions": 2266,
+          "recency": 1094.2,
+          "last_2y": 616,
+          "prev_2y": 919,
+          "delta_2y": -303,
+          "trend": -0.3297,
+          "importance": 9.9469
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "Para Jumbles"
+          ],
+          "subject": "ENG",
+          "chapter": "Para Jumbles",
+          "topic": null,
+          "concept": null,
+          "questions": 1152,
+          "recency": 601.7,
+          "last_2y": 350,
+          "prev_2y": 373,
+          "delta_2y": -23,
+          "trend": -0.0617,
+          "importance": 9.6562
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "ENG",
+            "OWS"
+          ],
+          "subject": "ENG",
+          "chapter": "OWS",
+          "topic": null,
+          "concept": null,
+          "questions": 1545,
+          "recency": 855.9,
+          "last_2y": 546,
+          "prev_2y": 789,
+          "delta_2y": -243,
+          "trend": -0.308,
+          "importance": 8.8288
+        }
+      ],
+      "GK": [
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "_unclassified"
+          ],
+          "subject": "GK",
+          "chapter": "_unclassified",
+          "topic": null,
+          "concept": null,
+          "questions": 3709,
+          "recency": 2369.4,
+          "last_2y": 1840,
+          "prev_2y": 1511,
+          "delta_2y": 329,
+          "trend": 0.2177,
+          "importance": 18.6827
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "CENSUS & DEMOGRAPHY"
+          ],
+          "subject": "GK",
+          "chapter": "CENSUS & DEMOGRAPHY",
+          "topic": null,
+          "concept": null,
+          "questions": 10,
+          "recency": 8.75,
+          "last_2y": 9,
+          "prev_2y": 1,
+          "delta_2y": 8,
+          "trend": 1.0,
+          "importance": 15.0319
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "INDIAN SPACE & NUCLEAR PROGRAMME"
+          ],
+          "subject": "GK",
+          "chapter": "INDIAN SPACE & NUCLEAR PROGRAMME",
+          "topic": null,
+          "concept": null,
+          "questions": 4,
+          "recency": 2.8,
+          "last_2y": 2,
+          "prev_2y": 1,
+          "delta_2y": 1,
+          "trend": 1.0,
+          "importance": 15.0109
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "ART & CULTURE"
+          ],
+          "subject": "GK",
+          "chapter": "ART & CULTURE",
+          "topic": null,
+          "concept": null,
+          "questions": 3503,
+          "recency": 1933.7,
+          "last_2y": 1338,
+          "prev_2y": 1510,
+          "delta_2y": -172,
+          "trend": -0.1139,
+          "importance": 14.8778
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "SCIENTISTS, INVENTIONS & DISCOVERIES"
+          ],
+          "subject": "GK",
+          "chapter": "SCIENTISTS, INVENTIONS & DISCOVERIES",
+          "topic": null,
+          "concept": null,
+          "questions": 349,
+          "recency": 196.95,
+          "last_2y": 132,
+          "prev_2y": 72,
+          "delta_2y": 60,
+          "trend": 0.8333,
+          "importance": 14.5813
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "INDIAN POLITY & CONSTITUTION"
+          ],
+          "subject": "GK",
+          "chapter": "INDIAN POLITY & CONSTITUTION",
+          "topic": null,
+          "concept": null,
+          "questions": 3269,
+          "recency": 1744.7,
+          "last_2y": 1173,
+          "prev_2y": 1268,
+          "delta_2y": -95,
+          "trend": -0.0749,
+          "importance": 14.4655
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "IMPORTANT REPORTS & INDICES"
+          ],
+          "subject": "GK",
+          "chapter": "IMPORTANT REPORTS & INDICES",
+          "topic": null,
+          "concept": null,
+          "questions": 244,
+          "recency": 145.15,
+          "last_2y": 104,
+          "prev_2y": 58,
+          "delta_2y": 46,
+          "trend": 0.7931,
+          "importance": 14.0488
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "INDIAN ECONOMY"
+          ],
+          "subject": "GK",
+          "chapter": "INDIAN ECONOMY",
+          "topic": null,
+          "concept": null,
+          "questions": 2453,
+          "recency": 1356.5,
+          "last_2y": 909,
+          "prev_2y": 984,
+          "delta_2y": -75,
+          "trend": -0.0762,
+          "importance": 12.6992
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "INDIAN GEOGRAPHY"
+          ],
+          "subject": "GK",
+          "chapter": "INDIAN GEOGRAPHY",
+          "topic": null,
+          "concept": null,
+          "questions": 2600,
+          "recency": 1361.8,
+          "last_2y": 899,
+          "prev_2y": 998,
+          "delta_2y": -99,
+          "trend": -0.0992,
+          "importance": 12.676
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "ANCIENT INDIAN HISTORY"
+          ],
+          "subject": "GK",
+          "chapter": "ANCIENT INDIAN HISTORY",
+          "topic": null,
+          "concept": null,
+          "questions": 1008,
+          "recency": 575.6,
+          "last_2y": 429,
+          "prev_2y": 337,
+          "delta_2y": 92,
+          "trend": 0.273,
+          "importance": 11.9659
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "SPORTS — STATIC GK"
+          ],
+          "subject": "GK",
+          "chapter": "SPORTS — STATIC GK",
+          "topic": null,
+          "concept": null,
+          "questions": 2289,
+          "recency": 1192.95,
+          "last_2y": 777,
+          "prev_2y": 902,
+          "delta_2y": -125,
+          "trend": -0.1386,
+          "importance": 11.6571
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC"
+          ],
+          "subject": "GK",
+          "chapter": "GOVERNMENT SCHEMES & WELFARE — STATIC/SEMI-STATIC",
+          "topic": null,
+          "concept": null,
+          "questions": 881,
+          "recency": 498.3,
+          "last_2y": 362,
+          "prev_2y": 315,
+          "delta_2y": 47,
+          "trend": 0.1492,
+          "importance": 10.7204
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "MODERN INDIAN HISTORY"
+          ],
+          "subject": "GK",
+          "chapter": "MODERN INDIAN HISTORY",
+          "topic": null,
+          "concept": null,
+          "questions": 1675,
+          "recency": 838.2,
+          "last_2y": 522,
+          "prev_2y": 618,
+          "delta_2y": -96,
+          "trend": -0.1553,
+          "importance": 10.0476
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "ENVIRONMENT & ECOLOGY"
+          ],
+          "subject": "GK",
+          "chapter": "ENVIRONMENT & ECOLOGY",
+          "topic": null,
+          "concept": null,
+          "questions": 400,
+          "recency": 202.6,
+          "last_2y": 129,
+          "prev_2y": 111,
+          "delta_2y": 18,
+          "trend": 0.1622,
+          "importance": 9.6091
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "CURRENT AFFAIRS"
+          ],
+          "subject": "GK",
+          "chapter": "CURRENT AFFAIRS",
+          "topic": null,
+          "concept": null,
+          "questions": 1793,
+          "recency": 762.1,
+          "last_2y": 353,
+          "prev_2y": 477,
+          "delta_2y": -124,
+          "trend": -0.26,
+          "importance": 9.1747
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "GENERAL SCIENCE — PHYSICS"
+          ],
+          "subject": "GK",
+          "chapter": "GENERAL SCIENCE — PHYSICS",
+          "topic": null,
+          "concept": null,
+          "questions": 751,
+          "recency": 380.7,
+          "last_2y": 225,
+          "prev_2y": 234,
+          "delta_2y": -9,
+          "trend": -0.0385,
+          "importance": 8.8888
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "MEDIEVAL INDIAN HISTORY"
+          ],
+          "subject": "GK",
+          "chapter": "MEDIEVAL INDIAN HISTORY",
+          "topic": null,
+          "concept": null,
+          "questions": 915,
+          "recency": 477.0,
+          "last_2y": 304,
+          "prev_2y": 342,
+          "delta_2y": -38,
+          "trend": -0.1111,
+          "importance": 8.7442
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "GENERAL SCIENCE — BIOLOGY"
+          ],
+          "subject": "GK",
+          "chapter": "GENERAL SCIENCE — BIOLOGY",
+          "topic": null,
+          "concept": null,
+          "questions": 1623,
+          "recency": 729.45,
+          "last_2y": 359,
+          "prev_2y": 627,
+          "delta_2y": -268,
+          "trend": -0.4274,
+          "importance": 7.6775
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "GENERAL SCIENCE — CHEMISTRY"
+          ],
+          "subject": "GK",
+          "chapter": "GENERAL SCIENCE — CHEMISTRY",
+          "topic": null,
+          "concept": null,
+          "questions": 1209,
+          "recency": 567.7,
+          "last_2y": 323,
+          "prev_2y": 541,
+          "delta_2y": -218,
+          "trend": -0.403,
+          "importance": 7.061
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "GK",
+            "AWARDS — STATIC"
+          ],
+          "subject": "GK",
+          "chapter": "AWARDS — STATIC",
+          "topic": null,
+          "concept": null,
+          "questions": 1300,
+          "recency": 575.05,
+          "last_2y": 287,
+          "prev_2y": 494,
+          "delta_2y": -207,
+          "trend": -0.419,
+          "importance": 7.0433
+        }
+      ],
+      "MATH": [
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "_unclassified"
+          ],
+          "subject": "MATH",
+          "chapter": "_unclassified",
+          "topic": null,
+          "concept": null,
+          "questions": 4560,
+          "recency": 2228.0,
+          "last_2y": 1227,
+          "prev_2y": 1075,
+          "delta_2y": 152,
+          "trend": 0.1414,
+          "importance": 18.5281
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Mensuration 2D & 3D"
+          ],
+          "subject": "MATH",
+          "chapter": "Mensuration 2D & 3D",
+          "topic": null,
+          "concept": null,
+          "questions": 3044,
+          "recency": 1726.5,
+          "last_2y": 1266,
+          "prev_2y": 1049,
+          "delta_2y": 217,
+          "trend": 0.2069,
+          "importance": 16.3245
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Discount"
+          ],
+          "subject": "MATH",
+          "chapter": "Discount",
+          "topic": null,
+          "concept": null,
+          "questions": 233,
+          "recency": 181.0,
+          "last_2y": 180,
+          "prev_2y": 53,
+          "delta_2y": 127,
+          "trend": 1.0,
+          "importance": 15.6831
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Simple Interest"
+          ],
+          "subject": "MATH",
+          "chapter": "Simple Interest",
+          "topic": null,
+          "concept": null,
+          "questions": 1002,
+          "recency": 614.8,
+          "last_2y": 526,
+          "prev_2y": 302,
+          "delta_2y": 224,
+          "trend": 0.7417,
+          "importance": 15.5773
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Geometry"
+          ],
+          "subject": "MATH",
+          "chapter": "Geometry",
+          "topic": null,
+          "concept": null,
+          "questions": 2075,
+          "recency": 1212.15,
+          "last_2y": 870,
+          "prev_2y": 620,
+          "delta_2y": 250,
+          "trend": 0.4032,
+          "importance": 15.5732
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Partnership"
+          ],
+          "subject": "MATH",
+          "chapter": "Partnership",
+          "topic": null,
+          "concept": null,
+          "questions": 70,
+          "recency": 65.0,
+          "last_2y": 60,
+          "prev_2y": 10,
+          "delta_2y": 50,
+          "trend": 1.0,
+          "importance": 15.2327
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Permutation & Combination"
+          ],
+          "subject": "MATH",
+          "chapter": "Permutation & Combination",
+          "topic": null,
+          "concept": null,
+          "questions": 2,
+          "recency": 1.75,
+          "last_2y": 2,
+          "prev_2y": 0,
+          "delta_2y": 2,
+          "trend": 1.0,
+          "importance": 15.0064
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Race & Circular Motion"
+          ],
+          "subject": "MATH",
+          "chapter": "Race & Circular Motion",
+          "topic": null,
+          "concept": null,
+          "questions": 2,
+          "recency": 1.5,
+          "last_2y": 2,
+          "prev_2y": 0,
+          "delta_2y": 2,
+          "trend": 1.0,
+          "importance": 15.0057
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Number System"
+          ],
+          "subject": "MATH",
+          "chapter": "Number System",
+          "topic": null,
+          "concept": null,
+          "questions": 3311,
+          "recency": 1755.25,
+          "last_2y": 1182,
+          "prev_2y": 1228,
+          "delta_2y": -46,
+          "trend": -0.0375,
+          "importance": 14.8124
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Profit & Loss"
+          ],
+          "subject": "MATH",
+          "chapter": "Profit & Loss",
+          "topic": null,
+          "concept": null,
+          "questions": 3003,
+          "recency": 1515.8,
+          "last_2y": 971,
+          "prev_2y": 1294,
+          "delta_2y": -323,
+          "trend": -0.2496,
+          "importance": 12.3178
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Mixture & Alligation"
+          ],
+          "subject": "MATH",
+          "chapter": "Mixture & Alligation",
+          "topic": null,
+          "concept": null,
+          "questions": 334,
+          "recency": 220.45,
+          "last_2y": 181,
+          "prev_2y": 126,
+          "delta_2y": 55,
+          "trend": 0.4365,
+          "importance": 11.6521
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Ratio & Proportion"
+          ],
+          "subject": "MATH",
+          "chapter": "Ratio & Proportion",
+          "topic": null,
+          "concept": null,
+          "questions": 1561,
+          "recency": 839.55,
+          "last_2y": 567,
+          "prev_2y": 611,
+          "delta_2y": -44,
+          "trend": -0.072,
+          "importance": 10.571
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Probability"
+          ],
+          "subject": "MATH",
+          "chapter": "Probability",
+          "topic": null,
+          "concept": null,
+          "questions": 44,
+          "recency": 24.1,
+          "last_2y": 18,
+          "prev_2y": 13,
+          "delta_2y": 5,
+          "trend": 0.3846,
+          "importance": 10.4875
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Time & Distance"
+          ],
+          "subject": "MATH",
+          "chapter": "Time & Distance",
+          "topic": null,
+          "concept": null,
+          "questions": 1766,
+          "recency": 882.85,
+          "last_2y": 538,
+          "prev_2y": 816,
+          "delta_2y": -278,
+          "trend": -0.3407,
+          "importance": 8.8569
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Average"
+          ],
+          "subject": "MATH",
+          "chapter": "Average",
+          "topic": null,
+          "concept": null,
+          "questions": 1281,
+          "recency": 628.65,
+          "last_2y": 391,
+          "prev_2y": 516,
+          "delta_2y": -125,
+          "trend": -0.2422,
+          "importance": 8.4904
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Time & Work"
+          ],
+          "subject": "MATH",
+          "chapter": "Time & Work",
+          "topic": null,
+          "concept": null,
+          "questions": 1681,
+          "recency": 822.4,
+          "last_2y": 452,
+          "prev_2y": 763,
+          "delta_2y": -311,
+          "trend": -0.4076,
+          "importance": 8.1202
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Trigonometry"
+          ],
+          "subject": "MATH",
+          "chapter": "Trigonometry",
+          "topic": null,
+          "concept": null,
+          "questions": 1589,
+          "recency": 740.85,
+          "last_2y": 354,
+          "prev_2y": 650,
+          "delta_2y": -296,
+          "trend": -0.4554,
+          "importance": 7.466
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Percentage"
+          ],
+          "subject": "MATH",
+          "chapter": "Percentage",
+          "topic": null,
+          "concept": null,
+          "questions": 1341,
+          "recency": 643.05,
+          "last_2y": 377,
+          "prev_2y": 635,
+          "delta_2y": -258,
+          "trend": -0.4063,
+          "importance": 7.3526
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Algebra"
+          ],
+          "subject": "MATH",
+          "chapter": "Algebra",
+          "topic": null,
+          "concept": null,
+          "questions": 1544,
+          "recency": 687.55,
+          "last_2y": 307,
+          "prev_2y": 672,
+          "delta_2y": -365,
+          "trend": -0.5432,
+          "importance": 6.6284
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "MATH",
+            "Data Interpretation"
+          ],
+          "subject": "MATH",
+          "chapter": "Data Interpretation",
+          "topic": null,
+          "concept": null,
+          "questions": 2327,
+          "recency": 859.95,
+          "last_2y": 244,
+          "prev_2y": 920,
+          "delta_2y": -676,
+          "trend": -0.7348,
+          "importance": 6.3587
+        }
+      ],
+      "REAS": [
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "SERIES"
+          ],
+          "subject": "REAS",
+          "chapter": "SERIES",
+          "topic": null,
+          "concept": null,
+          "questions": 6124,
+          "recency": 3211.45,
+          "last_2y": 2048,
+          "prev_2y": 2459,
+          "delta_2y": -411,
+          "trend": -0.1671,
+          "importance": 20.2004
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "Logical Reasoning"
+          ],
+          "subject": "REAS",
+          "chapter": "Logical Reasoning",
+          "topic": null,
+          "concept": null,
+          "questions": 2412,
+          "recency": 845.45,
+          "last_2y": 175,
+          "prev_2y": 8,
+          "delta_2y": 167,
+          "trend": 1.0,
+          "importance": 19.4104
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "_unclassified"
+          ],
+          "subject": "REAS",
+          "chapter": "_unclassified",
+          "topic": null,
+          "concept": null,
+          "questions": 1171,
+          "recency": 899.6,
+          "last_2y": 764,
+          "prev_2y": 365,
+          "delta_2y": 399,
+          "trend": 1.0,
+          "importance": 18.4072
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "LOGICAL STATEMENT QUESTIONS"
+          ],
+          "subject": "REAS",
+          "chapter": "LOGICAL STATEMENT QUESTIONS",
+          "topic": null,
+          "concept": null,
+          "questions": 300,
+          "recency": 244.45,
+          "last_2y": 223,
+          "prev_2y": 47,
+          "delta_2y": 176,
+          "trend": 1.0,
+          "importance": 15.9091
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "NUMBER / DIGIT OPERATIONS"
+          ],
+          "subject": "REAS",
+          "chapter": "NUMBER / DIGIT OPERATIONS",
+          "topic": null,
+          "concept": null,
+          "questions": 229,
+          "recency": 197.55,
+          "last_2y": 225,
+          "prev_2y": 3,
+          "delta_2y": 222,
+          "trend": 1.0,
+          "importance": 15.7223
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "FIGURE COUNTING"
+          ],
+          "subject": "REAS",
+          "chapter": "FIGURE COUNTING",
+          "topic": null,
+          "concept": null,
+          "questions": 67,
+          "recency": 58.0,
+          "last_2y": 67,
+          "prev_2y": 0,
+          "delta_2y": 67,
+          "trend": 1.0,
+          "importance": 15.2118
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "PAPER FOLDING"
+          ],
+          "subject": "REAS",
+          "chapter": "PAPER FOLDING",
+          "topic": null,
+          "concept": null,
+          "questions": 67,
+          "recency": 53.75,
+          "last_2y": 59,
+          "prev_2y": 8,
+          "delta_2y": 51,
+          "trend": 1.0,
+          "importance": 15.2008
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "WORD / DICTIONARY ORDER"
+          ],
+          "subject": "REAS",
+          "chapter": "WORD / DICTIONARY ORDER",
+          "topic": null,
+          "concept": null,
+          "questions": 37,
+          "recency": 36.75,
+          "last_2y": 37,
+          "prev_2y": 0,
+          "delta_2y": 37,
+          "trend": 1.0,
+          "importance": 15.1292
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "DICE"
+          ],
+          "subject": "REAS",
+          "chapter": "DICE",
+          "topic": null,
+          "concept": null,
+          "questions": 40,
+          "recency": 30.0,
+          "last_2y": 40,
+          "prev_2y": 0,
+          "delta_2y": 40,
+          "trend": 1.0,
+          "importance": 15.1145
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "MISSING NUMBER"
+          ],
+          "subject": "REAS",
+          "chapter": "MISSING NUMBER",
+          "topic": null,
+          "concept": null,
+          "questions": 28,
+          "recency": 24.0,
+          "last_2y": 20,
+          "prev_2y": 8,
+          "delta_2y": 12,
+          "trend": 1.0,
+          "importance": 15.0879
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "INPUT-OUTPUT / MACHINE TYPE REASONING"
+          ],
+          "subject": "REAS",
+          "chapter": "INPUT-OUTPUT / MACHINE TYPE REASONING",
+          "topic": null,
+          "concept": null,
+          "questions": 18,
+          "recency": 18.0,
+          "last_2y": 18,
+          "prev_2y": 0,
+          "delta_2y": 18,
+          "trend": 1.0,
+          "importance": 15.0632
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "FLOOR / BUILDING ARRANGEMENT"
+          ],
+          "subject": "REAS",
+          "chapter": "FLOOR / BUILDING ARRANGEMENT",
+          "topic": null,
+          "concept": null,
+          "questions": 4,
+          "recency": 4.0,
+          "last_2y": 4,
+          "prev_2y": 0,
+          "delta_2y": 4,
+          "trend": 1.0,
+          "importance": 15.014
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "SCHEDULING / DAY / MONTH ARRANGEMENT"
+          ],
+          "subject": "REAS",
+          "chapter": "SCHEDULING / DAY / MONTH ARRANGEMENT",
+          "topic": null,
+          "concept": null,
+          "questions": 4,
+          "recency": 3.5,
+          "last_2y": 3,
+          "prev_2y": 1,
+          "delta_2y": 2,
+          "trend": 1.0,
+          "importance": 15.0127
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "BOX / STACK ARRANGEMENT"
+          ],
+          "subject": "REAS",
+          "chapter": "BOX / STACK ARRANGEMENT",
+          "topic": null,
+          "concept": null,
+          "questions": 1,
+          "recency": 1.0,
+          "last_2y": 1,
+          "prev_2y": 0,
+          "delta_2y": 1,
+          "trend": 1.0,
+          "importance": 15.0035
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "PUZZLES"
+          ],
+          "subject": "REAS",
+          "chapter": "PUZZLES",
+          "topic": null,
+          "concept": null,
+          "questions": 3031,
+          "recency": 1661.15,
+          "last_2y": 1139,
+          "prev_2y": 1200,
+          "delta_2y": -61,
+          "trend": -0.0508,
+          "importance": 14.2106
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "MIRROR IMAGE"
+          ],
+          "subject": "REAS",
+          "chapter": "MIRROR IMAGE",
+          "topic": null,
+          "concept": null,
+          "questions": 229,
+          "recency": 153.5,
+          "last_2y": 145,
+          "prev_2y": 84,
+          "delta_2y": 61,
+          "trend": 0.7262,
+          "importance": 13.5547
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "CODING-DECODING"
+          ],
+          "subject": "REAS",
+          "chapter": "CODING-DECODING",
+          "topic": null,
+          "concept": null,
+          "questions": 3344,
+          "recency": 1641.65,
+          "last_2y": 1031,
+          "prev_2y": 1324,
+          "delta_2y": -293,
+          "trend": -0.2213,
+          "importance": 13.17
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "NON-VERBAL SERIES"
+          ],
+          "subject": "REAS",
+          "chapter": "NON-VERBAL SERIES",
+          "topic": null,
+          "concept": null,
+          "questions": 4019,
+          "recency": 1815.3,
+          "last_2y": 993,
+          "prev_2y": 1636,
+          "delta_2y": -643,
+          "trend": -0.393,
+          "importance": 12.9534
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "ANALOGY"
+          ],
+          "subject": "REAS",
+          "chapter": "ANALOGY",
+          "topic": null,
+          "concept": null,
+          "questions": 4142,
+          "recency": 1891.2,
+          "last_2y": 940,
+          "prev_2y": 1767,
+          "delta_2y": -827,
+          "trend": -0.468,
+          "importance": 12.7007
+        },
+        {
+          "kind": "chapter",
+          "path": [
+            "REAS",
+            "ALPHABET TEST"
+          ],
+          "subject": "REAS",
+          "chapter": "ALPHABET TEST",
+          "topic": null,
+          "concept": null,
+          "questions": 1516,
+          "recency": 859.4,
+          "last_2y": 637,
+          "prev_2y": 585,
+          "delta_2y": 52,
+          "trend": 0.0889,
+          "importance": 11.7877
+        }
+      ]
+    }
+  },
+  "papers": {
+    "total": 1322,
+    "validated": 1318,
+    "flagged": 4,
+    "placeable": 1322
+  }
+}

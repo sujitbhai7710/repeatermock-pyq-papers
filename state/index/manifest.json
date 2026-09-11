@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "generated_by": "agent.indexer",
+  "format": "jsonl-sharded",
+  "max_shard_bytes": 26214400,
+  "legacy_path": "state/questions_index.jsonl",
+  "records": 138634,
+  "bytes": 108569888,
+  "qid_sha256": "852558b4a9cceeb49a37b80939ce16f9bb4c1d6099234cf4145c43a9f921f6b1",
+  "subjects": {
+    "COMPUTER": {
+      "shards": 1,
+      "records": 220
+    },
+    "ENG": {
+      "shards": 2,
+      "records": 37990
+    },
+    "GK": {
+      "shards": 2,
+      "records": 34578
+    },
+    "MATH": {
+      "shards": 1,
+      "records": 32100
+    },
+    "REAS": {
+      "shards": 2,
+      "records": 33746
+    }
+  },
+  "shards": [
+    {
+      "path": "state/index/eng.1.jsonl",
+      "file": "eng.1.jsonl",
+      "subject": "ENG",
+      "records": 34168,
+      "bytes": 26213869,
+      "sha256": "3c491e728e532f0543a8ed136c2f6cabb2db6fe5ea8f7bc2a03dce4dbe1b776b"
+    },
+    {
+      "path": "state/index/eng.2.jsonl",
+      "file": "eng.2.jsonl",
+      "subject": "ENG",
+      "records": 3822,
+      "bytes": 2966642,
+      "sha256": "c1557fea58b173f4f339014469c12bfdc4dbac5657e4f32924ff4ac134ab7c22"
+    },
+    {
+      "path": "state/index/gk.1.jsonl",
+      "file": "gk.1.jsonl",
+      "subject": "GK",
+      "records": 32978,
+      "bytes": 26214296,
+      "sha256": "90d5f7080bbaf89ac4ec3353dbe7aff471c2d1d2353e9ce42204efd5fb29641a"
+    },
+    {
+      "path": "state/index/gk.2.jsonl",
+      "file": "gk.2.jsonl",
+      "subject": "GK",
+      "records": 1600,
+      "bytes": 1288344,
+      "sha256": "7dd08c8101b14bcc79f4c63da6be2b39a79fdf2bb5e077c09cea8238114de282"
+    },
+    {
+      "path": "state/index/math.1.jsonl",
+      "file": "math.1.jsonl",
+      "subject": "MATH",
+      "records": 32100,
+      "bytes": 25229585,
+      "sha256": "94ad6cea4cdb669e7eaa3195a9d7f25c7b76965163f1dd8808451fbc2f3aae0c"
+    },
+    {
+      "path": "state/index/reas.1.jsonl",
+      "file": "reas.1.jsonl",
+      "subject": "REAS",
+      "records": 33413,
+      "bytes": 26213863,
+      "sha256": "eb4384b0c382f9d5737dfce75cce998eb2bbba8badf8c8cd638590b1c49fb6f0"
+    },
+    {
+      "path": "state/index/reas.2.jsonl",
+      "file": "reas.2.jsonl",
+      "subject": "REAS",
+      "records": 333,
+      "bytes": 266473,
+      "sha256": "cacbaab11516d0d563e34760959b3edd0cecbdf2212e94c7c5e800ce6bd7b689"
+    },
+    {
+      "path": "state/index/computer.1.jsonl",
+      "file": "computer.1.jsonl",
+      "subject": "COMPUTER",
+      "records": 220,
+      "bytes": 176816,
+      "sha256": "5b462329b421d35a5b5c701bc3213dd4f2cbd376f4ab9563d4ccd8c49deb5041"
+    }
+  ]
+}
