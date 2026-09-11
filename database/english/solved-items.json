@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generated_by": "agent.phases.phase1",
+  "vocabulary": {
+    "status": "ok",
+    "counters": {
+      "vocabulary_items": 10592,
+      "synonym_questions": 2083,
+      "antonym_questions": 3256,
+      "ows_questions": 1529,
+      "idiom_questions": 2678,
+      "spelling_questions": 907,
+      "homonym_questions": 139,
+      "distinct_synonym_words": 5415,
+      "distinct_antonym_words": 7070,
+      "distinct_ows_entries": 5395,
+      "distinct_idioms": 11530
+    },
+    "files": [
+      "database/english/_analysis/vocabulary/all.json",
+      "database/english/_analysis/vocabulary/synonyms.md",
+      "database/english/_analysis/vocabulary/antonyms.md",
+      "database/english/_analysis/vocabulary/one-word-substitution.md",
+      "database/english/_analysis/vocabulary/idioms.md",
+      "database/english/_analysis/vocabulary/spelling.md",
+      "database/english/_analysis/vocabulary/homonyms.md"
+    ],
+    "notes": []
+  },
+  "grammar": {
+    "status": "ok",
+    "counters": {
+      "rules": 129,
+      "grammar_questions_matched": 6480,
+      "grammar_questions_unmapped": 3913,
+      "rules_with_questions": 98,
+      "type:Error Detection": 920,
+      "type:Phrasal Verb": 13,
+      "type:Sentence Improvement": 2836,
+      "type:Shuffling of Sentence parts": 247,
+      "type:Shuffling of Sentences in a passage": 58
+    },
+    "files": [
+      "database/english/_analysis/grammar/rules.json",
+      "database/english/_analysis/grammar/questions.jsonl",
+      "database/english/_analysis/grammar/unmapped.jsonl",
+      "database/english/_analysis/grammar/rules.md"
+    ],
+    "notes": []
+  }
+}
