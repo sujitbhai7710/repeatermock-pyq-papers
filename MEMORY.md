@@ -101,23 +101,28 @@ agent/          python package (stdlib only — no third-party runtime deps)
   vocab.py      synonym/antonym 4-bucket, OWS, idioms, spelling, homonyms
   grammar.py    map grammar Qs to the 129 rules
   distribution.py / build_db.py / mockdata.py
-  router.py     provider failover + circuit breaker + GLOBAL HALT
-  llm.py        OpenAI-compatible client (+ reasoning-truncation escalation)
+  router.py     candidate-model + provider failover, circuit breaker, GLOBAL HALT
+  llm.py        OpenAI-compatible client (+ reasoning-truncation escalation, failure_class)
   debate.py     DeepSeek proposes -> GPT-5.6 Sol judges (max 1 rebuttal)
   verify.py     AI re-check of every python-extracted item (resumable, windowed)
+  gitpush.py    checkpoint commit + push every tick (PYQ_GIT_PUSH)
   websearch.py  Monid (TinyFish) search/fetch
   checkpoint.py / tracking.py
   phases/       phase0..phase5 (phase0 first, always)
 config/         exams.json (layout table), settings.json, supplementary_taxonomy.json
 tools/          resolve.py, mocks.py, audit_db.py
-tests/          123 tests (pure functions + failover + soft stop + audit rules)
+tests/          188 tests (pure functions + failover + model fallback + gitpush + audit rules)
 state/          GENERATED (gitignored on main) — taxonomy, alias map, sharded index, checkpoints
 database/       GENERATED (gitignored on main) — the deliverable tree
 .github/workflows/pyq-agent.yml   the CI pipeline
 ```
 
 **Branch model:** `main` = code only. Generated `state/` + `database/` are published to the
-**`pyq-db`** branch by CI via `git add -f state database`.
+**`pyq-db`** branch by CI via `git add -f state database` — and with `PYQ_GIT_PUSH=1`
+(the workflow default) by the **agent itself on every checkpoint tick** (15 min), so a killed job
+keeps everything up to its last tick. That logic lives in `agent/gitpush.py`
+(`python -m agent.cli publish [--force]` runs one publish by hand); the workflow's final commit
+step is only a safety net for a job that died before its first tick.
 
 ## 7. Commands cheat sheet
 
@@ -134,6 +139,7 @@ $py = "C:\Users\akasa\AppData\Local\Programs\Python\Python311\python.exe"
 & $py -m agent.cli run --no-ai  # python extraction only, no LLM calls
 & $py -m agent.cli phase 3      # one phase (0-5)
 & $py -m agent.cli verify-db --limit 20 --batch-size 20 --report-only
+& $py -m agent.cli routes --probe --timeout 30   # what is alive right now (never prints keys)
 & $py -m agent.cli audit        # MUST print VIOLATIONS: 0
 & $py -m agent.cli stats --top 20
 & $py -m agent.cli mocks
@@ -151,7 +157,16 @@ Soft stops checkpoint and publish; the workflow treats 3/4 as success.
 | jw-rotator (justwoker) | `https://jw-rotator.opencode-5a3.workers.dev/v1` | **fallback** |
 | Monid (TinyFish) | `https://api.monid.ai/v1/{inspect,run,discover}` | web search + fetch (free) |
 
-- Models: **`deepseek-v4-flash`** (proposer) and **`gpt-5.6-sol`** (judge).
+- Models: **`deepseek-v4-flash`** (proposer) and **`gpt-5.6-sol`** (judge), each with an ordered
+  candidate list in `config/settings.json` (`debate.proposer_models` / `debate.critic_models`).
+  A model with **zero** working routes falls back to the next candidate model of its role
+  (live case: `deepseek-v4-flash` is dark on the runner — WAF on agentrouter, `all_keys_exhausted`
+  on both workers, 403 direct — while `jw-worker` still serves `gpt-5.6-sol`). The serving
+  `(provider, model)` pair is recorded per batch; a debate that needed one model for both roles is
+  flagged `same_model_fallback: true`.
+- **`python -m agent.cli routes --probe`** is the diagnostic: one tiny completion per
+  `(provider, model)` candidate, printed as a provider × model matrix (`ok` /
+  `rate_limited:503` / `http_403` / `waf_html` / `bad_json` / `transport` / `nokey`).
 - **Every worker call MUST send a browser `User-Agent`** or Cloudflare answers `403 error code: 1010`.
 - Repo secrets: `AR_PROXY_TOKEN`, `JW_PROXY_TOKEN`, `MONID_API_KEY` (set, encrypted).
 - **Never hardcode keys.** Read from env. `.env`/key files are never committed.
@@ -160,9 +175,11 @@ Soft stops checkpoint and publish; the workflow treats 3/4 as success.
 
 `.github/workflows/pyq-agent.yml`: `workflow_dispatch` + cron every 6 h, **`timeout-minutes: 350`
 as a JOB key**, `concurrency: {group: pyq-agent, cancel-in-progress: false}`, `permissions: contents: write`.
-Steps: checkout(depth 0) → setup-python 3.11 → pip → preflight keys → run agent
-(`MAX_WORK_SECONDS=19800`) → `agent.cli audit` → PROGRESS.md into job summary → commit+push
-`state`+`database` to `pyq-db` → upload artifacts.
+Steps: checkout(depth 0) → setup-python 3.11 → pip → preflight keys → `agent.cli routes --probe`
+(matrix into the job summary, `continue-on-error`) → run agent
+(`MAX_WORK_SECONDS=19800`, `CHECKPOINT_INTERVAL_SECONDS=900`, `PYQ_GIT_PUSH=1`) → `agent.cli audit`
+→ PROGRESS.md into job summary → commit+push `state`+`database` to `pyq-db` (safety net; the agent
+already published every 15 min) → upload artifacts.
 No secrets ⇒ no-op dry run, exit 0, `status=skipped_no_keys`.
 
 ## 10. Things you will be tempted to "fix" — don't

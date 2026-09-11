@@ -19,6 +19,17 @@ next one and only raises :class:`~agent.router.GlobalHalt` when no route for a
 model can serve the request.  A ``GlobalHalt`` means "the AI is unavailable": the
 caller records ``status=ai_unavailable`` and finishes its deterministic work
 instead of failing the run.
+
+Model fallback
+--------------
+A route is a ``(provider, model)`` pair, so when *no provider* can serve a model
+the request also **falls back across models**: the proposer tries
+``debate.proposer_models`` and the critic ``debate.critic_models`` in order, and
+the pair that answered is recorded in the provenance.  The two opinions stay
+independent: the critic prefers a model other than the one that wrote the
+proposal and only reuses it when that is the only working model left — a
+``same_model_fallback`` that is flagged in the provenance (and in ``PROGRESS.md``)
+instead of being hidden.
 """
 
 from __future__ import annotations
@@ -43,6 +54,55 @@ SYSTEM_CRITIC = (
 
 VERDICT_AGREE = "agree"
 VERDICT_COUNTER = "counter"
+
+
+def ordered_candidates(
+    models: Sequence[str],
+    *,
+    first: Optional[str] = None,
+    last: Optional[str] = None,
+) -> List[str]:
+    """De-duplicated candidate list with *first* moved to the front and *last* to the back.
+
+    *last* is how the two roles stay independent: the critic prefers any model
+    other than the one that wrote the proposal, and only reaches for it when
+    nothing else can serve — the ``same_model_fallback`` case.
+    """
+
+    out: List[str] = []
+    for name in models:
+        value = str(name).strip()
+        if value and value not in out:
+            out.append(value)
+    if first:
+        if first in out:
+            out.remove(first)
+        out.insert(0, first)
+    if last and last in out and last != first:
+        out.remove(last)
+        out.append(last)
+    return out
+
+
+def same_model_fallback(provenance: Dict[str, Any]) -> bool:
+    """True when one model effectively spoke for both sides of the debate.
+
+    The two opinions must stay independent, so a run where every proposer-side
+    and every critic-side call was served by the *same* model is flagged rather
+    than silently reported as a two-model agreement.
+    """
+
+    proposer: set = set()
+    critic: set = set()
+    for role in ("proposer", "rebuttal"):
+        call = provenance.get(role)
+        if isinstance(call, dict) and call.get("model"):
+            proposer.add(str(call["model"]))
+    for role in ("critic", "final"):
+        call = provenance.get(role)
+        if isinstance(call, dict) and call.get("model"):
+            critic.add(str(call["model"]))
+    return bool(proposer and critic and proposer & critic)
 
 
 @dataclass
@@ -122,15 +182,39 @@ class Debate:
         self.policy = settings.debate
 
     # -- helpers ----------------------------------------------------------
+    def _role_models(
+        self,
+        role: str,
+        *,
+        other: Optional[str] = None,
+        first: Optional[str] = None,
+        last: Optional[str] = None,
+    ) -> List[str]:
+        """Candidate models of *role*, with the other role's served model last.
+
+        *other* is the model that answered for the opposite side of the debate: it
+        is appended (and moved last) so a debate can still finish when the only
+        working model has to speak for both roles — flagged as
+        ``same_model_fallback`` instead of failing the step.
+        """
+
+        models = list(self.policy.candidates_for(role))
+        if other and other not in models:
+            models.append(other)
+        return ordered_candidates(models, first=first, last=last)
+
     def _chat(
         self,
         model: str,
         system: str,
         user: str,
-        provider_order: Optional[Sequence[str]] = None,
         *,
+        models: Optional[Sequence[str]] = None,
+        role: str = "proposer",
         max_tokens: int = 700,
     ) -> llm.ChatResult:
+        """One role call: walk the role's candidate models and provider chains."""
+
         messages = [
             llm.ChatMessage("system", system),
             llm.ChatMessage("user", user),
@@ -138,10 +222,11 @@ class Debate:
         return self.router.chat(
             model=model,
             messages=messages,
-            provider_order=provider_order,
             temperature=0.0,
             max_tokens=max_tokens,
             json_mode=True,
+            models=models,
+            role=role,
         )
 
     # -- protocol ---------------------------------------------------------
@@ -155,19 +240,28 @@ class Debate:
     ) -> DebateOutcome:
         """Propose -> criticise -> (one rebuttal) -> final verdict.
 
-        The route order is resolved **per model** (``debate.model_provider_orders``
-        first, then the role's order): a bundle where ``gpt-5.6-sol`` is only
-        served by one worker must not be steered by the proposer's chain.
+        Each call walks the **candidate models of its role** (the primary model
+        first) and, for every candidate, that model's own provider order
+        (``debate.model_provider_orders`` first, then the role's order): a bundle
+        where ``gpt-5.6-sol`` is only served by one worker must not be steered by
+        the proposer's chain, and a model with no working route must not cost the
+        debate its chance to run at all.
         """
 
         proposer_model = self.policy.proposer_model
         critic_model = self.policy.critic_model
-        proposer_order = self.policy.order_for(proposer_model, role="proposer")
-        critic_order = self.policy.order_for(critic_model, role="critic")
 
         user = _item_prompt(task, payload, vocabulary) + "\n" + _proposal_schema_hint(task)
 
-        proposal_call = self._chat(proposer_model, SYSTEM_PROPOSER, user, proposer_order)
+        proposal_call = self._chat(
+            proposer_model,
+            SYSTEM_PROPOSER,
+            user,
+            models=self._role_models("proposer"),
+            role="proposer",
+        )
+        # the model that actually answered — not necessarily the primary one
+        proposer_used = proposal_call.model or proposer_model
         proposal = llm.extract_json(proposal_call.text)
         if not isinstance(proposal, dict) or not proposal:
             outcome = DebateOutcome(
@@ -181,6 +275,7 @@ class Debate:
                     "proposer": proposal_call.as_dict(),
                     "critic": None,
                     "reason": "proposer reply was not valid JSON",
+                    "same_model_fallback": False,
                 },
                 disputed=True,
             )
@@ -198,7 +293,16 @@ class Debate:
             "If you agree, repeat the proposal in \"final\". If you disagree, put your own "
             "corrected object in \"final\"."
         )
-        critic_call = self._chat(critic_model, SYSTEM_CRITIC, critic_user, critic_order)
+        # Keep the two opinions independent: prefer any critic model other than
+        # the one that wrote the proposal, and reach for it only when nothing else
+        # can serve (recorded as ``same_model_fallback`` below).
+        critic_call = self._chat(
+            critic_model,
+            SYSTEM_CRITIC,
+            critic_user,
+            models=self._role_models("critic", other=proposer_used, last=proposer_used),
+            role="critic",
+        )
         critique = llm.extract_json(critic_call.text)
         if not isinstance(critique, dict):
             critique = {"verdict": VERDICT_COUNTER, "reason": "critic reply was not valid JSON"}
@@ -208,7 +312,7 @@ class Debate:
         final = critique.get("final") if isinstance(critique.get("final"), dict) else proposal
 
         if verdict == VERDICT_AGREE:
-            return DebateOutcome(
+            return self._outcome(
                 item_id=item_id,
                 task=task,
                 final=dict(final or proposal),
@@ -218,7 +322,7 @@ class Debate:
                 provenance={
                     "proposer": proposal_call.as_dict(),
                     "critic": critic_call.as_dict(),
-                    "final_author": critic_model,
+                    "final_author": critic_call.model or critic_model,
                 },
             )
 
@@ -235,7 +339,18 @@ class Debate:
                 "Either accept the correction or defend your answer. Reply with JSON only: "
                 '{"accept": boolean, "final": {...}, "reason": string}.'
             )
-            rebuttal_call = self._chat(proposer_model, SYSTEM_PROPOSER, rebuttal_user, proposer_order)
+            rebuttal_call = self._chat(
+                proposer_used,
+                SYSTEM_PROPOSER,
+                rebuttal_user,
+                models=self._role_models(
+                    "proposer",
+                    other=critic_call.model,
+                    first=proposer_used,
+                    last=critic_call.model,
+                ),
+                role="proposer",
+            )
             rebuttal = llm.extract_json(rebuttal_call.text)
             if not isinstance(rebuttal, dict):
                 rebuttal = {"accept": True, "final": final}
@@ -258,14 +373,25 @@ class Debate:
                 "Emit the FINAL verdict. Reply with JSON only: "
                 '{"verdict":"agree"|"counter","final":{...},"reason":string}.'
             )
-            final_call = self._chat(critic_model, SYSTEM_CRITIC, final_user, critic_order)
+            final_call = self._chat(
+                critic_call.model or critic_model,
+                SYSTEM_CRITIC,
+                final_user,
+                models=self._role_models(
+                    "critic",
+                    other=proposer_used,
+                    first=critic_call.model,
+                    last=proposer_used,
+                ),
+                role="critic",
+            )
             final_verdict = llm.extract_json(final_call.text)
             if not isinstance(final_verdict, dict):
                 final_verdict = {"verdict": VERDICT_COUNTER, "final": final}
             if isinstance(final_verdict.get("final"), dict):
                 final = final_verdict["final"]
             agreed = str(final_verdict.get("verdict", "")).lower() == VERDICT_AGREE
-            outcome = DebateOutcome(
+            outcome = self._outcome(
                 item_id=item_id,
                 task=task,
                 final=dict(final or {}),
@@ -277,15 +403,14 @@ class Debate:
                     "critic": critic_call.as_dict(),
                     "rebuttal": rebuttal_call.as_dict(),
                     "final": final_call.as_dict(),
-                    "final_author": critic_model,
+                    "final_author": final_call.model or critic_model,
                 },
-                disputed=not agreed,
             )
             if outcome.disputed:
                 self._record_dispute(outcome)
             return outcome
 
-        outcome = DebateOutcome(
+        outcome = self._outcome(
             item_id=item_id,
             task=task,
             final=dict(final or {}),
@@ -295,12 +420,47 @@ class Debate:
             provenance={
                 "proposer": proposal_call.as_dict(),
                 "critic": critic_call.as_dict(),
-                "final_author": critic_model,
+                "final_author": critic_call.model or critic_model,
             },
-            disputed=True,
         )
         self._record_dispute(outcome)
         return outcome
+
+    def _outcome(
+        self,
+        *,
+        item_id: str,
+        task: str,
+        final: Dict[str, Any],
+        agreed: bool,
+        rounds: int,
+        verdict: str,
+        provenance: Dict[str, Any],
+    ) -> DebateOutcome:
+        """Build the outcome and flag a debate that one model spoke alone."""
+
+        provenance.setdefault("same_model_fallback", False)
+        provenance["same_model_fallback"] = same_model_fallback(provenance)
+        notes: List[str] = []
+        if provenance["same_model_fallback"]:
+            note = (
+                "same_model_fallback: true – proposer and critic were both served by "
+                f"{provenance.get('final_author') or 'the same model'}; "
+                "only one model had a working route"
+            )
+            notes.append(note)
+            self.log.warn(f"{task} {item_id}: {note}")
+        return DebateOutcome(
+            item_id=item_id,
+            task=task,
+            final=final,
+            agreed=agreed,
+            rounds=rounds,
+            verdict=verdict,
+            provenance=provenance,
+            disputed=not agreed,
+            notes=notes,
+        )
 
     # -- disputes ---------------------------------------------------------
     def _record_dispute(self, outcome: DebateOutcome) -> None:

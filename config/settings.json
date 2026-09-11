@@ -20,6 +20,8 @@
     "max_rounds": 1,
     "proposer_model": "deepseek-v4-flash",
     "critic_model": "gpt-5.6-sol",
+    "proposer_models": ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-5.6-sol", "claude-sonnet-5", "glm-5.3"],
+    "critic_models": ["gpt-5.6-sol", "claude-opus-5", "claude-sonnet-5", "gemini-3.5-flash", "grok-4.6"],
     "provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
     "proposer_provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
     "critic_provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],

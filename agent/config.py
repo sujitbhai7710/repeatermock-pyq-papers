@@ -129,17 +129,77 @@ DEFAULT_PROVIDERS: Tuple[ProviderSpec, ...] = (
 )
 
 
+#: candidate models per role, in failover order.  The first entry is the primary
+#: model (``debate.proposer_model`` / ``debate.critic_model``); the rest are tried
+#: in order when **no provider** can serve a model — the case that used to skip
+#: the whole AI step: ``deepseek-v4-flash`` had zero routes (agentrouter blocked
+#: by the Aliyun WAF on the runner, both workers out of credits, justwoker 403)
+#: while ``gpt-5.6-sol`` was still served by ``jw-worker``.
+DEFAULT_PROPOSER_MODELS: Tuple[str, ...] = (
+    "deepseek-v4-flash",
+    "deepseek-v4-pro",
+    "gpt-5.6-sol",
+    "claude-sonnet-5",
+    "glm-5.3",
+)
+
+DEFAULT_CRITIC_MODELS: Tuple[str, ...] = (
+    "gpt-5.6-sol",
+    "claude-opus-5",
+    "claude-sonnet-5",
+    "gemini-3.5-flash",
+    "grok-4.6",
+)
+
+
 @dataclass(frozen=True)
 class DebatePolicy:
     max_rounds: int = 1
     proposer_model: str = "deepseek-v4-flash"
     critic_model: str = "gpt-5.6-sol"
+    #: ordered fallback candidates per role (``debate.proposer_models`` /
+    #: ``debate.critic_models``).  A route is a ``(provider, model)`` pair, so a
+    #: model with no working route anywhere must be able to fall back to another
+    #: *model* — otherwise a provider outage that only spares ``gpt-5.6-sol``
+    #: leaves the proposer with zero routes and skips the whole AI step.
+    proposer_models: Tuple[str, ...] = DEFAULT_PROPOSER_MODELS
+    critic_models: Tuple[str, ...] = DEFAULT_CRITIC_MODELS
     #: ordered route list used when a request does not carry its own order
     provider_order: Tuple[str, ...] = DEFAULT_PROVIDER_ORDER
     proposer_provider_order: Tuple[str, ...] = DEFAULT_PROVIDER_ORDER
     critic_provider_order: Tuple[str, ...] = DEFAULT_PROVIDER_ORDER
     #: optional per-model overrides, e.g. ``{"gpt-5.6-sol": ["jw-worker"]}``
     model_provider_orders: Dict[str, Tuple[str, ...]] = field(default_factory=dict)
+
+    def primary_model(self, role: str = "proposer") -> str:
+        return self.critic_model if role == "critic" else self.proposer_model
+
+    def candidates_for(self, role: str = "proposer") -> Tuple[str, ...]:
+        """Ordered model candidates for *role*: the primary model first.
+
+        ``proposer_model`` / ``critic_model`` stay authoritative for the *first*
+        attempt; the declared list only supplies the fallbacks (and the primary is
+        de-duplicated into its declared position when it appears there).
+        """
+
+        primary = self.primary_model(role)
+        declared = self.critic_models if role == "critic" else self.proposer_models
+        out: List[str] = []
+        for model in (primary, *(declared or ())):
+            name = str(model).strip()
+            if name and name not in out:
+                out.append(name)
+        return tuple(out)
+
+    def all_models(self) -> Tuple[str, ...]:
+        """Every candidate model of both roles (the ``routes`` probe matrix)."""
+
+        out: List[str] = []
+        for role in ("proposer", "critic"):
+            for model in self.candidates_for(role):
+                if model not in out:
+                    out.append(model)
+        return tuple(out)
 
     def order_for(self, model: str, *, role: str = "proposer") -> Tuple[str, ...]:
         override = self.model_provider_orders.get(model)
@@ -303,6 +363,22 @@ def load_settings(path: Optional[Path] = None) -> Settings:
             return default
         return tuple(str(name) for name in value)
 
+    def _models(key: str, env_name: str, default: Tuple[str, ...]) -> Tuple[str, ...]:
+        """Candidate model list: environment (comma separated) beats the file."""
+
+        raw_env = os.environ.get(env_name, "")
+        if raw_env.strip():
+            parsed = tuple(chunk.strip() for chunk in raw_env.split(",") if chunk.strip())
+            if parsed:
+                return parsed
+        value = db.get(key)
+        if isinstance(value, str):
+            value = [chunk for chunk in value.split(",")]
+        if not value:
+            return default
+        names = tuple(str(name).strip() for name in value if str(name).strip())
+        return names or default
+
     model_orders = {
         str(model): tuple(str(name) for name in names)
         for model, names in (db.get("model_provider_orders") or {}).items()
@@ -311,6 +387,8 @@ def load_settings(path: Optional[Path] = None) -> Settings:
         max_rounds=int(db.get("max_rounds", 1)),
         proposer_model=str(db.get("proposer_model", "deepseek-v4-flash")),
         critic_model=str(db.get("critic_model", "gpt-5.6-sol")),
+        proposer_models=_models("proposer_models", "PYQ_PROPOSER_MODELS", DEFAULT_PROPOSER_MODELS),
+        critic_models=_models("critic_models", "PYQ_CRITIC_MODELS", DEFAULT_CRITIC_MODELS),
         provider_order=_order("provider_order", provider_order),
         proposer_provider_order=_order("proposer_provider_order", provider_order),
         critic_provider_order=_order("critic_provider_order", provider_order),

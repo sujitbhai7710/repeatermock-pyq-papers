@@ -314,6 +314,46 @@ def detect_rate_limit(status: Optional[int], body: str) -> bool:
     return any(signal in lowered for signal in RATE_LIMIT_SIGNALS)
 
 
+#: markers of an HTML challenge page — a WAF (Cloudflare / Aliyun) answered
+#: instead of the API.  The live case: a runner gets
+#: ``invalid JSON from https://agentrouter.org/v1: <!doctype html> ...
+#: <meta name="aliyun_waf_aa" ...>`` while the same endpoint works from a normal
+#: machine, so a bare "invalid JSON" hides the real cause.
+WAF_SIGNALS = (
+    "aliyun_waf",
+    "doctype html",
+    "browser integrity",
+    "error 1010",
+    "cf-error",
+    "cloudflare",
+    "waf_",
+)
+
+
+def failure_class(exc: BaseException) -> str:
+    """Compact class of a route failure for the ``routes`` report (no secrets).
+
+    ``ok`` / ``rate_limited:503`` / ``http_403`` / ``waf_html`` / ``bad_json`` /
+    ``transport`` / ``empty_completion`` / ``error``.
+    """
+
+    text = str(exc).lower()
+    status = getattr(exc, "status", None)
+    if any(signal in text for signal in WAF_SIGNALS):
+        return f"waf_html:{status}" if status else "waf_html"
+    if isinstance(exc, LlmRateLimited):
+        return f"rate_limited:{status}" if status else "rate_limited"
+    if status:
+        return f"http_{status}"
+    if "invalid json" in text:
+        return "bad_json"
+    if "transport error" in text:
+        return "transport"
+    if "empty completion" in text:
+        return "empty_completion"
+    return "error"
+
+
 def _auth_headers(api_key: str, auth_style: str, ua: str) -> Dict[str, str]:
     headers = {
         "Content-Type": "application/json",

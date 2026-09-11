@@ -103,14 +103,31 @@ rate-limit / quota-exhaustion signal
 Breakers are keyed by **`(provider, model)`** — a worker that 503s
 `deepseek-v4-flash` keeps serving `gpt-5.6-sol`.
 
-The router counts **consecutive** failures per model (one success resets the
-counter). A **global halt** happens only when no healthy route for that model is
-left:
+A model whose providers are *all* down falls back to the next **candidate model**
+of its role (`debate.proposer_models` / `debate.critic_models` in
+`config/settings.json`, ordered, primary model first; override without editing the
+file with `PYQ_PROPOSER_MODELS` / `PYQ_CRITIC_MODELS`). A request walks the
+candidates outermost-first — for every candidate model, every provider in that
+model's order — and the serving pair is recorded in the verdict provenance
+(`proposer=…@…`, `critic=…@…`) and counted in `RouterStats.model_fallbacks`.
+That is what keeps a runner green where the direct `agentrouter` endpoint is
+blocked by the Aliyun WAF, both workers report `all_keys_exhausted` for
+`deepseek-v4-flash` and direct `justwoker` answers 403: `jw-worker` still serves
+`gpt-5.6-sol`, so the debate runs instead of being skipped with
+`status=ai_unavailable`.
 
-* every configured route for the model is exhausted / cooling down / without
+When the only working model ends up serving both roles the run proceeds but says
+so: `same_model_fallback: true` lands in the verdict provenance, the phase
+counters (`batches_same_model_fallback`) and `PROGRESS.md`.
+
+The router counts **consecutive** failures per model (one success resets the
+counter). A **global halt** happens only when no `(provider, model)` candidate is
+healthy for a role:
+
+* every candidate route of the role is exhausted / cooling down / without
   credentials, or
 * **10 consecutive failures** (`rate_limit.consecutive_failure_threshold`) were
-  recorded for that model and no healthy route absorbed them.
+  recorded per model and no route absorbed them.
 
 On halt the AI step stops for that model; the deterministic pipeline keeps
 going. Phases finish normally, `database/` and the mock catalogue are written,
@@ -129,7 +146,8 @@ items total / done / % / this run / remaining / ETA plus the per-route health
 | Timeout | `350` minutes |
 | Concurrency | group `pyq-agent`, `cancel-in-progress: false` |
 | Permissions | `contents: write` |
-| Steps | checkout (`fetch-depth: 0`) → setup-python 3.11 → `pip install -r requirements.txt` (a no-op: stdlib only) → `python -m agent.cli run` with `MAX_WORK_SECONDS=19800`, `CHECKPOINT_INTERVAL_SECONDS=900` and `AGENTROUTER_KEYS` / `JUSTWOKER_KEYS` / `AR_PROXY_TOKEN` / `JW_PROXY_TOKEN` / `MONID_API_KEY` (exit 0 = ok **or ai_unavailable**, 3 = rate_limited, 4 = time_limit are all success; the run step maps them to `status=…` and exits 0 so the audit + publish steps run) → `python -m agent.cli audit` (fails the job on a structural defect) → checkpoint status + `database/_meta/PROGRESS.md` + audit transcript in the job summary → `upload-artifact` (logs, checkpoint, coverage; 14 days) → commit the generated tree with `git add -f state database` and `git push origin HEAD:pyq-db` (branch created on the first run, fast-forward afterwards) |
+| Steps | checkout (`fetch-depth: 0`) → setup-python 3.11 → `pip install -r requirements.txt` (a no-op: stdlib only) → `python -m agent.cli routes --probe` (route matrix into the job summary, `continue-on-error`) → `python -m agent.cli run` with `MAX_WORK_SECONDS=19800`, `CHECKPOINT_INTERVAL_SECONDS=900`, `PYQ_GIT_PUSH=1`, `PYQ_DB_BRANCH=pyq-db` and `AGENTROUTER_KEYS` / `JUSTWOKER_KEYS` / `AR_PROXY_TOKEN` / `JW_PROXY_TOKEN` / `MONID_API_KEY` (exit 0 = ok **or ai_unavailable**, 3 = rate_limited, 4 = time_limit are all success; the run step maps them to `status=…` and exits 0 so the audit + publish steps run) → `python -m agent.cli audit` (fails the job on a structural defect) → checkpoint status + `database/_meta/PROGRESS.md` + audit transcript in the job summary → `upload-artifact` (logs, checkpoint, coverage; 14 days) → commit the generated tree with `git add -f state database` and `git push origin HEAD:pyq-db` (branch created on the first run, fast-forward afterwards; a safety net — the agent already published every 15 minutes via `PYQ_GIT_PUSH=1`) |
+| Publishing | `agent/gitpush.py`: on every checkpoint tick (throttled to `CHECKPOINT_INTERVAL_SECONDS`) commit `state` + `database` with `pyq-agent: checkpoint <phase> <done>/<total> [skip ci]`, re-parent onto the existing `pyq-db` tip so the push is a fast-forward, and push. Uses the credentials `actions/checkout` persisted (optional `PYQ_PUSH_TOKEN` override, never logged); `.tmp-*.part` files are deleted/unstaged; a failed commit or push is a warning, never a failed run. Also available as `python -m agent.cli publish [--force]` |
 | Branches | `main` is code only (`/state/` and `/database/` are gitignored); all generated artefacts live on `pyq-db` and are marked generated in `.gitattributes` |
 
 Local sanity check of the workflow logic:

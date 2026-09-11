@@ -11,6 +11,9 @@ Commands
 ``audit``       deterministic structural self-check of ``database/``
 ``stats``       per-exam/per-subject counts and the top concepts
 ``mocks``       regenerate the mock-pack catalogue
+``routes``      the ``(provider, model)`` candidate matrix; ``--probe`` tests
+                every route and prints OK / failure class
+``publish``     one checkpoint commit + push to the ``pyq-db`` branch
 """
 
 from __future__ import annotations
@@ -19,13 +22,14 @@ import argparse
 import json
 import sys
 import traceback
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence
 
 from . import checkpoint, config, paths, taxonomy, tracking
 from .classify import Classifier, collect_raw_labels
 from .config import ExamTable, Settings
-from .util import Log, human_int, pct, read_json
+from .util import Log, human_int, monotonic, pct, read_json
 
 EXIT_OK = 0
 EXIT_USAGE = 2
@@ -81,6 +85,37 @@ def build_parser() -> argparse.ArgumentParser:
     p_stats = sub.add_parser("stats", help="counts and top concepts")
     p_stats.add_argument("--top", type=int, default=20)
     p_stats.add_argument("--json", action="store_true")
+
+    p_routes = sub.add_parser(
+        "routes", help="show the (provider, model) route matrix — and optionally probe it"
+    )
+    p_routes.add_argument(
+        "--probe",
+        action="store_true",
+        help="send one tiny completion to every configured (provider, model) candidate",
+    )
+    p_routes.add_argument("--json", action="store_true", help="machine-readable report")
+    p_routes.add_argument(
+        "--role", choices=["proposer", "critic", "all"], default="all", help="which role's candidates"
+    )
+    p_routes.add_argument(
+        "--provider", action="append", default=None, help="limit to a provider (repeatable)"
+    )
+    p_routes.add_argument(
+        "--model", action="append", default=None, help="limit to a model (repeatable)"
+    )
+    p_routes.add_argument(
+        "--timeout", type=int, default=30, help="per-probe timeout in seconds (default 30)"
+    )
+    p_routes.add_argument("--max-tokens", type=int, default=64, help="probe completion budget")
+
+    p_publish = sub.add_parser(
+        "publish", help="commit + push the generated tree to the checkpoint branch"
+    )
+    p_publish.add_argument(
+        "--force", action="store_true", help="publish even when PYQ_GIT_PUSH is not set"
+    )
+    p_publish.add_argument("--json", action="store_true")
 
     p_audit = sub.add_parser(
         "audit", help="deterministic structural self-check of database/"
@@ -330,6 +365,22 @@ def _coverage_extra(ctx) -> Optional[Dict[str, Any]]:
 def cmd_phase0(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log, run_id: str) -> int:
     return cmd_phase(0, settings, exams, log, run_id)
 
+def _publish_checkpoint(phase: str, log: Log, *, done: int = 0, total: int = 0) -> None:
+    """Publish ``state/`` + ``database/`` at a checkpoint boundary.
+
+    Throttled to ``CHECKPOINT_INTERVAL_SECONDS`` and disabled unless
+    ``PYQ_GIT_PUSH`` is set, so a local run never pushes; failures are logged and
+    never abort the run (see :mod:`agent.gitpush`).
+    """
+
+    from . import gitpush
+
+    result = gitpush.maybe_publish(phase=phase, done=done, total=total, log=log)
+    if result.reason == gitpush.REASON_OK:
+        log.info(f"{phase}: checkpoint published to the {result.branch} branch")
+    elif result.attempted and result.reason not in (gitpush.REASON_NOTHING, gitpush.REASON_THROTTLED):
+        log.warn(f"{phase}: checkpoint publish skipped – {result.reason}")
+
 def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
     from .phases import PHASE_ORDER
 
@@ -379,6 +430,7 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
                 log=log,
             )
             tracking.write_progress_md(extra=None)
+            _publish_checkpoint(name, log, done=len(completed), total=len(phases))
             exit_code = EXIT_TIME_LIMIT
             run_status = checkpoint.STATUS_TIME_LIMIT
             break
@@ -407,9 +459,9 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
                 log=log,
             )
             tracking.write_progress_md(extra=None)
+            _publish_checkpoint(name, log, done=len(completed), total=len(phases))
             run_status = soft_status
             break
-
         completed.append(name)
         phase_status = _phase_status(name, checkpoint.STATUS_OK)
         if phase_status == "ai_unavailable":
@@ -431,6 +483,7 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
             paths.CHECKPOINT_JSON,
         )
         tracking.write_progress_md(extra=None)
+        _publish_checkpoint(name, log, done=len(completed), total=len(phases))
 
     # The mock catalogue is derived from the finished index; build it whenever the
     # pipeline ran to the end without a hard error — an AI outage must not cost
@@ -526,6 +579,358 @@ def cmd_verify_db(args: argparse.Namespace, settings: Settings, exams: ExamTable
     if result.status in ("ok", verify.STATUS_SKIPPED, verify.STATUS_AI_UNAVAILABLE):
         return EXIT_OK
     return exit_code_for_status(result.status)
+
+# ---------------------------------------------------------------------------
+# routes — the (provider, model) matrix
+# ---------------------------------------------------------------------------
+
+#: cell codes of the route matrix (probe = one tiny completion per candidate)
+ROUTE_OK = "ok"
+ROUTE_COOLDOWN = "cooldown"
+ROUTE_NO_KEY = "nokey"
+
+
+@dataclass
+class ProbeOutcome:
+    """Result of probing one ``(provider, model)`` candidate."""
+
+    provider: str
+    model: str
+    ok: bool
+    status: str  # "ok" or a llm.failure_class token
+    detail: str = ""
+    latency_ms: int = 0
+    keys: int = 0
+    error: bool = False
+
+    def as_dict(self) -> Dict[str, Any]:
+        return {
+            "provider": self.provider,
+            "model": self.model,
+            "ok": self.ok,
+            "status": self.status,
+            "detail": self.detail,
+            "latency_ms": self.latency_ms,
+            "keys": self.keys,
+            "error": self.error,
+        }
+
+
+def _probe_messages() -> List[Any]:
+    from . import llm
+
+    return [
+        llm.ChatMessage("system", "Reply with JSON only."),
+        llm.ChatMessage("user", 'Reply with the single JSON object {"ok": true}.'),
+    ]
+
+
+def _probe_route(
+    provider: Any,
+    pool: Sequence[str],
+    model: str,
+    *,
+    timeout: int,
+    max_tokens: int,
+) -> ProbeOutcome:
+    """One tiny completion against a single route; never raises, never logs a key."""
+
+    from . import llm
+
+    if not pool:
+        return ProbeOutcome(provider.name, model, False, ROUTE_NO_KEY, "no credentials", keys=0)
+    last: Optional[ProbeOutcome] = None
+    # the router rotates keys; probing only the first one would report a pool as
+    # dead when a second key still answers, so try up to two
+    for index, key in enumerate(pool[:2]):
+        started = monotonic()
+        try:
+            result = llm.chat_completion(
+                base_url=provider.base_url,
+                api_key=key,
+                model=model,
+                messages=_probe_messages(),
+                timeout=timeout,
+                temperature=0.0,
+                max_tokens=max_tokens,
+                auth_style=provider.auth_style,
+                user_agent_value=provider.user_agent_value(),
+                path=provider.request_path(),
+                # a reasoning model can spend the whole probe budget on its
+                # reasoning and answer with empty content: escalate once (the
+                # router does the same) instead of reporting a working route dead
+                truncation_retries=1,
+            )
+        except llm.LlmError as exc:
+            last = ProbeOutcome(
+                provider.name,
+                model,
+                False,
+                llm.failure_class(exc),
+                str(exc)[:200],
+                int((monotonic() - started) * 1000),
+                keys=len(pool),
+            )
+            if index == 0 and len(pool) > 1 and (getattr(exc, "status", None) or 0) in (401, 402, 403, 429):
+                last.detail += " (retrying with the next key of the pool)"
+                continue
+            return last
+        except Exception as exc:  # noqa: BLE001 - a probe must never raise
+            return ProbeOutcome(
+                provider.name,
+                model,
+                False,
+                "error",
+                f"{type(exc).__name__}: {exc}"[:200],
+                int((monotonic() - started) * 1000),
+                keys=len(pool),
+                error=True,
+            )
+        return ProbeOutcome(
+            provider.name,
+            model,
+            True,
+            ROUTE_OK,
+            "",
+            result.latency_ms,
+            keys=len(pool),
+        )
+    return last or ProbeOutcome(provider.name, model, False, ROUTE_NO_KEY, "no credentials")
+
+
+def _route_cell(row: Dict[str, Any], *, probe: bool) -> str:
+    if not row.get("configured", True):
+        return ROUTE_NO_KEY
+    if probe:
+        return str(row.get("status") or "-")
+    return ROUTE_OK if row.get("healthy") else ROUTE_COOLDOWN
+
+
+def _print_route_matrix(
+    rows: List[Dict[str, Any]],
+    models: Sequence[str],
+    providers: Sequence[str],
+    *,
+    probe: bool,
+    log: Log,
+) -> None:
+    """Provider × model table (one short cell per route)."""
+
+    by_pair = {(row["provider"], row["model"]): row for row in rows}
+    width = max([len(m) for m in models] + [8])
+    header = f"{'provider':12s}" + "".join(f"{model:>{width + 2}s}" for model in models)
+    print("=" * len(header))
+    print(f"PYQ route matrix — {'probed' if probe else 'configured/health'} (provider × model)")
+    print("=" * len(header))
+    print(header)
+    print("-" * len(header))
+    for provider in providers:
+        line = f"{provider:12s}"
+        for model in models:
+            row = by_pair.get((provider, model))
+            cell = "-" if row is None else _route_cell(row, probe=probe)
+            line += f"{cell:>{width + 2}s}"
+        print(line)
+    print("-" * len(header))
+    print(
+        "cells: ok = route answered"
+        + (
+            " | <class> = probe failure (http_403, rate_limited:503, waf_html, bad_json, transport, nokey)"
+            if probe
+            else " | cooldown = breaker open | nokey = no credentials configured | - = not a candidate"
+        )
+    )
+    print()
+
+    failures = [row for row in rows if probe and not row["ok"]]
+    if failures:
+        print("probe failures")
+        print("-" * 78)
+        for row in failures:
+            detail = row.get("detail") or ""
+            print(f"  {row['provider']}/{row['model']}: {row['status']}" + (f" — {detail}" if detail else ""))
+        print()
+
+    for role in ("proposer", "critic"):
+        eligible = [row for row in rows if role in row.get("roles", [])]
+        working = [row for row in eligible if row["ok"]] if probe else [
+            row for row in eligible if row.get("healthy")
+        ]
+        label = f"{role}-eligible working route(s)"
+        if working:
+            print(
+                f"{label}: "
+                + ", ".join(f"{row['provider']}/{row['model']}" for row in working)
+            )
+        else:
+            print(f"{label}: none")
+    print()
+
+
+def cmd_routes(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
+    """``python -m agent.cli routes [--probe]`` — the route matrix.
+
+    Without ``--probe`` it reports the configured candidates and their breaker
+    state; with ``--probe`` it sends one tiny completion to every
+    ``(provider, model)`` candidate and prints OK / failure class.  Keys are read
+    from the environment and never printed (a route's key is never echoed, only
+    its pool size).
+    """
+
+    from . import llm
+    from . import router as router_mod
+
+    router = router_mod.get_router(settings, log=log)
+    roles = ("proposer", "critic") if args.role == "all" else (args.role,)
+    providers = llm.resolve_providers(settings)
+    by_name = llm.provider_index(providers)
+    pools = llm.provider_keys(providers)
+
+    wanted_providers = set(args.provider or ())
+    wanted_models = set(args.model or ())
+
+    rows: List[Dict[str, Any]] = []
+    for role in roles:
+        for name, model in router.role_routes(role):
+            if wanted_providers and name not in wanted_providers:
+                continue
+            if wanted_models and model not in wanted_models:
+                continue
+            row = next(
+                (r for r in rows if r["provider"] == name and r["model"] == model), None
+            )
+            if row is None:
+                healthy, why = router.route_healthy(name, model)
+                row = {
+                    "provider": name,
+                    "model": model,
+                    "configured": bool(pools.get(name)),
+                    "healthy": healthy and not router.is_halted(model),
+                    "why": why,
+                    "halted": router.is_halted(model),
+                    "status": "",
+                    "detail": "",
+                    "latency_ms": 0,
+                    "keys": len(pools.get(name, ())),
+                    "error": False,
+                    "roles": [],
+                }
+                rows.append(row)
+            if role not in row["roles"]:
+                row["roles"].append(role)
+
+    if not rows:
+        print("no route candidates matched the filter", file=sys.stderr)
+        return EXIT_USAGE
+
+    if args.probe:
+        for row in rows:
+            provider = by_name.get(row["provider"])
+            if provider is None:
+                row["status"] = "unknown-provider"
+                row["error"] = True
+                continue
+            log.info(f"probing {row['provider']}/{row['model']} …")
+            outcome = _probe_route(
+                provider,
+                pools.get(row["provider"], []),
+                row["model"],
+                timeout=args.timeout,
+                max_tokens=args.max_tokens,
+            )
+            row.update(outcome.as_dict())
+            row["roles"] = row["roles"]
+            row["configured"] = bool(pools.get(row["provider"]))
+            log.info(
+                f"{row['provider']}/{row['model']}: {outcome.status}"
+                + (f" ({outcome.latency_ms} ms)" if outcome.ok else f" — {outcome.detail[:120]}")
+            )
+
+    models = sorted({row["model"] for row in rows}, key=lambda m: next(
+        i for i, r in enumerate(rows) if r["model"] == m
+    ))
+    providers_seen = sorted({row["provider"] for row in rows}, key=lambda p: next(
+        i for i, r in enumerate(rows) if r["provider"] == p
+    ))
+
+    summary = {
+        "probe": bool(args.probe),
+        "timeout_seconds": args.timeout,
+        "candidate_models": {
+            role: list(settings.debate.candidates_for(role)) for role in roles
+        },
+        "providers": list(providers_seen),
+        "models": list(models),
+        "routes": rows,
+        "working": {
+            role: [
+                f"{row['provider']}/{row['model']}"
+                for row in rows
+                if role in row["roles"] and (row["ok"] if args.probe else row["healthy"])
+            ]
+            for role in roles
+        },
+    }
+
+    if args.json:
+        print(json.dumps(summary, indent=2, ensure_ascii=False))
+    else:
+        _print_route_matrix(rows, models, providers_seen, probe=bool(args.probe), log=log)
+
+    tracking.journal(
+        "routes.probe" if args.probe else "routes.report",
+        {
+            "routes": len(rows),
+            "working": {role: values for role, values in summary["working"].items()},
+            "failures": {
+                f"{row['provider']}/{row['model']}": row["status"]
+                for row in rows
+                if args.probe and not row["ok"]
+            },
+        },
+    )
+    if not args.probe:
+        return EXIT_OK
+    # a probe is only green when both roles have at least one route that answered
+    return EXIT_OK if all(summary["working"].get(role) for role in roles) else EXIT_ERROR
+
+
+def cmd_publish(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
+    """``python -m agent.cli publish`` — one checkpoint commit + push.
+
+    This is the same publisher the 15-minute checkpoint tick uses
+    (:mod:`agent.gitpush`); ``--force`` publishes even when ``PYQ_GIT_PUSH`` is
+    not set.  A failed publish never fails the caller: the status is reported and
+    the exit code stays 0 unless the publish was explicitly requested with
+    ``--force`` and failed.
+    """
+
+    from . import gitpush
+
+    result = gitpush.publisher(log=log).publish(
+        phase="manual",
+        done=0,
+        total=0,
+        force=bool(args.force),
+    )
+    if args.json:
+        print(json.dumps(result.as_dict(), indent=2, ensure_ascii=False))
+    else:
+        print(f"publish: {result.reason}")
+        if result.message:
+            print(f"message: {result.message}")
+        if result.branch:
+            print(f"branch : {result.branch}")
+    if result.reason == gitpush.REASON_DISABLED:
+        print(
+            "PYQ_GIT_PUSH is not enabled – re-run with --force to publish anyway",
+            file=sys.stderr,
+        )
+        return EXIT_OK
+    if result.ok:
+        return EXIT_OK
+    return EXIT_ERROR if args.force else EXIT_OK
+
 
 def cmd_audit(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
     """``tools/audit_db.py`` — structural self-check; non-zero exit on violation."""
@@ -676,6 +1081,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             return cmd_stats(args, settings, exams, log)
         if args.command == "mocks":
             return cmd_mocks(args, settings, exams, log)
+        if args.command == "routes":
+            return cmd_routes(args, settings, exams, log)
+        if args.command == "publish":
+            return cmd_publish(args, settings, exams, log)
     except KeyboardInterrupt:
         log.warn("interrupted")
         return EXIT_ERROR

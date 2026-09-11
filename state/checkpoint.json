@@ -1,28 +1,21 @@
 {
   "version": 1,
-  "run_id": "run-20260911T060421Z-24a091de",
-  "phase": "phase5",
+  "run_id": "run-20260911T063718Z-64977a51",
+  "phase": "phase0",
   "cursor": {
     "completed": [
-      "phase0",
-      "phase1",
-      "phase2",
-      "phase3",
-      "phase4",
-      "phase5"
+      "phase0"
     ],
-    "next": null
+    "next": "phase1"
   },
-  "status": "ai_unavailable",
-  "started_at": "2026-09-11T06:07:20Z",
-  "updated_at": "2026-09-11T06:07:20Z",
+  "status": "ok",
+  "started_at": "2026-09-11T06:37:43Z",
+  "updated_at": "2026-09-11T06:37:43Z",
   "window": {
     "max_seconds": 19800,
     "interval_seconds": 900,
-    "elapsed_seconds": 174.766,
-    "remaining_seconds": 19625.234
+    "elapsed_seconds": 22.055,
+    "remaining_seconds": 19777.945
   },
-  "notes": [
-    "no AI route available – the deterministic pipeline (phase0 + python extraction + database + mocks) completed anyway; only the AI verification step was skipped"
-  ]
+  "notes": []
 }
