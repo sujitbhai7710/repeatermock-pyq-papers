@@ -1,0 +1,223 @@
+name: pyq-agent
+
+# Builds the SSC PYQ database from the raw papers in this repository.
+#
+#   * code lives on `main` (state/ and database/ are gitignored there)
+#   * every run publishes the generated tree to the `pyq-db` checkpoint branch
+#
+# Without the worker secrets the job is a no-op dry run: it exits 0 with
+# `status=skipped_no_keys` instead of calling the endpoints unauthenticated.
+
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "Run a single phase (0-5). Empty = full pipeline."
+        required: false
+        default: ""
+      no_ai:
+        description: "Skip every LLM step (python extraction only)"
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 */6 * * *"
+
+timeout-minutes: 350
+
+concurrency:
+  group: pyq-agent
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PYTHONUTF8: "1"
+  # 5.5 h of work inside a 350 min job budget (leaves room for audit + push)
+  MAX_WORK_SECONDS: "19800"
+  LOG_DIR: reports/logs
+
+jobs:
+  build-database:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # full history: the checkpoint commit is re-parented onto the existing
+          # `pyq-db` tip so every push stays a fast-forward
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # requirements.txt has no active entries: the agent is standard-library
+          # only, so this is a no-op install that still fails loudly if the file
+          # ever becomes unparseable
+          pip install -r requirements.txt
+
+      - name: Preflight (worker keys)
+        id: preflight
+        env:
+          AR_PROXY_TOKEN: ${{ secrets.AR_PROXY_TOKEN }}
+          JW_PROXY_TOKEN: ${{ secrets.JW_PROXY_TOKEN }}
+          MONID_API_KEY: ${{ secrets.MONID_API_KEY }}
+        run: |
+          mkdir -p "$LOG_DIR"
+          keys_present=false
+          for name in AR_PROXY_TOKEN JW_PROXY_TOKEN MONID_API_KEY; do
+            if [ -n "${!name:-}" ]; then
+              echo "$name: present"
+              keys_present=true
+            else
+              echo "$name: absent"
+            fi
+          done
+          echo "keys=$keys_present" >> "$GITHUB_OUTPUT"
+          if [ "$keys_present" = "false" ]; then
+            {
+              echo "## pyq-agent skipped"
+              echo
+              echo '`status=skipped_no_keys`'
+              echo
+              echo "No worker secret (AR_PROXY_TOKEN / JW_PROXY_TOKEN / MONID_API_KEY) is configured,"
+              echo "so the run is a no-op dry run. Add the secrets to enable the pipeline."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "status=skipped_no_keys"
+          fi
+
+      - name: Run the agent
+        id: agent
+        if: steps.preflight.outputs.keys == 'true'
+        env:
+          AR_PROXY_TOKEN: ${{ secrets.AR_PROXY_TOKEN }}
+          JW_PROXY_TOKEN: ${{ secrets.JW_PROXY_TOKEN }}
+          MONID_API_KEY: ${{ secrets.MONID_API_KEY }}
+        run: |
+          set -o pipefail
+          # The checkpoint published on `pyq-db` makes `run` resume completed
+          # phases, which is what an interrupted job needs — but a scheduled job
+          # must rebuild from the source papers (they may have changed), so the
+          # cron path passes --fresh and the manual path resumes by default.
+          fresh=""
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            fresh="--fresh"
+          fi
+          if [ -n "${{ github.event.inputs.phase }}" ]; then
+            echo "::group::agent run (phase ${{ github.event.inputs.phase }})"
+            python -m agent.cli run --phase "${{ github.event.inputs.phase }}" 2>&1 | tee "$LOG_DIR/agent.log"
+          elif [ "${{ github.event.inputs.no_ai }}" = "true" ]; then
+            echo "::group::agent run (python extraction only)"
+            python -m agent.cli run --no-ai $fresh 2>&1 | tee "$LOG_DIR/agent.log"
+          else
+            echo "::group::agent run (full pipeline)"
+            python -m agent.cli run $fresh 2>&1 | tee "$LOG_DIR/agent.log"
+          fi
+          code=$?
+          echo "::endgroup::"
+          echo "exit=$code" | tee -a "$LOG_DIR/agent.log"
+          if [ "$code" -eq 0 ]; then
+            echo "status=ok" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=failed" >> "$GITHUB_OUTPUT"
+          fi
+          exit "$code"
+
+      - name: Audit the database
+        if: always() && steps.preflight.outputs.keys == 'true'
+        run: |
+          if [ ! -d database ]; then
+            echo "database/ not produced – audit skipped" | tee -a "$LOG_DIR/audit.log"
+            exit 0
+          fi
+          set +e
+          python -m agent.cli audit 2>&1 | tee "$LOG_DIR/audit.log"
+          status=${PIPESTATUS[0]}
+          set -e
+          {
+            echo "## Database audit"
+            echo '```text'
+            cat "$LOG_DIR/audit.log"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          # non-zero on any structural violation (tools/audit_db.py exits 1)
+          exit "$status"
+
+      - name: Publish PROGRESS.md to the job summary
+        if: always() && steps.preflight.outputs.keys == 'true'
+        run: |
+          {
+            echo "## PYQ agent progress"
+            echo
+            if [ -f database/_meta/PROGRESS.md ]; then
+              cat database/_meta/PROGRESS.md
+            else
+              echo "_database/_meta/PROGRESS.md was not produced_"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyq-agent-logs-${{ github.run_number }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            ${{ env.LOG_DIR }}/
+            state/checkpoint.json
+            state/progress.json
+            state/manifest.json
+            database/_meta/PROGRESS.md
+            database/_meta/coverage.md
+
+      - name: Commit the checkpoint branch (pyq-db)
+        if: always() && steps.preflight.outputs.keys == 'true'
+        env:
+          RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          set -euo pipefail
+          git config user.name "pyq-agent"
+          git config user.email "pyq-agent@users.noreply.github.com"
+
+          # interrupted atomic writes leave `.tmp-*.part` siblings behind; never
+          # commit them (they are gitignored, but `git add -f` overrides that)
+          find state database -name '.tmp-*' -type f -delete 2>/dev/null || true
+
+          # stage the generated tree explicitly; `-f` overrides .gitignore
+          git add -f state database
+          if git diff --cached --quiet; then
+            echo "nothing to publish (generated tree unchanged)"
+            exit 0
+          fi
+          git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER}"
+
+          # re-parent the checkpoint commit onto the existing pyq-db tip so the
+          # push below is always a fast-forward; on the first run the branch does
+          # not exist yet and this block is skipped
+          if git ls-remote --exit-code --heads origin pyq-db >/dev/null 2>&1; then
+            git fetch --depth=1 origin pyq-db
+            git reset --soft FETCH_HEAD
+            git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER}"
+          fi
+
+          # creates pyq-db on the first run, fast-forwards it afterwards
+          git push origin HEAD:pyq-db
+
+      - name: Result
+        if: always()
+        run: |
+          if [ "${{ steps.preflight.outputs.keys }}" != "true" ]; then
+            echo "status=skipped_no_keys"
+          else
+            echo "status=${{ steps.agent.outputs.status || 'failed' }}"
+          fi

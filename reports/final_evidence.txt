@@ -1,0 +1,22 @@
+records: 138634 | qid sha256: 852558b4a9cceeb49a37b80939ce16f9bb4c1d6099234cf4145c43a9f921f6b1
+shards: [('eng.1.jsonl', 34069, 26214277), ('eng.2.jsonl', 3921, 3047472), ('gk.1.jsonl', 33074, 26213935), ('gk.2.jsonl', 1504, 1208226), ('math.1.jsonl', 32100, 25108016), ('reas.1.jsonl', 33500, 26213863), ('reas.2.jsonl', 246, 195802), ('computer.1.jsonl', 220, 175983)]
+GK chapter 39: 32
+GK physics/chem/bio: 754 1161 1697
+_other records: 12800 leaves: 378
+sample _other leaves: [('COMPUTER', 'Internet & Networking', '-', 'Network Security'), ('COMPUTER', 'Internet & Networking', 'Internet', 'Basics of Internet'), ('COMPUTER', 'MS Office', '-', 'MS Excel')]
+on-disk _other leaves (sample): []
+mocks: packs 1170 files 1170 collisions 0
+vocab rows: {'synonym': 5415, 'antonym': 7070, 'ows': 5395, 'idioms': 11530, 'spelling': 3359, 'homonyms': 482}
+index dir: ['computer.1.jsonl', 'eng.1.jsonl', 'eng.2.jsonl', 'gk.1.jsonl', 'gk.2.jsonl', 'manifest.json', 'math.1.jsonl', 'reas.1.jsonl', 'reas.2.jsonl']
+largest generated file: (26214277, 'state/index/eng.1.jsonl')
+_other leaves on disk: 283
+   database/computer/internet-and-networking/_other/network-security/questions.jsonl  questions=3  concept='Network Security' chapter='Internet & Networking' bucket='_other'
+   database/computer/ms-office/_other/ms-excel/questions.jsonl  questions=1  concept='MS Excel' chapter='MS Office' bucket='_other'
+   database/gk/agriculture/_other/agriculture-officer/questions.jsonl  questions=2  concept='Agriculture Officer' chapter='AGRICULTURE' bucket='_other'
+total questions under _other on disk: 11744
+distinct subjects with _other: ['computer', 'gk', 'maths', 'reasoning']
+_other leaves on disk: 378 | questions under _other: 12800
+path depths: [6, 7]
+examples: ['database/computer/internet-and-networking/_other/internet/basics-of-internet/questions.jsonl', 'database/computer/internet-and-networking/_other/network-security/questions.jsonl'] ... ['database/reasoning/water-image/_other/mirror-and-water-image/questions.jsonl']
+total dirs: 1080 | '_other' dirs: 71 | chapter-level: 71 | topic-level: 0
+tree files: 3101

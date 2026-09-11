@@ -1,0 +1,49 @@
+[     0.2s] STEP  agent: phase0: discovering papers
+[     3.4s] INFO  agent: 1322 in-scope papers / 142090 questions (287 papers dropped by the year filter)
+[     3.4s] STEP  agent: phase0: building the question index (Hindi split + signature validation)
+[    21.0s] INFO  agent: indexed 130020 placed, 8614 unclassified, 0 flagged, 3456 skipped_hindi
+[    21.1s] INFO  agent: coverage: placed=130020 unclassified=8614 skipped_hindi=3456 flagged=0 total=142090 balanced=True
+[    21.1s] STEP  agent: phase0: writing state/
+[    22.5s] INFO  agent: index: 138634 records in 8 shard(s) across 5 subject(s), max shard 25.0 MB, qid sha256 852558b4a9cceeb4
+[    22.5s] STEP  agent: phase0: computing the distribution
+[    22.9s] INFO  agent: distribution: 138634 questions over 5 subjects, 115 chapters
+[    22.9s] STEP  agent: phase0: writing database/_meta/
+{
+  "phase": "phase0",
+  "status": "ok",
+  "counters": {
+    "papers_in_scope": 1322,
+    "papers_out_of_scope": 287,
+    "questions_in_scope": 142090,
+    "placed": 130020,
+    "unclassified": 8614,
+    "skipped_hindi": 3456,
+    "flagged_papers_questions": 0,
+    "papers_validated": 1318,
+    "papers_flagged": 4,
+    "papers_placeable": 1322
+  },
+  "notes": [
+    "coverage identity holds"
+  ],
+  "files": [
+    "state/index/manifest.json",
+    "state/index/manifest.json",
+    "state/index/computer.1.jsonl",
+    "state/index/eng.1.jsonl",
+    "state/index/eng.2.jsonl",
+    "state/index/gk.1.jsonl",
+    "state/index/gk.2.jsonl",
+    "state/index/math.1.jsonl",
+    "state/index/reas.1.jsonl",
+    "state/index/reas.2.jsonl",
+    "state/papers.json",
+    "state/distribution.json",
+    "state/subject_keywords.json",
+    "database/_meta/distribution.md",
+    "database/_meta/coverage.md",
+    "database/_meta/schema.md",
+    "database/_meta/papers.jsonl",
+    "database/_meta/flagged_papers.jsonl"
+  ]
+}

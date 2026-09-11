@@ -1,0 +1,254 @@
+{
+  "version": 2,
+  "description": "Per-exam paper layout table. A layout entry is [SUBJECT, from, to] over the GLOBAL ORDINAL position of a question inside the paper. The ordinal is (index in the paper's questions[] array + 1): the source `n` field restarts at 1 for every section, so it is NOT a paper position. 'layout_rules' are evaluated in order, first match wins; a rule may filter on 'years' and/or 'length' (questions in the paper). 'detect': true means the layout must be derived per paper from its own section structure + content keywords (CGL Tier-II non-Paper-I, CHSL Tier-II).",
+  "provenance": {
+    "note": "Row-by-row section order and section sizes were measured across all 1,322 in-scope papers by splitting each paper at its `n` resets and taking the keyword majority of every section. Where the task-specified table disagrees with the corpus, the corpus value is used and the difference is documented in docs/DATA_MODEL.md and _meta/coverage.md.",
+    "measured_corrections": [
+      "CGL Tier-II Paper-I is 30/30/45/25/20 = MATH, REAS, ENG, GK, COMPUTER (not 30/30/30/30/30).",
+      "CHSL Tier-I switched from ENG,REAS,MATH,GK to REAS,GK,MATH,ENG for the 2022-23 and 2023 papers.",
+      "MTS 2019/2021 order is ENG,REAS,MATH,GK; MTS 2022 is REAS,MATH,ENG,GK; MTS 2023+ (90 questions) is MATH,REAS,GK,ENG with sizes 20/20/25/25.",
+      "GD 2019 and 2021 have four 25-question sections and no Hindi section; GD 2022+ has five 20-question sections with Hindi last.",
+      "CGL Tier-II 'other' papers (AAO Finance, Statistics/JSO) are single 100-question sections and need per-paper detection."
+    ]
+  },
+  "subjects": ["REAS", "GK", "MATH", "ENG", "COMPUTER", "HINDI"],
+  "subject_labels": {
+    "REAS": "Reasoning / General Intelligence",
+    "GK": "General Awareness / General Studies",
+    "MATH": "Quantitative Aptitude / Mathematical Abilities",
+    "ENG": "English Language / Verbal Ability",
+    "COMPUTER": "Computer Knowledge",
+    "HINDI": "Hindi Language"
+  },
+  "exams": {
+    "CGL": {
+      "label": "SSC CGL",
+      "root": "SSC-CGL",
+      "series_slug": "ssc-cgl",
+      "paper_kinds": [
+        {
+          "id": "tier1",
+          "label": "Tier-I",
+          "path_includes": ["Previous_Year_Paper_Tier_I"],
+          "path_excludes": [],
+          "layout_rules": [
+            {
+              "layout": [["REAS", 1, 25], ["GK", 26, 50], ["MATH", 51, 75], ["ENG", 76, 100]]
+            }
+          ],
+          "detect": false
+        },
+        {
+          "id": "tier2_english",
+          "label": "Tier-II English (English-only paper)",
+          "path_includes": ["Previous_Year_Paper_Tier_II", "English_"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["ENG", 1, 200]] }
+          ],
+          "detect": false
+        },
+        {
+          "id": "tier2_maths",
+          "label": "Tier-II Quantitative Aptitude (Maths-only paper)",
+          "path_includes": ["Previous_Year_Paper_Tier_II", "Quantitative_Aptitude_"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["MATH", 1, 100]] }
+          ],
+          "detect": false
+        },
+        {
+          "id": "tier2_paper1",
+          "label": "Tier-II Paper-I",
+          "path_includes": ["Previous_Year_Paper_Tier_II"],
+          "path_excludes": ["English_", "Quantitative_Aptitude_", "Paper_II_Statistics", "Paper_III_AAO"],
+          "layout_rules": [
+            {
+              "length": 150,
+              "layout": [["MATH", 1, 30], ["REAS", 31, 60], ["ENG", 61, 105], ["GK", 106, 130], ["COMPUTER", 131, 150]]
+            },
+            {
+              "layout": [["MATH", 1, 30], ["REAS", 31, 60], ["ENG", 61, 90], ["GK", 91, 120], ["COMPUTER", 121, 150]]
+            }
+          ],
+          "detect": false
+        },
+        {
+          "id": "tier2_other",
+          "label": "Tier-II other paper (AAO / Statistics-JSO)",
+          "path_includes": ["Previous_Year_Paper_Tier_II"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "length": 100, "layout": [["MATH", 1, 100]] }
+          ],
+          "detect": true
+        }
+      ]
+    },
+    "CHSL": {
+      "label": "SSC CHSL",
+      "root": "SSC-CHSL",
+      "series_slug": "ssc-chsl",
+      "paper_kinds": [
+        {
+          "id": "tier1_new",
+          "label": "Tier-I (2022-23 / 2023 section order)",
+          "path_includes": ["PYP_Tier_I/2022_-_2023"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["REAS", 1, 25], ["GK", 26, 50], ["MATH", 51, 75], ["ENG", 76, 100]] }
+          ],
+          "detect": false
+        },
+        {
+          "id": "tier1_new",
+          "label": "Tier-I (2022-23 / 2023 section order)",
+          "path_includes": ["PYP_Tier_I/2023"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["REAS", 1, 25], ["GK", 26, 50], ["MATH", 51, 75], ["ENG", 76, 100]] }
+          ],
+          "detect": false
+        },
+        {
+          "id": "tier1",
+          "label": "Tier-I",
+          "path_includes": ["PYP_Tier_I"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["ENG", 1, 25], ["REAS", 26, 50], ["MATH", 51, 75], ["GK", 76, 100]] }
+          ],
+          "detect": false
+        },
+        {
+          "id": "tier2",
+          "label": "Tier-II",
+          "path_includes": ["PYP_Tier_II"],
+          "path_excludes": [],
+          "layout_rules": [
+            {
+              "length": 135,
+              "layout": [["MATH", 1, 30], ["REAS", 31, 60], ["ENG", 61, 100], ["GK", 101, 120], ["COMPUTER", 121, 135]]
+            },
+            {
+              "layout": [["MATH", 1, 30], ["REAS", 31, 60], ["ENG", 61, 100], ["GK", 101, 120], ["COMPUTER", 121, 135]]
+            }
+          ],
+          "detect": true
+        }
+      ]
+    },
+    "CPO": {
+      "label": "SSC CPO",
+      "root": "SSC-CPO",
+      "series_slug": "ssc-cpo",
+      "paper_kinds": [
+        {
+          "id": "paper1",
+          "label": "Paper-I",
+          "path_includes": ["Previous_Year_Paper_Paper_I"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["REAS", 1, 50], ["GK", 51, 100], ["MATH", 101, 150], ["ENG", 151, 200]] }
+          ],
+          "detect": false
+        },
+        {
+          "id": "paper2",
+          "label": "Paper-II",
+          "path_includes": ["Previous_Year_Paper_Paper_II"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["ENG", 1, 200]] }
+          ],
+          "detect": false
+        }
+      ]
+    },
+    "MTS": {
+      "label": "SSC MTS",
+      "root": "SSC-MTS",
+      "series_slug": "ssc-mts",
+      "paper_kinds": [
+        {
+          "id": "paper1",
+          "label": "Paper-I (Session)",
+          "path_includes": ["Previous_Year_Paper"],
+          "path_excludes": [],
+          "layout_rules": [
+            {
+              "years": [2023, 2024, 2025],
+              "layout": [["MATH", 1, 20], ["REAS", 21, 40], ["GK", 41, 65], ["ENG", 66, 90]]
+            },
+            {
+              "years": [2022],
+              "layout": [["REAS", 1, 25], ["MATH", 26, 50], ["ENG", 51, 75], ["GK", 76, 100]]
+            },
+            {
+              "layout": [["ENG", 1, 25], ["REAS", 26, 50], ["MATH", 51, 75], ["GK", 76, 100]]
+            }
+          ],
+          "detect": false
+        }
+      ]
+    },
+    "GD": {
+      "label": "SSC GD Constable",
+      "root": "SSC-GD",
+      "series_slug": "ssc-gd",
+      "paper_kinds": [
+        {
+          "id": "paper1",
+          "label": "Paper-I",
+          "path_includes": ["Previous_Year_Papers"],
+          "path_excludes": [],
+          "layout_rules": [
+            {
+              "years": [2022, 2024, 2025],
+              "layout": [["REAS", 1, 20], ["GK", 21, 40], ["MATH", 41, 60], ["ENG", 61, 80], ["HINDI", 81, 100]]
+            },
+            {
+              "layout": [["REAS", 1, 25], ["GK", 26, 50], ["MATH", 51, 75], ["ENG", 76, 100]]
+            }
+          ],
+          "detect": false
+        }
+      ]
+    },
+    "SELECTION_POST": {
+      "label": "SSC Selection Post",
+      "root": "SSC-Selection-Post",
+      "series_slug": "ssc-selection-post",
+      "paper_kinds": [
+        {
+          "id": "paper1",
+          "label": "Paper-I",
+          "path_includes": ["Previous_Year_Paper"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["REAS", 1, 25], ["GK", 26, 50], ["MATH", 51, 75], ["ENG", 76, 100]] }
+          ],
+          "detect": false
+        }
+      ]
+    },
+    "STENO": {
+      "label": "SSC Stenographer",
+      "root": "SSC-Stenographer",
+      "series_slug": "ssc-stenographer",
+      "paper_kinds": [
+        {
+          "id": "paper1",
+          "label": "Paper-I",
+          "path_includes": ["Previous_Year_Paper"],
+          "path_excludes": [],
+          "layout_rules": [
+            { "layout": [["REAS", 1, 50], ["GK", 51, 100], ["ENG", 101, 200]] }
+          ],
+          "detect": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+AFTER distinct table rows: {
+ "synonym": 5415,
+ "antonym": 7070,
+ "ows": 5395,
+ "idioms": 11530,
+ "spelling": 3359,
+ "homonyms": 482
+}
+question_counts: {"synonym": 2083, "antonym": 3256, "ows": 1529, "idiom": 2678, "spelling": 907, "homonym": 139}
+synonym   rows=  5415  rows-merged-from-multiple-spellings= 1190  spellings-folded= 1318
+antonym   rows=  7070  rows-merged-from-multiple-spellings= 1616  spellings-folded= 1807
+ows       rows=  5395  rows-merged-from-multiple-spellings=  242  spellings-folded=  242
+idioms    rows= 11530  rows-merged-from-multiple-spellings=  512  spellings-folded=  559
+spelling  rows=  3359  rows-merged-from-multiple-spellings=  133  spellings-folded=  137
+homonyms  rows=   482  rows-merged-from-multiple-spellings=   15  spellings-folded=   15
+
+idiom rows carrying a leading 'to ' variant: 2913
+examples: [('Spill the beans', ['Spill the beans', 'To spill the beans', 'spill the beans'], 23), ('Bite the bullet', ['Bite the Bullet', 'Bite the bullet', 'To bite the bullet', 'bite the bullet', 'to bite the bullet'], 18), ('Hit the nail on the head', ['Hit the nail on the head', 'To hit the nail on the head', 'hit the nail on the head'], 14)]
