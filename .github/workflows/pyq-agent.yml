@@ -277,24 +277,35 @@ jobs:
           # commit them (they are gitignored, but `git add -f` overrides that)
           find state database -name '.tmp-*' -type f -delete 2>/dev/null || true
 
-          # stage the generated tree explicitly; `-f` overrides .gitignore
+          # NEVER delete published work. A checkpoint must MERGE with what is already on
+          # `pyq-db`: snapshot what this run produced, overlay it on the published tree,
+          # and commit the union. (Committing only the run's own tree is what previously
+          # wiped the full database tree / grammar leaves / mocks off the branch.)
+          rm -rf /tmp/pyq-run-state /tmp/pyq-run-db
+          cp -a state /tmp/pyq-run-state
+          cp -a database /tmp/pyq-run-db
+
+          if git ls-remote --exit-code --heads origin pyq-db >/dev/null 2>&1; then
+            git fetch --depth=1 origin pyq-db
+            # 1) bring back every file already published
+            git checkout FETCH_HEAD -- state database 2>/dev/null || true
+            # 2) overlay this run's fresher files on top of them
+            cp -a /tmp/pyq-run-state/. state/
+            cp -a /tmp/pyq-run-db/. database/
+          fi
+
+          find state database -name '.tmp-*' -type f -delete 2>/dev/null || true
           git add -f state database
           if git diff --cached --quiet; then
             echo "nothing to publish (generated tree unchanged since the last checkpoint push)"
             exit 0
           fi
-          git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER} [skip ci]"
 
-          # re-parent the checkpoint commit onto the existing pyq-db tip so the
-          # push below is always a fast-forward; on the first run the branch does
-          # not exist yet and this block is skipped
+          # re-parent onto the existing pyq-db tip so the push stays a fast-forward
           if git ls-remote --exit-code --heads origin pyq-db >/dev/null 2>&1; then
-            git fetch --depth=1 origin pyq-db
             git reset --soft FETCH_HEAD
-            git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER} [skip ci]"
           fi
-
-          # creates pyq-db on the first run, fast-forwards it afterwards
+          git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER} [skip ci]"
           git push origin HEAD:pyq-db
 
       - name: Result
