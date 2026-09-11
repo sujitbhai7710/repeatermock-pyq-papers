@@ -1,0 +1,52 @@
+# missing-number-in-matrix
+
+- **Level**: concept
+- **Subject**: REAS
+- **Chapter**: MISSING NUMBER
+- **Questions**: 25
+
+## By exam
+
+| Exam | Questions |
+|---|---|
+| CHSL | 16 |
+| MTS | 9 |
+
+## By year
+
+| Year | Questions |
+|---|---|
+| 2023 | 9 |
+| 2025 | 16 |
+
+## Question ids
+
+Resolve any id with `python tools/resolve.py <qid>`.
+
+```text
+6997b6868fb71f7bef4fb72d  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_18_Nov_2025_Shift_1_699139f25bb969cde8bdac95.json #49
+6997b6ec5397aa616b933655  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_18_Nov_2025_Shift_1_699139f25bb969cde8bdac95.json #50
+69b3b6efe35703b584455a23  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_22_Nov_2025_Shift_1_699139f6e0a7e3f7384f560f.json #36
+699d7702035bd6b380ea2b90  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_25_Nov_2025_Shift_1_699139fa00b8600595dfcc3c.json #35
+699d7761afff0975aad0cf37  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_25_Nov_2025_Shift_1_699139fa00b8600595dfcc3c.json #36
+699eb1c19d327a45d941a4c3  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_27_Nov_2025_Shift_1_699139fffe1e622799519adf.json #37
+69a01e2a3d243350fcf0971f  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_28_Nov_2025_Shift_1_69913a0236d1ea3c72e13bea.json #33
+69941e9d5b7cd4b1ebb0ffdc  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_12_Nov_2025_Shift_3_699139ed00b1a6213ea3b68f.json #43
+6943cd2c47681fe34817f5a1  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_13_Nov_2025_Shift_3_699139e563f8671dd7984a91.json #42
+69677e95d25949bbcbaf561c  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_14_Nov_2025_Shift_3_699139e76c26e0de7859cd61.json #42
+699bf3a2c32d339f0dbe8a5f  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_18_Nov_2025_Shift_3_699139f463f8671dd7984b37.json #49
+699bf424b0e12a003affa139  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_18_Nov_2025_Shift_3_699139f463f8671dd7984b37.json #50
+693c11498dfed04b233eb36c  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_20_Nov_2025_Shift_3_699139ea73f524ea74184c6c.json #34
+699d5d20c2fecec63d7b0549  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_25_Nov_2025_Shift_3_699139fc2ccdf2ae91b342fd.json #33
+699f0bb099597f2b4734767a  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_26_Nov_2025_Shift_3_699139fe3805537016416209.json #38
+69a12c6ad536644d656ce8a8  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_29_Nov_2025_Shift_3_69913a0583be60a89ad04541.json #35
+64a4f223258e5fc14bc93b1d  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_Jun_2023_Shift_1_69c4dd5ba1aff0d13b628d0a.json #26
+64a01ee2b3a93612aaa5423d  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_11_May_2023_Shift_2_69c4dd46c93f8d7d943456e8.json #21
+64a54c62c1e2c77d91d2544d  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_15_May_2023_Shift_2_69c4dd4aae87d044d3af596b.json #21
+64a1027e19e0a47091798f89  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_17_May_2023_Shift_2_69c4dd4fc93f8d7d9434571e.json #23
+64a38997b375700d880dd109  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_12_May_2023_Shift_3_69c4dd497ec09bc7a519335a.json #28
+64a7ee1527bb0f49b925c018  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_15_May_2023_Shift_3_69c4dd4be7391208d448d722.json #26
+64a65a3dae230f589b59fb40  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_17_May_2023_Shift_3_69c4dd4fe9c3c84d78c7d6f9.json #26
+649fc59edca3b9f9cd134b23  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_18_May_2023_Shift_3_69c4dd51e334ef538752150d.json #35
+64a663753e53199d5b1ac40f  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_14_Jun_2023_Shift_3_69c4dd5889e47aca52cdd16f.json #31
+```
