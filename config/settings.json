@@ -33,31 +33,31 @@
       "deepseek-v4-flash"
     ],
     "provider_order": [
-      "agentrouter",
-      "ar-worker",
+      "justwoker",
       "jw-worker",
-      "justwoker"
+      "ar-worker",
+      "agentrouter"
     ],
     "proposer_provider_order": [
-      "agentrouter",
-      "ar-worker",
+      "justwoker",
       "jw-worker",
-      "justwoker"
+      "ar-worker",
+      "agentrouter"
     ],
     "critic_provider_order": [
-      "agentrouter",
-      "ar-worker",
+      "justwoker",
       "jw-worker",
-      "justwoker"
+      "ar-worker",
+      "agentrouter"
     ],
     "model_provider_orders": {}
   },
   "providers": {
     "order": [
-      "agentrouter",
-      "ar-worker",
+      "justwoker",
       "jw-worker",
-      "justwoker"
+      "ar-worker",
+      "agentrouter"
     ],
     "routes": {
       "agentrouter": {
