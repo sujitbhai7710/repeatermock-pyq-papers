@@ -69,6 +69,11 @@ OTHER_DIR = "_other"
 #: directories under ``database/`` that are not question-tree nodes
 RESERVED_DIRS = ("_meta", "_analysis", "mocks")
 
+#: files a subject root owns next to the tree: the phase writes them (the tree
+#: writer never does), so a tree rebuild must not delete them
+#: (``english/solved-items.json``, ``<subject>/analysis.json``).
+RESERVED_FILES = ("solved-items.json", "analysis.json")
+
 POINTER_FIELDS = (
     "qid",
     "n",
@@ -345,19 +350,21 @@ def build_subject_tree(records: Sequence[Dict[str, Any]], subject: str) -> TreeN
 
 
 def prune_subject_tree(subject_root: Path) -> int:
-    """Delete a subject's previous tree revision (reserved dirs are kept).
+    """Delete a subject's previous tree revision (reserved entries are kept).
 
     The tree is regenerated from the index on every run, so the previous
     revision is removed first: a superseded directory (for example the old
     ``english/grammar/grammar`` duplicate or the pre-``_analysis`` vocabulary
     files) would otherwise survive as a stale shell next to the new layout.
+    ``_analysis``/``_meta``/``mocks`` (:data:`RESERVED_DIRS`) and the subject's
+    analyses (:data:`RESERVED_FILES`) belong to other writers and stay.
     """
 
     if not subject_root.is_dir():
         return 0
     removed = 0
     for child in sorted(subject_root.iterdir(), key=lambda item: item.name):
-        if child.name in RESERVED_DIRS:
+        if child.name in RESERVED_DIRS or child.name in RESERVED_FILES:
             continue
         if child.is_dir():
             removed += 1 + sum(1 for _ in child.rglob("*"))
@@ -373,6 +380,7 @@ def write_question_tree(
     *,
     database_dir: Optional[Path] = None,
     log: Optional[Log] = None,
+    exclude_qids: Optional[Iterable[str]] = None,
 ) -> Dict[str, Any]:
     """Write ``database/<subject>/<chapter>[/<topic>]/<concept>/``.
 
@@ -380,13 +388,25 @@ def write_question_tree(
     no ``a/a/`` directory; every leaf concept owns exactly one ``index.md`` and
     one ``questions.jsonl``.  The subject subtree is rebuilt from scratch (the
     previous revision is pruned, reserved ``_analysis`` directories are kept).
+
+    ``exclude_qids`` names the questions that another view already owns (the
+    grammar rule leaves, see :func:`agent.grammar.assigned_qids`): such a record
+    is not filed in the concept tree, so a question never ends up in two leaves.
+    The set is keyed on ``qid`` — the identity the grammar pass assigns with —
+    and comes from the grammar output, it is never recomputed here.
     """
 
     base = database_dir or paths.DATABASE_DIR
     logger = log or Log("build_db")
+    owned = {str(qid) for qid in (exclude_qids or ())}
 
     by_subject: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+    excluded = 0
     for record in records:
+        if owned and str(record.get("qid") or "") in owned:
+            # the rule leaf is this question's home, see audit rule 5
+            excluded += 1
+            continue
         by_subject[record.get("subject") or SUBJECT_DIR_FALLBACK].append(record)
 
     files_written = 0
@@ -414,8 +434,8 @@ def write_question_tree(
         files_written += 1
         if node.records:
             # a collapsed node can both hold questions and have children
-            # (english/grammar -> 8k question records + the grammar topics);
-            # it still owns exactly one questions.jsonl.
+            # (english/grammar -> the grammar chapters + the concept tree's own
+            # records); it still owns exactly one questions.jsonl.
             write_jsonl(directory / "questions.jsonl", [pointer(r) for r in node.records])
             files_written += 1
             leaves += 1
@@ -457,7 +477,7 @@ def write_question_tree(
 
     # count the levels that were collapsed away (chapter == topic, concept ==
     # parent, unclassified == unclassified) for the phase report
-    for record in records:
+    for record in (row for rows in by_subject.values() for row in rows):
         emitted = len(leaf_levels(record))
         declared = 2 + (1 if record.get("topic") else 0)
         collapsed += max(0, declared - emitted)
@@ -465,12 +485,14 @@ def write_question_tree(
     logger.info(
         f"question tree: {files_written} files across {len(by_subject)} subjects, "
         f"{leaves} concept leaves, {collapsed} duplicate levels collapsed"
+        + (f", {human_int(excluded)} rule-owned questions skipped" if excluded else "")
     )
     return {
         "files": files_written,
         "subjects": sorted(by_subject),
         "leaves": leaves,
         "collapsed_levels": collapsed,
+        "excluded": excluded,
     }
 
 

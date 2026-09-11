@@ -36,30 +36,30 @@
     ],
     "provider_order": [
       "agentrouter",
-      "justwoker",
       "ar-worker",
-      "jw-worker"
+      "jw-worker",
+      "justwoker"
     ],
     "proposer_provider_order": [
       "agentrouter",
-      "justwoker",
       "ar-worker",
-      "jw-worker"
+      "jw-worker",
+      "justwoker"
     ],
     "critic_provider_order": [
       "agentrouter",
-      "justwoker",
       "ar-worker",
-      "jw-worker"
+      "jw-worker",
+      "justwoker"
     ],
     "model_provider_orders": {}
   },
   "providers": {
     "order": [
       "agentrouter",
-      "justwoker",
       "ar-worker",
-      "jw-worker"
+      "jw-worker",
+      "justwoker"
     ],
     "routes": {
       "agentrouter": {

@@ -134,6 +134,34 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="questions per pack (default 100; 0 = every question)",
     )
+
+    p_grammar = sub.add_parser(
+        "grammar",
+        help="route grammar questions over the 129 rules (keyword matcher + AI pass)",
+    )
+    p_grammar.add_argument(
+        "--ai",
+        action="store_true",
+        help="run the deepseek-proposes / gpt-5.6-sol-judges pass over the residual",
+    )
+    p_grammar.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        help="max questions handed to the AI this run (0 = every pending question)",
+    )
+    p_grammar.add_argument(
+        "--batch-size", type=int, default=None, help="questions per AI call (default 20)"
+    )
+    p_grammar.add_argument(
+        "--report-only",
+        action="store_true",
+        help="run the AI pass but keep the stored verdicts (nothing new is applied)",
+    )
+    p_grammar.add_argument(
+        "--no-write", action="store_true", help="do not rewrite the database views"
+    )
+    p_grammar.add_argument("--json", action="store_true", help="machine-readable result")
     return parser
 
 # ---------------------------------------------------------------------------
@@ -1047,6 +1075,96 @@ def cmd_mocks(args: argparse.Namespace, settings: Settings, exams: ExamTable, lo
     print(json.dumps(summary, indent=2, ensure_ascii=False))
     return EXIT_OK
 
+
+def cmd_grammar(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
+    """Route every grammar question to one of the 129 rules and write the views."""
+
+    from . import grammar as grammar_mod
+    from . import indexer
+
+    records = indexer.read_index()
+    if not records:
+        print("no index found – run `python -m agent.cli phase0` first", file=sys.stderr)
+        return EXIT_ERROR
+    taxonomy = read_json(paths.TAXONOMY_JSON, default=None)
+    if not taxonomy:
+        print("taxonomy missing – run `python -m agent.cli taxonomy` first", file=sys.stderr)
+        return EXIT_ERROR
+
+    eng = [r for r in records if r.get("subject") == "ENG"]
+    from .phases.subject_phase import _questions_for
+
+    questions = _questions_for(eng)
+    log.info(f"grammar: {human_int(len(eng))} English records, {human_int(len(questions))} raw questions")
+
+    window = checkpoint.make_window(settings)
+    result = grammar_mod.build_grammar_view(
+        records,
+        questions,
+        taxonomy,
+        settings=settings,
+        window=window,
+        ai=grammar_mod.AiOptions(
+            enabled=bool(args.ai),
+            limit=int(args.limit or 0),
+            batch_size=int(args.batch_size or grammar_mod.AI_BATCH_SIZE),
+            report_only=bool(args.report_only),
+        ),
+        database_dir=paths.DATABASE_DIR,
+        log=log,
+    )
+    payload = result.as_dict()
+    payload["coverage"] = grammar_mod.coverage_line(result)
+    if args.json:
+        print(json.dumps(payload, indent=2, ensure_ascii=False))
+    else:
+        counters = result.counters
+        print("=" * 78)
+        print("GRAMMAR -> 129 RULES")
+        print("=" * 78)
+        print(f"grammar questions   : {human_int(counters.get('grammar_questions', 0))}")
+        print(
+            f"assigned            : {human_int(counters.get('grammar_questions_matched', 0))} "
+            f"({counters.get('coverage_pct', 0)}%)"
+        )
+        print(f"  by keyword matcher: {human_int(counters.get('grammar_questions_matched', 0) - counters.get('grammar_questions_assigned_by_ai', 0))}")
+        print(f"  by the AI pass    : {human_int(counters.get('grammar_questions_assigned_by_ai', 0))}")
+        print(f"unassigned          : {human_int(counters.get('grammar_questions_unassigned', 0))}")
+        print(
+            f"rules with questions: {human_int(counters.get('rules_with_questions', 0))}"
+            f" / {human_int(counters.get('rules', 0))}"
+        )
+        excluded = int(counters.get("tree_excluded", 0))
+        if excluded:
+            print(
+                f"tree re-filed       : {human_int(excluded)} rule-owned questions "
+                "moved out of the concept tree"
+            )
+        ai_status = counters.get("ai_status")
+        if ai_status:
+            print(f"ai status           : {ai_status}")
+        reasons = {k: v for k, v in counters.items() if k.startswith("reason:")}
+        if reasons:
+            print("unassigned reasons  : " + ", ".join(f"{k.split(':', 1)[1]}={v}" for k, v in sorted(reasons.items())))
+        for note in result.notes:
+            print(f"note                : {note}")
+        print("=" * 78)
+    if not args.no_write:
+        tracking.journal(
+            "grammar.complete",
+            {
+                "questions": result.counters.get("grammar_questions", 0),
+                "assigned": result.counters.get("grammar_questions_matched", 0),
+                "unassigned": result.counters.get("grammar_questions_unassigned", 0),
+                "rules_with_questions": result.counters.get("rules_with_questions", 0),
+            },
+        )
+    if result.counters.get("ai_status") == grammar_mod.STATUS_AI_UNAVAILABLE:
+        # the AI is a soft stop, exactly like in the verify step: the
+        # deterministic result stands and the run is not a failure
+        return EXIT_OK
+    return EXIT_OK
+
 # ---------------------------------------------------------------------------
 # main
 # ---------------------------------------------------------------------------
@@ -1081,6 +1199,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             return cmd_stats(args, settings, exams, log)
         if args.command == "mocks":
             return cmd_mocks(args, settings, exams, log)
+        if args.command == "grammar":
+            return cmd_grammar(args, settings, exams, log)
         if args.command == "routes":
             return cmd_routes(args, settings, exams, log)
         if args.command == "publish":

@@ -42,10 +42,17 @@ CRITIC = "gpt-5.6-sol"
 
 
 def make_settings(**policy_overrides: Any) -> config.Settings:
+    # Pin the canonical four-route chain for the fallback mechanics; the shipped
+    # default order is asserted in test_failover.ChainConfigTests.
+    order = policy_overrides.pop("provider_order", ("agentrouter", "ar-worker", "jw-worker", "justwoker"))
     base = config.load_settings()
     if policy_overrides:
         base = replace(base, rate_limit=replace(base.rate_limit, **policy_overrides))
-    return base
+    return replace(
+        base,
+        provider_order=tuple(order),
+        providers=tuple(sorted(base.providers, key=lambda p: order.index(p.name))),
+    )
 
 
 def all_keys() -> Dict[str, List[str]]:
@@ -189,7 +196,7 @@ class ModelFallbackTests(RouteTestCase):
         """The live case: every route for the proposer model is dead."""
 
         router = router_mod.Router(make_settings(provider_cooldown_seconds=300))
-        for provider in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+        for provider in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
             self.fake.behaviour[(provider, PROPOSER)] = "rate"
             self.fake.behaviour[(provider, "deepseek-v4-pro")] = "waf"
         # the fallback model is only served by jw-worker, as on the runner
@@ -229,7 +236,7 @@ class ModelFallbackTests(RouteTestCase):
         """The proposer role keeps working while its primary model is dark."""
 
         router = router_mod.Router(make_settings(provider_cooldown_seconds=300))
-        for provider in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+        for provider in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
             self.fake.behaviour[(provider, PROPOSER)] = "rate"
         self.fake.behaviour[("jw-worker", CRITIC)] = "ok"
 
@@ -249,7 +256,7 @@ class ModelFallbackTests(RouteTestCase):
 
         router = router_mod.Router(make_settings(provider_cooldown_seconds=300))
         candidates = router.role_models("proposer")
-        for name in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+        for name in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
             for model in candidates:
                 self.fake.behaviour[(name, model)] = "rate"
 

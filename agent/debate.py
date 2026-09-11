@@ -169,6 +169,17 @@ def _proposal_schema_hint(task: str) -> str:
             'Schema: {"kind": "synonym"|"antonym"|"ows"|"idiom"|"spelling"|"homonym"|"none", '
             '"term": string|null, "reason": string}'
         )
+    if task == "grammar_rule":
+        # the payload is a *batch* of grammar questions; every question must be
+        # answered with exactly one of the 129 numbered rules (or null when no
+        # rule of the list genuinely applies) or the reply cannot be mapped back
+        return (
+            'Schema: {"items": [{"qid": string, "rule": 1..129|null, "confidence": 0..1, '
+            '"reason": string}], "reason": string}. '
+            "Emit exactly one entry in \"items\" for every question of the batch payload, "
+            "echoing each qid verbatim and choosing the single best rule number of the "
+            "supplied list; use null only when no listed rule genuinely applies."
+        )
     return 'Schema: {"result": any, "reason": string}'
 
 
@@ -237,6 +248,7 @@ class Debate:
         task: str,
         payload: Dict[str, Any],
         vocabulary: Sequence[str] = (),
+        max_tokens: int = 700,
     ) -> DebateOutcome:
         """Propose -> criticise -> (one rebuttal) -> final verdict.
 
@@ -246,6 +258,11 @@ class Debate:
         where ``gpt-5.6-sol`` is only served by one worker must not be steered by
         the proposer's chain, and a model with no working route must not cost the
         debate its chance to run at all.
+
+        *max_tokens* is the completion budget of **every** call of the protocol,
+        so a batched task (``grammar_rule`` answers one rule per question of a
+        20-question payload) can raise it without changing the shape of the
+        protocol.
         """
 
         proposer_model = self.policy.proposer_model
@@ -259,6 +276,7 @@ class Debate:
             user,
             models=self._role_models("proposer"),
             role="proposer",
+            max_tokens=max_tokens,
         )
         # the model that actually answered — not necessarily the primary one
         proposer_used = proposal_call.model or proposer_model
@@ -302,6 +320,7 @@ class Debate:
             critic_user,
             models=self._role_models("critic", other=proposer_used, last=proposer_used),
             role="critic",
+            max_tokens=max_tokens,
         )
         critique = llm.extract_json(critic_call.text)
         if not isinstance(critique, dict):
@@ -350,6 +369,7 @@ class Debate:
                     last=critic_call.model,
                 ),
                 role="proposer",
+                max_tokens=max_tokens,
             )
             rebuttal = llm.extract_json(rebuttal_call.text)
             if not isinstance(rebuttal, dict):
@@ -384,6 +404,7 @@ class Debate:
                     last=proposer_used,
                 ),
                 role="critic",
+                max_tokens=max_tokens,
             )
             final_verdict = llm.extract_json(final_call.text)
             if not isinstance(final_verdict, dict):

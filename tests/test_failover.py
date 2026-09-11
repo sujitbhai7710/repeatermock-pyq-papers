@@ -38,9 +38,17 @@ CRITIC = "gpt-5.6-sol"
 
 
 def make_settings(**policy_overrides: Any) -> config.Settings:
+    # Failover mechanics are tested against the canonical four-route chain
+    # (worker order); the shipped default is checked separately in
+    # ChainConfigTests.test_default_chain_matches_the_spec.
+    order = policy_overrides.pop("provider_order", ("agentrouter", "ar-worker", "jw-worker", "justwoker"))
     base = config.load_settings()
-    policy = replace(base.rate_limit, **policy_overrides)
-    return replace(base, rate_limit=policy)
+    return replace(
+        base,
+        rate_limit=replace(base.rate_limit, **policy_overrides),
+        provider_order=tuple(order),
+        providers=tuple(sorted(base.providers, key=lambda p: order.index(p.name))),
+    )
 
 
 def all_keys() -> Dict[str, List[str]]:
@@ -418,7 +426,7 @@ class RouteKeyedBreakerTests(RouteTestCase):
         router = router_mod.Router(make_settings())
         report = router.provider_report()
         for model in (PROPOSER, CRITIC):
-            for name in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+            for name in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
                 key = f"{name}/{model}"
                 self.assertIn(key, report)
                 self.assertTrue(report[key]["configured"], key)
@@ -433,7 +441,7 @@ class RouteKeyedBreakerTests(RouteTestCase):
 class HaltTests(RouteTestCase):
     def test_every_route_down_halts_the_model(self) -> None:
         router = router_mod.Router(make_settings(provider_cooldown_seconds=300))
-        for name in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+        for name in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
             self.fake.behaviour[(name, PROPOSER)] = "rate"
 
         with self.assertRaises(GlobalHalt) as caught:
@@ -445,7 +453,7 @@ class HaltTests(RouteTestCase):
 
     def test_halted_router_refuses_further_requests(self) -> None:
         router = router_mod.Router(make_settings())
-        for name in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+        for name in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
             self.fake.behaviour[(name, PROPOSER)] = "rate"
         with self.assertRaises(GlobalHalt):
             chat_once(router)
@@ -457,7 +465,7 @@ class HaltTests(RouteTestCase):
 
     def test_a_model_specific_outage_does_not_halt_the_other_model(self) -> None:
         router = router_mod.Router(make_settings(provider_cooldown_seconds=300))
-        for name in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+        for name in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
             self.fake.behaviour[(name, PROPOSER)] = "rate"
         with self.assertRaises(GlobalHalt):
             chat_once(router, model=PROPOSER)
@@ -573,7 +581,7 @@ class HaltTests(RouteTestCase):
             router.models_available([PROPOSER, CRITIC]), {PROPOSER: True, CRITIC: True}
         )
 
-        for name in ("agentrouter", "ar-worker", "jw-worker", "justwoker"):
+        for name in ("agentrouter", "justwoker", "ar-worker", "jw-worker"):
             self.fake.behaviour[(name, PROPOSER)] = "rate"
         with self.assertRaises(GlobalHalt):
             chat_once(router, model=PROPOSER)

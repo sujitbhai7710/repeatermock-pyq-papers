@@ -113,11 +113,13 @@ def run_subject_phase(ctx, phase: str, subject: str) -> PhaseResult:
 
     # -- 4. write DB -------------------------------------------------------
     tree = build_db.write_question_tree(subset, log=log)
-    result.files.extend(_tree_files(subset))
     result.counters["db_files"] = tree.get("files", 0)
 
     if subject == "ENG":
+        # the grammar pass re-files the English tree and writes the rule leaves,
+        # so the subject is globbed for the file list *after* it ran
         result.files.extend(_write_english_analysis(ctx, records, log))
+    result.files.extend(_tree_files(subset))
     if subject in ("GK", "MATH", "REAS", "COMPUTER"):
         result.files.extend(_write_subject_analysis(phase, subject, subset, log))
 
@@ -149,8 +151,22 @@ def _write_english_analysis(ctx, records: Sequence[Dict[str, Any]], log: Log) ->
     questions = _questions_for(records)
 
     vocab_result = vocab.build_vocabulary_db(records, questions, log=log)
-    grammar_result = grammar.build_grammar_db(
-        records, questions, ctx.taxonomy, log=log
+    # The grammar view routes every grammar-shaped question to one of the 129
+    # rules: the keyword matcher first, then — unless the run is `--no-ai` or the
+    # AI is down — the deepseek-proposes / gpt-5.6-sol-judges pass over the
+    # residual.  An AI outage is a soft stop: the deterministic result is still
+    # written and the leftover questions land in `unassigned.jsonl`.  The pass
+    # also re-files the English tree without the questions it rules, so a grammar
+    # question ends up in exactly one leaf (its rule node).
+    grammar_result = grammar.build_grammar_view(
+        records,
+        questions,
+        ctx.taxonomy,
+        settings=ctx.settings,
+        window=ctx.window,
+        ai=grammar.AiOptions(enabled=not getattr(ctx, "no_ai", False)),
+        database_dir=paths.DATABASE_DIR,
+        log=log,
     )
 
     solved = paths.DATABASE_DIR / "english" / "solved-items.json"
@@ -164,10 +180,11 @@ def _write_english_analysis(ctx, records: Sequence[Dict[str, Any]], log: Log) ->
         },
     )
     log.info(
-        "phase1: vocabulary {v} items, grammar {g} mapped / {u} unmapped".format(
+        "phase1: vocabulary {v} items, grammar {g} assigned / {u} unassigned ({p}%)".format(
             v=vocab_result.counters.get("vocabulary_items", 0),
             g=grammar_result.counters.get("grammar_questions_matched", 0),
-            u=grammar_result.counters.get("grammar_questions_unmapped", 0),
+            u=grammar_result.counters.get("grammar_questions_unassigned", 0),
+            p=grammar_result.counters.get("coverage_pct", 0),
         )
     )
     return list(vocab_result.files) + list(grammar_result.files) + [solved]
