@@ -38,9 +38,10 @@ CRITIC = "gpt-5.6-sol"
 
 
 def make_settings(**policy_overrides: Any) -> config.Settings:
-    # Failover mechanics are tested against the canonical four-route chain
-    # (worker order); the shipped default is checked separately in
-    # ChainConfigTests.test_default_chain_matches_the_spec.
+    # Pin the role-level provider orders too: role_routes reads the debate
+    # policy (from settings.json),not the top-level ``provider_order``,so
+    # scenario tests stay immune to shipped reorders.
+
     order = policy_overrides.pop("provider_order", ("agentrouter", "ar-worker", "jw-worker", "justwoker"))
     base = config.load_settings()
     return replace(
@@ -48,6 +49,12 @@ def make_settings(**policy_overrides: Any) -> config.Settings:
         rate_limit=replace(base.rate_limit, **policy_overrides),
         provider_order=tuple(order),
         providers=tuple(sorted(base.providers, key=lambda p: order.index(p.name))),
+        debate=replace(
+            base.debate,
+            provider_order=tuple(order),
+            proposer_provider_order=tuple(order),
+            critic_provider_order=tuple(order),
+        ),
     )
 
 
@@ -133,9 +140,9 @@ class ChainConfigTests(unittest.TestCase):
     def test_default_chain_matches_the_spec(self) -> None:
         settings = config.load_settings()
         names = [provider.name for provider in settings.providers]
-        self.assertEqual(names, ["agentrouter", "ar-worker", "jw-worker", "justwoker"])
+        self.assertEqual(names, ["justwoker", "jw-worker", "ar-worker", "agentrouter"])
         self.assertEqual(
-            tuple(settings.provider_order), ("agentrouter", "ar-worker", "jw-worker", "justwoker")
+            tuple(settings.provider_order), ("justwoker", "jw-worker", "ar-worker", "agentrouter")
         )
 
         by_name = {provider.name: provider for provider in settings.providers}
@@ -166,7 +173,7 @@ class ChainConfigTests(unittest.TestCase):
             provider_order=("justwoker", "agentrouter"),
         )
         provider = llm.resolve_providers(trimmed)
-        self.assertEqual([p.name for p in provider], ["agentrouter", "justwoker"])
+        self.assertEqual([p.name for p in provider], ["justwoker", "agentrouter"])
         router = router_mod.Router(trimmed)
         # declaration order is kept for the chain, the configured order for walking it
         self.assertEqual(router.provider_order, ("justwoker", "agentrouter"))

@@ -1,7 +1,7 @@
 # Rule 92: Fixed Preposition Combinations
 
 - **Topic**: Prepositions
-- **Questions**: 41
+- **Questions**: 48
 - **Top exam**: CHSL
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -33,9 +33,9 @@ Words: `comprise`, `preposition`
 |---|---|
 | CHSL | 12 |
 | MTS | 11 |
+| CGL | 10 |
 | STENO | 6 |
 | CPO | 4 |
-| CGL | 3 |
 | GD | 3 |
 | SELECTION_POST | 2 |
 
@@ -43,8 +43,8 @@ Words: `comprise`, `preposition`
 
 | Year | Questions |
 |---|---|
-| 2019 | 3 |
-| 2020 | 3 |
+| 2019 | 6 |
+| 2020 | 7 |
 | 2021 | 7 |
 | 2022 | 7 |
 | 2023 | 9 |
@@ -64,6 +64,13 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e948296f60d5d58edec33d4 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_3_6a0f3daedaa906308e01dbba.json` #81 | Error Detection | ai |
+| 5e8c4aec585db7606e339a22 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_3_6a0f3da27fa7782b08e61c5c.json` #85 | Error Detection | ai |
+| 5e82103df60d5d5b2b1e3b29 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_1_6a0f3d920f618830b205ae83.json` #93 | Sentence Improvement | ai |
+| 61c984daccd5b4927480f02c | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_2_6a0f3dd07fa7782b08e61ee6.json` #81 | Error Detection | ai |
+| 61cb2781ca7e1400995f24b5 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_1_6a0f3dd483407d2492174d9d.json` #82 | Error Detection | ai |
+| 614c2924057ed7d6abc27935 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_3_6a0f3dba3b5bc48ebebf5fef.json` #85 | Error Detection | ai |
+| 61cc255964b39a202515010f | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_2_6a0f3ddc461696fe4dabf194.json` #85 | Sentence Improvement | ai |
 | 63a691424e4e13617bd639a5 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_07_Dec_2022_Shift_4_6a0f3e38c6516817f880a259.json` #90 | Sentence Improvement | keyword |
 | 6909f62c6c407480e20c1135 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_16_Sept_2025_Shift_1_6a0f3f0933a6a35112cee7b2.json` #87 | Error Detection | keyword |
 | 690b228b9b71212a5b9fe15e | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_18_Sept_2025_Shift_1_6a0f3f16836cac9339b3b838.json` #91 | Sentence Improvement | keyword |

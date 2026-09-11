@@ -1,7 +1,7 @@
 # Rule 6: Gerund or Infinitive
 
 - **Topic**: Verb Forms
-- **Questions**: 5
+- **Questions**: 8
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `-ing`, `gerund`, `infinitive`, `to`
 
 | Exam | Questions |
 |---|---|
-| CGL | 2 |
+| CGL | 5 |
 | MTS | 1 |
 | SELECTION_POST | 1 |
 | STENO | 1 |
@@ -41,6 +41,7 @@ Words: `-ing`, `gerund`, `infinitive`, `to`
 | Year | Questions |
 |---|---|
 | 2019 | 1 |
+| 2020 | 3 |
 | 2021 | 1 |
 | 2022 | 1 |
 | 2023 | 1 |
@@ -60,6 +61,9 @@ Trend: **▼ -1**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e8ef3911f7b436693413593 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_2_6a0f3da6d464e6c08627de87.json` #98 | Sentence Improvement | keyword |
+| 61a5f86d9b1081a63c5ea7d6 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_3_6a0f3dc6cda71d26928e57a6.json` #77 | Sentence Improvement | ai |
+| 614d9012cbf1e39c432b8ee4 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_2_6a0f3dbecda5e733b2faba6f.json` #80 | Error Detection | ai |
+| 61cc5c800ccd26a910c73650 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_3_6a0f3dde205404a71f29fad1.json` #80 | Error Detection | ai |
 | 6710ccb5eaab89ddac6e52e1 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_11_Sept_2024_Shift_3_6a0f3eb9daa906308e01e770.json` #95 | Error Detection | keyword |
 | 64a26706b5fc35d2b449f687 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_2_69c4dd43d87f9bf12c73999b.json` #72 | Error Detection | keyword |
 | 630af36a0ccff5e933575ed6 | SELECTION_POST | 2022 | `SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_Matric_Level_Official_Paper_Held_on_2_Aug_2022_Shift_1_69df453bdc7d9bce0ea3339c.json` #87 | Sentence Improvement | keyword |

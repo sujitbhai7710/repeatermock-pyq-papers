@@ -42,8 +42,14 @@ CRITIC = "gpt-5.6-sol"
 
 
 def make_settings(**policy_overrides: Any) -> config.Settings:
-    # Pin the canonical four-route chain for the fallback mechanics; the shipped
+    # Pin the canonical four-route chain for the fallback mechanics;the shipped
     # default order is asserted in test_failover.ChainConfigTests.
+
+    # Pin the role-level provider orders too: role_routes reads the debate
+    # policy (from settings.json),not the top-level ``provider_order``,so
+    # scenario tests stay immune to shipped reorders.
+
+
     order = policy_overrides.pop("provider_order", ("agentrouter", "ar-worker", "jw-worker", "justwoker"))
     base = config.load_settings()
     if policy_overrides:
@@ -52,8 +58,13 @@ def make_settings(**policy_overrides: Any) -> config.Settings:
         base,
         provider_order=tuple(order),
         providers=tuple(sorted(base.providers, key=lambda p: order.index(p.name))),
+        debate=replace(
+            base.debate,
+            provider_order=tuple(order),
+            proposer_provider_order=tuple(order),
+            critic_provider_order=tuple(order),
+        ),
     )
-
 
 def all_keys() -> Dict[str, List[str]]:
     return {
@@ -145,14 +156,14 @@ class CandidateConfigTests(unittest.TestCase):
         policy = config.load_settings().debate
         self.assertEqual(
             list(policy.candidates_for("proposer")),
-            ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-5.6-sol", "claude-sonnet-5", "glm-5.3"],
+            ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-5.6-sol", "claude-sonnet-5"],
         )
         self.assertEqual(
             list(policy.candidates_for("critic")),
-            ["gpt-5.6-sol", "claude-opus-5", "claude-sonnet-5", "gemini-3.5-flash", "grok-4.6"],
+            ["gpt-5.6-sol", "claude-sonnet-5", "deepseek-v4-pro", "deepseek-v4-flash"],
         )
         self.assertEqual(policy.all_models()[0], PROPOSER)
-        self.assertEqual(len(policy.all_models()), 8, "the union de-duplicates gpt-5.6-sol")
+        self.assertEqual(len(policy.all_models()), 4, "the union de-duplicates gpt-5.6-sol")
 
     def test_primary_model_always_leads_its_candidates(self) -> None:
         policy = replace(
@@ -334,7 +345,7 @@ class ModelFallbackTests(RouteTestCase):
         self.assertEqual(routes[4][1], "deepseek-v4-pro")
         # every candidate model is in the matrix, and the report covers them all
         report = router.provider_report()
-        self.assertIn("agentrouter/glm-5.3", report)
+        self.assertIn("agentrouter/deepseek-v4-pro", report)
         self.assertIn(f"jw-worker/{CRITIC}", report)
 
     def test_a_halted_candidate_is_skipped_without_a_request(self) -> None:
@@ -410,7 +421,7 @@ class DebateRoleTests(RouteTestCase):
 
         router = router_mod.Router(make_settings(provider_cooldown_seconds=300))
         # only the proposer's model answers: every other candidate model is down
-        for model in ("gpt-5.6-sol", "claude-opus-5", "claude-sonnet-5", "gemini-3.5-flash", "grok-4.6"):
+        for model in ("gpt-5.6-sol", "claude-sonnet-5", "deepseek-v4-pro"):
             self.fake.behaviour[("", model)] = "rate"
         session = debate.Debate(make_settings(), router, log=QUIET)
 
@@ -437,7 +448,7 @@ class SameModelFallbackReportTests(RouteTestCase):
         fake = FakeChain()
         # the proposer's model answers, every other model is down: the debate
         # survives, but one model ends up speaking for both sides
-        for model in ("gpt-5.6-sol", "claude-opus-5", "claude-sonnet-5", "gemini-3.5-flash", "grok-4.6"):
+        for model in ("gpt-5.6-sol", "claude-sonnet-5", "deepseek-v4-pro"):
             fake.behaviour[("", model)] = "rate"
 
         result, record_ai = _run_verify(

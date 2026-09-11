@@ -1,8 +1,8 @@
 # Rule 20: Immediate Succession
 
 - **Topic**: Correlative Conjunctions and Inversion
-- **Questions**: 49
-- **Top exam**: MTS
+- **Questions**: 51
+- **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -29,8 +29,8 @@ Words: `hardly`, `scarcely`, `than`, `when`
 
 | Exam | Questions |
 |---|---|
+| CGL | 13 |
 | MTS | 12 |
-| CGL | 11 |
 | GD | 9 |
 | STENO | 6 |
 | CHSL | 5 |
@@ -41,8 +41,8 @@ Words: `hardly`, `scarcely`, `than`, `when`
 
 | Year | Questions |
 |---|---|
-| 2019 | 13 |
-| 2020 | 1 |
+| 2019 | 14 |
+| 2020 | 2 |
 | 2021 | 7 |
 | 2022 | 3 |
 | 2023 | 9 |
@@ -63,8 +63,10 @@ Trend: **▲ +6**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e8fb3573ab0500d2e508620 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_3_6a0f3da8b6389f13cda38db4.json` #85 | Sentence Improvement | keyword |
+| 5e872c51f60d5d02db162631 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_1_6a0f3d9ec36c311e7bb058d6.json` #90 | Sentence Improvement | ai |
 | 5e85bfedf60d5d42b9206821 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_3_6a0f3d9c0f618830b205af1c.json` #93 | Error Detection | keyword |
 | 5e8fc04c3ab0500d2e511381 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_1_6a0f3daadaa906308e01db76.json` #95 | Sentence Improvement | keyword |
+| 61c5aafb5ff2342b6a3f4306 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_2_6a0f3dcab835398b15c9c42c.json` #88 | Error Detection | ai |
 | 62755d1d3d3a7466dab996e5 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_3_6a0f3dfc41a6d355fcadfb33.json` #87 | Sentence Improvement | keyword |
 | 63a58a55c1cc8e6c6bb260d0 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_07_Dec_2022_Shift_3_6a0f3e366470e02c4ea84d50.json` #84 | Sentence Improvement | keyword |
 | 64cd200b1a8c086e205bc0ec | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_21_Jul_2023_Shift_2_6a0f3e8401dbc5dc46abb6d0.json` #95 | Sentence Improvement | keyword |

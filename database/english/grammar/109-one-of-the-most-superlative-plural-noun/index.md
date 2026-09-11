@@ -1,7 +1,7 @@
 # Rule 109: One of the Most + Superlative + Plural Noun
 
 - **Topic**: Noun Number after ‘One of the Most’
-- **Questions**: 17
+- **Questions**: 18
 - **Top exam**: MTS
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,8 +31,8 @@ Words: `one`, `superlative`
 |---|---|
 | MTS | 5 |
 | GD | 4 |
+| CGL | 3 |
 | STENO | 3 |
-| CGL | 2 |
 | CHSL | 2 |
 | CPO | 1 |
 
@@ -41,7 +41,7 @@ Words: `one`, `superlative`
 | Year | Questions |
 |---|---|
 | 2019 | 8 |
-| 2020 | 2 |
+| 2020 | 3 |
 | 2022 | 2 |
 | 2023 | 1 |
 | 2024 | 4 |
@@ -60,6 +60,7 @@ Trend: **▼ -4**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e821134f60d5d5b2b1e3b79 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_1_6a0f3d920f618830b205ae83.json` #80 | Error Detection | keyword |
+| 61cac0096ad5f4b20ab2f745 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_3_6a0f3dd2124e5a0e8beda8ac.json` #76 | Error Detection | ai |
 | 614d904456787d178c96bf4c | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_2_6a0f3dbecda5e733b2faba6f.json` #81 | Sentence Improvement | keyword |
 | 5d691bd4fdb8bb069bf5bbb4 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_8_Held_On_4_July_2019_Shift_1_67d926223f895fab7698b1a6.json` #9 | Error Detection | keyword |
 | 642d18c1adf5c218cb6983cc | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_15_March_2023_Shift_3_67d925b7bd786c71e74af8ce.json` #90 | Sentence Improvement | keyword |

@@ -1,7 +1,7 @@
 # Rule 8: Choosing Participles
 
 - **Topic**: Participles
-- **Questions**: 15
+- **Questions**: 16
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,8 +32,8 @@ Words: `-ing`, `participle`, `participles`, `v3`
 | Exam | Questions |
 |---|---|
 | MTS | 4 |
+| CGL | 3 |
 | SELECTION_POST | 3 |
-| CGL | 2 |
 | CHSL | 2 |
 | CPO | 2 |
 | GD | 2 |
@@ -42,7 +42,7 @@ Words: `-ing`, `participle`, `participles`, `v3`
 
 | Year | Questions |
 |---|---|
-| 2019 | 2 |
+| 2019 | 3 |
 | 2020 | 1 |
 | 2021 | 1 |
 | 2022 | 4 |
@@ -63,6 +63,7 @@ Trend: **▲ +3**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e9482cef60d5d58edec33eb | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_3_6a0f3daedaa906308e01dbba.json` #99 | Sentence Improvement | ai |
 | 627557b07e3d947eef22d055 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_2_6a0f3e060a97601eb8f37ab6.json` #91 | Error Detection | keyword |
 | 63a47086152a060341b54bb9 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_05_Dec_2022_Shift_4_6a0f3e2841a6d355fcadfcd8.json` #84 | Sentence Improvement | keyword |
 | 642e7a5bc1f8c63c95997e49 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_13_March_2023_Shift_2_67d925b1e85a479e9bcdcb5c.json` #77 | Direct and Indirect Speech | keyword |

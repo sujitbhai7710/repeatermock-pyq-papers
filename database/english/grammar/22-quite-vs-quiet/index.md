@@ -1,7 +1,7 @@
 # Rule 22: Quite vs Quiet
 
 - **Topic**: Confusing Words and Adverbs
-- **Questions**: 45
+- **Questions**: 46
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,8 +30,8 @@ Words: `quiet`, `quite`, `quitting`, `too`
 | MTS | 9 |
 | STENO | 9 |
 | CHSL | 8 |
+| CGL | 6 |
 | GD | 6 |
-| CGL | 5 |
 | CPO | 5 |
 | SELECTION_POST | 3 |
 
@@ -40,7 +40,7 @@ Words: `quiet`, `quite`, `quitting`, `too`
 | Year | Questions |
 |---|---|
 | 2019 | 3 |
-| 2020 | 5 |
+| 2020 | 6 |
 | 2021 | 7 |
 | 2022 | 4 |
 | 2023 | 6 |
@@ -60,6 +60,7 @@ Trend: **▼ -4**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 614040c2ffba96831f17673e | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_1_6a0f3db69b19ada2a1c23492.json` #92 | Error Detection | ai |
 | 6273fe725a7c56ced259096e | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_1_6a0f3dec9f2d708abd18d6a5.json` #82 | Error Detection | keyword |
 | 63a69a95cb4eb1284fccc535 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_2_6a0f3e3cd50c12865dcf324b.json` #88 | Shuffling of Sentence parts | keyword |
 | 64ccb7cfa2e728f623e01a88 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_24_Jul_2023_Shift_4_6a0f3e918de2cf16f5959312.json` #90 | Fill in the Blanks | keyword |

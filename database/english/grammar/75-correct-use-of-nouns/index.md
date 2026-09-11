@@ -1,7 +1,7 @@
 # Rule 75: Correct Use of Nouns
 
 - **Topic**: Noun
-- **Questions**: 15
+- **Questions**: 16
 - **Top exam**: CPO
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,9 +30,9 @@ Words: `advice`, `baggage`, `equipment`, `furniture`, `information`, `luggage`, 
 | Exam | Questions |
 |---|---|
 | CPO | 5 |
+| CGL | 3 |
 | GD | 3 |
 | MTS | 3 |
-| CGL | 2 |
 | CHSL | 1 |
 | SELECTION_POST | 1 |
 
@@ -41,6 +41,7 @@ Words: `advice`, `baggage`, `equipment`, `furniture`, `information`, `luggage`, 
 | Year | Questions |
 |---|---|
 | 2019 | 1 |
+| 2020 | 1 |
 | 2021 | 3 |
 | 2022 | 2 |
 | 2023 | 4 |
@@ -60,6 +61,7 @@ Trend: **▼ -1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 61cd7edfdb07efc484e587ca | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_1_6a0f3dc8d5b80365e231c6af.json` #87 | Error Detection | ai |
 | 65429952272136a453a64aa5 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_II/2023_-_2024/SSC_CGL_Tier-II_2023_Official_Paper-I_Held_On_26_Oct_2023_69611916ff6bb82bbdbfaf09.json` #80 | Direct and Indirect Speech | keyword |
 | 64ccc7f085095a91e459ee43 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_25_Jul_2023_Shift_3_6a0f3e97cda5e733b2fac218.json` #93 | Sentence Improvement | keyword |
 | 693c1d6e2da22457dfa969c5 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_21_Nov_2025_Shift_1_699139eb1efd406c3e074889.json` #7 | Sentence Improvement | keyword |

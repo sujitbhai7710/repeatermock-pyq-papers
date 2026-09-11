@@ -1,7 +1,7 @@
 # Rule 4: Modal Verbs
 
 - **Topic**: Verb and Modals
-- **Questions**: 124
+- **Questions**: 127
 - **Top exam**: STENO
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -34,9 +34,9 @@ Words: `can`, `could`, `dare`, `may`, `might`, `must`, `need`, `should`, `to`, `
 | STENO | 31 |
 | CHSL | 19 |
 | MTS | 19 |
+| CGL | 18 |
 | GD | 18 |
 | CPO | 16 |
-| CGL | 15 |
 | SELECTION_POST | 6 |
 
 ## By year
@@ -44,7 +44,7 @@ Words: `can`, `could`, `dare`, `may`, `might`, `must`, `need`, `should`, `to`, `
 | Year | Questions |
 |---|---|
 | 2019 | 17 |
-| 2020 | 14 |
+| 2020 | 17 |
 | 2021 | 26 |
 | 2022 | 20 |
 | 2023 | 18 |
@@ -65,9 +65,12 @@ Trend: **▲ +7**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e85bb28f60d5d3fe95bf75c | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_3_6a0f3d9c0f618830b205af1c.json` #76 | Active and Passive Voice | keyword |
+| 614d8f6fd2b03b6b5acf5ea0 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_2_6a0f3dbecda5e733b2faba6f.json` #76 | Error Detection | ai |
+| 61c95c9d09f44394f1c298d4 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_1_6a0f3dce98950246b8cbc7df.json` #77 | Error Detection | ai |
 | 61c95ceb4cfc4369f6eb7c40 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_1_6a0f3dce98950246b8cbc7df.json` #79 | Active and Passive Voice | keyword |
 | 61cb26c6f2773c85e2bd26fa | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_1_6a0f3dd483407d2492174d9d.json` #79 | Sentence Improvement | keyword |
 | 614c7a676aac1a2cf968beec | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_1_6a0f3dbc471ce89a8c64ee65.json` #80 | Fill in the Blanks | keyword |
+| 61cc0392ff791fa596bf2c2d | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_2_6a0f3dd69f2d708abd18d53a.json` #82 | Error Detection | ai |
 | 61a5f9c589c1b4c501b867cf | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_3_6a0f3dc6cda71d26928e57a6.json` #89 | Direct and Indirect Speech | keyword |
 | 63a31d2c58432d944e6c06d0 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_3_6a0f3e16c36c311e7bb05d5c.json` #78 | Error Detection | keyword |
 | 63a47196978874fc5c7c0606 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_1_6a0f3e3ab6389f13cda3939e.json` #91 | Error Detection | keyword |

@@ -1,7 +1,7 @@
 # Rule 54: Possessive Apostrophes
 
 - **Topic**: Apostrophe and Possessive Case
-- **Questions**: 5
+- **Questions**: 6
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `apostrophe`, `mothers-in-law`, `passers-by`, `possessive`, `s`
 
 | Exam | Questions |
 |---|---|
-| CGL | 1 |
+| CGL | 2 |
 | CHSL | 1 |
 | GD | 1 |
 | MTS | 1 |
@@ -41,6 +41,7 @@ Words: `apostrophe`, `mothers-in-law`, `passers-by`, `possessive`, `s`
 
 | Year | Questions |
 |---|---|
+| 2019 | 1 |
 | 2022 | 2 |
 | 2024 | 2 |
 | 2025 | 1 |
@@ -58,6 +59,7 @@ Trend: **▼ -1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e95ca94f60d5d3ce5abc028 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_1_6a0f3db0ccf0ef8f830e7843.json` #89 | Sentence Improvement | ai |
 | 641081235fbd3fd742476fab | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json` #73 | Direct and Indirect Speech | keyword |
 | 642cfc38defa4264e08121ab | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_20_March_2023_Shift_4_67d925c075dbb33f27660222.json` #92 | Direct and Indirect Speech | keyword |
 | 6668146004f60145fc54211b | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_01_Mar_2024_Shift_1_68e366bac040f53d106650d5.json` #67 | Sentence Improvement | keyword |

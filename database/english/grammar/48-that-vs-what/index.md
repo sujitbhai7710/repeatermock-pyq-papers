@@ -1,7 +1,7 @@
 # Rule 48: That vs What
 
 - **Topic**: Relative Pronouns
-- **Questions**: 75
+- **Questions**: 76
 - **Top exam**: STENO
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -33,7 +33,7 @@ Words: `that`, `what`, `which`
 | CHSL | 13 |
 | CPO | 13 |
 | MTS | 12 |
-| CGL | 10 |
+| CGL | 11 |
 | SELECTION_POST | 7 |
 | GD | 4 |
 
@@ -41,7 +41,7 @@ Words: `that`, `what`, `which`
 
 | Year | Questions |
 |---|---|
-| 2019 | 14 |
+| 2019 | 15 |
 | 2020 | 7 |
 | 2021 | 18 |
 | 2022 | 9 |
@@ -65,6 +65,7 @@ Trend: **▲ +3**
 | 5e82f7b4f60d5d7277ffa32d | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_2_6a0f3d94d464e6c08627dd92.json` #78 | Direct and Indirect Speech | keyword |
 | 5e8ee1dc55a06d0d30cdede2 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #81 | Direct and Indirect Speech | keyword |
 | 5e86f91df60d5d125034f045 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #86 | Direct and Indirect Speech | keyword |
+| 5e943c07f60d5d0d0ba57c97 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_2_6a0f3dac6470e02c4ea84669.json` #98 | Error Detection | ai |
 | 61cb2a6b0221a23eb17a0b2d | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_1_6a0f3dd483407d2492174d9d.json` #95 | Sentence Improvement | keyword |
 | 627564a5723e401fdd1e09b0 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_1_6a0f3df88d0a5c66cc0db6f2.json` #83 | Direct and Indirect Speech | keyword |
 | 62752c23d35f22ccdec3fe33 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_3_6a0f3df6076c0c0843116c8d.json` #84 | Error Detection | keyword |

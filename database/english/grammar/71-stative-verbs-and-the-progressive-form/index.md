@@ -1,7 +1,7 @@
 # Rule 71: Stative Verbs and the Progressive Form
 
 - **Topic**: Verb
-- **Questions**: 158
+- **Questions**: 159
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -36,14 +36,14 @@ Words: `believe`, `belong`, `know`, `like`, `own`, `progressive`, `stative`, `un
 | CHSL | 24 |
 | CPO | 22 |
 | GD | 22 |
-| CGL | 20 |
+| CGL | 21 |
 | SELECTION_POST | 10 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 26 |
+| 2019 | 27 |
 | 2020 | 12 |
 | 2021 | 23 |
 | 2022 | 28 |
@@ -64,6 +64,7 @@ Trend: **▼ -4**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e85bf7ef60d5d42b9206810 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_3_6a0f3d9c0f618830b205af1c.json` #91 | Error Detection | ai |
 | 61cac0a89bf3ff65a6d6cabf | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_3_6a0f3dd2124e5a0e8beda8ac.json` #80 | Direct and Indirect Speech | keyword |
 | 61cd7defb8198710e19ccd8a | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_1_6a0f3dc8d5b80365e231c6af.json` #82 | Error Detection | keyword |
 | 6277f04d70027625ff70cf4d | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_11_April_2022_Shift_2_6a0f3de2cda5e733b2fabbe3.json` #77 | Direct and Indirect Speech | keyword |

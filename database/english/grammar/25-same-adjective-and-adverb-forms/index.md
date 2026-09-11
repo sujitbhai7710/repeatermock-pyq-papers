@@ -1,7 +1,7 @@
 # Rule 25: Same Adjective and Adverb Forms
 
 - **Topic**: Adjectives and Adverbs
-- **Questions**: 144
+- **Questions**: 145
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,7 +32,7 @@ Words: `deep`, `early`, `fast`, `hard`, `high`, `late`, `long`, `low`, `near`, `
 | MTS | 42 |
 | CHSL | 26 |
 | GD | 25 |
-| CGL | 17 |
+| CGL | 18 |
 | STENO | 16 |
 | SELECTION_POST | 10 |
 | CPO | 8 |
@@ -42,7 +42,7 @@ Words: `deep`, `early`, `fast`, `hard`, `high`, `late`, `long`, `low`, `near`, `
 | Year | Questions |
 |---|---|
 | 2019 | 22 |
-| 2020 | 7 |
+| 2020 | 8 |
 | 2021 | 13 |
 | 2022 | 27 |
 | 2023 | 22 |
@@ -65,6 +65,7 @@ Trend: **▼ -5**
 | 5e8ee2eb3de3ed0e1b82b7bc | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #88 | Sentence Improvement | keyword |
 | 5e8ef082f61bed7276223b02 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_2_6a0f3da6d464e6c08627de87.json` #88 | Error Detection | keyword |
 | 5e8222bff60d5d5b2b1e3f8d | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_1_6a0f3d920f618830b205ae83.json` #90 | Error Detection | keyword |
+| 61cb2884ca7e1400995f3f74 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_1_6a0f3dd483407d2492174d9d.json` #90 | Error Detection | ai |
 | 61c5ab5e634d3bb563f881b0 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_2_6a0f3dcab835398b15c9c42c.json` #92 | Error Detection | keyword |
 | 62755e0ac656e1b8d8fbac92 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_3_6a0f3dfc41a6d355fcadfb33.json` #93 | Error Detection | keyword |
 | 6410816fe27e7c049781b6ed | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json` #77 | Sentence Improvement | keyword |

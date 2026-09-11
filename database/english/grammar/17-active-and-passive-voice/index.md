@@ -1,7 +1,7 @@
 # Rule 17: Active and Passive Voice
 
 - **Topic**: Voice
-- **Questions**: 1,127
+- **Questions**: 1,137
 - **Top exam**: STENO
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `active`, `be`, `been`, `by`, `passive`, `v3`, `voice`
 |---|---|
 | STENO | 291 |
 | CHSL | 285 |
-| CGL | 274 |
+| CGL | 284 |
 | SELECTION_POST | 142 |
 | CPO | 93 |
 | MTS | 42 |
@@ -40,8 +40,8 @@ Words: `active`, `be`, `been`, `by`, `passive`, `v3`, `voice`
 
 | Year | Questions |
 |---|---|
-| 2019 | 77 |
-| 2020 | 79 |
+| 2019 | 82 |
+| 2020 | 84 |
 | 2021 | 120 |
 | 2022 | 250 |
 | 2023 | 169 |
@@ -65,22 +65,32 @@ Trend: **▲ +204**
 | 5e8ee1b93de3ed0e1b826ff5 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #80 | Active and Passive Voice | keyword |
 | 5e94804bf60d5d58edec32e8 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_3_6a0f3daedaa906308e01dbba.json` #84 | Active and Passive Voice | keyword |
 | 5e8728a3f60d5d02db162547 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_1_6a0f3d9ec36c311e7bb058d6.json` #86 | Active and Passive Voice | keyword |
+| 5e8c38897495200d2bd63226 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_3_6a0f3da27fa7782b08e61c5c.json` #86 | Active and Passive Voice | ai |
+| 5e8ef0a155a06d0d30cf6860 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_2_6a0f3da6d464e6c08627de87.json` #92 | Active and Passive Voice | ai |
 | 5e8fbdf13ab0500d2e50c2c4 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_1_6a0f3daadaa906308e01db76.json` #93 | Active and Passive Voice | keyword |
+| 5e95caccf60d5d3ce5abc099 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_1_6a0f3db0ccf0ef8f830e7843.json` #93 | Active and Passive Voice | ai |
 | 5e84bcfdf60d5d276d1849e9 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_3_6a0f3d96471ce89a8c64ed49.json` #95 | Active and Passive Voice | keyword |
+| 5e9d5251f60d5d4fde78bb1a | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_3_6a0f3db4a61a5fe8f645c19f.json` #95 | Active and Passive Voice | ai |
 | 5e86f30cf60d5d125034ee32 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #96 | Active and Passive Voice | keyword |
 | 5e943b85f60d5d0d0ba57c7c | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_2_6a0f3dac6470e02c4ea84669.json` #97 | Active and Passive Voice | keyword |
+| 5e82fbc9f60d5d7277ffa3c1 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_2_6a0f3d94d464e6c08627dd92.json` #98 | Active and Passive Voice | ai |
 | 5e9d7274f60d5d4fde78cac1 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_2_6a0f3db2d5b80365e231c518.json` #98 | Active and Passive Voice | keyword |
 | 5e82109bf60d5d5b2b1e3b50 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_1_6a0f3d920f618830b205ae83.json` #99 | Active and Passive Voice | keyword |
 | 61403ed5d169a674fec097ab | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_1_6a0f3db69b19ada2a1c23492.json` #76 | Active and Passive Voice | keyword |
 | 61cace02b01b5dd2f38c956e | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_1_6a0f3ddaa61a5fe8f645c370.json` #78 | Active and Passive Voice | keyword |
+| 61cb259221f00310284b6613 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_1_6a0f3dd483407d2492174d9d.json` #78 | Active and Passive Voice | ai |
 | 613f2cc8fb752a828a25fd10 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_2_6a0f3dc4c6516817f8809bc2.json` #80 | Active and Passive Voice | keyword |
+| 617faceb7f1ae8418b87f002 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_3_6a0f3dc083407d2492174d14.json` #80 | Active and Passive Voice | ai |
 | 61cc03744f3f5a4ceac0a3cb | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_2_6a0f3dd69f2d708abd18d53a.json` #81 | Active and Passive Voice | keyword |
 | 61cd7d89f9bb8a83b8e13860 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_1_6a0f3dc8d5b80365e231c6af.json` #81 | Active and Passive Voice | keyword |
 | 614c21b8798a7bb40e4293a3 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_2_6a0f3db8daa906308e01dc8b.json` #82 | Active and Passive Voice | keyword |
+| 61a5f916c8ecca997ae3438e | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_3_6a0f3dc6cda71d26928e57a6.json` #83 | Active and Passive Voice | ai |
 | 61cc253601a6a4178bf9fc6e | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_2_6a0f3ddc461696fe4dabf194.json` #84 | Active and Passive Voice | keyword |
 | 61cad6e9f86b0903208f6d5f | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_3_6a0f3dccb835398b15c9c432.json` #85 | Active and Passive Voice | keyword |
 | 619e30874300252b9e1b2be5 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_1_6a0f3dc2d464e6c08627dfdf.json` #90 | Active and Passive Voice | keyword |
 | 6145b9bf0ddbc06f1f9de856 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_3_6a0f3dd85a73de9e21cde61b.json` #91 | Active and Passive Voice | keyword |
+| 61cac3a86373055a9297f360 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_3_6a0f3dd2124e5a0e8beda8ac.json` #91 | Active and Passive Voice | ai |
+| 61cdb2dff90057a67144ad62 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_2_6a0f3dd07fa7782b08e61ee6.json` #91 | Active and Passive Voice | ai |
 | 614c29f0057ed7d6abc29903 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_3_6a0f3dba3b5bc48ebebf5fef.json` #92 | Active and Passive Voice | keyword |
 | 614c7c0c743d0467c998a1b1 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_1_6a0f3dbc471ce89a8c64ee65.json` #94 | Active and Passive Voice | keyword |
 | 614d92516d132167d6de0b0f | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_2_6a0f3dbecda5e733b2faba6f.json` #94 | Active and Passive Voice | keyword |

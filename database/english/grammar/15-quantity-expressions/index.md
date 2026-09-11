@@ -1,7 +1,7 @@
 # Rule 15: Quantity Expressions
 
 - **Topic**: Subject-Verb Agreement
-- **Questions**: 33
+- **Questions**: 34
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -35,8 +35,8 @@ Words: `many`
 | CHSL | 8 |
 | GD | 6 |
 | SELECTION_POST | 3 |
+| CGL | 2 |
 | STENO | 2 |
-| CGL | 1 |
 | CPO | 1 |
 
 ## By year
@@ -44,7 +44,7 @@ Words: `many`
 | Year | Questions |
 |---|---|
 | 2019 | 2 |
-| 2020 | 1 |
+| 2020 | 2 |
 | 2021 | 8 |
 | 2022 | 8 |
 | 2023 | 8 |
@@ -64,6 +64,7 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 614c283c6aac1a2cf95d840d | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_3_6a0f3dba3b5bc48ebebf5fef.json` #77 | Sentence Improvement | ai |
 | 63ac79e2b553595bc3003f0c | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_13_Dec_2022_Shift_1_6a0f3e5298d24d08c231f7b9.json` #77 | Sentence Improvement | keyword |
 | 60017b9baf8054d7ea1d9554 | CHSL | 2020 | `SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_8_Held_On_19_March_2020_Shift_2_67d925ff82900514c39d732e.json` #13 | Sentence Improvement | keyword |
 | 62d23fe6bb9bf81694a795e2 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_7_June_2022_Shift_2_67d925db95238976dcea598e.json` #13 | Error Detection | keyword |

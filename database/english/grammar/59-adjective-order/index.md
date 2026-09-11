@@ -1,7 +1,7 @@
 # Rule 59: Adjective Order
 
 - **Topic**: Order of Adjectives (OSASCOMP)
-- **Questions**: 93
+- **Questions**: 94
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,7 +32,7 @@ Words: `beautiful`, `big`, `italian`, `old`, `osascomp`, `round`, `wooden`
 | MTS | 31 |
 | CHSL | 17 |
 | GD | 13 |
-| CGL | 11 |
+| CGL | 12 |
 | STENO | 10 |
 | CPO | 6 |
 | SELECTION_POST | 5 |
@@ -42,7 +42,7 @@ Words: `beautiful`, `big`, `italian`, `old`, `osascomp`, `round`, `wooden`
 | Year | Questions |
 |---|---|
 | 2019 | 10 |
-| 2020 | 3 |
+| 2020 | 4 |
 | 2021 | 15 |
 | 2022 | 15 |
 | 2023 | 21 |
@@ -64,6 +64,7 @@ Trend: **▼ -9**
 |---|---|---|---|---|---|
 | 5e8ee2bb55a06d0d30ce4346 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #87 | Fill in the Blanks | keyword |
 | 619e2f4872f602e51ed9e224 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_1_6a0f3dc2d464e6c08627dfdf.json` #78 | Direct and Indirect Speech | keyword |
+| 61cc26346a5afbb5e4b800fa | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_2_6a0f3ddc461696fe4dabf194.json` #93 | Error Detection | ai |
 | 6274067bf60b60bce38b2c6c | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_2_6a0f3dee9636bcffad5cbcb5.json` #87 | Error Detection | keyword |
 | 62756622723e401fdd1e3755 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_1_6a0f3df88d0a5c66cc0db6f2.json` #89 | Error Detection | keyword |
 | 6274023da04a125612ac4042 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_1_6a0f3dec9f2d708abd18d6a5.json` #90 | Error Detection | keyword |
