@@ -64,7 +64,7 @@ def run_subject_phase(ctx, phase: str, subject: str) -> PhaseResult:
         from .. import verify as verify_mod
 
         verification = verify_mod.verify_database(
-            ctx.settings, phase=phase, log=log
+            ctx.settings, phase=phase, log=log, window=ctx.window
         )
         verification_status = verification.status
         corrections_applied = int(verification.counters.get("index_updated", 0))
@@ -72,6 +72,9 @@ def run_subject_phase(ctx, phase: str, subject: str) -> PhaseResult:
         if verification.status == STATUS_RATE_LIMITED:
             result.status = STATUS_RATE_LIMITED
             log.warn(f"{phase}: halted (rate limited) – checkpointing")
+        elif verification.status == STATUS_TIME_LIMIT:
+            result.status = STATUS_TIME_LIMIT
+            log.warn(f"{phase}: work window expired – checkpointing")
         if corrections_applied:
             records = indexer.read_index()
             subset = [r for r in records if r.get("subject") == subject]

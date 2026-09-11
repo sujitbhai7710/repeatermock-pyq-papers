@@ -155,8 +155,13 @@ phases/phaseN.run
   fingerprints per phase; a restart skips them.
 * **idempotency**: `apply_corrections` only writes fields whose corrected value
   differs, so replaying the same corrections changes nothing.
-* **halt**: `Router` raises `GlobalHalt`; the phase checkpoints and returns
-  `status=rate_limited`.
+* **work window**: the budget is checked before every batch; a spent window stops
+  the loop cleanly (`status=time_limit`, exit 4) instead of being killed.
+* **failover**: a rate-limit/exhaustion signal trips that provider's circuit
+  breaker (cooldown, then a single probe) and the request falls over to the next
+  configured provider; `GlobalHalt` (and therefore `status=rate_limited`) only
+  happens when no healthy provider is left or the consecutive-failure threshold
+  is reached.
 
 ## 6. Determinism
 

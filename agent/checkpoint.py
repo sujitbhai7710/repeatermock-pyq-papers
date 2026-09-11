@@ -93,16 +93,19 @@ def new_checkpoint(
     run_id: str,
     cursor: Optional[Dict[str, Any]] = None,
     window: Optional[WorkWindow] = None,
+    status: str = STATUS_OK,
+    notes: Optional[List[str]] = None,
 ) -> Checkpoint:
     stamp = now_iso()
     return Checkpoint(
         run_id=run_id,
         phase=phase,
         cursor=cursor or {},
-        status=STATUS_OK,
+        status=status,
         started_at=stamp,
         updated_at=stamp,
         window=window.as_dict() if window else {},
+        notes=list(notes or []),
     )
 
 

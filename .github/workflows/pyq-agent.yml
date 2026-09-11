@@ -7,6 +7,10 @@ name: pyq-agent
 #
 # Without the worker secrets the job is a no-op dry run: it exits 0 with
 # `status=skipped_no_keys` instead of calling the endpoints unauthenticated.
+#
+# Soft stops: a run stopped by rate limiting (exit 3) or by the work window
+# (exit 4) checkpoints and publishes, and the job finishes green; the next
+# scheduled run resumes.  Only other non-zero exits fail the job.
 
 on:
   workflow_dispatch:
@@ -124,10 +128,19 @@ jobs:
           code=$?
           echo "::endgroup::"
           echo "exit=$code" | tee -a "$LOG_DIR/agent.log"
-          if [ "$code" -eq 0 ]; then
-            echo "status=ok" >> "$GITHUB_OUTPUT"
-          else
-            echo "status=failed" >> "$GITHUB_OUTPUT"
+          # 0 = ok, 3 = rate_limited, 4 = time_limit.  The last two are *soft
+          # stops*: the run checkpointed and published its progress, so the job
+          # stays green and the next scheduled run resumes from the checkpoint.
+          # Every other exit code is a real failure.
+          case "$code" in
+            0) echo "status=ok" >> "$GITHUB_OUTPUT" ;;
+            3) echo "status=rate_limited" >> "$GITHUB_OUTPUT" ;;
+            4) echo "status=time_limit" >> "$GITHUB_OUTPUT" ;;
+            *) echo "status=failed" >> "$GITHUB_OUTPUT" ;;
+          esac
+          if [ "$code" -eq 0 ] || [ "$code" -eq 3 ] || [ "$code" -eq 4 ]; then
+            echo "agent soft stop (exit $code): checkpoint + database are published"
+            exit 0
           fi
           exit "$code"
 
