@@ -88,3 +88,19 @@ The agent commits in its sandbox. To publish the generated tree, run `python -m 
 - `waiting_for_confirmation` → the agent needs a human to approve something in the OpenHands UI.
 - If OpenHands is unavailable, say so and fall back to the GitHub Action (it already runs the same
   pipeline every 6 h and publishes to `pyq-db`).
+
+---
+
+## 8. Verified live route matrix (2026-09-11, measured)
+
+| Route | Model | Status |
+|---|---|---|
+| `ar-rotator` worker | `deepseek-v4-flash` | ✅ **working** (free; needs `max_tokens >= 8192`) |
+| `jw-rotator` worker | `gpt-5.6-sol` | ✅ **working** |
+| `api.justwoker.icu` direct (`/v1/messages`) | `gpt-5.6-sol` | ✅ **working** |
+| `agentrouter.org` direct | any | ❌ Aliyun WAF blocks non-Cloudflare IPs |
+| `ar-rotator` worker | `gpt-5.6-sol`, `claude-opus-5` | ❌ 402 — no credits on agentrouter |
+| any | `glm-5.3` | ❌ 3-7x slower — **do not use** |
+
+**Use:** proposer = `deepseek-v4-flash` on `ar-rotator`; judge = `gpt-5.6-sol` on `jw-rotator`
+(or direct justwoker). Check anytime with `python -m agent.cli routes --probe`.
