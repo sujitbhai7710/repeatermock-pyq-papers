@@ -653,10 +653,3 @@ git status --porcelain
 
 ---
 
-## Remote workers
-
-- **GitHub Actions** — the always-on worker: every 6 h it runs the pipeline and publishes the
-  generated tree to the `pyq-db` branch.
-- **OpenHands Cloud** — the agentic worker for bigger jobs. See
-  [`OPENHANDS.md`](OPENHANDS.md) for how it is wired, and [`TASK.md`](TASK.md) for the standing brief.
-
