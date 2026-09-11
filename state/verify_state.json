@@ -4,21 +4,30 @@
   "phases": {
     "phase1": {
       "done": [
+        "0301610afc60de93277fd9cd39ba553b",
+        "1cce97eb43eaba46f5fdbc0acb8b083e",
         "1d027be45c20e5a378911001f5e3746a",
         "221ce0625ba89a9d7124dd4a7f18c380",
         "2d7388208a408f8de3c2758ae2ce9766",
         "2ec6e8667dd0bcf0a19cc964b8d85147",
+        "3d7a3f292a8bc011ad65baaf3439c15e",
         "4200a7deb480b63a7bd477b6ed3c8a46",
+        "579a38acdf95d6c1a1ae7b8658d6aadb",
+        "5ba2f7c2e8aa918c7d4a705f52750730",
         "609c40860baf5f3f8b3c5254ad4f66bb",
+        "670cbb3c7033ad77167e3c4016f226b5",
         "673f7821cb2f96dfd44529339e59913d",
         "6bf7c8985df58c7d8b095154ebd53edc",
         "7e7b1f639daec415b49d5935f848baf3",
         "8c5e3255a00ba8fc1170d4241ee77885",
         "9099536f7976403460aeb892cc784c03",
         "94edb0da295d64c07d9b15a5261f1776",
+        "9c8cd055368618542c212a143c532f8d",
         "b4927408d283ecd425ff59e375c14019",
         "b5835a9698070875b969a9e935695157",
+        "b92c4acbec2fc696bd597c711e70ba0c",
         "c528409ca6bb77c72df4ca559aeecd13",
+        "c978cc943f656f91f059177924cf2785",
         "d6f06b96248f83f61bf1d7cacdf2e883",
         "dbbd3b0660a7d58cbd134c49ebb86f38",
         "df2666c62aa97286bc5344e568776e9d",
@@ -27,10 +36,10 @@
         "f9bd3b0252833448a8440c0d705c90c7",
         "fc0d1458c0cc712c280abaf47bac2df1"
       ],
-      "cursor": 24,
+      "cursor": 35,
       "last_verdict": {
-        "batch": 23,
-        "at": "2026-09-11T18:47:27Z",
+        "batch": 34,
+        "at": "2026-09-11T18:54:40Z",
         "items": 20,
         "verdict": "agree",
         "rounds": 2,
@@ -39,22 +48,22 @@
           "proposer": {
             "model": "gpt-5.6-sol",
             "provider": "justwoker",
-            "latency_ms": 9429
+            "latency_ms": 10756
           },
           "critic": {
             "model": "gpt-5.6-sol",
             "provider": "justwoker",
-            "latency_ms": 9247
+            "latency_ms": 10789
           },
           "rebuttal": {
             "model": "gpt-5.6-sol",
             "provider": "justwoker",
-            "latency_ms": 8175
+            "latency_ms": 9363
           },
           "final": {
             "model": "gpt-5.6-sol",
             "provider": "justwoker",
-            "latency_ms": 10217
+            "latency_ms": 9387
           },
           "final_author": "gpt-5.6-sol",
           "same_model_fallback": true
@@ -63,22 +72,23 @@
       "progress": {
         "status": "ok",
         "items_total": 37990,
-        "items_done": 440,
+        "items_done": 620,
         "items_done_before": 0,
-        "items_this_run": 440,
-        "items_remaining": 37550,
+        "items_this_run": 620,
+        "items_remaining": 37370,
         "items_corrected": 0,
         "batches_total": 1900,
-        "batches_done": 22,
-        "batches_this_run": 22,
-        "batches_failed": 2,
+        "batches_done": 31,
+        "batches_this_run": 31,
+        "batches_failed": 5,
         "batch_size": 20,
-        "eta_seconds": 80329.62876068328,
-        "elapsed_seconds": 982.5,
-        "phase_seconds": 941.3
+        "eta_seconds": 84818.6601788697,
+        "elapsed_seconds": 1448.4,
+        "phase_seconds": 1407.2
       },
-      "last_checkpoint_monotonic": 132.404260926
+      "last_checkpoint_monotonic": 132.404260926,
+      "last_checkpoint_at": "2026-09-11T18:54:40Z"
     }
   },
-  "updated_at": "2026-09-11T18:47:27Z"
+  "updated_at": "2026-09-11T18:55:13Z"
 }
