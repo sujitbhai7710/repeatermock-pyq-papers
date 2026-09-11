@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "created_at": "2026-09-11T10:56:16Z",
+  "phases": {
+    "phase1": {
+      "done": [
+        "6bf7c8985df58c7d8b095154ebd53edc",
+        "8c5e3255a00ba8fc1170d4241ee77885",
+        "b4927408d283ecd425ff59e375c14019",
+        "ebf23edb6d5d73512cae0214dda481b2",
+        "f9bd3b0252833448a8440c0d705c90c7"
+      ],
+      "cursor": 5,
+      "last_verdict": {
+        "batch": 4,
+        "at": "2026-09-11T11:00:10Z",
+        "items": 20,
+        "verdict": "agree",
+        "rounds": 2,
+        "agreed": true,
+        "provenance": {
+          "proposer": {
+            "model": "gpt-5.6-sol",
+            "provider": "justwoker",
+            "latency_ms": 12840
+          },
+          "critic": {
+            "model": "gpt-5.6-sol",
+            "provider": "justwoker",
+            "latency_ms": 12220
+          },
+          "rebuttal": {
+            "model": "gpt-5.6-sol",
+            "provider": "justwoker",
+            "latency_ms": 11724
+          },
+          "final": {
+            "model": "gpt-5.6-sol",
+            "provider": "justwoker",
+            "latency_ms": 12104
+          },
+          "final_author": "gpt-5.6-sol",
+          "same_model_fallback": true
+        }
+      },
+      "progress": {
+        "status": "ok",
+        "items_total": 37990,
+        "items_done": 100,
+        "items_done_before": 0,
+        "items_this_run": 100,
+        "items_remaining": 37890,
+        "items_corrected": 0,
+        "batches_total": 1900,
+        "batches_done": 5,
+        "batches_this_run": 5,
+        "batches_failed": 1,
+        "batch_size": 20,
+        "eta_seconds": 102017.49748141319,
+        "elapsed_seconds": 313.6,
+        "phase_seconds": 269.2
+      },
+      "last_checkpoint_monotonic": 391.760148915
+    }
+  },
+  "updated_at": "2026-09-11T11:00:46Z"
+}
