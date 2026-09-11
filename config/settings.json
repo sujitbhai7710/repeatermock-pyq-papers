@@ -20,43 +20,85 @@
     "max_rounds": 1,
     "proposer_model": "deepseek-v4-flash",
     "critic_model": "gpt-5.6-sol",
-    "proposer_models": ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-5.6-sol", "claude-sonnet-5", "glm-5.3"],
-    "critic_models": ["gpt-5.6-sol", "claude-opus-5", "claude-sonnet-5", "gemini-3.5-flash", "grok-4.6"],
-    "provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
-    "proposer_provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
-    "critic_provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
+    "proposer_models": [
+      "deepseek-v4-flash",
+      "deepseek-v4-pro",
+      "gpt-5.6-sol",
+      "claude-sonnet-5",
+      "glm-5.3"
+    ],
+    "critic_models": [
+      "gpt-5.6-sol",
+      "claude-opus-5",
+      "claude-sonnet-5",
+      "gemini-3.5-flash",
+      "grok-4.6"
+    ],
+    "provider_order": [
+      "agentrouter",
+      "justwoker",
+      "ar-worker",
+      "jw-worker"
+    ],
+    "proposer_provider_order": [
+      "agentrouter",
+      "justwoker",
+      "ar-worker",
+      "jw-worker"
+    ],
+    "critic_provider_order": [
+      "agentrouter",
+      "justwoker",
+      "ar-worker",
+      "jw-worker"
+    ],
     "model_provider_orders": {}
   },
   "providers": {
-    "order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
+    "order": [
+      "agentrouter",
+      "justwoker",
+      "ar-worker",
+      "jw-worker"
+    ],
     "routes": {
       "agentrouter": {
         "label": "agentrouter.org (direct)",
         "base_url": "https://agentrouter.org/v1",
         "auth_style": "bearer",
         "user_agent": "cline/2.0.0",
-        "env_keys": ["AGENTROUTER_KEYS", "OPENAI_KEYS"]
+        "env_keys": [
+          "AGENTROUTER_KEYS",
+          "OPENAI_KEYS"
+        ]
       },
       "ar-worker": {
         "label": "ar-rotator worker",
         "base_url": "https://ar-rotator.opencode-5a3.workers.dev/v1",
         "auth_style": "bearer",
         "user_agent": "browser",
-        "env_keys": ["AR_PROXY_TOKEN"]
+        "env_keys": [
+          "AR_PROXY_TOKEN"
+        ]
       },
       "jw-worker": {
         "label": "jw-rotator worker",
         "base_url": "https://jw-rotator.opencode-5a3.workers.dev/v1",
         "auth_style": "bearer",
         "user_agent": "browser",
-        "env_keys": ["JW_PROXY_TOKEN"]
+        "env_keys": [
+          "JW_PROXY_TOKEN"
+        ]
       },
       "justwoker": {
         "label": "api.justwoker.icu (direct, Anthropic Messages API)",
         "base_url": "https://api.justwoker.icu/v1",
         "auth_style": "anthropic",
         "user_agent": "browser",
-        "env_keys": ["JUSTWOKER_KEYS", "DEEPSEEK_KEYS"],
+        "env_keys": [
+          "JUSTWOKER_KEYS",
+          "DEEPSEEK_KEYS"
+        ],
         "path": "/messages"
       }
     }
@@ -69,7 +111,10 @@
   },
   "hindi": {
     "regex": "[\\u0900-\\u097F]",
-    "scope": ["question", "options"],
+    "scope": [
+      "question",
+      "options"
+    ],
     "include_solution": false,
     "exclude_punctuation": false
   },

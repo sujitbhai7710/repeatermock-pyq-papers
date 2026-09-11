@@ -1,43 +1,46 @@
 {
   "name": "SSC PYQ Agent (repeatermock-pyq-papers)",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
-
   "features": {
-    "ghcr.io/devcontainers/features/node:1": { "version": "20" },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-
-  "hostRequirements": { "cpus": 4, "memory": "8gb", "storage": "32gb" },
-
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
   "postCreateCommand": "bash scripts/codespace-setup.sh",
   "postStartCommand": "bash scripts/codespace-setup.sh --quick",
-
   "secrets": {
-    "ZAI_API_KEY": {
-      "description": "z.ai GLM Coding Plan API key — powers the agentic coding CLI (ANTHROPIC_AUTH_TOKEN)."
-    },
     "AGENTROUTER_KEYS": {
       "description": "Comma-separated agentrouter.org keys (3) for the SSC PYQ pipeline's own AI calls."
     },
     "JUSTWOKER_KEYS": {
       "description": "Comma-separated api.justwoker.icu keys (3) for the SSC PYQ pipeline's own AI calls."
     },
-    "AR_PROXY_TOKEN": { "description": "ar-rotator worker proxy token (optional fallback route)." },
-    "JW_PROXY_TOKEN": { "description": "jw-rotator worker proxy token (optional fallback route)." },
-    "MONID_API_KEY": { "description": "Monid API key for web search/fetch." }
+    "AR_PROXY_TOKEN": {
+      "description": "ar-rotator worker proxy token (optional fallback route)."
+    },
+    "JW_PROXY_TOKEN": {
+      "description": "jw-rotator proxy token — also powers the in-Codespace coding agent (gpt-5.6-sol)."
+    },
+    "MONID_API_KEY": {
+      "description": "Monid API key for web search/fetch."
+    }
   },
-
   "remoteEnv": {
     "PYTHONUNBUFFERED": "1",
     "PYTHONUTF8": "1",
     "PYQ_GIT_PUSH": "1",
     "CHECKPOINT_INTERVAL_SECONDS": "900",
-    "MAX_WORK_SECONDS": "19800",
-    "ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
-    "ANTHROPIC_AUTH_TOKEN": "${localEnv:ZAI_API_KEY}",
-    "ANTHROPIC_MODEL": "glm-4.6"
+    "MAX_WORK_SECONDS": "12600",
+    "ANTHROPIC_BASE_URL": "https://jw-rotator.opencode-5a3.workers.dev",
+    "ANTHROPIC_AUTH_TOKEN": "${localEnv:JW_PROXY_TOKEN}",
+    "ANTHROPIC_MODEL": "gpt-5.6-sol"
   },
-
   "customizations": {
     "vscode": {
       "extensions": [
