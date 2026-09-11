@@ -58,11 +58,14 @@ database/_meta/PROGRESS.md  human-readable roll-up of the above
 Set these as repository secrets for the workflow, or export them locally:
 
 ```bash
-export OPENAI_KEYS="key1,key2"      # agentrouter key pool
-export DEEPSEEK_KEYS="key1,key2"    # jw key pool
-export AR_PROXY_TOKEN="..."         # single agentrouter bearer token
-export JW_PROXY_TOKEN="..."         # single jw bearer token
-export MONID_API_KEY="..."          # Monid TinyFish
+export AGENTROUTER_KEYS="key1,key2"   # direct agentrouter.org key pool
+export JUSTWOKER_KEYS="key1,key2"     # direct api.justwoker.icu key pool (Anthropic Messages)
+export AR_PROXY_TOKEN="..."           # ar-rotator worker bearer token
+export JW_PROXY_TOKEN="..."           # jw-rotator worker bearer token
+export MONID_API_KEY="..."            # Monid TinyFish
+# historical aliases, still accepted:
+#   OPENAI_KEYS  -> agentrouter
+#   DEEPSEEK_KEYS -> justwoker
 ```
 
 Rules enforced by the code:
@@ -73,35 +76,50 @@ Rules enforced by the code:
 * missing keys are not an error: the AI steps report
   `status=skipped_no_keys` and the python extraction is kept.
 
-## 5. Rate limits — provider failover + GLOBAL HALT
+## 5. Rate limits — route failover + GLOBAL HALT
 
-Each request walks the configured provider order (`agentrouter` → `jw`). A
-provider that answers with a rate-limit / quota-exhaustion signal
+Each request walks the route order configured in the `providers` block of
+`config/settings.json` (`providers.order`, default
+`agentrouter` → `ar-worker` → `jw-worker` → `justwoker`; per-role overrides in
+`debate.proposer_provider_order` / `debate.critic_provider_order`, and per-model
+overrides in `debate.model_provider_orders`). A route that answers with a
+rate-limit / quota-exhaustion signal
 (`halt_on_any_rate_limit_signal`): HTTP 402 / 429 / 503, or a body containing
 `rate limit`, `rate-limit`, `ratelimit`, `too many requests`, `quota`,
 `exhausted`, `all_keys_exhausted`, `insufficient_quota`, `insufficient balance`,
 `no available`, `capacity`, `overloaded`, `temporarily unavailable`,
-`try again later`, `concurrency` — is treated as a **provider-level outage**:
+`try again later`, `concurrency` — is treated as a **route-level outage**:
 
 * its circuit breaker trips for `rate_limit.provider_cooldown_seconds`
   (default 300 s, doubling per consecutive trip up to
   `provider_cooldown_max_seconds`, default 3,600 s);
-* the request fails over to the next configured provider;
-* a tripped provider is skipped while cooling down (not retried per item) and is
+* the request fails over to the next route **for the same model**;
+* a tripped route is skipped while cooling down (not retried per item) and is
   probed exactly once after the cooldown — success closes the breaker, failure
-  re-opens it with a doubled cooldown.
+  re-opens it with a doubled cooldown;
+* `rate_limit.provider_error_strike_limit` (default 3) consecutive hard errors
+  (`401`, `403`, `5xx`, transport failures) open the same breaker.
 
-The router counts **consecutive** failures (one success resets the counter to 0).
-A **global halt** happens only when no healthy provider is left:
+Breakers are keyed by **`(provider, model)`** — a worker that 503s
+`deepseek-v4-flash` keeps serving `gpt-5.6-sol`.
 
-* every configured provider is exhausted / cooling down / without credentials, or
+The router counts **consecutive** failures per model (one success resets the
+counter). A **global halt** happens only when no healthy route for that model is
+left:
+
+* every configured route for the model is exhausted / cooling down / without
+  credentials, or
 * **10 consecutive failures** (`rate_limit.consecutive_failure_threshold`) were
-  recorded and no healthy provider absorbed them.
+  recorded for that model and no healthy route absorbed them.
 
-On halt: the in-flight item finishes, `GlobalHalt` is raised for everything
-after it, the phase checkpoints, and the run exits with
-`status=rate_limited` (exit code `3`, a soft stop). The next scheduled run
-resumes from the checkpoint.
+On halt the AI step stops for that model; the deterministic pipeline keeps
+going. Phases finish normally, `database/` and the mock catalogue are written,
+the checkpoint records `status=ai_unavailable`, and the run exits **0** (the AI
+outage is not a failure). Every phase in `database/_meta/PROGRESS.md` reports
+items total / done / % / this run / remaining / ETA plus the per-route health
+(ok / fail / rate-limited / cooldown / retry-in) and the last checkpoint time.
+`status=rate_limited` (exit 3) remains a legacy soft stop; `status=time_limit`
+(exit 4) is still how a spent work window ends a run.
 
 ## 6. CI (`.github/workflows/pyq-agent.yml`)
 
@@ -111,7 +129,7 @@ resumes from the checkpoint.
 | Timeout | `350` minutes |
 | Concurrency | group `pyq-agent`, `cancel-in-progress: false` |
 | Permissions | `contents: write` |
-| Steps | checkout (`fetch-depth: 0`) → setup-python 3.11 → `pip install -r requirements.txt` (a no-op: stdlib only) → `python -m agent.cli run` with `MAX_WORK_SECONDS=19800` and `AR_PROXY_TOKEN` / `JW_PROXY_TOKEN` / `MONID_API_KEY` (exit 0/3/4 = ok/rate_limited/time_limit are all success; the run step maps them to `status=…` and exits 0 so the audit + publish steps run) → `python -m agent.cli audit` (fails the job on a structural defect) → `database/_meta/PROGRESS.md` + audit transcript in the job summary → `upload-artifact` (logs, checkpoint, coverage; 14 days) → commit the generated tree with `git add -f state database` and `git push origin HEAD:pyq-db` (branch created on the first run, fast-forward afterwards) |
+| Steps | checkout (`fetch-depth: 0`) → setup-python 3.11 → `pip install -r requirements.txt` (a no-op: stdlib only) → `python -m agent.cli run` with `MAX_WORK_SECONDS=19800`, `CHECKPOINT_INTERVAL_SECONDS=900` and `AGENTROUTER_KEYS` / `JUSTWOKER_KEYS` / `AR_PROXY_TOKEN` / `JW_PROXY_TOKEN` / `MONID_API_KEY` (exit 0 = ok **or ai_unavailable**, 3 = rate_limited, 4 = time_limit are all success; the run step maps them to `status=…` and exits 0 so the audit + publish steps run) → `python -m agent.cli audit` (fails the job on a structural defect) → checkpoint status + `database/_meta/PROGRESS.md` + audit transcript in the job summary → `upload-artifact` (logs, checkpoint, coverage; 14 days) → commit the generated tree with `git add -f state database` and `git push origin HEAD:pyq-db` (branch created on the first run, fast-forward afterwards) |
 | Branches | `main` is code only (`/state/` and `/database/` are gitignored); all generated artefacts live on `pyq-db` and are marked generated in `.gitattributes` |
 
 Local sanity check of the workflow logic:

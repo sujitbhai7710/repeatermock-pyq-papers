@@ -10,6 +10,15 @@ Flow (at most ``debate.max_rounds`` rebuttal rounds, default **1**)::
 Unresolved items are appended to ``state/disputes.jsonl``.  Every verdict carries
 provenance (which model said what, on which provider, in how many rounds) so a
 result can always be traced back to its source.
+
+Routing
+-------
+Both roles walk the ``(provider, model)`` route chain configured in
+``config/settings.json`` — :data:`agent.router.Router` fails a route over to the
+next one and only raises :class:`~agent.router.GlobalHalt` when no route for a
+model can serve the request.  A ``GlobalHalt`` means "the AI is unavailable": the
+caller records ``status=ai_unavailable`` and finishes its deterministic work
+instead of failing the run.
 """
 
 from __future__ import annotations
@@ -86,9 +95,14 @@ def _proposal_schema_hint(task: str) -> str:
             '"subject": "REAS"|"GK"|"MATH"|"ENG"|"COMPUTER", "confidence": 0..1, "reason": string}'
         )
     if task == "verify":
+        # the payload is a *batch* — every item must be answered, keyed by its qid,
+        # otherwise the reply cannot be mapped back onto the index records
         return (
-            'Schema: {"ok": boolean, "concept": string|null, "chapter": string|null, '
-            '"topic": string|null, "reason": string}'
+            'Schema: {"items": [{"qid": string, "ok": boolean, "concept": string|null, '
+            '"chapter": string|null, "topic": string|null, "reason": string}], "reason": string}. '
+            "Emit exactly one entry in \"items\" for every item of the batch payload, "
+            "echoing each qid verbatim; set \"ok\" to true when the python_result is "
+            "correct and otherwise give the corrected concept/chapter/topic."
         )
     if task == "vocab":
         return (
@@ -113,7 +127,7 @@ class Debate:
         model: str,
         system: str,
         user: str,
-        provider_order: Sequence[str],
+        provider_order: Optional[Sequence[str]] = None,
         *,
         max_tokens: int = 700,
     ) -> llm.ChatResult:
@@ -139,12 +153,17 @@ class Debate:
         payload: Dict[str, Any],
         vocabulary: Sequence[str] = (),
     ) -> DebateOutcome:
-        """Propose -> criticise -> (one rebuttal) -> final verdict."""
+        """Propose -> criticise -> (one rebuttal) -> final verdict.
+
+        The route order is resolved **per model** (``debate.model_provider_orders``
+        first, then the role's order): a bundle where ``gpt-5.6-sol`` is only
+        served by one worker must not be steered by the proposer's chain.
+        """
 
         proposer_model = self.policy.proposer_model
         critic_model = self.policy.critic_model
-        proposer_order = self.policy.proposer_provider_order
-        critic_order = self.policy.critic_provider_order
+        proposer_order = self.policy.order_for(proposer_model, role="proposer")
+        critic_order = self.policy.order_for(critic_model, role="critic")
 
         user = _item_prompt(task, payload, vocabulary) + "\n" + _proposal_schema_hint(task)
 

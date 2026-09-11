@@ -5,12 +5,20 @@ name: pyq-agent
 #   * code lives on `main` (state/ and database/ are gitignored there)
 #   * every run publishes the generated tree to the `pyq-db` checkpoint branch
 #
-# Without the worker secrets the job is a no-op dry run: it exits 0 with
+# The provider chain is `agentrouter` (direct) -> `ar-worker` -> `jw-worker` ->
+# `justwoker` (see the `providers` block of config/settings.json).  A route that
+# answers with a rate-limit / exhaustion signal is skipped for its cooldown and
+# the request fails over to the next route for the *same model*; only a total
+# outage halts the AI step.
+#
+# Without any provider secret the job is a no-op dry run: it exits 0 with
 # `status=skipped_no_keys` instead of calling the endpoints unauthenticated.
 #
-# Soft stops: a run stopped by rate limiting (exit 3) or by the work window
-# (exit 4) checkpoints and publishes, and the job finishes green; the next
-# scheduled run resumes.  Only other non-zero exits fail the job.
+# Soft stops and AI outages never fail the job:
+#   * rate limiting (exit 3) and the work window (exit 4) checkpoint + publish;
+#   * an AI outage completes the deterministic pipeline and exits 0 with
+#     `status=ai_unavailable`.
+# Only other non-zero exits fail the job.
 
 on:
   workflow_dispatch:
@@ -39,6 +47,8 @@ env:
   PYTHONUTF8: "1"
   # 5.5 h of work inside a 350 min job budget (leaves room for audit + push)
   MAX_WORK_SECONDS: "19800"
+  # checkpoint every 15 minutes so an interrupted job resumes where it stopped
+  CHECKPOINT_INTERVAL_SECONDS: "900"
   LOG_DIR: reports/logs
 
 jobs:
@@ -68,32 +78,42 @@ jobs:
           # ever becomes unparseable
           pip install -r requirements.txt
 
-      - name: Preflight (worker keys)
+      - name: Preflight (provider keys)
         id: preflight
         env:
+          AGENTROUTER_KEYS: ${{ secrets.AGENTROUTER_KEYS }}
+          JUSTWOKER_KEYS: ${{ secrets.JUSTWOKER_KEYS }}
           AR_PROXY_TOKEN: ${{ secrets.AR_PROXY_TOKEN }}
           JW_PROXY_TOKEN: ${{ secrets.JW_PROXY_TOKEN }}
           MONID_API_KEY: ${{ secrets.MONID_API_KEY }}
         run: |
           mkdir -p "$LOG_DIR"
           keys_present=false
-          for name in AR_PROXY_TOKEN JW_PROXY_TOKEN MONID_API_KEY; do
+          routes=0
+          for name in AGENTROUTER_KEYS JUSTWOKER_KEYS AR_PROXY_TOKEN JW_PROXY_TOKEN MONID_API_KEY; do
             if [ -n "${!name:-}" ]; then
               echo "$name: present"
-              keys_present=true
+              case "$name" in
+                AGENTROUTER_KEYS|JUSTWOKER_KEYS|AR_PROXY_TOKEN|JW_PROXY_TOKEN) routes=$((routes + 1)) ;;
+              esac
             else
               echo "$name: absent"
             fi
           done
+          if [ "$routes" -gt 0 ]; then
+            keys_present=true
+          fi
           echo "keys=$keys_present" >> "$GITHUB_OUTPUT"
+          echo "routes=$routes" >> "$GITHUB_OUTPUT"
           if [ "$keys_present" = "false" ]; then
             {
               echo "## pyq-agent skipped"
               echo
               echo '`status=skipped_no_keys`'
               echo
-              echo "No worker secret (AR_PROXY_TOKEN / JW_PROXY_TOKEN / MONID_API_KEY) is configured,"
-              echo "so the run is a no-op dry run. Add the secrets to enable the pipeline."
+              echo "No provider secret (AGENTROUTER_KEYS / JUSTWOKER_KEYS / AR_PROXY_TOKEN /"
+              echo "JW_PROXY_TOKEN) is configured, so the run is a no-op dry run. Add the"
+              echo "secrets to enable the pipeline."
             } >> "$GITHUB_STEP_SUMMARY"
             echo "status=skipped_no_keys"
           fi
@@ -102,6 +122,8 @@ jobs:
         id: agent
         if: steps.preflight.outputs.keys == 'true'
         env:
+          AGENTROUTER_KEYS: ${{ secrets.AGENTROUTER_KEYS }}
+          JUSTWOKER_KEYS: ${{ secrets.JUSTWOKER_KEYS }}
           AR_PROXY_TOKEN: ${{ secrets.AR_PROXY_TOKEN }}
           JW_PROXY_TOKEN: ${{ secrets.JW_PROXY_TOKEN }}
           MONID_API_KEY: ${{ secrets.MONID_API_KEY }}
@@ -128,18 +150,26 @@ jobs:
           code=$?
           echo "::endgroup::"
           echo "exit=$code" | tee -a "$LOG_DIR/agent.log"
-          # 0 = ok, 3 = rate_limited, 4 = time_limit.  The last two are *soft
-          # stops*: the run checkpointed and published its progress, so the job
-          # stays green and the next scheduled run resumes from the checkpoint.
-          # Every other exit code is a real failure.
+          # The CLI already distinguishes the AI outage from a real failure: a run
+          # whose AI step could not reach any route exits 0 with
+          # status=ai_unavailable, so the exit code alone is enough here.
+          # 0 = ok / ai_unavailable, 3 = rate_limited, 4 = time_limit.  The last
+          # two are *soft stops*: the run checkpointed and published its progress,
+          # so the job stays green and the next scheduled run resumes from the
+          # checkpoint.  Every other exit code is a real failure.
+          run_status=ok
+          if [ -f state/checkpoint.json ]; then
+            run_status=$(python -c "import json;print(json.load(open('state/checkpoint.json')).get('status') or 'ok')")
+          fi
+          echo "run_status=$run_status" >> "$GITHUB_OUTPUT"
           case "$code" in
-            0) echo "status=ok" >> "$GITHUB_OUTPUT" ;;
+            0) echo "status=$run_status" >> "$GITHUB_OUTPUT" ;;
             3) echo "status=rate_limited" >> "$GITHUB_OUTPUT" ;;
             4) echo "status=time_limit" >> "$GITHUB_OUTPUT" ;;
             *) echo "status=failed" >> "$GITHUB_OUTPUT" ;;
           esac
           if [ "$code" -eq 0 ] || [ "$code" -eq 3 ] || [ "$code" -eq 4 ]; then
-            echo "agent soft stop (exit $code): checkpoint + database are published"
+            echo "agent soft stop (exit $code, status=$run_status): checkpoint + database are published"
             exit 0
           fi
           exit "$code"
@@ -169,6 +199,8 @@ jobs:
         run: |
           {
             echo "## PYQ agent progress"
+            echo
+            python -m tools.ci_summary
             echo
             if [ -f database/_meta/PROGRESS.md ]; then
               cat database/_meta/PROGRESS.md

@@ -44,18 +44,89 @@ class YearRange:
 @dataclass(frozen=True)
 class RateLimitPolicy:
     consecutive_failure_threshold: int = 10
-    #: when true (default) a rate-limit/exhaustion signal trips the *provider's*
+    #: when true (default) a rate-limit/exhaustion signal trips the *route's*
     #: circuit breaker and the request fails over; a global halt only happens
-    #: once no healthy provider is left (or the consecutive-failure threshold is
-    #: reached).  When false the provider stays in rotation and only the
-    #: consecutive-failure counter applies.
+    #: once no healthy route is left for the requested model (or the
+    #: consecutive-failure threshold is reached).  When false the route stays in
+    #: rotation and only the consecutive-failure counter applies.
     halt_on_any_rate_limit_signal: bool = True
     request_timeout_seconds: int = 120
     max_retries_per_request: int = 1
-    #: circuit-breaker cooldown for an exhausted provider (doubles per
-    #: consecutive trip, capped by ``provider_cooldown_max_seconds``)
+    #: circuit-breaker cooldown for an exhausted route (doubles per consecutive
+    #: trip, capped by ``provider_cooldown_max_seconds``)
     provider_cooldown_seconds: int = 300
     provider_cooldown_max_seconds: int = 3600
+    #: consecutive non-rate-limit failures (HTTP 4xx/5xx, transport errors) after
+    #: which a route's breaker opens as well (0 disables)
+    provider_error_strike_limit: int = 3
+
+
+@dataclass(frozen=True)
+class ProviderSpec:
+    """One route of the provider chain.
+
+    Loaded from the ``providers.routes`` block of ``config/settings.json`` so a
+    breaking route can be repaired without touching code:
+
+    * ``auth_style`` – ``bearer`` (``Authorization: Bearer <key>``, OpenAI chat
+      completions) or ``anthropic`` (``x-api-key`` + ``anthropic-version``,
+      Anthropic Messages);
+    * ``user_agent`` – ``browser`` (Cloudflare-fronted workers), the literal
+      ``cline/2.0.0`` the direct agentrouter endpoint requires, or any other
+      literal;
+    * ``env_keys`` – environment variables whose comma-separated values form the
+      route's key pool (never logged).
+    """
+
+    name: str
+    base_url: str
+    auth_style: str = "bearer"
+    user_agent: str = "browser"
+    env_keys: Tuple[str, ...] = ()
+    label: str = ""
+    #: relative request path; empty = the auth style's default
+    path: str = ""
+
+
+#: default route order: direct agentrouter first, then the two workers, then the
+#: direct Anthropic-compatible endpoint
+DEFAULT_PROVIDER_ORDER: Tuple[str, ...] = ("agentrouter", "ar-worker", "jw-worker", "justwoker")
+
+#: built-in routes used when ``config/settings.json`` has no ``providers`` block
+DEFAULT_PROVIDERS: Tuple[ProviderSpec, ...] = (
+    ProviderSpec(
+        name="agentrouter",
+        base_url="https://agentrouter.org/v1",
+        auth_style="bearer",
+        user_agent="cline/2.0.0",
+        env_keys=("AGENTROUTER_KEYS", "OPENAI_KEYS"),
+        label="agentrouter.org (direct)",
+    ),
+    ProviderSpec(
+        name="ar-worker",
+        base_url="https://ar-rotator.opencode-5a3.workers.dev/v1",
+        auth_style="bearer",
+        user_agent="browser",
+        env_keys=("AR_PROXY_TOKEN",),
+        label="ar-rotator worker",
+    ),
+    ProviderSpec(
+        name="jw-worker",
+        base_url="https://jw-rotator.opencode-5a3.workers.dev/v1",
+        auth_style="bearer",
+        user_agent="browser",
+        env_keys=("JW_PROXY_TOKEN",),
+        label="jw-rotator worker",
+    ),
+    ProviderSpec(
+        name="justwoker",
+        base_url="https://api.justwoker.icu/v1",
+        auth_style="anthropic",
+        user_agent="browser",
+        env_keys=("JUSTWOKER_KEYS", "DEEPSEEK_KEYS"),
+        label="api.justwoker.icu (direct, Anthropic Messages API)",
+    ),
+)
 
 
 @dataclass(frozen=True)
@@ -63,8 +134,18 @@ class DebatePolicy:
     max_rounds: int = 1
     proposer_model: str = "deepseek-v4-flash"
     critic_model: str = "gpt-5.6-sol"
-    proposer_provider_order: Tuple[str, ...] = ("agentrouter", "jw")
-    critic_provider_order: Tuple[str, ...] = ("agentrouter", "jw")
+    #: ordered route list used when a request does not carry its own order
+    provider_order: Tuple[str, ...] = DEFAULT_PROVIDER_ORDER
+    proposer_provider_order: Tuple[str, ...] = DEFAULT_PROVIDER_ORDER
+    critic_provider_order: Tuple[str, ...] = DEFAULT_PROVIDER_ORDER
+    #: optional per-model overrides, e.g. ``{"gpt-5.6-sol": ["jw-worker"]}``
+    model_provider_orders: Dict[str, Tuple[str, ...]] = field(default_factory=dict)
+
+    def order_for(self, model: str, *, role: str = "proposer") -> Tuple[str, ...]:
+        override = self.model_provider_orders.get(model)
+        if override:
+            return override
+        return self.critic_provider_order if role == "critic" else self.proposer_provider_order
 
 
 @dataclass(frozen=True)
@@ -105,11 +186,66 @@ class Settings:
     vocab: Dict[str, Any] = field(default_factory=dict)
     paths_cfg: Dict[str, Any] = field(default_factory=dict)
     raw: Dict[str, Any] = field(default_factory=dict)
+    #: the provider chain (``providers.routes``); empty = keep the code default
+    providers: Tuple[ProviderSpec, ...] = DEFAULT_PROVIDERS
+    #: ordered route names (``providers.order``)
+    provider_order: Tuple[str, ...] = DEFAULT_PROVIDER_ORDER
 
     # convenience -----------------------------------------------------------
     @property
     def max_work_seconds(self) -> int:
         return self.work_window_seconds
+
+    def provider_by_name(self, name: str) -> Optional[ProviderSpec]:
+        for provider in self.providers:
+            if provider.name == name:
+                return provider
+        return None
+
+
+def _provider_specs(config: Any) -> Tuple[ProviderSpec, ...]:
+    """Parse the ``providers`` block into specs, preserving the declared order.
+
+    ``providers.routes`` is a name -> spec mapping, ``providers.order`` lists the
+    names in failover order (unnamed routes are appended in declaration order).
+    """
+
+    if not isinstance(config, dict):
+        return DEFAULT_PROVIDERS
+    routes = config.get("routes")
+    if not isinstance(routes, dict) or not routes:
+        return DEFAULT_PROVIDERS
+    order = [str(name) for name in (config.get("order") or [])]
+    names = [name for name in order if name in routes]
+    names += [name for name in routes if name not in names]
+
+    specs: List[ProviderSpec] = []
+    for name in names:
+        body = routes[name]
+        if not isinstance(body, dict):
+            continue
+        specs.append(
+            ProviderSpec(
+                name=name,
+                base_url=str(body.get("base_url", "")),
+                auth_style=str(body.get("auth_style", "bearer")),
+                user_agent=str(body.get("user_agent", "browser")),
+                env_keys=tuple(str(env) for env in (body.get("env_keys") or ())),
+                label=str(body.get("label", name)),
+                path=str(body.get("path", "")),
+            )
+        )
+    return tuple(specs) or DEFAULT_PROVIDERS
+
+
+def _provider_order(config: Any, specs: Tuple[ProviderSpec, ...]) -> Tuple[str, ...]:
+    if isinstance(config, dict):
+        declared = [str(name) for name in (config.get("order") or [])]
+        present = {spec.name for spec in specs}
+        ordered = tuple(name for name in declared if name in present)
+        if ordered:
+            return ordered
+    return tuple(spec.name for spec in specs) or DEFAULT_PROVIDER_ORDER
 
 
 def load_settings(path: Optional[Path] = None) -> Settings:
@@ -142,6 +278,10 @@ def load_settings(path: Optional[Path] = None) -> Settings:
     env_cooldown_max = _env_int("PROVIDER_COOLDOWN_MAX_SECONDS")
     if env_cooldown_max is not None:
         cooldown_max = env_cooldown_max
+    strike_limit = int(rl.get("provider_error_strike_limit", 3))
+    env_strikes = _env_int("PROVIDER_ERROR_STRIKE_LIMIT")
+    if env_strikes is not None:
+        strike_limit = env_strikes
     rate_limit = RateLimitPolicy(
         consecutive_failure_threshold=threshold,
         halt_on_any_rate_limit_signal=bool(rl.get("halt_on_any_rate_limit_signal", True)),
@@ -149,15 +289,32 @@ def load_settings(path: Optional[Path] = None) -> Settings:
         max_retries_per_request=int(rl.get("max_retries_per_request", 1)),
         provider_cooldown_seconds=cooldown,
         provider_cooldown_max_seconds=cooldown_max,
+        provider_error_strike_limit=strike_limit,
     )
 
     db = raw.get("debate", {})
+
+    provider_specs = _provider_specs(raw.get("providers"))
+    provider_order = _provider_order(raw.get("providers"), provider_specs)
+
+    def _order(key: str, default: Tuple[str, ...]) -> Tuple[str, ...]:
+        value = db.get(key)
+        if not value:
+            return default
+        return tuple(str(name) for name in value)
+
+    model_orders = {
+        str(model): tuple(str(name) for name in names)
+        for model, names in (db.get("model_provider_orders") or {}).items()
+    }
     debate = DebatePolicy(
         max_rounds=int(db.get("max_rounds", 1)),
         proposer_model=str(db.get("proposer_model", "deepseek-v4-flash")),
         critic_model=str(db.get("critic_model", "gpt-5.6-sol")),
-        proposer_provider_order=tuple(db.get("proposer_provider_order", ["agentrouter", "jw"])),
-        critic_provider_order=tuple(db.get("critic_provider_order", ["agentrouter", "jw"])),
+        provider_order=_order("provider_order", provider_order),
+        proposer_provider_order=_order("proposer_provider_order", provider_order),
+        critic_provider_order=_order("critic_provider_order", provider_order),
+        model_provider_orders=model_orders,
     )
 
     vf = raw.get("verify", {})
@@ -195,6 +352,8 @@ def load_settings(path: Optional[Path] = None) -> Settings:
         vocab=raw.get("vocab", {}),
         paths_cfg=raw.get("paths", {}),
         raw=raw,
+        providers=provider_specs,
+        provider_order=provider_order,
     )
 
 

@@ -7,10 +7,12 @@
    refine chapter/topic with the alias map + fallback ladder (already applied in
    phase 0; re-checked here so a phase can be re-run after the taxonomy changes);
 2. **AI verify** – optional two-model confirmation of each batch
-   (:mod:`agent.verify`), skipped with a note when no keys are configured;
+   (:mod:`agent.verify`), skipped with a note when no keys are configured and
+   recorded as ``ai_unavailable`` (not an error) when every route is down;
 3. **apply corrections** – corrections are written back to the index;
 4. **write DB** – the subject's slice of ``database/`` plus, for English, the
-   vocabulary and grammar analyses.
+   vocabulary and grammar analyses.  This step runs even when the AI step was
+   skipped or unavailable, so an AI outage never costs the run its database.
 """
 
 from __future__ import annotations
@@ -19,7 +21,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Sequence
 
 from .. import build_db, grammar, indexer, paths, tracking, vocab
-from ..checkpoint import STATUS_RATE_LIMITED, STATUS_TIME_LIMIT
+from ..checkpoint import STATUS_TIME_LIMIT
 from ..util import Log, human_int, write_json
 from . import PhaseResult
 
@@ -69,12 +71,29 @@ def run_subject_phase(ctx, phase: str, subject: str) -> PhaseResult:
         verification_status = verification.status
         corrections_applied = int(verification.counters.get("index_updated", 0))
         result.notes.extend(verification.notes)
-        if verification.status == STATUS_RATE_LIMITED:
-            result.status = STATUS_RATE_LIMITED
-            log.warn(f"{phase}: halted (rate limited) – checkpointing")
+        if verification.status == verify_mod.STATUS_AI_UNAVAILABLE:
+            # The AI is unreachable: this is *not* a failure.  The python
+            # extraction result stands, the database slice below is still
+            # written and the run reports status=ai_unavailable with exit 0.
+            result.status = verify_mod.STATUS_AI_UNAVAILABLE
+            log.warn(
+                f"{phase}: AI unavailable – keeping the python extraction result "
+                "and writing the database slice anyway"
+            )
         elif verification.status == STATUS_TIME_LIMIT:
             result.status = STATUS_TIME_LIMIT
             log.warn(f"{phase}: work window expired – checkpointing")
+        result.counters.update(
+            {
+                "ai_items_total": verification.counters.get("items_total"),
+                "ai_items_done": verification.counters.get("items_done"),
+                "ai_items_this_run": verification.counters.get("items_this_run"),
+                "ai_items_remaining": verification.counters.get("items_remaining"),
+                "ai_eta_seconds": verification.counters.get("eta_seconds"),
+                "ai_batches_verified": verification.counters.get("batches_verified"),
+                "ai_batches_failed": verification.counters.get("batches_failed"),
+            }
+        )
         if corrections_applied:
             records = indexer.read_index()
             subset = [r for r in records if r.get("subject") == subject]
@@ -104,8 +123,15 @@ def run_subject_phase(ctx, phase: str, subject: str) -> PhaseResult:
 
     tracking.record_files(phase, result.files)
     tracking.journal(f"{phase}.complete", result.counters)
-    if result.status == "ok":
-        log.info(f"{phase}: database slice written ({len(result.files)} files)")
+    if result.status == STATUS_TIME_LIMIT:
+        log.warn(
+            f"{phase}: work window spent during the AI step – database slice written "
+            f"({len(result.files)} files), the remaining batches resume from the checkpoint"
+        )
+    else:
+        log.info(
+            f"{phase}: database slice written ({len(result.files)} files, ai={verification_status})"
+        )
     return result
 
 def _tree_files(records: Sequence[Dict[str, Any]]) -> List[Path]:
