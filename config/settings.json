@@ -14,7 +14,8 @@
     "max_retries_per_request": 1,
     "provider_cooldown_seconds": 300,
     "provider_cooldown_max_seconds": 3600,
-    "provider_error_strike_limit": 3
+    "provider_error_strike_limit": 3,
+    "consecutive_failures": 6
   },
   "debate": {
     "max_rounds": 1,
@@ -22,40 +23,35 @@
     "critic_model": "gpt-5.6-sol",
     "proposer_models": [
       "deepseek-v4.1-flash:free",
-      "deepseek-v4-flash:free",
       "deepseek-v4-flash",
-      "mimo-v2.5:free",
-      "muse-spark-1.2-contributor-free",
       "gpt-5.6-sol"
     ],
     "critic_models": [
       "gpt-5.6-sol",
-      "muse-spark-1.2-contributor-free",
-      "ling-3.0-flash-fin-free",
       "deepseek-v4.1-flash:free"
     ],
     "provider_order": [
       "tokenharbor",
-      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
+      "zen-rotator",
       "agentrouter"
     ],
     "proposer_provider_order": [
       "tokenharbor",
-      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
+      "zen-rotator",
       "agentrouter"
     ],
     "critic_provider_order": [
       "tokenharbor",
-      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
+      "zen-rotator",
       "agentrouter"
     ],
     "model_provider_orders": {}
@@ -63,10 +59,10 @@
   "providers": {
     "order": [
       "tokenharbor",
-      "zen-rotator",
       "justwoker",
       "jw-worker",
       "ar-worker",
+      "zen-rotator",
       "agentrouter"
     ],
     "routes": {
@@ -158,5 +154,9 @@
     "state_dir": "state",
     "database_dir": "database",
     "report_dir": "reports"
+  },
+  "run": {
+    "max_work_seconds": 19800,
+    "checkpoint_interval_seconds": 900
   }
 }
