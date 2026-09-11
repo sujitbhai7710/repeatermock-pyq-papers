@@ -1,85 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-09-11T17:12:11Z",
+  "updated_at": "2026-09-11T18:21:43Z",
   "phases": {
-    "phase0": {
-      "files": [
-        {
-          "path": "database/_meta/coverage.md",
-          "bytes": 3479
-        },
-        {
-          "path": "database/_meta/distribution.md",
-          "bytes": 14019
-        },
-        {
-          "path": "database/_meta/flagged_papers.jsonl",
-          "bytes": 2398
-        },
-        {
-          "path": "database/_meta/papers.jsonl",
-          "bytes": 776276
-        },
-        {
-          "path": "database/_meta/schema.md",
-          "bytes": 6121
-        },
-        {
-          "path": "state/distribution.json",
-          "bytes": 164977
-        },
-        {
-          "path": "state/index/computer.1.jsonl",
-          "bytes": 176816
-        },
-        {
-          "path": "state/index/eng.1.jsonl",
-          "bytes": 26213869
-        },
-        {
-          "path": "state/index/eng.2.jsonl",
-          "bytes": 2966642
-        },
-        {
-          "path": "state/index/gk.1.jsonl",
-          "bytes": 26214296
-        },
-        {
-          "path": "state/index/gk.2.jsonl",
-          "bytes": 1288344
-        },
-        {
-          "path": "state/index/manifest.json",
-          "bytes": 2559
-        },
-        {
-          "path": "state/index/manifest.json",
-          "bytes": 2559
-        },
-        {
-          "path": "state/index/math.1.jsonl",
-          "bytes": 25229585
-        },
-        {
-          "path": "state/index/reas.1.jsonl",
-          "bytes": 26213863
-        },
-        {
-          "path": "state/index/reas.2.jsonl",
-          "bytes": 266473
-        },
-        {
-          "path": "state/papers.json",
-          "bytes": 2155980
-        },
-        {
-          "path": "state/subject_keywords.json",
-          "bytes": 10202
-        }
-      ],
-      "count": 18,
-      "bytes": 111708458
-    },
     "taxonomy": {
       "files": [
         {
@@ -97,8 +19,84 @@
       ],
       "count": 3,
       "bytes": 1447678
+    },
+    "phase0": {
+      "files": [
+        {
+          "path": "database/_meta/coverage.md",
+          "bytes": 3477
+        },
+        {
+          "path": "database/_meta/distribution.md",
+          "bytes": 13291
+        },
+        {
+          "path": "database/_meta/flagged_papers.jsonl",
+          "bytes": 2398
+        },
+        {
+          "path": "database/_meta/papers.jsonl",
+          "bytes": 776276
+        },
+        {
+          "path": "database/_meta/schema.md",
+          "bytes": 6121
+        },
+        {
+          "path": "state/distribution.json",
+          "bytes": 164492
+        },
+        {
+          "path": "state/index/computer.1.jsonl",
+          "bytes": 175983
+        },
+        {
+          "path": "state/index/eng.1.jsonl",
+          "bytes": 26214277
+        },
+        {
+          "path": "state/index/eng.2.jsonl",
+          "bytes": 3047472
+        },
+        {
+          "path": "state/index/gk.1.jsonl",
+          "bytes": 26213935
+        },
+        {
+          "path": "state/index/gk.2.jsonl",
+          "bytes": 1208226
+        },
+        {
+          "path": "state/index/manifest.json",
+          "bytes": 2559
+        },
+        {
+          "path": "state/index/manifest.json",
+          "bytes": 2559
+        },
+        {
+          "path": "state/index/math.1.jsonl",
+          "bytes": 25108016
+        },
+        {
+          "path": "state/index/reas.1.jsonl",
+          "bytes": 26213863
+        },
+        {
+          "path": "state/index/reas.2.jsonl",
+          "bytes": 195802
+        },
+        {
+          "path": "state/papers.json",
+          "bytes": 2155980
+        },
+        {
+          "path": "state/subject_keywords.json",
+          "bytes": 10202
+        }
+      ],
+      "count": 18,
+      "bytes": 111514929
     }
-  },
-  "status": "time_limit",
-  "status_at": "2026-09-11T17:12:11Z"
+  }
 }
