@@ -45,19 +45,40 @@ may serve one model and 503 for another (``jw-rotator`` does exactly that), and
 a failure for ``deepseek-v4-flash`` must not take the provider out of rotation
 for ``gpt-5.6-sol``.
 
+Model-level failover
+--------------------
+Breakers alone are not enough: if **no** provider can serve the proposer's model
+the request has nowhere to go, even when another model still has a working
+route.  On a GitHub runner that is exactly the live situation — the direct
+``agentrouter`` endpoint is blocked by the Aliyun WAF, both workers report
+``all_keys_exhausted`` for ``deepseek-v4-flash`` and 403/503 elsewhere, so
+``deepseek-v4-flash`` has zero routes while ``gpt-5.6-sol`` is still served by
+``jw-worker``.
+
+Each role therefore carries an ordered **candidate model** list
+(``debate.proposer_models`` / ``debate.critic_models``).  A request walks the
+candidates outermost-first — for every candidate model, every provider in that
+model's order — and is served by the first ``(provider, model)`` that answers; the
+serving pair is recorded on the :class:`~agent.llm.ChatResult` (``provider`` and
+``model``) and counted in :attr:`RouterStats.model_fallbacks`.  The single-model
+call ``chat(model=..., provider_order=...)`` is unchanged: pass *models* to opt
+into the candidate walk.
+
 GLOBAL HALT
 -----------
-``GlobalHalt`` is raised only when there is no healthy route left **for the
-model being requested**:
+``GlobalHalt`` is raised only when there is no healthy route left **for any
+candidate model of the request**:
 
-* every route for that model is exhausted / cooling down / without credentials, or
+* every ``(provider, model)`` candidate is exhausted / cooling down / without
+  credentials, or
 * ``rate_limit.consecutive_failure_threshold`` (default 10) consecutive
-  failures for that model were recorded and no success interrupted them.
+  failures for each of them were recorded and no success interrupted them.
 
-A rate limit from one route therefore never halts a run while another route can
-serve the model.  Once halted, the router refuses all further requests; the
-caller checkpoints, finishes its deterministic work and exits with
-``status=ai_unavailable`` (exit code 0 — an unavailable AI never fails a run).
+A rate limit from one route therefore never halts a run while another route (or
+another candidate model) can serve the request.  Once halted, the router refuses
+all further requests; the caller checkpoints, finishes its deterministic work and
+exits with ``status=ai_unavailable`` (exit code 0 — an unavailable AI never fails
+a run).
 """
 
 from __future__ import annotations
@@ -130,6 +151,29 @@ class RouteState:
 
 
 @dataclass
+class ModelAttempt:
+    """Outcome of walking every provider of **one candidate model**.
+
+    Returned instead of raised so the caller can carry on with the next
+    candidate model: only ``halted`` (no healthy route left *and* credentials
+    exist for it) is a dead end for that model.
+    """
+
+    model: str
+    served: bool = False
+    halted: bool = False
+    result: Optional[llm.ChatResult] = None
+    error: Optional[Exception] = None
+    #: halt reason, or the ``_no_route_reason`` summary when not halted
+    reason: str = ""
+    #: human-readable summary of why this model could not serve
+    summary: str = ""
+    attempted: List[str] = field(default_factory=list)
+    skipped: List[str] = field(default_factory=list)
+    unavailable: Dict[str, str] = field(default_factory=dict)
+
+
+@dataclass
 class RouterStats:
     requests: int = 0
     successes: int = 0
@@ -146,6 +190,9 @@ class RouterStats:
     consecutive_by_model: Dict[str, int] = field(default_factory=dict)
     #: ``provider/model`` -> {ok, fail, rate_limited, trips}
     per_route: Dict[str, Dict[str, int]] = field(default_factory=dict)
+    #: model -> how often it served a request after an earlier candidate model
+    #: of the same request failed (``same_model_fallback`` in the verdict)
+    model_fallbacks: Dict[str, int] = field(default_factory=dict)
 
     def as_dict(self) -> Dict[str, Any]:
         return {
@@ -160,6 +207,7 @@ class RouterStats:
             "halted_at": self.halted_at,
             "halted_models": dict(sorted(self.halted_models.items())),
             "per_route": {k: dict(v) for k, v in sorted(self.per_route.items())},
+            "model_fallbacks": dict(sorted(self.model_fallbacks.items())),
         }
 
 
@@ -219,6 +267,66 @@ class Router:
             if name in self._provider_by_name and name not in out:
                 out.append(name)
         return out
+
+    # -- role candidates (model-level failover) ----------------------------
+    def role_models(self, role: str) -> Tuple[str, ...]:
+        """Ordered candidate models of *role* (proposer / critic)."""
+
+        return self.debate.candidates_for(role)
+
+    def role_provider_order(self, role: str, model: str) -> List[str]:
+        """Provider walk order for one role's *model* (per-model override wins)."""
+
+        return self.order_for(model, self.debate.order_for(model, role=role))
+
+    def role_routes(self, role: str) -> List[Tuple[str, str]]:
+        """Every ``(provider, model)`` candidate of *role*, in walk order."""
+
+        out: List[Tuple[str, str]] = []
+        for model in self.role_models(role):
+            for name in self.role_provider_order(role, model):
+                pair = (name, model)
+                if pair not in out:
+                    out.append(pair)
+        return out
+
+    def all_route_candidates(self) -> List[Tuple[str, str]]:
+        """The ``(provider, model)`` matrix of both roles (used by ``cli routes``)."""
+
+        out: List[Tuple[str, str]] = []
+        for role in ("proposer", "critic"):
+            for pair in self.role_routes(role):
+                if pair not in out:
+                    out.append(pair)
+        return out
+
+    def role_available(self, role: str) -> bool:
+        """True while at least one ``(provider, model)`` candidate can serve *role*."""
+
+        for name, model in self.role_routes(role):
+            if self.is_halted(model):
+                continue
+            if self.route_healthy(name, model)[0]:
+                return True
+        return False
+
+    def roles_available(self, roles: Sequence[str] = ("proposer", "critic")) -> Dict[str, bool]:
+        return {role: self.role_available(role) for role in roles}
+
+    def role_health(self, role: str) -> Dict[str, Dict[str, Any]]:
+        """``{"provider/model": {healthy, why, halted}}`` for one role's candidates."""
+
+        report: Dict[str, Dict[str, Any]] = {}
+        for name, model in self.role_routes(role):
+            healthy, why = self.route_healthy(name, model)
+            report[route_key(name, model)] = {
+                "provider": name,
+                "model": model,
+                "healthy": healthy and not self.is_halted(model),
+                "halted": self.is_halted(model),
+                "why": why,
+            }
+        return report
 
     # -- halt handling ----------------------------------------------------
     @property
@@ -470,35 +578,84 @@ class Router:
 
     #: kept for callers that only want "how is each provider doing"
     def provider_report(self) -> Dict[str, Any]:
+        """Health of every ``(provider, model)`` candidate of both roles.
+
+        The report covers the whole candidate matrix (not just the two primary
+        models) so ``PROGRESS.md`` shows which fallback model a run actually has
+        available.
+        """
+
         report = self.route_report()
-        models = [self.debate.proposer_model, self.debate.critic_model]
-        for role, model in (("proposer", models[0]), ("critic", models[1])):
-            for name in self.order_for(model, self.debate.order_for(model, role=role)):
+        for role in ("proposer", "critic"):
+            for name, model in self.role_routes(role):
                 key = route_key(name, model)
                 if key in report:
                     continue
                 healthy, why = self.route_healthy(name, model)
                 state = self.route_state(name, model).as_dict()
                 state.update(
-                    {"healthy": healthy, "why": why, "configured": bool(self._keys(name))}
+                    {
+                        "healthy": healthy and not self.is_halted(model),
+                        "why": why,
+                        "configured": bool(self._keys(name)),
+                        "role": role,
+                    }
                 )
                 report[key] = state
         return dict(sorted(report.items()))
 
     # -- dispatch ---------------------------------------------------------
-    def chat(
+    def _candidates(self, model: str, models: Optional[Sequence[str]]) -> Tuple[str, ...]:
+        """Ordered candidate models of one request.
+
+        An explicit *models* list wins (that is how a caller steers the order);
+        *model* is appended when it is missing so a request can never lose its own
+        model, and the single-model call ``chat(model=...)`` keeps its exact
+        behaviour.
+        """
+
+        ordered = [str(name).strip() for name in (models or ()) if str(name).strip()]
+        if not ordered:
+            ordered = [str(model)]
+        elif model and model not in ordered:
+            ordered.append(str(model))
+        out: List[str] = []
+        for name in ordered:
+            if name and name not in out:
+                out.append(name)
+        return tuple(out)
+
+    def _provider_order_for(
+        self,
+        model: str,
+        provider_order: Optional[Sequence[str]],
+        role: str,
+    ) -> Optional[Sequence[str]]:
+        """Provider walk order for one candidate model.
+
+        An explicit *provider_order* wins; a role-aware request resolves the order
+        **per candidate model** (``debate.model_provider_orders`` override first,
+        then the role's order) so a fallback model keeps its own route chain.
+        """
+
+        if provider_order:
+            return provider_order
+        if role:
+            return self.role_provider_order(role, model)
+        return None
+
+    def _chat_model(
         self,
         *,
         model: str,
         messages: Sequence[llm.ChatMessage],
-        provider_order: Optional[Sequence[str]] = None,
-        temperature: float = 0.0,
-        max_tokens: Optional[int] = None,
-        json_mode: bool = False,
-    ) -> llm.ChatResult:
-        """Send one completion, honouring the model's route order and failover."""
+        provider_order: Optional[Sequence[str]],
+        temperature: float,
+        max_tokens: Optional[int],
+        json_mode: bool,
+    ) -> ModelAttempt:
+        """Walk every provider of *model*; never raises for a route outage."""
 
-        self.raise_if_halted(model)
         order = self.order_for(model, provider_order)
         last_error: Optional[Exception] = None
         attempted: List[str] = []
@@ -550,7 +707,8 @@ class Router:
                     f"route {name}/{model}: rate-limited ({detail[:160]}) – failing over"
                 )
                 last_error = exc
-                self.raise_if_halted(model)
+                if self.is_halted(model):
+                    break
                 continue
             except llm.LlmError as exc:
                 detail = str(exc)
@@ -561,7 +719,8 @@ class Router:
                     f"route {name}/{model}: failed ({detail[:160]}) – failing over"
                 )
                 last_error = exc
-                self.raise_if_halted(model)
+                if self.is_halted(model):
+                    break
                 continue
             self._close_route(name, model)
             self._record_success(name, model)
@@ -573,16 +732,148 @@ class Router:
                     f"{len(attempted) - 1} failed and {len(skipped)} skipped route(s)"
                     + (f" [skipped: {', '.join(skipped)}]" if skipped else "")
                 )
-            return result
+            return ModelAttempt(
+                model=model,
+                served=True,
+                result=result,
+                attempted=attempted,
+                skipped=skipped,
+                unavailable=unavailable,
+            )
 
-        self.raise_if_halted(model)
+        if self.is_halted(model):
+            reason = self.halt_reason(model) or f"{model} halted"
+            return ModelAttempt(
+                model=model,
+                halted=True,
+                error=last_error,
+                reason=reason,
+                summary=reason,
+                attempted=attempted,
+                skipped=skipped,
+                unavailable=unavailable,
+            )
         summary, should_halt = self._no_route_reason(model, order, unavailable, attempted)
         if should_halt:
             self.halt(summary, model=model)
-            self.raise_if_halted(model)
-        if last_error is not None:
-            raise last_error
-        raise llm.LlmError(summary)
+            return ModelAttempt(
+                model=model,
+                halted=True,
+                error=last_error,
+                reason=summary,
+                summary=summary,
+                attempted=attempted,
+                skipped=skipped,
+                unavailable=unavailable,
+            )
+        # not a halt: either credentials are missing entirely (an unconfigured
+        # environment must not look like a provider outage) or a route is still
+        # healthy and the caller may retry
+        return ModelAttempt(
+            model=model,
+            halted=False,
+            error=last_error or llm.LlmError(summary),
+            reason=summary,
+            summary=summary,
+            attempted=attempted,
+            skipped=skipped,
+            unavailable=unavailable,
+        )
+
+    def chat(
+        self,
+        *,
+        model: str,
+        messages: Sequence[llm.ChatMessage],
+        provider_order: Optional[Sequence[str]] = None,
+        temperature: float = 0.0,
+        max_tokens: Optional[int] = None,
+        json_mode: bool = False,
+        models: Optional[Sequence[str]] = None,
+        role: str = "",
+    ) -> llm.ChatResult:
+        """Send one completion, honouring the candidate-model + route order.
+
+        With the default ``models=None`` this is the original single-model call:
+        walk the providers of *model* and stop at the first that answers.
+
+        With *models* given, the candidates are walked **outermost-first** — for
+        each candidate model, every provider in that model's order — and the
+        request is served by the first ``(provider, model)`` that answers.  Which
+        pair served it is recorded on the result (``ChatResult.provider`` /
+        ``ChatResult.model``) and counted in
+        :attr:`RouterStats.model_fallbacks` when it was not the first candidate.
+
+        :class:`GlobalHalt` is raised only when **no** ``(provider, model)``
+        candidate is healthy; a dead model then costs one candidate instead of
+        skipping the whole AI step.
+        """
+
+        candidates = self._candidates(model, models)
+        first = candidates[0]
+        attempts: List[ModelAttempt] = []
+        errors: List[Exception] = []
+
+        for index, candidate in enumerate(candidates):
+            if self.is_halted(candidate):
+                # a halted model refuses every further request: skip the candidate
+                # instead of asking its routes again
+                reason = self.halt_reason(candidate) or f"{candidate} halted"
+                attempts.append(
+                    ModelAttempt(model=candidate, halted=True, reason=reason, summary=reason)
+                )
+                if index < len(candidates) - 1:
+                    self.log.info(f"model {candidate}: halted ({reason}) – next candidate")
+                continue
+            attempt = self._chat_model(
+                model=candidate,
+                messages=messages,
+                provider_order=self._provider_order_for(candidate, provider_order, role),
+                temperature=temperature,
+                max_tokens=max_tokens,
+                json_mode=json_mode,
+            )
+            attempts.append(attempt)
+            if attempt.served and attempt.result is not None:
+                result = attempt.result
+                if candidate != first:
+                    with self._lock:
+                        self.stats.model_fallbacks[candidate] = (
+                            self.stats.model_fallbacks.get(candidate, 0) + 1
+                        )
+                    self.log.warn(
+                        f"model fallback{f' ({role})' if role else ''}: "
+                        f"{result.model}@{result.provider} served the request "
+                        f"(candidates: {', '.join(candidates)}; "
+                        f"{candidates.index(candidate)} earlier candidate(s) failed)"
+                    )
+                return result
+            if attempt.error is not None:
+                errors.append(attempt.error)
+            if attempt.halted and index < len(candidates) - 1:
+                self.log.warn(
+                    f"model {candidate}: no healthy route – trying the next candidate"
+                )
+
+        last_error = errors[-1] if errors else None
+        # A candidate that is merely unhealthy-but-not-halted (a route is still
+        # healthy, or no credentials are configured at all) means "not an AI
+        # outage": hand the underlying error to the caller so it may retry.
+        transient = [a for a in attempts if not a.halted]
+        if transient or not attempts:
+            if last_error is not None:
+                raise last_error
+            raise llm.LlmError(
+                "; ".join(a.summary for a in attempts)
+                or f"no candidate model could serve {model}"
+            )
+
+        reason = (
+            f"no healthy route for any candidate model of "
+            f"{role or 'the request'} ({', '.join(candidates)}): "
+            + "; ".join(f"{a.model}: {a.summary}" for a in attempts)
+        )
+        raise GlobalHalt(reason)
 
     def _no_route_reason(
         self,

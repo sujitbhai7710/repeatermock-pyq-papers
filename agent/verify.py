@@ -26,12 +26,18 @@ When the AI cannot be reached the step **never fails the run**:
 ``skipped_no_keys``
     no credentials are configured at all (offline / dry run).
 ``ai_unavailable``
-    routes exist but none can serve the proposer or the critic model (all cooling
-    down, all failing, or the router halted).  Python extraction results are kept
-    unchanged, the phase still writes its database slice, and the run exits 0.
+    routes exist but none can serve a role: **every candidate model** of the
+    proposer or the critic (``debate.proposer_models`` / ``debate.critic_models``)
+    has only cooling-down, failing or unkeyed routes, or the router halted
+    outright.  Python extraction results are kept unchanged, the phase still
+    writes its database slice, and the run exits 0.
 ``time_limit``
     the work window expired – the only condition that still stops the pipeline
     (soft stop, exit code 4, resumes next run).
+
+If the AI only survives by serving both roles with the same model, the run
+proceeds but says so: ``same_model_fallback: true`` is written to the batch
+provenance, the phase counters and ``PROGRESS.md``.
 """
 
 from __future__ import annotations
@@ -45,7 +51,7 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from . import checkpoint as ckpt
 from . import debate as debate_mod
-from . import indexer, llm, paths, router as router_mod, tracking
+from . import gitpush, indexer, llm, paths, router as router_mod, tracking
 from .checkpoint import WorkWindow
 from .config import Settings
 from .util import Log, append_jsonl, chunked, monotonic, now_iso, read_json, write_json
@@ -151,6 +157,20 @@ def _run_id() -> str:
     return str(stored.get("run_id") or ckpt.run_id())
 
 
+def _router_wide_halt(router: "router_mod.Router") -> bool:
+    """True only for a router-wide halt (``halt()`` called without a model).
+
+    A single model going dark is **not** a stop condition any more: the request
+    falls back to the next candidate model of its role, and only a role with no
+    healthy candidate stops the AI step (``router.role_available``).
+    """
+
+    try:
+        return "*" in router.halt_report()
+    except Exception:  # noqa: BLE001 - a report must never break the loop
+        return False
+
+
 def _checkpoint(
     *,
     phase: str,
@@ -190,6 +210,15 @@ def _checkpoint(
         status=status,
     )
     tracking.write_progress_md(extra=None)
+    # A killed job used to lose every checkpoint since the last phase boundary:
+    # publish the generated tree on the checkpoint tick as well (no-op unless
+    # PYQ_GIT_PUSH is set, throttled to ``CHECKPOINT_INTERVAL_SECONDS``, and never
+    # fatal – a failed commit must not abort the run).
+    gitpush.maybe_publish(
+        phase=phase,
+        done=progress.items_done,
+        total=progress.items_total,
+    )
 
 
 def batch_fingerprint(records: Sequence[Dict[str, Any]]) -> str:
@@ -313,20 +342,27 @@ def verify_database(
 
     proposer_model = settings.debate.proposer_model
     critic_model = settings.debate.critic_model
-    models = (proposer_model, critic_model)
+    #: a role is served while **any** of its candidate models has a healthy route
+    #: (``debate.proposer_models`` / ``debate.critic_models``), not just the
+    #: primary one: on a runner where every route for ``deepseek-v4-flash`` is
+    #: blocked, ``gpt-5.6-sol`` may still serve the proposer.
+    roles = ("proposer", "critic")
     # A spent run budget is checked first: it is a *run* constraint, so a run that
     # has no time left stops with time_limit (exit 4, resumable) even when the AI
     # happens to be down as well.
     if window is None or not window.expired():
-        health = router.models_available(models)
+        health = router.roles_available(roles)
         if not all(health.values()):
-            missing = [model for model, ok in health.items() if not ok]
+            missing = [role for role in roles if not health[role]]
             reason = (
-                "no healthy route for " + ", ".join(missing) + " at startup: "
+                "no healthy route for any candidate model of the "
+                + ", ".join(missing)
+                + " role(s) at startup: "
                 + "; ".join(
-                    f"{name}: " + router.route_healthy(name, model)[1]
-                    for model in missing
-                    for name in router.order_for(model)
+                    f"{key}: {entry['why']}"
+                    for role in missing
+                    for key, entry in router.role_health(role).items()
+                    if not entry["healthy"]
                 )
             )
             logger.warn(f"AI unavailable – {reason}")
@@ -351,6 +387,8 @@ def verify_database(
     halted_reason = ""
     time_reason = ""
     unavailable_reason = ""
+    same_model_noted = False
+    same_model_note = ""
     run_id = _run_id()
     started_wall = now_iso()
     progress: Optional[PhaseProgress] = None
@@ -402,12 +440,16 @@ def verify_database(
                 counters["batches_not_attempted"] = len(pending) - progress.batches_this_run
                 logger.warn(f"{phase_name}: {time_reason}")
                 break
-            if router.halted:
-                halted_reason = router.stats.halt_reason
+            if _router_wide_halt(router):
+                halted_reason = router.halt_report().get("*") or router.stats.halt_reason
                 break
-            down = [model for model in models if not router.model_available(model)]
+            down = [role for role in roles if not router.role_available(role)]
             if down:
-                unavailable_reason = "no healthy route for " + ", ".join(down) + " mid-run"
+                unavailable_reason = (
+                    "no healthy route for any candidate model of the "
+                    + ", ".join(down)
+                    + " role(s) mid-run"
+                )
                 logger.warn(f"{phase_name}: {unavailable_reason} – stopping the AI step")
                 break
             fingerprint = batch_fingerprint(group)
@@ -434,6 +476,24 @@ def verify_database(
             phase_state["cursor"] = index + 1
             done.add(fingerprint)
             phase_state["done"] = sorted(done)
+
+            if outcome.provenance.get("same_model_fallback"):
+                # the run's AI survived by using one model for both roles: say so
+                # in PROGRESS.md instead of reporting a two-model agreement
+                counters["batches_same_model_fallback"] += 1
+                if not same_model_noted:
+                    same_model_noted = True
+                    same_model_note = (
+                        "same_model_fallback: true – proposer and critic were both served by "
+                        f"{_provenance_summary(outcome).get('final_author') or 'the same model'}; "
+                        "no second model had a working route"
+                    )
+                    tracking.record_ai(
+                        phase_name,
+                        {"same_model_fallback": True, "same_model_fallback_at": now_iso()},
+                        notes=[same_model_note],
+                    )
+                    logger.warn(f"{phase_name}: {same_model_note}")
 
             final = outcome.final if isinstance(outcome.final, dict) else {}
             results = final.get("items") if isinstance(final.get("items"), list) else None
@@ -552,6 +612,8 @@ def verify_database(
         notes.append(f"halted (AI unavailable): {halted_reason}")
     if unavailable_reason:
         notes.append(unavailable_reason)
+    if same_model_note:
+        notes.append(same_model_note)
     if status == STATUS_AI_UNAVAILABLE:
         notes.append(
             "python extraction results were kept unchanged; the deterministic "
@@ -591,6 +653,8 @@ def _provenance_summary(outcome: Any) -> Dict[str, Any]:
             }
     if prov.get("final_author"):
         summary["final_author"] = prov["final_author"]
+    # both opinions came from one model (no second model had a working route)
+    summary["same_model_fallback"] = bool(prov.get("same_model_fallback"))
     return summary
 
 
@@ -612,6 +676,7 @@ def _provenance_line(phase: str, index: int, outcome: Any, group: Sequence[Dict[
             != (critic.get("model"), critic.get("provider"))
             else ""
         )
+        + (" same_model_fallback=true" if summary.get("same_model_fallback") else "")
     )
 
 

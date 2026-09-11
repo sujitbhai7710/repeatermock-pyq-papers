@@ -23,8 +23,10 @@ classified, validated, mock-generator-ready database.
 | Phases 1–5 — subjects | `python -m agent.cli run` | subject trees, vocabulary + grammar analyses, mock packs |
 | Audit | `python -m agent.cli audit` | structural self-check of `database/` (non-zero exit on any defect) |
 | Verify | `python -m agent.cli verify-db` | AI re-check of every python-extracted item |
+| Routes | `python -m agent.cli routes --probe` | provider × model matrix: which route can serve which model right now |
 | Stats | `python -m agent.cli stats` | per-exam / per-subject counts, top concepts |
 | Mocks | `python -m agent.cli mocks` | `database/mocks/index.json` + packs |
+| Publish | `python -m agent.cli publish --force` | one checkpoint commit + push to `pyq-db` |
 
 The pipeline is **deterministic** (identical input → byte-identical output) and
 **idempotent** (re-running a phase rewrites the same files; the only file that
@@ -268,7 +270,14 @@ python -m agent.cli run --phase 3      # or: python -m agent.cli phase 3
 # 6. mock packs
 python -m agent.cli mocks
 
-# 7. structural gate over database/ (exit != 0 on any defect)
+# 7. which route can serve which model right now (keys from the environment;
+#    --probe sends one tiny completion per configured (provider, model) pair and
+#    prints OK / failure class — http_403, rate_limited:503, waf_html, bad_json,
+#    transport, nokey — never a key). Exit 0 only when both roles have a route.
+python -m agent.cli routes               # configured candidates + breaker state
+python -m agent.cli routes --probe --timeout 30
+
+# 8. structural gate over database/ (exit != 0 on any defect)
 python -m agent.cli audit              # or: python tools/audit_db.py --json
 ```
 
@@ -318,6 +327,10 @@ python tools/mocks.py build --kind concept --id math-profit-and-loss-profit-and-
 | `PROVIDER_COOLDOWN_SECONDS` / `PROVIDER_COOLDOWN_MAX_SECONDS` | circuit-breaker cooldown of a route (default `300` / `3600`) |
 | `PROVIDER_ERROR_STRIKE_LIMIT` | consecutive hard errors after which a route's breaker opens (default `3`, `0` disables) |
 | `PYQ_INDEX_GZIP` | also emit the optional single-file `state/index/ALL.jsonl.gz` |
+| `PYQ_PROPOSER_MODELS` / `PYQ_CRITIC_MODELS` | comma-separated candidate model list overriding `debate.proposer_models` / `debate.critic_models` |
+| `PYQ_GIT_PUSH` | `1`/`true`/`on` enables the checkpoint commit + push on every tick (off by default, so a local run never pushes) |
+| `PYQ_PUSH_TOKEN` | optional token overriding the credentials `actions/checkout` persisted (never logged) |
+| `PYQ_DB_BRANCH` / `PYQ_GIT_REMOTE` | checkpoint branch (default `pyq-db`) and remote (default `origin`) |
 | `PYQ_USER_AGENT` | override the browser user agent used by the worker routes |
 | `PYQ_CLINE_USER_AGENT` | override the user agent the direct agentrouter route sends (default `cline/2.0.0`) |
 | `PYQ_PROJECT_ROOT` | force the project root |
@@ -352,12 +365,38 @@ never logged (the router records at most a `...abcd` suffix).
 * A rate-limit / exhaustion answer (`402`, `429`, `503`, `all_keys_exhausted`)
   opens the route's breaker (300 s, doubling to 3,600 s) and fails over
   immediately; three consecutive hard errors (`401`, `403`, `5xx`) do the same.
-* Only a **total outage** (no route healthy for a model) halts that model.
-  The run then finishes the deterministic pipeline (phase 0 + python extraction
-  + database + mocks), checkpoints, and exits **0** with
-  `status=ai_unavailable` — recorded in `state/checkpoint.json`,
+* When **no provider** can serve a model, the request falls back to the next
+  **candidate model** of its role — `debate.proposer_models` for the proposer,
+  `debate.critic_models` for the critic, both ordered, primary model first:
+
+  ```json
+  "debate": {
+    "proposer_model": "deepseek-v4-flash",
+    "critic_model": "gpt-5.6-sol",
+    "proposer_models": ["deepseek-v4-flash", "deepseek-v4-pro", "gpt-5.6-sol", "claude-sonnet-5", "glm-5.3"],
+    "critic_models":   ["gpt-5.6-sol", "claude-opus-5", "claude-sonnet-5", "gemini-3.5-flash", "grok-4.6"]
+  }
+  ```
+
+  Each request walks the candidates **outermost-first** (for every candidate
+  model, every provider in that model's order) and the served `(provider, model)`
+  pair is recorded in the verdict provenance. `PYQ_PROPOSER_MODELS` /
+  `PYQ_CRITIC_MODELS` (comma separated) override the lists without editing a
+  file. This is the live runner case: the direct `agentrouter` endpoint is
+  blocked by the Aliyun WAF there, both workers answer `all_keys_exhausted` for
+  `deepseek-v4-flash`, direct `justwoker` is `403` — but `jw-worker` still serves
+  `gpt-5.6-sol`, so the debate runs instead of being skipped.
+* Only a **total outage** (no `(provider, model)` candidate healthy for either
+  role) halts the AI step. The run then finishes the deterministic pipeline
+  (phase 0 + python extraction + database + mocks), checkpoints, and exits **0**
+  with `status=ai_unavailable` — recorded in `state/checkpoint.json`,
   `state/manifest.json` and `database/_meta/PROGRESS.md`. A missing AI never
   fails a run; only genuine code/data errors exit non-zero.
+* The two opinions stay independent: the critic prefers a model other than the
+  one that wrote the proposal and only reuses it when that is the only working
+  model left. That degradation is never silent — `same_model_fallback: true` is
+  written to the verdict provenance, the phase counters and `PROGRESS.md`. (Use
+  `python -m agent.cli routes --probe` to see what is actually alive.)
 * A run whose AI step was cut short reports its progress per phase (items
   total / done / % / this run / remaining / ETA) and the per-route health
   (ok / fail / rate-limited / cooldown / retry-in) in `PROGRESS.md`, refreshed
@@ -374,8 +413,11 @@ never logged (the router records at most a `...abcd` suffix).
   `permissions: contents: write`;
 * steps: checkout (`fetch-depth: 0`) → setup-python 3.11 →
   `pip install -r requirements.txt` (a no-op: the agent is stdlib-only) →
+  `python -m agent.cli routes --probe` (route matrix into the job summary;
+  `continue-on-error`, so a dead route is diagnosis, not a failure) →
   `python -m agent.cli run` with `MAX_WORK_SECONDS=19800`,
-  `CHECKPOINT_INTERVAL_SECONDS=900` and the secrets
+  `CHECKPOINT_INTERVAL_SECONDS=900`, `PYQ_GIT_PUSH=1`, `PYQ_DB_BRANCH=pyq-db` and
+  the secrets
   `AGENTROUTER_KEYS`, `JUSTWOKER_KEYS`, `AR_PROXY_TOKEN`, `JW_PROXY_TOKEN`,
   `MONID_API_KEY` →
   **`python -m agent.cli audit`** (fails the job on any structural defect) →
@@ -386,6 +428,14 @@ never logged (the router records at most a `...abcd` suffix).
   and `git push origin HEAD:pyq-db` (creates the branch on the first run,
   fast-forwards afterwards by re-parenting onto the branch tip; `.tmp-*.part`
   leftovers are deleted first). The default branch is never modified.
+* **published every 15 minutes**: with `PYQ_GIT_PUSH=1` the agent itself commits
+  and pushes the generated tree on every checkpoint tick
+  (`agent/gitpush.py`), throttled to `CHECKPOINT_INTERVAL_SECONDS` — a job killed
+  after five hours no longer loses every checkpoint it took. Credentials are the
+  ones `actions/checkout` persisted (`GITHUB_TOKEN`, `permissions: contents:
+  write`); set the optional `PYQ_PUSH_TOKEN` secret to override them. A failed
+  commit/push is a warning, never a failed run, and the final workflow step
+  repeats the commit as a safety net for a job that died before its first tick.
 * **no-op safe**: with no provider secret configured the job writes
   `status=skipped_no_keys` to the summary and exits 0 instead of calling the
   endpoints unauthenticated;
@@ -411,8 +461,15 @@ published checkpoint unless `--fresh` is requested locally.
   whole `run`, not per phase. The budget is checked before every batch/phase;
   when it is spent the run stops cleanly with `status=time_limit` (exit code 4)
   instead of being killed mid-flight.
-* Checkpoint every `CHECKPOINT_INTERVAL_SECONDS` (default **1,800 s**):
-  `state/checkpoint.json` records `{run_id, phase, cursor.completed, status}`.
+* Checkpoint every `CHECKPOINT_INTERVAL_SECONDS` (default **1,800 s** in
+  `settings.json`, **900 s** in CI): `state/checkpoint.json` records
+  `{run_id, phase, cursor.completed, status}`.
+* With `PYQ_GIT_PUSH` set the same tick **publishes**: `git add -f state
+  database` → `git commit -m "pyq-agent: checkpoint <phase> <done>/<total>
+  [skip ci]"` → re-parent onto the `pyq-db` tip → `git push origin HEAD:pyq-db`
+  (`agent/gitpush.py`, also reachable as `python -m agent.cli publish`). Never
+  fatal: "nothing to commit" and a failed push are warnings, and `.tmp-*.part`
+  files are deleted and unstaged first, so a broken network cannot stop a run.
 * `python -m agent.cli run` **resumes**: phases already listed in
   `cursor.completed` are skipped. `--fresh` ignores the checkpoint.
 * All state writes are atomic (temp file + `os.replace`), so a killed run never
@@ -435,7 +492,11 @@ item ──> DeepSeek V4 Flash          : structured JSON proposal
          GPT-5.6 Sol                : FINAL verdict + provenance
 ```
 
-* proposer model: `deepseek-v4-flash`, critic model: `gpt-5.6-sol`;
+* proposer model: `deepseek-v4-flash`, critic model: `gpt-5.6-sol`, each with an
+  ordered **candidate list** (`debate.proposer_models` / `debate.critic_models`)
+  that is walked when no provider can serve the primary model — the served pair is
+  recorded in the provenance, and a debate that needed one model for both roles is
+  flagged `same_model_fallback: true`;
 * provider order **agentrouter ar-rotator**
   (`https://ar-rotator.opencode-5a3.workers.dev/v1`) then **jw-rotator**
   (`https://jw-rotator.opencode-5a3.workers.dev/v1`);
@@ -466,10 +527,14 @@ the level of the **provider chain**, not the individual request:
      retried on every item — and is probed exactly once after the cooldown;
 * every failure increments a **consecutive-failure** counter and one success
   resets it to zero;
-* **`GlobalHalt` is raised only when no healthy provider is left**: either every
-  configured provider is exhausted / cooling down / unkeyed, or
-  `rate_limit.consecutive_failure_threshold` (default **10**) consecutive
-  failures were recorded and no provider could absorb them;
+* when no provider can serve a model the request also fails over across the
+  **candidate models of its role** (`debate.proposer_models` /
+  `debate.critic_models`), so a model with zero working routes costs one
+  candidate rather than the whole AI step;
+* **`GlobalHalt` is raised only when no `(provider, model)` candidate is healthy
+  for either role**: either every candidate route is exhausted / cooling down /
+  unkeyed, or `rate_limit.consecutive_failure_threshold` (default **10**)
+  consecutive failures were recorded per model and no route could absorb them;
 * on halt the in-flight item finishes, the phase checkpoints, and the run exits
   with **`status=rate_limited`** (exit code `3`).
 

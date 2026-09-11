@@ -8,8 +8,11 @@ name: pyq-agent
 # The provider chain is `agentrouter` (direct) -> `ar-worker` -> `jw-worker` ->
 # `justwoker` (see the `providers` block of config/settings.json).  A route that
 # answers with a rate-limit / exhaustion signal is skipped for its cooldown and
-# the request fails over to the next route for the *same model*; only a total
-# outage halts the AI step.
+# the request fails over to the next route for the *same model*; when **no**
+# provider can serve that model the request falls back to the next candidate
+# model of its role (`debate.proposer_models` / `debate.critic_models`, e.g.
+# `deepseek-v4-flash` -> `deepseek-v4-pro` -> `gpt-5.6-sol`).  Only a role with no
+# working `(provider, model)` pair at all skips the AI step.
 #
 # Without any provider secret the job is a no-op dry run: it exits 0 with
 # `status=skipped_no_keys` instead of calling the endpoints unauthenticated.
@@ -19,6 +22,11 @@ name: pyq-agent
 #   * an AI outage completes the deterministic pipeline and exits 0 with
 #     `status=ai_unavailable`.
 # Only other non-zero exits fail the job.
+#
+# Publishing: the agent pushes a checkpoint commit to `pyq-db` every
+# CHECKPOINT_INTERVAL_SECONDS (900 s) while it runs (`PYQ_GIT_PUSH=1`, see
+# agent/gitpush.py) and the final step below repeats the same commit as a safety
+# net for a job that died before its first tick.
 
 on:
   workflow_dispatch:
@@ -49,6 +57,10 @@ env:
   MAX_WORK_SECONDS: "19800"
   # checkpoint every 15 minutes so an interrupted job resumes where it stopped
   CHECKPOINT_INTERVAL_SECONDS: "900"
+  # ... and publish that checkpoint to the `pyq-db` branch on the same tick, so a
+  # killed job never loses more than 15 minutes of work
+  PYQ_GIT_PUSH: "1"
+  PYQ_DB_BRANCH: "pyq-db"
   LOG_DIR: reports/logs
 
 jobs:
@@ -118,6 +130,27 @@ jobs:
             echo "status=skipped_no_keys"
           fi
 
+      - name: Probe the route matrix
+        if: steps.preflight.outputs.keys == 'true'
+        continue-on-error: true
+        env:
+          AGENTROUTER_KEYS: ${{ secrets.AGENTROUTER_KEYS }}
+          JUSTWOKER_KEYS: ${{ secrets.JUSTWOKER_KEYS }}
+          AR_PROXY_TOKEN: ${{ secrets.AR_PROXY_TOKEN }}
+          JW_PROXY_TOKEN: ${{ secrets.JW_PROXY_TOKEN }}
+        run: |
+          # One tiny completion per configured (provider, model) candidate: this is
+          # the diagnosis for "the AI step was skipped" runs — it shows exactly
+          # which route can serve the proposer and which can serve the critic.
+          # Never fatal, never prints a key (only the pool size).
+          python -m agent.cli routes --probe --timeout 30 > "$LOG_DIR/routes.log" 2>&1 || true
+          {
+            echo "## Route probe (provider × model)"
+            echo '```text'
+            cat "$LOG_DIR/routes.log"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Run the agent
         id: agent
         if: steps.preflight.outputs.keys == 'true'
@@ -127,6 +160,8 @@ jobs:
           AR_PROXY_TOKEN: ${{ secrets.AR_PROXY_TOKEN }}
           JW_PROXY_TOKEN: ${{ secrets.JW_PROXY_TOKEN }}
           MONID_API_KEY: ${{ secrets.MONID_API_KEY }}
+          # optional: overrides the GITHUB_TOKEN that actions/checkout persisted
+          PYQ_PUSH_TOKEN: ${{ secrets.PYQ_PUSH_TOKEN }}
         run: |
           set -o pipefail
           # The checkpoint published on `pyq-db` makes `run` resume completed
@@ -233,6 +268,11 @@ jobs:
           git config user.name "pyq-agent"
           git config user.email "pyq-agent@users.noreply.github.com"
 
+          # Safety net: the agent already published a checkpoint every 15 minutes
+          # while it ran (PYQ_GIT_PUSH=1, agent/gitpush.py), so this step usually
+          # finds nothing new — it exists for the job that died before its first
+          # tick, and repeats the same re-parent/push logic.
+          #
           # interrupted atomic writes leave `.tmp-*.part` siblings behind; never
           # commit them (they are gitignored, but `git add -f` overrides that)
           find state database -name '.tmp-*' -type f -delete 2>/dev/null || true
@@ -240,10 +280,10 @@ jobs:
           # stage the generated tree explicitly; `-f` overrides .gitignore
           git add -f state database
           if git diff --cached --quiet; then
-            echo "nothing to publish (generated tree unchanged)"
+            echo "nothing to publish (generated tree unchanged since the last checkpoint push)"
             exit 0
           fi
-          git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER}"
+          git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER} [skip ci]"
 
           # re-parent the checkpoint commit onto the existing pyq-db tip so the
           # push below is always a fast-forward; on the first run the branch does
@@ -251,7 +291,7 @@ jobs:
           if git ls-remote --exit-code --heads origin pyq-db >/dev/null 2>&1; then
             git fetch --depth=1 origin pyq-db
             git reset --soft FETCH_HEAD
-            git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER}"
+            git commit -m "pyq-agent: checkpoint run ${RUN_NUMBER} [skip ci]"
           fi
 
           # creates pyq-db on the first run, fast-forwards it afterwards

@@ -116,7 +116,12 @@ class VerifyUnavailableTests(unittest.TestCase):
             raise AssertionError("no request may be sent when no route is healthy")
 
         router = router_mod.get_router(make_settings())
-        router.halt("all routes exhausted", model="gpt-5.6-sol")
+        # The *whole* critic role must be dark — every candidate model of the role,
+        # not just the primary one: with model-level failover a single dead model
+        # (or a halted one) is served by the next candidate, so one halt is no
+        # longer an AI outage (see tests/test_model_fallback.py).
+        for model in make_settings().debate.candidates_for("critic"):
+            router.halt("all routes exhausted", model=model)
 
         result, _save, _ai, _routes = self._run(chat_effect=chat, records=records_for("ENG", 3))
 
