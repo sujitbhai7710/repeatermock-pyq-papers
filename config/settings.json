@@ -6,21 +6,58 @@
     "max": 2025
   },
   "work_window_seconds": 19800,
-  "checkpoint_interval_seconds": 1800,
+  "checkpoint_interval_seconds": 900,
   "rate_limit": {
     "consecutive_failure_threshold": 10,
     "halt_on_any_rate_limit_signal": true,
     "request_timeout_seconds": 120,
     "max_retries_per_request": 1,
     "provider_cooldown_seconds": 300,
-    "provider_cooldown_max_seconds": 3600
+    "provider_cooldown_max_seconds": 3600,
+    "provider_error_strike_limit": 3
   },
   "debate": {
     "max_rounds": 1,
     "proposer_model": "deepseek-v4-flash",
     "critic_model": "gpt-5.6-sol",
-    "proposer_provider_order": ["agentrouter", "jw"],
-    "critic_provider_order": ["agentrouter", "jw"]
+    "provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
+    "proposer_provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
+    "critic_provider_order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
+    "model_provider_orders": {}
+  },
+  "providers": {
+    "order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
+    "routes": {
+      "agentrouter": {
+        "label": "agentrouter.org (direct)",
+        "base_url": "https://agentrouter.org/v1",
+        "auth_style": "bearer",
+        "user_agent": "cline/2.0.0",
+        "env_keys": ["AGENTROUTER_KEYS", "OPENAI_KEYS"]
+      },
+      "ar-worker": {
+        "label": "ar-rotator worker",
+        "base_url": "https://ar-rotator.opencode-5a3.workers.dev/v1",
+        "auth_style": "bearer",
+        "user_agent": "browser",
+        "env_keys": ["AR_PROXY_TOKEN"]
+      },
+      "jw-worker": {
+        "label": "jw-rotator worker",
+        "base_url": "https://jw-rotator.opencode-5a3.workers.dev/v1",
+        "auth_style": "bearer",
+        "user_agent": "browser",
+        "env_keys": ["JW_PROXY_TOKEN"]
+      },
+      "justwoker": {
+        "label": "api.justwoker.icu (direct, Anthropic Messages API)",
+        "base_url": "https://api.justwoker.icu/v1",
+        "auth_style": "anthropic",
+        "user_agent": "browser",
+        "env_keys": ["JUSTWOKER_KEYS", "DEEPSEEK_KEYS"],
+        "path": "/messages"
+      }
+    }
   },
   "verify": {
     "batch_size": 20,

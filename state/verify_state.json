@@ -1,21 +1,52 @@
 {
   "version": 1,
-  "created_at": "2026-09-11T01:36:39Z",
+  "created_at": "2026-09-11T06:05:03Z",
   "phases": {
     "phase1": {
       "done": [
-        "0f8c04953b4fed6c08c5600b2b060cdd",
-        "15553cc25e71e1ce6f541b05e8e57b6b",
-        "1ee71ceaac4f7f6a2383831d231d71bb",
-        "39671d28bce67942f9c5ee7356706b83",
-        "543519a684d881f429b7e269b4a200fd",
-        "5b75a8e3b5a9b5ec666b3d8f65071a3e",
-        "6234657e37491bade70534df8f2f3f72",
-        "c16aec69640621ef88c1cdf85b004171",
-        "f2503ddd192a89eff331ac7db78e4f78"
+        "6bf7c8985df58c7d8b095154ebd53edc"
       ],
-      "cursor": 12
+      "cursor": 1,
+      "last_verdict": {
+        "batch": 0,
+        "at": "2026-09-11T06:06:47Z",
+        "items": 20,
+        "verdict": "agree",
+        "rounds": 1,
+        "agreed": true,
+        "provenance": {
+          "proposer": {
+            "model": "deepseek-v4-flash",
+            "provider": "ar-worker",
+            "latency_ms": 89235
+          },
+          "critic": {
+            "model": "gpt-5.6-sol",
+            "provider": "jw-worker",
+            "latency_ms": 11025
+          },
+          "final_author": "gpt-5.6-sol"
+        }
+      },
+      "progress": {
+        "status": "ok",
+        "items_total": 37990,
+        "items_done": 20,
+        "items_done_before": 0,
+        "items_this_run": 20,
+        "items_remaining": 37970,
+        "items_corrected": 0,
+        "batches_total": 1900,
+        "batches_done": 1,
+        "batches_this_run": 1,
+        "batches_failed": 2,
+        "batch_size": 20,
+        "eta_seconds": 201390.39668226294,
+        "elapsed_seconds": 144.5,
+        "phase_seconds": 106.1
+      },
+      "last_checkpoint_monotonic": 245.282930124
     }
   },
-  "updated_at": "2026-09-11T02:07:09Z"
+  "updated_at": "2026-09-11T06:06:50Z"
 }

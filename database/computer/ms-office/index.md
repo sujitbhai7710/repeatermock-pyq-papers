@@ -1,0 +1,96 @@
+# ms-office
+
+- **Level**: chapter
+- **Subject**: COMPUTER
+- **Chapter**: MS Office
+- **Questions (this subtree)**: 62
+- **Questions at this level**: 61
+- **Children**: 1
+
+| Child | Level | Questions |
+|---|---|---|
+| _other | other | 1 |
+
+## By exam
+
+| Exam | Questions |
+|---|---|
+| CGL | 47 |
+| CHSL | 14 |
+
+## By year
+
+| Year | Questions |
+|---|---|
+| 2022 | 25 |
+| 2023 | 13 |
+| 2024 | 16 |
+| 2025 | 7 |
+
+## Question ids
+
+Resolve any id with `python tools/resolve.py <qid>`.
+
+```text
+6412bbfb2a9b324cd2d61c91  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json #132
+6412bd4e5b6f31d6ceb706ff  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json #136
+6412bda29a7d91f2bcb27992  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json #138
+6412be01d263df64ce206fc6  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json #141
+6412bede90318e4c7c6aa7a7  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json #147
+6412bf08c2c5549d4e824452  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json #148
+6412b450267f3a1ef2fda74d  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json #138
+6412b52899bf001f431a715c  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json #140
+6412b618d263df64ce1f73ba  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json #143
+6412b7ab9c9b4aae0cdcffa8  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json #147
+6412b8c95ed52adc42d1a779  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json #150
+64108a8d08368e95458ceccb  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json #134
+64108acb63d84b0f41c699eb  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json #136
+64108b3ae7f116c414789e44  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json #140
+64108b69e7f116c41478a357  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json #141
+64108bba3fbb9cb29a210657  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json #143
+64108c30e27e7c049782e5ac  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_6_March_2023_69611913ed11a81e6e8fae62.json #148
+6410bef8096d9c2a06d0f0d4  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json #137
+6410bf39ff5d69c530726958  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json #140
+6410bf595eb3e6ad6aa0db5c  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json #141
+6410bf7b096d9c2a06d103f9  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json #142
+6410c0349c8fcf227b79e172  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json #148
+6542a167748dcf31d9499267  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/2023_-_2024/SSC_CGL_Tier-II_2023_Official_Paper-I_Held_On_26_Oct_2023_69611916ff6bb82bbdbfaf09.json #133
+6542a23a272136a453a766ab  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/2023_-_2024/SSC_CGL_Tier-II_2023_Official_Paper-I_Held_On_26_Oct_2023_69611916ff6bb82bbdbfaf09.json #140
+6542a27cb7d3408fefa42e85  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/2023_-_2024/SSC_CGL_Tier-II_2023_Official_Paper-I_Held_On_26_Oct_2023_69611916ff6bb82bbdbfaf09.json #143
+6542a355660e71560d0ecc65  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/2023_-_2024/SSC_CGL_Tier-II_2023_Official_Paper-I_Held_On_26_Oct_2023_69611916ff6bb82bbdbfaf09.json #148
+6542a3767850f70965934b3f  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/2023_-_2024/SSC_CGL_Tier-II_2023_Official_Paper-I_Held_On_26_Oct_2023_69611916ff6bb82bbdbfaf09.json #149
+67943a4e74c031a125d34bcb  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json #132
+67943aa779b7aed04c7dd2c6  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json #134
+67943ac09aabc907fadf7ca6  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json #135
+67943b292ee9bf5afd6dd6c4  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json #137
+67943b93406fd9d26a8d04aa  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json #141
+67943bb4fba5b26fcfdb152e  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json #142
+67943d60dbd2992fea8c3c2f  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json #150
+67975f03d58a86ce86db0783  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_20_Jan_2025_696119182d2e7bac49658f70.json #136
+67975f17206346d03869b7a6  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_20_Jan_2025_696119182d2e7bac49658f70.json #137
+67975f3d0ff2d2ba098158b3  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_20_Jan_2025_696119182d2e7bac49658f70.json #139
+67975f52541b3f3198dc5bd2  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_20_Jan_2025_696119182d2e7bac49658f70.json #140
+67975f77cb76fc491bbf70c2  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_20_Jan_2025_696119182d2e7bac49658f70.json #142
+67975fa0775ac8c3732ef521  CGL 2024 SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_20_Jan_2025_696119182d2e7bac49658f70.json #144
+697e4a91d4cc597d86084193  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json #133
+697e4a937e1570bb3ec65a79  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json #138
+697e4a9485861778b9bd1267  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json #140
+697e4a95b254bdc9b0df4893  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json #143
+697e4a96bc84baef529e1231  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json #146
+697e4a97def7d1ec80258958  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json #149
+697e4a982d7c46160be3e902  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json #150
+64a6aa95a116fa69e4f96806  CHSL 2022 SSC-CHSL/PYP_Tier_II/SSC_CHSL_2022_Tier-II_Official_Paper_Held_On_26_Jun_2023_Shift_1_67d0f2e7e530f382c2c7539a.json #121
+64a6aac0255c03c67cbd0160  CHSL 2022 SSC-CHSL/PYP_Tier_II/SSC_CHSL_2022_Tier-II_Official_Paper_Held_On_26_Jun_2023_Shift_1_67d0f2e7e530f382c2c7539a.json #123
+64a6aaeb2e65c87dfd0a70a9  CHSL 2022 SSC-CHSL/PYP_Tier_II/SSC_CHSL_2022_Tier-II_Official_Paper_Held_On_26_Jun_2023_Shift_1_67d0f2e7e530f382c2c7539a.json #125
+65a62685eca5fef7503a5bd3  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_02_Nov_2023_Shift_1_67d0f35041a98e5eafce6c6c.json #122
+65a6275a152e7b6cacb45f43  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_02_Nov_2023_Shift_1_67d0f35041a98e5eafce6c6c.json #126
+65a62790af4ed7bbad6084e8  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_02_Nov_2023_Shift_1_67d0f35041a98e5eafce6c6c.json #127
+65a62895ef6ba3adb6fb9a10  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_02_Nov_2023_Shift_1_67d0f35041a98e5eafce6c6c.json #132
+65a6b40cfb6c02b02a229b47  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #122
+65a6b4e12031f8acdac3c6d9  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #127
+65a6b62637662095dbe862ae  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #132
+65a6b6439200130124055659  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #133
+6749d551726cd77e78e19039  CHSL 2024 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Tier-II_Exam_2024_Official_Paper_Held_On_18_Nov_2024_67d0f3cc35e5b86eef7117a1.json #121
+6749d59c818734ac1067b299  CHSL 2024 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Tier-II_Exam_2024_Official_Paper_Held_On_18_Nov_2024_67d0f3cc35e5b86eef7117a1.json #125
+6749d63fafe8ae48ce94f8de  CHSL 2024 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Tier-II_Exam_2024_Official_Paper_Held_On_18_Nov_2024_67d0f3cc35e5b86eef7117a1.json #134
+```

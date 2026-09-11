@@ -306,21 +306,62 @@ python tools/mocks.py build --kind concept --id math-profit-and-loss-profit-and-
 
 | Variable | Purpose |
 |---|---|
-| `OPENAI_KEYS` | comma-separated key pool for the **agentrouter** provider |
-| `DEEPSEEK_KEYS` | comma-separated key pool for the **jw** provider |
-| `AR_PROXY_TOKEN` | single bearer token for agentrouter |
-| `JW_PROXY_TOKEN` | single bearer token for jw |
+| `AGENTROUTER_KEYS` | comma-separated key pool for the **agentrouter** route (`https://agentrouter.org/v1`, bearer, `User-Agent: cline/2.0.0`) |
+| `JUSTWOKER_KEYS` | comma-separated key pool for the **justwoker** route (`https://api.justwoker.icu/v1`, Anthropic Messages API) |
+| `AR_PROXY_TOKEN` | bearer token for the **ar-worker** route (`ar-rotator.opencode-5a3.workers.dev`) |
+| `JW_PROXY_TOKEN` | bearer token for the **jw-worker** route (`jw-rotator.opencode-5a3.workers.dev`) |
+| `OPENAI_KEYS` / `DEEPSEEK_KEYS` | historical aliases: they feed the `agentrouter` / `justwoker` pools |
 | `MONID_API_KEY` | Monid TinyFish web search/fetch |
 | `MAX_WORK_SECONDS` | override the work window (default `19800`) |
-| `PYQ_INDEX_GZIP` | also emit the optional single-file `state/index/ALL.jsonl.gz` |
-| `PYQ_USER_AGENT` | override the browser user agent used for every HTTP call |
-| `CHECKPOINT_INTERVAL_SECONDS` | override the checkpoint interval (default `1800`) |
+| `CHECKPOINT_INTERVAL_SECONDS` | override the checkpoint interval (default `900` = 15 min) |
 | `RATE_LIMIT_THRESHOLD` | override the consecutive-failure threshold (default `10`) |
+| `PROVIDER_COOLDOWN_SECONDS` / `PROVIDER_COOLDOWN_MAX_SECONDS` | circuit-breaker cooldown of a route (default `300` / `3600`) |
+| `PROVIDER_ERROR_STRIKE_LIMIT` | consecutive hard errors after which a route's breaker opens (default `3`, `0` disables) |
+| `PYQ_INDEX_GZIP` | also emit the optional single-file `state/index/ALL.jsonl.gz` |
+| `PYQ_USER_AGENT` | override the browser user agent used by the worker routes |
+| `PYQ_CLINE_USER_AGENT` | override the user agent the direct agentrouter route sends (default `cline/2.0.0`) |
 | `PYQ_PROJECT_ROOT` | force the project root |
 | `PYQ_RUN_ID` | force the run id |
 
+Routes and their order live in the `providers` block of `config/settings.json`
+(`providers.order` + `providers.routes`), so a route can be repaired or moved
+without touching code:
+
+```json
+"providers": {
+  "order": ["agentrouter", "ar-worker", "jw-worker", "justwoker"],
+  "routes": {
+    "agentrouter": {"base_url": "https://agentrouter.org/v1", "auth_style": "bearer",
+                    "user_agent": "cline/2.0.0", "env_keys": ["AGENTROUTER_KEYS", "OPENAI_KEYS"]},
+    "justwoker":   {"base_url": "https://api.justwoker.icu/v1", "auth_style": "anthropic",
+                    "user_agent": "browser", "env_keys": ["JUSTWOKER_KEYS", "DEEPSEEK_KEYS"],
+                    "path": "/messages"}
+  }
+}
+```
+
 Keys are read from the environment only, are never written to a file, and are
 never logged (the router records at most a `...abcd` suffix).
+
+### Failover, breakers and the AI-outage rule
+
+* A request walks the route order **for its model** and stops at the first route
+  that answers; the circuit breaker is keyed by `(provider, model)`, so a
+  `deepseek-v4-flash` outage on one worker never takes that worker out of
+  rotation for `gpt-5.6-sol`.
+* A rate-limit / exhaustion answer (`402`, `429`, `503`, `all_keys_exhausted`)
+  opens the route's breaker (300 s, doubling to 3,600 s) and fails over
+  immediately; three consecutive hard errors (`401`, `403`, `5xx`) do the same.
+* Only a **total outage** (no route healthy for a model) halts that model.
+  The run then finishes the deterministic pipeline (phase 0 + python extraction
+  + database + mocks), checkpoints, and exits **0** with
+  `status=ai_unavailable` — recorded in `state/checkpoint.json`,
+  `state/manifest.json` and `database/_meta/PROGRESS.md`. A missing AI never
+  fails a run; only genuine code/data errors exit non-zero.
+* A run whose AI step was cut short reports its progress per phase (items
+  total / done / % / this run / remaining / ETA) and the per-route health
+  (ok / fail / rate-limited / cooldown / retry-in) in `PROGRESS.md`, refreshed
+  at every checkpoint (every `CHECKPOINT_INTERVAL_SECONDS`, default 900 s).
 
 ---
 
@@ -333,21 +374,29 @@ never logged (the router records at most a `...abcd` suffix).
   `permissions: contents: write`;
 * steps: checkout (`fetch-depth: 0`) → setup-python 3.11 →
   `pip install -r requirements.txt` (a no-op: the agent is stdlib-only) →
-  `python -m agent.cli run` with `MAX_WORK_SECONDS=19800` and the secrets
-  `AR_PROXY_TOKEN`, `JW_PROXY_TOKEN`, `MONID_API_KEY` →
+  `python -m agent.cli run` with `MAX_WORK_SECONDS=19800`,
+  `CHECKPOINT_INTERVAL_SECONDS=900` and the secrets
+  `AGENTROUTER_KEYS`, `JUSTWOKER_KEYS`, `AR_PROXY_TOKEN`, `JW_PROXY_TOKEN`,
+  `MONID_API_KEY` →
   **`python -m agent.cli audit`** (fails the job on any structural defect) →
-  `database/_meta/PROGRESS.md` (plus the audit transcript) in the job summary →
+  `state/checkpoint.json` status + `database/_meta/PROGRESS.md` (plus the audit
+  transcript) in the job summary →
   `upload-artifact` (logs, checkpoint, coverage) → commit the generated tree to
   the long-lived **`pyq-db`** checkpoint branch with `git add -f state database`
   and `git push origin HEAD:pyq-db` (creates the branch on the first run,
   fast-forwards afterwards by re-parenting onto the branch tip; `.tmp-*.part`
   leftovers are deleted first). The default branch is never modified.
-* **no-op safe**: with no worker secret configured the job writes
+* **no-op safe**: with no provider secret configured the job writes
   `status=skipped_no_keys` to the summary and exits 0 instead of calling the
   endpoints unauthenticated;
-* every HTTP call uses a **browser `User-Agent`** (override with
-  `PYQ_USER_AGENT`): Cloudflare answers the stock Python user agent with
-  `HTTP 403 error 1010`.
+* **green on soft stops**: exit `0` (`ok` / `ai_unavailable`), `3`
+  (`rate_limited`) and `4` (`time_limit`) all pass the run step; only other
+  non-zero exits fail the job;
+* every HTTP call uses the user agent its route requires — a **browser
+  `User-Agent`** for the workers (override with `PYQ_USER_AGENT`; Cloudflare
+  answers the stock Python user agent with `HTTP 403 error 1010`) and
+  `cline/2.0.0` for the direct agentrouter endpoint (override with
+  `PYQ_CLINE_USER_AGENT`).
 
 Manual run options: a single phase (`phase` input) or python-only
 (`no_ai=true`, no LLM calls at all). Scheduled runs pass `--fresh` (the corpus
@@ -527,3 +576,12 @@ README, which replaces the original two-line one). Verify with:
 ```bash
 git status --porcelain
 ```
+
+---
+
+## Handover docs (read these first)
+
+- [`MEMORY.md`](MEMORY.md) — durable project memory: scope, invariants, data facts, per-exam
+  section layout table, commands, providers/secrets, and the things you must not "fix".
+- [`LESSONS.md`](LESSONS.md) — every problem hit so far with symptom -> cause -> fix -> verification,
+  plus a quick troubleshooting index.

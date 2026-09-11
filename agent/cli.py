@@ -106,33 +106,10 @@ def build_parser() -> argparse.ArgumentParser:
 # ---------------------------------------------------------------------------
 
 def cmd_taxonomy(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
-    from . import discover
-
     paths.ensure_dir(paths.STATE_DIR)
-    tax = taxonomy.build_taxonomy()
-    taxonomy.write_taxonomy(tax)
-    log.info(
-        "taxonomy: "
-        + ", ".join(
-            f"{subject}: {body['chapters']} chapters / {body['topics']} topics / {body['concepts']} concepts"
-            for subject, body in tax["counts"].items()
-        )
+    tax, alias, cache, labels = _build_taxonomy(
+        settings, exams, log, from_cache=bool(getattr(args, "from_cache", False))
     )
-
-    cache = paths.STATE_DIR / "labels.json"
-    if args.from_cache and cache.is_file():
-        labels = read_json(cache, default=[])
-        log.info(f"labels: reusing {len(labels)} cached raw concepts/tags")
-    else:
-        papers, _ = discover.discover(settings, exams)
-        labels = collect_raw_labels(papers)
-        from .util import write_json
-
-        write_json(cache, labels)
-        log.info(f"labels: collected {len(labels)} raw concepts/tags from {len(papers)} papers")
-
-    alias = taxonomy.build_alias_map(tax, labels)
-    taxonomy.write_alias_map(alias)
     stats = alias["stats"]
     log.info(
         "alias map: {total} keys (curated={curated} taxonomy={taxonomy} observed={observed} "
@@ -154,6 +131,53 @@ def cmd_taxonomy(args: argparse.Namespace, settings: Settings, exams: ExamTable,
     tracking.record_files("taxonomy", [paths.TAXONOMY_JSON, paths.ALIAS_MAP_JSON, cache])
     return EXIT_OK
 
+def _build_taxonomy(settings: Settings, exams: ExamTable, log: Log, *, from_cache: bool):
+    """Parse ``chapter-and-topic/*.md`` -> taxonomy + alias map (+ label cache)."""
+
+    from . import discover
+    from .util import write_json
+
+    tax = taxonomy.build_taxonomy()
+    taxonomy.write_taxonomy(tax)
+    log.info(
+        "taxonomy: "
+        + ", ".join(
+            f"{subject}: {body['chapters']} chapters / {body['topics']} topics / {body['concepts']} concepts"
+            for subject, body in tax["counts"].items()
+        )
+    )
+
+    cache = paths.STATE_DIR / "labels.json"
+    if from_cache and cache.is_file():
+        labels = read_json(cache, default=[])
+        log.info(f"labels: reusing {len(labels)} cached raw concepts/tags")
+    else:
+        papers, _ = discover.discover(settings, exams)
+        labels = collect_raw_labels(papers)
+        write_json(cache, labels)
+        log.info(f"labels: collected {len(labels)} raw concepts/tags from {len(papers)} papers")
+
+    alias = taxonomy.build_alias_map(tax, labels)
+    taxonomy.write_alias_map(alias)
+    return tax, alias, cache, labels
+
+def _ensure_taxonomy(settings: Settings, exams: ExamTable, log: Log) -> bool:
+    """Build the taxonomy before a fresh run needs it.
+
+    ``state/`` is generated and gitignored, so a fresh CI checkout has no
+    ``taxonomy.json``: without it every question would fall through to
+    ``unclassified``.  Returns ``True`` when the taxonomy was (re)built.
+    """
+
+    if paths.TAXONOMY_JSON.is_file() and paths.ALIAS_MAP_JSON.is_file():
+        return False
+    log.step("taxonomy missing – rebuilding it from chapter-and-topic/*.md")
+    tax, alias, cache, _labels = _build_taxonomy(settings, exams, log, from_cache=True)
+    tracking.journal("taxonomy.complete", tax["counts"])
+    tracking.record_files("taxonomy", [paths.TAXONOMY_JSON, paths.ALIAS_MAP_JSON, cache])
+    log.info(f"taxonomy: rebuilt ({len(alias['map'])} alias keys)")
+    return True
+
 def _make_context(settings: Settings, exams: ExamTable, log: Log, classifier: Classifier, run_id: str, window=None):
     from .phases import PipelineContext
 
@@ -173,7 +197,14 @@ def os_environ_keys() -> List[str]:
     import os
 
     found: List[str] = []
-    for name in ("OPENAI_KEYS", "DEEPSEEK_KEYS", "AR_PROXY_TOKEN", "JW_PROXY_TOKEN"):
+    for name in (
+        "AGENTROUTER_KEYS",
+        "OPENAI_KEYS",
+        "JUSTWOKER_KEYS",
+        "DEEPSEEK_KEYS",
+        "AR_PROXY_TOKEN",
+        "JW_PROXY_TOKEN",
+    ):
         if os.environ.get(name, "").strip():
             found.append(name)
     return found
@@ -185,29 +216,69 @@ def cmd_phase(
     log: Log,
     run_id: str,
     window=None,
+    *,
+    no_ai: bool = False,
 ) -> int:
     from .phases import phase_module
 
     name = f"phase{number}"
     classifier = load_classifier(log)
     ctx = _make_context(settings, exams, log, classifier, run_id, window=window)
+    ctx.no_ai = no_ai
     module = phase_module(name)
     result = module.run(ctx)
+    notes = _ai_notes(result)
     tracking.save_progress(
-        tracking.record_phase(name, result.status, result.counters, notes=result.notes)
+        tracking.record_phase(name, result.status, result.counters, notes=notes or None)
     )
+    _record_phase_ai(name, result)
     tracking.write_progress_md(extra=_coverage_extra(ctx))
     print(json.dumps(result.as_dict(), indent=2, ensure_ascii=False))
     return exit_code_for_status(result.status)
+
+def _ai_notes(result) -> List[str]:
+    """Notes that belong next to the AI status rather than the phase counters."""
+
+    notes: List[str] = []
+    for note in result.notes:
+        if note.startswith("halted (AI unavailable)") or note.startswith("no healthy route"):
+            notes.append(note)
+    return notes
+
+def _record_phase_ai(phase: str, result) -> None:
+    """Publish the phase's AI work-item progress + route health (R6)."""
+
+    counters = result.counters or {}
+    if counters.get("ai_items_total") is not None:
+        from . import router as router_mod
+
+        settings = config.settings()
+        router = router_mod.get_router(settings)
+        tracking.record_ai(
+            phase,
+            {
+                "items_total": counters.get("ai_items_total"),
+                "items_done": counters.get("ai_items_done"),
+                "items_this_run": counters.get("ai_items_this_run"),
+                "items_remaining": counters.get("ai_items_remaining"),
+                "eta_seconds": counters.get("ai_eta_seconds"),
+                "batches_verified": counters.get("ai_batches_verified"),
+                "batches_failed": counters.get("ai_batches_failed"),
+            },
+            status=str(counters.get("verification") or ""),
+        )
+        tracking.record_routes(router.provider_report())
 
 def exit_code_for_status(status: str) -> int:
     """Phase/verify status -> process exit code.
 
     ``rate_limited`` (3) and ``time_limit`` (4) are **soft stops**: the phase
     checkpointed and published, so the shell must not treat them as failures.
+    ``ai_unavailable`` (and ``skipped_no_keys``) are not even soft stops — the
+    deterministic pipeline finished, so they exit **0**.
     """
 
-    if status in ("ok", "done", "complete"):
+    if status in ("ok", "done", "complete", "skipped_no_keys", checkpoint.STATUS_AI_UNAVAILABLE):
         return EXIT_OK
     if status == checkpoint.STATUS_RATE_LIMITED:
         return EXIT_RATE_LIMITED
@@ -276,11 +347,20 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
             f"(completed: {completed or 'none'})"
         )
 
+    # ``state/`` is generated: a fresh tree (CI) has no taxonomy, and without it
+    # phase 0 would classify nothing.
+    if args.phase in (None, 0):
+        _ensure_taxonomy(settings, exams, log)
+
     phases = [f"phase{args.phase}"] if args.phase is not None else list(PHASE_ORDER)
     # One work window spans the whole run (not one per phase): MAX_WORK_SECONDS
     # bounds the job, and a spent window stops the run cleanly with exit code 4.
     window = checkpoint.make_window(settings)
     exit_code = EXIT_OK
+    #: ``ok`` / ``ai_unavailable`` — a phase-level AI outage degrades the run
+    #: status but never stops the deterministic pipeline (R4).
+    run_status = checkpoint.STATUS_OK
+    no_ai = bool(getattr(args, "no_ai", False))
 
     for name in phases:
         if name in completed and resume:
@@ -289,55 +369,72 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
         if window.expired():
             note = f"work window expired after {window.elapsed():.0f}s – phase not started"
             log.warn(f"{name}: {note} – checkpointing")
-            checkpoint.save_checkpoint(
-                checkpoint.new_checkpoint(
-                    name,
-                    run_id,
-                    {"completed": completed, "next": name},
-                    window,
-                    status=checkpoint.STATUS_TIME_LIMIT,
-                    notes=[note],
-                ),
-                paths.CHECKPOINT_JSON,
+            _save_status(
+                checkpoint.STATUS_TIME_LIMIT,
+                name,
+                run_id,
+                {"completed": completed, "next": name},
+                window,
+                note=note,
+                log=log,
             )
-            tracking.save_progress(tracking.record_phase(name, checkpoint.STATUS_TIME_LIMIT, notes=[note]))
             tracking.write_progress_md(extra=None)
             exit_code = EXIT_TIME_LIMIT
+            run_status = checkpoint.STATUS_TIME_LIMIT
             break
         checkpoint.save_checkpoint(
             checkpoint.new_checkpoint(name, run_id, {"completed": completed}, window),
             paths.CHECKPOINT_JSON,
         )
-        code = cmd_phase(int(name[-1]), settings, exams, log, run_id, window=window)
-        if code != EXIT_OK:
+        code = cmd_phase(int(name[-1]), settings, exams, log, run_id, window=window, no_ai=no_ai)
+        if code not in (EXIT_OK,):
             exit_code = code
             soft_status = {
                 EXIT_RATE_LIMITED: checkpoint.STATUS_RATE_LIMITED,
                 EXIT_TIME_LIMIT: checkpoint.STATUS_TIME_LIMIT,
             }.get(code, checkpoint.STATUS_ERROR)
-            checkpoint.save_checkpoint(
-                checkpoint.new_checkpoint(
-                    name,
-                    run_id,
-                    {"completed": completed, "next": name},
-                    window,
-                    status=soft_status,
-                ),
-                paths.CHECKPOINT_JSON,
+            note = (
+                f"{name}: stopped with status={soft_status} "
+                f"(exit {code}) – resumes from state/checkpoint.json"
+            )
+            _save_status(
+                soft_status,
+                name,
+                run_id,
+                {"completed": completed, "next": name},
+                window,
+                note=note,
+                log=log,
             )
             tracking.write_progress_md(extra=None)
+            run_status = soft_status
             break
+
         completed.append(name)
+        phase_status = _phase_status(name, checkpoint.STATUS_OK)
+        if phase_status == "ai_unavailable":
+            # The AI step was skipped, the phase itself is deterministic and
+            # complete: keep going, the run is still a success (exit 0).
+            run_status = checkpoint.STATUS_AI_UNAVAILABLE
+            log.warn(
+                f"{name}: AI unavailable – database slice written, continuing with the "
+                "deterministic pipeline (run status=ai_unavailable, exit 0)"
+            )
         checkpoint.save_checkpoint(
             checkpoint.new_checkpoint(
-                name, run_id, {"completed": completed, "next": _next_phase(completed)}, window
+                name,
+                run_id,
+                {"completed": completed, "next": _next_phase(completed)},
+                window,
+                status=run_status,
             ),
             paths.CHECKPOINT_JSON,
         )
         tracking.write_progress_md(extra=None)
 
-    # The mock catalogue is derived from the finished index; only build it when
-    # the whole pipeline ran and every phase succeeded.
+    # The mock catalogue is derived from the finished index; build it whenever the
+    # pipeline ran to the end without a hard error — an AI outage must not cost
+    # the run its mock packs.
     if exit_code == EXIT_OK and args.phase is None and _next_phase(completed) is None:
         from . import mockdata
 
@@ -350,7 +447,52 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
         )
         tracking.write_progress_md(extra=None)
 
+    if exit_code == EXIT_OK:
+        note = tracking.STATUS_NOTES.get(run_status, "")
+        tracking.record_status(run_status, note=note or None)
+        checkpoint.save_checkpoint(
+            checkpoint.new_checkpoint(
+                phases[-1] if phases else "phase0",
+                run_id,
+                {"completed": completed, "next": _next_phase(completed)},
+                window,
+                status=run_status,
+                notes=[note] if note else None,
+            ),
+            paths.CHECKPOINT_JSON,
+        )
+        tracking.write_progress_md(extra=None)
+        log.info(f"run complete: status={run_status} (exit 0)")
     return exit_code
+
+def _save_status(
+    status: str,
+    phase: str,
+    run_id: str,
+    cursor: Dict[str, Any],
+    window,
+    *,
+    note: Optional[str] = None,
+    log: Optional[Log] = None,
+) -> None:
+    """Persist a run status to the checkpoint, manifest and progress roll-up."""
+
+    if log is not None:
+        log.warn(f"run status={status} at {phase}")
+    checkpoint.save_checkpoint(
+        checkpoint.new_checkpoint(
+            phase, run_id, cursor, window, status=status, notes=[note] if note else None
+        ),
+        paths.CHECKPOINT_JSON,
+    )
+    tracking.record_phase(phase, status, notes=[note] if note else None)
+    tracking.record_status(status, note=note)
+
+def _phase_status(phase: str, default: str) -> str:
+    """The status the phase last recorded in ``state/progress.json``."""
+
+    entry = (tracking.load_progress().get("phases") or {}).get(phase) or {}
+    return str(entry.get("status") or default)
 
 def _next_phase(completed: Sequence[str]) -> Optional[str]:
     from .phases import PHASE_ORDER
@@ -373,9 +515,15 @@ def cmd_verify_db(args: argparse.Namespace, settings: Settings, exams: ExamTable
         window=checkpoint.make_window(settings),
     )
     print(json.dumps(result.as_dict(), indent=2, ensure_ascii=False))
-    # ``skipped_no_keys`` is an expected, successful outcome (python extraction is
-    # kept); only a real failure or a halt is an error for the shell.
-    if result.status in ("ok", verify.STATUS_SKIPPED):
+    # a standalone verification run is a run: record its status so the job summary
+    # and PROGRESS.md do not keep showing the previous run's outcome
+    if result.status not in ("ok", verify.STATUS_SKIPPED):
+        tracking.record_status(result.status, note="; ".join(result.notes[:2]) or None)
+        tracking.write_progress_md(extra=_coverage_extra(None))
+    # ``skipped_no_keys`` (offline) and ``ai_unavailable`` (every route down) are
+    # expected, successful outcomes: the python extraction is kept and the run
+    # does not fail because a provider is having a bad day.
+    if result.status in ("ok", verify.STATUS_SKIPPED, verify.STATUS_AI_UNAVAILABLE):
         return EXIT_OK
     return exit_code_for_status(result.status)
 

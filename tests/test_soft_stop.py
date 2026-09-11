@@ -13,7 +13,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from agent import checkpoint, cli, config, llm, paths, router as router_mod, verify
+from agent import checkpoint, cli, config, llm, paths, verify
 from agent.phases import PhaseResult
 from agent.util import Log
 
@@ -96,7 +96,17 @@ class VerifyWindowTests(unittest.TestCase):
             verify.indexer, "read_index", return_value=records
         ), mock.patch.object(verify, "load_state", return_value={"phases": {}}), mock.patch.object(
             verify, "save_state"
-        ) as save_state:
+        ) as save_state, mock.patch.object(
+            verify.ckpt, "load_checkpoint", return_value={}
+        ), mock.patch.object(
+            verify.ckpt, "save_checkpoint"
+        ) as save_checkpoint, mock.patch.object(
+            verify.tracking, "record_ai"
+        ), mock.patch.object(
+            verify.tracking, "record_routes"
+        ), mock.patch.object(
+            verify.tracking, "write_progress_md"
+        ):
             result = verify.verify_database(
                 settings(), phase="phase1", window=window, log=QUIET
             )
@@ -105,6 +115,49 @@ class VerifyWindowTests(unittest.TestCase):
         self.assertEqual(result.counters.get("batches_not_attempted"), 1)
         self.assertTrue(any("work window expired" in note for note in result.notes))
         save_state.assert_called()
+        # the soft stop is check-pointed so the next run resumes here
+        self.assertEqual(save_checkpoint.call_args[0][0].status, checkpoint.STATUS_TIME_LIMIT)
+        self.assertEqual(save_checkpoint.call_args[0][0].cursor["verify"]["items_total"], 1)
+
+    def test_ai_unavailable_is_never_a_failure(self) -> None:
+        """A total outage keeps the python extraction and exits 0 (R4)."""
+
+        def chat(**kwargs):
+            raise llm.LlmRateLimited("HTTP 503: all_keys_exhausted")
+
+        records = [
+            {
+                "qid": "q1",
+                "subject": "ENG",
+                "exam": "CGL",
+                "year": 2024,
+                "ordinal": 1,
+                "concept": "Grammar",
+                "chapter": "Grammar",
+            }
+        ]
+        keys = {"agentrouter": ["k"], "ar-worker": ["k"], "jw-worker": ["k"], "justwoker": ["k"]}
+        with mock.patch.object(llm, "provider_keys", return_value=keys), mock.patch.object(
+            llm, "chat_completion", side_effect=chat
+        ), mock.patch.object(verify.indexer, "read_index", return_value=records), mock.patch.object(
+            verify, "load_state", return_value={"phases": {}}
+        ), mock.patch.object(verify, "save_state"), mock.patch.object(
+            verify.ckpt, "load_checkpoint", return_value={}
+        ), mock.patch.object(
+            verify.ckpt, "save_checkpoint"
+        ), mock.patch.object(
+            verify.tracking, "record_ai"
+        ), mock.patch.object(
+            verify.tracking, "record_routes"
+        ), mock.patch.object(
+            verify.tracking, "write_progress_md"
+        ):
+            result = verify.verify_database(
+                settings(provider_cooldown_seconds=300), phase="phase1", log=QUIET
+            )
+
+        self.assertEqual(result.status, verify.STATUS_AI_UNAVAILABLE)
+        self.assertEqual(cli.exit_code_for_status(result.status), cli.EXIT_OK)
 
 
 class RunSoftStopTests(unittest.TestCase):

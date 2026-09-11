@@ -3,15 +3,15 @@
 ## Coverage identity
 
 ```text
-placed + skipped_hindi + unclassified + flagged_papers_questions = 120671 + 3456 + 17963 + 0 = 142090
+placed + skipped_hindi + unclassified + flagged_papers_questions = 130020 + 3456 + 8614 + 0 = 142090
 in-scope questions                                        = 142090
 balanced = True
 ```
 
 | Bucket | Questions | Meaning |
 |---|---|---|
-| placed | 120,671 | subject assigned AND concept mapped to the taxonomy |
-| unclassified | 17,963 | subject assigned, concept not mappable (incl. source label `Unidentified`) |
+| placed | 130,020 | subject assigned AND concept mapped to the taxonomy |
+| unclassified | 8,614 | subject assigned, concept not mappable (incl. source label `Unidentified`) |
 | skipped_hindi | 3,456 | Devanagari present in the question prompt or one of its options |
 | flagged_papers_questions | 0 | paper failed signature validation and no confident layout could be derived |
 

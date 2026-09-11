@@ -1,9 +1,24 @@
 """Checkpointing and the work window.
 
 A run is bounded by ``MAX_WORK_SECONDS`` (default 19,800 s = 5.5 h) and writes a
-checkpoint every ``CHECKPOINT_INTERVAL_SECONDS`` (default 1,800 s).  All writes go
-through :mod:`agent.util` (temp file + ``os.replace``) so a killed run never
-leaves a half-written JSON file behind.
+checkpoint every ``CHECKPOINT_INTERVAL_SECONDS`` (default 900 s = 15 min).  All
+writes go through :mod:`agent.util` (temp file + ``os.replace``) so a killed run
+never leaves a half-written JSON file behind.
+
+Statuses
+--------
+``ok``
+    the phase / run finished.
+``time_limit``
+    the work window expired — soft stop, exit code 4, resume from the checkpoint.
+``rate_limited``
+    every route answered with a rate-limit signal — soft stop, exit code 3.
+``ai_unavailable``
+    no route could serve a model (all cooling down / failing / unkeyed).  The
+    deterministic pipeline still runs to completion, so this is a **success**
+    (exit code 0) that merely records that the AI step was skipped.
+``error``
+    a genuine code/data failure.
 """
 
 from __future__ import annotations
@@ -49,7 +64,11 @@ class WorkWindow:
 STATUS_OK = "ok"
 STATUS_RATE_LIMITED = "rate_limited"
 STATUS_TIME_LIMIT = "time_limit"
+STATUS_AI_UNAVAILABLE = "ai_unavailable"
 STATUS_ERROR = "error"
+
+#: statuses that are a *soft stop*: the run checkpointed and published its work
+SOFT_STATUSES = (STATUS_OK, STATUS_RATE_LIMITED, STATUS_TIME_LIMIT, STATUS_AI_UNAVAILABLE)
 
 PHASES = ("phase0", "phase1", "phase2", "phase3", "phase4", "phase5")
 

@@ -30,11 +30,22 @@
   "grammar": {
     "status": "ok",
     "counters": {
-      "rules": 0
+      "rules": 129,
+      "grammar_questions_matched": 6480,
+      "grammar_questions_unmapped": 3913,
+      "rules_with_questions": 98,
+      "type:Error Detection": 920,
+      "type:Phrasal Verb": 13,
+      "type:Sentence Improvement": 2836,
+      "type:Shuffling of Sentence parts": 247,
+      "type:Shuffling of Sentences in a passage": 58
     },
-    "files": [],
-    "notes": [
-      "taxonomy has no ENG rules"
-    ]
+    "files": [
+      "database/english/_analysis/grammar/rules.json",
+      "database/english/_analysis/grammar/questions.jsonl",
+      "database/english/_analysis/grammar/unmapped.jsonl",
+      "database/english/_analysis/grammar/rules.md"
+    ],
+    "notes": []
   }
 }
