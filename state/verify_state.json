@@ -1,61 +1,84 @@
 {
   "version": 1,
-  "created_at": "2026-09-11T05:16:52Z",
+  "created_at": "2026-09-11T18:31:46Z",
   "phases": {
     "phase1": {
       "done": [
-        "6bf7c8985df58c7d8b095154ebd53edc"
+        "1d027be45c20e5a378911001f5e3746a",
+        "221ce0625ba89a9d7124dd4a7f18c380",
+        "2d7388208a408f8de3c2758ae2ce9766",
+        "2ec6e8667dd0bcf0a19cc964b8d85147",
+        "4200a7deb480b63a7bd477b6ed3c8a46",
+        "609c40860baf5f3f8b3c5254ad4f66bb",
+        "673f7821cb2f96dfd44529339e59913d",
+        "6bf7c8985df58c7d8b095154ebd53edc",
+        "7e7b1f639daec415b49d5935f848baf3",
+        "8c5e3255a00ba8fc1170d4241ee77885",
+        "9099536f7976403460aeb892cc784c03",
+        "94edb0da295d64c07d9b15a5261f1776",
+        "b4927408d283ecd425ff59e375c14019",
+        "b5835a9698070875b969a9e935695157",
+        "c528409ca6bb77c72df4ca559aeecd13",
+        "d6f06b96248f83f61bf1d7cacdf2e883",
+        "dbbd3b0660a7d58cbd134c49ebb86f38",
+        "df2666c62aa97286bc5344e568776e9d",
+        "ebf23edb6d5d73512cae0214dda481b2",
+        "f30387b7b0ba16a08551b47fdc07157c",
+        "f9bd3b0252833448a8440c0d705c90c7",
+        "fc0d1458c0cc712c280abaf47bac2df1"
       ],
-      "cursor": 1,
+      "cursor": 24,
       "last_verdict": {
-        "batch": 0,
-        "at": "2026-09-11T05:19:27Z",
+        "batch": 23,
+        "at": "2026-09-11T18:47:27Z",
         "items": 20,
         "verdict": "agree",
         "rounds": 2,
         "agreed": true,
         "provenance": {
           "proposer": {
-            "model": "deepseek-v4-flash",
-            "provider": "agentrouter",
-            "latency_ms": 97500
+            "model": "gpt-5.6-sol",
+            "provider": "justwoker",
+            "latency_ms": 9429
           },
           "critic": {
             "model": "gpt-5.6-sol",
             "provider": "justwoker",
-            "latency_ms": 12031
+            "latency_ms": 9247
           },
           "rebuttal": {
-            "model": "deepseek-v4-flash",
-            "provider": "agentrouter",
-            "latency_ms": 27062
+            "model": "gpt-5.6-sol",
+            "provider": "justwoker",
+            "latency_ms": 8175
           },
           "final": {
             "model": "gpt-5.6-sol",
             "provider": "justwoker",
-            "latency_ms": 15296
+            "latency_ms": 10217
           },
-          "final_author": "gpt-5.6-sol"
+          "final_author": "gpt-5.6-sol",
+          "same_model_fallback": true
         }
       },
       "progress": {
         "status": "ok",
-        "items_total": 20,
-        "items_done": 20,
-        "items_done_before": 20,
-        "items_this_run": 0,
-        "items_remaining": 0,
+        "items_total": 37990,
+        "items_done": 440,
+        "items_done_before": 0,
+        "items_this_run": 440,
+        "items_remaining": 37550,
         "items_corrected": 0,
-        "batches_total": 1,
-        "batches_done": 1,
-        "batches_this_run": 0,
-        "batches_failed": 0,
+        "batches_total": 1900,
+        "batches_done": 22,
+        "batches_this_run": 22,
+        "batches_failed": 2,
         "batch_size": 20,
-        "eta_seconds": 0.0,
-        "elapsed_seconds": 2.7,
-        "phase_seconds": 0.0
-      }
+        "eta_seconds": 80329.62876068328,
+        "elapsed_seconds": 982.5,
+        "phase_seconds": 941.3
+      },
+      "last_checkpoint_monotonic": 132.404260926
     }
   },
-  "updated_at": "2026-09-11T05:55:10Z"
+  "updated_at": "2026-09-11T18:47:27Z"
 }

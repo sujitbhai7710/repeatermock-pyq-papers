@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "run_id": "run-20260911T183100Z-ba8d81e8",
+  "phase": "phase1",
+  "cursor": {
+    "completed": [
+      "phase0"
+    ],
+    "verify": {
+      "phase": "phase1",
+      "batch": 24,
+      "batches_done": 22,
+      "items_done": 440,
+      "items_total": 37990,
+      "state_file": "state/verify_state.json",
+      "started_wall": "2026-09-11T18:31:46Z"
+    }
+  },
+  "status": "ok",
+  "started_at": "2026-09-11T18:47:27Z",
+  "updated_at": "2026-09-11T18:47:27Z",
+  "window": {
+    "max_seconds": 19800,
+    "interval_seconds": 900,
+    "elapsed_seconds": 982.457,
+    "remaining_seconds": 18817.543
+  },
+  "notes": []
+}

@@ -1,20 +1,28 @@
 # PYQ Agent — Progress
 
-_generated 2026-09-11T08:33:53Z_
+_generated 2026-09-11T18:47:27Z_
 
 ## Run status
 
-- status: **`time_limit`**
+- status: **`ok`**
 - meaning: run complete
-- recorded: 2026-09-11T08:33:53Z
-- route health last updated: 2026-09-11T05:55:10Z
+- route health last updated: -
+
+## Last checkpoint
+
+- run id: `run-20260911T183100Z-ba8d81e8`
+- phase: `phase1`
+- status: `ok`
+- last checkpoint at: 2026-09-11T18:47:27Z
+- work window: elapsed 982.457s of 19800s (checkpoint every 900s)
+- cursor: `{'completed': ['phase0'], 'verify': {'phase': 'phase1', 'batch': 24, 'batches_done': 22, 'items_done': 440, 'items_total': 37990, 'state_file': 'state/verify_state.json', 'started_wall': '2026-09-11T18:31:46Z'}}`
 
 ## Phases (work items)
 
 | Phase | Status | Items | Done | % | This run | Remaining | ETA | Updated |
 |---|---|---:|---:|---:|---:|---:|---:|---|
-| `phase0` | ok | 142,090 | 142,090 | 100.0% | 142,090 | 0 | 0s | 2026-09-11T08:32:31Z |
-| `phase1` | ok | 20 | 20 | 100.0% | 0 | 0 | 0s | 2026-09-11T08:26:59Z |
+| `phase0` | ok | 142,090 | 142,090 | 100.0% | 142,090 | 0 | 0s | 2026-09-11T18:31:39Z |
+| `phase1` | ? | 37,990 | 440 | 1.2% | 440 | 37,550 | 22.3h | 2026-09-11T18:47:27Z |
 | `phase2` | pending | - | - | - | - | - | - | - |
 | `phase3` | pending | - | - | - | - | - | - | - |
 | `phase4` | pending | - | - | - | - | - | - | - |
@@ -22,40 +30,13 @@ _generated 2026-09-11T08:33:53Z_
 
 _Items = questions the phase must cover (AI verification for phases 1-5, extracted questions for phase0); ETA extrapolates this run's throughput._
 
-## Provider health (per provider + model, 2026-09-11T05:55:10Z)
+## Notes
 
-| Route | State | OK | Fail | Rate-limited | Trips | Cooldown | Retry in | Last reason |
-|---|---|---:|---:|---:|---:|---:|---:|---|
-| `agentrouter/deepseek-v4-flash` | closed | 0 | 0 | 0 | 0 | - | - | - |
-| `agentrouter/gpt-5.6-sol` | closed | 0 | 0 | 0 | 0 | - | - | - |
-| `ar-worker/deepseek-v4-flash` | closed | 0 | 0 | 0 | 0 | - | - | closed |
-| `ar-worker/gpt-5.6-sol` | closed | 0 | 0 | 0 | 0 | - | - | closed |
-| `justwoker/deepseek-v4-flash` | closed | 0 | 0 | 0 | 0 | - | - | closed |
-| `justwoker/gpt-5.6-sol` | closed | 0 | 0 | 0 | 0 | - | - | closed |
-| `jw-worker/deepseek-v4-flash` | closed | 0 | 0 | 0 | 0 | - | - | closed |
-| `jw-worker/gpt-5.6-sol` | closed | 0 | 0 | 0 | 0 | - | - | closed |
-
-## Coverage
-
-- papers: 1322
-- questions: 142090
-- placed: 130020
-- unclassified: 8614
-- skipped_hindi: 3456
-- flagged_papers_questions: 0
-- identity: placed(130020) + skipped_hindi(3456) + unclassified(8614) + flagged(0) = 142090
-- papers_validated: 1318
-- papers_flagged: 4
+- `phase1`: same_model_fallback: true – proposer and critic were both served by gpt-5.6-sol; no second model had a working route
 
 ## Artifacts per phase
 
 | Phase | Files | Bytes |
 |---|---:|---:|
-| `mocks` | 1,418 | 1,831,644 |
-| `phase0` | 19 | 216,948,831 |
-| `phase1` | 855 | 63,600,338 |
-| `phase2` | 1,876 | 25,640,753 |
-| `phase3` | 423 | 20,965,132 |
-| `phase4` | 335 | 20,371,398 |
-| `phase5` | 44 | 163,684 |
-| `taxonomy` | 3 | 1,434,048 |
+| `phase0` | 18 | 111,514,929 |
+| `taxonomy` | 3 | 1,447,678 |
