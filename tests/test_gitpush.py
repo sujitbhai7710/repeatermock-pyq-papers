@@ -230,7 +230,7 @@ class PublisherGitIntegrationTests(unittest.TestCase):
 
     def setUp(self) -> None:
         tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(shutil.rmtree, tmp.name, ignore_errors=True)
+        self.addCleanup(tmp.cleanup)
         self.tmp = Path(tmp.name)
         self.origin = self.tmp / "origin.git"
         self.repo = self.tmp / "repo"

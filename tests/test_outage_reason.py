@@ -26,7 +26,6 @@ except ImportError:  # pragma: no cover
 
 import json
 import os
-import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -40,7 +39,7 @@ class ReasonTests(unittest.TestCase):
 
     def setUp(self) -> None:
         tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(shutil.rmtree, tmp.name, ignore_errors=True)
+        self.addCleanup(tmp.cleanup)
         self.ledger = Path(tmp.name) / "errors.jsonl"
 
     def _record(self, kind: str, **kwargs: object) -> None:
@@ -173,7 +172,7 @@ class StatusRecordingTests(unittest.TestCase):
 
     def setUp(self) -> None:
         tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(shutil.rmtree, tmp.name, ignore_errors=True)
+        self.addCleanup(tmp.cleanup)
         self.root = Path(tmp.name)
         self.progress = self.root / "progress.json"
         self.manifest = self.root / "manifest.json"

@@ -29,7 +29,6 @@ except ImportError:  # pragma: no cover
 
 import argparse
 import json
-import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -211,7 +210,7 @@ class RunContinuesOnAiOutageTests(unittest.TestCase):
 
     def setUp(self) -> None:
         tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(shutil.rmtree, tmp.name, ignore_errors=True)
+        self.addCleanup(tmp.cleanup)
         self.tmp = Path(tmp.name)
         # redirect every generated artefact into a scratch tree
         for name in (
@@ -360,7 +359,7 @@ class ProgressRollupTests(unittest.TestCase):
         from tools import ci_summary
 
         tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(shutil.rmtree, tmp.name, ignore_errors=True)
+        self.addCleanup(tmp.cleanup)
         state = Path(tmp.name)
         (state / "checkpoint.json").write_text(
             json.dumps(
