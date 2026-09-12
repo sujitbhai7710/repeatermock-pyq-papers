@@ -48,8 +48,9 @@ Every phase currently reports `ai_unavailable` and English sits at **440 / 37,99
   (DeepSeek proposes, `gpt-5.6-sol` judges). Resumable; re-run until the counters stop moving.
 - **Re-open rule 52 (`52-articles-with-joined-nouns`)**: its leaf is marked *"No PYQ in scope"*, but a
   scan found ~42 grammar questions matching its pattern (`… and the …`, i.e. the article repeated before
-  each joined noun). Example candidate: qid `64cb6825f34fb32646d22238` — *"The boys and the teacher
-  __wants to win__."* Verify with the AI whether these belong to rule 52, assign them if so, and only
+  each joined noun). Strongest candidate (found by an independent audit): qid `5e8fbf903ab0500d2e510c26`,
+  CGL 2019/2020 — *"The famous author and actor are being honoured…"*, whose own solution states the
+  article-once / same-person rule verbatim; it currently sits under rule **10**. Verify with the AI whether these belong to rule 52, assign them if so, and only
   keep the "No PYQ" marker if the model agrees none match.
 
 ### 3. Review the `_unclassified` buckets

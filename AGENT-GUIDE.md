@@ -158,10 +158,11 @@ Totals: **947 leaf nodes** (`questions.jsonl` link files), **1,148 mock packs**,
 | # | Gap | Detail |
 |---|---|---|
 | 1 | **AI verification** | `phase1` is at **440 / 37,990** items. The AI ran rarely because providers were unreachable from CI runners. `python -m agent.cli errors` now records exactly why. |
-| 2 | **Grammar AI verdicts** | ~140 of ~7,190 unassigned grammar questions have an AI rule verdict. `state/grammar_ai_state.json` is **not** currently on `pyq-db`. |
+| 2 | **Grammar AI verdicts** | ~140 of ~7,190 unassigned grammar questions have an AI rule verdict. |
 | 3 | **Notes** | GK/GS notes (**563**) and grammar notes (**134**) now exist. **Maths and Reasoning have none.** |
-| 4 | **Remaining/error datastore** | `state/remaining.json` and `state/errors.jsonl` are **not** implemented in the shipped code — so a "green" run can silently do no AI work. |
-| 5 | **Empty grammar rules** | 5 leaves were empty; 4 now have questions (1, 1, 3, 14). Only **rule 52** still has none — and its "No PYQ" marker is **unverified**: ~42 questions match its pattern, so the AI must confirm. |
+| 4 | **Error datastore** | `state/errors.jsonl` **is** implemented (`python -m agent.cli errors`). `state/remaining.json` is the part still missing. |
+| 5 | **Rule 52 marker unverified** — an in-scope CGL 2019/2020 question exists (qid `5e8fbf903ab0500d2e510c26`, *"The famous author and actor are being honoured…"*) whose solution states the article-once/same-person rule; it is currently filed under rule 10. |
+| 5b | **Empty grammar rules** | 5 leaves were empty; 4 now have questions (1, 1, 3, 14). Only **rule 52** still has none — and its "No PYQ" marker is **unverified**: ~42 questions match its pattern, so the AI must confirm. |
 | 6 | **4 flagged papers** | Need AI review (`database/_meta/flagged_papers.jsonl`). |
 
 ---
