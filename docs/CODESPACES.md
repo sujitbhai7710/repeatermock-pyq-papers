@@ -85,7 +85,7 @@ python -m agent.cli routes --probe     # which AI routes are alive
 python -m agent.cli audit              # MUST print VIOLATIONS: 0
 python -m agent.cli errors --top 20    # why the AI failed, if it did
 python -m agent.cli stats --top 20     # counts
-python -m unittest discover -s tests -t .   # 232 tests must stay green
+python -m unittest discover -s tests -t .   # 260 tests must stay green
 python -m agent.cli run                # the AI verification pass (checkpoints every 15 min)
 python -m agent.cli publish            # merge-publish state/ + database/ to pyq-db
 ```
@@ -109,6 +109,6 @@ python -m agent.cli publish            # merge-publish state/ + database/ to pyq
 bash scripts/codespace-git.sh        # 1. enable push
 python -m agent.cli routes --probe   # 2. see what AI is alive
 python -m agent.cli audit            # 3. expect VIOLATIONS: 0
-python -m unittest discover -s tests -t .   # 4. expect OK (232 tests)
+python -m unittest discover -s tests -t .   # 4. expect OK (260 tests)
 opencode                             # 5. paste TASK-PROMPT.md and let it work
 ```

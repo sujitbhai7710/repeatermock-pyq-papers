@@ -189,7 +189,7 @@ python -m agent.cli audit              # subject leaves + pointer records
 | 2 | **Grammar AI verdicts** | `state/grammar_ai_state.json` holds the per-question rule verdicts; `python -m agent.cli grammar --ai` is resumable, so re-run until the counters stop moving. |
 | 3 | **Notes** | GK/GS topic notes and grammar notes exist. **Maths and Reasoning have none.** |
 | 4 | **Error datastore** | `state/errors.jsonl` **is** implemented (`python -m agent.cli errors`). `state/remaining.json` is the part still missing. |
-| 5 | **Rule 52 marker** — verified 2026-09-12 (see `LESSONS.md` L26): the "No PYQ in scope" marker was removed after the AI confirmed the pattern matches. |
+| 5 | **Rule 52 marker is FALSE** — the leaf says "No PYQ in scope 2019–2025", but Groq (`openai/gpt-oss-120b`) adjudicated 12 candidates and **3+ are genuinely rule 52** (`5d526532fdb8bb49b0c24c1e` 0.97, `63ac79e2b553595bc3003f0c` 0.99, `64cb6825f34fb32646d22238` 0.99) plus `5e8fbf903ab0500d2e510c26`; they currently sit in rules **10 / 15 / 71**. Verdicts: `state/rule52_verdicts.json`. **Still to do:** adjudicate the remaining 45 candidates, re-file, and regenerate the grammar tree — the marker then drops automatically. |
 | 5b | **Empty grammar rules** | Check with `python -m agent.cli audit` (rule 9: an empty leaf must carry the marker, and a marker on a leaf with questions is a violation). |
 | 6 | **4 flagged papers** | Need AI review (`database/_meta/flagged_papers.jsonl`). |
 
