@@ -659,3 +659,5 @@ git status --porcelain
 
 - [`AGENT-GUIDE.md`](AGENT-GUIDE.md) — complete handover: what is done, what is left, the exact order of work, and every failure we hit.
 - [`AI-APIS.txt`](AI-APIS.txt) — every AI provider, endpoint, auth style and copy-paste request example.
+- [`TASK-PROMPT.md`](TASK-PROMPT.md) — the exact prompt/work queue to hand to a coding agent.
+- [`docs/CODESPACES.md`](docs/CODESPACES.md) — how to run this in a GitHub Codespace with `opencode`.

@@ -157,11 +157,11 @@ Totals: **947 leaf nodes** (`questions.jsonl` link files), **1,148 mock packs**,
 
 | # | Gap | Detail |
 |---|---|---|
-| 1 | **AI verification** | `phase1` is at **440 / 37,990** items. The AI ran rarely because providers were unreachable from CI runners. |
+| 1 | **AI verification** | `phase1` is at **440 / 37,990** items. The AI ran rarely because providers were unreachable from CI runners. `python -m agent.cli errors` now records exactly why. |
 | 2 | **Grammar AI verdicts** | ~140 of ~7,190 unassigned grammar questions have an AI rule verdict. `state/grammar_ai_state.json` is **not** currently on `pyq-db`. |
-| 3 | **Notes** | GK/GS notes and grammar notes were specified but are **not generated**. |
+| 3 | **Notes** | GK/GS notes (**563**) and grammar notes (**134**) now exist. **Maths and Reasoning have none.** |
 | 4 | **Remaining/error datastore** | `state/remaining.json` and `state/errors.jsonl` are **not** implemented in the shipped code — so a "green" run can silently do no AI work. |
-| 5 | **Parallel AI** | Batches are processed **sequentially** — the single biggest speedup available. |
+| 5 | **Empty grammar rules** | 5 leaves were empty; 4 now have questions (1, 1, 3, 14). Only **rule 52** still has none — and its "No PYQ" marker is **unverified**: ~42 questions match its pattern, so the AI must confirm. |
 | 6 | **4 flagged papers** | Need AI review (`database/_meta/flagged_papers.jsonl`). |
 
 ---
@@ -310,3 +310,21 @@ python -m unittest discover -s tests -t .   # expect 231 tests OK
 python -m agent.cli stats --top 20    # see the counts
 ```
 Then start the AI work (`grammar --ai`, then `run`), and finish with `audit` → `publish`.
+
+---
+
+## 11. How to run it in a Codespace (with `opencode`)
+
+Full guide: **[`docs/CODESPACES.md`](docs/CODESPACES.md)**. The machine config is
+[`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json); it installs Python 3.11, Node 20
+and the **`opencode`** agent, and wires git so the agent can **push its own changes**.
+
+1. **Code ▾ → Codespaces → Create codespace on `main`**
+2. Add the secrets listed in the guide (same names as `AI-APIS.txt` §9).
+3. `bash scripts/codespace-git.sh` → enables push.
+4. `python -m agent.cli routes --probe` then `python -m agent.cli audit`.
+5. Paste **[`TASK-PROMPT.md`](TASK-PROMPT.md)** into `opencode` — it is the exact work queue,
+   with the hard rules and the definition of done.
+
+> Keep the GitHub Action **disabled** while the Codespace works: two writers publishing to `pyq-db`
+> is what previously wiped the tree.
