@@ -1,7 +1,7 @@
 # Rule 48: That vs What
 
 - **Topic**: Relative Pronouns
-- **Questions**: 75
+- **Questions**: 71
 - **Top exam**: STENO
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,9 +31,9 @@ Words: `that`, `what`, `which`
 |---|---|
 | STENO | 16 |
 | CHSL | 13 |
-| CPO | 13 |
+| CPO | 12 |
 | MTS | 12 |
-| CGL | 10 |
+| CGL | 7 |
 | SELECTION_POST | 7 |
 | GD | 4 |
 
@@ -43,9 +43,9 @@ Words: `that`, `what`, `which`
 |---|---|
 | 2019 | 14 |
 | 2020 | 7 |
-| 2021 | 18 |
+| 2021 | 15 |
 | 2022 | 9 |
-| 2023 | 10 |
+| 2023 | 9 |
 | 2024 | 7 |
 | 2025 | 10 |
 
@@ -66,9 +66,6 @@ Trend: **▲ +3**
 | 5e8ee1dc55a06d0d30cdede2 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #81 | Direct and Indirect Speech | keyword |
 | 5e86f91df60d5d125034f045 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #86 | Direct and Indirect Speech | keyword |
 | 61cb2a6b0221a23eb17a0b2d | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_1_6a0f3dd483407d2492174d9d.json` #95 | Sentence Improvement | keyword |
-| 627564a5723e401fdd1e09b0 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_1_6a0f3df88d0a5c66cc0db6f2.json` #83 | Direct and Indirect Speech | keyword |
-| 62752c23d35f22ccdec3fe33 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_3_6a0f3df6076c0c0843116c8d.json` #84 | Error Detection | keyword |
-| 627503782c22b3f3f83942a9 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_2_6a0f3dfad464e6c08627e254.json` #94 | Direct and Indirect Speech | keyword |
 | 69030b1ec389ac6c201dc8e3 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_12_Sept_2025_Shift_1_6a0f3ef125f9d428c136a83a.json` #91 | Sentence Improvement | keyword |
 | 690b2186c8f1c0ade55dc503 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_17_Sept_2025_Shift_3_6a0f3f13471ce89a8c64fdbb.json` #95 | Sentence Improvement | keyword |
 | 690b21860be34715dcd9dee4 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_17_Sept_2025_Shift_3_6a0f3f13471ce89a8c64fdbb.json` #96 | Direct and Indirect Speech | keyword |
@@ -96,7 +93,6 @@ Trend: **▲ +3**
 | 61704b9c98bfda548e78648f | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_26th_July_2021_69c66abd574e18bb2743cbe5.json` #65 | Direct and Indirect Speech | keyword |
 | 617051f71218a0b2abae6bcb | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_26th_July_2021_69c66abd574e18bb2743cbe5.json` #89 | Direct and Indirect Speech | keyword |
 | 61a06b9bd8fca5f969d5f5cb | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_8th_November_2021_69c66abe237081a793776840.json` #89 | Direct and Indirect Speech | keyword |
-| 669fe14724fd1ecd2cc676f4 | CPO | 2023 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_2023_Official_Paper-II_Held_On_08_Jan_2024_69c66ac0cab49990f757f42f.json` #15 | Error Detection | keyword |
 | 696622790ffc87d9a4cc0e84 | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_09_Dec_2025_Shift_2_69c66a5e0053d7a0e568ae8d.json` #186 | Error Detection | keyword |
 | 5fa01a4c7e3ed3b3e53e9bcd | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_1st_March_2019_Shift_1_68e36619634479a018b7296b.json` #84 | Sentence Improvement | keyword |
 | 5f27b37276e0830d05208b8a | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_14th_February_2019_Shift_1_68e3662010de2287dac997b1.json` #98 | Fill in the Blanks | keyword |

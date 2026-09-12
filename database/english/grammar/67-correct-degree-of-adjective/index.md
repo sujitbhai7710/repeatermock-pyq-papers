@@ -1,7 +1,7 @@
 # Rule 67: Correct Degree of Adjective
 
 - **Topic**: Adjective
-- **Questions**: 95
+- **Questions**: 90
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -27,11 +27,11 @@ Words: `as…as`, `bad`, `best`, `better`, `degree`, `good`, `than`, `the`, `wor
 
 | Exam | Questions |
 |---|---|
-| MTS | 35 |
+| MTS | 31 |
 | CHSL | 15 |
-| STENO | 13 |
-| CGL | 11 |
-| GD | 10 |
+| CGL | 12 |
+| STENO | 12 |
+| GD | 9 |
 | CPO | 7 |
 | SELECTION_POST | 4 |
 
@@ -40,19 +40,19 @@ Words: `as…as`, `bad`, `best`, `better`, `degree`, `good`, `than`, `the`, `wor
 | Year | Questions |
 |---|---|
 | 2019 | 13 |
-| 2020 | 2 |
-| 2021 | 7 |
+| 2020 | 3 |
+| 2021 | 6 |
 | 2022 | 12 |
-| 2023 | 17 |
-| 2024 | 32 |
-| 2025 | 12 |
+| 2023 | 14 |
+| 2024 | 31 |
+| 2025 | 11 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 32 |
-| 2025 | 12 |
+| 2024 | 31 |
+| 2025 | 11 |
 
 Trend: **▼ -20**
 
@@ -62,8 +62,9 @@ Trend: **▼ -20**
 |---|---|---|---|---|---|
 | 5e86f77ef60d5d125034efd2 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #83 | Error Detection | ai |
 | 5e859e89f60d5d10bc8cbc58 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_2_6a0f3d9a0a97601eb8f3767d.json` #88 | Sentence Improvement | ai |
+| 614c298d26baf056507f10cb | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_3_6a0f3dba3b5bc48ebebf5fef.json` #89 | Error Detection | ai_review |
+| 6412b15358022c7bacbca7fe | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json` #75 | Sentence Improvement | ai_review |
 | 63a3d0f94930eef0375b46d0 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_03_Dec_2022_Shift_2_6a0f3e1ccda5e733b2fabe0d.json` #76 | Sentence Improvement | keyword |
-| 63a31e89cae9c224758260e5 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_3_6a0f3e16c36c311e7bb05d5c.json` #90 | Direct and Indirect Speech | keyword |
 | 63a472085222fea4031e057d | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_05_Dec_2022_Shift_4_6a0f3e2841a6d355fcadfcd8.json` #93 | Sentence Improvement | keyword |
 | 6716033abca46fddd105a809 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_19_Sept_2024_Shift_3_6a0f3ed741a6d355fcae08f5.json` #82 | - | keyword |
 | 67401f1dc381ed087a755e33 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_26_Sept_2024_Shift_3_6a0f3eef83407d2492175cf3.json` #84 | Error Detection | keyword |
@@ -101,24 +102,19 @@ Trend: **▼ -20**
 | 66688f1456ce8e8a18f4e9c8 | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_06_Mar_2024_Shift_1_68e366b4c299d9b93acc6e3e.json` #62 | Error Detection | keyword |
 | 666be7a5288f1ff7bb958a9e | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_07_Mar_2024_Shift_1_68e366a3525083de8a4f24e1.json` #65 | Error Detection | keyword |
 | 666f2453455a3de134837f38 | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_28_Feb_2024_Shift_4_68e366af49cb55bd10175ef9.json` #73 | Error Detection | keyword |
-| 666aaf1a89f2adad5c511a1f | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_24_Feb_2024_Shift_2_68e3669e90979525b7eb92b6.json` #75 | Error Detection | keyword |
 | 67e0f1abccdd292e3e53857b | GD | 2025 | `SSC-GD/Previous_Year_Papers/2025/SSC_GD_Constable_2025_Official_Paper_Held_On_21_Feb_2025_Shift_2_68e366da5cce2a6080350fbc.json` #63 | Fill in the Blanks | keyword |
 | 5e074fab65fc980d06a492b1 | MTS | 2019 | `SSC-MTS/Previous_Year_Paper/2019/SSC_MTS_Previous_Year_Paper_Held_on_7_Aug_2019_Shift_3_69c4ddac3ca721844200a5cd.json` #17 | Sentence Improvement | keyword |
 | 5e0705c11155380d0b64f473 | MTS | 2019 | `SSC-MTS/Previous_Year_Paper/2019/SSC_MTS_Previous_Year_Paper_Held_on_6_Aug_2019_Shift_3_69c4dda9c93f8d7d94345cc0.json` #5 | - | keyword |
 | 6230234bd5eb8475d3490c51 | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_27_Oct_2021_Shift_2_69c4dda0ae87d044d3af5f95.json` #18 | Error Detection | keyword |
-| 619c827e69b2fc8a4f4096d5 | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_5_Oct_2021_Shift_2_69c4dd862bced945e373f1ec.json` #4 | Fill in the Blanks | keyword |
 | 64a25f1db18adc7c6a511fd2 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_20_Jun_2023_Shift_2_69c4dd61ce25059461e2cab1.json` #68 | Sentence Improvement | keyword |
 | 64a2712c5574627072c5c55a | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_02_May_2023_Shift_3_69c4dd390f160cd9204765c1.json` #70 | Error Detection | keyword |
-| 64a1a575bbc4f2ab4c37fc2a | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_19_May_2023_Shift_2_69c4dd53b070f8a770f37a22.json` #71 | Sentence Improvement | keyword |
 | 64a3fd652608404d67064b9b | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_20_Jun_2023_Shift_3_69c4dd61d87f9bf12c739a6a.json` #73 | Error Detection | keyword |
 | 650c0a26eb85376adb588024 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_05_Sept_2023_Shift_2_69c4dd29d71370459de639ea.json` #73 | Sentence Improvement | keyword |
-| 649fd0b6fd9f49d0276e8fd5 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_18_May_2023_Shift_3_69c4dd51e334ef538752150d.json` #74 | Error Detection | keyword |
 | 650b0a3d5a5a9d2df1937dbb | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_04_Sept_2023_Shift_3_69c4dd280f160cd9204763ba.json` #76 | Error Detection | keyword |
 | 6509d1adba31cf2b0f28c8e8 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_06_Sept_2023_Shift_2_69c4dd2b0f160cd92047646b.json` #78 | Sentence Improvement | keyword |
 | 6509e22a1a641984b4478f4a | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_12_Sept_2023_Shift_3_69c4dd3254d9907abd88ab78.json` #79 | Error Detection | keyword |
 | 650a90a3d617582df82923b9 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_13_Sept_2023_Shift_3_69c4dd34e7391208d448d535.json` #81 | Error Detection | keyword |
 | 64a3b6b64477159229826acb | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_17_May_2023_Shift_1_69c4dd4eae87d044d3af599b.json` #84 | Error Detection | keyword |
-| 650b2834553072b0e2e3d0be | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_01_Sept_2023_Shift_1_69c4dd230f160cd920476392.json` #84 | Error Detection | keyword |
 | 6509c6c4f43859aad0e4c161 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_06_Sept_2023_Shift_3_69c4dd2cb070f8a770f376e5.json` #85 | Error Detection | keyword |
 | 6758113d67f014577a830bcf | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_18_Oct_2024_Shift_2_69c4dd043ef490de181c45be.json` #67 | Sentence Improvement | keyword |
 | 6758035c0fcced3434441470 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_04_Nov_2024_Shift_2_69c4dd1524745cb955f79dd3.json` #68 | Error Detection | keyword |
@@ -151,7 +147,6 @@ Trend: **▼ -20**
 | 677fa04e41bc1bfff70f8d47 | STENO | 2024 | `SSC-Stenographer/Previous_Year_Paper/2024/SSC_Stenographer_2024_Official_Paper_Held_On_10_Dec_2024_Shift_2_69f44e209b909515994fddfa.json` #117 | Direct and Indirect Speech | keyword |
 | 677cdc2bce5b59b9f70b4779 | STENO | 2024 | `SSC-Stenographer/Previous_Year_Paper/2024/SSC_Stenographer_2024_Official_Paper_Held_On_11_Dec_2024_Shift_3_69f44e1c9d08d81daae5a58c.json` #129 | Error Detection | keyword |
 | 68b2ca601f95ea38301a09bc | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_3_69f44e7a4f39b0d99ed0e767.json` #124 | Fill in the Blanks | keyword |
-| 68b1894e058369976a1c5c96 | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_1_69f44e7899588957ba38518d.json` #179 | - | keyword |
 | 68b18e342720316cf5a12670 | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_1_69f44e7899588957ba38518d.json` #196 | Fill in the Blanks | keyword |
 | 68b2c21342333f528c5206f2 | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_06_Aug_2025_Shift_2_69f44e72329d0ab29ce165f5.json` #199 | Direct and Indirect Speech | keyword |
 | 68b18eac2d6d0e66acd649c7 | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_1_69f44e7899588957ba38518d.json` #200 | Direct and Indirect Speech | keyword |

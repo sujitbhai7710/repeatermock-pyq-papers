@@ -1,0 +1,2072 @@
+{
+ "candidates": 200,
+ "verdicts": [
+  {
+   "qid": "5d526532fdb8bb49b0c24c1e",
+   "year": 2019,
+   "concept": "Grammar",
+   "raw": "{\n  \"rule52\": true,\n  \"confidence\": 0.97,\n  \"why\": \"Repeated article, separate nouns → plural verb needed.\"\n}",
+   "rule52": true,
+   "confidence": 0.97,
+   "why": "Repeated article, separate nouns → plural verb needed."
+  },
+  {
+   "qid": "5d29e9adfdb8bb0ac81316df",
+   "year": 2019,
+   "concept": "Grammar",
+   "raw": "{\"rule52\": false, \"confidence\": 0.95, \"why\": \"Error is noun number, not article with joined nouns\"}",
+   "rule52": false,
+   "confidence": 0.95,
+   "why": "Error is noun number, not article with joined nouns"
+  },
+  {
+   "qid": "63ac79e2b553595bc3003f0c",
+   "year": 2022,
+   "concept": "Grammar",
+   "raw": "{\"rule52\": true, \"confidence\": 0.99, \"why\": \"Repeated 'the' makes nouns separate, requiring plural verb\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "Repeated 'the' makes nouns separate, requiring plural verb"
+  },
+  {
+   "qid": "64cb6825f34fb32646d22238",
+   "year": 2023,
+   "concept": "Grammar",
+   "raw": "{\"rule52\": true, \"confidence\": 0.99, \"why\": \"plural verb; nouns are separate entities\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "plural verb; nouns are separate entities"
+  },
+  {
+   "qid": "6705038668c2de85af85dae9",
+   "year": 2024,
+   "concept": "Grammar",
+   "raw": "{\n  \"rule52\": false,\n  \"confidence\": 0.99,\n  \"why\": \"Focuses on verb tense, not article/verb-number with joined nouns\"\n}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Focuses on verb tense, not article/verb-number with joined nouns"
+  },
+  {
+   "qid": "679758c0bbf74d38f24198e6",
+   "year": 2024,
+   "concept": "Sentence Improvement",
+   "raw": "{\n  \"rule52\": false,\n  \"confidence\": 0.78,\n  \"why\": \"No article repetition before joined nouns; verb already singular.\"\n}",
+   "rule52": false,
+   "confidence": 0.78,
+   "why": "No article repetition before joined nouns; verb already singular."
+  },
+  {
+   "qid": "5fc0b346fd85efd4f3d98a17",
+   "year": 2020,
+   "concept": "Grammar",
+   "raw": "{\n  \"rule52\": false,\n  \"confidence\": 0.97,\n  \"why\": \"tests verb agreement, not article with joined nouns\"\n}",
+   "rule52": false,
+   "confidence": 0.97,
+   "why": "tests verb agreement, not article with joined nouns"
+  },
+  {
+   "qid": "61ee81b749ca2cfd4cd96a23",
+   "year": 2020,
+   "concept": "Sentence Improvement",
+   "raw": "{\n  \"rule52\": false,\n  \"confidence\": 0.99,\n  \"why\": \"asks sentence ordering, not article/verb agreement\"\n}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "asks sentence ordering, not article/verb agreement"
+  },
+  {
+   "qid": "642e51097c902fc192169cb7",
+   "year": 2022,
+   "concept": "Grammar",
+   "raw": "{\"rule52\": false, \"confidence\": 0.96, \"why\": \"Question tests adverb/verb, not article/verb-number.\"}",
+   "rule52": false,
+   "confidence": 0.96,
+   "why": "Question tests adverb/verb, not article/verb-number."
+  },
+  {
+   "qid": "642c67791558175fe1490c94",
+   "year": 2022,
+   "concept": "Error Detection",
+   "raw": ""
+  },
+  {
+   "qid": "642e4a2046c926ee303721f5",
+   "year": 2022,
+   "concept": "Error Detection",
+   "raw": ""
+  },
+  {
+   "qid": "642d0e16fde1c2df88e9e95f",
+   "year": 2022,
+   "concept": "Sentence Improvement",
+   "raw": ""
+  },
+  {
+   "qid": "5e8fbf903ab0500d2e510c26",
+   "raw": "{\"qid\": \"5e8fbf903ab0500d2e510c26\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The subject 'the famous author and actor' has a single article before two nouns, indicating a single person; the plural verb 'are' violates Rule 52, so the error is due to incorrect article‑verb agreement.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The subject 'the famous author and actor' has a single article before two nouns, indicating a single person; the plural verb 'are' violates Rule 52, so the error is due to incorrect article‑verb agreement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "5e8c38897495200d2bd63226",
+   "raw": "{\"qid\": \"5e8c38897495200d2bd63226\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks for a passive transformation; it does not involve two nouns joined by 'and' with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks for a passive transformation; it does not involve two nouns joined by 'and' with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "63a6bed0d1b3318787af689b",
+   "raw": "{\"qid\": \"63a6bed0d1b3318787af689b\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is ordering jumbled sentences, unrelated to the article‑and‑noun rule.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is ordering jumbled sentences, unrelated to the article‑and‑noun rule.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "63a5e9399682732af834515d",
+   "raw": "{\"qid\": \"63a5e9399682732af834515d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item concerns substitution of a prepositional phrase, not the use of articles with coordinated nouns.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item concerns substitution of a prepositional phrase, not the use of articles with coordinated nouns.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "64cb73badee55663ecbd4829",
+   "raw": "{\"qid\": \"64cb73badee55663ecbd4829\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The prompt asks for a passive‑voice sentence; no coordination of nouns with an article is involved.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The prompt asks for a passive‑voice sentence; no coordination of nouns with an article is involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "64cce01dfb130ccb6476cbe1",
+   "raw": "{\"qid\": \"64cce01dfb130ccb6476cbe1\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is another paragraph‑ordering question, unrelated to Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is another paragraph‑ordering question, unrelated to Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "670503d0b42bcc7816818e9c",
+   "raw": "{\"qid\": \"670503d0b42bcc7816818e9c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error concerns subject‑verb agreement with a singular indefinite pronoun, not article placement before two nouns.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error concerns subject‑verb agreement with a singular indefinite pronoun, not article placement before two nouns.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "671609e863649274f7bc3d63",
+   "raw": "{\"qid\": \"671609e863649274f7bc3d63\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The mistake is the verb form 'does not' with a plural subject; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The mistake is the verb form 'does not' with a plural subject; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "6710cc194eb791109160cf51",
+   "raw": "{\"qid\": \"6710cc194eb791109160cf51\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question deals with replacing a phrase for grammatical correctness, not with article‑and‑noun coordination.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question deals with replacing a phrase for grammatical correctness, not with article‑and‑noun coordination.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "690b31ebf2572e4774f9b1b9",
+   "raw": "{\"qid\": \"690b31ebf2572e4774f9b1b9\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is a sequencing task; Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is a sequencing task; Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:20Z"
+  },
+  {
+   "qid": "6909b4dcdbef48f85a31506a",
+   "raw": "{\"qid\": \"6909b4dcdbef48f85a31506a\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The error is subject‑verb agreement ('are' should be 'is'); it does not involve article placement with nouns joined by 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The error is subject‑verb agreement ('are' should be 'is'); it does not involve article placement with nouns joined by 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "5d6fd15ffdb8bb067e4b6053",
+   "raw": "{\"qid\": \"5d6fd15ffdb8bb067e4b6053\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The mistake is tense ('have reached' should be 'had reached'); no article‑and‑noun issue.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The mistake is tense ('have reached' should be 'had reached'); no article‑and‑noun issue.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "5d6a56fffdb8bb52cebf908c",
+   "raw": "{\"qid\": \"5d6a56fffdb8bb52cebf908c\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The error is the verb form ('were fallen' should be 'had fallen'); unrelated to article placement.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The error is the verb form ('were fallen' should be 'had fallen'); unrelated to article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "5feb217dd7d0e616072f07bf",
+   "raw": "{\"qid\": \"5feb217dd7d0e616072f07bf\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The task is to form a passive sentence; no article‑and‑noun rule is involved.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The task is to form a passive sentence; no article‑and‑noun rule is involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "5fd1ff82f107df9e1562eb37",
+   "raw": "{\"qid\": \"5fd1ff82f107df9e1562eb37\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The issue concerns tense/aspect ('have been closed' vs 'were closed'); not about article placement.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The issue concerns tense/aspect ('have been closed' vs 'were closed'); not about article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "5fb26ac73c46cb4e24337130",
+   "raw": "{\"qid\": \"5fb26ac73c46cb4e24337130\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The singular verb 'was' is incorrect because the subject consists of two nouns joined by 'and' with a single article, requiring a plural verb per Rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The singular verb 'was' is incorrect because the subject consists of two nouns joined by 'and' with a single article, requiring a plural verb per Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "61e6a0b00c8da01479e06004",
+   "raw": "{\"qid\": \"61e6a0b00c8da01479e06004\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The singular verb 'was' is wrong; two nouns ('the teacher and her student') with one article need a plural verb, as dictated by Rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The singular verb 'was' is wrong; two nouns ('the teacher and her student') with one article need a plural verb, as dictated by Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "61b304fdac2902dee70dc3a2",
+   "raw": "{\"qid\": \"61b304fdac2902dee70dc3a2\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The question asks for logical paragraph ordering; it does not involve article‑and‑noun agreement.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The question asks for logical paragraph ordering; it does not involve article‑and‑noun agreement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "62cef87f12585d435335c01c",
+   "raw": "{\"qid\": \"62cef87f12585d435335c01c\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The error concerns verb tense/spelling ('choose' vs 'chose'); no relevance to Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The error concerns verb tense/spelling ('choose' vs 'chose'); no relevance to Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "62d5781de48756d928f1f37a",
+   "raw": "{\"qid\": \"62d5781de48756d928f1f37a\", \"rule52\": false, \"confidence\": 0.98, \"why\": \"The mistake is verb mood ('has' vs 'had'); unrelated to article placement with 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.98,
+   "why": "The mistake is verb mood ('has' vs 'had'); unrelated to article placement with 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:20:54Z"
+  },
+  {
+   "qid": "62c449e57f812f7291ea961d",
+   "raw": "{\"qid\": \"62c449e57f812f7291ea961d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correct answer is an ordering of sentence fragments; no sentence contains two singular nouns joined by \\\"and\\\" with article placement, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correct answer is an ordering of sentence fragments; no sentence contains two singular nouns joined by \"and\" with article placement, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:21:29Z"
+  },
+  {
+   "qid": "62c99d0674b2212a4ee94c44",
+   "raw": "{\"qid\": \"62c99d0674b2212a4ee94c44\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks for a misspelled word; it does not involve article usage with singular nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks for a misspelled word; it does not involve article usage with singular nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:04Z"
+  },
+  {
+   "qid": "62d8ddd082de3042d0f57939",
+   "raw": "{\"qid\": \"62d8ddd082de3042d0f57939\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error concerns verb tense, not the placement of articles before singular nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error concerns verb tense, not the placement of articles before singular nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:04Z"
+  },
+  {
+   "qid": "62cbcb064b7b487ad1914b5c",
+   "raw": "{\"qid\": \"62cbcb064b7b487ad1914b5c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is ordering sentence fragments; no article‑and‑noun construction is involved.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is ordering sentence fragments; no article‑and‑noun construction is involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:04Z"
+  },
+  {
+   "qid": "642d4259a26126bf635a8c1d",
+   "raw": "{\"qid\": \"642d4259a26126bf635a8c1d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question requires re‑ordering jumbled parts; it does not test article placement with singular nouns.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question requires re‑ordering jumbled parts; it does not test article placement with singular nouns.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:04Z"
+  },
+  {
+   "qid": "62c9905553e12714ceabd5ff",
+   "raw": "{\"qid\": \"62c9905553e12714ceabd5ff\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error is subject‑verb agreement for a plural subject, not the use of articles before singular nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error is subject‑verb agreement for a plural subject, not the use of articles before singular nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:04Z"
+  },
+  {
+   "qid": "642d6955c91b15660370f6e4",
+   "raw": "{\"qid\": \"642d6955c91b15660370f6e4\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correction concerns singular/plural verb agreement after \\\"neither\\\", not article placement.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correction concerns singular/plural verb agreement after \"neither\", not article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:04Z"
+  },
+  {
+   "qid": "62cff576cd8bbb362c7c5562",
+   "raw": "{\"qid\": \"62cff576cd8bbb362c7c5562\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item asks for the logical paragraph order; article usage with \\\"and\\\" is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item asks for the logical paragraph order; article usage with \"and\" is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:04Z"
+  },
+  {
+   "qid": "642d44c413ba3b251e9fb472",
+   "raw": "{\"qid\": \"642d44c413ba3b251e9fb472\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence involves a plural noun phrase and proper nouns joined by \\\"and\\\" but does not illustrate the article placement rule for two singular nouns forming a single unit or separate units.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence involves a plural noun phrase and proper nouns joined by \"and\" but does not illustrate the article placement rule for two singular nouns forming a single unit or separate units.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "64e4a8f135ac2f8ff99aa5a6",
+   "raw": "{\"qid\": \"64e4a8f135ac2f8ff99aa5a6\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence deals with preposition choice; there is no construction of two singular nouns joined by \\\"and\\\" with article placement.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence deals with preposition choice; there is no construction of two singular nouns joined by \"and\" with article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "66a5ee55dcc20277e35826d0",
+   "raw": "{\"qid\": \"66a5ee55dcc20277e35826d0\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item is an idiom‑selection task; no two singular nouns joined by \\\"and\\\" are present.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item is an idiom‑selection task; no two singular nouns joined by \"and\" are present.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "66a5ee88d845ebb0020dede2",
+   "raw": "{\"qid\": \"66a5ee88d845ebb0020dede2\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence contains a conjunction of clauses, not two singular nouns with article placement.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence contains a conjunction of clauses, not two singular nouns with article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "66a25fe2f92b325fc669e3d7",
+   "raw": "{\"qid\": \"66a25fe2f92b325fc669e3d7\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question concerns a preposition after \\\"time\\\"; no relevant noun‑and‑noun structure.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question concerns a preposition after \"time\"; no relevant noun‑and‑noun structure.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "66a487274f2d15fa995ce4ae",
+   "raw": "{\"qid\": \"66a487274f2d15fa995ce4ae\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence focuses on verb‑tense error; it does not feature two singular nouns joined by \\\"and\\\" with article usage.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence focuses on verb‑tense error; it does not feature two singular nouns joined by \"and\" with article usage.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "66a39dd15377bcf1b87b8b5d",
+   "raw": "{\"qid\": \"66a39dd15377bcf1b87b8b5d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence is about tense consistency; there is no article‑noun‑and‑noun pattern.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence is about tense consistency; there is no article‑noun‑and‑noun pattern.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "699ff801faaf6921489d786c",
+   "raw": "{\"qid\": \"699ff801faaf6921489d786c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence contains two verbs linked by \\\"and\\\" but no two singular nouns with article placement.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence contains two verbs linked by \"and\" but no two singular nouns with article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "699da5ac4be42daa8d436fa4",
+   "raw": "{\"qid\": \"699da5ac4be42daa8d436fa4\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The statement deals with subject‑verb agreement for a measurement phrase; it does not involve two singular nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The statement deals with subject‑verb agreement for a measurement phrase; it does not involve two singular nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "699428f3dfcfc9a40bcab5b7",
+   "raw": "{\"qid\": \"699428f3dfcfc9a40bcab5b7\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence includes a conjunction of clauses, not a pair of singular nouns sharing or repeating an article.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence includes a conjunction of clauses, not a pair of singular nouns sharing or repeating an article.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:22:37Z"
+  },
+  {
+   "qid": "699831817b3de5401e36dc79",
+   "raw": "{\"qid\": \"699831817b3de5401e36dc79\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correct option does not involve two singular nouns joined by \\\"and\\\"; rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correct option does not involve two singular nouns joined by \"and\"; rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:12Z"
+  },
+  {
+   "qid": "69940058877a6028de0d9be6",
+   "raw": "{\"qid\": \"69940058877a6028de0d9be6\", \"rule52\": true, \"confidence\": 0.98, \"why\": \"The sentence contains \\\"the businessman and philanthropist\\\" referring to the same person; the correct answer uses a singular verb (\\\"is starting\\\"), which follows rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.98,
+   "why": "The sentence contains \"the businessman and philanthropist\" referring to the same person; the correct answer uses a singular verb (\"is starting\"), which follows rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:12Z"
+  },
+  {
+   "qid": "699d3907db3140b3be7e67c8",
+   "raw": "{\"qid\": \"699d3907db3140b3be7e67c8\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to identify an incorrect sentence; none of the options involve the article‑and‑noun construction addressed by rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to identify an incorrect sentence; none of the options involve the article‑and‑noun construction addressed by rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:12Z"
+  },
+  {
+   "qid": "699ea16b56e6a27650a2e5bc",
+   "raw": "{\"qid\": \"699ea16b56e6a27650a2e5bc\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error relates to word choice (\\\"more responsibility\\\"); rule 52 about article placement with \\\"and\\\" does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error relates to word choice (\"more responsibility\"); rule 52 about article placement with \"and\" does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:12Z"
+  },
+  {
+   "qid": "5cecd0d3fdb8bb18b1d757db",
+   "raw": "{\"qid\": \"5cecd0d3fdb8bb18b1d757db\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question concerns substitution of a phrase about difficulty; it does not involve two singular nouns joined by \\\"and\\\" with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question concerns substitution of a phrase about difficulty; it does not involve two singular nouns joined by \"and\" with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "61715e02721aa8f143bf6807",
+   "raw": "{\"qid\": \"61715e02721aa8f143bf6807\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to order jumbled sentences; no article‑and‑noun construction is present, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to order jumbled sentences; no article‑and‑noun construction is present, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "65086fa1313a15139606efb8",
+   "raw": "{\"qid\": \"65086fa1313a15139606efb8\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item asks for indirect‑speech conversion; the issue is tense and reporting verbs, not article usage with two nouns, so Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item asks for indirect‑speech conversion; the issue is tense and reporting verbs, not article usage with two nouns, so Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "669fe108f9f8640297687993",
+   "raw": "{\"qid\": \"669fe108f9f8640297687993\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is another sentence‑ordering problem; there is no \\\"noun and noun\\\" article issue, thus Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is another sentence‑ordering problem; there is no \"noun and noun\" article issue, thus Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "669febee17f40a0e49c1db1f",
+   "raw": "{\"qid\": \"669febee17f40a0e49c1db1f\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The paragraph‑reordering task does not involve article placement before two singular nouns, so Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The paragraph‑reordering task does not involve article placement before two singular nouns, so Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "652a496dbcb85a416212bab3",
+   "raw": "{\"qid\": \"652a496dbcb85a416212bab3\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error‑identification question focuses on segmental grammar (e.g., conjunction, punctuation), not on the singular‑noun‑and‑article rule.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error‑identification question focuses on segmental grammar (e.g., conjunction, punctuation), not on the singular‑noun‑and‑article rule.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "655e2114addbbe7c50efe0f6",
+   "raw": "{\"qid\": \"655e2114addbbe7c50efe0f6\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The inference question is about content interpretation; it contains no article‑and‑noun construction, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The inference question is about content interpretation; it contains no article‑and‑noun construction, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "6528278b3293cd842bfde180",
+   "raw": "{\"qid\": \"6528278b3293cd842bfde180\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to correct a tense error; article placement with two singular nouns is not involved, making Rule 52 inapplicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to correct a tense error; article placement with two singular nouns is not involved, making Rule 52 inapplicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "655e1db060562abf43ddca7b",
+   "raw": "{\"qid\": \"655e1db060562abf43ddca7b\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Choosing a verb phrase to replace a bracketed segment does not concern the article‑and‑noun rule, so Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Choosing a verb phrase to replace a bracketed segment does not concern the article‑and‑noun rule, so Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "66a52ac86d7dce7ae3d56920",
+   "raw": "{\"qid\": \"66a52ac86d7dce7ae3d56920\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error‑identification sentence deals with subject‑verb agreement and phrasing, not with two singular nouns joined by \\\"and\\\" and article placement; thus Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error‑identification sentence deals with subject‑verb agreement and phrasing, not with two singular nouns joined by \"and\" and article placement; thus Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:23:45Z"
+  },
+  {
+   "qid": "5f1bfc9963cfab0d10fc74e4",
+   "raw": "{\"qid\": \"5f1bfc9963cfab0d10fc74e4\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The sentence contains no coordination of two singular nouns with 'and' that would test article placement; therefore it does not violate Rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The sentence contains no coordination of two singular nouns with 'and' that would test article placement; therefore it does not violate Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "5fa01aa109e88e56945f8f96",
+   "raw": "{\"qid\": \"5fa01aa109e88e56945f8f96\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The sentence does not involve two singular nouns joined by 'and' with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The sentence does not involve two singular nouns joined by 'and' with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "5f1bd9ff49f0020d15337205",
+   "raw": "{\"qid\": \"5f1bd9ff49f0020d15337205\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The error concerns verb agreement, not the use of articles before nouns joined by 'and'; Rule 52 is satisfied.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The error concerns verb agreement, not the use of articles before nouns joined by 'and'; Rule 52 is satisfied.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "6263c429d37e4b0eb314719a",
+   "raw": "{\"qid\": \"6263c429d37e4b0eb314719a\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The grammatical problem lies in parallelism, not in article usage with 'and'; Rule 52 is observed.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The grammatical problem lies in parallelism, not in article usage with 'and'; Rule 52 is observed.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "6312ce81a82c2cb082e85ab2",
+   "raw": "{\"qid\": \"6312ce81a82c2cb082e85ab2\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The mistake is subject‑verb agreement; there is no article‑and‑noun construction to evaluate under Rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The mistake is subject‑verb agreement; there is no article‑and‑noun construction to evaluate under Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "63fbb1c609ae36fba6429c09",
+   "raw": "{\"qid\": \"63fbb1c609ae36fba6429c09\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The issue is incorrect verb number after a singular subject; article placement with 'and' is not present, so Rule 52 is met.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The issue is incorrect verb number after a singular subject; article placement with 'and' is not present, so Rule 52 is met.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "63f817470cb2eb08583a966b",
+   "raw": "{\"qid\": \"63f817470cb2eb08583a966b\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The error concerns tense/aspect of the verb phrase, not the article‑and‑noun rule; Rule 52 remains satisfied.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The error concerns tense/aspect of the verb phrase, not the article‑and‑noun rule; Rule 52 remains satisfied.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "63fb26afef32f4008fa3c1b4",
+   "raw": "{\"qid\": \"63fb26afef32f4008fa3c1b4\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The problem is a missing preposition ('than' vs 'to'), not article usage with coordinated nouns; Rule 52 is not violated.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The problem is a missing preposition ('than' vs 'to'), not article usage with coordinated nouns; Rule 52 is not violated.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "63fc7fcb4ed67333f78b94a3",
+   "raw": "{\"qid\": \"63fc7fcb4ed67333f78b94a3\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The sentence’s flaw is semantic/style, not the placement of articles before nouns joined by 'and'; Rule 52 holds.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The sentence’s flaw is semantic/style, not the placement of articles before nouns joined by 'and'; Rule 52 holds.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "63fcc41aa1ae217ba02ce665",
+   "raw": "{\"qid\": \"63fcc41aa1ae217ba02ce665\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"The error is verb form and article misuse unrelated to coordinated singular nouns; therefore Rule 52 is correctly applied.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "The error is verb form and article misuse unrelated to coordinated singular nouns; therefore Rule 52 is correctly applied.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:19Z"
+  },
+  {
+   "qid": "63fb5c151d015750b3ffb944",
+   "raw": "{\"qid\": \"63fb5c151d015750b3ffb944\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence concerns verb agreement with a compound subject (John and Sara); no article before two singular nouns joined by \\\"and\\\" is involved, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence concerns verb agreement with a compound subject (John and Sara); no article before two singular nouns joined by \"and\" is involved, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "63fa3bd633a0d51c052145ff",
+   "raw": "{\"qid\": \"63fa3bd633a0d51c052145ff\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question deals with word choice for \\\"cattle\\\" and \\\"kettle\\\"; there is no construction of two singular nouns with an article, thus Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question deals with word choice for \"cattle\" and \"kettle\"; there is no construction of two singular nouns with an article, thus Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "666a9666e6ca5e1299efa272",
+   "raw": "{\"qid\": \"666a9666e6ca5e1299efa272\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The focus is on tense/verb form after \\\"Suraj\\\"; no article before two singular nouns joined by \\\"and\\\" appears, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The focus is on tense/verb form after \"Suraj\"; no article before two singular nouns joined by \"and\" appears, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "6666ca2d7c1200be23d5be84",
+   "raw": "{\"qid\": \"6666ca2d7c1200be23d5be84\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence compares clauses; it contains no article preceding two singular nouns linked by \\\"and,\\\" making Rule 52 inapplicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence compares clauses; it contains no article preceding two singular nouns linked by \"and,\" making Rule 52 inapplicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "6667e268f47274d6aaa9fc36",
+   "raw": "{\"qid\": \"6667e268f47274d6aaa9fc36\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error concerns adjective/adverb usage (\\\"fearless and strong\\\"); there is no article with two singular nouns, so Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error concerns adjective/adverb usage (\"fearless and strong\"); there is no article with two singular nouns, so Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "666947310ee09a45b926e8f8",
+   "raw": "{\"qid\": \"666947310ee09a45b926e8f8\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The subject is the plural noun \\\"muscles\\\" with a prepositional phrase; no article before two singular nouns joined by \\\"and\\\" is present, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The subject is the plural noun \"muscles\" with a prepositional phrase; no article before two singular nouns joined by \"and\" is present, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "66695e0d11fbd5cb52c5d3c2",
+   "raw": "{\"qid\": \"66695e0d11fbd5cb52c5d3c2\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The issue is pronoun/verb form (\\\"I were\\\" vs \\\"I was\\\"); there is no article before two singular nouns, thus Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The issue is pronoun/verb form (\"I were\" vs \"I was\"); there is no article before two singular nouns, thus Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "67e0a72dc6019bec25dab172",
+   "raw": "{\"qid\": \"67e0a72dc6019bec25dab172\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question concerns verb tense (\\\"was baking\\\" vs \\\"was being baked\\\"); no article before two singular nouns joined by \\\"and\\\" appears.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question concerns verb tense (\"was baking\" vs \"was being baked\"); no article before two singular nouns joined by \"and\" appears.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "67ddf0c9eb0d412a3d01f0e0",
+   "raw": "{\"qid\": \"67ddf0c9eb0d412a3d01f0e0\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error is about passive construction; there is no article preceding two singular nouns linked by \\\"and,\\\" so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error is about passive construction; there is no article preceding two singular nouns linked by \"and,\" so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "67d813410afd17cbe65c176a",
+   "raw": "{\"qid\": \"67d813410afd17cbe65c176a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to select the correct verb tense for a simple sentence; it contains no article before two singular nouns joined by \\\"and,\\\" making Rule 52 irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to select the correct verb tense for a simple sentence; it contains no article before two singular nouns joined by \"and,\" making Rule 52 irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:24:53Z"
+  },
+  {
+   "qid": "67dcfdd72f76672af9aaf97f",
+   "raw": "{\"qid\": \"67dcfdd72f76672af9aaf97f\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question concerns verb tense correction, not the placement of articles with two singular nouns joined by \\\"and\\\" as described in Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question concerns verb tense correction, not the placement of articles with two singular nouns joined by \"and\" as described in Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "67d7f5310ce034022812dc55",
+   "raw": "{\"qid\": \"67d7f5310ce034022812dc55\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The focus is on selecting a conjunctive adverb (Although), not on article usage with two singular nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The focus is on selecting a conjunctive adverb (Although), not on article usage with two singular nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "67db68bfe7beabeb8fa446d7",
+   "raw": "{\"qid\": \"67db68bfe7beabeb8fa446d7\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item requires a past‑tense verb correction; it does not involve article placement with two singular nouns.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item requires a past‑tense verb correction; it does not involve article placement with two singular nouns.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5e0af8b677a3a00d09ae191d",
+   "raw": "{\"qid\": \"5e0af8b677a3a00d09ae191d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correction concerns verb form (have known); no article with two singular nouns is present.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correction concerns verb form (have known); no article with two singular nouns is present.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5e0de60dbca80b0cfe85b1e9",
+   "raw": "{\"qid\": \"5e0de60dbca80b0cfe85b1e9\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to choose the correct verb phrase; article rules are irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to choose the correct verb phrase; article rules are irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5e58f0bbf60d5d39f705f732",
+   "raw": "{\"qid\": \"5e58f0bbf60d5d39f705f732\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence requires a singular verb (has); it does not involve article placement with two nouns.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence requires a singular verb (has); it does not involve article placement with two nouns.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5f00b7ddb10e770622595a9a",
+   "raw": "{\"qid\": \"5f00b7ddb10e770622595a9a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks for the appropriate article before a single noun, not for two singular nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks for the appropriate article before a single noun, not for two singular nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5e09b54534581e0d0aa6a36e",
+   "raw": "{\"qid\": \"5e09b54534581e0d0aa6a36e\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correction is about verb agreement (were); no article‑and‑noun structure is involved.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correction is about verb agreement (were); no article‑and‑noun structure is involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5e0da4cd982d600d064cb215",
+   "raw": "{\"qid\": \"5e0da4cd982d600d064cb215\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item deals with verb phrase selection; it does not pertain to Rule 52's article usage.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item deals with verb phrase selection; it does not pertain to Rule 52's article usage.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5e0b335991a34b0d09788be7",
+   "raw": "{\"qid\": \"5e0b335991a34b0d09788be7\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The focus is on the correct auxiliary verb (had); there is no two‑noun \\\"and\\\" article scenario.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The focus is on the correct auxiliary verb (had); there is no two‑noun \"and\" article scenario.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:25:26Z"
+  },
+  {
+   "qid": "5e0f09f1a0b92c0d07cd5b57",
+   "raw": "{\"qid\": \"5e0f09f1a0b92c0d07cd5b57\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence concerns verb choice for 'prove' and does not involve two singular nouns joined by 'and' with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence concerns verb choice for 'prove' and does not involve two singular nouns joined by 'and' with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "620274515011f1416af35797",
+   "raw": "{\"qid\": \"620274515011f1416af35797\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question tests reflexive pronoun selection; there is no construction of two singular nouns with 'and' and an article, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question tests reflexive pronoun selection; there is no construction of two singular nouns with 'and' and an article, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "623c7889057e85b00c9ce319",
+   "raw": "{\"qid\": \"623c7889057e85b00c9ce319\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item asks for the correct adjective form after 'completely'; it contains no 'and' conjunction of singular nouns with an article, thus Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item asks for the correct adjective form after 'completely'; it contains no 'and' conjunction of singular nouns with an article, thus Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "6203c48fda4eb47f66b010ab",
+   "raw": "{\"qid\": \"6203c48fda4eb47f66b010ab\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This item concerns auxiliary verb choice after a negative clause; there is no noun‑and‑noun structure with an article, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This item concerns auxiliary verb choice after a negative clause; there is no noun‑and‑noun structure with an article, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "622f31ad68dbbef48f9882da",
+   "raw": "{\"qid\": \"622f31ad68dbbef48f9882da\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error lies in the comparative adjective 'second large' rather than article placement with two nouns, so Rule 52 is not involved.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error lies in the comparative adjective 'second large' rather than article placement with two nouns, so Rule 52 is not involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "62ecf405bf7ee4faed3106ff",
+   "raw": "{\"qid\": \"62ecf405bf7ee4faed3106ff\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The problem is comparative degree ('more splendid') and article usage, not the specific case of two singular nouns sharing or repeating an article; Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The problem is comparative degree ('more splendid') and article usage, not the specific case of two singular nouns sharing or repeating an article; Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "62edd5f5a4cb47b97465c546",
+   "raw": "{\"qid\": \"62edd5f5a4cb47b97465c546\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence requires no substitution; the issue is not about two singular nouns joined by 'and' with an article, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence requires no substitution; the issue is not about two singular nouns joined by 'and' with an article, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "62f3991d3f90afedb41a8ef2",
+   "raw": "{\"qid\": \"62f3991d3f90afedb41a8ef2\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The phrase 'the industry and its emissions' joins two singular nouns with a single article but refers to separate entities; according to Rule 52 the verb should be plural ('have'), so the current singular verb 'has' violates Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The phrase 'the industry and its emissions' joins two singular nouns with a single article but refers to separate entities; according to Rule 52 the verb should be plural ('have'), so the current singular verb 'has' violates Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "62edd6b1b81a7ce52877ba8e",
+   "raw": "{\"qid\": \"62edd6b1b81a7ce52877ba8e\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error is the verb form 'pictures take'; there is no conjunction of two singular nouns with article placement, making Rule 52 irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error is the verb form 'pictures take'; there is no conjunction of two singular nouns with article placement, making Rule 52 irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "64a45621a4c44cb7e8978c52",
+   "raw": "{\"qid\": \"64a45621a4c44cb7e8978c52\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to choose the correct verb tense for the bracketed phrase; it does not involve two singular nouns joined by 'and' with an article, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to choose the correct verb tense for the bracketed phrase; it does not involve two singular nouns joined by 'and' with an article, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:00Z"
+  },
+  {
+   "qid": "650b09ad126e2bd634778462",
+   "raw": "{\"qid\": \"650b09ad126e2bd634778462\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence deals with subject-verb agreement for a plural noun 'Mathematics' and does not involve two singular nouns joined by 'and' with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence deals with subject-verb agreement for a plural noun 'Mathematics' and does not involve two singular nouns joined by 'and' with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "64a0165a4b7c9f55ae03d74c",
+   "raw": "{\"qid\": \"64a0165a4b7c9f55ae03d74c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence concerns adjective agreement and pronoun usage, not two singular nouns joined by 'and'; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence concerns adjective agreement and pronoun usage, not two singular nouns joined by 'and'; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "64a2bc288f7f03022cff5474",
+   "raw": "{\"qid\": \"64a2bc288f7f03022cff5474\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The focus is on verb form after 'had a reputation', not on article placement with two singular nouns; Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The focus is on verb form after 'had a reputation', not on article placement with two singular nouns; Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "64a38ec36101e0d8366208db",
+   "raw": "{\"qid\": \"64a38ec36101e0d8366208db\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence is about verb tense of a singular noun 'roof', not about two singular nouns joined by 'and'; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence is about verb tense of a singular noun 'roof', not about two singular nouns joined by 'and'; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "6509f42a2a1024e36274592c",
+   "raw": "{\"qid\": \"6509f42a2a1024e36274592c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The issue is present perfect vs simple past for a singular subject, not article usage with two nouns; Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The issue is present perfect vs simple past for a singular subject, not article usage with two nouns; Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "649fc2e14dcd419dd9c0b902",
+   "raw": "{\"qid\": \"649fc2e14dcd419dd9c0b902\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence deals with relative clause agreement, not two singular nouns joined by 'and'; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence deals with relative clause agreement, not two singular nouns joined by 'and'; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "64a66a5fae230f589b5d1b28",
+   "raw": "{\"qid\": \"64a66a5fae230f589b5d1b28\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correction concerns verb tense and pronoun agreement, not article placement with two singular nouns; Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correction concerns verb tense and pronoun agreement, not article placement with two singular nouns; Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "6509b0e7b3d38aa44ce69aad",
+   "raw": "{\"qid\": \"6509b0e7b3d38aa44ce69aad\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to choose an appropriate verb, unrelated to two singular nouns with 'and'; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to choose an appropriate verb, unrelated to two singular nouns with 'and'; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "650aa8f3c126fdd76160e079",
+   "raw": "{\"qid\": \"650aa8f3c126fdd76160e079\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error detection focuses on clause structure, not on article usage with two singular nouns joined by 'and'; Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error detection focuses on clause structure, not on article usage with two singular nouns joined by 'and'; Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "675800a5a3836b9a822ced6c",
+   "raw": "{\"qid\": \"675800a5a3836b9a822ced6c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence involves subject-verb agreement with a collective noun, not two singular nouns joined by 'and' with article placement; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence involves subject-verb agreement with a collective noun, not two singular nouns joined by 'and' with article placement; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:26:33Z"
+  },
+  {
+   "qid": "6757f96c22982e7042d77139",
+   "raw": "{\"qid\": \"6757f96c22982e7042d77139\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence contains no conjunction of two singular nouns with articles, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence contains no conjunction of two singular nouns with articles, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "6758113d3cfb1228fc2493d4",
+   "raw": "{\"qid\": \"6758113d3cfb1228fc2493d4\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error concerns subject‑verb agreement, not the placement of articles before nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error concerns subject‑verb agreement, not the placement of articles before nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "67581c7b676b331a3571ed55",
+   "raw": "{\"qid\": \"67581c7b676b331a3571ed55\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence deals with verb choice, not with two singular nouns linked by \\\"and\\\" and article placement.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence deals with verb choice, not with two singular nouns linked by \"and\" and article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "67581be0d74d47fa98137bc7",
+   "raw": "{\"qid\": \"67581be0d74d47fa98137bc7\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is idiom selection; there is no \\\"and\\\" construction involving articles.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is idiom selection; there is no \"and\" construction involving articles.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "6758100777159232fe20a1a3",
+   "raw": "{\"qid\": \"6758100777159232fe20a1a3\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"Two singular nouns (\\\"Prime Minister\\\" and \\\"Leader\\\") refer to the same person; the article appears only before the first noun, matching Rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "Two singular nouns (\"Prime Minister\" and \"Leader\") refer to the same person; the article appears only before the first noun, matching Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "67580c33637a483259cf0661",
+   "raw": "{\"qid\": \"67580c33637a483259cf0661\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence does not contain two singular nouns joined by \\\"and\\\" with article placement; the issue lies elsewhere.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence does not contain two singular nouns joined by \"and\" with article placement; the issue lies elsewhere.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "6758105fc81a1792beaf2af1",
+   "raw": "{\"qid\": \"6758105fc81a1792beaf2af1\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"No relevant \\\"and\\\" construction with articles is present.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "No relevant \"and\" construction with articles is present.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "67580de850e63506bb516045",
+   "raw": "{\"qid\": \"67580de850e63506bb516045\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"Each singular noun (\\\"fox\\\" and \\\"hyena\\\") has its own article, indicating separate entities, and the plural verb \\\"were\\\" follows Rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "Each singular noun (\"fox\" and \"hyena\") has its own article, indicating separate entities, and the plural verb \"were\" follows Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "675815beeffa87b6154ccde3",
+   "raw": "{\"qid\": \"675815beeffa87b6154ccde3\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence does not involve two singular nouns linked by \\\"and\\\" with article placement.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence does not involve two singular nouns linked by \"and\" with article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "67580ef34522973e92348453",
+   "raw": "{\"qid\": \"67580ef34522973e92348453\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is spelling selection; there is no relevant \\\"and\\\" construction.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is spelling selection; there is no relevant \"and\" construction.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:07Z"
+  },
+  {
+   "qid": "675813a1030841c8d5d68b90",
+   "raw": "{\"qid\": \"675813a1030841c8d5d68b90\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence deals with subject‑verb agreement for 'Each of the participants' and contains no two singular nouns joined by 'and'; therefore Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence deals with subject‑verb agreement for 'Each of the participants' and contains no two singular nouns joined by 'and'; therefore Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "69a717db87a3113d85f2193b",
+   "raw": "{\"qid\": \"69a717db87a3113d85f2193b\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"Both nouns have the article 'the' repeated ('the poor and the downtrodden'), indicating separate groups; the plural verb 'were' follows Rule 52 correctly.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "Both nouns have the article 'the' repeated ('the poor and the downtrodden'), indicating separate groups; the plural verb 'were' follows Rule 52 correctly.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "6309c2b86ee0f179f3ba3e65",
+   "raw": "{\"qid\": \"6309c2b86ee0f179f3ba3e65\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence contains no conjunction of two singular nouns with an article; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence contains no conjunction of two singular nouns with an article; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "630af6e66a8a2b65644f3368",
+   "raw": "{\"qid\": \"630af6e66a8a2b65644f3368\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item is a content‑based comprehension question, not a grammatical construction involving 'and' and articles.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item is a content‑based comprehension question, not a grammatical construction involving 'and' and articles.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "6245d451c1a5c85eacc86021",
+   "raw": "{\"qid\": \"6245d451c1a5c85eacc86021\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence contains no pair of singular nouns joined by 'and'; Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence contains no pair of singular nouns joined by 'and'; Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "669f8fed20353bd40f639481",
+   "raw": "{\"qid\": \"669f8fed20353bd40f639481\", \"rule52\": true, \"confidence\": 0.99, \"why\": \"Two singular nouns are joined by 'and' with separate articles ('The Prime Minister' and 'a President'), which according to Rule 52 refer to different persons and correctly take the plural verb 'are'.\"}",
+   "rule52": true,
+   "confidence": 0.99,
+   "why": "Two singular nouns are joined by 'and' with separate articles ('The Prime Minister' and 'a President'), which according to Rule 52 refer to different persons and correctly take the plural verb 'are'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "669f4ed0093f34a35e5767ad",
+   "raw": "{\"qid\": \"669f4ed0093f34a35e5767ad\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence lacks a conjunction of two singular nouns with an article; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence lacks a conjunction of two singular nouns with an article; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "66a789b9de6cde59411eed9a",
+   "raw": "{\"qid\": \"66a789b9de6cde59411eed9a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"No 'and' construction with repeated articles is present; Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "No 'and' construction with repeated articles is present; Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "69ccf162cb9a22786af05aee",
+   "raw": "{\"qid\": \"69ccf162cb9a22786af05aee\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence is about voice transformation and contains no two singular nouns joined by 'and' with article placement.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence is about voice transformation and contains no two singular nouns joined by 'and' with article placement.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "68e0eb17b86ff401390a9578",
+   "raw": "{\"qid\": \"68e0eb17b86ff401390a9578\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence involves a passive construction without any 'and' conjunction of singular nouns; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence involves a passive construction without any 'and' conjunction of singular nouns; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:27:40Z"
+  },
+  {
+   "qid": "5dc6a494f60d5d2c277b1e00",
+   "raw": "{\"qid\": \"5dc6a494f60d5d2c277b1e00\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question concerns subject‑verb agreement ('is discovered'), not the use of articles with nouns joined by 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question concerns subject‑verb agreement ('is discovered'), not the use of articles with nouns joined by 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "5dc6cd3df60d5d2c277b2146",
+   "raw": "{\"qid\": \"5dc6cd3df60d5d2c277b2146\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item asks for a factual statement about disasters; it does not involve article placement with 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item asks for a factual statement about disasters; it does not involve article placement with 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "5da56aa1f60d5d52c6012104",
+   "raw": "{\"qid\": \"5da56aa1f60d5d52c6012104\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error relates to clause structure ('as they imbued'), not to the rule about articles before two nouns joined by 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error relates to clause structure ('as they imbued'), not to the rule about articles before two nouns joined by 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "60151fa6ecb338e9f1dab04b",
+   "raw": "{\"qid\": \"60151fa6ecb338e9f1dab04b\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The focus is on verb form ('was arrested' vs 'were arrested'), not on article usage with 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The focus is on verb form ('was arrested' vs 'were arrested'), not on article usage with 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "633d25f756f18c62cf6a7d3f",
+   "raw": "{\"qid\": \"633d25f756f18c62cf6a7d3f\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to change passive to active voice; no article‑and construction is involved.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to change passive to active voice; no article‑and construction is involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "624f0dd5289dd8d48e46666c",
+   "raw": "{\"qid\": \"624f0dd5289dd8d48e46666c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks for direct speech conversion, unrelated to article placement with 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks for direct speech conversion, unrelated to article placement with 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "633d2a51cfa0513ca02bdeb2",
+   "raw": "{\"qid\": \"633d2a51cfa0513ca02bdeb2\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"It concerns direct narration, not the rule about articles before two nouns joined by 'and'.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "It concerns direct narration, not the rule about articles before two nouns joined by 'and'.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "638265719ed3c10143b57b70",
+   "raw": "{\"qid\": \"638265719ed3c10143b57b70\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item requires forming a passive sentence; no article‑and structure is present.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item requires forming a passive sentence; no article‑and structure is present.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "6382668f9ed3c10143b58ff6",
+   "raw": "{\"qid\": \"6382668f9ed3c10143b58ff6\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is paragraph sequencing, which does not involve the article‑and rule.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is paragraph sequencing, which does not involve the article‑and rule.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "6380797029dbe26cfda2eadf",
+   "raw": "{\"qid\": \"6380797029dbe26cfda2eadf\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Again a paragraph‑ordering problem; the rule about articles with 'and' is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Again a paragraph‑ordering problem; the rule about articles with 'and' is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:14Z"
+  },
+  {
+   "qid": "652fa6b14974105d6f20d195",
+   "raw": "{\"qid\": \"652fa6b14974105d6f20d195\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question concerns choosing a verb phrase replacement; it does not involve two singular nouns joined by \\\"and\\\" and thus does not test Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question concerns choosing a verb phrase replacement; it does not involve two singular nouns joined by \"and\" and thus does not test Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "67839578e4b74d09de60d727",
+   "raw": "{\"qid\": \"67839578e4b74d09de60d727\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correction focuses on article placement and pluralization, not on two singular nouns linked by \\\"and\\\"; Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correction focuses on article placement and pluralization, not on two singular nouns linked by \"and\"; Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "677bb8ea97c66bddb24a372a",
+   "raw": "{\"qid\": \"677bb8ea97c66bddb24a372a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence correction deals with indefinite articles before singular nouns, not with the \\\"and\\\" construction addressed by Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence correction deals with indefinite articles before singular nouns, not with the \"and\" construction addressed by Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "677cdc2e75eaf2502217a33e",
+   "raw": "{\"qid\": \"677cdc2e75eaf2502217a33e\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error is the missing article before \\\"latter\\\"; Rule 52 concerns article placement with two nouns joined by \\\"and\\\", which is unrelated here.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error is the missing article before \"latter\"; Rule 52 concerns article placement with two nouns joined by \"and\", which is unrelated here.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "6773b7753f4d85081c0c5afe",
+   "raw": "{\"qid\": \"6773b7753f4d85081c0c5afe\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to choose the correctly article‑qualified sentence about \\\"earth\\\"; it does not involve two singular nouns linked by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to choose the correctly article‑qualified sentence about \"earth\"; it does not involve two singular nouns linked by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "67839e6ed7f85f09b9a8b42a",
+   "raw": "{\"qid\": \"67839e6ed7f85f09b9a8b42a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The selection is about subject‑verb agreement and adverb placement, not about the article rule for two nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The selection is about subject‑verb agreement and adverb placement, not about the article rule for two nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "68bc1e4e2ee0b2066368257e",
+   "raw": "{\"qid\": \"68bc1e4e2ee0b2066368257e\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is a sequencing (ordering) question; Rule 52 about article placement with \\\"and\\\" does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is a sequencing (ordering) question; Rule 52 about article placement with \"and\" does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "68b0f7a9827cde4249d41c3d",
+   "raw": "{\"qid\": \"68b0f7a9827cde4249d41c3d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item requires ordering of passage fragments, unrelated to the article‑and‑noun rule.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item requires ordering of passage fragments, unrelated to the article‑and‑noun rule.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "68b1813b447ee7c38eb5b832",
+   "raw": "{\"qid\": \"68b1813b447ee7c38eb5b832\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Again a passage‑ordering task; Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Again a passage‑ordering task; Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "68b0f84963c3fce20b219cb8",
+   "raw": "{\"qid\": \"68b0f84963c3fce20b219cb8\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks for logical ordering of sentences, not for article usage with two nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks for logical ordering of sentences, not for article usage with two nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:28:47Z"
+  },
+  {
+   "qid": "68bacaf9a468c1558491a915",
+   "raw": "{\"qid\": \"68bacaf9a468c1558491a915\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks to order sentence fragments; it does not involve singular nouns joined by \\\"and\\\" with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks to order sentence fragments; it does not involve singular nouns joined by \"and\" with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68bb903e96e6cdba765e4421",
+   "raw": "{\"qid\": \"68bb903e96e6cdba765e4421\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is a sentence‑ordering task, not a grammar issue concerning article use with \\\"and\\\"; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is a sentence‑ordering task, not a grammar issue concerning article use with \"and\"; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68bd3d62e39afc4d0e28f925",
+   "raw": "{\"qid\": \"68bd3d62e39afc4d0e28f925\", \"rule52\": true, \"confidence\": 0.98, \"why\": \"The original sentence uses a single article (\\\"The\\\") before two singular nouns \\\"fiction and non fictional book\\\" that refer to the same book, and a singular verb \\\"was\\\"—exactly the pattern described in Rule 52. The correction concerns the relative pronoun, not the article usage, so the sentence already follows Rule 52.\"}",
+   "rule52": true,
+   "confidence": 0.98,
+   "why": "The original sentence uses a single article (\"The\") before two singular nouns \"fiction and non fictional book\" that refer to the same book, and a singular verb \"was\"—exactly the pattern described in Rule 52. The correction concerns the relative pronoun, not the article usage, so the sentence already",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68b243b4044f6e532337a9c0",
+   "raw": "{\"qid\": \"68b243b4044f6e532337a9c0\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item is a passage‑reordering question; no \\\"and\\\"‑joined singular nouns with article placement are present.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item is a passage‑reordering question; no \"and\"‑joined singular nouns with article placement are present.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68b2cb9643f28559b9c1a9d4",
+   "raw": "{\"qid\": \"68b2cb9643f28559b9c1a9d4\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Again a passage‑reordering exercise; Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Again a passage‑reordering exercise; Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68bb913c939d8c08e515850f",
+   "raw": "{\"qid\": \"68bb913c939d8c08e515850f\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task involves ordering sentences; there is no grammatical structure concerning article use with \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task involves ordering sentences; there is no grammatical structure concerning article use with \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68bb915c939d8c08e5158578",
+   "raw": "{\"qid\": \"68bb915c939d8c08e5158578\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is a sequencing question, not related to Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is a sequencing question, not related to Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68b2cca9e1d1692fbf0d3015",
+   "raw": "{\"qid\": \"68b2cca9e1d1692fbf0d3015\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks for logical ordering of parts; no relevant article‑and‑noun construction is present.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks for logical ordering of parts; no relevant article‑and‑noun construction is present.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68bacf3dba93e0e4172c2446",
+   "raw": "{\"qid\": \"68bacf3dba93e0e4172c2446\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Another ordering problem; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Another ordering problem; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68b0fa5e63c3fce20b21beae",
+   "raw": "{\"qid\": \"68b0fa5e63c3fce20b21beae\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item concerns arranging sentence fragments; it does not involve the article‑and‑noun rule.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item concerns arranging sentence fragments; it does not involve the article‑and‑noun rule.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:21Z"
+  },
+  {
+   "qid": "68b2cd5ea38c155975f77cda",
+   "raw": "{\"qid\": \"68b2cd5ea38c155975f77cda\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The prompt asks to order sentence parts; it contains no nouns joined by \\\"and\\\" with articles, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The prompt asks to order sentence parts; it contains no nouns joined by \"and\" with articles, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68b2cd796a032c0e114f3665",
+   "raw": "{\"qid\": \"68b2cd796a032c0e114f3665\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is sentence ordering; there is no use of articles before nouns joined by \\\"and\\\", thus Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is sentence ordering; there is no use of articles before nouns joined by \"and\", thus Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68bd47a489de00ab31548a82",
+   "raw": "{\"qid\": \"68bd47a489de00ab31548a82\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question involves arranging story fragments; it does not involve article‑noun‑and constructions, so Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question involves arranging story fragments; it does not involve article‑noun‑and constructions, so Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68b184fb67092fd45fefc2f9",
+   "raw": "{\"qid\": \"68b184fb67092fd45fefc2f9\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item is a passage‑ordering exercise with no article‑and noun structure, hence Rule 52 is not engaged.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item is a passage‑ordering exercise with no article‑and noun structure, hence Rule 52 is not engaged.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68b1853293d211a7ca5c1ce2",
+   "raw": "{\"qid\": \"68b1853293d211a7ca5c1ce2\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The prompt requires ordering of sentences; it contains no relevant article‑and noun pattern, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The prompt requires ordering of sentences; it contains no relevant article‑and noun pattern, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68bd4c7d8cb7772caccc73ca",
+   "raw": "{\"qid\": \"68bd4c7d8cb7772caccc73ca\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question is about sequencing sentences about books; no article before two nouns joined by \\\"and\\\" appears, making Rule 52 inapplicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question is about sequencing sentences about books; no article before two nouns joined by \"and\" appears, making Rule 52 inapplicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68b2d0aabbe4508f23d1622d",
+   "raw": "{\"qid\": \"68b2d0aabbe4508f23d1622d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task asks for logical ordering of parts; it does not involve the article‑and noun rule, so Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task asks for logical ordering of parts; it does not involve the article‑and noun rule, so Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68bd4de0e2a30b9239e5589e",
+   "raw": "{\"qid\": \"68bd4de0e2a30b9239e5589e\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is a sentence‑ordering question; there is no usage of articles with nouns joined by \\\"and\\\", thus Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is a sentence‑ordering question; there is no usage of articles with nouns joined by \"and\", thus Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68b126019e8278994a8d74f3",
+   "raw": "{\"qid\": \"68b126019e8278994a8d74f3\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item is an error‑detection/ordering exercise; it lacks the specific article‑and noun construction required for Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item is an error‑detection/ordering exercise; it lacks the specific article‑and noun construction required for Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68bb957fc9b4905b663b2d03",
+   "raw": "{\"qid\": \"68bb957fc9b4905b663b2d03\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The prompt concerns sentence improvement and ordering, not the placement of articles before nouns joined by \\\"and\\\"; Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The prompt concerns sentence improvement and ordering, not the placement of articles before nouns joined by \"and\"; Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:29:54Z"
+  },
+  {
+   "qid": "68bad3c740a63176e9d96c75",
+   "raw": "{\"qid\": \"68bad3c740a63176e9d96c75\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks for the logical ordering of sentence fragments; it does not involve two singular nouns joined by \\\"and\\\" with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks for the logical ordering of sentence fragments; it does not involve two singular nouns joined by \"and\" with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68bd507b5efca5a8b18a4ca7",
+   "raw": "{\"qid\": \"68bd507b5efca5a8b18a4ca7\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is a sequencing task, not a grammar question about article usage with \\\"and\\\"; therefore Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is a sequencing task, not a grammar question about article usage with \"and\"; therefore Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68b158c4d4cdcd0763beb117",
+   "raw": "{\"qid\": \"68b158c4d4cdcd0763beb117\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The item requires converting an active sentence to passive voice; it does not test the article‑and‑noun rule, so Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The item requires converting an active sentence to passive voice; it does not test the article‑and‑noun rule, so Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68b127daed31fec56a18cfe3",
+   "raw": "{\"qid\": \"68b127daed31fec56a18cfe3\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to arrange passage parts logically; no \\\"and\\\"‑joined singular nouns with articles are present, so Rule 52 is not involved.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to arrange passage parts logically; no \"and\"‑joined singular nouns with articles are present, so Rule 52 is not involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68b12812a4e2ea0fdf7e047a",
+   "raw": "{\"qid\": \"68b12812a4e2ea0fdf7e047a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Again a sequencing question; it does not test the article‑and‑noun rule, making Rule 52 inapplicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Again a sequencing question; it does not test the article‑and‑noun rule, making Rule 52 inapplicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68b2489fe70541d1c2418d69",
+   "raw": "{\"qid\": \"68b2489fe70541d1c2418d69\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question concerns ordering of statements, not the placement of articles before nouns joined by \\\"and\\\"; Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question concerns ordering of statements, not the placement of articles before nouns joined by \"and\"; Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68b248ba40f50b0a0f6128d7",
+   "raw": "{\"qid\": \"68b248ba40f50b0a0f6128d7\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is a passage‑ordering item; there is no grammatical structure involving \\\"and\\\" with repeated articles, so Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is a passage‑ordering item; there is no grammatical structure involving \"and\" with repeated articles, so Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68b128fc6d85abf7ececf3e9",
+   "raw": "{\"qid\": \"68b128fc6d85abf7ececf3e9\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The prompt asks for logical sequencing of parts; it does not involve the article‑and‑noun rule, thus Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The prompt asks for logical sequencing of parts; it does not involve the article‑and‑noun rule, thus Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68bd53c1004de5ea53300efa",
+   "raw": "{\"qid\": \"68bd53c1004de5ea53300efa\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to choose the correct order of sentences; it does not test the specific article placement rule, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to choose the correct order of sentences; it does not test the specific article placement rule, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68bb9ef5e90d6830783c9104",
+   "raw": "{\"qid\": \"68bb9ef5e90d6830783c9104\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"This is another ordering question; there is no use of \\\"and\\\" with singular nouns and articles, making Rule 52 irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "This is another ordering question; there is no use of \"and\" with singular nouns and articles, making Rule 52 irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:26Z"
+  },
+  {
+   "qid": "68bad7f6cc40596d47f3a90c",
+   "raw": "{\"qid\": \"68bad7f6cc40596d47f3a90c\", \"rule52\": false, \"confidence\": 0.9, \"why\": \"The question asks for the logical ordering of sentence parts; it does not involve two singular nouns joined by \\\"and\\\" with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.9,
+   "why": "The question asks for the logical ordering of sentence parts; it does not involve two singular nouns joined by \"and\" with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:59Z"
+  },
+  {
+   "qid": "68bad8621078e53955cea75d",
+   "raw": "{\"qid\": \"68bad8621078e53955cea75d\", \"rule52\": false, \"confidence\": 0.9, \"why\": \"The task concerns ordering of passage fragments, not the use of articles before singular nouns joined by \\\"and\\\"; therefore Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.9,
+   "why": "The task concerns ordering of passage fragments, not the use of articles before singular nouns joined by \"and\"; therefore Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:59Z"
+  },
+  {
+   "qid": "68b2d7dce1df0932f62c249f",
+   "raw": "{\"qid\": \"68b2d7dce1df0932f62c249f\", \"rule52\": false, \"confidence\": 0.9, \"why\": \"The item requires selecting the correct sequence of statements; there is no sentence featuring the article‑and‑noun construction relevant to Rule 52.\"}",
+   "rule52": false,
+   "confidence": 0.9,
+   "why": "The item requires selecting the correct sequence of statements; there is no sentence featuring the article‑and‑noun construction relevant to Rule 52.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:59Z"
+  },
+  {
+   "qid": "68b24a9243f28559b9b94075",
+   "raw": "{\"qid\": \"68b24a9243f28559b9b94075\", \"rule52\": false, \"confidence\": 0.9, \"why\": \"The prompt is about arranging parts of a paragraph, not about article usage with singular nouns, so Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.9,
+   "why": "The prompt is about arranging parts of a paragraph, not about article usage with singular nouns, so Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:59Z"
+  },
+  {
+   "qid": "68bd5838c64dbc761cde7283",
+   "raw": "{\"qid\": \"68bd5838c64dbc761cde7283\", \"rule52\": false, \"confidence\": 0.9, \"why\": \"The question deals with ordering sentences about rainforests; it does not test the article‑and‑noun rule, making Rule 52 inapplicable.\"}",
+   "rule52": false,
+   "confidence": 0.9,
+   "why": "The question deals with ordering sentences about rainforests; it does not test the article‑and‑noun rule, making Rule 52 inapplicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:59Z"
+  },
+  {
+   "qid": "68b2d843e1d1692fbf0e3ef0",
+   "raw": "{\"qid\": \"68b2d843e1d1692fbf0e3ef0\", \"rule52\": false, \"confidence\": 0.9, \"why\": \"The task is to choose the logical order of statements about computers; no article‑and‑noun construction is present, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.9,
+   "why": "The task is to choose the logical order of statements about computers; no article‑and‑noun construction is present, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:30:59Z"
+  },
+  {
+   "qid": "62d81148ab7b31d121365e07",
+   "raw": "{\"qid\": \"62d81148ab7b31d121365e07\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The sentence deals with verbs and does not contain two singular nouns joined by \\\"and\\\" with article placement, so Rule 52 is not applicable.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The sentence deals with verbs and does not contain two singular nouns joined by \"and\" with article placement, so Rule 52 is not applicable.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62d81250a9500c8508f9e6b2",
+   "raw": "{\"qid\": \"62d81250a9500c8508f9e6b2\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The prompt concerns a missing adjective; there are no two singular nouns with an article, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The prompt concerns a missing adjective; there are no two singular nouns with an article, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62cbcf364b7b487ad191dd00",
+   "raw": "{\"qid\": \"62cbcf364b7b487ad191dd00\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error is subject‑verb agreement with a plural noun; no article before two singular nouns, thus Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error is subject‑verb agreement with a plural noun; no article before two singular nouns, thus Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62cd7a14a1d69d3941d1c310",
+   "raw": "{\"qid\": \"62cd7a14a1d69d3941d1c310\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The mistake is a duplicated auxiliary verb; no construction of two singular nouns with an article, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The mistake is a duplicated auxiliary verb; no construction of two singular nouns with an article, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62c9a57bb86e9f8f2f066124",
+   "raw": "{\"qid\": \"62c9a57bb86e9f8f2f066124\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error concerns verb agreement with the compound subject \\\"You and I\\\"; Rule 52 concerns article placement, not present here.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error concerns verb agreement with the compound subject \"You and I\"; Rule 52 concerns article placement, not present here.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62d6dd19dab75163ab1a66c9",
+   "raw": "{\"qid\": \"62d6dd19dab75163ab1a66c9\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is ordering sentences; it contains no two singular nouns joined by \\\"and\\\" with an article, so Rule 52 is not relevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is ordering sentences; it contains no two singular nouns joined by \"and\" with an article, so Rule 52 is not relevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62c99aff53e12714cead0e8a",
+   "raw": "{\"qid\": \"62c99aff53e12714cead0e8a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The issue is singular/plural verb agreement with \\\"People\\\"; no article before two singular nouns, thus Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The issue is singular/plural verb agreement with \"People\"; no article before two singular nouns, thus Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62d7d2eb962075d44fab5c5d",
+   "raw": "{\"qid\": \"62d7d2eb962075d44fab5c5d\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The prompt asks for an active‑voice rewrite; it contains no article‑determined noun pair, so Rule 52 is not involved.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The prompt asks for an active‑voice rewrite; it contains no article‑determined noun pair, so Rule 52 is not involved.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "62c4194701c2c364bb2c44a3",
+   "raw": "{\"qid\": \"62c4194701c2c364bb2c44a3\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The exercise is sentence ordering; there is no instance of two singular nouns with an article, so Rule 52 is irrelevant.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The exercise is sentence ordering; there is no instance of two singular nouns with an article, so Rule 52 is irrelevant.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "642fb02cef305bb69483d866",
+   "raw": "{\"qid\": \"642fb02cef305bb69483d866\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The correction concerns the verb \\\"is\\\" vs \\\"are\\\" after \\\"you\\\"; no two singular nouns with article, so Rule 52 does not apply.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The correction concerns the verb \"is\" vs \"are\" after \"you\"; no two singular nouns with article, so Rule 52 does not apply.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:16Z"
+  },
+  {
+   "qid": "642dd28cc2c1edeaf4cf7a63",
+   "raw": "{\"qid\": \"642dd28cc2c1edeaf4cf7a63\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The question asks to reorder sentence parts; it does not involve the use of articles with nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The question asks to reorder sentence parts; it does not involve the use of articles with nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  },
+  {
+   "qid": "642ffd53cf5430a19d86030c",
+   "raw": "{\"qid\": \"642ffd53cf5430a19d86030c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to choose the correct verb form; no article‑and construction is present.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to choose the correct verb form; no article‑and construction is present.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  },
+  {
+   "qid": "699e7d27810493fb22cb34cf",
+   "raw": "{\"qid\": \"699e7d27810493fb22cb34cf\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Identifying the incorrect sentence deals with subject‑verb agreement and word choice, not article placement with \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Identifying the incorrect sentence deals with subject‑verb agreement and word choice, not article placement with \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  },
+  {
+   "qid": "699fda519ea15a60aa16128a",
+   "raw": "{\"qid\": \"699fda519ea15a60aa16128a\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The error pertains to pronoun reference, not to article usage before nouns joined by \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The error pertains to pronoun reference, not to article usage before nouns joined by \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  },
+  {
+   "qid": "699fdbacb76e1b4bdcf24383",
+   "raw": "{\"qid\": \"699fdbacb76e1b4bdcf24383\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The incorrect sentence involves verb agreement; there is no relevant article‑and structure.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The incorrect sentence involves verb agreement; there is no relevant article‑and structure.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  },
+  {
+   "qid": "5cecd619fdb8bb18b1d757e3",
+   "raw": "{\"qid\": \"5cecd619fdb8bb18b1d757e3\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"The task is to locate a grammatical error unrelated to article placement with \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "The task is to locate a grammatical error unrelated to article placement with \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  },
+  {
+   "qid": "5e13163356f9a70d0bd8efdc",
+   "raw": "{\"qid\": \"5e13163356f9a70d0bd8efdc\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Ordering jumbled sentences does not test the article‑and rule.\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Ordering jumbled sentences does not test the article‑and rule.",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  },
+  {
+   "qid": "5e3d604ff60d5d433ce8b36c",
+   "raw": "{\"qid\": \"5e3d604ff60d5d433ce8b36c\", \"rule52\": false, \"confidence\": 0.99, \"why\": \"Choosing the correct verb for \\\"Plenty of information...\\\" involves subject‑verb agreement, not article usage with \\\"and\\\".\"}",
+   "rule52": false,
+   "confidence": 0.99,
+   "why": "Choosing the correct verb for \"Plenty of information...\" involves subject‑verb agreement, not article usage with \"and\".",
+   "model": "openai/gpt-oss-120b",
+   "at": "2026-09-12T04:32:49Z"
+  }
+ ],
+ "candidate_qids": [
+  "5cecd0d3fdb8bb18b1d757db",
+  "5cecd619fdb8bb18b1d757e3",
+  "5d6a56fffdb8bb52cebf908c",
+  "5d6fd15ffdb8bb067e4b6053",
+  "5da56aa1f60d5d52c6012104",
+  "5dc6a494f60d5d2c277b1e00",
+  "5dc6cd3df60d5d2c277b2146",
+  "5e09b54534581e0d0aa6a36e",
+  "5e0af8b677a3a00d09ae191d",
+  "5e0b335991a34b0d09788be7",
+  "5e0da4cd982d600d064cb215",
+  "5e0de60dbca80b0cfe85b1e9",
+  "5e0f09f1a0b92c0d07cd5b57",
+  "5e13163356f9a70d0bd8efdc",
+  "5e3d604ff60d5d433ce8b36c",
+  "5e58f0bbf60d5d39f705f732",
+  "5e8c38897495200d2bd63226",
+  "5e8fbf903ab0500d2e510c26",
+  "5f00b7ddb10e770622595a9a",
+  "5f1bd9ff49f0020d15337205",
+  "5f1bfc9963cfab0d10fc74e4",
+  "5fa01aa109e88e56945f8f96",
+  "5fb26ac73c46cb4e24337130",
+  "5fd1ff82f107df9e1562eb37",
+  "5feb217dd7d0e616072f07bf",
+  "60151fa6ecb338e9f1dab04b",
+  "61715e02721aa8f143bf6807",
+  "61b304fdac2902dee70dc3a2",
+  "61e6a0b00c8da01479e06004",
+  "620274515011f1416af35797",
+  "6203c48fda4eb47f66b010ab",
+  "622f31ad68dbbef48f9882da",
+  "623c7889057e85b00c9ce319",
+  "6245d451c1a5c85eacc86021",
+  "624f0dd5289dd8d48e46666c",
+  "6263c429d37e4b0eb314719a",
+  "62c4194701c2c364bb2c44a3",
+  "62c449e57f812f7291ea961d",
+  "62c9905553e12714ceabd5ff",
+  "62c99aff53e12714cead0e8a",
+  "62c99d0674b2212a4ee94c44",
+  "62c9a57bb86e9f8f2f066124",
+  "62cbcb064b7b487ad1914b5c",
+  "62cbcf364b7b487ad191dd00",
+  "62cd7a14a1d69d3941d1c310",
+  "62cef87f12585d435335c01c",
+  "62cff576cd8bbb362c7c5562",
+  "62d5781de48756d928f1f37a",
+  "62d6dd19dab75163ab1a66c9",
+  "62d7d2eb962075d44fab5c5d",
+  "62d81148ab7b31d121365e07",
+  "62d81250a9500c8508f9e6b2",
+  "62d8ddd082de3042d0f57939",
+  "62ecf405bf7ee4faed3106ff",
+  "62edd5f5a4cb47b97465c546",
+  "62edd6b1b81a7ce52877ba8e",
+  "62f3991d3f90afedb41a8ef2",
+  "6309c2b86ee0f179f3ba3e65",
+  "630af6e66a8a2b65644f3368",
+  "6312ce81a82c2cb082e85ab2",
+  "633d25f756f18c62cf6a7d3f",
+  "633d2a51cfa0513ca02bdeb2",
+  "6380797029dbe26cfda2eadf",
+  "638265719ed3c10143b57b70",
+  "6382668f9ed3c10143b58ff6",
+  "63a5e9399682732af834515d",
+  "63a6bed0d1b3318787af689b",
+  "63ac79e2b553595bc3003f0c",
+  "63f817470cb2eb08583a966b",
+  "63fa3bd633a0d51c052145ff",
+  "63fb26afef32f4008fa3c1b4",
+  "63fb5c151d015750b3ffb944",
+  "63fbb1c609ae36fba6429c09",
+  "63fc7fcb4ed67333f78b94a3",
+  "63fcc41aa1ae217ba02ce665",
+  "642c67791558175fe1490c94",
+  "642d4259a26126bf635a8c1d",
+  "642d44c413ba3b251e9fb472",
+  "642d6955c91b15660370f6e4",
+  "642dd28cc2c1edeaf4cf7a63",
+  "642fb02cef305bb69483d866",
+  "642ffd53cf5430a19d86030c",
+  "649fc2e14dcd419dd9c0b902",
+  "64a0165a4b7c9f55ae03d74c",
+  "64a2bc288f7f03022cff5474",
+  "64a38ec36101e0d8366208db",
+  "64a45621a4c44cb7e8978c52",
+  "64a66a5fae230f589b5d1b28",
+  "64cb6825f34fb32646d22238",
+  "64cb73badee55663ecbd4829",
+  "64cce01dfb130ccb6476cbe1",
+  "64e4a8f135ac2f8ff99aa5a6",
+  "65086fa1313a15139606efb8",
+  "6509b0e7b3d38aa44ce69aad",
+  "6509f42a2a1024e36274592c",
+  "650aa8f3c126fdd76160e079",
+  "650b09ad126e2bd634778462",
+  "6528278b3293cd842bfde180",
+  "652a496dbcb85a416212bab3",
+  "652fa6b14974105d6f20d195",
+  "655e1db060562abf43ddca7b",
+  "655e2114addbbe7c50efe0f6",
+  "6666ca2d7c1200be23d5be84",
+  "6667e268f47274d6aaa9fc36",
+  "666947310ee09a45b926e8f8",
+  "66695e0d11fbd5cb52c5d3c2",
+  "666a9666e6ca5e1299efa272",
+  "669f4ed0093f34a35e5767ad",
+  "669f8fed20353bd40f639481",
+  "669fe108f9f8640297687993",
+  "669febee17f40a0e49c1db1f",
+  "66a25fe2f92b325fc669e3d7",
+  "66a39dd15377bcf1b87b8b5d",
+  "66a487274f2d15fa995ce4ae",
+  "66a52ac86d7dce7ae3d56920",
+  "66a5ee55dcc20277e35826d0",
+  "66a5ee88d845ebb0020dede2",
+  "66a789b9de6cde59411eed9a",
+  "670503d0b42bcc7816818e9c",
+  "6710cc194eb791109160cf51",
+  "671609e863649274f7bc3d63",
+  "6757f96c22982e7042d77139",
+  "675800a5a3836b9a822ced6c",
+  "67580c33637a483259cf0661",
+  "67580de850e63506bb516045",
+  "67580ef34522973e92348453",
+  "6758100777159232fe20a1a3",
+  "6758105fc81a1792beaf2af1",
+  "6758113d3cfb1228fc2493d4",
+  "675813a1030841c8d5d68b90",
+  "675815beeffa87b6154ccde3",
+  "67581be0d74d47fa98137bc7",
+  "67581c7b676b331a3571ed55",
+  "6773b7753f4d85081c0c5afe",
+  "677bb8ea97c66bddb24a372a",
+  "677cdc2e75eaf2502217a33e",
+  "67839578e4b74d09de60d727",
+  "67839e6ed7f85f09b9a8b42a",
+  "679758c0bbf74d38f24198e6",
+  "67d7f5310ce034022812dc55",
+  "67d813410afd17cbe65c176a",
+  "67db68bfe7beabeb8fa446d7",
+  "67dcfdd72f76672af9aaf97f",
+  "67ddf0c9eb0d412a3d01f0e0",
+  "67e0a72dc6019bec25dab172",
+  "68b0f7a9827cde4249d41c3d",
+  "68b0f84963c3fce20b219cb8",
+  "68b0fa5e63c3fce20b21beae",
+  "68b126019e8278994a8d74f3",
+  "68b127daed31fec56a18cfe3",
+  "68b12812a4e2ea0fdf7e047a",
+  "68b128fc6d85abf7ececf3e9",
+  "68b158c4d4cdcd0763beb117",
+  "68b1813b447ee7c38eb5b832",
+  "68b184fb67092fd45fefc2f9",
+  "68b1853293d211a7ca5c1ce2",
+  "68b243b4044f6e532337a9c0",
+  "68b2489fe70541d1c2418d69",
+  "68b248ba40f50b0a0f6128d7",
+  "68b24a9243f28559b9b94075",
+  "68b2cb9643f28559b9c1a9d4",
+  "68b2cca9e1d1692fbf0d3015",
+  "68b2cd5ea38c155975f77cda",
+  "68b2cd796a032c0e114f3665",
+  "68b2d0aabbe4508f23d1622d",
+  "68b2d7dce1df0932f62c249f",
+  "68b2d843e1d1692fbf0e3ef0",
+  "68bacaf9a468c1558491a915",
+  "68bacf3dba93e0e4172c2446",
+  "68bad3c740a63176e9d96c75",
+  "68bad7f6cc40596d47f3a90c",
+  "68bad8621078e53955cea75d",
+  "68bb903e96e6cdba765e4421",
+  "68bb913c939d8c08e515850f",
+  "68bb915c939d8c08e5158578",
+  "68bb957fc9b4905b663b2d03",
+  "68bb9ef5e90d6830783c9104",
+  "68bc1e4e2ee0b2066368257e",
+  "68bd3d62e39afc4d0e28f925",
+  "68bd47a489de00ab31548a82",
+  "68bd4c7d8cb7772caccc73ca",
+  "68bd4de0e2a30b9239e5589e",
+  "68bd507b5efca5a8b18a4ca7",
+  "68bd53c1004de5ea53300efa",
+  "68bd5838c64dbc761cde7283",
+  "68e0eb17b86ff401390a9578",
+  "6909b4dcdbef48f85a31506a",
+  "690b31ebf2572e4774f9b1b9",
+  "69940058877a6028de0d9be6",
+  "699428f3dfcfc9a40bcab5b7",
+  "699831817b3de5401e36dc79",
+  "699d3907db3140b3be7e67c8",
+  "699da5ac4be42daa8d436fa4",
+  "699e7d27810493fb22cb34cf",
+  "699ea16b56e6a27650a2e5bc",
+  "699fda519ea15a60aa16128a",
+  "699fdbacb76e1b4bdcf24383",
+  "699ff801faaf6921489d786c",
+  "69a717db87a3113d85f2193b",
+  "69ccf162cb9a22786af05aee"
+ ],
+ "pattern": "article-headed joined nouns + verb-number evidence (tools/rule52_adjudicate.py)",
+ "updated_at": "2026-09-12T04:33:19Z"
+}

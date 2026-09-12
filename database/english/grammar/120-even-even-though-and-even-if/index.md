@@ -1,10 +1,13 @@
 # Rule 120: Even, Even Though, and Even If
 
 - **Topic**: Conjunctions
-- **Questions**: 1
-- **Top exam**: GD
+- **Questions**: 0
+- **Top exam**: -
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
+
+**No PYQ in scope 2019–2025** — the corpus contains no question for this rule.
+The empty `questions.jsonl` is intentional: this leaf is kept so the rule matrix stays complete, and the marker tells the audit it is not a missing write.
 
 ## Rule
 
@@ -27,15 +30,11 @@ Words: `even`
 
 ## By exam
 
-| Exam | Questions |
-|---|---|
-| GD | 1 |
+_No question is attached to this rule yet._
 
 ## By year
 
-| Year | Questions |
-|---|---|
-| 2022 | 1 |
+_No question is attached to this rule yet._
 
 ## Trend (last years in the corpus)
 
@@ -48,8 +47,6 @@ Trend: **→ 0**
 
 ## Questions
 
-| qid | Exam | Year | Paper | Type | Via |
-|---|---|---|---|---|---|
-| 63f5f0f76bdc5341e51d4bce | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_08_Feb_2023_Shift_2_68e36668c30ac440454dab76.json` #66 | Error Detection | keyword |
+_None._
 
 Resolve any id with `python tools/resolve.py <qid>`.

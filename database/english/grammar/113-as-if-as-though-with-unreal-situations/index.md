@@ -1,10 +1,13 @@
 # Rule 113: As If / As Though with Unreal Situations
 
 - **Topic**: Conjunctions
-- **Questions**: 1
-- **Top exam**: SELECTION_POST
+- **Questions**: 0
+- **Top exam**: -
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
+
+**No PYQ in scope 2019–2025** — the corpus contains no question for this rule.
+The empty `questions.jsonl` is intentional: this leaf is kept so the rule matrix stays complete, and the marker tells the audit it is not a missing write.
 
 ## Rule
 
@@ -27,29 +30,23 @@ Words: `be`, `were`
 
 ## By exam
 
-| Exam | Questions |
-|---|---|
-| SELECTION_POST | 1 |
+_No question is attached to this rule yet._
 
 ## By year
 
-| Year | Questions |
-|---|---|
-| 2025 | 1 |
+_No question is attached to this rule yet._
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 0 |
-| 2025 | 1 |
+| 2025 | 0 |
 
-Trend: **▲ new**
+Trend: **→ 0**
 
 ## Questions
 
-| qid | Exam | Year | Paper | Type | Via |
-|---|---|---|---|---|---|
-| 69ca10f5bf75771696ba611e | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_29_Jul_2025_Shift__69df4566d84f6129d5159642.json` #90 | Error Detection | keyword |
+_None._
 
 Resolve any id with `python tools/resolve.py <qid>`.

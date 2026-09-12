@@ -1,7 +1,7 @@
 # Rule 72: No ‘As’ Before an Object Complement
 
 - **Topic**: Verb Usage
-- **Questions**: 22
+- **Questions**: 20
 - **Top exam**: CGL
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -29,7 +29,7 @@ Words: `appoint`, `as`, `call`, `consider`, `elect`, `name`, `regard`
 
 | Exam | Questions |
 |---|---|
-| CGL | 7 |
+| CGL | 5 |
 | MTS | 5 |
 | CPO | 3 |
 | GD | 3 |
@@ -41,8 +41,8 @@ Words: `appoint`, `as`, `call`, `consider`, `elect`, `name`, `regard`
 
 | Year | Questions |
 |---|---|
-| 2019 | 4 |
-| 2020 | 3 |
+| 2019 | 3 |
+| 2020 | 2 |
 | 2021 | 1 |
 | 2022 | 2 |
 | 2023 | 6 |
@@ -62,9 +62,7 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e9d6f1bf60d5d4fde78c963 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_2_6a0f3db2d5b80365e231c518.json` #81 | Direct and Indirect Speech | keyword |
 | 61cb27a05cfb1234d59c2ba7 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_1_6a0f3dd483407d2492174d9d.json` #83 | Direct and Indirect Speech | keyword |
-| 614c2292b980fbeea580c419 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_2_6a0f3db8daa906308e01dc8b.json` #89 | Error Detection | keyword |
 | 6275af9e77dbd034480085b8 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_11_April_2022_Shift_3_6a0f3de4b6389f13cda38f16.json` #77 | Error Detection | keyword |
 | 697e4a7d1a658b9d2f2ad24f | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json` #79 | Direct and Indirect Speech | keyword |
 | 6909f62c7e2abf590ea16b5f | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_16_Sept_2025_Shift_1_6a0f3f0933a6a35112cee7b2.json` #85 | Error Detection | keyword |

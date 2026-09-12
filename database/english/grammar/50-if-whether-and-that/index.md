@@ -1,7 +1,7 @@
 # Rule 50: If, Whether, and That
 
 - **Topic**: Conjunctions
-- **Questions**: 51
+- **Questions**: 48
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,11 +32,11 @@ Words: `ask`, `if`, `that`, `whether`
 | Exam | Questions |
 |---|---|
 | CGL | 12 |
-| CHSL | 11 |
-| STENO | 10 |
+| CHSL | 10 |
+| STENO | 9 |
 | SELECTION_POST | 8 |
 | CPO | 4 |
-| MTS | 4 |
+| MTS | 3 |
 | GD | 2 |
 
 ## By year
@@ -44,19 +44,19 @@ Words: `ask`, `if`, `that`, `whether`
 | Year | Questions |
 |---|---|
 | 2019 | 2 |
-| 2020 | 5 |
-| 2021 | 8 |
+| 2020 | 6 |
+| 2021 | 6 |
 | 2022 | 10 |
 | 2023 | 4 |
-| 2024 | 10 |
-| 2025 | 12 |
+| 2024 | 9 |
+| 2025 | 11 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 10 |
-| 2025 | 12 |
+| 2024 | 9 |
+| 2025 | 11 |
 
 Trend: **▲ +2**
 
@@ -65,8 +65,8 @@ Trend: **▲ +2**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 617facb7e8986aebcd604668 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_3_6a0f3dc083407d2492174d14.json` #78 | Direct and Indirect Speech | keyword |
-| 62740558864f48054c79451b | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_2_6a0f3dee9636bcffad5cbcb5.json` #84 | Error Detection | keyword |
-| 63a539abbc80190bd8798e2f | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_4_6a0f3e189f2d708abd18d89d.json` #84 | Direct and Indirect Speech | keyword |
+| 6145b96afc62245e0a45eb67 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_3_6a0f3dd85a73de9e21cde61b.json` #89 | Direct and Indirect Speech | ai_review |
+| 6412b0ef5ed52adc42d09db3 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json` #72 | Direct and Indirect Speech | ai_review |
 | 63af809c4ab43bda5330570c | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_4_6a0f3e4883407d24921753fd.json` #84 | Direct and Indirect Speech | keyword |
 | 64cc5a74e38dd1fa8a4c47c4 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_18_Jul_2023_Shift_2_6a0f3e6c0f618830b205ba2a.json` #79 | Sentence Improvement | keyword |
 | 6710ccb4e595cf728f28c7b8 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_11_Sept_2024_Shift_3_6a0f3eb9daa906308e01e770.json` #77 | Sentence Improvement | keyword |
@@ -84,7 +84,6 @@ Trend: **▲ +2**
 | 62c3e3aaae58a5cb0414367e | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_10_June_2022_Shift_3_67d925d30bc64f76a20ceede.json` #16 | Direct and Indirect Speech | keyword |
 | 62cff30992cd872aa4c546d1 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_7_June_2022_Shift_1_67d925db16489e5eb23b5a22.json` #5 | Direct and Indirect Speech | keyword |
 | 66a37760756fb1bc63a1dde0 | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_1_67d92583e85a479e9bcdcad3.json` #22 | Fill in the Blanks | keyword |
-| 699c4ae0499113a9ced5e6a1 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_19_Nov_2025_Shift_3_699139f65b7cd4b1eb8ba071.json` #10 | Direct and Indirect Speech | keyword |
 | 69b3f9b76ab8122813c5bb15 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_30_Nov_2025_Shift_3_69913a07b864e7e276ac093b.json` #11 | Direct and Indirect Speech | keyword |
 | 699d3ec55cb90c8f010f4136 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_24_Nov_2025_Shift_1_699139f8e1485bf9ae4d91f2.json` #14 | Active and Passive Voice | keyword |
 | 5ce2645bfdb8bb0d34bda9ec | CPO | 2019 | `SSC-CPO/Previous_Year_Paper_Paper_I/2019/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_on_14th_March_2019_Shift_1_69c66a83fe5ef23de9ebbfc5.json` #193 | Sentence Improvement | keyword |
@@ -93,7 +92,6 @@ Trend: **▲ +2**
 | 6986cb56c3b7e5a7a2be977c | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_11_Dec_2025_Shift_1_69c66a60be1f1c8292f6e8ce.json` #199 | Direct and Indirect Speech | keyword |
 | 6251cfd95097697f38c30904 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_1st_December_2021_Shift_2_68e3662d49cb55bd101756fa.json` #86 | Fill in the Blanks | keyword |
 | 66684bc60d8c6cea2010c9e8 | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_23_Feb_2024_Shift_4_68e366b69517f98eddda2e14.json` #74 | Sentence Improvement | keyword |
-| 62162705f80ddf4ebef1b32b | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_8_Oct_2021_Shift_2_69c4dd8d82f235a81d901343.json` #4 | Sentence Improvement | keyword |
 | 64a51433637e71ad613f406a | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_14_Jun_2023_Shift_2_69c4dd57a6a9fbe9a42c4b6f.json` #67 | Sentence Improvement | keyword |
 | 67580e9ebf5951e54e6fbf69 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_16_Oct_2024_Shift_2_69c4dcfe24745cb955f79bf7.json` #68 | Fill in the Blanks | keyword |
 | 67580a85a06a29282fe90619 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_12_Nov_2024_Shift_3_69c4dd1eeec134766e001d28.json` #78 | Fill in the Blanks | keyword |
@@ -112,7 +110,6 @@ Trend: **▲ +2**
 | 638379a6d1415ba673b3c65a | STENO | 2022 | `SSC-Stenographer/Previous_Year_Paper/2022/SSC_Steno_2022_Official_Paper_Held_On_18_Nov_2022_Shift_3_69f44e36bea6de0ee08236ea.json` #125 | Direct and Indirect Speech | keyword |
 | 652fbdf604ab647b0f424385 | STENO | 2023 | `SSC-Stenographer/Previous_Year_Paper/2023/SSC_Stenographer_2023_Official_Paper_Held_On_13_Oct_2023_Shift_2_69f44e26ee889486b48222bf.json` #155 | Direct and Indirect Speech | keyword |
 | 652fbe6809217a35f9298a7e | STENO | 2023 | `SSC-Stenographer/Previous_Year_Paper/2023/SSC_Stenographer_2023_Official_Paper_Held_On_13_Oct_2023_Shift_2_69f44e26ee889486b48222bf.json` #160 | Direct and Indirect Speech | keyword |
-| 677bb8e64fa8190f35579327 | STENO | 2024 | `SSC-Stenographer/Previous_Year_Paper/2024/SSC_Stenographer_2024_Official_Paper_Held_On_11_Dec_2024_Shift_1_69f44e1a17619b5931aaedcc.json` #122 | Direct and Indirect Speech | keyword |
 | 677cdc30ce5b59b9f70b477f | STENO | 2024 | `SSC-Stenographer/Previous_Year_Paper/2024/SSC_Stenographer_2024_Official_Paper_Held_On_11_Dec_2024_Shift_3_69f44e1c9d08d81daae5a58c.json` #143 | Sentence Improvement | keyword |
 | 68b2ce139213a8d69864dd47 | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_3_69f44e7a4f39b0d99ed0e767.json` #148 | Direct and Indirect Speech | keyword |
 

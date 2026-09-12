@@ -1,7 +1,7 @@
 # Rule 87: Conjunctions vs Prepositions: Because, In Case, and Unless
 
 - **Topic**: Prepositions and Conjunctions
-- **Questions**: 12
+- **Questions**: 11
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,8 +31,8 @@ Words: `because`, `unless`, `without`
 |---|---|
 | MTS | 5 |
 | CHSL | 2 |
-| CPO | 2 |
 | GD | 2 |
+| CPO | 1 |
 | STENO | 1 |
 
 ## By year
@@ -42,7 +42,6 @@ Words: `because`, `unless`, `without`
 | 2019 | 2 |
 | 2021 | 4 |
 | 2022 | 1 |
-| 2023 | 1 |
 | 2024 | 3 |
 | 2025 | 1 |
 
@@ -62,7 +61,6 @@ Trend: **▼ -2**
 | 612dd83f0f0ac53e52ed5669 | CHSL | 2021 | `SSC-CHSL/PYP_Tier_I/2021/SSC_CHSL_2020_Official_Paper_3_Held_On_12_April_2021_Shift_3_67d925e24e1dc9535c9a5ded.json` #7 | Error Detection | keyword |
 | 61eaa06238fb84f6155b85d9 | CHSL | 2021 | `SSC-CHSL/PYP_Tier_I/2021/SSC_CHSL_2020_Official_Paper_28_Held_on_10_Aug_2021_Shift_1_67d925f461576da269e7f2fc.json` #7 | Sentence Improvement | keyword |
 | 61a0875be0d64cf74ed43275 | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_8th_November_2021_69c66abe237081a793776840.json` #195 | Sentence Improvement | keyword |
-| 669febad762def97e6cefb11 | CPO | 2023 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_2023_Official_Paper-II_Held_On_08_Jan_2024_69c66ac0cab49990f757f42f.json` #133 | Direct and Indirect Speech | keyword |
 | 6265778f03e80b4daaa7c916 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_10th_December_2021_Shift_2_68e3662f76d80d839fc100f3.json` #83 | Fill in the Blanks | keyword |
 | 67e134e6b988bf4a3954678c | GD | 2025 | `SSC-GD/Previous_Year_Papers/2025/SSC_GD_Constable_2025_Official_Paper_Held_On_18_Feb_2025_Shift_1_68e366d20cfb1d3c9c60c65b.json` #72 | Sentence Improvement | keyword |
 | 5e0de60dbca80b0cfe85b1e9 | MTS | 2019 | `SSC-MTS/Previous_Year_Paper/2019/SSC_MTS_Previous_Year_Paper_Held_on_19_Aug_2019_Shift_2_69c4ddb8e7391208d448e16c.json` #1 | Fill in the Blanks | keyword |

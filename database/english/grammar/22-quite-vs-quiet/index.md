@@ -1,8 +1,8 @@
 # Rule 22: Quite vs Quiet
 
 - **Topic**: Confusing Words and Adverbs
-- **Questions**: 45
-- **Top exam**: MTS
+- **Questions**: 41
+- **Top exam**: CHSL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -27,12 +27,12 @@ Words: `quiet`, `quite`, `quitting`, `too`
 
 | Exam | Questions |
 |---|---|
-| MTS | 9 |
-| STENO | 9 |
 | CHSL | 8 |
+| MTS | 8 |
+| STENO | 7 |
 | GD | 6 |
-| CGL | 5 |
 | CPO | 5 |
+| CGL | 4 |
 | SELECTION_POST | 3 |
 
 ## By year
@@ -40,27 +40,26 @@ Words: `quiet`, `quite`, `quitting`, `too`
 | Year | Questions |
 |---|---|
 | 2019 | 3 |
-| 2020 | 5 |
-| 2021 | 7 |
+| 2020 | 4 |
+| 2021 | 5 |
 | 2022 | 4 |
 | 2023 | 6 |
-| 2024 | 12 |
+| 2024 | 11 |
 | 2025 | 8 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 12 |
+| 2024 | 11 |
 | 2025 | 8 |
 
-Trend: **▼ -4**
+Trend: **▼ -3**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 6273fe725a7c56ced259096e | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_1_6a0f3dec9f2d708abd18d6a5.json` #82 | Error Detection | keyword |
 | 63a69a95cb4eb1284fccc535 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_2_6a0f3e3cd50c12865dcf324b.json` #88 | Shuffling of Sentence parts | keyword |
 | 64ccb7cfa2e728f623e01a88 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_24_Jul_2023_Shift_4_6a0f3e918de2cf16f5959312.json` #90 | Fill in the Blanks | keyword |
 | 6710cd6bccef132434d56858 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_12_Sept_2024_Shift_1_6a0f3ebb0a97601eb8f381b2.json` #79 | - | keyword |
@@ -92,7 +91,6 @@ Trend: **▼ -4**
 | 67580ad8effa87b6154c7c70 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_13_Nov_2024_Shift_1_69c4dd1f157480fede1e051f.json` #78 | Error Detection | keyword |
 | 67580d92f3a070b73245c4e6 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_15_Oct_2024_Shift_2_69c4dcfc54d9907abd88a74e.json` #78 | Fill in the Blanks | keyword |
 | 67581340dd19a27c3f7d277c | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_22_Oct_2024_Shift_1_69c4dd08a1aff0d13b628624.json` #78 | Sentence Improvement | keyword |
-| 67580803346622fc3407d63a | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_09_Oct_2024_Shift_1_69c4dcf71a8d117f623e9208.json` #82 | Error Detection | keyword |
 | 69ccbe27ec7c50e6d1b32c37 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_24_Jul_2025_S_69df452576635e6b70a70ba6.json` #82 | Fill in the Blanks | keyword |
 | 69ccbe27188db77c240c9d56 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_24_Jul_2025_S_69df452576635e6b70a70ba6.json` #83 | Fill in the Blanks | keyword |
 | 68e0b62f9e0a6d80761abba4 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Matric_Level/SSC_Selection_Post_2025_Matriculation_Level_Official_Paper_Held_On_29_Aug_2025_S_69df452ddc7d9bce0ea332dd.json` #88 | - | keyword |
@@ -100,9 +98,7 @@ Trend: **▼ -4**
 | 60013889475094ea3e34f4b4 | STENO | 2020 | `SSC-Stenographer/Previous_Year_Paper/2020/SSC_Steno_2020_Official_Paper_Held_on_22_Dec_2020_Shift_1_69f44e4017b00a75d2fd74e2.json` #115 | Error Detection | keyword |
 | 60055a801c25a430efcc8a41 | STENO | 2020 | `SSC-Stenographer/Previous_Year_Paper/2020/SSC_Steno_2020_Official_Paper_Held_on_22_Dec_2020_Shift_2_69f44e4e7006d9c0e42bee38.json` #129 | Sentence Improvement | keyword |
 | 6006f1566afea629581c3ae4 | STENO | 2020 | `SSC-Stenographer/Previous_Year_Paper/2020/SSC_Steno_2020_Official_Paper_Held_on_23_Dec_2020_Shift_2_69f44e54c866a6268be69e21.json` #136 | Direct and Indirect Speech | keyword |
-| 60055d89a1bf62b3299c4cfd | STENO | 2020 | `SSC-Stenographer/Previous_Year_Paper/2020/SSC_Steno_2020_Official_Paper_Held_on_22_Dec_2020_Shift_2_69f44e4e7006d9c0e42bee38.json` #145 | Sentence Improvement | keyword |
 | 624f0aff2986ac363af0a193 | STENO | 2021 | `SSC-Stenographer/Previous_Year_Paper/2021/SSC_Steno_2021_Official_Paper_Held_on_15_Nov_2021_Shift_2_69f44e3c2b70d66b1ce58bc0.json` #121 | Fill in the Blanks | keyword |
-| 624b04315f565a398adb1ab4 | STENO | 2021 | `SSC-Stenographer/Previous_Year_Paper/2021/SSC_Steno_2021_Official_Paper_Held_on_11_Nov_2021_Shift_2_69f44e3a20bfb030bf080136.json` #140 | Fill in the Blanks | keyword |
 | 68b1819b057288c64d5e5408 | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_1_69f44e7899588957ba38518d.json` #123 | Direct and Indirect Speech | keyword |
 | 68bb92234843a0daafce14aa | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_08_Aug_2025_Shift_2_69f44e807006d9c0e42bf22e.json` #140 | - | keyword |
 

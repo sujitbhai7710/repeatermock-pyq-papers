@@ -3,30 +3,30 @@
 - **Level**: topic
 - **Subject**: ENG
 - **Chapter**: Verbal Ability
-- **Questions**: 532
+- **Questions**: 577
 
 ## By exam
 
 | Exam | Questions |
 |---|---|
 | CGL | 6 |
-| CHSL | 131 |
-| CPO | 19 |
-| MTS | 343 |
-| SELECTION_POST | 16 |
-| STENO | 17 |
+| CHSL | 135 |
+| CPO | 20 |
+| MTS | 380 |
+| SELECTION_POST | 18 |
+| STENO | 18 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 13 |
+| 2019 | 16 |
 | 2020 | 4 |
 | 2021 | 4 |
-| 2022 | 16 |
-| 2023 | 150 |
-| 2024 | 232 |
-| 2025 | 113 |
+| 2022 | 17 |
+| 2023 | 173 |
+| 2024 | 249 |
+| 2025 | 114 |
 
 ## Question ids
 
@@ -72,11 +72,13 @@ Resolve any id with `python tools/resolve.py <qid>`.
 66a38c6cbe6bbf5858a1942d  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_02_Jul_2024_Shift_3_67d925791b7267ea6c95537e.json #21
 66a38c7da780bc320b051155  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_02_Jul_2024_Shift_3_67d925791b7267ea6c95537e.json #22
 66a259df3a5c0c0e73a1ab51  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_03_Jul_2024_Shift_3_67d9257b61124665b0f4c4de.json #12
+66a4cd77ff1af5be579062ca  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_04_Jul_2024_Shift_3_67d9257e92c4b43ddd28160d.json #12
 66a4d1f46e2398a321c0f00c  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_04_Jul_2024_Shift_3_67d9257e92c4b43ddd28160d.json #25
 66a247c945a8e6ccaeab6419  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_05_Jul_2024_Shift_3_67d92581a363a587f80488f5.json #10
 66a24893cf3bc753042747b6  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_05_Jul_2024_Shift_3_67d92581a363a587f80488f5.json #14
 66a245c9b05d5981ebb10621  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_3_67d9258439958cced4a375b5.json #13
 66a245e7de257e3af947357a  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_3_67d9258439958cced4a375b5.json #14
+66a247286af5268e60b4c4c8  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_3_67d9258439958cced4a375b5.json #24
 66a5ee70852ad20ca7dc8e97  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_10_Jul_2024_Shift_3_67d9258a777e3b160ae602c2.json #18
 66a5eea5fd3cf869a9a66caa  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_10_Jul_2024_Shift_3_67d9258a777e3b160ae602c2.json #20
 66a5ef2aeea46b129acede43  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_10_Jul_2024_Shift_3_67d9258a777e3b160ae602c2.json #25
@@ -87,6 +89,7 @@ Resolve any id with `python tools/resolve.py <qid>`.
 66a26edc954761307f9211ba  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_03_Jul_2024_Shift_4_67d9257cdfdb6f90a7ff8cf3.json #13
 66a26f5ea97cb52593ed2724  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_03_Jul_2024_Shift_4_67d9257cdfdb6f90a7ff8cf3.json #18
 66a26fde81f14c5187599d66  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_03_Jul_2024_Shift_4_67d9257cdfdb6f90a7ff8cf3.json #22
+66a631fce98fdc3183dc0b60  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_04_Jul_2024_Shift_4_67d9257f5e17aa7b30ab7e19.json #21
 66a277d9e75769c9bf09ca48  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_05_Jul_2024_Shift_4_67d92582635309d10c9cb10e.json #1
 67278b32a8dc9f536500a05b  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_05_Jul_2024_Shift_4_67d92582635309d10c9cb10e.json #5
 66a279cd0071a6b0f895b1e6  CHSL 2024 SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_05_Jul_2024_Shift_4_67d92582635309d10c9cb10e.json #6
@@ -132,6 +135,7 @@ Resolve any id with `python tools/resolve.py <qid>`.
 693c10c29e5cc5f512748580  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_20_Nov_2025_Shift_2_699139e92552aacae84782dc.json #2
 693c10c35bc658233b0c6e1b  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_20_Nov_2025_Shift_2_699139e92552aacae84782dc.json #3
 693c10c7479f9795f5d5ce3a  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_20_Nov_2025_Shift_2_699139e92552aacae84782dc.json #13
+693c1e016bfca177998c5d55  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_21_Nov_2025_Shift_2_699139eb4e93fc9447c36835.json #3
 699c2f08e2b6c23c89a7af15  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_22_Nov_2025_Shift_2_699139f75bb969cde8bdaca8.json #3
 699c2f4d5b2d708c1c9f0cda  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_22_Nov_2025_Shift_2_699139f75bb969cde8bdaca8.json #4
 699d4848b1dc064c81ee918e  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_24_Nov_2025_Shift_2_699139f97e64c196e89b53bb.json #6
@@ -170,6 +174,7 @@ Resolve any id with `python tools/resolve.py <qid>`.
 69a0fd4eba613fa52dab7e04  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_29_Nov_2025_Shift_3_69913a0583be60a89ad04541.json #14
 69b3f8eb2059cb3c2d07beab  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_30_Nov_2025_Shift_3_69913a07b864e7e276ac093b.json #3
 69b3f90c6d5842dffa301c0c  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_30_Nov_2025_Shift_3_69913a07b864e7e276ac093b.json #4
+5e12e6de4e1bc00d041266b4  CPO 2019 SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_27th_September_2019_69c66abd03c5a52a6d11b54e.json #46
 5e12f8522f2e51591c3982e8  CPO 2019 SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_27th_September_2019_69c66abd03c5a52a6d11b54e.json #70
 5e13069888d10a0d0472d410  CPO 2019 SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_27th_September_2019_69c66abd03c5a52a6d11b54e.json #88
 5e13069888d10a0d0472d411  CPO 2019 SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_27th_September_2019_69c66abd03c5a52a6d11b54e.json #89
@@ -193,14 +198,18 @@ Resolve any id with `python tools/resolve.py <qid>`.
 649e983992b7b683057d1fea  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_02_May_2023_Shift_1_69c4dd37b070f8a770f3785e.json #72
 649ead08e540d5c52a229826  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_03_May_2023_Shift_1_69c4dd3ad71370459de63a9d.json #66
 649eaecd8d6eb010786832f2  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_03_May_2023_Shift_1_69c4dd3ad71370459de63a9d.json #76
+649eafeb1b664e692c0920e7  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_03_May_2023_Shift_1_69c4dd3ad71370459de63a9d.json #83
 649fbbfab6f3f8ae078b058a  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_04_May_2023_Shift_1_69c4dd3c4a94e2004b7308a4.json #73
 649fc193b6f3f8ae078bdae4  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_04_May_2023_Shift_1_69c4dd3c4a94e2004b7308a4.json #80
+649ec510a4dfe0c9c16264b9  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_08_May_2023_Shift_1_69c4dd3ee7391208d448d61f.json #80
 649ec5772a30f27cd3411e91  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_08_May_2023_Shift_1_69c4dd3ee7391208d448d61f.json #83
+649ec5984b3044a0125849a3  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_08_May_2023_Shift_1_69c4dd3ee7391208d448d61f.json #84
 649f04fc7e79c418a2414414  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_09_May_2023_Shift_1_69c4dd4024745cb955f7a43b.json #67
 649f058375d7acf095499ec1  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_09_May_2023_Shift_1_69c4dd4024745cb955f7a43b.json #72
 649f06522b76cfb9954043af  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_09_May_2023_Shift_1_69c4dd4024745cb955f7a43b.json #79
 649f06cf8f3c94f062d73869  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_09_May_2023_Shift_1_69c4dd4024745cb955f7a43b.json #84
 64a15b32e15552122e930a35  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_1_69c4dd42c93f8d7d94345669.json #69
+64a15cbf2367152863581bea  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_1_69c4dd42c93f8d7d94345669.json #75
 64a15cf52367152863582500  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_1_69c4dd42c93f8d7d94345669.json #76
 64a02a473bb85c2bf0e9afeb  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_11_May_2023_Shift_1_69c4dd45ce25059461e2c86d.json #74
 64a02d577018f1c14011bb66  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_11_May_2023_Shift_1_69c4dd45ce25059461e2c86d.json #80
@@ -215,23 +224,14 @@ Resolve any id with `python tools/resolve.py <qid>`.
 64a569767321d895e2fe9826  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_15_May_2023_Shift_1_69c4dd4a0f160cd920476893.json #81
 64a51b0a637e71ad61404719  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_Jun_2023_Shift_1_69c4dd5ba1aff0d13b628d0a.json #80
 64a2e4fc67a68919cebdc731  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_May_2023_Shift_1_69c4dd4cd87f9bf12c7399cc.json #79
+64a2e536b841adda58cd4360  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_May_2023_Shift_1_69c4dd4cd87f9bf12c7399cc.json #80
+64a2e5d779a87499006fd96f  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_May_2023_Shift_1_69c4dd4cd87f9bf12c7399cc.json #81
+64a3aa179108457d881f93c5  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_17_May_2023_Shift_1_69c4dd4eae87d044d3af599b.json #67
 64a3af376f2ba6738d40e2c5  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_17_May_2023_Shift_1_69c4dd4eae87d044d3af599b.json #74
+64a3b1a19108457d8820f034  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_17_May_2023_Shift_1_69c4dd4eae87d044d3af599b.json #76
+64a1a31adb4eafa0bb22d585  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_18_May_2023_Shift_1_69c4dd502bced945e373edbc.json #67
 64a1a576a5ce447b4582fdf6  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_18_May_2023_Shift_1_69c4dd502bced945e373edbc.json #70
 64a1a73a0036264fada42ee1  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_18_May_2023_Shift_1_69c4dd502bced945e373edbc.json #72
 649feb004db7db18b124bd96  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_19_Jun_2023_Shift_1_69c4dd5ee9c3c84d78c7d774.json #69
-649fec948b1b9806f961c7ba  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_19_Jun_2023_Shift_1_69c4dd5ee9c3c84d78c7d774.json #73
-64a2ba0bb375700d88f2f69f  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_20_Jun_2023_Shift_1_69c4dd600f160cd920476b1c.json #74
-64a2be27cdc68787242b832b  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_20_Jun_2023_Shift_1_69c4dd600f160cd920476b1c.json #81
-64a2bfaceb1b574ee219de6b  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_20_Jun_2023_Shift_1_69c4dd600f160cd920476b1c.json #83
-64a5133e50f2973459f92874  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_14_Jun_2023_Shift_1_69c4dd57c93f8d7d943457cc.json #71
-64a514182a614c77e45cdb4e  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_14_Jun_2023_Shift_1_69c4dd57c93f8d7d943457cc.json #74
-64a4590fdc2dcead7eb16b88  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_19_May_2023_Shift_1_69c4dd52157480fede1e0913.json #77
-64a459aca90f27974710b97e  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_19_May_2023_Shift_1_69c4dd52157480fede1e0913.json #79
-650de9319da48f15f0ea7d1b  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_04_Sept_2023_Shift_1_69c4dd267ec09bc7a5192fc7.json #82
-650ab8a699706896e3148719  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_05_Sept_2023_Shift_1_69c4dd28157480fede1e0582.json #69
-650aba2753f9def3f2b2ec2c  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_05_Sept_2023_Shift_1_69c4dd28157480fede1e0582.json #82
-650a6b84c00628c9dc7a39aa  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_06_Sept_2023_Shift_1_69c4dd2ab526cd165802ee2e.json #83
-650a8b827b129955e1051402  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_08_Sept_2023_Shift_1_69c4dd2d3ca7218442009bdb.json #76
-650ac964cb93614c425fdfd1  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_11_Sept_2023_Shift_1_69c4dd2f0f160cd9204764c3.json #70
-... 332 more (see questions.jsonl)
+... 377 more (see questions.jsonl)
 ```

@@ -1,10 +1,13 @@
 # Rule 12: One Article, One Entity
 
 - **Topic**: Articles
-- **Questions**: 1
-- **Top exam**: CHSL
+- **Questions**: 0
+- **Top exam**: -
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
+
+**No PYQ in scope 2019–2025** — the corpus contains no question for this rule.
+The empty `questions.jsonl` is intentional: this leaf is kept so the rule matrix stays complete, and the marker tells the audit it is not a missing write.
 
 ## Rule
 
@@ -27,15 +30,11 @@ Words: `a`, `an`, `articles`, `the`
 
 ## By exam
 
-| Exam | Questions |
-|---|---|
-| CHSL | 1 |
+_No question is attached to this rule yet._
 
 ## By year
 
-| Year | Questions |
-|---|---|
-| 2023 | 1 |
+_No question is attached to this rule yet._
 
 ## Trend (last years in the corpus)
 
@@ -48,8 +47,6 @@ Trend: **→ 0**
 
 ## Questions
 
-| qid | Exam | Year | Paper | Type | Via |
-|---|---|---|---|---|---|
-| 64e716ee5c164206e3000af1 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_07_Aug_2023_Shift_4_67d9259972032ae6b55e7288.json` #89 | Shuffling of Sentence parts | keyword |
+_None._
 
 Resolve any id with `python tools/resolve.py <qid>`.

@@ -1,7 +1,7 @@
 # Rule 112: Lest — Negative Purpose
 
 - **Topic**: Conjunctions
-- **Questions**: 8
+- **Questions**: 6
 - **Top exam**: CPO
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,35 +30,32 @@ Words: `lest`, `not`, `should`
 | Exam | Questions |
 |---|---|
 | CPO | 3 |
-| CGL | 2 |
-| CHSL | 2 |
+| CGL | 1 |
+| CHSL | 1 |
 | STENO | 1 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2020 | 1 |
 | 2022 | 1 |
 | 2024 | 1 |
-| 2025 | 5 |
+| 2025 | 4 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 1 |
-| 2025 | 5 |
+| 2025 | 4 |
 
-Trend: **▲ +4**
+Trend: **▲ +3**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 690c6cec86eddd0bdacca05e | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_23_Sept_2025_Shift_3_6a0f3f38dbd2173b22e422ce.json` #96 | Sentence Improvement | keyword |
-| 690b1bc1b5904ecb896d3bc7 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_17_Sept_2025_Shift_1_6a0f3f0fcda71d26928e6844.json` #97 | Direct and Indirect Speech | keyword |
-| 605c8d4886dd433dd2e2caab | CHSL | 2020 | `SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_3_Held_On_17_March_2020_Shift_3_67d925fb61576da269e7f308.json` #21 | Direct and Indirect Speech | keyword |
 | 66a4754e6300148bbec44ea5 | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_11_Jul_2024_Shift_2_67d9258cfe530d1609a39a23.json` #1 | Error Detection | keyword |
 | 696903c4bb236aff632749f1 | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_10_Dec_2025_Shift_2_69c66a609e8806b60e852f5f.json` #195 | Direct and Indirect Speech | keyword |
 | 696598f7a295dee7587eb9c9 | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_09_Dec_2025_Shift_1_69c66a5ecab49990f757f023.json` #196 | Direct and Indirect Speech | keyword |

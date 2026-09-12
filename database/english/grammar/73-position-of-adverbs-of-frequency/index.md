@@ -1,8 +1,8 @@
 # Rule 73: Position of Adverbs of Frequency
 
 - **Topic**: Adverb
-- **Questions**: 75
-- **Top exam**: CHSL
+- **Questions**: 70
+- **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -31,10 +31,10 @@ Words: `always`, `be`, `never`, `often`, `rarely`, `seldom`, `sometimes`, `usual
 
 | Exam | Questions |
 |---|---|
-| CHSL | 17 |
 | MTS | 16 |
+| CHSL | 15 |
 | GD | 15 |
-| CGL | 14 |
+| CGL | 11 |
 | STENO | 10 |
 | CPO | 3 |
 
@@ -43,9 +43,9 @@ Words: `always`, `be`, `never`, `often`, `rarely`, `seldom`, `sometimes`, `usual
 | Year | Questions |
 |---|---|
 | 2019 | 5 |
-| 2020 | 3 |
-| 2021 | 10 |
-| 2022 | 17 |
+| 2020 | 2 |
+| 2021 | 9 |
+| 2022 | 14 |
 | 2023 | 16 |
 | 2024 | 15 |
 | 2025 | 9 |
@@ -64,10 +64,7 @@ Trend: **▼ -6**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e84bdd7f60d5d276d184a00 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_3_6a0f3d96471ce89a8c64ed49.json` #78 | Sentence Improvement | ai |
-| 62743ec9292c4dfc2e69a098 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_20_April_2022_Shift_3_6a0f3e026470e02c4ea84baf.json` #92 | Sentence Improvement | keyword |
-| 63a4064afa91172fdd6619a7 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_2_6a0f3e14b835398b15c9c749.json` #76 | Sentence Improvement | keyword |
 | 63a3d22b3e06396b5271d800 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_03_Dec_2022_Shift_2_6a0f3e1ccda5e733b2fabe0d.json` #81 | - | keyword |
-| 63a293d2980487d919789a37 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_01_Dec_2022_Shift_3_6a0f3e0e33a6a35112ced9cf.json` #82 | Sentence Improvement | keyword |
 | 63a53c62bc80190bd879dc5b | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_4_6a0f3e189f2d708abd18d89d.json` #86 | Shuffling of Sentence parts | keyword |
 | 63a53b1c36eac9b8078cd248 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_06_Dec_2022_Shift_1_6a0f3e2a762fad51036ef30b.json` #91 | Sentence Improvement | keyword |
 | 63a5cde77507f6566345144c | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_06_Dec_2022_Shift_2_6a0f3e2c8de2cf16f5958f87.json` #94 | Error Detection | keyword |
@@ -77,11 +74,9 @@ Trend: **▼ -6**
 | 64ccc6a385095a91e459a396 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_25_Jul_2023_Shift_3_6a0f3e97cda5e733b2fac218.json` #87 | - | keyword |
 | 64cbe1d427ee0677626a5e21 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_17_Jul_2023_Shift_2_6a0f3e64836cac9339b3ae46.json` #92 | Error Detection | keyword |
 | 6909d81ad9de8466e62b2688 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_12_Sept_2025_Shift_3_6a0f3ef579735237a77695ea.json` #85 | Error Detection | keyword |
-| 5face7cce032a0eea82adaff | CHSL | 2020 | `SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_12_Held_On_12_Oct_2020_Shift_3_67d92602777e3b160ae605db.json` #20 | Direct and Indirect Speech | keyword |
 | 62cefe9118da17c4d55f2e93 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_6_June_2022_Shift_2_67d925d97be6b038271bc9a7.json` #16 | Error Detection | keyword |
 | 62c4194701c2c364bb2c44a3 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_10_June_2022_Shift_2_67d925d36dc58ebbb55bf3ed.json` #5 | Shuffling of Sentences in a passage | keyword |
 | 62d238a5aacbc3b270209f3b | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_7_June_2022_Shift_2_67d925db95238976dcea598e.json` #5 | Fill in the Blanks | keyword |
-| 642e4af8a6a904a8d2cf4efd | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_14_March_2023_Shift_1_67d925b3f5efef6e7aaaf042.json` #79 | Direct and Indirect Speech | keyword |
 | 642c69670671dbb72c5db31b | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_17_March_2023_Shift_1_67d925bc66019ed3c889c241.json` #87 | Error Detection | keyword |
 | 64e59a291f2104091428d683 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_10_Aug_2023_Shift_3_67d925a00fff327612707b47.json` #78 | Error Detection | keyword |
 | 64e85897db9a09d2d4c896a0 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_04_Aug_2023_Shift_3_67d92595026e0ef5daf79497.json` #93 | Error Detection | keyword |

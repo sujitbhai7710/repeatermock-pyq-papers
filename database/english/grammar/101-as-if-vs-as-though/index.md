@@ -1,10 +1,13 @@
 # Rule 101: As If vs. As Though
 
 - **Topic**: Conjunctions
-- **Questions**: 1
-- **Top exam**: GD
+- **Questions**: 0
+- **Top exam**: -
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
+
+**No PYQ in scope 2019–2025** — the corpus contains no question for this rule.
+The empty `questions.jsonl` is intentional: this leaf is kept so the rule matrix stays complete, and the marker tells the audit it is not a missing write.
 
 ## Rule
 
@@ -27,15 +30,11 @@ Words: `was`, `were`
 
 ## By exam
 
-| Exam | Questions |
-|---|---|
-| GD | 1 |
+_No question is attached to this rule yet._
 
 ## By year
 
-| Year | Questions |
-|---|---|
-| 2021 | 1 |
+_No question is attached to this rule yet._
 
 ## Trend (last years in the corpus)
 
@@ -48,8 +47,6 @@ Trend: **→ 0**
 
 ## Questions
 
-| qid | Exam | Year | Paper | Type | Via |
-|---|---|---|---|---|---|
-| 625175af54d865b8225017e7 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_2nd_December_2021_Shift_1_68e3663e7edf56ec928b09a3.json` #94 | Fill in the Blanks | keyword |
+_None._
 
 Resolve any id with `python tools/resolve.py <qid>`.

@@ -1,7 +1,7 @@
 # Rule 64: Objective Case After Prepositions
 
 - **Topic**: Pronoun Case
-- **Questions**: 7
+- **Questions**: 6
 - **Top exam**: GD
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -35,34 +35,33 @@ Words: `her`, `him`, `me`, `preposition`, `them`, `us`
 | STENO | 2 |
 | CGL | 1 |
 | CHSL | 1 |
-| SELECTION_POST | 1 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
 | 2019 | 3 |
-| 2022 | 2 |
-| 2024 | 2 |
+| 2020 | 1 |
+| 2022 | 1 |
+| 2024 | 1 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 2 |
+| 2024 | 1 |
 | 2025 | 0 |
 
-Trend: **▼ -2**
+Trend: **▼ -1**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 63a40bcdb5cf34d4197fb7cd | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_2_6a0f3e14b835398b15c9c749.json` #82 | Direct and Indirect Speech | keyword |
+| 61404104b03a9ffd9ef3ddd9 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_1_6a0f3db69b19ada2a1c23492.json` #94 | Sentence Improvement | ai_review |
 | 66a2480e01ff759e3444e3bd | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_05_Jul_2024_Shift_3_67d92581a363a587f80488f5.json` #11 | Sentence Improvement | keyword |
 | 5f27b0e8b3c1760d20af41f7 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_14th_February_2019_Shift_1_68e3662010de2287dac997b1.json` #78 | Sentence Improvement | keyword |
 | 63f8668dd1e9fae093d6b0fb | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_13_Jan_2023_Shift_2_68e36677ee20f26fb4fd992b.json` #67 | Sentence Improvement | keyword |
-| 669fa44484b3bb8ffe7055ec | SELECTION_POST | 2024 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2024_Graduate_Level_Official_Paper_Held_On_24_Jun_2024_Shift__69df456b468e6778159d714c.json` #90 | Sentence Improvement | keyword |
 | 5db814baf60d5d77346527a8 | STENO | 2019 | `SSC-Stenographer/Previous_Year_Paper/2019/SSC_Steno_2019_Official_Paper_Held_on_7_Feb_2019_Shift_2_69f44e5c9d08d81daae5ac3f.json` #114 | Sentence Improvement | keyword |
 | 5daea688f60d5d3afa387f3d | STENO | 2019 | `SSC-Stenographer/Previous_Year_Paper/2019/SSC_Steno_2019_Official_Paper_Held_on_7_Feb_2019_Shift_1_69f44e56610b0613cd5805e6.json` #132 | Sentence Improvement | keyword |
 

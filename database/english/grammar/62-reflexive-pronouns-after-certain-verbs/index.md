@@ -1,8 +1,8 @@
 # Rule 62: Reflexive Pronouns after Certain Verbs
 
 - **Topic**: Pronoun
-- **Questions**: 17
-- **Top exam**: MTS
+- **Questions**: 16
+- **Top exam**: GD
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -29,8 +29,8 @@ Words: `herself`, `himself`, `itself`, `myself`, `ourselves`, `reflexive`, `them
 
 | Exam | Questions |
 |---|---|
-| MTS | 5 |
 | GD | 4 |
+| MTS | 4 |
 | CGL | 2 |
 | CHSL | 2 |
 | STENO | 2 |
@@ -44,7 +44,7 @@ Words: `herself`, `himself`, `itself`, `myself`, `ourselves`, `reflexive`, `them
 | 2019 | 4 |
 | 2020 | 1 |
 | 2021 | 2 |
-| 2022 | 2 |
+| 2022 | 1 |
 | 2023 | 4 |
 | 2024 | 1 |
 | 2025 | 3 |
@@ -72,7 +72,6 @@ Trend: **▲ +2**
 | 62645ad9f9192ca8f7391112 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_10th_December_2021_Shift_1_68e3662fc523736ae0653e90.json` #85 | Fill in the Blanks | keyword |
 | 666bfe908c3bd827d0adc25c | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_29_Feb_2024_Shift_3_68e366bac040f53d106650d2.json` #68 | Error Detection | keyword |
 | 6203c3d92f588131868b40f1 | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_6_Oct_2021_Shift_3_69c4dd8954d9907abd88b1f2.json` #4 | Sentence Improvement | keyword |
-| 62ee3fb8ee32304cebe92d9f | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_15_July_2022_Shift_3_69c4dd7541803ad4e27aa0c5.json` #67 | Fill in the Blanks | keyword |
 | 64a1227de797634b0ef56814 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_12_May_2023_Shift_2_69c4dd481a8d117f623e9a23.json` #73 | Fill in the Blanks | keyword |
 | 64a2c7d7cdc68787242d202c | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_20_Jun_2023_Shift_1_69c4dd600f160cd920476b1c.json` #86 | Fill in the Blanks | keyword |
 | 649fee04e9a5996fcbf6c123 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_3_69c4dd4489e47aca52cdd01d.json` #88 | Fill in the Blanks | keyword |

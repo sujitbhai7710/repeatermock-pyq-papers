@@ -1,7 +1,7 @@
 # Rule 59: Adjective Order
 
 - **Topic**: Order of Adjectives (OSASCOMP)
-- **Questions**: 93
+- **Questions**: 84
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,46 +30,39 @@ Words: `beautiful`, `big`, `italian`, `old`, `osascomp`, `round`, `wooden`
 | Exam | Questions |
 |---|---|
 | MTS | 31 |
-| CHSL | 17 |
-| GD | 13 |
-| CGL | 11 |
+| CHSL | 16 |
+| GD | 12 |
 | STENO | 10 |
 | CPO | 6 |
 | SELECTION_POST | 5 |
+| CGL | 4 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 10 |
+| 2019 | 9 |
 | 2020 | 3 |
-| 2021 | 15 |
-| 2022 | 15 |
+| 2021 | 10 |
+| 2022 | 13 |
 | 2023 | 21 |
-| 2024 | 19 |
+| 2024 | 18 |
 | 2025 | 10 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 19 |
+| 2024 | 18 |
 | 2025 | 10 |
 
-Trend: **▼ -9**
+Trend: **▼ -8**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e8ee2bb55a06d0d30ce4346 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #87 | Fill in the Blanks | keyword |
 | 619e2f4872f602e51ed9e224 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_1_6a0f3dc2d464e6c08627dfdf.json` #78 | Direct and Indirect Speech | keyword |
-| 6274067bf60b60bce38b2c6c | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_2_6a0f3dee9636bcffad5cbcb5.json` #87 | Error Detection | keyword |
-| 62756622723e401fdd1e3755 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_1_6a0f3df88d0a5c66cc0db6f2.json` #89 | Error Detection | keyword |
-| 6274023da04a125612ac4042 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_1_6a0f3dec9f2d708abd18d6a5.json` #90 | Error Detection | keyword |
-| 6273a80b6a96d4ad6dbcba87 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_11_April_2022_Shift_1_6a0f3de09636bcffad5cbc50.json` #95 | Sentence Improvement | keyword |
-| 6412b0b8a166c1b8d0722b25 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_2_March_2023_69611915b415b1c6cb564fc1.json` #70 | Error Detection | keyword |
-| 63a8962f0037156eb5aabf76 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_3_6a0f3e4633a6a35112ceddd9.json` #91 | Direct and Indirect Speech | keyword |
 | 64cb94f3e0b5b68d7d598ada | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_17_Jul_2023_Shift_4_6a0f3e683b5bc48ebebf6682.json` #91 | Sentence Improvement | keyword |
 | 64cb9541e0b5b68d7d5998d8 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_17_Jul_2023_Shift_4_6a0f3e683b5bc48ebebf6682.json` #94 | - | keyword |
 | 690b31ebf2572e4774f9b1b9 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_21_Sept_2025_Shift_2_6a0f3f2a8d0a5c66cc0dc6d2.json` #100 | Sentence Improvement | keyword |
@@ -86,7 +79,6 @@ Trend: **▼ -9**
 | 66a3399aa5aad295f9a6e99a | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_09_Jul_2024_Shift_3_67d925878b3fddc188ffcb92.json` #10 | Sentence Improvement | keyword |
 | 66a2468376e63a4c101249fd | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_3_67d9258439958cced4a375b5.json` #18 | Sentence Improvement | keyword |
 | 66a2bdcbddadc5966ba81830 | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_4_67d9258566ea8449d8825757.json` #22 | Fill in the Blanks | keyword |
-| 66a2788d89b5217107f89cba | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_05_Jul_2024_Shift_4_67d92582635309d10c9cb10e.json` #4 | Error Detection | keyword |
 | 69a13698fcec28499aaa9c22 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_29_Nov_2025_Shift_1_69913a043e93fa3903462f05.json` #12 | Direct and Indirect Speech | keyword |
 | 69a0701b390650d0f2041ff4 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_30_Nov_2025_Shift_2_69913a078f9c3b21e8a7cee6.json` #16 | Error Detection | keyword |
 | 699d48b64772e252a3097725 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_24_Nov_2025_Shift_2_699139f97e64c196e89b53bb.json` #9 | Direct and Indirect Speech | keyword |
@@ -100,7 +92,6 @@ Trend: **▼ -9**
 | 5f509410201fa83b93792f7d | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_15th_February_2019_Shift_1_68e366231a48cc0f8d1198b9.json` #99 | Fill in the Blanks | keyword |
 | 62624502e7948dc0f0732cc6 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_6th_December_2021_Shift_3_68e366545cce2a6080350523.json` #84 | Fill in the Blanks | keyword |
 | 625294c4c084e1e7a58a27e0 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_30th_November_2021_Shift_3_68e3665249cb55bd10175a15.json` #86 | Error Detection | keyword |
-| 62624745a6e20e0e4a59b940 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_6th_December_2021_Shift_3_68e366545cce2a6080350523.json` #87 | Fill in the Blanks | keyword |
 | 6242961222fd68c511bf109a | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_24th_November_2021_Shift_3_68e3664690979525b7eb899a.json` #89 | Fill in the Blanks | keyword |
 | 624d674dfc47e2c808632fde | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_30th_November_2021_Shift_1_68e366500137adf867c3bdab.json` #89 | Sentence Improvement | keyword |
 | 6218e2ea720eed2e7fbd1a4a | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_17th_November_2021_Shift_3_68e3663a76d80d839fc101c2.json` #93 | Sentence Improvement | keyword |

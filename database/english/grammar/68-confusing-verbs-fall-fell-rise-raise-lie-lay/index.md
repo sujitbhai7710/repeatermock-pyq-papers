@@ -1,7 +1,7 @@
 # Rule 68: Confusing Verbs: Fall/Fell, Rise/Raise, Lie/Lay
 
 - **Topic**: Verb Usage and Transitivity
-- **Questions**: 52
+- **Questions**: 49
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,9 +30,9 @@ Words: `fall`, `fell`, `laid`, `lain`, `lay`, `lie`, `raise`, `rise`
 | Exam | Questions |
 |---|---|
 | MTS | 18 |
-| GD | 8 |
-| CGL | 6 |
-| CHSL | 6 |
+| GD | 7 |
+| CGL | 5 |
+| CHSL | 5 |
 | SELECTION_POST | 5 |
 | STENO | 5 |
 | CPO | 4 |
@@ -41,8 +41,8 @@ Words: `fall`, `fell`, `laid`, `lain`, `lay`, `lie`, `raise`, `rise`
 
 | Year | Questions |
 |---|---|
-| 2019 | 9 |
-| 2020 | 4 |
+| 2019 | 7 |
+| 2020 | 3 |
 | 2021 | 5 |
 | 2022 | 8 |
 | 2023 | 10 |
@@ -62,13 +62,11 @@ Trend: **▼ -2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 613f2dfc0ac44cbc5f995dbf | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_2_6a0f3dc4c6516817f8809bc2.json` #87 | Error Detection | keyword |
 | 63a496a5d3b5fd9703c0ac25 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_05_Dec_2022_Shift_3_6a0f3e26ebc71a5ff00194d5.json` #89 | Fill in the Blanks | keyword |
 | 63a89722d69d98877cd61a52 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_3_6a0f3e4633a6a35112ceddd9.json` #95 | Sentence Improvement | keyword |
 | 64cc5a95294cc1136c003821 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_18_Jul_2023_Shift_2_6a0f3e6c0f618830b205ba2a.json` #80 | Error Detection | keyword |
 | 679436bba2aec53aff0f9795 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json` #104 | Fill in the Blanks | keyword |
 | 6710cb79629e751617aa61f2 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_11_Sept_2024_Shift_1_6a0f3eb598d24d08c231fcf5.json` #82 | Sentence Improvement | keyword |
-| 5d6a56fffdb8bb52cebf908c | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_13_Held_On_5_July_2019_Shift_3_67d926268145ddad361948b1.json` #19 | Error Detection | keyword |
 | 62c7f4b1a3b06ac65950bfa2 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_26_May_2022_Shift_2_67d925c87be6b038271bc7ac.json` #15 | Sentence Improvement | keyword |
 | 642e93defad238ab27384e72 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_10_March_2023_Shift_2_67d925ae0c8b52ad375599a7.json` #80 | Error Detection | keyword |
 | 642c38ef7e144be8120c0d02 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_09_March_2023_Shift_1_67d925abde55970745a5b8c8.json` #92 | Sentence Improvement | keyword |
@@ -78,7 +76,6 @@ Trend: **▼ -2**
 | 5fe8304135cdbf6b1021cd3f | CPO | 2020 | `SSC-CPO/Previous_Year_Paper_Paper_I/2020/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_25_November_2020_Shift_1_69c66a7975bfbcf2a0617255.json` #169 | Sentence Improvement | keyword |
 | 5fe82c1d02cb71de1a7cb876 | CPO | 2020 | `SSC-CPO/Previous_Year_Paper_Paper_I/2020/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_25_November_2020_Shift_1_69c66a7975bfbcf2a0617255.json` #179 | Error Detection | keyword |
 | 6376190cae344cd3a9578cf9 | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_I/2022/SSC_CPO_2022_Tier-I_Official_Paper_Held_On_11_Nov_2022_Shift_1_69c66a72574e18bb2743c3c2.json` #195 | Sentence Improvement | keyword |
-| 5fa01aa109e88e56945f8f96 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_1st_March_2019_Shift_1_68e36619634479a018b7296b.json` #85 | Error Detection | keyword |
 | 5f197febaedf100d16b1c5bd | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_11th_February_2019_Shift_1_68e3661b9517f98eddda2283.json` #89 | Sentence Improvement | keyword |
 | 5f197faad5dfae0d11942b17 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_11th_February_2019_Shift_1_68e3661b9517f98eddda2283.json` #99 | Fill in the Blanks | keyword |
 | 6266d630c79465050b0c6157 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_15th_December_2021_Shift_1_68e36635fe4a66a8868d37ef.json` #82 | Fill in the Blanks | keyword |

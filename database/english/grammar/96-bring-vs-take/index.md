@@ -1,7 +1,7 @@
 # Rule 96: Bring vs. Take
 
 - **Topic**: Confusable Verbs
-- **Questions**: 114
+- **Questions**: 106
 - **Top exam**: MTS
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -25,44 +25,40 @@ Words: `bring`, `brought`, `take`, `took`
 
 | Exam | Questions |
 |---|---|
-| MTS | 28 |
-| CPO | 18 |
+| MTS | 27 |
 | CHSL | 17 |
-| GD | 17 |
 | STENO | 17 |
-| CGL | 10 |
+| CPO | 16 |
+| GD | 16 |
 | SELECTION_POST | 7 |
+| CGL | 6 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 9 |
+| 2019 | 8 |
 | 2020 | 6 |
-| 2021 | 20 |
-| 2022 | 22 |
-| 2023 | 17 |
+| 2021 | 18 |
+| 2022 | 19 |
+| 2023 | 16 |
 | 2024 | 22 |
-| 2025 | 18 |
+| 2025 | 17 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 22 |
-| 2025 | 18 |
+| 2025 | 17 |
 
-Trend: **▼ -4**
+Trend: **▼ -5**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e943838f60d5d0d0ba57b97 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_2_6a0f3dac6470e02c4ea84669.json` #80 | Direct and Indirect Speech | keyword |
 | 614c7a2af644a893d4867d38 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_16_Aug_2021_Shift_1_6a0f3dbc471ce89a8c64ee65.json` #78 | Error Detection | keyword |
-| 627638df143bc055723e830a | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_3_6a0f3e08205404a71f29fdcb.json` #80 | Error Detection | keyword |
-| 627492a41bde985bc4c3b441 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_2_6a0f3df46f9594e2cd05cb14.json` #84 | Error Detection | keyword |
-| 63a5db83e601ceb70962a8ea | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_03_Dec_2022_Shift_1_6a0f3e1a9b19ada2a1c23987.json` #80 | Fill in the Blanks | keyword |
 | 64ce4c5fd8a1044f04287362 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_19_Jul_2023_Shift_3_6a0f3e76cf23a15bf6d54282.json` #90 | Fill in the Blanks | keyword |
 | 6715fc3ffbefa254da0a5a17 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_17_Sept_2024_Shift_1_6a0f3ec79b19ada2a1c2414a.json` #86 | Error Detection | keyword |
 | 6716029d9ef28221bc1223a6 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_19_Sept_2024_Shift_1_6a0f3ed3cda71d26928e6532.json` #92 | Shuffling of Sentence parts | keyword |
@@ -96,12 +92,10 @@ Trend: **▼ -4**
 | 637634772cefabbb064beb5a | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_I/2022/SSC_CPO_2022_Tier-I_Official_Paper_Held_On_9_Nov_2022_Shift_3_69c66a768660242bfdabf8d1.json` #161 | Error Detection | keyword |
 | 63762ca931453db6fc1525f5 | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_I/2022/SSC_CPO_2022_Tier-I_Official_Paper_Held_On_10_Nov_2022_Shift_1_69c66a70b40c18e7232857a8.json` #183 | Fill in the Blanks | keyword |
 | 637661a1ac760ed0d9c69bb7 | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_I/2022/SSC_CPO_2022_Tier-I_Official_Paper_Held_On_10_Nov_2022_Shift_3_69c66a714b88ba0ac6fccfb8.json` #185 | Sentence Improvement | keyword |
-| 650865f32837366bbd1df2a3 | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_2022_Tier-II_Official_Paper_Held_On_02_May_2023_Shift_2_69c66abfea772294b9df64b2.json` #23 | Error Detection | keyword |
 | 6508661a9cfc672988c826b0 | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_2022_Tier-II_Official_Paper_Held_On_02_May_2023_Shift_2_69c66abfea772294b9df64b2.json` #25 | - | keyword |
 | 65294c1b25f235a4bf7260a7 | CPO | 2023 | `SSC-CPO/Previous_Year_Paper_Paper_I/2023/SSC_CPO_2023_Official_Paper-I_Held_On_05_Oct_2023_Shift_1_69c66a6e574e18bb2743c3a8.json` #154 | Error Detection | keyword |
 | 6527accab7de9c3df92aa823 | CPO | 2023 | `SSC-CPO/Previous_Year_Paper_Paper_I/2023/SSC_CPO_2023_Official_Paper-I_Held_On_04_Oct_2023_Shift_3_69c66a6dbf28bd9b3d2bc0db.json` #164 | Error Detection | keyword |
 | 66a3deeb2bdc97eef0a1356a | CPO | 2024 | `SSC-CPO/Previous_Year_Paper_Paper_I/2024/SSC_CPO_2024_Official_Paper-I_Held_On_27_Jun_2024_Shift_1_69c66a63cab49990f757f051.json` #152 | Sentence Improvement | keyword |
-| 696e8ea62edb1010b3129fda | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_12_Dec_2025_Shift_1_69c66a624b88ba0ac6fcce1a.json` #176 | Error Detection | keyword |
 | 696f32411b5b56fe93c7cb8a | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_12_Dec_2025_Shift_1_69c66a624b88ba0ac6fcce1a.json` #200 | Sentence Improvement | keyword |
 | 5f2533ccf6db930d0a511f65 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_13th_February_2019_Shift_1_68e3661f41685bbcf388202b.json` #78 | Fill in the Blanks | keyword |
 | 5f27b13e5fd31f0d0f0522e6 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_14th_February_2019_Shift_1_68e3662010de2287dac997b1.json` #81 | Fill in the Blanks | keyword |
@@ -112,7 +106,6 @@ Trend: **▼ -4**
 | 6245e24e2440565b3063615c | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_25th_November_2021_Shift_2_68e36648ee20f26fb4fd9504.json` #85 | Sentence Improvement | keyword |
 | 6260cb178804652a9bf48cb6 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_3rd_December_2021_Shift_3_68e366502c2aa8a56545ef4c.json` #85 | Error Detection | keyword |
 | 62413aacfcb0f01d003da6e8 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_22nd_November_2021_Shift_1_68e366400cfb1d3c9c60bb5c.json` #86 | Error Detection | keyword |
-| 63f817470cb2eb08583a966b | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_16_Jan_2023_Shift_1_68e3667a49cb55bd10175c10.json` #63 | Sentence Improvement | keyword |
 | 63ff8e6345bb889c3ee23ad8 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_27_Jan_2023_Shift_1_68e366886c3e264d3c4dce6b.json` #64 | - | keyword |
 | 63fbb2439832ce3c289ae515 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_12_Jan_2023_Shift_3_68e36693c30ac440454daeef.json` #67 | Error Detection | keyword |
 | 666a9666e6ca5e1299efa272 | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_20_Feb_2024_Shift_3_68e366b00137adf867c3c7cd.json` #64 | Sentence Improvement | keyword |
@@ -130,7 +123,6 @@ Trend: **▼ -4**
 | 62ed0ef9bf7ee4faed34d123 | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_21_July_2022_Shift_1_69c4dd7cc93f8d7d943459c2.json` #60 | Error Detection | keyword |
 | 62f0d22455101f63a550d4bd | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_19_July_2022_Shift_2_69c4dd79ce25059461e2cc22.json` #70 | Sentence Improvement | keyword |
 | 65096c5b78920a0b425c0291 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_13_Sept_2023_Shift_2_69c4dd34ae87d044d3af56c0.json` #66 | Sentence Improvement | keyword |
-| 64a012b5c4ad6d7a32926d18 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_12_May_2023_Shift_1_69c4dd48157480fede1e082a.json` #68 | Error Detection | keyword |
 | 64a119ce11bce3428173ce37 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_11_May_2023_Shift_2_69c4dd46c93f8d7d943456e8.json` #68 | Fill in the Blanks | keyword |
 | 64a2e46b7eaf3c37dd59d9ee | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_May_2023_Shift_1_69c4dd4cd87f9bf12c7399cc.json` #76 | Error Detection | keyword |
 | 64a51553629e0c9a29db7907 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_14_Jun_2023_Shift_1_69c4dd57c93f8d7d943457cc.json` #78 | Error Detection | keyword |

@@ -1,7 +1,7 @@
 # Rule 98: Than vs. Then
 
 - **Topic**: Confusable Words
-- **Questions**: 39
+- **Questions**: 37
 - **Top exam**: STENO
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -28,10 +28,10 @@ Words: `than`, `then`
 | Exam | Questions |
 |---|---|
 | STENO | 9 |
-| CGL | 6 |
 | MTS | 6 |
 | CHSL | 5 |
 | CPO | 5 |
+| CGL | 4 |
 | GD | 4 |
 | SELECTION_POST | 4 |
 
@@ -39,9 +39,9 @@ Words: `than`, `then`
 
 | Year | Questions |
 |---|---|
-| 2019 | 4 |
+| 2019 | 3 |
 | 2020 | 5 |
-| 2021 | 8 |
+| 2021 | 7 |
 | 2022 | 9 |
 | 2023 | 7 |
 | 2024 | 2 |
@@ -60,8 +60,6 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e95c9aff60d5d3ce5abbf54 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_1_6a0f3db0ccf0ef8f830e7843.json` #86 | Direct and Indirect Speech | keyword |
-| 627491f2e514871f5633e9e5 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_2_6a0f3df46f9594e2cd05cb14.json` #80 | Direct and Indirect Speech | keyword |
 | 6275b2faaf0fc33d28209471 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_11_April_2022_Shift_3_6a0f3de4b6389f13cda38f16.json` #82 | Error Detection | keyword |
 | 63a2ed6aa9d07cc150394d76 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_01_Dec_2022_Shift_1_6a0f3e0ab835398b15c9c6f5.json` #77 | Direct and Indirect Speech | keyword |
 | 63ac076a1d98d5a61f0747d7 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_1_6a0f3e42daa906308e01e30a.json` #78 | Direct and Indirect Speech | keyword |

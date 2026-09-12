@@ -1,7 +1,7 @@
 # Rule 58: Order of Numeral Adjectives
 
 - **Topic**: Adjectives
-- **Questions**: 24
+- **Questions**: 23
 - **Top exam**: STENO
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -29,7 +29,7 @@ Words: `first`, `last`, `numeral`, `order`, `second`
 
 | Exam | Questions |
 |---|---|
-| STENO | 21 |
+| STENO | 20 |
 | CHSL | 2 |
 | CGL | 1 |
 
@@ -39,16 +39,16 @@ Words: `first`, `last`, `numeral`, `order`, `second`
 |---|---|
 | 2022 | 2 |
 | 2024 | 2 |
-| 2025 | 20 |
+| 2025 | 19 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 2 |
-| 2025 | 20 |
+| 2025 | 19 |
 
-Trend: **▲ +18**
+Trend: **▲ +17**
 
 ## Questions
 
@@ -77,6 +77,5 @@ Trend: **▲ +18**
 | 68bd53c1004de5ea53300efa | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_08_Aug_2025_Shift_3_69f44e7c17b00a75d2fd794e.json` #177 | Error Detection | keyword |
 | 68bad8621078e53955cea75d | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_08_Aug_2025_Shift_1_69f44e7e9ac6ad777c87f5c6.json` #183 | Direct and Indirect Speech | keyword |
 | 68b2d7dce1df0932f62c249f | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_3_69f44e7a4f39b0d99ed0e767.json` #186 | Error Detection | keyword |
-| 68b24b7340f50b0a0f61565b | STENO | 2025 | `SSC-Stenographer/Previous_Year_Paper/2025/SSC_Stenographer_2025_Official_Paper_Held_On_07_Aug_2025_Shift_2_69f44e76ef7c710a1c297324.json` #195 | Error Detection | keyword |
 
 Resolve any id with `python tools/resolve.py <qid>`.

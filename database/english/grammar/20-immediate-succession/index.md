@@ -1,7 +1,7 @@
 # Rule 20: Immediate Succession
 
 - **Topic**: Correlative Conjunctions and Inversion
-- **Questions**: 50
+- **Questions**: 48
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,9 +31,9 @@ Words: `hardly`, `scarcely`, `than`, `when`
 |---|---|
 | CGL | 12 |
 | MTS | 12 |
-| GD | 9 |
+| GD | 8 |
 | STENO | 6 |
-| CHSL | 5 |
+| CHSL | 4 |
 | CPO | 4 |
 | SELECTION_POST | 2 |
 
@@ -43,20 +43,20 @@ Words: `hardly`, `scarcely`, `than`, `when`
 |---|---|
 | 2019 | 14 |
 | 2020 | 1 |
-| 2021 | 7 |
+| 2021 | 6 |
 | 2022 | 3 |
 | 2023 | 9 |
-| 2024 | 5 |
+| 2024 | 4 |
 | 2025 | 11 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 5 |
+| 2024 | 4 |
 | 2025 | 11 |
 
-Trend: **▲ +6**
+Trend: **▲ +7**
 
 ## Questions
 
@@ -77,14 +77,12 @@ Trend: **▲ +6**
 | 5d6e1a39fdb8bb3fb66c0173 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_16_Held_On_8_Jul_2019_Shift_3_67d926286d69954ad49e9dd7.json` #1 | Error Detection | keyword |
 | 5d6a3fd0fdb8bb52cebf8e01 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_12_Held_On_5_Jul_2019_Shift_2_67d926259f1b6fe4c4e877c5.json` #19 | Error Detection | keyword |
 | 64ec750999d961af822b4456 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_14_Aug_2023_Shift_4_67d925a7042c8297b383a257.json` #95 | Sentence Improvement | keyword |
-| 66a2affd82a774081a36b1d8 | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_01_Jul_2024_Shift_4_67d9257710673fe9d924c125.json` #14 | Sentence Improvement | keyword |
 | 699ff5d41420000f6d2d2f0a | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_28_Nov_2025_Shift_1_69913a0236d1ea3c72e13bea.json` #4 | Error Detection | keyword |
 | 5e3ac816f60d5d484e9ed4bc | CPO | 2019 | `SSC-CPO/Previous_Year_Paper_Paper_I/2019/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_13_December_2019_Shift_2_69c66a7f1ae2fac6927fcd35.json` #156 | Error Detection | keyword |
 | 5e3d5812f60d5d433ce8b0d9 | CPO | 2019 | `SSC-CPO/Previous_Year_Paper_Paper_I/2019/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_13_December_2019_Shift_1_69c66a7f9fdea1088ce26958.json` #186 | Fill in the Blanks | keyword |
 | 655e1db060562abf43ddca7b | CPO | 2023 | `SSC-CPO/Previous_Year_Paper_Paper_I/2023/SSC_CPO_2023_Official_Paper-I_Held_On_03_Oct_2023_Shift_1_69c66a69e719772266c13667.json` #199 | Sentence Improvement | keyword |
 | 66a3f721a780bc320b0ecfe6 | CPO | 2024 | `SSC-CPO/Previous_Year_Paper_Paper_I/2024/SSC_CPO_2024_Official_Paper-I_Held_On_27_Jun_2024_Shift_3_69c66a651ee850988a258d93.json` #192 | Sentence Improvement | keyword |
 | 5fa14013e408a0eaab08f114 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_1st_March_2019_Shift_2_68e3661aaa914933a9a34fd2.json` #79 | Sentence Improvement | keyword |
-| 625172df7ae6aa31f4f344c5 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_2nd_December_2021_Shift_1_68e3663e7edf56ec928b09a3.json` #81 | Fill in the Blanks | keyword |
 | 626454f4f9192ca8f738ec94 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_10th_December_2021_Shift_1_68e3662fc523736ae0653e90.json` #82 | Fill in the Blanks | keyword |
 | 6266d3a6afd6b9b781d2de3f | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_13th_December_2021_Shift_3_68e366324405843ff1f232ad.json` #90 | Fill in the Blanks | keyword |
 | 62645677fe1531ee02b63b58 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_13th_December_2021_Shift_1_68e36631fe4a66a8868d3657.json` #92 | Error Detection | keyword |

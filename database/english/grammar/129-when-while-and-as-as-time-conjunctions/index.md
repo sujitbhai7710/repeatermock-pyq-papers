@@ -1,7 +1,7 @@
 # Rule 129: When, While, and As as Time Conjunctions
 
 - **Topic**: Conjunctions
-- **Questions**: 6
+- **Questions**: 5
 - **Top exam**: MTS
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,7 +30,6 @@ Words: `as`, `when`, `while`
 | Exam | Questions |
 |---|---|
 | MTS | 2 |
-| CGL | 1 |
 | CHSL | 1 |
 | CPO | 1 |
 | GD | 1 |
@@ -40,7 +39,6 @@ Words: `as`, `when`, `while`
 | Year | Questions |
 |---|---|
 | 2019 | 1 |
-| 2020 | 1 |
 | 2023 | 2 |
 | 2024 | 2 |
 
@@ -57,7 +55,6 @@ Trend: **▼ -2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 61404104b03a9ffd9ef3ddd9 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_1_6a0f3db69b19ada2a1c23492.json` #94 | Sentence Improvement | keyword |
 | 66a25f2360750578e345ba5e | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_03_Jul_2024_Shift_2_67d9257b574b41fc189125ee.json` #3 | Error Detection | keyword |
 | 669fe1864752c2d2858bb0b1 | CPO | 2023 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_2023_Official_Paper-II_Held_On_08_Jan_2024_69c66ac0cab49990f757f42f.json` #18 | Error Detection | keyword |
 | 5fc0b418aa76b7a23ffc08d2 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_6th_March_2019_Shift_1_68e3662b4169992645eacd25.json` #85 | Sentence Improvement | keyword |

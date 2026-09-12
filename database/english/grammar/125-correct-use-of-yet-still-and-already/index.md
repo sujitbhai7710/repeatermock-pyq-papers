@@ -1,7 +1,7 @@
 # Rule 125: Correct Use of Yet, Still, and Already
 
 - **Topic**: Adverbs of Time
-- **Questions**: 22
+- **Questions**: 21
 - **Top exam**: MTS
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,7 +30,7 @@ Words: `already`, `be`, `still`, `yet`
 | MTS | 9 |
 | GD | 5 |
 | CGL | 4 |
-| CHSL | 3 |
+| CHSL | 2 |
 | CPO | 1 |
 
 ## By year
@@ -42,16 +42,16 @@ Words: `already`, `be`, `still`, `yet`
 | 2022 | 2 |
 | 2023 | 5 |
 | 2024 | 8 |
-| 2025 | 2 |
+| 2025 | 1 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 8 |
-| 2025 | 2 |
+| 2025 | 1 |
 
-Trend: **▼ -6**
+Trend: **▼ -7**
 
 ## Questions
 
@@ -63,7 +63,6 @@ Trend: **▼ -6**
 | 690c6c17a494fb13e719b6e6 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_23_Sept_2025_Shift_2_6a0f3f3633a6a35112cee955.json` #96 | Direct and Indirect Speech | keyword |
 | 64e86496b0d4a7a0985a8415 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_04_Aug_2023_Shift_1_67d925948b3fddc188ffcba1.json` #78 | Shuffling of Sentence parts | keyword |
 | 6749d08748438bb3940203fe | CHSL | 2024 | `SSC-CHSL/PYP_Tier_II/SSC_CHSL_Tier-II_Exam_2024_Official_Paper_Held_On_18_Nov_2024_67d0f3cc35e5b86eef7117a1.json` #65 | Fill in the Blanks | keyword |
-| 6942813916e96a947daffc2a | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_12_Nov_2025_Shift_2_699139e458051d1eae5508ec.json` #1 | Error Detection | keyword |
 | 61a07393f4670132fbfb9fce | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_8th_November_2021_69c66abe237081a793776840.json` #147 | Shuffling of Sentence parts | keyword |
 | 5fa017a206eccab08a9cbbcc | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_1st_March_2019_Shift_1_68e36619634479a018b7296b.json` #76 | Fill in the Blanks | keyword |
 | 62658d5603e80b4daaaa243d | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_14th_December_2021_Shift_3_68e36635ee20f26fb4fd93bb.json` #91 | Error Detection | keyword |

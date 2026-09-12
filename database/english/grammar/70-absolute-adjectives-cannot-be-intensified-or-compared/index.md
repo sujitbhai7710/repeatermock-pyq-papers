@@ -1,7 +1,7 @@
 # Rule 70: Absolute Adjectives Cannot Be Intensified or Compared
 
 - **Topic**: Adjectives
-- **Questions**: 65
+- **Questions**: 62
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,19 +32,19 @@ Words: `absolute`, `almost`, `complete`, `completely`, `empty`, `full`, `more`, 
 | MTS | 21 |
 | GD | 17 |
 | CHSL | 9 |
-| CGL | 6 |
 | CPO | 6 |
 | STENO | 5 |
+| CGL | 3 |
 | SELECTION_POST | 1 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 6 |
+| 2019 | 5 |
 | 2020 | 1 |
 | 2021 | 12 |
-| 2022 | 9 |
+| 2022 | 7 |
 | 2023 | 10 |
 | 2024 | 16 |
 | 2025 | 11 |
@@ -62,9 +62,6 @@ Trend: **▼ -5**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e8727ebf60d5d02db16251e | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_1_6a0f3d9ec36c311e7bb058d6.json` #84 | Error Detection | keyword |
-| 63b41a479e555086e0ab7a79 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_12_Dec_2022_Shift_2_6a0f3e4ccda71d26928e5e27.json` #82 | Error Detection | keyword |
-| 63a974709cc2a6b2e8ff8b53 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_13_Dec_2022_Shift_4_6a0f3e589e39867c389a7877.json` #83 | Sentence Improvement | keyword |
 | 64ce14f6ced1f31643f44747 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_24_Jul_2023_Shift_2_6a0f3e8d445f1981ffd22f97.json` #81 | Sentence Improvement | keyword |
 | 64cb807857f8e15a60592e2b | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_27_Jul_2023_Shift_2_6a0f3ea533a6a35112cee265.json` #86 | Error Detection | keyword |
 | 690c7c748f70b330c5f5ee28 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_26_Sept_2025_Shift_1_6a0f3f46461696fe4dabfdad.json` #95 | Sentence Improvement | keyword |

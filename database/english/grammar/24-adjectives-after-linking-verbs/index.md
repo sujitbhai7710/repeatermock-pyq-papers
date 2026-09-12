@@ -1,7 +1,7 @@
 # Rule 24: Adjectives After Linking Verbs
 
 - **Topic**: Adjectives vs Adverbs
-- **Questions**: 107
+- **Questions**: 102
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -29,49 +29,45 @@ Words: `appear`, `become`, `feel`, `look`, `seem`, `smell`, `sound`, `taste`
 
 | Exam | Questions |
 |---|---|
-| MTS | 33 |
+| MTS | 32 |
 | CHSL | 22 |
 | GD | 17 |
-| CGL | 10 |
 | CPO | 9 |
 | STENO | 9 |
 | SELECTION_POST | 7 |
+| CGL | 6 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 11 |
+| 2019 | 10 |
 | 2020 | 10 |
-| 2021 | 22 |
-| 2022 | 12 |
+| 2021 | 19 |
+| 2022 | 13 |
 | 2023 | 21 |
-| 2024 | 14 |
+| 2024 | 12 |
 | 2025 | 17 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 14 |
+| 2024 | 12 |
 | 2025 | 17 |
 
-Trend: **▲ +3**
+Trend: **▲ +5**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e9d72a1f60d5d4fde78cad1 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_2_6a0f3db2d5b80365e231c518.json` #99 | Error Detection | keyword |
 | 614c21981bd958d4dea8bc47 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_2_6a0f3db8daa906308e01dc8b.json` #81 | Direct and Indirect Speech | keyword |
 | 619e2fa37a81b38e9a4462d1 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_1_6a0f3dc2d464e6c08627dfdf.json` #82 | Error Detection | keyword |
-| 6273a12e5516e1fc3c04f4f4 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_11_April_2022_Shift_1_6a0f3de09636bcffad5cbc50.json` #81 | Sentence Improvement | keyword |
-| 62751f91285888fe655154f2 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_20_April_2022_Shift_2_6a0f3e00daa906308e01df56.json` #83 | Fill in the Blanks | keyword |
-| 62743cb832b227724a289681 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_20_April_2022_Shift_3_6a0f3e026470e02c4ea84baf.json` #84 | Direct and Indirect Speech | keyword |
+| 63a495a75db927c0ec8514cb | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_4_6a0f3e40d50c12865dcf32c8.json` #81 | Sentence Improvement | ai_review |
 | 64cd065c3b01c4c0020a86aa | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_19_Jul_2023_Shift_2_6a0f3e7479735237a7769137.json` #80 | Fill in the Blanks | keyword |
 | 64cc021ca1c41f623bb39e38 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_26_Jul_2023_Shift_1_6a0f3e9b01dbc5dc46abb74d.json` #86 | Fill in the Blanks | keyword |
 | 671604f2cc89caa1b6d55aba | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_24_Sept_2024_Shift_2_6a0f3ee1ebc71a5ff0019c26.json` #82 | Shuffling of Sentence parts | keyword |
-| 679433ce0ba377cfef1762c8 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_II/2024_-_2025/SSC_CGL_2024_Tier-II_Official_Paper-I_Held_On_18_Jan_2025_69611917bf26faa8691ddce9.json` #82 | Fill in the Blanks | keyword |
 | 5d6fd56dfdb8bb067e4b60b7 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_23_Held_On_11_Jul_2019_Shift_1_67d9262d72032ae6b55e767f.json` #1 | Sentence Improvement | keyword |
 | 5d6e11c2fdb8bb3fb66c0073 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_14_Held_On_8_Jul_2019_Shift_1_67d9262786d9cf57f3231277.json` #18 | Error Detection | keyword |
 | 5d6f9c1ffdb8bb4933a6f2f0 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_18_Held_On_9_July_2019_Shift_2_67d92629bc0bda2fba0f6636.json` #18 | Error Detection | keyword |
@@ -145,7 +141,6 @@ Trend: **▲ +3**
 | 64a45a0da9f7dd4b1f009e9c | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_May_2023_Shift_2_69c4dd4d1a8d117f623e9a41.json` #88 | Fill in the Blanks | keyword |
 | 64a522a525077a5ea2064eb1 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_Jun_2023_Shift_1_69c4dd5ba1aff0d13b628d0a.json` #88 | Fill in the Blanks | keyword |
 | 64a8064bf22761c03c10256a | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_15_May_2023_Shift_3_69c4dd4be7391208d448d722.json` #90 | Fill in the Blanks | keyword |
-| 6758105f578e1642dde42896 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_17_Oct_2024_Shift_3_69c4dd02844164539f3b9107.json` #72 | Sentence Improvement | keyword |
 | 675806cab859f7ebda1690e3 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_07_Oct_2024_Shift_3_69c4dcf441803ad4e27a97a1.json` #73 | Sentence Improvement | keyword |
 | 675806920dd70b7996cf354d | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_07_Oct_2024_Shift_2_69c4dcf3ae87d044d3af50f6.json` #77 | Error Detection | keyword |
 | 6758069219b957bfda329097 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_07_Oct_2024_Shift_2_69c4dcf3ae87d044d3af50f6.json` #78 | Error Detection | keyword |

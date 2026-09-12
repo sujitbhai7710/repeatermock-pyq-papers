@@ -1,7 +1,7 @@
 # Rule 123: Else, Other and Another
 
 - **Topic**: Determiners
-- **Questions**: 26
+- **Questions**: 25
 - **Top exam**: CHSL
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,7 +32,7 @@ Words: `another`, `else`, `other`, `others`
 | Exam | Questions |
 |---|---|
 | CHSL | 7 |
-| GD | 6 |
+| GD | 5 |
 | CPO | 4 |
 | MTS | 3 |
 | STENO | 3 |
@@ -43,7 +43,7 @@ Words: `another`, `else`, `other`, `others`
 
 | Year | Questions |
 |---|---|
-| 2019 | 4 |
+| 2019 | 3 |
 | 2021 | 6 |
 | 2022 | 4 |
 | 2023 | 3 |
@@ -77,7 +77,6 @@ Trend: **▲ +3**
 | 66a52962acc63fbd53b35db6 | CPO | 2024 | `SSC-CPO/Previous_Year_Paper_Paper_I/2024/SSC_CPO_2024_Official_Paper-I_Held_On_29_Jun_2024_Shift_2_69c66a680053d7a0e568af81.json` #180 | Sentence Improvement | keyword |
 | 6986c8ecc8c08391916b8f28 | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_11_Dec_2025_Shift_1_69c66a60be1f1c8292f6e8ce.json` #189 | Active and Passive Voice | keyword |
 | 5fa017f75eab5ffa915fafa9 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_1st_March_2019_Shift_1_68e36619634479a018b7296b.json` #87 | Sentence Improvement | keyword |
-| 5f50ecd39dc0de5f8c53c38a | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_15th_February_2019_Shift_2_68e366242fc3e32b62ef3005.json` #93 | Sentence Improvement | keyword |
 | 6263c5accc236d2e9f878089 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_9th_December_2021_Shift_1_68e3665a1a48cc0f8d119bf2.json` #87 | Error Detection | keyword |
 | 6400405f907cb5581e405cf9 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_12_Jan_2023_Shift_2_68e366935cce2a60803509b8.json` #63 | Fill in the Blanks | keyword |
 | 63fca8ec15c7abdb91bd6095 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_30_Jan_2023_Shift_1_68e3668b5cce2a60803508a0.json` #67 | Sentence Improvement | keyword |

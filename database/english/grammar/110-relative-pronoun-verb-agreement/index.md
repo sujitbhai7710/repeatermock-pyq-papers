@@ -1,7 +1,7 @@
 # Rule 110: Relative Pronoun–Verb Agreement
 
 - **Topic**: Subject-Verb Agreement
-- **Questions**: 14
+- **Questions**: 13
 - **Top exam**: MTS
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,8 +30,8 @@ Words: `agreement`, `that`, `which`, `who`
 | Exam | Questions |
 |---|---|
 | MTS | 4 |
-| GD | 3 |
 | CPO | 2 |
+| GD | 2 |
 | STENO | 2 |
 | CGL | 1 |
 | CHSL | 1 |
@@ -44,7 +44,7 @@ Words: `agreement`, `that`, `which`, `who`
 | 2019 | 5 |
 | 2020 | 1 |
 | 2021 | 2 |
-| 2022 | 3 |
+| 2022 | 2 |
 | 2023 | 2 |
 | 2025 | 1 |
 
@@ -67,7 +67,6 @@ Trend: **▲ new**
 | 6170540598ccca1384e9a99b | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_26th_July_2021_69c66abd574e18bb2743cbe5.json` #99 | Error Detection | keyword |
 | 601ac93694f15157e898bb6b | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_19th_February_2019_Shift_1_68e366274fbaf8924069b087.json` #76 | Error Detection | keyword |
 | 601aad9db56505f87cfc1928 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_3rd_March_2019_Shift_3_68e366292c2aa8a56545edcb.json` #94 | Error Detection | keyword |
-| 6400412fbe79ec39f03ad1c8 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_12_Jan_2023_Shift_2_68e366935cce2a60803509b8.json` #72 | Sentence Improvement | keyword |
 | 5e04b3ce75c1a60d01ca33ff | MTS | 2019 | `SSC-MTS/Previous_Year_Paper/2019/SSC_MTS_Previous_Year_Paper_Held_on_2_Aug_2019_Shift_2_69c4dda4ae87d044d3af600d.json` #12 | Sentence Improvement | keyword |
 | 62164b0df80ddf4ebef510a5 | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_11_Oct_2021_Shift_3_69c4dd903ca721844200a471.json` #12 | Fill in the Blanks | keyword |
 | 649ec9c923e7ac3e5ee2795c | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_03_May_2023_Shift_3_69c4dd3bcd78c1335d591ed2.json` #71 | Sentence Improvement | keyword |

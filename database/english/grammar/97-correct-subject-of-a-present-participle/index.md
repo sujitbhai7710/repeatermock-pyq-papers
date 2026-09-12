@@ -1,8 +1,8 @@
 # Rule 97: Correct Subject of a Present Participle
 
 - **Topic**: Present Participle (V1 + ing)
-- **Questions**: 1
-- **Top exam**: MTS
+- **Questions**: 2
+- **Top exam**: CGL
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -29,6 +29,7 @@ Words: `-ing`, `dangling`, `subject`
 
 | Exam | Questions |
 |---|---|
+| CGL | 1 |
 | MTS | 1 |
 
 ## By year
@@ -36,6 +37,7 @@ Words: `-ing`, `dangling`, `subject`
 | Year | Questions |
 |---|---|
 | 2019 | 1 |
+| 2021 | 1 |
 
 ## Trend (last years in the corpus)
 
@@ -50,6 +52,7 @@ Trend: **→ 0**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 62750213be524fa4a47ea8bf | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_2_6a0f3dfad464e6c08627e254.json` #88 | Sentence Improvement | ai_review |
 | 5e06f9c710e9a80d0b50026d | MTS | 2019 | `SSC-MTS/Previous_Year_Paper/2019/SSC_MTS_Previous_Year_Paper_Held_on_6_Aug_2019_Shift_2_69c4dda903eab02875e8a646.json` #13 | Fill in the Blanks | keyword |
 
 Resolve any id with `python tools/resolve.py <qid>`.

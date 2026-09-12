@@ -1,7 +1,7 @@
 # Rule 117: Despite, Although, and However
 
 - **Topic**: Conjunctions and Contrast
-- **Questions**: 44
+- **Questions**: 40
 - **Top exam**: MTS
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,9 +31,9 @@ Words: `although`, `despite`, `however`, `though`
 |---|---|
 | MTS | 15 |
 | SELECTION_POST | 8 |
-| CGL | 6 |
-| CHSL | 6 |
-| CPO | 4 |
+| CHSL | 5 |
+| CGL | 4 |
+| CPO | 3 |
 | GD | 3 |
 | STENO | 2 |
 
@@ -41,43 +41,39 @@ Words: `although`, `despite`, `however`, `though`
 
 | Year | Questions |
 |---|---|
-| 2019 | 5 |
+| 2019 | 4 |
 | 2020 | 1 |
-| 2021 | 7 |
-| 2022 | 9 |
+| 2021 | 6 |
+| 2022 | 8 |
 | 2023 | 6 |
 | 2024 | 5 |
-| 2025 | 11 |
+| 2025 | 10 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 5 |
-| 2025 | 11 |
+| 2025 | 10 |
 
-Trend: **▲ +6**
+Trend: **▲ +5**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e8fc0d03ab0500d2e511ab5 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_1_6a0f3daadaa906308e01db76.json` #76 | Sentence Improvement | keyword |
 | 62740e7b850250d70e1b0951 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_1_6a0f3df2d5b80365e231c8fa.json` #81 | Sentence Improvement | keyword |
-| 6278c83c6b5391926f339970 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_12_April_2022_Shift_2_6a0f3de8f886fe6323e1334b.json` #91 | Error Detection | keyword |
 | 63a8956f78f1eb2cf394a91a | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_3_6a0f3e4633a6a35112ceddd9.json` #87 | Shuffling of Sentence parts | keyword |
 | 63a5a3cd3c7b89ee83e4a51a | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_3_6a0f3e3ec36c311e7bb05e6a.json` #95 | Fill in the Blanks | keyword |
 | 690b2a9a57be1e782cf02d01 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_19_Sept_2025_Shift_2_6a0f3f1e33a6a35112cee8b4.json` #91 | Sentence Improvement | keyword |
 | 5d6a32b8fdb8bb52cebf8c74 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_11_Held_On_5_Jul_2019_Shift_1_67d9262482900514c39d7480.json` #15 | Error Detection | keyword |
 | 5fc08243325ee17e938fcc19 | CHSL | 2020 | `SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_16_Held_On_14_Oct_2020_Shift_1_67d92606bc0bda2fba0f656b.json` #15 | Error Detection | keyword |
-| 642d082351477852530257b7 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_09_March_2023_Shift_4_67d925ad0fbe2395ee170f51.json` #92 | Fill in the Blanks | keyword |
 | 64e968d83da0e6af11ffe703 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_14_Aug_2023_Shift_3_67d925a6a0f1fd1035552e1e.json` #85 | Sentence Improvement | keyword |
 | 693c10c26bfca177998b4e6c | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_20_Nov_2025_Shift_2_699139e92552aacae84782dc.json` #1 | Error Detection | keyword |
 | 69428139dc77a0488b6a91cb | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_12_Nov_2025_Shift_2_699139e458051d1eae5508ec.json` #2 | Fill in the Blanks | keyword |
 | 61717a02d51f7c572c99d6de | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_26th_July_2021_69c66abd574e18bb2743cbe5.json` #145 | Error Detection | keyword |
 | 63762b2164ca9244a27fb899 | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_I/2022/SSC_CPO_2022_Tier-I_Official_Paper_Held_On_11_Nov_2022_Shift_3_69c66a73f100a56ce1536da6.json` #164 | Sentence Improvement | keyword |
 | 6528277703bbc4e322c56dc8 | CPO | 2023 | `SSC-CPO/Previous_Year_Paper_Paper_I/2023/SSC_CPO_2023_Official_Paper-I_Held_On_05_Oct_2023_Shift_2_69c66a6eea772294b9df5ea0.json` #162 | Sentence Improvement | keyword |
-| 69879c76458667c4dbaad32e | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_12_Dec_2025_Shift_2_69c66a62bf28bd9b3d2bc01d.json` #188 | - | keyword |
 | 5f1a828723e1e10d1187bfd9 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_11th_February_2019_Shift_2_68e3661b05d9af27cd9b6e90.json` #87 | Fill in the Blanks | keyword |
 | 62529ceb23e5298bdf028ece | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_1st_December_2021_Shift_3_68e3662e400061bf41d25140.json` #78 | Error Detection | keyword |
 | 626529c4b14979097de01a92 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_15th_December_2021_Shift_2_68e366364ade00f3c2dfc123.json` #85 | Sentence Improvement | keyword |

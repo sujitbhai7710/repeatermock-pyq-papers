@@ -1,7 +1,7 @@
 # Rule 2: Each, Every, Either, Neither and None
 
 - **Topic**: Determiners, pronouns and subject–verb agreement
-- **Questions**: 142
+- **Questions**: 136
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,11 +31,11 @@ Words: `each`, `either`, `every`, `neither`, `none`
 
 | Exam | Questions |
 |---|---|
-| MTS | 32 |
-| GD | 31 |
+| MTS | 31 |
+| GD | 28 |
 | CHSL | 22 |
 | STENO | 21 |
-| CGL | 17 |
+| CGL | 15 |
 | CPO | 12 |
 | SELECTION_POST | 7 |
 
@@ -43,11 +43,11 @@ Words: `each`, `either`, `every`, `neither`, `none`
 
 | Year | Questions |
 |---|---|
-| 2019 | 18 |
+| 2019 | 17 |
 | 2020 | 10 |
-| 2021 | 19 |
-| 2022 | 24 |
-| 2023 | 21 |
+| 2021 | 16 |
+| 2022 | 23 |
+| 2023 | 20 |
 | 2024 | 25 |
 | 2025 | 25 |
 
@@ -67,8 +67,6 @@ Trend: **→ flat**
 | 619e2fdb7a81b38e9a447268 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_1_6a0f3dc2d464e6c08627dfdf.json` #84 | Sentence Improvement | keyword |
 | 61cad88cb01b5dd2f38d9d92 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_3_6a0f3dccb835398b15c9c432.json` #95 | Sentence Improvement | keyword |
 | 6272afaeb5fa78e521109716 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_3_6a0f3df033a6a35112ced8cf.json` #76 | Sentence Improvement | keyword |
-| 62740ebb5a7c56ced25af5b1 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_1_6a0f3df2d5b80365e231c8fa.json` #82 | Error Detection | keyword |
-| 62746cc532b227724a29261b | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_1_6a0f3e0483407d249217506c.json` #88 | Error Detection | keyword |
 | 63a4959a978874fc5c7f3203 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_05_Dec_2022_Shift_3_6a0f3e26ebc71a5ff00194d5.json` #82 | Sentence Improvement | keyword |
 | 63af826f076cf119fb5f1b4c | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_4_6a0f3e4883407d24921753fd.json` #89 | Sentence Improvement | keyword |
 | 64cbcd394a76cf5bb6fffdab | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_20_Jul_2023_Shift_3_6a0f3e7edaa906308e01e55d.json` #85 | Sentence Improvement | keyword |
@@ -116,18 +114,15 @@ Trend: **→ flat**
 | 66a3dfc479461ec6bda5711c | CPO | 2024 | `SSC-CPO/Previous_Year_Paper_Paper_I/2024/SSC_CPO_2024_Official_Paper-I_Held_On_27_Jun_2024_Shift_1_69c66a63cab49990f757f051.json` #169 | Sentence Improvement | keyword |
 | 69662335523a42a4dfd6d838 | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_09_Dec_2025_Shift_2_69c66a5e0053d7a0e568ae8d.json` #194 | Sentence Improvement | keyword |
 | 5fbcc49a920a4360524ef748 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_5th_March_2019_Shift_2_68e3662a400061bf41d250b5.json` #82 | Error Detection | keyword |
-| 5f50ec34e60d948491cd960a | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_15th_February_2019_Shift_2_68e366242fc3e32b62ef3005.json` #89 | Sentence Improvement | keyword |
 | 5f2807b0afbb200d11610556 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_14th_February_2019_Shift_2_68e366214fbaf8924069b037.json` #91 | Fill in the Blanks | keyword |
 | 6264bc8642d0cfc163765923 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_9th_December_2021_Shift_3_68e3665b634479a018b72d5f.json` #79 | Fill in the Blanks | keyword |
 | 62652c3703e80b4daa9ed086 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_15th_December_2021_Shift_2_68e366364ade00f3c2dfc123.json` #81 | Sentence Improvement | keyword |
 | 6262293db6888727b477bb09 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_7th_December_2021_Shift_1_68e36655c30ac440454daa4e.json` #82 | Error Detection | keyword |
-| 626a7cca094c2d4ed885fd6d | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_7th_December_2021_Shift_3_68e366562c2aa8a56545ef77.json` #87 | Fill in the Blanks | keyword |
 | 624c84610dbf9fad6a0f7fa9 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_29th_November_2021_Shift_3_68e3664dc040f53d1066464a.json` #89 | Sentence Improvement | keyword |
 | 62622704cce7e2d3e1642638 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_7th_December_2021_Shift_1_68e36655c30ac440454daa4e.json` #91 | Sentence Improvement | keyword |
 | 621549dcc043ed1ab187c778 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_18th_November_2021_Shift_3_68e3663d8b12e6c5fc66f4cf.json` #92 | Sentence Improvement | keyword |
 | 6240ce2e10fdc4cdf7b969f7 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_22nd_November_2021_Shift_3_68e366420137adf867c3bb8b.json` #92 | Error Detection | keyword |
 | 61fcc5b8e216c6dacd93386d | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_16th_November_2021_Shift_1_69de380f13e74fe439cb4171.json` #95 | Error Detection | keyword |
-| 63fa3adfb18659b32d4e555b | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_25_Jan_2023_Shift_1_68e366850a6893ca101b141d.json` #62 | Sentence Improvement | keyword |
 | 63fe7e2b4f5cb47e0c508472 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_31_Jan_2023_Shift_1_68e3668e90979525b7eb915e.json` #63 | Shuffling of Sentence parts | keyword |
 | 63fb2db1e4ed12d1b6687a64 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_23_Jan_2023_Shift_4_68e366824fbaf8924069b60a.json` #75 | Fill in the Blanks | keyword |
 | 6406ba389f18b2a77ea1e7a2 | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_31_Jan_2023_Shift_3_68e36690dfe41a9c3047d916.json` #75 | Sentence Improvement | keyword |
@@ -160,7 +155,6 @@ Trend: **→ flat**
 | 62ee414994a25fa9b5686c51 | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_14_July_2022_Shift_1_69c4dd7141803ad4e27aa0a7.json` #65 | Error Detection | keyword |
 | 62f1f99c1f5ce19e84f186aa | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_5_July_2022_Shift_1_69c4dd624a94e2004b730cdb.json` #66 | Sentence Improvement | keyword |
 | 62ef5c178b61d22dc3f2f5b8 | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_18_July_2022_Shift_2_69c4dd76b070f8a770f37cbc.json` #69 | Fill in the Blanks | keyword |
-| 649fe9c88b1b9806f96159ed | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_19_Jun_2023_Shift_1_69c4dd5ee9c3c84d78c7d774.json` #66 | Error Detection | keyword |
 | 64a01f69b3a93612aaa55eba | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_11_May_2023_Shift_1_69c4dd45ce25059461e2c86d.json` #68 | Error Detection | keyword |
 | 64a2e2b6b841adda58cce0d9 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_May_2023_Shift_1_69c4dd4cd87f9bf12c7399cc.json` #69 | Sentence Improvement | keyword |
 | 64a3fc9cf28c80a81c056299 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_20_Jun_2023_Shift_3_69c4dd61d87f9bf12c739a6a.json` #69 | Error Detection | keyword |

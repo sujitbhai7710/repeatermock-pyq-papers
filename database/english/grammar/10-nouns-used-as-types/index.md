@@ -1,7 +1,7 @@
 # Rule 10: Nouns Used as Types
 
 - **Topic**: Articles
-- **Questions**: 5
+- **Questions**: 2
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -27,17 +27,13 @@ Words: `a`, `an`, `articles`, `the`
 
 | Exam | Questions |
 |---|---|
-| MTS | 4 |
-| CGL | 1 |
+| MTS | 2 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 1 |
-| 2021 | 1 |
 | 2022 | 1 |
-| 2023 | 1 |
 | 2024 | 1 |
 
 ## Trend (last years in the corpus)
@@ -53,10 +49,7 @@ Trend: **▼ -1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e8fbf903ab0500d2e510c26 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_1_6a0f3daadaa906308e01db76.json` #83 | Error Detection | keyword |
-| 623c55fb29478513c69dbc1a | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_13_Oct_2021_Shift_3_69c4dd94157480fede1e0fd3.json` #8 | Error Detection | keyword |
 | 62ef962bad1600e2016aad6b | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_11_July_2022_Shift_2_69c4dd6c3551b1b8cf2d3b03.json` #63 | Sentence Improvement | keyword |
-| 64a5161cb9310066cc58afe2 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_Official_Paper_Held_On_14_Jun_2023_Shift_2_69c4dd57a6a9fbe9a42c4b6f.json` #85 | Fill in the Blanks | keyword |
 | 675812e8db711264e2072867 | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_21_Oct_2024_Shift_3_69c4dd0712b977f8da8fb2c1.json` #76 | Fill in the Blanks | keyword |
 
 Resolve any id with `python tools/resolve.py <qid>`.

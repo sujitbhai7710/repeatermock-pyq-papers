@@ -1,10 +1,13 @@
 # Rule 77: Use of Articles: A/An vs The
 
 - **Topic**: Articles
-- **Questions**: 2
-- **Top exam**: CGL
+- **Questions**: 0
+- **Top exam**: -
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
+
+**No PYQ in scope 2019–2025** — the corpus contains no question for this rule.
+The empty `questions.jsonl` is intentional: this leaf is kept so the rule matrix stays complete, and the marker tells the audit it is not a missing write.
 
 ## Rule
 
@@ -25,17 +28,11 @@ Words: `a`, `an`, `articles`, `the`
 
 ## By exam
 
-| Exam | Questions |
-|---|---|
-| CGL | 1 |
-| MTS | 1 |
+_No question is attached to this rule yet._
 
 ## By year
 
-| Year | Questions |
-|---|---|
-| 2021 | 1 |
-| 2023 | 1 |
+_No question is attached to this rule yet._
 
 ## Trend (last years in the corpus)
 
@@ -48,9 +45,6 @@ Trend: **→ 0**
 
 ## Questions
 
-| qid | Exam | Year | Paper | Type | Via |
-|---|---|---|---|---|---|
-| 627469cdf60b60bce39311fa | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_1_6a0f3e0483407d249217506c.json` #76 | Error Detection | keyword |
-| 64a2bb40ef4dad70a6cb1c27 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_Jun_2023_Shift_2_69c4dd5c7ec09bc7a5193560.json` #73 | Fill in the Blanks | keyword |
+_None._
 
 Resolve any id with `python tools/resolve.py <qid>`.

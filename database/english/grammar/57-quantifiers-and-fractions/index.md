@@ -1,7 +1,7 @@
 # Rule 57: Quantifiers and Fractions
 
 - **Topic**: Subject-Verb Agreement
-- **Questions**: 9
+- **Questions**: 8
 - **Top exam**: CHSL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -29,7 +29,7 @@ Words: `fraction`, `half`, `of`, `percent`, `quarter`, `two-thirds`
 
 | Exam | Questions |
 |---|---|
-| CHSL | 4 |
+| CHSL | 3 |
 | CPO | 2 |
 | CGL | 1 |
 | GD | 1 |
@@ -43,17 +43,17 @@ Words: `fraction`, `half`, `of`, `percent`, `quarter`, `two-thirds`
 | 2021 | 1 |
 | 2022 | 3 |
 | 2023 | 1 |
-| 2024 | 2 |
+| 2024 | 1 |
 | 2025 | 1 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 2 |
+| 2024 | 1 |
 | 2025 | 1 |
 
-Trend: **▼ -1**
+Trend: **→ flat**
 
 ## Questions
 
@@ -63,7 +63,6 @@ Trend: **▼ -1**
 | 62d81250a9500c8508f9e6b2 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_9_June_2022_Shift_2_67d925dfec6b292b503c4c39.json` #12 | Fill in the Blanks | keyword |
 | 642c4b689d9e78c7ff93ff59 | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_17_March_2023_Shift_2_67d925bca5a69c43824b92bf.json` #77 | Error Detection | keyword |
 | 642d94a10673d3897b15c75b | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_14_March_2023_Shift_4_67d925b57cb0c13167640700.json` #89 | Error Detection | keyword |
-| 66a2459ab87ea7c554a3a174 | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_3_67d9258439958cced4a375b5.json` #11 | Sentence Improvement | keyword |
 | 5fe979b66dd6f39618117b54 | CPO | 2020 | `SSC-CPO/Previous_Year_Paper_Paper_I/2020/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_24_November_2020_Shift_2_69c66a780a3dbe2e0b2084b9.json` #200 | Fill in the Blanks | keyword |
 | 61a06d750419d5c489bf3d7d | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_8th_November_2021_69c66abe237081a793776840.json` #104 | Fill in the Blanks | keyword |
 | 6667486efad42b754688962e | GD | 2024 | `SSC-GD/Previous_Year_Papers/2024/SSC_GD_Constable_2024_Official_Paper_Held_On_05_Mar_2024_Shift_3_68e366a476d80d839fc10708.json` #65 | Fill in the Blanks | keyword |

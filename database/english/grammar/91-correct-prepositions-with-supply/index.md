@@ -1,8 +1,8 @@
 # Rule 91: Correct Prepositions with “Supply”
 
 - **Topic**: Preposition
-- **Questions**: 3
-- **Top exam**: CHSL
+- **Questions**: 2
+- **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -29,7 +29,6 @@ Words: `supply`
 
 | Exam | Questions |
 |---|---|
-| CHSL | 1 |
 | MTS | 1 |
 | SELECTION_POST | 1 |
 
@@ -38,7 +37,6 @@ Words: `supply`
 | Year | Questions |
 |---|---|
 | 2021 | 1 |
-| 2022 | 1 |
 | 2023 | 1 |
 
 ## Trend (last years in the corpus)
@@ -54,7 +52,6 @@ Trend: **→ 0**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 62d8052395e9673ce178ee3e | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_7_June_2022_Shift_3_67d925dc9a75a115dca05839.json` #11 | Error Detection | keyword |
 | 6203c36d2f588131868b39f0 | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_7_Oct_2021_Shift_2_69c4dd8b0f160cd920477021.json` #13 | Error Detection | keyword |
 | 64b639820f1d019f9e14805b | SELECTION_POST | 2023 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_Graduation_Level_Official_Paper_Held_On_30_June_2023_Shift_1_69df456ea0ef8fa701f46e1d.json` #99 | Direct and Indirect Speech | keyword |
 

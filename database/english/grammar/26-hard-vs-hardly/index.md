@@ -1,7 +1,7 @@
 # Rule 26: Hard vs. Hardly
 
 - **Topic**: Confusing Words / Adverbs
-- **Questions**: 8
+- **Questions**: 7
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -29,7 +29,7 @@ Words: `hard`, `hardly`
 
 | Exam | Questions |
 |---|---|
-| MTS | 4 |
+| MTS | 3 |
 | CPO | 2 |
 | CGL | 1 |
 | CHSL | 1 |
@@ -42,17 +42,17 @@ Words: `hard`, `hardly`
 | 2021 | 1 |
 | 2022 | 2 |
 | 2023 | 1 |
-| 2024 | 2 |
+| 2024 | 1 |
 | 2025 | 1 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 2 |
+| 2024 | 1 |
 | 2025 | 1 |
 
-Trend: **▼ -1**
+Trend: **→ flat**
 
 ## Questions
 
@@ -65,6 +65,5 @@ Trend: **▼ -1**
 | 62317c9d9a5d11772f97d276 | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_2_Nov_2021_Shift_3_69c4dda33ca721844200a57d.json` #5 | Fill in the Blanks | keyword |
 | 62f1c17b70f7847b94c9d9bb | MTS | 2022 | `SSC-MTS/Previous_Year_Paper/2022/SSC_MTS_Previous_Year_Paper_Held_on_12_July_2022_Shift_1_69c4dd6dd4dcb0a4c0d10d8b.json` #55 | Sentence Improvement | keyword |
 | 64a02a564b7c9f55ae074d34 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_02_May_2023_Shift_2_69c4dd3857ee788b3e8cb31a.json` #80 | Fill in the Blanks | keyword |
-| 67580ad88e73fe1cb7977f3f | MTS | 2024 | `SSC-MTS/Previous_Year_Paper/2024/SSC_MTS_2024_Official_Paper_Held_On_13_Nov_2024_Shift_1_69c4dd1f157480fede1e051f.json` #72 | Error Detection | keyword |
 
 Resolve any id with `python tools/resolve.py <qid>`.

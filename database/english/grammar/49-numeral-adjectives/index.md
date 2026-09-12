@@ -60,7 +60,7 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 62750213be524fa4a47ea8bf | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_2_6a0f3dfad464e6c08627e254.json` #88 | Sentence Improvement | keyword |
+| 6274067bf60b60bce38b2c6c | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_2_6a0f3dee9636bcffad5cbcb5.json` #87 | Error Detection | ai_review |
 | 63a53e54d79e48e71e985000 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_4_6a0f3e189f2d708abd18d89d.json` #88 | Sentence Improvement | keyword |
 | 697e4a76d4cc597d86083fbf | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json` #61 | Error Detection | keyword |
 | 5d6e1a7efdb8bb3fb66c0177 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_16_Held_On_8_Jul_2019_Shift_3_67d926286d69954ad49e9dd7.json` #3 | Direct and Indirect Speech | keyword |

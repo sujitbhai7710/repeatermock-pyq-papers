@@ -1,7 +1,7 @@
 # Rule 34: Repeated Nouns Stay Singular
 
 - **Topic**: Nouns / Prepositions
-- **Questions**: 18
+- **Questions**: 17
 - **Top exam**: CHSL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -35,7 +35,7 @@ Words: `singular`, `three`, `two`
 | STENO | 4 |
 | CPO | 3 |
 | GD | 3 |
-| CGL | 2 |
+| CGL | 1 |
 | MTS | 1 |
 | SELECTION_POST | 1 |
 
@@ -43,7 +43,7 @@ Words: `singular`, `three`, `two`
 
 | Year | Questions |
 |---|---|
-| 2021 | 7 |
+| 2021 | 6 |
 | 2022 | 5 |
 | 2023 | 3 |
 | 2024 | 3 |
@@ -61,7 +61,6 @@ Trend: **▼ -3**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 62755dc58597a6683a96ebd3 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_3_6a0f3dfc41a6d355fcadfb33.json` #91 | Direct and Indirect Speech | keyword |
 | 63a4a75945584e387932279a | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_05_Dec_2022_Shift_1_6a0f3e223b257227394bf399.json` #95 | Direct and Indirect Speech | keyword |
 | 61a71eb04ecc5197e10d39dd | CHSL | 2021 | `SSC-CHSL/PYP_Tier_I/2021/SSC_CHSL_2020_Official_Paper_16_Held_On_4_Aug_2021_Shift_1_67d925eb7f25b645f6998d84.json` #11 | Direct and Indirect Speech | keyword |
 | 61a71f7f9f153befa9d62706 | CHSL | 2021 | `SSC-CHSL/PYP_Tier_I/2021/SSC_CHSL_2020_Official_Paper_16_Held_On_4_Aug_2021_Shift_1_67d925eb7f25b645f6998d84.json` #18 | Error Detection | keyword |

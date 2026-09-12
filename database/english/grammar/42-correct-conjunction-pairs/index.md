@@ -40,8 +40,8 @@ Words: `among`, `and`, `between`, `both`, `her`, `him`, `lest`, `me`, `or`, `sho
 
 | Year | Questions |
 |---|---|
-| 2019 | 2 |
-| 2020 | 1 |
+| 2019 | 1 |
+| 2020 | 2 |
 | 2023 | 1 |
 | 2024 | 1 |
 | 2025 | 1 |
@@ -59,7 +59,7 @@ Trend: **→ flat**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e9d5107f60d5d4fde78ba7b | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_9_March_2020_Shift_3_6a0f3db4a61a5fe8f645c19f.json` #91 | Error Detection | ai |
+| 61cc5d7a8bebd5ba01f159e3 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_3_6a0f3dde205404a71f29fad1.json` #90 | Error Detection | ai_review |
 | 66a26f1660750578e3474d39 | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_03_Jul_2024_Shift_4_67d9257cdfdb6f90a7ff8cf3.json` #15 | Sentence Improvement | keyword |
 | 699d493c2db232edf431f275 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_24_Nov_2025_Shift_2_699139f97e64c196e89b53bb.json` #11 | Error Detection | keyword |
 | 5cee26c0fdb8bb76e5586712 | CPO | 2019 | `SSC-CPO/Previous_Year_Paper_Paper_I/2019/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_on_13th_March_2019_Shift_1_69c66a810053d7a0e568b141.json` #193 | Sentence Improvement | keyword |

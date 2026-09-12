@@ -31,31 +31,31 @@ Words: `active`, `be`, `been`, `by`, `passive`, `v3`, `voice`
 |---|---|
 | STENO | 291 |
 | CHSL | 285 |
-| CGL | 279 |
-| SELECTION_POST | 142 |
+| CGL | 282 |
+| SELECTION_POST | 140 |
 | CPO | 93 |
-| MTS | 42 |
+| MTS | 41 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
 | 2019 | 82 |
-| 2020 | 79 |
-| 2021 | 120 |
+| 2020 | 80 |
+| 2021 | 123 |
 | 2022 | 250 |
-| 2023 | 169 |
+| 2023 | 168 |
 | 2024 | 114 |
-| 2025 | 318 |
+| 2025 | 315 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 114 |
-| 2025 | 318 |
+| 2025 | 315 |
 
-Trend: **▲ +204**
+Trend: **▲ +201**
 
 ## Questions
 
@@ -84,6 +84,7 @@ Trend: **▲ +204**
 | 614c21b8798a7bb40e4293a3 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_2_6a0f3db8daa906308e01dc8b.json` #82 | Active and Passive Voice | keyword |
 | 61cc253601a6a4178bf9fc6e | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_2_6a0f3ddc461696fe4dabf194.json` #84 | Active and Passive Voice | keyword |
 | 61cad6e9f86b0903208f6d5f | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_18_Aug_2021_Shift_3_6a0f3dccb835398b15c9c432.json` #85 | Active and Passive Voice | keyword |
+| 613f2dfc0ac44cbc5f995dbf | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_2_6a0f3dc4c6516817f8809bc2.json` #87 | Error Detection | ai_review |
 | 619e30874300252b9e1b2be5 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_1_6a0f3dc2d464e6c08627dfdf.json` #90 | Active and Passive Voice | keyword |
 | 6145b9bf0ddbc06f1f9de856 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_3_6a0f3dd85a73de9e21cde61b.json` #91 | Active and Passive Voice | keyword |
 | 614c29f0057ed7d6abc29903 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_3_6a0f3dba3b5bc48ebebf5fef.json` #92 | Active and Passive Voice | keyword |
@@ -101,12 +102,14 @@ Trend: **▲ +204**
 | 6273fdb54764a52e9741adad | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_13_April_2022_Shift_1_6a0f3dec9f2d708abd18d6a5.json` #80 | Active and Passive Voice | keyword |
 | 627500972c22b3f3f838dcb1 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_2_6a0f3dfad464e6c08627e254.json` #80 | Active and Passive Voice | keyword |
 | 62756381723e401fdd1de7fc | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_1_6a0f3df88d0a5c66cc0db6f2.json` #80 | Active and Passive Voice | keyword |
+| 6273a12e5516e1fc3c04f4f4 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_11_April_2022_Shift_1_6a0f3de09636bcffad5cbc50.json` #81 | Sentence Improvement | ai_review |
 | 62752accc36dd5ebbf42ba1f | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_3_6a0f3df6076c0c0843116c8d.json` #81 | Active and Passive Voice | keyword |
 | 6274924ca6b8d61b717711c3 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_2_6a0f3df46f9594e2cd05cb14.json` #82 | Active and Passive Voice | keyword |
 | 62746b44f60b60bce3932460 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_1_6a0f3e0483407d249217506c.json` #83 | Active and Passive Voice | keyword |
 | 627555c377dbd03448f90dd0 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_2_6a0f3e060a97601eb8f37ab6.json` #83 | Active and Passive Voice | keyword |
 | 627623e877dbd034480d18fa | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_12_April_2022_Shift_1_6a0f3de6c3d3b52796dbfc9b.json` #83 | Active and Passive Voice | keyword |
 | 6274ddb52c22b3f3f8346e07 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_12_April_2022_Shift_3_6a0f3deadaa906308e01dee4.json` #84 | Active and Passive Voice | keyword |
+| 62752c23d35f22ccdec3fe33 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_3_6a0f3df6076c0c0843116c8d.json` #84 | Error Detection | ai_review |
 | 62755cca6e08d3aa09094b7c | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_3_6a0f3dfc41a6d355fcadfb33.json` #85 | Active and Passive Voice | keyword |
 | 6278c6a1cfd7916d9e66cee2 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_12_April_2022_Shift_2_6a0f3de8f886fe6323e1334b.json` #86 | Active and Passive Voice | keyword |
 | 627520d5d35f22ccdec2e122 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_20_April_2022_Shift_2_6a0f3e00daa906308e01df56.json` #87 | Active and Passive Voice | keyword |
@@ -120,6 +123,7 @@ Trend: **▲ +204**
 | 62762614af0fc33d28240558 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_12_April_2022_Shift_1_6a0f3de6c3d3b52796dbfc9b.json` #92 | Active and Passive Voice | keyword |
 | 6273a7b36a96d4ad6dbcaf28 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_11_April_2022_Shift_1_6a0f3de09636bcffad5cbc50.json` #94 | Active and Passive Voice | keyword |
 | 62741117268d22259d328775 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_1_6a0f3df2d5b80365e231c8fa.json` #95 | Active and Passive Voice | keyword |
+| 627558d78597a6683a965510 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_2_6a0f3e060a97601eb8f37ab6.json` #95 | Active and Passive Voice | ai_review |
 | 6410b51cff5d69c5307129b2 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json` #63 | Active and Passive Voice | keyword |
 | 6410958063d84b0f41c7ce15 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json` #64 | Active and Passive Voice | keyword |
 | 6410964ed606dd5c6413aa23 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json` #67 | Active and Passive Voice | keyword |
@@ -337,7 +341,6 @@ Trend: **▲ +204**
 | 690c7c74e2b3b68fd4b697e2 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_26_Sept_2025_Shift_1_6a0f3f46461696fe4dabfdad.json` #94 | Active and Passive Voice | keyword |
 | 690c7d56c94cd1f4f71c3e1c | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_26_Sept_2025_Shift_2_6a0f3f480f618830b205c361.json` #94 | Active and Passive Voice | keyword |
 | 690c7e859fd6438242a5a0d0 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_26_Sept_2025_Shift_3_6a0f3f4a0a97601eb8f3884e.json` #94 | Active and Passive Voice | keyword |
-| 690b2e5ae5487d5c9d20cb76 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_20_Sept_2025_Shift_3_6a0f3f26d5b80365e231d3dc.json` #95 | Sentence Improvement | keyword |
 | 690b309fa0f66e3129352cd3 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_21_Sept_2025_Shift_1_6a0f3f28c6516817f880aeef.json` #95 | Active and Passive Voice | keyword |
 | 690c54bdce29a1f2f6429ff6 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_22_Sept_2025_Shift_2_6a0f3f30ebc71a5ff0019fd1.json` #95 | Active and Passive Voice | keyword |
 | 5d6a5515fdb8bb52cebf9056 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_13_Held_On_5_July_2019_Shift_3_67d926268145ddad361948b1.json` #10 | Active and Passive Voice | keyword |
@@ -718,7 +721,6 @@ Trend: **▲ +204**
 | 6969034ed06d8a46da40c9fb | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_11_Dec_2025_Shift_2_69c66a615ba135daec6742a4.json` #193 | Active and Passive Voice | keyword |
 | 6969f97128bc1d50b9bc831d | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_10_Dec_2025_Shift_1_69c66a5f97abba8c4111dd7a.json` #193 | Active and Passive Voice | keyword |
 | 696903c4ced6d8f0bfbe04f3 | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_11_Dec_2025_Shift_2_69c66a615ba135daec6742a4.json` #194 | Active and Passive Voice | keyword |
-| 6509d0b4c316a40816537966 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_06_Sept_2023_Shift_2_69c4dd2b0f160cd92047646b.json` #67 | Sentence Improvement | keyword |
 | 69bcebbf1068a7ae493e9bfd | MTS | 2025 | `SSC-MTS/Previous_Year_Paper/2025/SSC_MTS_2025_Official_Paper_Held_On_06_Feb_2026_Shift_3_69ccf66f6b271382c6c52046.json` #75 | Active and Passive Voice | keyword |
 | 69bcf5ac095965e11d29f0f3 | MTS | 2025 | `SSC-MTS/Previous_Year_Paper/2025/SSC_MTS_2025_Official_Paper_Held_On_11_Feb_2026_Shift_1_69ccf674126999f3971f9852.json` #75 | Active and Passive Voice | keyword |
 | 69aea1d0392a1d1570139961 | MTS | 2025 | `SSC-MTS/Previous_Year_Paper/2025/SSC_MTS_2025_Official_Paper_Held_On_04_Feb_2026_Shift_3_69ccf66bc98fc8d94d3656b8.json` #76 | Active and Passive Voice | keyword |
@@ -871,7 +873,6 @@ Trend: **▲ +204**
 | 69c7fc55a4bc27e68a84fbef | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_02_Aug_202_69df454c5200408a435d5c4b.json` #85 | Active and Passive Voice | keyword |
 | 69c913febe18266c1744d167 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_28_July_20_69df454aec0d8c6db40f0bba.json` #85 | - | keyword |
 | 69cb5d229d779e6c917450ea | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_30_Jul_202_69df454ba0ef8fa701f46c6a.json` #85 | - | keyword |
-| 68e05f63e2a16dbbb82c5fbc | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_26_Jul_202_69df4549c045b1e3b9f17ade.json` #86 | Shuffling of Sentence parts | keyword |
 | 69ccc96ca4dd5830486f1283 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_24_Jul_202_69df4548ec0d8c6db40f0b94.json` #86 | Active and Passive Voice | keyword |
 | 69c221ed85b5225c1c9c8c91 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_29_Aug_2025_Shift__69df4568fd3cb8a815d00466.json` #87 | Active and Passive Voice | keyword |
 | 69ccc96c9889ef6a53343918 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_24_Jul_202_69df4548ec0d8c6db40f0b94.json` #87 | Active and Passive Voice | keyword |
@@ -895,7 +896,6 @@ Trend: **▲ +204**
 | 69ccf34d69516332eafd3e46 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_25_Jul_2025_Shift__69df4562f9b3acbfe801e2f6.json` #94 | Active and Passive Voice | keyword |
 | 69c7fb5314c1ee2eaa66be09 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_02_Aug_2025_Shift__69df4568dc7d9bce0ea3361f.json` #95 | Active and Passive Voice | keyword |
 | 69ca0a8c08e86fb8c1a279c6 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_28_Jul_2025_Shift__69df45659d16d3917870987d.json` #95 | Active and Passive Voice | keyword |
-| 69ca0eaeb479a34d80a5b267 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/10_2_Level/SSC_Selection_Post_2025_Higher_Secondary_Level_Official_Paper_Held_On_29_July_20_69df454a94ed56bd00ca7e77.json` #95 | Shuffling of Sentence parts | keyword |
 | 69ca10f76831a65f12cbd2dd | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_29_Jul_2025_Shift__69df4566d84f6129d5159642.json` #95 | Active and Passive Voice | keyword |
 | 69ca13b3b542b9e3baec74bb | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_26_Jul_2025_Shift__69df45643bb1fd08b756599d.json` #95 | Active and Passive Voice | keyword |
 | 69cb5e38e60e519b1bbc48c1 | SELECTION_POST | 2025 | `SSC-Selection-Post/Previous_Year_Paper/Graduation_Level/SSC_Selection_Post_2025_Graduate_Level_Official_Paper_Held_On_30_Jul_2025_Shift__69df456694d6093e085a608b.json` #95 | Active and Passive Voice | keyword |

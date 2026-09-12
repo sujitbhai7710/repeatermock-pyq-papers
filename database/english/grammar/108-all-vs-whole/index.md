@@ -1,7 +1,7 @@
 # Rule 108: All vs. Whole
 
 - **Topic**: Determiners
-- **Questions**: 36
+- **Questions**: 32
 - **Top exam**: GD
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -34,18 +34,18 @@ Words: `all`, `complete`, `entire`, `whole`
 | GD | 10 |
 | CHSL | 9 |
 | MTS | 7 |
-| CGL | 5 |
 | SELECTION_POST | 2 |
 | STENO | 2 |
+| CGL | 1 |
 | CPO | 1 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 6 |
-| 2021 | 7 |
-| 2022 | 9 |
+| 2019 | 5 |
+| 2021 | 5 |
+| 2022 | 8 |
 | 2023 | 4 |
 | 2024 | 4 |
 | 2025 | 6 |
@@ -63,10 +63,6 @@ Trend: **▲ +2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e8ee3fb55a06d0d30ce622f | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #96 | - | keyword |
-| 62752a736c8e2d3d1a6cf524 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_18_April_2022_Shift_3_6a0f3df6076c0c0843116c8d.json` #80 | Error Detection | keyword |
-| 62746ae2a6b8d61b7173cd79 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_1_6a0f3e0483407d249217506c.json` #81 | Error Detection | keyword |
-| 63a5eaa0d7e74e1862a54368 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_03_Dec_2022_Shift_1_6a0f3e1a9b19ada2a1c23987.json` #92 | Error Detection | keyword |
 | 697e4a7e4bc31fcf50eab057 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_II/2025_-_2026/SSC_CGL_2025_Tier-II_Held_On_19_Jan_2026_698f0d6b29167fd824cbf156.json` #82 | Error Detection | keyword |
 | 5d9ed3a5f60d5d491f9e1a31 | CHSL | 2019 | `SSC-CHSL/PYP_Tier_I/2019/SSC_CHSL_Previous_Paper_21_Held_On_10_Jul_2019_Shift_2_67d9262b3735e2ad72369ed7.json` #3 | Sentence Improvement | keyword |
 | 62d59abcfd7e05083302f60f | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022/SSC_CHSL_Tier-1_2021_Official_Paper_Held_On_8_June_2022_Shift_1_67d925dd9ff62682780b636f.json` #1 | Sentence Improvement | keyword |

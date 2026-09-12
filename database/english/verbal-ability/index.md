@@ -3,16 +3,16 @@
 - **Level**: chapter
 - **Subject**: ENG
 - **Chapter**: Verbal Ability
-- **Questions (this subtree)**: 10,707
-- **Questions at this level**: 1,787
+- **Questions (this subtree)**: 10,823
+- **Questions at this level**: 1,791
 - **Children**: 7
 
 | Child | Level | Questions |
 |---|---|---|
 | _other | other | 2 |
 | cloze-test | topic | 4,973 |
-| english | topic | 1,905 |
-| fill-in-the-blanks | topic | 532 |
+| english | topic | 1,972 |
+| fill-in-the-blanks | topic | 577 |
 | match-the-following | topic | 36 |
 | para-jumbles | topic | 1,152 |
 | reading-comprehension | topic | 320 |
@@ -21,12 +21,12 @@
 
 | Exam | Questions |
 |---|---|
-| CGL | 278 |
+| CGL | 279 |
 | CHSL | 38 |
 | CPO | 359 |
 | MTS | 2 |
-| SELECTION_POST | 542 |
-| STENO | 568 |
+| SELECTION_POST | 544 |
+| STENO | 569 |
 
 ## By year
 
@@ -38,7 +38,7 @@
 | 2022 | 306 |
 | 2023 | 248 |
 | 2024 | 226 |
-| 2025 | 439 |
+| 2025 | 443 |
 
 ## Question ids
 
@@ -173,6 +173,7 @@ Resolve any id with `python tools/resolve.py <qid>`.
 6909e1a4d9de8466e62be64a  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_14_Sept_2025_Shift_1_6a0f3efdc36c311e7bb066a6.json #92
 6909e1a59002b79a1f1ec6b3  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_14_Sept_2025_Shift_1_6a0f3efdc36c311e7bb066a6.json #93
 6909e1a5ad853d4240780426  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_14_Sept_2025_Shift_1_6a0f3efdc36c311e7bb066a6.json #94
+6909e1a5ad853d4240780428  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_14_Sept_2025_Shift_1_6a0f3efdc36c311e7bb066a6.json #95
 6909eb8e0093c49a0945a7b7  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_15_Sept_2025_Shift_1_6a0f3f036e3c6c59e31554fd.json #90
 6909eb8ea937eb1254bf7a8b  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_15_Sept_2025_Shift_1_6a0f3f036e3c6c59e31554fd.json #91
 6909eb8f46afbbd01e8f8aca  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_15_Sept_2025_Shift_1_6a0f3f036e3c6c59e31554fd.json #92
@@ -244,6 +245,5 @@ Resolve any id with `python tools/resolve.py <qid>`.
 690b24a5f045476125bacfec  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_18_Sept_2025_Shift_2_6a0f3f1898d24d08c2320091.json #94
 690b24a5cf19d6986cb5ba32  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_18_Sept_2025_Shift_2_6a0f3f1898d24d08c2320091.json #95
 690b2a9a48b82c549be6a2ac  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_19_Sept_2025_Shift_2_6a0f3f1e33a6a35112cee8b4.json #92
-690b2a9ac8f1c0ade55e73dd  CGL 2025 SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_19_Sept_2025_Shift_2_6a0f3f1e33a6a35112cee8b4.json #93
-... 1587 more (see questions.jsonl)
+... 1591 more (see questions.jsonl)
 ```

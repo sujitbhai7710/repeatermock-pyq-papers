@@ -1,7 +1,7 @@
 # Rule 27: Farther vs. Further
 
 - **Topic**: Confusing Words
-- **Questions**: 11
+- **Questions**: 10
 - **Top exam**: GD
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -28,11 +28,11 @@ Words: `additional`, `farther`, `further`, `furthest`, `more`
 | Exam | Questions |
 |---|---|
 | GD | 3 |
-| CPO | 2 |
 | MTS | 2 |
 | STENO | 2 |
 | CGL | 1 |
 | CHSL | 1 |
+| CPO | 1 |
 
 ## By year
 
@@ -41,17 +41,17 @@ Words: `additional`, `farther`, `further`, `furthest`, `more`
 | 2021 | 1 |
 | 2022 | 2 |
 | 2023 | 2 |
-| 2024 | 4 |
+| 2024 | 3 |
 | 2025 | 2 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 4 |
+| 2024 | 3 |
 | 2025 | 2 |
 
-Trend: **▼ -2**
+Trend: **▼ -1**
 
 ## Questions
 
@@ -59,7 +59,6 @@ Trend: **▼ -2**
 |---|---|---|---|---|---|
 | 671602e5456d16b1b07a8d59 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_19_Sept_2024_Shift_2_6a0f3ed57fa7782b08e62d0d.json` #76 | Error Detection | keyword |
 | 69980f80dcb78f20577cfa10 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_18_Nov_2025_Shift_2_699139f32552aacae8478346.json` #19 | Error Detection | keyword |
-| 66a41335638ca9f4389736c4 | CPO | 2024 | `SSC-CPO/Previous_Year_Paper_Paper_I/2024/SSC_CPO_2024_Official_Paper-I_Held_On_28_Jun_2024_Shift_3_69c66a6774e2e3bbe066657c.json` #176 | Sentence Improvement | keyword |
 | 696597957ebacd6b8a5f5616 | CPO | 2025 | `SSC-CPO/Previous_Year_Paper_Paper_I/2025/SSC_CPO_2025_Official_Paper_Held_On_09_Dec_2025_Shift_1_69c66a5ecab49990f757f023.json` #182 | Error Detection | keyword |
 | 624be52033f074e8a92f85e2 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_29th_November_2021_Shift_2_68e3664c525083de8a4f1ecc.json` #84 | Sentence Improvement | keyword |
 | 64809745376c9b84e2a7e2bc | GD | 2022 | `SSC-GD/Previous_Year_Papers/2022-23/SSC_GD_Constable_2022_Official_Paper_Held_On_17_Jan_2023_Shift_2_68e3667de985b05a48b93bd1.json` #63 | Sentence Improvement | keyword |

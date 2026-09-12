@@ -1,7 +1,7 @@
 # Rule 114: Avoid Double Negatives
 
 - **Topic**: Negation
-- **Questions**: 65
+- **Questions**: 61
 - **Top exam**: MTS
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,10 +30,10 @@ Words: `anybody`, `anything`, `barely`, `ever`, `hardly`, `never`, `no`, `nobody
 | Exam | Questions |
 |---|---|
 | MTS | 23 |
-| CHSL | 10 |
-| CGL | 8 |
-| GD | 7 |
+| CHSL | 9 |
 | STENO | 7 |
+| CGL | 6 |
+| GD | 6 |
 | SELECTION_POST | 6 |
 | CPO | 4 |
 
@@ -41,30 +41,28 @@ Words: `anybody`, `anything`, `barely`, `ever`, `hardly`, `never`, `no`, `nobody
 
 | Year | Questions |
 |---|---|
-| 2019 | 10 |
+| 2019 | 8 |
 | 2020 | 3 |
-| 2021 | 8 |
-| 2022 | 11 |
+| 2021 | 9 |
+| 2022 | 9 |
 | 2023 | 12 |
-| 2024 | 15 |
+| 2024 | 14 |
 | 2025 | 6 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 15 |
+| 2024 | 14 |
 | 2025 | 6 |
 
-Trend: **▼ -9**
+Trend: **▼ -8**
 
 ## Questions
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 5e84bb26f60d5d276d1849bc | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_3_6a0f3d96471ce89a8c64ed49.json` #92 | Error Detection | keyword |
-| 64109f31f76acd670b37c855 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_3_March_2023_69611914146cbe43f8bcf22c.json` #80 | Direct and Indirect Speech | keyword |
-| 63ac0ddee0ac8eaa34f88e18 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_1_6a0f3e42daa906308e01e30a.json` #89 | Sentence Improvement | keyword |
+| 62746cc532b227724a29261b | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_1_6a0f3e0483407d249217506c.json` #88 | Error Detection | ai_review |
 | 64cc003d3b169c13baf505d7 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_26_Jul_2023_Shift_1_6a0f3e9b01dbc5dc46abb74d.json` #83 | Fill in the Blanks | keyword |
 | 64cd2d2afb130ccb64855cfb | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_25_Jul_2023_Shift_1_6a0f3e936f9594e2cd05d05d.json` #83 | Error Detection | keyword |
 | 67160254b4f5dcd76a6e7f35 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_18_Sept_2024_Shift_3_6a0f3ed1205404a71f2a0445.json` #85 | Error Detection | keyword |
@@ -76,7 +74,6 @@ Trend: **▼ -9**
 | 64e8bba431aa33b249382330 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_03_Aug_2023_Shift_4_67d92593042c8297b383a237.json` #95 | Error Detection | keyword |
 | 66a2445bfff586d6129d29fe | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_3_67d9258439958cced4a375b5.json` #1 | Error Detection | keyword |
 | 66a487c8f8efc3681cb5415e | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_11_Jul_2024_Shift_3_67d9258c48e4f5512065d8ef.json` #11 | Fill in the Blanks | keyword |
-| 66a247286af5268e60b4c4c8 | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_08_Jul_2024_Shift_3_67d9258439958cced4a375b5.json` #24 | Fill in the Blanks | keyword |
 | 66a4874078df881552fde9dc | CHSL | 2024 | `SSC-CHSL/PYP_Tier_I/2024/SSC_CHSL_Tier-1_2024_Official_Paper_Held_On_11_Jul_2024_Shift_3_67d9258c48e4f5512065d8ef.json` #4 | Error Detection | keyword |
 | 69cf8f14e0a15a0e9fe69c80 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_28_Nov_2025_Shift_2_69913a03e1485bf9ae4d92e9.json` #13 | Direct and Indirect Speech | keyword |
 | 6992bf441efd406c3e198346 | CHSL | 2025 | `SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_13_Nov_2025_Shift_1_699139edefdbdd144cc4e573.json` #20 | Sentence Improvement | keyword |
@@ -84,7 +81,6 @@ Trend: **▼ -9**
 | 5fe7004bb358d893a28cf2fc | CPO | 2020 | `SSC-CPO/Previous_Year_Paper_Paper_I/2020/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_23_November_2020_Shift_2_69c66a77d7c138028a675254.json` #154 | Error Detection | keyword |
 | 61a07aa6e0d64cf74ed29027 | CPO | 2021 | `SSC-CPO/Previous_Year_Paper_Paper_II/SSC_CPO_Tier-II_Previous_Year_Paper_Held_On_8th_November_2021_69c66abe237081a793776840.json` #173 | Sentence Improvement | keyword |
 | 63765cd9c4c4a375748bae7b | CPO | 2022 | `SSC-CPO/Previous_Year_Paper_Paper_I/2022/SSC_CPO_2022_Tier-I_Official_Paper_Held_On_10_Nov_2022_Shift_3_69c66a714b88ba0ac6fccfb8.json` #152 | Error Detection | keyword |
-| 5f1bfc1ae48adc0d10517430 | GD | 2019 | `SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_12th_February_2019_Shift_3_68e3661e1a48cc0f8d11988c.json` #98 | Fill in the Blanks | keyword |
 | 626345967854ee457ecba1c6 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_10th_December_2021_Shift_3_68e36630b4fcf8ca9a0c662a.json` #79 | Error Detection | keyword |
 | 6246f9552d86fb75c3b45b1d | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_25th_November_2021_Shift_3_68e366491a48cc0f8d119a77.json` #84 | Fill in the Blanks | keyword |
 | 6266d1106218173629ae4643 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_13th_December_2021_Shift_3_68e366324405843ff1f232ad.json` #87 | Error Detection | keyword |
