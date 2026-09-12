@@ -19,6 +19,21 @@
 
 
 --------------------------------------------------------------------------------
+ SECTION 0 — Groq  (fastest verified route; runs first)  — REQUIRES browser UA
+--------------------------------------------------------------------------------
+ Endpoint : https://api.groq.com/openai/v1/chat/completions   (OpenAI Chat Completions)
+ Auth     : Authorization: Bearer <GROQ_API_KEY>
+ Model    : openai/gpt-oss-120b
+ NOTE     : it emits a `reasoning` field. With max_tokens too small it returns
+            content:"" + finish_reason:length — use max_tokens >= 700 (same trap as deepseek).
+ VERIFIED : HTTP 200
+ curl -X POST https://api.groq.com/openai/v1/chat/completions \
+   -H "Authorization: Bearer $GROQ_API_KEY" -H "Content-Type: application/json" \
+   -H "User-Agent: Mozilla/5.0" \
+   -d '{{"model":"openai/gpt-oss-120b","max_tokens":700,
+        "messages":[{{"role":"user","content":"Say PONG"}}]}}'
+
+--------------------------------------------------------------------------------
  1. ar-rotator  (WORKER over agentrouter.org) — DeepSeek, free, RECOMMENDED proposer
 --------------------------------------------------------------------------------
  Base URL : https://ar-rotator.opencode-5a3.workers.dev/v1
@@ -169,6 +184,7 @@
  AR_PROXY_TOKEN     single token                 -> section 1
  JW_PROXY_TOKEN     single token                 -> section 2
  ZEN_PROXY_TOKEN    single token                 -> section 4
+ GROQ_API_KEY       single key                   -> section 0 (fastest; runs first)
  MONID_API_KEY      single key                   -> section 6
 
  On GitHub: repo Settings -> Secrets and variables -> Actions.

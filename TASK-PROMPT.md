@@ -16,7 +16,7 @@ notes, and a set of small data fixes.
 ## Hard rules — breaking any of these is a bug
 
 1. `python -m agent.cli audit` must print **`VIOLATIONS: 0`** after every change.
-2. `python -m unittest discover -s tests -t .` must stay green (currently **232 tests**).
+2. `python -m unittest discover -s tests -t .` must stay green (currently **260 tests**).
 3. Coverage identity must always balance:
    `placed + skipped_hindi + unclassified + flagged == 142090` (today: 130020 + 3456 + 8614 + 0).
 4. **Never edit raw data**: `SSC-*/**/*.json` and `chapter-and-topic/*.md` are read-only.
@@ -35,7 +35,7 @@ python -m agent.cli errors --top 20    # why the AI failed last time
 ```
 
 ### 1. Make the AI layer actually run
-Every phase currently reports `ai_unavailable` and English sits at **440 / 37,990**.
+Every phase currently reports `ai_unavailable` and English sits at **620 / 37,990**.
 - Run `python -m agent.cli routes --probe`, then `python -m agent.cli errors --top 20`, and fix the
   routing so a working route is used **first** (the verified order is in `AI-APIS.txt` §8).
 - Then run the verification pass: `python -m agent.cli run` (5.5 h window, checkpoint every 15 min).

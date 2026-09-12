@@ -111,7 +111,7 @@ agent/          python package (stdlib only — no third-party runtime deps)
   phases/       phase0..phase5 (phase0 first, always)
 config/         exams.json (layout table), settings.json, supplementary_taxonomy.json
 tools/          resolve.py, mocks.py, audit_db.py
-tests/          188 tests (pure functions + failover + model fallback + gitpush + audit rules)
+tests/          260 tests (pure functions + failover + model fallback + gitpush + audit rules)
 state/          GENERATED (gitignored on main) — taxonomy, alias map, sharded index, checkpoints
 database/       GENERATED (gitignored on main) — the deliverable tree
 .github/workflows/pyq-agent.yml   the CI pipeline

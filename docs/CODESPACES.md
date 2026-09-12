@@ -33,6 +33,7 @@ Add these; `devcontainer.json` declares them so Codespaces prompts for any that 
 | `AR_PROXY_TOKEN` | ar-rotator worker token → `deepseek-v4-flash` (proposer) |
 | `JW_PROXY_TOKEN` | jw-rotator worker token → `gpt-5.6-sol` (judge) |
 | `ZEN_PROXY_TOKEN` | zen-rotator token → `muse-spark-1.2` (alternate) |
+| `GROQ_API_KEY` | Groq `openai/gpt-oss-120b` — the fastest verified route, runs first |
 | `MONID_API_KEY` | web search + fetch (Monid/TinyFish) |
 
 Endpoint details, headers and copy-paste examples are in [`AI-APIS.txt`](../AI-APIS.txt)
