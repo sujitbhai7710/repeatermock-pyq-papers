@@ -29,6 +29,8 @@ except ImportError:  # pragma: no cover
 
 import argparse
 import json
+import shutil
+import pathlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -209,8 +211,9 @@ class RunContinuesOnAiOutageTests(unittest.TestCase):
     """``run`` completes the deterministic pipeline and exits 0 (R4)."""
 
     def setUp(self) -> None:
-        tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(tmp.cleanup)
+        tmp_dir = tempfile.mkdtemp(prefix="pyq-test-")
+        self.addCleanup(shutil.rmtree, tmp_dir, ignore_errors=True)
+        tmp = pathlib.Path(tmp_dir)
         self.tmp = Path(tmp.name)
         # redirect every generated artefact into a scratch tree
         for name in (
@@ -358,8 +361,9 @@ class ProgressRollupTests(unittest.TestCase):
     def test_ci_summary_renders_status_and_phases(self) -> None:
         from tools import ci_summary
 
-        tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(tmp.cleanup)
+        tmp_dir = tempfile.mkdtemp(prefix="pyq-test-")
+        self.addCleanup(shutil.rmtree, tmp_dir, ignore_errors=True)
+        tmp = pathlib.Path(tmp_dir)
         state = Path(tmp.name)
         (state / "checkpoint.json").write_text(
             json.dumps(

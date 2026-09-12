@@ -26,6 +26,8 @@ except ImportError:  # pragma: no cover
 
 import json
 import os
+import shutil
+import pathlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -38,8 +40,9 @@ class ReasonTests(unittest.TestCase):
     """``errors.outage_reason`` — the code and the evidence behind it."""
 
     def setUp(self) -> None:
-        tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(tmp.cleanup)
+        tmp_dir = tempfile.mkdtemp(prefix="pyq-test-")
+        self.addCleanup(shutil.rmtree, tmp_dir, ignore_errors=True)
+        tmp = pathlib.Path(tmp_dir)
         self.ledger = Path(tmp.name) / "errors.jsonl"
 
     def _record(self, kind: str, **kwargs: object) -> None:
@@ -171,8 +174,9 @@ class StatusRecordingTests(unittest.TestCase):
     """The code must reach progress.json, manifest.json and PROGRESS.md."""
 
     def setUp(self) -> None:
-        tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(tmp.cleanup)
+        tmp_dir = tempfile.mkdtemp(prefix="pyq-test-")
+        self.addCleanup(shutil.rmtree, tmp_dir, ignore_errors=True)
+        tmp = pathlib.Path(tmp_dir)
         self.root = Path(tmp.name)
         self.progress = self.root / "progress.json"
         self.manifest = self.root / "manifest.json"

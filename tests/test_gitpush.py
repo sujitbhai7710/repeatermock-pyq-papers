@@ -27,6 +27,7 @@ import json
 import os
 import shutil
 import subprocess
+import pathlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -229,8 +230,9 @@ class PublisherGitIntegrationTests(unittest.TestCase):
     """The real thing: a temporary repo, a local bare origin, real pushes."""
 
     def setUp(self) -> None:
-        tmp = tempfile.TemporaryDirectory()
-        self.addCleanup(tmp.cleanup)
+        tmp_dir = tempfile.mkdtemp(prefix="pyq-test-")
+        self.addCleanup(shutil.rmtree, tmp_dir, ignore_errors=True)
+        tmp = pathlib.Path(tmp_dir)
         self.tmp = Path(tmp.name)
         self.origin = self.tmp / "origin.git"
         self.repo = self.tmp / "repo"
