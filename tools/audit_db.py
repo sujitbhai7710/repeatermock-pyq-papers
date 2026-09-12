@@ -560,6 +560,14 @@ def check_subject_chapter_ownership(
                 concept = record.get("concept")
                 if not concept:
                     continue
+                if "_unclassified" in leaf.relative_to(database).parts:
+                    # An ``_unclassified`` bucket is the holding pen for items the
+                    # classifier could not place. Its leaf name may legitimately
+                    # mirror another subject's concept (``gk/_unclassified/analogy``);
+                    # the AI review pass is what resolves those, so the leaf-name
+                    # ownership check does not apply inside these buckets. The
+                    # chapter check above still fires here.
+                    continue
                 key = norm_key(concept)
                 if key in foreign and key not in owned:
                     report.issues.append(

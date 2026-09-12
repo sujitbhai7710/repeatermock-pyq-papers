@@ -229,11 +229,21 @@ class RuleTenTests(AuditFixture):
         self.assertTrue(any("is not declared by GK" in issue for issue in self.failures()))
 
     def test_a_chapterless_leaf_named_after_another_subject_fails(self) -> None:
-        """``gk/_unclassified/verbal-ability`` — the leaf is a foreign slug."""
+        """A real leaf named after another subject's vocabulary is a violation."""
 
-        self.write("gk/_unclassified/verbal-ability", [pointer("q-foreign", subject="GK", concept="Verbal Ability")])
+        self.write("gk/verbal-ability", [pointer("q-foreign", subject="GK", concept="Verbal Ability")])
         self.assertIn("10", self.rules())
         self.assertTrue(any("is another subject's vocabulary" in issue for issue in self.failures()))
+
+    def test_an_unclassified_bucket_is_exempt_from_the_leaf_name_check(self) -> None:
+        """``gk/_unclassified/analogy`` is the holding pen: the AI review resolves it."""
+
+        self.write(
+            "gk/_unclassified/analogy",
+            [pointer("q-pending", subject="GK", concept="ANALOGY")],
+            index="# Analogy\n",
+        )
+        self.assertNotIn("10", self.rules())
 
     def test_a_shared_name_is_not_a_violation(self) -> None:
         """A name both subjects declare is normal (Reasoning owns a chapter named alike)."""
