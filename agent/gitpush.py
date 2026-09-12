@@ -51,6 +51,14 @@ DEFAULT_REMOTE = "origin"
 #: paths staged by a checkpoint publish
 PUBLISH_PATHS: Tuple[str, ...] = ("state", "database")
 
+#: derived views inside ``PUBLISH_PATHS`` that must never reach the checkpoint
+#: branch.  ``database/english/_analysis`` is the English vocabulary/grammar
+#: *analysis* view: it repeats every grammar question that already has a home
+#: under ``database/english/grammar/<rule>/``, so publishing it duplicated
+#: 5,318 links and made the browsable tree look wrong.  It is regenerated
+#: locally on every run and is not part of the question tree.
+PUBLISH_EXCLUDE_PATHS: Tuple[str, ...] = ("database/english/_analysis",)
+
 REASON_DISABLED = "disabled"
 REASON_THROTTLED = "throttled"
 REASON_NOTHING = "nothing to commit"
@@ -227,6 +235,22 @@ class Publisher:
             result.steps.append(f"removed {removed} temp file(s)")
         return removed
 
+    def _drop_excluded_paths(self, result: PublishResult) -> None:
+        """Un-stage (and drop from the branch) :data:`PUBLISH_EXCLUDE_PATHS`.
+
+        ``git add -f`` stages the whole ``database/`` tree, so the derived
+        views have to be removed from the index explicitly.  ``--cached`` keeps
+        the local files: the agent still needs them, the branch does not.
+        """
+
+        for rel in PUBLISH_EXCLUDE_PATHS:
+            code, out = self._run(["rm", "-r", "--cached", "--quiet", "--ignore-unmatch", "--", rel])
+            if code != 0:
+                result.steps.append(f"could not exclude {rel}: {out[:120]}")
+                self.log.warn(f"could not exclude {rel} from the publish: {out[:200]}")
+            else:
+                result.steps.append(f"excluded {rel}")
+
     def _staged_paths(self) -> List[str]:
         code, out = self._run(["diff", "--cached", "--name-only", "-z"])
         if code != 0:
@@ -295,6 +319,7 @@ class Publisher:
             return self._finish(result, started)
 
         self._unstage_temp_files(result)
+        self._drop_excluded_paths(result)
         staged = self._staged_paths()
         if not staged:
             result.reason = REASON_NOTHING

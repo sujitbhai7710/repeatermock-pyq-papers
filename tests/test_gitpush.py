@@ -107,6 +107,7 @@ class EnablePushTests(unittest.TestCase):
                 (0, ""),  # git add -f state database
                 (0, "state/.tmp-abc.json.part\0state/progress.json\0"),  # git diff --cached -z
                 (0, ""),  # git reset -- .tmp-*
+                (0, ""),  # git rm -r --cached -- database/english/_analysis
                 (0, "state/progress.json\0"),  # git diff --cached -z (re-check)
                 (0, ""),  # commit
                 (0, ""),  # ls-remote
@@ -130,6 +131,7 @@ class EnablePushTests(unittest.TestCase):
             [
                 (0, ""),  # add -f
                 (0, "state/progress.json\0"),  # diff --cached -z (temp-file check)
+                (0, ""),  # git rm -r --cached -- database/english/_analysis
                 (0, "state/progress.json\0"),  # diff --cached -z (staged paths)
                 (0, ""),  # commit
                 (0, "origin\n"),  # ls-remote --heads origin pyq-db
@@ -156,6 +158,33 @@ class EnablePushTests(unittest.TestCase):
         self.assertNotIn(token, " ".join(spy.lines))
         self.assertNotIn(token, str(result.reason) + str(result.steps))
         self.assertNotIn(token, json.dumps(result.as_dict()))
+
+    def test_the_derived_analysis_view_is_dropped_from_the_publish(self) -> None:
+        """``database/english/_analysis`` must never reach the checkpoint branch.
+
+        It is a derived view: every grammar question in it already has a home
+        under ``database/english/grammar/<rule>/``, so publishing it duplicated
+        5,318 links in the browsable tree.
+        """
+
+        runner = RecordingRunner(
+            [
+                (0, ""),  # add -f
+                (0, "state/progress.json\0"),  # diff --cached -z (temp-file check)
+                (0, ""),  # git rm -r --cached -- database/english/_analysis
+                (0, "state/progress.json\0"),  # diff --cached -z (staged paths)
+            ]
+            + [(0, "")] * 8  # commit, ls-remote, fetch, reset --soft, commit, get-url, push...
+        )
+        with mock.patch.dict("os.environ", {"PYQ_GIT_PUSH": "1"}, clear=True):
+            Publisher(root=Path("."), log=QUIET, runner=runner).publish(phase="phase1")
+        rm = [call for call in runner.calls if call[0] == "rm"]
+        self.assertEqual(len(rm), 1, "exactly one exclusion call")
+        self.assertIn("database/english/_analysis", rm[0])
+        self.assertIn("--cached", rm[0], "the local files must survive")
+        # the exclusion happens before the tree is read back for the commit
+        first_commit = next(i for i, call in enumerate(runner.calls) if "commit" in call)
+        self.assertLess(runner.calls.index(rm[0]), first_commit)
 
     def test_maybe_publish_is_throttled_to_the_checkpoint_interval(self) -> None:
         runner = RecordingRunner([(0, ""), (0, ""), (0, "")])
