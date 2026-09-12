@@ -1,7 +1,7 @@
 # Rule 5: Special Noun Numbers
 
 - **Topic**: Noun (Number)
-- **Questions**: 131
+- **Questions**: 129
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -36,15 +36,15 @@ Words: `advice`, `aircraft`, `cattle`, `deer`, `equipment`, `furniture`, `inform
 | STENO | 23 |
 | CHSL | 19 |
 | CPO | 17 |
-| CGL | 12 |
+| CGL | 10 |
 | SELECTION_POST | 8 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 14 |
-| 2020 | 12 |
+| 2019 | 13 |
+| 2020 | 11 |
 | 2021 | 25 |
 | 2022 | 21 |
 | 2023 | 20 |
@@ -65,9 +65,7 @@ Trend: **▼ -9**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e84a396f60d5d276d1846d2 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_1_6a0f3d9898950246b8cbc430.json` #85 | Error Detection | keyword |
-| 5e948205f60d5d58edec33a6 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_3_6a0f3daedaa906308e01dbba.json` #96 | Error Detection | ai |
 | 61cc24702c8f30f1d798a84f | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_2_6a0f3ddc461696fe4dabf194.json` #77 | Sentence Improvement | keyword |
-| 613f2d2b07f7376906662e51 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_17_Aug_2021_Shift_2_6a0f3dc4c6516817f8809bc2.json` #82 | Sentence Improvement | ai |
 | 6145b96afc62245e0a45eb67 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_3_6a0f3dd85a73de9e21cde61b.json` #89 | Direct and Indirect Speech | keyword |
 | 63a96fc804a3ba9249ccdb7d | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_13_Dec_2022_Shift_4_6a0f3e589e39867c389a7877.json` #77 | Direct and Indirect Speech | keyword |
 | 63a53b7a0f06d44d809fd317 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_06_Dec_2022_Shift_1_6a0f3e2a762fad51036ef30b.json` #92 | Direct and Indirect Speech | keyword |

@@ -1,7 +1,7 @@
 # Rule 77: Use of Articles: A/An vs The
 
 - **Topic**: Articles
-- **Questions**: 3
+- **Questions**: 2
 - **Top exam**: CGL
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -27,14 +27,13 @@ Words: `a`, `an`, `articles`, `the`
 
 | Exam | Questions |
 |---|---|
-| CGL | 2 |
+| CGL | 1 |
 | MTS | 1 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2020 | 1 |
 | 2021 | 1 |
 | 2023 | 1 |
 
@@ -51,7 +50,6 @@ Trend: **→ 0**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 61cace4e6373055a9299207f | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_1_6a0f3ddaa61a5fe8f645c370.json` #81 | Sentence Improvement | ai |
 | 627469cdf60b60bce39311fa | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_21_April_2022_Shift_1_6a0f3e0483407d249217506c.json` #76 | Error Detection | keyword |
 | 64a2bb40ef4dad70a6cb1c27 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_Jun_2023_Shift_2_69c4dd5c7ec09bc7a5193560.json` #73 | Fill in the Blanks | keyword |
 

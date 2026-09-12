@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "run_id": "run-20260911T193010Z-c7802e62",
+  "phase": "phase1",
+  "cursor": {
+    "verify": {
+      "phase": "phase1",
+      "batch": 0,
+      "batches_done": 1,
+      "items_done": 2,
+      "items_total": 6,
+      "state_file": "C:/Users/akasa/AppData/Local/Temp/pytest-of-akasa/pytest-27/test_a_crash_mid_phase_only_re0/state/03-verify_state_json",
+      "started_wall": "2026-09-11T20:05:43Z"
+    }
+  },
+  "status": "rate_limited",
+  "started_at": "2026-09-11T20:05:43Z",
+  "updated_at": "2026-09-11T20:05:43Z",
+  "window": {},
+  "notes": [
+    "stopped by the consecutive-failure rule (threshold 2): 2 consecutive failures for deepseek-v4-flash (threshold 2); last: HTTP 500 from https://agentrouter.org/v1: third batch – the run checkpoints, exits 3 and the unverified batches stay pending"
+  ]
+}

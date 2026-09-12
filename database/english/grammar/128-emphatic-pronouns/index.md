@@ -1,8 +1,8 @@
 # Rule 128: Emphatic Pronouns
 
 - **Topic**: Pronouns
-- **Questions**: 0
-- **Top exam**: -
+- **Questions**: 3
+- **Top exam**: GD
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -25,23 +25,34 @@ Words: `emphatic`, `herself`, `himself`, `itself`, `myself`, `themselves`, `your
 
 ## By exam
 
-_No question is attached to this rule yet._
+| Exam | Questions |
+|---|---|
+| GD | 1 |
+| MTS | 1 |
+| STENO | 1 |
 
 ## By year
 
-_No question is attached to this rule yet._
+| Year | Questions |
+|---|---|
+| 2021 | 2 |
+| 2024 | 1 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
-| 2024 | 0 |
+| 2024 | 1 |
 | 2025 | 0 |
 
-Trend: **→ 0**
+Trend: **▼ -1**
 
 ## Questions
 
-_None._
+| qid | Exam | Year | Paper | Type | Via |
+|---|---|---|---|---|---|
+| 6218dfeb7772c7a64bcf0574 | GD | 2021 | `SSC-GD/Previous_Year_Papers/2021/SSC_GD_Constable_Previous_Year_Paper_Held_on_17th_November_2021_Shift_3_68e3663a76d80d839fc101c2.json` #87 | Fill in the Blanks | ai |
+| 620274515011f1416af35797 | MTS | 2021 | `SSC-MTS/Previous_Year_Paper/2021/SSC_MTS_Previous_Year_Paper_Held_on_6_Oct_2021_Shift_2_69c4dd88157480fede1e0eba.json` #13 | Fill in the Blanks | ai |
+| 6779453391f6e9cb9729f57c | STENO | 2024 | `SSC-Stenographer/Previous_Year_Paper/2024/SSC_Stenographer_2024_Official_Paper_Held_On_10_Dec_2024_Shift_3_69f44e18610b0613cd580137.json` #169 | Fill in the Blanks | ai |
 
 Resolve any id with `python tools/resolve.py <qid>`.

@@ -1,7 +1,7 @@
 # Rule 30: Agreement with the Head Subject
 
 - **Topic**: Subject-Verb Agreement
-- **Questions**: 21
+- **Questions**: 19
 - **Top exam**: MTS
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,8 +32,8 @@ Words: `containing`, `including`, `of`, `one`, `with`
 | Exam | Questions |
 |---|---|
 | MTS | 9 |
-| CGL | 4 |
 | GD | 4 |
+| CGL | 2 |
 | STENO | 2 |
 | CHSL | 1 |
 | CPO | 1 |
@@ -42,8 +42,8 @@ Words: `containing`, `including`, `of`, `one`, `with`
 
 | Year | Questions |
 |---|---|
-| 2019 | 5 |
-| 2020 | 3 |
+| 2019 | 4 |
+| 2020 | 2 |
 | 2021 | 1 |
 | 2022 | 2 |
 | 2023 | 7 |
@@ -63,8 +63,6 @@ Trend: **▼ -3**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e859f30f60d5d10bc8cbc76 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_2_6a0f3d9a0a97601eb8f3767d.json` #77 | Error Detection | ai |
-| 5e84bd6af60d5d276d1849f9 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_3_March_2020_Shift_3_6a0f3d96471ce89a8c64ed49.json` #99 | Error Detection | ai |
-| 61cc5cc56e57ae6832dd0ce0 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_3_6a0f3dde205404a71f29fad1.json` #83 | Sentence Improvement | ai |
 | 63b2a0ca22443b44bb6dc071 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_12_Dec_2022_Shift_3_6a0f3e4e6470e02c4ea84f5f.json` #82 | Sentence Improvement | keyword |
 | 64e5e2c28a617e928e1a82a8 | CHSL | 2023 | `SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_02_Aug_2023_Shift_3_67d92590dfdb6f90a7ff8d21.json` #87 | Sentence Improvement | keyword |
 | 5fe6d8037657934bd4522938 | CPO | 2020 | `SSC-CPO/Previous_Year_Paper_Paper_I/2020/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_25_November_2020_Shift_2_69c66a7ac00e0023de4faeeb.json` #152 | Fill in the Blanks | keyword |

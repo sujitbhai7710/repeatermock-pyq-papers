@@ -3,8 +3,8 @@
 - **Level**: chapter
 - **Subject**: MATH
 - **Questions (this subtree)**: 2,161
-- **Questions at this level**: 2,051
-- **Children**: 43
+- **Questions at this level**: 2,071
+- **Children**: 35
 
 | Child | Level | Questions |
 |---|---|---|
@@ -15,7 +15,6 @@
 | basic-operation | concept | 5 |
 | binomial-theorem | concept | 1 |
 | caselet-di | concept | 1 |
-| clock-and-calendar | concept | 2 |
 | cricket-based | concept | 2 |
 | data-sufficiency | concept | 1 |
 | differential-calculus | concept | 1 |
@@ -32,48 +31,41 @@
 | measurement-and-analysis-of-data | concept | 3 |
 | measures-of-dispersion | concept | 3 |
 | methods-of-estimation | concept | 2 |
-| number-series | concept | 5 |
 | operations-research | concept | 4 |
-| population-growth | concept | 3 |
 | prime-numbers | concept | 3 |
-| puzzle | concept | 5 |
 | random-variables-basics | concept | 1 |
 | real-number | concept | 1 |
 | research-in-education | concept | 3 |
 | sampling-theorems | concept | 1 |
 | sequences-and-series | concept | 1 |
-| series | concept | 1 |
 | special-classes-of-random-processes | concept | 1 |
-| statement-and-conclusion | concept | 1 |
 | sum-of-series | concept | 4 |
 | two-dimensional-random-variables | concept | 1 |
 | unit-conversion | concept | 1 |
 | unitary-method | concept | 2 |
-| venn-diagram | concept | 1 |
-| world-geography | concept | 2 |
 
 ## By exam
 
 | Exam | Questions |
 |---|---|
 | CGL | 264 |
-| CHSL | 529 |
+| CHSL | 535 |
 | CPO | 16 |
-| GD | 6 |
-| MTS | 1,231 |
-| SELECTION_POST | 5 |
+| GD | 8 |
+| MTS | 1,238 |
+| SELECTION_POST | 10 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2019 | 2 |
-| 2020 | 20 |
-| 2021 | 25 |
-| 2022 | 13 |
-| 2023 | 1,001 |
+| 2019 | 6 |
+| 2020 | 22 |
+| 2021 | 29 |
+| 2022 | 19 |
+| 2023 | 1,002 |
 | 2024 | 758 |
-| 2025 | 232 |
+| 2025 | 235 |
 
 ## Question ids
 
@@ -280,5 +272,5 @@ Resolve any id with `python tools/resolve.py <qid>`.
 6542557f6fdc6ef640c4b86d  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/Paper_III_AAO/SSC_CGL_Tier-II_AAO_2023_Official_Paper-III_Held_On_27_Oct_2023_Shift_2_6961192f0844b48b0aa4bb47.json #97
 654255a59dd11c506ff02c92  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/Paper_III_AAO/SSC_CGL_Tier-II_AAO_2023_Official_Paper-III_Held_On_27_Oct_2023_Shift_2_6961192f0844b48b0aa4bb47.json #98
 654255f9272136a4539d94d8  CGL 2023 SSC-CGL/Previous_Year_Paper_Tier_II/Paper_III_AAO/SSC_CGL_Tier-II_AAO_2023_Official_Paper-III_Held_On_27_Oct_2023_Shift_2_6961192f0844b48b0aa4bb47.json #99
-... 1851 more (see questions.jsonl)
+... 1871 more (see questions.jsonl)
 ```

@@ -1,8 +1,8 @@
 # Rule 116: Because Of vs. Due To
 
 - **Topic**: Prepositions
-- **Questions**: 0
-- **Top exam**: -
+- **Questions**: 1
+- **Top exam**: CGL
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -27,23 +27,29 @@ Words: `be`
 
 ## By exam
 
-_No question is attached to this rule yet._
+| Exam | Questions |
+|---|---|
+| CGL | 1 |
 
 ## By year
 
-_No question is attached to this rule yet._
+| Year | Questions |
+|---|---|
+| 2025 | 1 |
 
 ## Trend (last years in the corpus)
 
 | Year | Questions |
 |---|---|
 | 2024 | 0 |
-| 2025 | 0 |
+| 2025 | 1 |
 
-Trend: **→ 0**
+Trend: **▲ new**
 
 ## Questions
 
-_None._
+| qid | Exam | Year | Paper | Type | Via |
+|---|---|---|---|---|---|
+| 6909e00fc23293721845cb63 | CGL | 2025 | `SSC-CGL/Previous_Year_Paper_Tier_I/2025/SSC_CGL_2025_Held_On_13_Sept_2025_Shift_2_6a0f3ef9124e5a0e8bedb8eb.json` #85 | Error Detection | ai |
 
 Resolve any id with `python tools/resolve.py <qid>`.

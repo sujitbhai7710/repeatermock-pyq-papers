@@ -1,7 +1,7 @@
 # Rule 106: As vs. Like
 
 - **Topic**: Conjunctions and Prepositions
-- **Questions**: 12
+- **Questions**: 11
 - **Top exam**: STENO
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,9 +30,9 @@ Words: `as`, `like`
 | Exam | Questions |
 |---|---|
 | STENO | 4 |
-| CGL | 2 |
 | CHSL | 2 |
 | MTS | 2 |
+| CGL | 1 |
 | CPO | 1 |
 | GD | 1 |
 
@@ -40,7 +40,6 @@ Words: `as`, `like`
 
 | Year | Questions |
 |---|---|
-| 2020 | 1 |
 | 2021 | 3 |
 | 2022 | 2 |
 | 2023 | 4 |
@@ -59,7 +58,6 @@ Trend: **▼ -2**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
-| 6145b87da65513b80740feb2 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_3_6a0f3dd85a73de9e21cde61b.json` #83 | Error Detection | ai |
 | 6274e11b2c22b3f3f834dcc7 | CGL | 2021 | `SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_12_April_2022_Shift_3_6a0f3deadaa906308e01dee4.json` #92 | Direct and Indirect Speech | keyword |
 | 642ce53db41a700e9cd39f0d | CHSL | 2022 | `SSC-CHSL/PYP_Tier_I/2022_-_2023/SSC_CHSL_Tier-1_2022_Official_Paper_Held_On_21_March_2023_Shift_2_67d925c23735e2ad72369aed.json` #80 | Direct and Indirect Speech | keyword |
 | 65a53088204c7427752a5a4f | CHSL | 2023 | `SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_02_Nov_2023_Shift_1_67d0f35041a98e5eafce6c6c.json` #66 | Error Detection | keyword |

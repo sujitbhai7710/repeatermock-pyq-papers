@@ -6,6 +6,9 @@
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
+**No PYQ in scope 2019–2025** — the corpus contains no question for this rule.
+The empty `questions.jsonl` is intentional: this leaf is kept so the rule matrix stays complete, and the marker tells the audit it is not a missing write.
+
 ## Rule
 
 When two singular nouns joined by “and” refer to the same person or form one unit, use the article only before the first noun and a singular verb. When the article is repeated before each noun, the nouns refer to separate persons or things and require a plural verb. Thus, the placement of the article determines whether the subject is singular or plural.

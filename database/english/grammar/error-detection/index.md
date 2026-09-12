@@ -3,13 +3,13 @@
 - **Level**: topic
 - **Subject**: ENG
 - **Chapter**: Grammar
-- **Questions**: 582
+- **Questions**: 581
 
 ## By exam
 
 | Exam | Questions |
 |---|---|
-| CHSL | 155 |
+| CHSL | 154 |
 | GD | 1 |
 | MTS | 418 |
 | SELECTION_POST | 2 |
@@ -23,7 +23,7 @@
 | 2022 | 12 |
 | 2023 | 244 |
 | 2024 | 247 |
-| 2025 | 78 |
+| 2025 | 77 |
 
 ## Question ids
 
@@ -161,7 +161,6 @@ Resolve any id with `python tools/resolve.py <qid>`.
 693c1e016fc4717b190898ed  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_21_Nov_2025_Shift_2_699139eb4e93fc9447c36835.json #1
 699c2ea90ab02b733d3030c7  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_22_Nov_2025_Shift_2_699139f75bb969cde8bdaca8.json #2
 699c31a6a4bad1b9cd9270f5  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_22_Nov_2025_Shift_2_699139f75bb969cde8bdaca8.json #11
-699d4827d2f1b976f2bea8e4  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_24_Nov_2025_Shift_2_699139f97e64c196e89b53bb.json #5
 699d4c6eaac77be530c90dbc  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_24_Nov_2025_Shift_2_699139f97e64c196e89b53bb.json #25
 699e7caf9de00f5cb9caf5d9  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_26_Nov_2025_Shift_2_699139fdf3651e79ade14887.json #2
 69cf8f11ba76f397ee4df76c  CHSL 2025 SSC-CHSL/PYP_Tier_I/2025/SSC_CHSL_2025_Tier-1_Held_On_28_Nov_2025_Shift_2_69913a03e1485bf9ae4d92e9.json #4
@@ -230,5 +229,6 @@ Resolve any id with `python tools/resolve.py <qid>`.
 64a26c07acc48e97ce68ea8c  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_18_May_2023_Shift_1_69c4dd502bced945e373edbc.json #82
 64a270e3cb023c89bbdfc725  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_18_May_2023_Shift_1_69c4dd502bced945e373edbc.json #85
 649febc03aaccbeba22d77bb  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_19_Jun_2023_Shift_1_69c4dd5ee9c3c84d78c7d774.json #71
-... 382 more (see questions.jsonl)
+649fec2a182349d8af5dc78e  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_19_Jun_2023_Shift_1_69c4dd5ee9c3c84d78c7d774.json #72
+... 381 more (see questions.jsonl)
 ```

@@ -3,20 +3,20 @@
 - **Level**: topic
 - **Subject**: ENG
 - **Chapter**: Grammar
-- **Questions**: 72
+- **Questions**: 70
 
 ## By exam
 
 | Exam | Questions |
 |---|---|
 | CHSL | 24 |
-| MTS | 48 |
+| MTS | 46 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
-| 2023 | 25 |
+| 2023 | 23 |
 | 2024 | 38 |
 | 2025 | 9 |
 
@@ -56,13 +56,11 @@ Resolve any id with `python tools/resolve.py <qid>`.
 649f06211b292cfc32e7791a  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_09_May_2023_Shift_1_69c4dd4024745cb955f7a43b.json #77
 64a15a44236715286357a8b9  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_1_69c4dd42c93f8d7d94345669.json #66
 64a15f77c88bd26ae44c0f2f  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_1_69c4dd42c93f8d7d94345669.json #84
-64a52d17637e71ad614319b3  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_15_Jun_2023_Shift_1_69c4dd59d87f9bf12c739a1a.json #66
 64a51a976826b88c3e2b9ed8  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_16_Jun_2023_Shift_1_69c4dd5ba1aff0d13b628d0a.json #78
 650de953a535cb07a2154547  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_04_Sept_2023_Shift_1_69c4dd267ec09bc7a5192fc7.json #83
 650acb72229c90676ead91cc  MTS 2023 SSC-MTS/Previous_Year_Paper/2023_September/SSC_MTS_2023_Official_Paper_Held_On_11_Sept_2023_Shift_1_69c4dd2f0f160cd9204764c3.json #85
 64a0294f74db724ef80909b6  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_02_May_2023_Shift_2_69c4dd3857ee788b3e8cb31a.json #76
 64a0d2bfe162810b111cd7f4  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_03_May_2023_Shift_2_69c4dd3ad87f9bf12c739923.json #77
-64a101c9e162810b11240e86  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_08_May_2023_Shift_2_69c4dd3f1a8d117f623e9994.json #77
 64a265bd5c9e0041d2af7ad1  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_2_69c4dd43d87f9bf12c73999b.json #69
 64a26a635574627072c4c2ba  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_2_69c4dd43d87f9bf12c73999b.json #83
 64a5615edb7d5e398565e35a  MTS 2023 SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_15_May_2023_Shift_2_69c4dd4aae87d044d3af596b.json #67

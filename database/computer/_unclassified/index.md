@@ -3,21 +3,20 @@
 - **Level**: chapter
 - **Subject**: COMPUTER
 - **Questions (this subtree)**: 27
-- **Questions at this level**: 22
-- **Children**: 3
+- **Questions at this level**: 24
+- **Children**: 2
 
 | Child | Level | Questions |
 |---|---|---|
 | concept-of-layering | concept | 2 |
 | e-commerce | concept | 1 |
-| science-and-technology | concept | 2 |
 
 ## By exam
 
 | Exam | Questions |
 |---|---|
 | CGL | 9 |
-| CHSL | 13 |
+| CHSL | 15 |
 
 ## By year
 
@@ -25,7 +24,7 @@
 |---|---|
 | 2022 | 5 |
 | 2023 | 9 |
-| 2024 | 8 |
+| 2024 | 10 |
 
 ## Question ids
 
@@ -54,4 +53,6 @@ Resolve any id with `python tools/resolve.py <qid>`.
 65a6b5dc63c466929b46ac7f  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #131
 65a6b6b29827a896eae0148f  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #134
 65a6b7156d18431bf85e44a8  CHSL 2023 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Exam_2023_Tier-II_Official_Paper_Held_On_10_Jan_2024_Shift_1_67d0f393ed36140b14501e8f.json #135
+6749d5a9dd6c985cbf2cebac  CHSL 2024 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Tier-II_Exam_2024_Official_Paper_Held_On_18_Nov_2024_67d0f3cc35e5b86eef7117a1.json #126
+6749d5f59ec357a52a4cb557  CHSL 2024 SSC-CHSL/PYP_Tier_II/SSC_CHSL_Tier-II_Exam_2024_Official_Paper_Held_On_18_Nov_2024_67d0f3cc35e5b86eef7117a1.json #130
 ```

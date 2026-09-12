@@ -3,15 +3,14 @@
 - **Level**: chapter
 - **Subject**: GK
 - **Questions (this subtree)**: 2,908
-- **Questions at this level**: 2,639
-- **Children**: 128
+- **Questions at this level**: 2,658
+- **Children**: 124
 
 | Child | Level | Questions |
 |---|---|---|
 | abbreviations | concept | 4 |
 | agricultural-engineering | concept | 1 |
 | agricultural-practices | concept | 1 |
-| analogy | concept | 1 |
 | anatomy-and-exercise | concept | 1 |
 | apps-in-news | concept | 1 |
 | balance-of-payments-bop | concept | 2 |
@@ -42,7 +41,6 @@
 | emission-and-control | concept | 1 |
 | empire | concept | 3 |
 | entertainment-and-films | concept | 3 |
-| fill-in-the-blanks | concept | 1 |
 | financial-regulators-in-india | concept | 2 |
 | financial-statements-analysis | concept | 1 |
 | fitter | concept | 1 |
@@ -92,7 +90,6 @@
 | nursing | concept | 1 |
 | of-offences-against-property | concept | 1 |
 | ohm-s-law | concept | 1 |
-| other-dimensions | concept | 16 |
 | p-block | concept | 3 |
 | partnership-accounts | concept | 1 |
 | pastoralism-and-food-production | concept | 1 |
@@ -132,7 +129,6 @@
 | types-of-loans | concept | 1 |
 | vectors | concept | 1 |
 | vegetable-and-fruit-science | concept | 3 |
-| verbal-ability | concept | 1 |
 | water-resource | concept | 5 |
 | water-treatment | concept | 2 |
 | women-and-child-related | concept | 1 |
@@ -141,11 +137,11 @@
 
 | Exam | Questions |
 |---|---|
-| CGL | 107 |
-| CHSL | 861 |
+| CGL | 108 |
+| CHSL | 866 |
 | CPO | 50 |
-| GD | 120 |
-| MTS | 1,388 |
+| GD | 121 |
+| MTS | 1,400 |
 | SELECTION_POST | 82 |
 | STENO | 31 |
 
@@ -153,12 +149,12 @@
 
 | Year | Questions |
 |---|---|
-| 2020 | 111 |
+| 2020 | 112 |
 | 2021 | 62 |
-| 2022 | 269 |
-| 2023 | 864 |
-| 2024 | 740 |
-| 2025 | 593 |
+| 2022 | 271 |
+| 2023 | 866 |
+| 2024 | 749 |
+| 2025 | 598 |
 
 ## Question ids
 
@@ -241,6 +237,7 @@ Resolve any id with `python tools/resolve.py <qid>`.
 627411d1850250d70e1b6cef  CGL 2021 SSC-CGL/Previous_Year_Paper_Tier_I/2021_-_2022/SSC_CGL_2021_Tier-I_Held_On_19_April_2022_Shift_2_6a0f3dfad464e6c08627e254.json #48
 6410bd415eb3e6ad6aa09302  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_II/2022_-_2023/SSC_CGL_2022_Tier-II_Official_Paper_Held_On_7_March_2023_6961191351ea99af4bda9379.json #127
 63a303b6a9d07cc1503b2433  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_08_Dec_2022_Shift_1_6a0f3e3ab6389f13cda3939e.json #47
+63aadc1767bfe646f0520407  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_12_Dec_2022_Shift_1_6a0f3e4acda5e733b2fac01d.json #50
 63a6ef4953196fcc806aa565  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_3_6a0f3e4633a6a35112ceddd9.json #38
 63a96ae3d4a12a57e8c62aa3  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_13_Dec_2022_Shift_3_6a0f3e56b835398b15c9cb67.json #42
 63aefb5e24fb2884d9002b79  CGL 2022 SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_09_Dec_2022_Shift_4_6a0f3e4883407d24921753fd.json #48
@@ -289,6 +286,7 @@ Resolve any id with `python tools/resolve.py <qid>`.
 5feaec45735f7e311ad7ca87  CHSL 2020 SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_30_Held_On_20_Oct_2020_Shift_2_67d9261009280d06d4eac913.json #100
 600e800213b3430134a4084d  CHSL 2020 SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_32_Held_On_21_Oct_2020_Shift_2_67d92612dec0fd77c374ee2d.json #95
 604738513ce77cd6004dbfef  CHSL 2020 SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_35_Held_On_26_Oct_2020_Shift_2_67d9261c7db6262c5f52f19a.json #98
+60473879fda79f26e56df6ca  CHSL 2020 SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_35_Held_On_26_Oct_2020_Shift_2_67d9261c7db6262c5f52f19a.json #99
 5fd0c6c7a8246c59d64dabfd  CHSL 2020 SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_24_Held_On_16_Oct_2020_Shift_3_67d9260ca0f1fd1035552fff.json #91
 5fedd37b8fde35f5d279596e  CHSL 2020 SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_25_Held_On_20_Oct_2020_Shift_3_67d9260dc95292802fb416d1.json #78
 5fedd465791970025ff2250a  CHSL 2020 SSC-CHSL/PYP_Tier_I/2020/SSC_CHSL_Previous_Paper_25_Held_On_20_Oct_2020_Shift_3_67d9260dc95292802fb416d1.json #87
@@ -363,7 +361,5 @@ Resolve any id with `python tools/resolve.py <qid>`.
 64eaef6c41613395bbf47320  CHSL 2023 SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_04_Aug_2023_Shift_1_67d925948b3fddc188ffcba1.json #45
 64e88bbe73dd3d8f94ab2227  CHSL 2023 SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_07_Aug_2023_Shift_1_67d9259792c4b43ddd2816c3.json #49
 64e888ba6b5bce0f15abc8b6  CHSL 2023 SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_04_Aug_2023_Shift_2_67d925945f73c680582d954f.json #35
-64e8894219b8b32e434a23f4  CHSL 2023 SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_04_Aug_2023_Shift_2_67d925945f73c680582d954f.json #39
-64e88bfecb2064d5e16bf247  CHSL 2023 SSC-CHSL/PYP_Tier_I/2023/SSC_CHSL_Tier-1_2023_Official_Paper_Held_On_04_Aug_2023_Shift_2_67d925945f73c680582d954f.json #45
-... 2439 more (see questions.jsonl)
+... 2458 more (see questions.jsonl)
 ```

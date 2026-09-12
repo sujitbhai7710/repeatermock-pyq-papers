@@ -1,7 +1,7 @@
 # Rule 21: Correct Verb Forms
 
 - **Topic**: Verb Forms and Confusables
-- **Questions**: 9
+- **Questions**: 12
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `-ed`, `participle`, `v1`, `v2`, `v3`
 
 | Exam | Questions |
 |---|---|
-| CGL | 2 |
+| CGL | 5 |
 | GD | 2 |
 | STENO | 2 |
 | CHSL | 1 |
@@ -42,7 +42,7 @@ Words: `-ed`, `participle`, `v1`, `v2`, `v3`
 
 | Year | Questions |
 |---|---|
-| 2019 | 3 |
+| 2019 | 6 |
 | 2020 | 1 |
 | 2021 | 3 |
 | 2022 | 1 |
@@ -61,6 +61,9 @@ Trend: **▼ -1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e872bd8f60d5d02db16260d | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_1_6a0f3d9ec36c311e7bb058d6.json` #100 | Sentence Improvement | ai |
+| 5e859dd8f60d5d10bc8cbc3e | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_2_6a0f3d9a0a97601eb8f3767d.json` #76 | Error Detection | ai |
+| 5e8ee17af61bed727620da40 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_1_6a0f3da498950246b8cbc527.json` #78 | Sentence Improvement | ai |
 | 5e86f8d8f60d5d125034f032 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #85 | Error Detection | ai |
 | 5e943634f60d5d0d0ba57b0c | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_2_6a0f3dac6470e02c4ea84669.json` #88 | Sentence Improvement | ai |
 | 6145edbfe6818d64f7527a67 | CHSL | 2021 | `SSC-CHSL/PYP_Tier_I/2021/SSC_CHSL_2020_Official_Paper_2_Held_On_12_April_2021_Shift_2_67d925e15ed127856666d61b.json` #10 | Sentence Improvement | keyword |

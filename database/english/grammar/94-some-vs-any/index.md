@@ -1,7 +1,7 @@
 # Rule 94: Some vs. Any
 
 - **Topic**: Determiners
-- **Questions**: 4
+- **Questions**: 3
 - **Top exam**: CGL
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -29,7 +29,7 @@ Words: `any`, `some`
 
 | Exam | Questions |
 |---|---|
-| CGL | 2 |
+| CGL | 1 |
 | CHSL | 1 |
 | STENO | 1 |
 
@@ -38,7 +38,6 @@ Words: `any`, `some`
 | Year | Questions |
 |---|---|
 | 2019 | 1 |
-| 2020 | 1 |
 | 2021 | 1 |
 | 2024 | 1 |
 
@@ -56,7 +55,6 @@ Trend: **▼ -1**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 5e948031f60d5d58edec32e1 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_7_March_2020_Shift_3_6a0f3daedaa906308e01dbba.json` #80 | Sentence Improvement | ai |
-| 6145b84cf92a7641e96f07c4 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_23_Aug_2021_Shift_3_6a0f3dd85a73de9e21cde61b.json` #82 | Sentence Improvement | ai |
 | 61a4ab2fa5adc9d66283aa01 | CHSL | 2021 | `SSC-CHSL/PYP_Tier_I/2021/SSC_CHSL_2020_Official_Paper_12_Held_On_16_April_2021_Shift_3_67d925e8c8ae540b4bc03f86.json` #12 | Error Detection | keyword |
 | 677bb8e5d26290454d7e1690 | STENO | 2024 | `SSC-Stenographer/Previous_Year_Paper/2024/SSC_Stenographer_2024_Official_Paper_Held_On_11_Dec_2024_Shift_1_69f44e1a17619b5931aaedcc.json` #121 | Error Detection | keyword |
 

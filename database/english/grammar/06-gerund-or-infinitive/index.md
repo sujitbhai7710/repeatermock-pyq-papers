@@ -1,7 +1,7 @@
 # Rule 6: Gerund or Infinitive
 
 - **Topic**: Verb Forms
-- **Questions**: 5
+- **Questions**: 6
 - **Top exam**: CGL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -31,7 +31,7 @@ Words: `-ing`, `gerund`, `infinitive`, `to`
 
 | Exam | Questions |
 |---|---|
-| CGL | 2 |
+| CGL | 3 |
 | MTS | 1 |
 | SELECTION_POST | 1 |
 | STENO | 1 |
@@ -40,7 +40,7 @@ Words: `-ing`, `gerund`, `infinitive`, `to`
 
 | Year | Questions |
 |---|---|
-| 2019 | 1 |
+| 2019 | 2 |
 | 2021 | 1 |
 | 2022 | 1 |
 | 2023 | 1 |
@@ -59,6 +59,7 @@ Trend: **▼ -1**
 
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
+| 5e8ef35f55a06d0d30cfb73d | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_2_6a0f3da6d464e6c08627de87.json` #79 | Direct and Indirect Speech | ai |
 | 5e8ef3911f7b436693413593 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_6_March_2020_Shift_2_6a0f3da6d464e6c08627de87.json` #98 | Sentence Improvement | keyword |
 | 6710ccb5eaab89ddac6e52e1 | CGL | 2024 | `SSC-CGL/Previous_Year_Paper_Tier_I/2024/SSC_CGL_2024_Tier-I_Official_Paper_Held_On_11_Sept_2024_Shift_3_6a0f3eb9daa906308e01e770.json` #95 | Error Detection | keyword |
 | 64a26706b5fc35d2b449f687 | MTS | 2023 | `SSC-MTS/Previous_Year_Paper/2023/SSC_MTS_2022_Official_Paper_Held_On_10_May_2023_Shift_2_69c4dd43d87f9bf12c73999b.json` #72 | Error Detection | keyword |

@@ -1,84 +1,108 @@
 {
   "version": 1,
-  "created_at": "2026-09-11T21:14:18Z",
+  "created_at": "2026-09-11T18:31:46Z",
   "phases": {
     "phase1": {
       "done": [
+        "0301610afc60de93277fd9cd39ba553b",
+        "1cce97eb43eaba46f5fdbc0acb8b083e",
         "1d027be45c20e5a378911001f5e3746a",
+        "221ce0625ba89a9d7124dd4a7f18c380",
         "2d7388208a408f8de3c2758ae2ce9766",
         "2ec6e8667dd0bcf0a19cc964b8d85147",
-        "3bb0472cf6271529457b9aeadb93734b",
+        "31365f1daa386f4627f5cd163ec96c43",
+        "3d7a3f292a8bc011ad65baaf3439c15e",
+        "4200a7deb480b63a7bd477b6ed3c8a46",
+        "579a38acdf95d6c1a1ae7b8658d6aadb",
+        "5ba2f7c2e8aa918c7d4a705f52750730",
         "609c40860baf5f3f8b3c5254ad4f66bb",
+        "670cbb3c7033ad77167e3c4016f226b5",
         "673f7821cb2f96dfd44529339e59913d",
         "6bf7c8985df58c7d8b095154ebd53edc",
+        "75045b831035e951ee1640fc69de27cf",
         "7e7b1f639daec415b49d5935f848baf3",
         "8c5e3255a00ba8fc1170d4241ee77885",
         "9099536f7976403460aeb892cc784c03",
         "94edb0da295d64c07d9b15a5261f1776",
+        "9c8cd055368618542c212a143c532f8d",
+        "aa8f16bb43ae8771ca8342ea0abf5256",
         "b4927408d283ecd425ff59e375c14019",
         "b5835a9698070875b969a9e935695157",
+        "b92c4acbec2fc696bd597c711e70ba0c",
         "c528409ca6bb77c72df4ca559aeecd13",
+        "c978cc943f656f91f059177924cf2785",
         "d6f06b96248f83f61bf1d7cacdf2e883",
         "dbbd3b0660a7d58cbd134c49ebb86f38",
         "df2666c62aa97286bc5344e568776e9d",
-        "eb65b9a4716549eea282a53573a509da",
         "ebf23edb6d5d73512cae0214dda481b2",
         "f30387b7b0ba16a08551b47fdc07157c",
         "f9bd3b0252833448a8440c0d705c90c7",
         "fc0d1458c0cc712c280abaf47bac2df1"
       ],
-      "cursor": 23,
+      "cursor": 3,
       "last_verdict": {
-        "batch": 22,
-        "at": "2026-09-11T21:30:06Z",
-        "items": 20,
-        "verdict": "agree",
+        "batch": 2,
+        "at": "2026-09-11T20:58:42Z",
+        "items": 2,
+        "verdict": "counter",
         "rounds": 2,
-        "agreed": true,
+        "agreed": false,
         "provenance": {
           "proposer": {
-            "model": "gpt-5.6-sol",
-            "provider": "justwoker",
-            "latency_ms": 11847
+            "model": "deepseek-v4-flash",
+            "provider": "jw-worker",
+            "latency_ms": 1
           },
           "critic": {
             "model": "gpt-5.6-sol",
-            "provider": "justwoker",
-            "latency_ms": 10697
+            "provider": "ar-worker",
+            "latency_ms": 1
           },
           "rebuttal": {
-            "model": "gpt-5.6-sol",
-            "provider": "justwoker",
-            "latency_ms": 11560
+            "model": "deepseek-v4-flash",
+            "provider": "jw-worker",
+            "latency_ms": 1
           },
           "final": {
             "model": "gpt-5.6-sol",
-            "provider": "justwoker",
-            "latency_ms": 11620
+            "provider": "ar-worker",
+            "latency_ms": 1
           },
           "final_author": "gpt-5.6-sol",
-          "same_model_fallback": true
+          "same_model_fallback": false
         }
       },
       "progress": {
         "status": "ok",
-        "items_total": 37990,
-        "items_done": 440,
+        "items_total": 1,
+        "items_done": 0,
         "items_done_before": 0,
-        "items_this_run": 440,
-        "items_remaining": 37550,
+        "items_this_run": 0,
+        "items_remaining": 1,
         "items_corrected": 0,
-        "batches_total": 1900,
-        "batches_done": 22,
-        "batches_this_run": 22,
-        "batches_failed": 2,
+        "batches_total": 1,
+        "batches_done": 0,
+        "batches_this_run": 0,
+        "batches_failed": 0,
         "batch_size": 20,
-        "eta_seconds": 83336.28981124215,
-        "elapsed_seconds": 1011.2,
-        "phase_seconds": 976.5
+        "eta_seconds": null,
+        "elapsed_seconds": 0.0,
+        "phase_seconds": 0.0
       },
-      "last_checkpoint_monotonic": 141.91841773
+      "last_checkpoint_at": "2026-09-11T18:54:40Z",
+      "failed_batches": {
+        "7d43868084da8c80f0191b81e862f807": {
+          "attempts": 1,
+          "at": "2026-09-11T20:58:42Z",
+          "items": 1,
+          "kind": "rate_limit",
+          "provider": "jw-worker",
+          "model": "deepseek-v4-flash",
+          "error": "no healthy route for any candidate model of proposer (deepseek-v4-flash, deepseek-v4.1-flash:free, gpt-5.6-sol): deepseek-v4-flash: no healthy route for deepseek-v4-flash after 1 attempt(s) (tried ar-worker); ar-worker: cooling down for 300s after HTTP 503 from https://ar-rotator.opencode-5a3.worker"
+        }
+      },
+      "failed_ids": []
     }
   },
-  "updated_at": "2026-09-11T21:30:35Z"
+  "updated_at": "2026-09-11T21:06:13Z"
 }

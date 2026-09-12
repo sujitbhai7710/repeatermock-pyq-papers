@@ -3,20 +3,20 @@
 - **Level**: topic
 - **Subject**: ENG
 - **Chapter**: Verbal Ability
-- **Questions**: 1,907
+- **Questions**: 1,905
 
 ## By exam
 
 | Exam | Questions |
 |---|---|
-| GD | 1,907 |
+| GD | 1,905 |
 
 ## By year
 
 | Year | Questions |
 |---|---|
 | 2019 | 557 |
-| 2021 | 1,350 |
+| 2021 | 1,348 |
 
 ## Question ids
 
@@ -223,5 +223,5 @@ Resolve any id with `python tools/resolve.py <qid>`.
 5fa95ee5c4cf431859de401d  GD 2019 SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_3rd_March_2019_Shift_1_68e36629e985b05a48b934e8.json #80
 5fa962a2e17996e7a252d16c  GD 2019 SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_3rd_March_2019_Shift_1_68e36629e985b05a48b934e8.json #81
 5fa95f08deb9f6442ab7eb1d  GD 2019 SSC-GD/Previous_Year_Papers/2019/SSC_GD_Constable_Previous_Year_Paper_Held_on_3rd_March_2019_Shift_1_68e36629e985b05a48b934e8.json #82
-... 1707 more (see questions.jsonl)
+... 1705 more (see questions.jsonl)
 ```

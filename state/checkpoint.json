@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "run_id": "run-20260911T211340Z-4039a9c3",
-  "phase": "phase5",
+  "run_id": "run-20260911T183100Z-ba8d81e8",
+  "phase": "phase1",
   "cursor": {
     "completed": [
       "phase0",
@@ -11,18 +11,23 @@
       "phase4",
       "phase5"
     ],
-    "next": null
+    "next": null,
+    "verify": {
+      "phase": "phase1",
+      "batch": 0,
+      "batches_done": 0,
+      "items_done": 0,
+      "items_total": 1,
+      "state_file": "state/verify_state.json",
+      "started_wall": "2026-09-11T21:06:13Z"
+    }
   },
   "status": "ai_unavailable",
-  "started_at": "2026-09-11T21:31:35Z",
-  "updated_at": "2026-09-11T21:31:35Z",
-  "window": {
-    "max_seconds": 19800,
-    "interval_seconds": 900,
-    "elapsed_seconds": 1071.133,
-    "remaining_seconds": 18728.867
-  },
+  "started_at": "2026-09-11T21:06:13Z",
+  "updated_at": "2026-09-11T21:06:13Z",
+  "window": {},
   "notes": [
-    "no AI route available – the deterministic pipeline (phase0 + python extraction + database + mocks) completed anyway; only the AI verification step was skipped"
+    "halted (AI unavailable): no healthy route for any candidate model of proposer (deepseek-v4-flash, deepseek-v4.1-flash:free, gpt-5.6-sol): deepseek-v4-flash: 6 consecutive failures for deepseek-v4-flash (threshold 6); last: HTTP 503 from https://agentrouter.org/v1: all_keys_exhausted; deepseek-v4.1-flash:free: 6 consecutive failures for deepseek-v4.1-flash:free (threshold 6); last: HTTP 503 from https://agentrouter.org/v1: all_keys_exhausted; gpt-5.6-sol: 6 consecutive failures for gpt-5.6-sol (threshold 6); last: HTTP 503 from https://agentrouter.org/v1: all_keys_exhausted",
+    "python extraction results were kept unchanged; the deterministic pipeline (database + mocks) still completes (exit 0)"
   ]
 }

@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "created_at": "2026-09-11T21:14:10Z",
-  "updated_at": "2026-09-12T00:13:55Z",
+  "created_at": "2026-09-11T18:31:39Z",
+  "updated_at": "2026-09-12T01:10:26Z",
   "phases": {
     "phase0": {
-      "started_at": "2026-09-11T21:14:10Z",
+      "started_at": "2026-09-11T18:31:39Z",
       "status": "ok",
-      "updated_at": "2026-09-11T21:14:10Z",
+      "updated_at": "2026-09-11T21:10:30Z",
       "counters": {
         "papers_in_scope": 1322,
         "papers_out_of_scope": 287,
@@ -19,46 +19,46 @@
         "papers_flagged": 4,
         "papers_placeable": 1322
       },
-      "finished_at": "2026-09-11T21:14:10Z"
+      "finished_at": "2026-09-11T21:10:30Z"
     },
     "phase1": {
       "ai": {
         "same_model_fallback": true,
-        "same_model_fallback_at": "2026-09-11T21:15:11Z",
-        "updated_at": "2026-09-11T21:31:17Z",
+        "same_model_fallback_at": "2026-09-11T18:34:40Z",
+        "updated_at": "2026-09-11T21:06:13Z",
         "status": "ai_unavailable",
-        "items_total": 37990,
-        "items_done": 440,
+        "items_total": 1,
+        "items_done": 0,
         "items_done_before": 0,
-        "items_this_run": 440,
-        "items_remaining": 37550,
+        "items_this_run": 0,
+        "items_remaining": 1,
         "items_corrected": 0,
-        "batches_total": 1900,
-        "batches_done": 22,
-        "batches_this_run": 22,
-        "batches_failed": 2,
+        "batches_total": 1,
+        "batches_done": 0,
+        "batches_this_run": 0,
+        "batches_failed": 0,
         "batch_size": 20,
-        "eta_seconds": 83336.38371687956,
-        "elapsed_seconds": 1011.2,
-        "phase_seconds": 976.5,
-        "batches_verified": 22
+        "eta_seconds": null,
+        "elapsed_seconds": 0.0,
+        "phase_seconds": 0.0,
+        "batches_verified": 31
       },
       "notes": [
         "same_model_fallback: true – proposer and critic were both served by gpt-5.6-sol; no second model had a working route",
-        "halted (AI unavailable): no healthy route for any candidate model of proposer (deepseek-v4-flash, deepseek-v4.1-flash:free, gpt-5.6-sol): deepseek-v4-flash: 6 consecutive failures for deepseek-v4-flash (threshold 6); last: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":null,\"last_status\":0,\"failover_count\":0,\"failed_keys\":0}}; deepseek-v4.1-flash:free: 6 consecutive failures for deepseek-v4.1-flash:free (threshold 6); last: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":\"auth-403\",\"last_status\":403,\"failover_count\":3,\"failed_keys\":3}}; gpt-5.6-sol: 6 consecutive failures for gpt-5.6-sol (threshold 6); last: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":null,\"last_status\":0,\"failover_count\":0,\"failed_keys\":0}}"
+        "halted (AI unavailable): no healthy route for any candidate model of proposer (deepseek-v4-flash, deepseek-v4.1-flash:free, gpt-5.6-sol): deepseek-v4-flash: 6 consecutive failures for deepseek-v4-flash (threshold 6); last: invalid JSON from https://agentrouter.org/v1: <!doctype html> <meta charset=\"UTF-8\"> <meta name=\"aliyun_waf_aa\" content=\"ff926c7f07e45e2e487a29a6197d3460\"> <meta name=\"aliyun_waf_bb\" content=\"eade71455e2ad9c6d08b82bc7d98df8c\"> <title></title> <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"> <script> !function(){var __webpack_; deepseek-v4.1-flash:free: 6 consecutive failures for deepseek-v4.1-flash:free (threshold 6); last: HTTP 503 from https://jw-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":null,\"last_status\":0,\"failover_count\":0,\"failed_keys\":0}}; gpt-5.6-sol: 6 consecutive failures for gpt-5.6-sol (threshold 6); last: HTTP 503 from https://ar-rotator.opencode-5a3.workers.dev/v1: {\"error\":{\"type\":\"all_keys_exhausted\",\"message\":\"All upstream keys failed or are on cooldown. Try again later or add more keys.\",\"last_error\":null,\"last_status\":0,\"failover_count\":0,\"failed_keys\":0}}"
       ],
-      "updated_at": "2026-09-11T21:31:17Z",
+      "updated_at": "2026-09-11T21:06:13Z",
       "ai_status": "ai_unavailable",
-      "started_at": "2026-09-11T21:31:17Z",
+      "started_at": "2026-09-11T18:56:01Z",
       "status": "ai_unavailable",
       "counters": {
         "ai_items_total": 37990,
-        "ai_items_done": 440,
-        "ai_items_this_run": 440,
-        "ai_items_remaining": 37550,
-        "ai_eta_seconds": 83336.38371687956,
-        "ai_batches_verified": 22,
-        "ai_batches_failed": 2,
+        "ai_items_done": 620,
+        "ai_items_this_run": 620,
+        "ai_items_remaining": 37370,
+        "ai_eta_seconds": 84818.75622658069,
+        "ai_batches_verified": 31,
+        "ai_batches_failed": 5,
         "eng_questions": 37990,
         "eng_chapters": 4,
         "eng_unclassified": 2463,
@@ -74,7 +74,7 @@
         "items_total": 0,
         "items_done": 0,
         "items_this_run": 0,
-        "updated_at": "2026-09-11T21:31:20Z",
+        "updated_at": "2026-09-11T18:56:04Z",
         "items_remaining": null,
         "eta_seconds": null,
         "batches_verified": null,
@@ -82,11 +82,11 @@
       },
       "ai_status": "ai_unavailable",
       "notes": [
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
       ],
-      "updated_at": "2026-09-11T21:31:20Z",
-      "started_at": "2026-09-11T21:31:20Z",
+      "updated_at": "2026-09-11T18:56:04Z",
+      "started_at": "2026-09-11T18:56:04Z",
       "status": "ai_unavailable",
       "counters": {
         "ai_items_total": 0,
@@ -111,7 +111,7 @@
         "items_total": 0,
         "items_done": 0,
         "items_this_run": 0,
-        "updated_at": "2026-09-11T21:31:23Z",
+        "updated_at": "2026-09-11T18:56:07Z",
         "items_remaining": null,
         "eta_seconds": null,
         "batches_verified": null,
@@ -119,11 +119,11 @@
       },
       "ai_status": "ai_unavailable",
       "notes": [
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
       ],
-      "updated_at": "2026-09-11T21:31:23Z",
-      "started_at": "2026-09-11T21:31:23Z",
+      "updated_at": "2026-09-11T18:56:07Z",
+      "started_at": "2026-09-11T18:56:07Z",
       "status": "ai_unavailable",
       "counters": {
         "ai_items_total": 0,
@@ -148,7 +148,7 @@
         "items_total": 0,
         "items_done": 0,
         "items_this_run": 0,
-        "updated_at": "2026-09-11T21:31:26Z",
+        "updated_at": "2026-09-11T18:56:10Z",
         "items_remaining": null,
         "eta_seconds": null,
         "batches_verified": null,
@@ -156,11 +156,11 @@
       },
       "ai_status": "ai_unavailable",
       "notes": [
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
       ],
-      "updated_at": "2026-09-11T21:31:26Z",
-      "started_at": "2026-09-11T21:31:26Z",
+      "updated_at": "2026-09-11T18:56:10Z",
+      "started_at": "2026-09-11T18:56:10Z",
       "status": "ai_unavailable",
       "counters": {
         "ai_items_total": 0,
@@ -185,7 +185,7 @@
         "items_total": 0,
         "items_done": 0,
         "items_this_run": 0,
-        "updated_at": "2026-09-11T21:31:28Z",
+        "updated_at": "2026-09-11T18:56:12Z",
         "items_remaining": null,
         "eta_seconds": null,
         "batches_verified": null,
@@ -193,11 +193,11 @@
       },
       "ai_status": "ai_unavailable",
       "notes": [
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
-        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: closed; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed",
+        "no healthy route for any candidate model of the proposer, critic role(s) at startup: tokenharbor/deepseek-v4-flash: no credentials; justwoker/deepseek-v4-flash: probe; jw-worker/deepseek-v4-flash: closed; ar-worker/deepseek-v4-flash: closed; zen-rotator/deepseek-v4-flash: no credentials; agentrouter/deepseek-v4-flash: closed; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/gpt-5.6-sol: no credentials; justwoker/gpt-5.6-sol: closed; jw-worker/gpt-5.6-sol: closed; ar-worker/gpt-5.6-sol: closed; zen-rotator/gpt-5.6-sol: no credentials; agentrouter/gpt-5.6-sol: probe; tokenharbor/deepseek-v4.1-flash:free: no credentials; justwoker/deepseek-v4.1-flash:free: closed; jw-worker/deepseek-v4.1-flash:free: closed; ar-worker/deepseek-v4.1-flash:free: closed; zen-rotator/deepseek-v4.1-flash:free: no credentials; agentrouter/deepseek-v4.1-flash:free: closed"
       ],
-      "updated_at": "2026-09-11T21:31:28Z",
-      "started_at": "2026-09-11T21:31:28Z",
+      "updated_at": "2026-09-11T18:56:12Z",
+      "started_at": "2026-09-11T18:56:12Z",
       "status": "ai_unavailable",
       "counters": {
         "ai_items_total": 0,
@@ -217,18 +217,18 @@
       }
     },
     "mocks": {
-      "started_at": "2026-09-11T21:31:35Z",
+      "started_at": "2026-09-11T18:56:20Z",
       "status": "ok",
-      "updated_at": "2026-09-11T21:31:35Z",
+      "updated_at": "2026-09-11T18:56:20Z",
       "counters": {
         "packs": 1170
       },
-      "finished_at": "2026-09-11T21:31:35Z"
+      "finished_at": "2026-09-11T18:56:20Z"
     }
   },
   "totals": {},
   "routes": {
-    "updated_at": "2026-09-11T21:31:28Z",
+    "updated_at": "2026-09-11T21:06:13Z",
     "report": {
       "agentrouter/deepseek-v4-flash": {
         "provider": "agentrouter",
@@ -236,13 +236,14 @@
         "state": "closed",
         "trips": 0,
         "probes": 0,
-        "error_strikes": 1,
+        "error_strikes": 0,
         "cooldown_seconds": 0.0,
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
         "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "agentrouter/deepseek-v4.1-flash:free": {
@@ -251,13 +252,14 @@
         "state": "closed",
         "trips": 0,
         "probes": 0,
-        "error_strikes": 1,
+        "error_strikes": 0,
         "cooldown_seconds": 0.0,
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
         "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "agentrouter/gpt-5.6-sol": {
@@ -266,13 +268,14 @@
         "state": "closed",
         "trips": 0,
         "probes": 0,
-        "error_strikes": 2,
+        "error_strikes": 0,
         "cooldown_seconds": 0.0,
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
-        "fail": 2,
+        "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "ar-worker/deepseek-v4-flash": {
@@ -319,8 +322,8 @@
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
-        "fail": 2,
-        "rate_limited": 2,
+        "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "justwoker/deepseek-v4-flash": {
@@ -329,13 +332,14 @@
         "state": "closed",
         "trips": 0,
         "probes": 0,
-        "error_strikes": 2,
+        "error_strikes": 0,
         "cooldown_seconds": 0.0,
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
-        "fail": 2,
+        "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "justwoker/deepseek-v4.1-flash:free": {
@@ -344,13 +348,14 @@
         "state": "closed",
         "trips": 0,
         "probes": 0,
-        "error_strikes": 2,
+        "error_strikes": 0,
         "cooldown_seconds": 0.0,
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
-        "fail": 2,
+        "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "justwoker/gpt-5.6-sol": {
@@ -359,13 +364,13 @@
         "state": "closed",
         "trips": 0,
         "probes": 0,
-        "error_strikes": 2,
+        "error_strikes": 0,
         "cooldown_seconds": 0.0,
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
-        "ok": 84,
-        "fail": 3,
+        "ok": 0,
+        "fail": 1,
         "rate_limited": 1,
         "configured": true
       },
@@ -381,8 +386,8 @@
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
-        "fail": 2,
-        "rate_limited": 2,
+        "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "jw-worker/deepseek-v4.1-flash:free": {
@@ -397,8 +402,8 @@
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
-        "fail": 2,
-        "rate_limited": 2,
+        "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "jw-worker/gpt-5.6-sol": {
@@ -413,8 +418,8 @@
         "last_reason": "",
         "last_failure_at": "",
         "ok": 0,
-        "fail": 3,
-        "rate_limited": 3,
+        "fail": 1,
+        "rate_limited": 1,
         "configured": true
       },
       "tokenharbor/deepseek-v4-flash": {
@@ -428,7 +433,10 @@
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
-        "configured": false
+        "ok": 0,
+        "fail": 1,
+        "rate_limited": 1,
+        "configured": true
       },
       "tokenharbor/deepseek-v4.1-flash:free": {
         "provider": "tokenharbor",
@@ -441,7 +449,10 @@
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
-        "configured": false
+        "ok": 0,
+        "fail": 1,
+        "rate_limited": 1,
+        "configured": true
       },
       "tokenharbor/gpt-5.6-sol": {
         "provider": "tokenharbor",
@@ -454,7 +465,10 @@
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
-        "configured": false
+        "ok": 0,
+        "fail": 1,
+        "rate_limited": 1,
+        "configured": true
       },
       "zen-rotator/deepseek-v4-flash": {
         "provider": "zen-rotator",
@@ -467,7 +481,10 @@
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
-        "configured": false
+        "ok": 0,
+        "fail": 1,
+        "rate_limited": 1,
+        "configured": true
       },
       "zen-rotator/deepseek-v4.1-flash:free": {
         "provider": "zen-rotator",
@@ -480,7 +497,10 @@
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
-        "configured": false
+        "ok": 0,
+        "fail": 1,
+        "rate_limited": 1,
+        "configured": true
       },
       "zen-rotator/gpt-5.6-sol": {
         "provider": "zen-rotator",
@@ -493,11 +513,14 @@
         "retry_in_seconds": 0.0,
         "last_reason": "",
         "last_failure_at": "",
-        "configured": false
+        "ok": 0,
+        "fail": 1,
+        "rate_limited": 1,
+        "configured": true
       }
     }
   },
   "status": "time_limit",
-  "status_at": "2026-09-12T00:13:55Z",
+  "status_at": "2026-09-12T01:10:26Z",
   "status_note": "no AI route available – the deterministic pipeline (phase0 + python extraction + database + mocks) completed anyway; only the AI verification step was skipped"
 }

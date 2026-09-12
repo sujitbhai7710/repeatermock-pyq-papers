@@ -1,7 +1,0 @@
-# Grammar — 36 Beside Vs Besides
-
-**26 question(s)** mapped to this rule.
-Exams: MTS (7), CGL (6), GD (5), CHSL (3), SELECTION_POST (3), CPO (1), STENO (1).
-Years: 2019–2025.
-
-See `chapter-and-topic/english-grammar-rules.md` for the authoritative statement of every rule; the questions under this rule are linked from `index.md` in this folder.

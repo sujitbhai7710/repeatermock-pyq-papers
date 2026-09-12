@@ -32,15 +32,15 @@
     "counters": {
       "rules": 129,
       "grammar_questions": 12487,
-      "grammar_questions_matched": 5277,
-      "grammar_questions_assigned_by_ai": 0,
-      "grammar_questions_unassigned": 7210,
+      "grammar_questions_matched": 5297,
+      "grammar_questions_assigned_by_ai": 20,
+      "grammar_questions_unassigned": 7190,
       "rules_with_questions": 124,
       "rules_without_questions": 5,
-      "coverage_pct": 42.26,
+      "coverage_pct": 42.42,
       "rule_leaves": 129,
-      "tree_excluded": 5277,
-      "reason:ai_unavailable": 7210,
+      "tree_excluded": 5297,
+      "reason:no_deterministic_match": 7190,
       "type:Active and Passive Voice": 1650,
       "type:Direct and Indirect Speech": 1300,
       "type:Error Detection": 3248,
@@ -49,10 +49,7 @@
       "type:Phrasal Verb": 14,
       "type:Sentence Improvement": 3100,
       "type:Shuffling of Sentence parts": 248,
-      "type:Shuffling of Sentences in a passage": 25,
-      "ai_batches_total": 361,
-      "ai_batches_done": 0,
-      "ai_status": "ai_unavailable"
+      "type:Shuffling of Sentences in a passage": 25
     },
     "files": [
       "database/english/_analysis/grammar/rules.json",
@@ -448,10 +445,6 @@
       "database/english/grammar/129-when-while-and-as-as-time-conjunctions/rule.json",
       "database/english/grammar/index.md"
     ],
-    "notes": [
-      "ai_status=ai_unavailable",
-      "no healthy route for the proposer, critic role(s)",
-      "questions left unassigned"
-    ]
+    "notes": []
   }
 }

@@ -1,7 +1,7 @@
 # Rule 67: Correct Degree of Adjective
 
 - **Topic**: Adjective
-- **Questions**: 96
+- **Questions**: 95
 - **Top exam**: MTS
 - **Source**: Aman Sir
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -30,7 +30,7 @@ Words: `as…as`, `bad`, `best`, `better`, `degree`, `good`, `than`, `the`, `wor
 | MTS | 35 |
 | CHSL | 15 |
 | STENO | 13 |
-| CGL | 12 |
+| CGL | 11 |
 | GD | 10 |
 | CPO | 7 |
 | SELECTION_POST | 4 |
@@ -40,7 +40,7 @@ Words: `as…as`, `bad`, `best`, `better`, `degree`, `good`, `than`, `the`, `wor
 | Year | Questions |
 |---|---|
 | 2019 | 13 |
-| 2020 | 3 |
+| 2020 | 2 |
 | 2021 | 7 |
 | 2022 | 12 |
 | 2023 | 17 |
@@ -62,7 +62,6 @@ Trend: **▼ -20**
 |---|---|---|---|---|---|
 | 5e86f77ef60d5d125034efd2 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_5_March_2020_Shift_2_6a0f3da0ccf0ef8f830e76d1.json` #83 | Error Detection | ai |
 | 5e859e89f60d5d10bc8cbc58 | CGL | 2019 | `SSC-CGL/Previous_Year_Paper_Tier_I/2019_-_2020/SSC_CGL_Previous_Paper_Held_On_4_March_2020_Shift_2_6a0f3d9a0a97601eb8f3767d.json` #88 | Sentence Improvement | ai |
-| 61cacea2a48e53d3ab9e81f5 | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_24_Aug_2021_Shift_1_6a0f3ddaa61a5fe8f645c370.json` #84 | Error Detection | ai |
 | 63a3d0f94930eef0375b46d0 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_03_Dec_2022_Shift_2_6a0f3e1ccda5e733b2fabe0d.json` #76 | Sentence Improvement | keyword |
 | 63a31e89cae9c224758260e5 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_3_6a0f3e16c36c311e7bb05d5c.json` #90 | Direct and Indirect Speech | keyword |
 | 63a472085222fea4031e057d | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_05_Dec_2022_Shift_4_6a0f3e2841a6d355fcadfcd8.json` #93 | Sentence Improvement | keyword |

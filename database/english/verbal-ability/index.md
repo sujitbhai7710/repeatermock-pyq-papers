@@ -3,7 +3,7 @@
 - **Level**: chapter
 - **Subject**: ENG
 - **Chapter**: Verbal Ability
-- **Questions (this subtree)**: 10,710
+- **Questions (this subtree)**: 10,707
 - **Questions at this level**: 1,787
 - **Children**: 7
 
@@ -11,8 +11,8 @@
 |---|---|---|
 | _other | other | 2 |
 | cloze-test | topic | 4,973 |
-| english | topic | 1,907 |
-| fill-in-the-blanks | topic | 533 |
+| english | topic | 1,905 |
+| fill-in-the-blanks | topic | 532 |
 | match-the-following | topic | 36 |
 | para-jumbles | topic | 1,152 |
 | reading-comprehension | topic | 320 |

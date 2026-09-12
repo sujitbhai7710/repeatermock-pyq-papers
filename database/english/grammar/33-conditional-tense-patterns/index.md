@@ -1,7 +1,7 @@
 # Rule 33: Conditional Tense Patterns
 
 - **Topic**: Conditionals and tense agreement
-- **Questions**: 100
+- **Questions**: 99
 - **Top exam**: CHSL
 - **Source**: Rani Ma'am
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
@@ -32,7 +32,7 @@ Words: `conditional`, `had`, `if`, `unless`, `were`
 | Exam | Questions |
 |---|---|
 | CHSL | 29 |
-| CGL | 19 |
+| CGL | 18 |
 | MTS | 16 |
 | STENO | 14 |
 | SELECTION_POST | 11 |
@@ -44,7 +44,7 @@ Words: `conditional`, `had`, `if`, `unless`, `were`
 | Year | Questions |
 |---|---|
 | 2019 | 5 |
-| 2020 | 3 |
+| 2020 | 2 |
 | 2021 | 16 |
 | 2022 | 20 |
 | 2023 | 12 |
@@ -65,7 +65,6 @@ Trend: **▲ +18**
 | qid | Exam | Year | Paper | Type | Via |
 |---|---|---|---|---|---|
 | 61cac1046ad5f4b20ab3113c | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_20_Aug_2021_Shift_3_6a0f3dd2124e5a0e8beda8ac.json` #83 | Sentence Improvement | keyword |
-| 6140401862b5cf8da5a357da | CGL | 2020 | `SSC-CGL/Previous_Year_Paper_Tier_I/2020_-_2021/SSC_CGL_2020_Tier-I_Official_Paper_Held_On_13_Aug_2021_Shift_1_6a0f3db69b19ada2a1c23492.json` #85 | Sentence Improvement | ai |
 | 63a2db20f4ac1d1695139380 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_02_Dec_2022_Shift_1_6a0f3e126e3c6c59e315474f.json` #77 | Sentence Improvement | keyword |
 | 63a6e3eaf0d77965c05663e2 | CGL | 2022 | `SSC-CGL/Previous_Year_Paper_Tier_I/2022/SSC_CGL_2022_Tier-I_Official_Paper_Held_On_05_Dec_2022_Shift_2_6a0f3e2498d24d08c231f621.json` #79 | Sentence Improvement | keyword |
 | 64cbdad79968d83e63bf26a5 | CGL | 2023 | `SSC-CGL/Previous_Year_Paper_Tier_I/2023/SSC_CGL_2023_Tier-I_Official_Paper_Held_On_24_Jul_2023_Shift_3_6a0f3e8fcda71d26928e6248.json` #76 | Active and Passive Voice | keyword |

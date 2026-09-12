@@ -1,8 +1,8 @@
 # Rule 100: Even If vs. Even Though
 
 - **Topic**: Conjunctions
-- **Questions**: 0
-- **Top exam**: -
+- **Questions**: 1
+- **Top exam**: CPO
 - **Source**: Manisha Bansal
 - **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)
 
@@ -25,11 +25,15 @@ Phrases: `even if`, `even though`
 
 ## By exam
 
-_No question is attached to this rule yet._
+| Exam | Questions |
+|---|---|
+| CPO | 1 |
 
 ## By year
 
-_No question is attached to this rule yet._
+| Year | Questions |
+|---|---|
+| 2019 | 1 |
 
 ## Trend (last years in the corpus)
 
@@ -42,6 +46,8 @@ Trend: **→ 0**
 
 ## Questions
 
-_None._
+| qid | Exam | Year | Paper | Type | Via |
+|---|---|---|---|---|---|
+| 5e218f68f60d5d27c61619b3 | CPO | 2019 | `SSC-CPO/Previous_Year_Paper_Paper_I/2019/SSC_CPO_Tier-_I_Previous_Year_Paper_Held_On_11_December_2019_Shift_2_69c66a7cc4d167eb0982a934.json` #165 | Sentence Improvement | ai |
 
 Resolve any id with `python tools/resolve.py <qid>`.
