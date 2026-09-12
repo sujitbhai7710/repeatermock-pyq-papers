@@ -335,6 +335,89 @@ Rules:
   (`agent/grammar.py`, the `item.match.rule is not None` branch) — that is a rules change, not a
   leaf fix.
 
+## L28. A 0.05-confidence AI verdict filed a question — placements need a confidence floor
+
+**Symptom** A question was filed under a grammar rule on the strength of an AI verdict with
+`confidence: 0.05`, and the review/veto pass that should have caught it had never run.
+
+**Cause** The AI assignment pass honoured every parsed verdict: no minimum confidence, so a
+near-zero-confidence guess placed questions exactly like a 0.99 verdict did.
+
+**Fix** The **placement confidence floor** (`agent.grammar.confidence_accepted`): a verdict may
+place — or move — a question only at `confidence >= 0.8`, or `>= 0.75` when **two distinct models**
+agreed on it (`same_model_fallback` is false; one model speaking for both roles never counts).
+Below the floor the question goes to `_unclassified` (`reason: ai_low_confidence`). The floor is
+enforced when a verdict is merged (`run_ai_pass._merge`) **and** again when stored decisions are
+consumed (`build_grammar_db`), so decisions written before the gate existed are still gated. The
+same floor gates `agent.verify` corrections (a "wrong" finding below the floor keeps the python
+result). Tests: `tests/test_grammar_review.py`.
+
+**Verify** `python -m unittest tests.test_grammar_review.py` — a stored `{rule: 17, confidence:
+0.05}` decision lands in `unassigned.jsonl`, never on a rule leaf.
+
+## L29. Groq `openai/gpt-oss-120b` — three traps in one route
+
+**Symptom** ① `403 error code: 1010`; ② empty `content` with `finish_reason: length`; ③
+`HTTP 429 … tokens per minute (TPM): Limit 8000`; ④ a valid HTTP-200 reply raised
+`LlmRateLimited`.
+
+**Cause**
+1. Cloudflare fronts `api.groq.com`: no browser `User-Agent` ⇒ 403/1010 (same class as L1).
+2. The model emits a **`reasoning` field**; with `max_tokens < ~700` the whole budget goes to
+   reasoning and `content` comes back empty. Exactly the deepseek trap (L9), now on Groq.
+3. The free tier meters **8,000 tokens/minute** across input+output: batches back to back trip it.
+4. `detect_rate_limit` scanned the *whole* body for signal words — a reply whose reasoning (or a
+   question sentence!) contains "rate limit" is a **valid completion**, and it was misread as an
+   outage.
+
+**Fix**
+1. `providers.routes.groq.user_agent: "browser"` (settings.json).
+2. Always `max_tokens >= 700`; the debate already sends `600 + 160 × batch_size`.
+3. Space batches (≥ ~20 s) and honour the "try again in Ns" hint from the 429 body; the tools do
+   (`tools/rule52_adjudicate.py`).
+4. `agent.llm.detect_rate_limit`: a 200 whose body parses to a chat completion **with `choices`**
+   is a success, whatever its text says; only error bodies / 4xx-5xx signal.
+
+**Verify** `python -m agent.cli routes --probe` → `groq/openai/gpt-oss-120b: ok`;
+`tests/test_failover.py::test_a_well_formed_200_completion_is_never_a_rate_limit`.
+
+## L30. The review/veto pass existed but had no CLI entry — so it never ran
+
+**Symptom** `state/grammar_ai_state.json` held 59 assignment decisions and **0 vetoes**;
+`cmd_grammar` had no `--review` flag, and the review sampling helper the code called
+(`review_sample`) was never defined — invoking the path raised `NameError`.
+
+**Cause** The review machinery (schema, veto handling, `AiOptions.review`) was written but never
+finished: no CLI wiring and no entry point, so nothing ever exercised it, and misfiled questions
+(a narration question under `08-choosing-participles`, a spelling question under
+`42-correct-conjunction-pairs`, rule-52 questions under rules 10/15/71) shipped uncaught.
+
+**Fix** `python -m agent.cli grammar --review [--sample-per-rule N]`: sends every placed question
+(the keyword matcher's *and* the AI pass's) back to the models with `{confirmed, correct_rule,
+confidence, why}`; `confirmed: false` or below the floor vetoes the filing — the question moves to
+the rule the reviewer named (when confident) or to `_unclassified` (`ai_review_rejected`). Batched
+(~20), resumable, idempotent; reports `review confirmed/vetoed/moved` per run. The rule-52
+adjudication (`tools/rule52_adjudicate.py`) writes its verdicts as stored vetoes.
+
+**Verify** run `grammar --review`, then read `state/grammar_ai_state.json`: `keep`/`veto` keys on
+the reviewed qids; the counters move; re-running skips already-reviewed questions.
+
+## L31. `pyq-db` still shipped the full source tree after the pruning fix
+
+**Symptom** `git ls-tree --name-only origin/pyq-db` listed `agent/`, `tools/`, `tests/`, `docs/`,
+`SSC-*/` — the branch carried a stale copy of the whole repository even though
+`Publisher._prune_index` existed and every *new* publish pruned the index to `state/` +
+`database/`.
+
+**Cause** The prune happens at **publish time**. The fix landed on `main`, but no publish ran
+after it, so the branch kept the last pre-fix snapshot forever.
+
+**Fix** Re-publish after any change to the publish path: `python -m agent.cli publish --force`
+(merge — it re-parents onto the existing `pyq-db` tip, never deletes), then confirm with
+`git ls-tree --name-only origin/pyq-db` → exactly `database` + `state`.
+
+**Verify** `git ls-tree --name-only origin/pyq-db` prints nothing but `database` and `state`.
+
 ## Quick troubleshooting index
 
 | Symptom | Go to |
@@ -364,13 +447,17 @@ Rules:
 | Cross-subject audit floods you with "wrong" leaves | L25 |
 | `state/errors.jsonl` grows after a test run | L26 |
 | A rule leaf has 0 questions and nobody knows why | L27 |
+| An AI verdict with a tiny confidence filed a question | L28 |
+| Groq 403 / empty content / 429 / phantom rate limit | L29 |
+| The grammar review pass never runs / no CLI entry | L30 |
+| `pyq-db` carries `agent/` and the source papers | L31 |
 
 ## Conventions that keep this project healthy
 
 1. Run `python -m agent.cli audit` after **every** change to the DB writer or classifier. It must print
    `VIOLATIONS: 0` (rules 1–11; rules 8–11 cover question uniqueness, empty-leaf markers,
    subject/chapter ownership and the unpublished `_analysis` view).
-2. Run the unit tests: `python -m unittest discover -s tests -t .` (231 tests).
+2. Run the unit tests: `python -m unittest discover -s tests -t .` (the suite prints the count).
 3. Keep the coverage identity at **142,090**; if a bucket moves, report the old and new numbers and why.
 4. Never edit raw data. If the taxonomy is missing a concept, propose `config/chapter_aliases.json` for
    a human to review.

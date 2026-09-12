@@ -310,6 +310,19 @@ def keys_env_names(providers: Optional[Sequence[Provider]] = None) -> List[str]:
 def detect_rate_limit(status: Optional[int], body: str) -> bool:
     if status in RATE_LIMIT_STATUSES:
         return True
+    if status not in (None, 200):
+        lowered = (body or "").lower()
+        return any(signal in lowered for signal in RATE_LIMIT_SIGNALS)
+    # a 200 whose body is a well-formed chat completion is a success even when
+    # the *content* mentions "rate limit" — a reasoning model can echo the words
+    # inside its chain of thought (Groq's gpt-oss-120b emits a `reasoning`
+    # field), and that must not look like a provider outage
+    try:
+        parsed = json.loads(body or "")
+    except json.JSONDecodeError:
+        parsed = None
+    if isinstance(parsed, dict) and isinstance(parsed.get("choices"), list) and parsed["choices"]:
+        return False
     lowered = (body or "").lower()
     return any(signal in lowered for signal in RATE_LIMIT_SIGNALS)
 

@@ -9,12 +9,26 @@ routed in two passes:
    the parsed body, the ✗/✓ examples and the quoted signal words all contribute
    (:mod:`agent.grammar_rules`).  A minimum score is required and the most
    specific rule wins an otherwise equal contest.
-2. **AI** (:func:`run_ai_pass`) — whatever the deterministic pass cannot place
-   is offered to the two-model debate: **deepseek-v4-flash proposes** a rule and
-   **gpt-5.6-sol confirms or overrides** it (the judge's answer is final).  The
-   pass is batched, resumable, and stops softly (``ai_unavailable``) when no
-   route can serve a role — the questions then stay in ``unassigned.jsonl``
-   instead of being guessed onto a rule.
+2. **AI assignment** (:func:`run_ai_pass`) — whatever the deterministic pass
+   cannot place is offered to the two-model debate: **deepseek-v4-flash
+   proposes** a rule and **gpt-5.6-sol confirms or overrides** it (the judge's
+   answer is final).  The pass is batched, resumable, and stops softly
+   (``ai_unavailable``) when no route can serve a role — the questions then stay
+   in ``unassigned.jsonl`` instead of being guessed onto a rule.
+3. **AI review** (``grammar --review``, :func:`review_sample`) — every question
+   that already *has* a rule (from either pass) is sent back to the models to
+   confirm the filing.  ``confirmed: false`` or a confidence below the floor
+   vetoes the assignment: the question moves to the rule the reviewer named
+   (when that verdict clears the floor too) or back to ``_unclassified``.
+   Verdicts are stored per qid, so the review is resumable and idempotent.
+
+**The confidence floor** (LESSONS L28, :func:`confidence_accepted`): an AI
+verdict may place or move a question only at ``confidence >= 0.8`` — or
+``>= 0.75`` when two distinct models agreed on it (``same_model_fallback`` is
+false).  Everything below the floor goes to ``_unclassified``; the floor is
+enforced when a verdict is merged (:func:`run_ai_pass`) and again when stored
+decisions are consumed (:func:`build_grammar_db`), so a decision written before
+the gate existed is still gated.
 
 Output (``database/english/_analysis/grammar/``) is the analysis view;
 ``database/english/grammar/<NN>-<slug>/`` is the browsable per-rule node with
@@ -528,10 +542,36 @@ MIN_SCORE = 4
 #: ``_unclassified``): the "100%-or-unassigned" policy (LESSONS L28).
 REQUIRE_STRONG_EVIDENCE = True
 
-#: how sure a *review* verdict must be before it may override the matcher.  The
-#: reviewer may only move a question out of its leaf when it is certain
-#: (:func:`parse_ai_reply`), never on a hunch.
-REVIEW_MIN_CONFIDENCE = 0.75
+#: how sure an AI verdict must be before it may place — or move — a question
+#: (the "only 100%-accurate placements, otherwise unassigned" policy, LESSONS
+#: L28).  A verdict below :data:`AI_CONFIDENCE_FLOOR` is never honoured; the
+#: one exception is a verdict of at least :data:`AI_CONFIDENCE_FLOOR_TWO_MODEL`
+#: that was *agreed by two distinct models* (``same_model_fallback`` is false —
+#: one model speaking for both roles does not count as agreement).
+AI_CONFIDENCE_FLOOR = 0.8
+AI_CONFIDENCE_FLOOR_TWO_MODEL = 0.75
+
+#: kept as the review-rejection reason code's companion: a review verdict only
+#: moves a question out of its leaf when the reviewer cleared the floor.
+REVIEW_MIN_CONFIDENCE = AI_CONFIDENCE_FLOOR
+
+
+def confidence_accepted(confidence: float, *, same_model_fallback: bool) -> bool:
+    """Whether an AI verdict clears the placement confidence floor.
+
+    ``>= AI_CONFIDENCE_FLOOR`` always; ``>= AI_CONFIDENCE_FLOOR_TWO_MODEL`` only
+    when two distinct models agreed on it (``same_model_fallback`` is false).
+    Everything below the floor goes to ``_unclassified`` — a weak verdict must
+    never file a question.
+    """
+
+    try:
+        value = float(confidence)
+    except (TypeError, ValueError):
+        return False
+    if value >= AI_CONFIDENCE_FLOOR:
+        return True
+    return bool(same_model_fallback is False and value >= AI_CONFIDENCE_FLOOR_TWO_MODEL)
 
 #: …and must clear the runner-up by this factor.  A sentence like *"Success
 #: depends ___ hard work"* scores on `hard` for Rule 25 and on `work`/`depends`
@@ -1106,6 +1146,8 @@ REASON_AI_NOT_ATTEMPTED = "ai_not_attempted"
 REASON_AI_NO_RULE = "ai_no_rule"
 REASON_AI_INVALID = "ai_invalid_rule"
 REASON_AI_UNPARSED = "ai_unparsed_reply"
+#: an AI placement below the confidence floor (LESSONS L28) — never filed
+REASON_AI_LOW_CONFIDENCE = "ai_low_confidence"
 #: an AI *review* rejected the matcher's assignment (see REVIEW_MIN_CONFIDENCE)
 REASON_AI_REVIEWED = "ai_review_rejected"
 
@@ -1191,7 +1233,21 @@ def _ai_payload(items: Sequence[GrammarQuestion]) -> Dict[str, Any]:
 
 
 def parse_ai_reply(final: Dict[str, Any], items: Sequence[GrammarQuestion], rules_count: int) -> Dict[str, Dict[str, Any]]:
-    """``qid -> decision`` from a debate verdict (tolerant of shape drift)."""
+    """``qid -> decision`` from a debate verdict (tolerant of shape drift).
+
+    Two row shapes are recognised:
+
+    * **assignment** — ``{"qid", "rule", "confidence", "reason"}``: propose a
+      rule (or ``null``) for an unfiled question;
+    * **review** — ``{"qid", "confirmed", "correct_rule", "confidence", "why"}``
+      (the ``keep`` / ``rule`` pair of the older schema is still accepted):
+      audit a question that already has an assignment.
+
+    The confidence floor is **not** applied here — the parser only records what
+    the model said.  :func:`run_ai_pass` folds the floor in once it knows which
+    model(s) served the batch (``same_model_fallback``), and
+    :func:`build_grammar_db` re-checks it when consuming stored decisions.
+    """
 
     rows = final.get("items") if isinstance(final, dict) else None
     if not isinstance(rows, list) and isinstance(final, dict) and "rule" in final and len(items) == 1:
@@ -1200,67 +1256,61 @@ def parse_ai_reply(final: Dict[str, Any], items: Sequence[GrammarQuestion], rule
     if not isinstance(rows, list):
         return out
     valid = {item.qid for item in items}
+
+    def _rule_number(raw_rule: Any) -> Tuple[Optional[int], Optional[Dict[str, Any]]]:
+        if raw_rule in (None, "", "null"):
+            return None, None
+        try:
+            rule = int(raw_rule)
+        except (TypeError, ValueError):
+            return None, {
+                "rule": None,
+                "confidence": 0.0,
+                "reason": str(raw_rule)[:100] + " is not a rule number",
+                "reason_code": REASON_AI_INVALID,
+            }
+        if not (1 <= rule <= rules_count):
+            return None, {
+                "rule": None,
+                "confidence": 0.0,
+                "reason": f"rule {rule} is outside 1..{rules_count}",
+                "reason_code": REASON_AI_INVALID,
+            }
+        return rule, None
+
     for row in rows:
         if not isinstance(row, dict):
             continue
         qid = str(row.get("qid") or "")
         if qid not in valid:
             continue
-        raw_rule = row.get("rule")
-        rule: Optional[int]
-        if raw_rule in (None, "", "null"):
-            rule = None
-        else:
-            try:
-                rule = int(raw_rule)
-            except (TypeError, ValueError):
-                rule = None
-                out[qid] = {
-                    "rule": None,
-                    "confidence": 0.0,
-                    "reason": str(row.get("reason") or "unparsable rule value")[:400],
-                    "reason_code": REASON_AI_INVALID,
-                }
-                continue
-            if not (1 <= rule <= rules_count):
-                out[qid] = {
-                    "rule": None,
-                    "confidence": 0.0,
-                    "reason": f"rule {rule} is outside 1..{rules_count}: {str(row.get('reason') or '')[:300]}",
-                    "reason_code": REASON_AI_INVALID,
-                }
-                continue
         try:
             confidence = float(row.get("confidence") or 0.0)
         except (TypeError, ValueError):
             confidence = 0.0
         confidence = max(0.0, min(1.0, confidence))
-        reason = str(row.get("reason") or "")[:400]
-        keep = row.get("keep")
-        if keep is not None:
-            # a *review* verdict.  The reviewer may only move a question out of
-            # its leaf when it is certain (:data:`REVIEW_MIN_CONFIDENCE`): an
-            # unsure reviewer keeps the assignment, which is what the
-            # "only when the model is certain" rule means.  `keep: false` with a
-            # rule number re-files, without one it unclassifies.
-            accepted = keep is True or str(keep).strip().lower() in {"true", "yes", "keep"}
-            if accepted or confidence < REVIEW_MIN_CONFIDENCE:
-                out[qid] = {
-                    "rule": rule,
-                    "confidence": confidence,
-                    "reason": reason,
-                    "reason_code": "",
-                    "veto": False,
-                    "keep": True,
-                }
-                continue
+        reason = str(row.get("why") or row.get("reason") or "")[:400]
+
+        is_review = "keep" in row or "confirmed" in row
+        raw_rule = row.get("correct_rule", row.get("rule"))
+        rule, invalid = _rule_number(raw_rule)
+        if invalid is not None:
+            out[qid] = {**invalid, "reason": str(row.get("reason") or invalid["reason"])[:400]}
+            continue
+        if is_review:
+            # a *review* verdict: `confirmed`/`keep` says the filing is right,
+            # `correct_rule`/`rule` names the fix when it is not.  The floor
+            # (and the veto it forces) is applied by run_ai_pass once the
+            # provenance is known.
+            keep_raw = row.get("confirmed", row.get("keep"))
+            confirmed = str(keep_raw).strip().lower() in {"true", "yes", "keep", "confirmed", "1"}
             out[qid] = {
-                "rule": rule if rule is not None else None,
+                "rule": rule,
                 "confidence": confidence,
                 "reason": reason,
-                "reason_code": REASON_AI_NO_RULE if rule is None else "",
-                "veto": True,
-                "keep": False,
+                "reason_code": "",
+                "keep": bool(confirmed),
+                "veto": not bool(confirmed),
             }
             continue
         out[qid] = {
@@ -1403,7 +1453,14 @@ def run_ai_pass(
     max_workers = max(1, int(os.environ.get("PYQ_AI_WORKERS", "1") or 1))
 
     def _merge(group, fingerprint, outcome, done: int) -> None:
-        """Fold one finished batch into the counters/decisions (main thread only)."""
+        """Fold one finished batch into the counters/decisions (main thread only).
+
+        This is also where the confidence floor (LESSONS L28) is enforced: a
+        verdict needs the provenance of the batch (``same_model_fallback``) to
+        know whether two distinct models agreed, so the parser stays floor-free
+        and the gate lives here — and again in :func:`build_grammar_db` for
+        stored decisions.
+        """
         final = outcome.final if isinstance(outcome.final, dict) else {}
         parsed = parse_ai_reply(final, group, len(rules))
         provenance = outcome.provenance or {}
@@ -1431,10 +1488,48 @@ def run_ai_pass(
             if decision is None:
                 counters["unparsed"] += 1
                 continue
-            if decision.get("rule") is None:
-                counters["no_rule"] += 1
+            same_model = bool(served["same_model_fallback"])
+            if "keep" in decision:
+                # ---- review verdict: confirm the filing or veto it ---------
+                if decision.get("keep") and confidence_accepted(
+                    decision.get("confidence", 0.0), same_model_fallback=same_model
+                ):
+                    decision["keep"] = True
+                    decision["veto"] = False
+                    # a confirmation keeps the effective filing: echo the rule
+                    # the item is filed under so a stored decision stands alone
+                    if decision.get("rule") is None and item.match.rule is not None:
+                        decision["rule"] = item.match.rule
+                    decision["reason_code"] = ""
+                    counters["review_confirmed"] += 1
+                else:
+                    # not confirmed, or below the floor: the placement is not
+                    # 100 %-accurate, so it is vetoed.  A suggested correct rule
+                    # is only re-filed when the reviewer cleared the floor.
+                    replacement = (
+                        decision.get("rule") if confidence_accepted(
+                            decision.get("confidence", 0.0), same_model_fallback=same_model
+                        ) else None
+                    )
+                    decision["keep"] = False
+                    decision["veto"] = True
+                    decision["rule"] = replacement
+                    decision["reason_code"] = REASON_AI_NO_RULE if replacement is None else ""
+                    counters["review_vetoed"] += 1
+                    if replacement is not None:
+                        counters["review_moved"] += 1
             else:
-                counters["assigned"] += 1
+                # ---- assignment verdict: place only above the floor --------
+                if decision.get("rule") is not None and not confidence_accepted(
+                    decision.get("confidence", 0.0), same_model_fallback=same_model
+                ):
+                    decision["rule"] = None
+                    decision["reason_code"] = REASON_AI_LOW_CONFIDENCE
+                    counters["low_confidence"] += 1
+                if decision.get("rule") is None:
+                    counters["no_rule"] += 1
+                else:
+                    counters["assigned"] += 1
             record = {
                 **decision,
                 "qid": item.qid,
@@ -2011,14 +2106,24 @@ def build_grammar_db(
 
     for item in pool:
         decision = decisions.get(item.qid) or {}
+        low_confidence = False
         if item.match.rule is not None and decision.get("veto"):
             # an AI *review* rejected the keyword match: the reviewer is certain
             # the question does not test the rule it was filed under.  It moves to
             # the rule the reviewer named, or back to `_unclassified` when the
-            # reviewer named none — never into a second guess.
+            # reviewer named none — never into a second guess.  A suggested
+            # replacement below the confidence floor is a guess: unclassify.
             rejected = item.match.rule
             replacement = decision.get("rule")
-            replacement_leaf = leaves.get(int(replacement)) if replacement is not None else None
+            replacement_leaf = None
+            if replacement is not None and confidence_accepted(
+                decision.get("confidence", 0.0),
+                same_model_fallback=bool(decision.get("same_model_fallback")),
+            ):
+                try:
+                    replacement_leaf = leaves.get(int(replacement))
+                except (TypeError, ValueError):
+                    replacement_leaf = None
             if replacement_leaf is not None:
                 item.match = RuleMatch(
                     rule=int(replacement),
@@ -2055,26 +2160,35 @@ def build_grammar_db(
         if item.match.rule is not None:
             item.match.breakdown["source"] = item.match.breakdown.get("source") or "keyword"
         elif decision.get("rule") is not None:
-            rule_number = int(decision["rule"])
-            rule = leaves.get(rule_number)
-            if rule is not None:
-                item.match = RuleMatch(
-                    rule=rule_number,
-                    title=rule.rule.title,
-                    score=int(decision.get("confidence", 0) * 100),
-                    matched_terms=[],
-                    hint=False,
-                    breakdown={
-                        "source": "ai",
-                        "confidence": decision.get("confidence"),
-                        "reason": decision.get("reason"),
-                        "proposer_model": decision.get("proposer_model"),
-                        "judge_model": decision.get("judge_model"),
-                        "same_model_fallback": decision.get("same_model_fallback"),
-                    },
-                )
-                ai_assigned += 1
-                ai_used += 1
+            if not confidence_accepted(
+                decision.get("confidence", 0.0),
+                same_model_fallback=bool(decision.get("same_model_fallback")),
+            ):
+                # a stored placement below the floor (written before the gate
+                # existed, or by an external tool): the question stays unfiled
+                low_confidence = True
+            else:
+                rule_number = int(decision["rule"])
+                rule = leaves.get(rule_number)
+                if rule is not None:
+                    item.match = RuleMatch(
+                        rule=rule_number,
+                        title=rule.rule.title,
+                        score=int(decision.get("confidence", 0) * 100),
+                        matched_terms=[],
+                        hint=False,
+                        breakdown={
+                            "source": "ai_review" if decision.get("veto") else "ai",
+                            "moved_from": item.match.rule if decision.get("veto") else None,
+                            "confidence": decision.get("confidence"),
+                            "reason": decision.get("reason"),
+                            "proposer_model": decision.get("proposer_model"),
+                            "judge_model": decision.get("judge_model"),
+                            "same_model_fallback": decision.get("same_model_fallback"),
+                        },
+                    )
+                    ai_assigned += 1
+                    ai_used += 1
         if item.match.rule is not None and item.match.rule in leaves:
             leaves[item.match.rule].questions.append(item)
             leaves[item.match.rule].sources[item.match.breakdown.get("source", "keyword")] += 1
@@ -2082,6 +2196,8 @@ def build_grammar_db(
         reason = str(decision.get("reason_code") or "")
         if not reason and decision.get("veto"):
             reason = REASON_AI_REVIEWED
+        if not reason and low_confidence:
+            reason = REASON_AI_LOW_CONFIDENCE
         if not reason:
             reason = REASON_NO_MATCH if not ai_status else (
                 REASON_AI_UNAVAILABLE if ai_status == STATUS_AI_UNAVAILABLE else REASON_AI_NOT_ATTEMPTED
@@ -2313,6 +2429,113 @@ def assigned_qids(path: Optional[Path] = None) -> Set[str]:
 # ---------------------------------------------------------------------------
 
 
+def _effective_placement(
+    item: GrammarQuestion,
+    decisions: Dict[str, Dict[str, Any]],
+    rules_by_number: Dict[int, GrammarRule],
+) -> Tuple[Optional[int], Optional[str]]:
+    """The rule a question is *effectively* filed under, from any source.
+
+    The keyword matcher's verdict travels on the item; an AI assignment lives in
+    the stored decision (and is only honoured when it clears the confidence
+    floor — the same gate :func:`build_grammar_db` applies).
+    """
+
+    if item.match.rule is not None:
+        return item.match.rule, item.match.title
+    decision = decisions.get(item.qid)
+    if not isinstance(decision, dict) or decision.get("veto"):
+        return None, None
+    raw = decision.get("rule")
+    if raw is None:
+        return None, None
+    try:
+        number = int(raw)
+    except (TypeError, ValueError):
+        return None, None
+    if not confidence_accepted(
+        decision.get("confidence", 0.0), same_model_fallback=bool(decision.get("same_model_fallback"))
+    ):
+        return None, None
+    rule = rules_by_number.get(number)
+    return (number, rule.title) if rule is not None else (None, None)
+
+
+def review_sample(
+    pool: Sequence[GrammarQuestion],
+    rules: Sequence[GrammarRule],
+    decisions: Dict[str, Dict[str, Any]],
+    *,
+    per_rule: int = 0,
+    limit: int = 0,
+) -> List[GrammarQuestion]:
+    """The questions the review pass audits: every *placed* question.
+
+    Placement is read the same way :func:`build_grammar_db` reads it — the
+    keyword match first, then a floor-clearing stored AI decision — so the
+    review covers AI-assigned questions too, not just the matcher's.
+
+    ``per_rule`` caps how many questions of each rule are audited per run
+    (``0`` = all; evenly spaced over the rule's questions so the sample is not
+    just the earliest papers), and ``limit`` caps the overall number.  The
+    selection is deterministic: re-running with the same state picks the same
+    questions, and the verdicts are stored per qid, so the pass is idempotent.
+    """
+
+    rules_by_number = {rule.number: rule for rule in rules}
+    by_rule: Dict[int, List[GrammarQuestion]] = defaultdict(list)
+    for item in pool:
+        number, _title = _effective_placement(item, decisions, rules_by_number)
+        if number is None:
+            continue
+        # the review payload reads ``item.match`` for the filed-under evidence;
+        # give AI-assigned items the same shape the matcher-assigned ones have
+        if item.match.rule is None:
+            decision = decisions.get(item.qid) or {}
+            item = GrammarQuestion(
+                qid=item.qid,
+                exam=item.exam,
+                year=item.year,
+                paper_path=item.paper_path,
+                ordinal=item.ordinal,
+                concept_raw=item.concept_raw,
+                qtype=item.qtype,
+                prompt=item.prompt,
+                options=item.options,
+                subject=item.subject,
+                concept=item.concept,
+                text=item.text,
+                candidates=item.candidates,
+                match=RuleMatch(
+                    rule=number,
+                    title=rules_by_number[number].title,
+                    score=int(float(decision.get("confidence") or 0) * 100),
+                    matched_terms=[],
+                    hint=False,
+                    breakdown={
+                        "source": "ai",
+                        "confidence": decision.get("confidence"),
+                        "reason": decision.get("reason"),
+                    },
+                ),
+            )
+        by_rule[number].append(item)
+
+    selected: List[GrammarQuestion] = []
+    for number in sorted(by_rule):
+        members = by_rule[number]
+        if per_rule and len(members) > per_rule:
+            step = len(members) / float(per_rule)
+            members = [members[int(i * step)] for i in range(per_rule)]
+        selected.extend(members)
+    # keep the pool's own ordering so the batch payload is stable
+    order = {id(item): index for index, item in enumerate(pool)}
+    selected.sort(key=lambda item: order.get(id(item), len(pool)))
+    if limit:
+        selected = selected[:limit]
+    return selected
+
+
 @dataclass
 class AiOptions:
     """How the AI pass should behave for one build."""
@@ -2382,10 +2605,11 @@ def build_grammar_view(
             notes.append("AI pass requested without settings – skipped")
             ai_status = STATUS_SKIPPED_NO_KEYS
         else:
-            # a *review* pass audits what the matcher placed (the rule leaves);
-            # an assignment pass fills what it could not place
+            # a *review* pass audits what the matcher (or a stored AI decision)
+            # placed — every rule leaf, not just the pending residual; an
+            # assignment pass fills what it could not place
             subject_items = (
-                review_sample(pool, per_rule=ai.sample_per_rule, limit=ai.limit)
+                review_sample(pool, rules, decisions, per_rule=ai.sample_per_rule, limit=ai.limit)
                 if ai.review
                 else pending
             )

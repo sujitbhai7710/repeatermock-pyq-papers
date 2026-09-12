@@ -159,10 +159,12 @@ def _proposal_schema_hint(task: str) -> str:
         # otherwise the reply cannot be mapped back onto the index records
         return (
             'Schema: {"items": [{"qid": string, "ok": boolean, "concept": string|null, '
-            '"chapter": string|null, "topic": string|null, "reason": string}], "reason": string}. '
+            '"chapter": string|null, "topic": string|null, "confidence": 0..1, '
+            '"reason": string}], "reason": string}. '
             "Emit exactly one entry in \"items\" for every item of the batch payload, "
             "echoing each qid verbatim; set \"ok\" to true when the python_result is "
-            "correct and otherwise give the corrected concept/chapter/topic."
+            "correct and otherwise give the corrected concept/chapter/topic. State a "
+            "confidence you would defend — corrections below 0.8 are not applied."
         )
     if task == "vocab":
         return (
@@ -184,14 +186,14 @@ def _proposal_schema_hint(task: str) -> str:
         # the payload is a batch that is *already filed* under a rule: the model
         # audits the filing instead of proposing one
         return (
-            'Schema: {"items": [{"qid": string, "keep": boolean, "rule": 1..129|null, '
-            '"confidence": 0..1, "reason": string}], "reason": string}. '
+            'Schema: {"items": [{"qid": string, "confirmed": boolean, "correct_rule": '
+            '1..129|null, "confidence": 0..1, "why": string}], "reason": string}. '
             "Emit exactly one entry in \"items\" for every question of the batch payload, "
             "echoing each qid verbatim. Every question carries \"filed_under_rule\": set "
-            "\"keep\" to true only when the question genuinely tests that rule; set it to "
-            "false when it does not and then give the correct rule number from the list "
-            "(null when no listed rule applies at all). State a confidence you would "
-            "defend — a low confidence keeps the existing filing."
+            "\"confirmed\" to true only when the question genuinely tests that rule; set it "
+            "to false when it does not and then give the correct rule number from the list "
+            "in \"correct_rule\" (null when no listed rule applies at all). State a "
+            "confidence you would defend — placements below 0.8 are not kept."
         )
     return 'Schema: {"result": any, "reason": string}'
 

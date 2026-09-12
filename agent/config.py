@@ -383,8 +383,12 @@ def load_settings(path: Optional[Path] = None) -> Settings:
         str(model): tuple(str(name) for name in names)
         for model, names in (db.get("model_provider_orders") or {}).items()
     }
+    # ``PYQ_DEBATE_MAX_ROUNDS`` lets a long review run skip the rebuttal round
+    # (a "counter" then goes straight to the critic's final verdict); the
+    # shipped default stays ``debate.max_rounds`` (1).
+    env_rounds = _env_int("PYQ_DEBATE_MAX_ROUNDS")
     debate = DebatePolicy(
-        max_rounds=int(db.get("max_rounds", 1)),
+        max_rounds=int(env_rounds if env_rounds is not None else db.get("max_rounds", 1)),
         proposer_model=str(db.get("proposer_model", "deepseek-v4-flash")),
         critic_model=str(db.get("critic_model", "gpt-5.6-sol")),
         proposer_models=_models("proposer_models", "PYQ_PROPOSER_MODELS", DEFAULT_PROPOSER_MODELS),

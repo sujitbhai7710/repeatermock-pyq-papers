@@ -55,6 +55,7 @@ from . import errors as errors_mod
 from . import gitpush, indexer, llm, paths, router as router_mod, tracking
 from .checkpoint import WorkWindow
 from .config import Settings
+from .grammar import confidence_accepted  # the shared placement confidence floor
 from .util import Log, append_jsonl, chunked, monotonic, now_iso, read_json, write_json
 
 STATUS_OK = "ok"
@@ -290,11 +291,16 @@ def _parse_verify_reply(reply: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         return None
     if "ok" not in reply and "concept" not in reply:
         return None
+    try:
+        confidence = float(reply.get("confidence") or 0.0)
+    except (TypeError, ValueError):
+        confidence = 0.0
     return {
         "ok": bool(reply.get("ok", True)),
         "concept": reply.get("concept"),
         "chapter": reply.get("chapter"),
         "topic": reply.get("topic"),
+        "confidence": max(0.0, min(1.0, confidence)),
         "reason": str(reply.get("reason") or "")[:400],
     }
 
@@ -520,6 +526,18 @@ def verify_database(
                     if parsed["ok"]:
                         counters["items_confirmed"] += 1
                         continue
+                    # the confidence floor (LESSONS L28): a correction is an AI
+                    # placement decision too, so it is applied only above the
+                    # floor — ``>= 0.8``, or ``>= 0.75`` when two distinct models
+                    # agreed on it (no same-model fallback for the batch)
+                    if not confidence_accepted(
+                        parsed["confidence"],
+                        same_model_fallback=bool(outcome.provenance.get("same_model_fallback")),
+                    ):
+                        # found wrong, but not certain enough to move: keep the
+                        # python result (the question stays where it is)
+                        counters["corrections_below_floor"] = counters.get("corrections_below_floor", 0) + 1
+                        continue
                     counters["items_corrected"] += 1
                     progress.items_corrected += 1
                     correction = {
@@ -536,6 +554,7 @@ def verify_database(
                             "chapter": parsed["chapter"],
                             "topic": parsed["topic"],
                         },
+                        "confidence": parsed["confidence"],
                         "reason": parsed["reason"],
                         "provenance": outcome.provenance,
                         "applied": not report_only,
@@ -784,7 +803,10 @@ def apply_corrections(records: Sequence[Dict[str, Any]], corrections: Sequence[D
             continue
         after = correction.get("after") or {}
         touched = False
-        for field in ("concept", "chapter", "topic"):
+        # ``subject`` is only set by a cross-subject correction
+        # (tools/cross_subject_review.py): the verify pass never moves a
+        # question to another subject, so its corrections are unaffected.
+        for field in ("subject", "concept", "chapter", "topic"):
             value = after.get(field)
             if value is None:
                 continue

@@ -152,7 +152,10 @@ class GrammarTreeExclusionTests(unittest.TestCase):
             # a rule leaf is a question-tree leaf: subject + concept on the record
             self.assertEqual(rows[0]["subject"], "ENG")
             self.assertTrue(rows[0]["concept"])
-            report = audit_db.run_audit(base)
+            # pass the taxonomy explicitly: the audit reads state/taxonomy.json,
+            # which a standalone run of this test (no other test has populated
+            # the temp state dir) would not have
+            report = audit_db.run_audit(base, taxonomy=grammar_taxonomy())
             self.assertTrue(report.ok, [str(issue) for issue in report.issues])
             self.assertEqual([issue for issue in report.issues if issue.rule == "5"], [])
 

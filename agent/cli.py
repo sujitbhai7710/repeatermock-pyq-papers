@@ -14,6 +14,8 @@ Commands
 ``routes``      the ``(provider, model)`` candidate matrix; ``--probe`` tests
                 every route and prints OK / failure class
 ``publish``     one checkpoint commit + push to the ``pyq-db`` branch
+``grammar``     route grammar questions over the 129 rules; ``--review`` re-checks
+                every placed question (confirm/veto, confidence floor 0.8)
 """
 
 from __future__ import annotations
@@ -51,6 +53,39 @@ def load_classifier(log: Optional[Log] = None) -> Classifier:
         alias = alias or {"map": {}}
     return Classifier(tax, alias)
 
+
+def _load_env_file(path: Optional[Path] = None) -> int:
+    """Load ``<project root>/.env`` into the environment (``KEY=VALUE`` lines).
+
+    Credentials live in the git-ignored ``.env`` so a local run does not need
+    them exported by hand; values already present in the environment win, values
+    are never logged, and a missing or malformed file is silently ignored (an
+    unconfigured environment is handled downstream by the router, exactly as
+    before).  Tests never reach :func:`main`, so a suite run is unaffected.
+    """
+
+    import os
+
+    target = Path(path) if path is not None else paths.PROJECT_ROOT / ".env"
+    if not target.is_file():
+        return 0
+    loaded = 0
+    try:
+        for raw in target.read_text(encoding="utf-8").splitlines():
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            name, _, value = line.partition("=")
+            name = name.strip()
+            value = value.strip().strip('"').strip("'")
+            if not name or os.environ.get(name, "").strip():
+                continue
+            os.environ[name] = value
+            loaded += 1
+    except OSError:  # pragma: no cover - a broken .env must not break the CLI
+        return 0
+    return loaded
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="python -m agent.cli",
@@ -70,6 +105,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_phase = sub.add_parser("phase", help="run a single phase")
     p_phase.add_argument("number", type=int, choices=[0, 1, 2, 3, 4, 5])
+    p_phase.add_argument("--no-ai", action="store_true", help="skip every LLM step")
 
     p_run = sub.add_parser("run", help="run the full pipeline")
     p_run.add_argument("--phase", type=int, default=None, choices=[0, 1, 2, 3, 4, 5])
@@ -154,6 +190,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="run the deepseek-proposes / gpt-5.6-sol-judges pass over the residual",
     )
     p_grammar.add_argument(
+        "--review",
+        action="store_true",
+        help="AI re-check of every question that already HAS a rule assignment "
+        "(confirm or veto; vetoed questions move to the suggested rule or back "
+        "to _unclassified). Resumable and idempotent.",
+    )
+    p_grammar.add_argument(
         "--limit",
         type=int,
         default=0,
@@ -161,6 +204,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_grammar.add_argument(
         "--batch-size", type=int, default=None, help="questions per AI call (default 20)"
+    )
+    p_grammar.add_argument(
+        "--sample-per-rule",
+        type=int,
+        default=0,
+        help="--review only: max questions audited per rule per run "
+        "(0 = audit every placed question)",
     )
     p_grammar.add_argument(
         "--report-only",
@@ -1188,10 +1238,12 @@ def cmd_grammar(args: argparse.Namespace, settings: Settings, exams: ExamTable, 
         settings=settings,
         window=window,
         ai=grammar_mod.AiOptions(
-            enabled=bool(args.ai),
+            enabled=bool(args.ai or args.review),
             limit=int(args.limit or 0),
             batch_size=int(args.batch_size or grammar_mod.AI_BATCH_SIZE),
             report_only=bool(args.report_only),
+            review=bool(args.review),
+            sample_per_rule=int(args.sample_per_rule or 0),
         ),
         database_dir=paths.DATABASE_DIR,
         log=log,
@@ -1226,6 +1278,17 @@ def cmd_grammar(args: argparse.Namespace, settings: Settings, exams: ExamTable, 
         ai_status = counters.get("ai_status")
         if ai_status:
             print(f"ai status           : {ai_status}")
+        review_confirmed = counters.get("ai_review_confirmed")
+        review_vetoed = counters.get("ai_review_vetoed")
+        review_moved = counters.get("ai_review_moved")
+        if review_confirmed is not None or review_vetoed is not None:
+            print("review (this run)   : "
+                  f"confirmed={human_int(review_confirmed or 0)}, "
+                  f"vetoed={human_int(review_vetoed or 0)} "
+                  f"(moved={human_int(review_moved or 0)})")
+        low_conf = counters.get("ai_low_confidence")
+        if low_conf:
+            print(f"below floor -> unassigned: {human_int(low_conf)}")
         reasons = {k: v for k, v in counters.items() if k.startswith("reason:")}
         if reasons:
             print("unassigned reasons  : " + ", ".join(f"{k.split(':', 1)[1]}={v}" for k, v in sorted(reasons.items())))
@@ -1255,6 +1318,7 @@ def cmd_grammar(args: argparse.Namespace, settings: Settings, exams: ExamTable, 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    _load_env_file()  # credentials live in the git-ignored .env (never printed)
     log = Log("agent", quiet=bool(getattr(args, "quiet", False)))
 
     settings = config.settings()
@@ -1271,7 +1335,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         if args.command == "phase0":
             return cmd_phase0(args, settings, exams, log, run_id)
         if args.command == "phase":
-            return cmd_phase(args.number, settings, exams, log, run_id)
+            return cmd_phase(args.number, settings, exams, log, run_id, no_ai=bool(getattr(args, "no_ai", False)))
         if args.command == "run":
             return cmd_run(args, settings, exams, log)
         if args.command == "verify-db":

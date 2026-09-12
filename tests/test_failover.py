@@ -840,6 +840,48 @@ class ReasoningTruncationTests(unittest.TestCase):
                     messages=[llm.ChatMessage("user", "hi")],
                 )
 
+    def test_a_well_formed_200_completion_is_never_a_rate_limit(self) -> None:
+        """A completion whose *content* says "rate limit" is a success.
+
+        Groq's gpt-oss-120b emits a ``reasoning`` field; when the reasoning (or
+        the answer text itself) mentions "rate limit" the whole body must not be
+        misread as a provider outage — the reply is a valid chat completion.
+        """
+        body = json.dumps(
+            {
+                "id": "chatcmpl-test",
+                "model": "openai/gpt-oss-120b",
+                "choices": [
+                    {
+                        "index": 0,
+                        "finish_reason": "stop",
+                        "message": {
+                            "role": "assistant",
+                            "content": '{"ok": true}',
+                            "reasoning": "The sentence tests the rate limit of verbs.",
+                        },
+                    }
+                ],
+            }
+        )
+        with mock.patch.object(llm, "_post_chat", return_value=(200, body)):
+            result = llm.chat_completion(
+                base_url="https://api.groq.com/openai/v1",
+                api_key="sk-test",
+                model="openai/gpt-oss-120b",
+                messages=[llm.ChatMessage("user", "hi")],
+            )
+        self.assertEqual(result.text, '{"ok": true}')
+        # …while a 200 *error* body (no choices) keeps signalling a rate limit
+        with mock.patch.object(llm, "_post_chat", return_value=(200, '{"error": {"message": "rate limit exceeded"}}')):
+            with self.assertRaises(llm.LlmRateLimited):
+                llm.chat_completion(
+                    base_url="https://api.groq.com/openai/v1",
+                    api_key="sk-test",
+                    model="openai/gpt-oss-120b",
+                    messages=[llm.ChatMessage("user", "hi")],
+                )
+
     def test_anthropic_reply_is_parsed_end_to_end(self) -> None:
         body = json.dumps(
             {

@@ -186,10 +186,10 @@ python -m agent.cli audit              # subject leaves + pointer records
 | # | Gap | Detail |
 |---|---|---|
 | 1 | **AI verification** | The live counter is in `database/_meta/PROGRESS.md` + `state/progress.json` (`agent.cli stats` prints the coverage identity). The AI ran rarely because providers were unreachable from CI runners. `python -m agent.cli errors` records exactly why, and `status=ai_unavailable` now carries a machine-readable `status_reason`. |
-| 2 | **Grammar AI verdicts** | `state/grammar_ai_state.json` holds the per-question rule verdicts; `python -m agent.cli grammar --ai` is resumable, so re-run until the counters stop moving. |
+| 2 | **Grammar AI verdicts** | `state/grammar_ai_state.json` holds the per-question rule verdicts; `python -m agent.cli grammar --ai` is resumable, so re-run until the counters stop moving. Every verdict is gated by the confidence floor (`agent.grammar.confidence_accepted`), and `grammar --review` re-checks every placement. |
 | 3 | **Notes** | GK/GS topic notes and grammar notes exist. **Maths and Reasoning have none.** |
 | 4 | **Error datastore** | `state/errors.jsonl` **is** implemented (`python -m agent.cli errors`). `state/remaining.json` is the part still missing. |
-| 5 | **Rule 52 marker is FALSE** — the leaf says "No PYQ in scope 2019–2025", but Groq (`openai/gpt-oss-120b`) adjudicated 12 candidates and **3+ are genuinely rule 52** (`5d526532fdb8bb49b0c24c1e` 0.97, `63ac79e2b553595bc3003f0c` 0.99, `64cb6825f34fb32646d22238` 0.99) plus `5e8fbf903ab0500d2e510c26`; they currently sit in rules **10 / 15 / 71**. Verdicts: `state/rule52_verdicts.json`. **Still to do:** adjudicate the remaining 45 candidates, re-file, and regenerate the grammar tree — the marker then drops automatically. |
+| 5 | **Rule 52 marker was FALSE** — DONE: all 200 candidates adjudicated with Groq (`state/rule52_verdicts.json` now stores the qid list + 208 verdicts), 22 are genuinely rule 52 (21 in the current corpus) and were re-filed under `52-articles-with-joined-nouns` via stored vetoes; the "No PYQ in scope" marker is gone. `tools/rule52_adjudicate.py` is the reusable adjudicator. |
 | 5b | **Empty grammar rules** | Check with `python -m agent.cli audit` (rule 9: an empty leaf must carry the marker, and a marker on a leaf with questions is a violation). |
 | 6 | **4 flagged papers** | Need AI review (`database/_meta/flagged_papers.jsonl`). |
 
@@ -203,6 +203,7 @@ python -m agent.cli audit              # subject leaves + pointer records
 2. python -m agent.cli phase0            # discovery + Hindi split + index + distribution
 3. python -m agent.cli routes --probe    # WHICH AI PROVIDERS ARE ALIVE RIGHT NOW (do this first!)
 4. python -m agent.cli grammar --ai      # grammar judging (resumable; safe to re-run)
+4b. python -m agent.cli grammar --review # re-check every placement (confirm/veto; resumable)
 5. python -m agent.cli run               # the AI verification pass (5.5h window, checkpoint 15min)
 6. python -m agent.cli audit             # MUST print VIOLATIONS: 0
 7. python -m unittest discover -s tests -t .
@@ -222,6 +223,8 @@ never work. Always re-run until the counters stop moving.
 | `python -m agent.cli phase0` | walk papers, year filter 2019–2025, Hindi split, build the sharded index + distribution |
 | `python -m agent.cli routes --probe` | probe every `(provider, model)` and print the live matrix — **run this before any AI work** |
 | `python -m agent.cli grammar --ai [--limit N]` | assign grammar questions to the 129 rules (deepseek proposes, gpt-5.6-sol judges) |
+| `python -m agent.cli grammar --review [--sample-per-rule N]` | re-check **every** placed grammar question (confirm/veto at the 0.8 confidence floor; resumable, idempotent) |
+| `python tools/rule52_adjudicate.py --apply-verdicts` | Groq adjudication of the rule-52 candidates; writes the true ones as stored vetoes |
 | `python -m agent.cli run [--no-ai] [--fresh]` | full pipeline; `--no-ai` = deterministic only |
 | `python -m agent.cli verify-db --phase phase1 [--limit N]` | run the AI verification for one phase |
 | `python -m agent.cli audit` | structural self-check (rules 1–11). **Must print `VIOLATIONS: 0`** |
@@ -332,16 +335,21 @@ See **`AI-APIS.txt`** for the endpoint table, keys, headers and copy-paste reque
 14. Every AI failure is recorded in `state/errors.jsonl` (append-only, no keys,
     message ≤ 300 chars). A test run redirects the whole state dir via
     `PYQ_STATE_DIR` (+ `PYQ_ERRORS_LEDGER`) and **never** touches the real
-    `state/` — in *both* discovery modes (see `tests/_isolation.py`, LESSONS L25).
+    `state/` — in *both* discovery modes (see `tests/_isolation.py`, LESSONS L26).
 15. An `ai_unavailable` status **must carry a reason**: `status_reason` in
     `state/progress.json` + `state/manifest.json`, derived from the ledger by
     `agent.errors.outage_reason` (`all_keys_exhausted`, `all_providers_403_waf`,
-    `no_route_for_model`, …). See §11 of `AI-APIS.txt`.
+    `no_route_for_model`, …). See §10 of `AI-APIS.txt`.
 16. `pyq-db` carries **`state/` + `database/` only** — a publish prunes the index
-    first, so the branch never receives a copy of the source (LESSONS L27).
+    first, so the branch never receives a copy of the source. The prune happens at
+    publish time: after any publish-path fix, **re-publish** and confirm with
+    `git ls-tree --name-only origin/pyq-db` (LESSONS L31).
 17. **Never guess a leaf.** The deterministic classifier places a question only
     when the signal is unambiguous; anything less confident goes to the subject's
-    `_unclassified` (LESSONS L28).
+    `_unclassified`. Every AI placement is gated by the confidence floor
+    (`>= 0.8`, or `>= 0.75` with two-model agreement —
+    `agent.grammar.confidence_accepted`), and `python -m agent.cli grammar
+    --review` re-checks every existing assignment (LESSONS L28, L30).
 
 ---
 

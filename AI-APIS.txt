@@ -26,6 +26,9 @@
  Model    : openai/gpt-oss-120b
  NOTE     : it emits a `reasoning` field. With max_tokens too small it returns
             content:"" + finish_reason:length — use max_tokens >= 700 (same trap as deepseek).
+            Free tier meters ~8,000 tokens/min: space batches (>= ~20 s) and honour the
+            "try again in Ns" hint in the 429 body. A 200 completion whose reasoning
+            *mentions* "rate limit" is still a success (agent.llm.detect_rate_limit).
  VERIFIED : HTTP 200
  curl -X POST https://api.groq.com/openai/v1/chat/completions \
    -H "Authorization: Bearer $GROQ_API_KEY" -H "Content-Type: application/json" \
@@ -189,3 +192,24 @@
 
  On GitHub: repo Settings -> Secrets and variables -> Actions.
  Check what is alive at any time with:   python -m agent.cli routes --probe
+
+
+--------------------------------------------------------------------------------
+ 10. AI failure classes (state/errors.jsonl -> `python -m agent.cli errors`)
+--------------------------------------------------------------------------------
+ The ledger records one row per failed route attempt / batch; the reason codes
+ below are what `agent.errors.outage_reason` turns into `status_reason` in
+ state/progress.json + state/manifest.json, so an ai_unavailable status always
+ says WHY.
+
+   all_keys_exhausted         a provider answered that every upstream key is spent
+   all_providers_403_waf      every route answered 403 with a WAF/HTML challenge
+   all_providers_auth_rejected  every route rejected the credential (401/403)
+   all_providers_rate_limited every route answered quota/balance/rate-limit (402/429)
+   all_providers_transport_error  network-level failure on every route (timeout, DNS)
+   no_route_for_model         no (provider, model) pair can serve the request
+   no_keys_configured         no credentials were configured at all
+   unclassified_ai_outage     none of the above matched
+
+ See agent/errors.py for the full code list.  `python -m agent.cli errors --top 20`
+ summarises the ledger without exposing any key material.
