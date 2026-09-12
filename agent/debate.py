@@ -180,6 +180,19 @@ def _proposal_schema_hint(task: str) -> str:
             "echoing each qid verbatim and choosing the single best rule number of the "
             "supplied list; use null only when no listed rule genuinely applies."
         )
+    if task == "grammar_review":
+        # the payload is a batch that is *already filed* under a rule: the model
+        # audits the filing instead of proposing one
+        return (
+            'Schema: {"items": [{"qid": string, "keep": boolean, "rule": 1..129|null, '
+            '"confidence": 0..1, "reason": string}], "reason": string}. '
+            "Emit exactly one entry in \"items\" for every question of the batch payload, "
+            "echoing each qid verbatim. Every question carries \"filed_under_rule\": set "
+            "\"keep\" to true only when the question genuinely tests that rule; set it to "
+            "false when it does not and then give the correct rule number from the list "
+            "(null when no listed rule applies at all). State a confidence you would "
+            "defend — a low confidence keeps the existing filing."
+        )
     return 'Schema: {"result": any, "reason": string}'
 
 

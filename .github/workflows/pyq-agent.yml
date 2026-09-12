@@ -90,6 +90,30 @@ jobs:
           # ever becomes unparseable
           pip install -r requirements.txt
 
+      - name: Run the unit tests
+        id: tests
+        run: |
+          # The gate in front of the audit: a red suite fails the job before a
+          # broken build can publish its tree to `pyq-db`.
+          #
+          # Both discovery modes are run on purpose (LESSONS.md L25).  Without
+          # `-t .` unittest imports the test modules as top-level modules and
+          # never imports the `tests` package, which used to skip the state-dir
+          # redirect and append the simulated router outages to the real,
+          # append-only state/errors.jsonl.  `|| exit` is unnecessary: pipefail
+          # makes the pipeline take unittest's exit code.
+          set -o pipefail
+          mkdir -p "$LOG_DIR"
+          ledger_before=$(sha256sum state/errors.jsonl 2>/dev/null | cut -d' ' -f1 || echo none)
+          python -m unittest discover -s tests -t . 2>&1 | tee "$LOG_DIR/tests.log"
+          python -m unittest discover -s tests 2>&1 | tee -a "$LOG_DIR/tests.log"
+          ledger_after=$(sha256sum state/errors.jsonl 2>/dev/null | cut -d' ' -f1 || echo none)
+          if [ "$ledger_before" != "$ledger_after" ]; then
+            echo "::error::the test suite wrote the real state/errors.jsonl ($ledger_before -> $ledger_after)"
+            exit 1
+          fi
+          echo "state/errors.jsonl untouched by the suite ($ledger_after)"
+
       - name: Preflight (provider keys)
         id: preflight
         env:
@@ -295,7 +319,22 @@ jobs:
           fi
 
           find state database -name '.tmp-*' -type f -delete 2>/dev/null || true
-          git add -f state database
+
+          # `pyq-db` carries state/ + database/ and NOTHING else: `git commit` writes
+          # the whole index, so committing the checkout as-is also published a stale
+          # copy of agent/, tools/ and the docs onto the data branch.  Rebuild the
+          # index from the two published paths only (the same prune the in-run
+          # publisher does, agent/gitpush.py) — the source lives on main.
+          generated=""
+          [ -d state ] && generated="state"
+          [ -d database ] && generated="$generated database"
+          if [ -z "$generated" ]; then
+            echo "no generated tree to publish"
+            exit 0
+          fi
+          git read-tree --empty
+          git add -f $generated
+          git rm -r --cached --quiet --ignore-unmatch -- database/english/_analysis || true
           if git diff --cached --quiet; then
             echo "nothing to publish (generated tree unchanged since the last checkpoint push)"
             exit 0

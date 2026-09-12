@@ -437,12 +437,18 @@ def _read_gzip_file(target: Path) -> List[Dict[str, Any]]:
     return out
 
 
-def index_manifest() -> Optional[Dict[str, Any]]:
-    """The shard manifest, or ``None`` when the index is a single file."""
+def index_manifest(path: Optional[Path] = None) -> Optional[Dict[str, Any]]:
+    """The shard manifest, or ``None`` when the index is a single file.
 
-    if not paths.INDEX_MANIFEST_JSON.is_file():
+    *path* reads that manifest instead of ``state/index/manifest.json`` — the
+    tests use it to inspect the published index while their own state dir is
+    redirected to a temporary directory.
+    """
+
+    target = Path(path) if path is not None else paths.INDEX_MANIFEST_JSON
+    if not target.is_file():
         return None
-    return json.loads(paths.INDEX_MANIFEST_JSON.read_text(encoding="utf-8"))
+    return json.loads(target.read_text(encoding="utf-8"))
 
 
 def coverage(records: Sequence[Dict[str, Any]], paper_reports: Sequence[Dict[str, Any]]) -> Dict[str, Any]:

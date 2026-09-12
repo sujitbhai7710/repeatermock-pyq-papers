@@ -81,11 +81,14 @@ class VerifyResult:
     corrections_file: Optional[Path] = None
     ai_status: str = ""
     routes: Dict[str, Any] = field(default_factory=dict)
+    #: the machine-readable ``ai_unavailable`` reason (see ``errors.REASONS``)
+    reason_code: str = ""
 
     def as_dict(self) -> Dict[str, Any]:
         return {
             "status": self.status,
             "ai_status": self.ai_status or self.status,
+            "reason_code": self.reason_code,
             "counters": self.counters,
             "notes": self.notes,
             "corrections_file": paths.rel(self.corrections_file) if self.corrections_file else None,
@@ -367,13 +370,15 @@ def verify_database(
                 )
             )
             logger.warn(f"AI unavailable – {reason}")
-            _record_unavailable(router, window, reason)
+            code, _evidence = errors_mod.outage_reason(keys_configured=True)
+            _record_unavailable(router, window, reason, reason_code=code)
             return VerifyResult(
                 STATUS_AI_UNAVAILABLE,
                 counters={"items_total": 0, "items_done": 0, "items_this_run": 0},
                 notes=[reason, "python extraction results were kept unchanged"],
                 ai_status=STATUS_AI_UNAVAILABLE,
                 routes=router.provider_report(),
+                reason_code=code,
             )
 
     records = indexer.read_index()
@@ -388,6 +393,7 @@ def verify_database(
     halted_reason = ""
     time_reason = ""
     unavailable_reason = ""
+    reason_code = ""
     same_model_noted = False
     same_model_note = ""
     run_id = _run_id()
@@ -622,6 +628,9 @@ def verify_database(
         )
         # the ledger keeps the *reason* a phase degraded to ai_unavailable: the
         # per-route rows alone cannot say what stopped the phase as a whole
+        reason_code, _evidence = errors_mod.outage_reason(keys_configured=True)
+        if reason_code:
+            notes.append(f"ai_unavailable reason: {reason_code}")
         errors_mod.record_unavailable(
             halted_reason or unavailable_reason or "no route could serve the AI step",
             phase=phase_name,
@@ -646,7 +655,15 @@ def verify_database(
         )
     notes.append(f"router: {json.dumps(router.stats.as_dict(), sort_keys=True)}")
     notes.append(f"routes: {json.dumps(routes, sort_keys=True)}")
-    return VerifyResult(status, dict(counters), notes, corrections_file, ai_status=status, routes=routes)
+    return VerifyResult(
+        status,
+        dict(counters),
+        notes,
+        corrections_file,
+        ai_status=status,
+        routes=routes,
+        reason_code=reason_code if status == STATUS_AI_UNAVAILABLE else "",
+    )
 
 
 def _provenance_summary(outcome: Any) -> Dict[str, Any]:
@@ -701,13 +718,26 @@ def _should_checkpoint(window: Optional[WorkWindow], phase_state: Dict[str, Any]
     return window.should_checkpoint(float(last))
 
 
-def _record_unavailable(router: "router_mod.Router", window: Optional[WorkWindow], reason: str) -> None:
-    """Record an ``ai_unavailable`` run in the checkpoint and PROGRESS.md."""
+def _record_unavailable(
+    router: "router_mod.Router",
+    window: Optional[WorkWindow],
+    reason: str,
+    *,
+    reason_code: str = "",
+) -> None:
+    """Record an ``ai_unavailable`` run in the checkpoint and PROGRESS.md.
+
+    *reason_code* is the machine-readable verdict (:func:`agent.errors.outage_reason`)
+    stored next to the human-readable *reason* so the checkpoint answers "why"
+    without re-reading the ledger.
+    """
 
     tracking.record_routes(router.provider_report())
     stored = ckpt.load_checkpoint() or {}
     cursor = dict(stored.get("cursor") or {})
     cursor["verify"] = {"ai_unavailable": True, "reason": reason[:400]}
+    if reason_code:
+        cursor["verify"]["reason_code"] = reason_code
     ckpt.save_checkpoint(
         ckpt.new_checkpoint(
             str(stored.get("phase") or "phase1"),

@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import contextlib
 import contextvars
+import datetime
 import json
 import os
 import re
@@ -57,6 +58,68 @@ KIND_OTHER = "other"
 SCOPE_ROUTE = "route"
 SCOPE_BATCH = "batch"
 SCOPE_PHASE = "phase"
+
+# ---------------------------------------------------------------------------
+# why a run ended as ``ai_unavailable`` — a short machine-readable code
+# ---------------------------------------------------------------------------
+#
+# ``status=ai_unavailable`` alone is not actionable: it does not say whether the
+# keys were exhausted, the WAF blocked the runner, or every route was skipped for
+# a model nobody serves.  :func:`outage_reason` derives one code from the ledger
+# so ``progress.json`` / ``manifest.json`` / ``PROGRESS.md`` can carry it.
+# The codes are a closed vocabulary — a new one must be added here deliberately.
+
+#: every configured key pool is exhausted (``all_keys_exhausted`` answers)
+REASON_ALL_KEYS_EXHAUSTED = "all_keys_exhausted"
+#: every route answered 401/403 with a WAF / HTML-challenge body
+REASON_ALL_PROVIDERS_403_WAF = "all_providers_403_waf"
+#: every route rejected the credential (401/403 without a WAF signal)
+REASON_ALL_PROVIDERS_AUTH = "all_providers_auth_rejected"
+#: every route answered quota/balance/rate-limit (402/429) without exhaustion
+REASON_ALL_PROVIDERS_RATE_LIMITED = "all_providers_rate_limited"
+#: every route failed at the transport level (DNS/TLS/timeout)
+REASON_ALL_PROVIDERS_TRANSPORT = "all_providers_transport_error"
+#: no candidate model had a route the router was willing to try (cooldowns/skips)
+REASON_NO_ROUTE_FOR_MODEL = "no_route_for_model"
+#: no credential is configured at all
+REASON_NO_KEYS = "no_keys_configured"
+#: the ledger has rows but none of them explains the outage
+REASON_UNKNOWN = "unclassified_ai_outage"
+
+#: the closed vocabulary (order = documentation order, not precedence)
+REASONS: Tuple[str, ...] = (
+    REASON_ALL_KEYS_EXHAUSTED,
+    REASON_ALL_PROVIDERS_403_WAF,
+    REASON_ALL_PROVIDERS_AUTH,
+    REASON_ALL_PROVIDERS_RATE_LIMITED,
+    REASON_ALL_PROVIDERS_TRANSPORT,
+    REASON_NO_ROUTE_FOR_MODEL,
+    REASON_NO_KEYS,
+    REASON_UNKNOWN,
+)
+
+#: what each code means, for ``PROGRESS.md`` and the run summary
+REASON_MEANINGS: Dict[str, str] = {
+    REASON_ALL_KEYS_EXHAUSTED: "every provider answered that its key pool is exhausted",
+    REASON_ALL_PROVIDERS_403_WAF: "every route answered 403 with a WAF/HTML challenge (not a bad key)",
+    REASON_ALL_PROVIDERS_AUTH: "every route rejected the credential (401/403)",
+    REASON_ALL_PROVIDERS_RATE_LIMITED: "every route answered quota/balance/rate-limit (402/429)",
+    REASON_ALL_PROVIDERS_TRANSPORT: "every route failed at the transport level (DNS/TLS/timeout)",
+    REASON_NO_ROUTE_FOR_MODEL: "no candidate model had a route the router could try (cooldown/unconfigured)",
+    REASON_NO_KEYS: "no API key is configured",
+    REASON_UNKNOWN: "the ledger explains the route failures but not the outage as a whole",
+}
+
+#: signals the providers use for "the whole key pool is gone"
+_EXHAUSTED_SIGNALS: Tuple[str, ...] = (
+    "all_keys_exhausted",
+    "all upstream keys failed",
+    "all keys failed",
+    "no available keys",
+    "keys exhausted",
+)
+#: how far back :func:`outage_reason` looks for the failure that ended the run
+REASON_WINDOW_SECONDS = 3600
 
 #: ``message`` is cut here before it is written
 MESSAGE_LIMIT = 300
@@ -307,7 +370,7 @@ def ledger_path() -> Path:
     override = os.environ.get("PYQ_ERRORS_LEDGER", "").strip()
     if override:
         return Path(override)
-    return paths.STATE_DIR / "errors.jsonl"
+    return paths.ERRORS_JSONL
 
 
 def record(
@@ -467,6 +530,119 @@ def iter_errors(path: Optional[Path] = None) -> Iterator[Dict[str, Any]]:
 
 def _share(value: int, total: int) -> float:
     return round(100.0 * value / total, 1) if total else 0.0
+
+
+def _recent(rows: Sequence[Dict[str, Any]], window_seconds: int) -> List[Dict[str, Any]]:
+    """The tail of the ledger that belongs to the failure being explained.
+
+    Timestamps are the project's fixed ``YYYY-MM-DDTHH:MM:SSZ`` UTC shape, so a
+    lexicographic comparison orders them correctly.  Rows older than
+    *window_seconds* before the newest one are ignored: they belong to an
+    earlier outage and would blur the verdict.
+    """
+
+    stamps = sorted(str(row.get("ts") or "") for row in rows if row.get("ts"))
+    if not stamps:
+        return list(rows)
+    newest = stamps[-1]
+    try:
+        cutoff = (
+            datetime.datetime.strptime(newest, "%Y-%m-%dT%H:%M:%SZ")
+            - datetime.timedelta(seconds=max(60, int(window_seconds)))
+        ).strftime("%Y-%m-%dT%H:%M:%SZ")
+    except ValueError:  # pragma: no cover - a hand-edited row
+        return list(rows)
+    return [row for row in rows if str(row.get("ts") or "") >= cutoff]
+
+
+def outage_reason(
+    path: Optional[Path] = None,
+    *,
+    window_seconds: int = REASON_WINDOW_SECONDS,
+    keys_configured: Optional[bool] = None,
+) -> Tuple[str, Dict[str, Any]]:
+    """Derive the machine-readable reason for an ``ai_unavailable`` run.
+
+    Returns ``(code, evidence)`` where *code* is one of :data:`REASONS` and
+    *evidence* is a small dict (kind histogram, newest message, counts) that is
+    safe to store in ``progress.json`` — it never contains a credential.
+
+    The verdict is read from the tail of the ledger (see :func:`_recent`), in
+    this precedence order:
+
+    1. no key configured at all            -> ``no_keys_configured``
+    2. the router skipped every candidate  -> ``no_route_for_model``
+    3. every route answered 403/401 with a WAF/HTML body -> ``all_providers_403_waf``
+    4. every route rejected the credential -> ``all_providers_auth_rejected``
+    5. a route said the key pool is empty  -> ``all_keys_exhausted``
+    6. every route answered quota/balance  -> ``all_providers_rate_limited``
+    7. every route failed at transport level -> ``all_providers_transport_error``
+    8. anything else                       -> ``unclassified_ai_outage``
+
+    A WAF body is checked **before** the generic auth verdict on purpose: a
+    Cloudflare/Aliyun challenge is an infrastructure answer, not a bad key, and
+    the two need different fixes.
+    """
+
+    rows = list(iter_errors(path))
+    recent = _recent(rows, window_seconds)
+    route_rows = [row for row in recent if str(row.get("scope") or SCOPE_ROUTE) == SCOPE_ROUTE]
+    batch_rows = [row for row in recent if str(row.get("scope")) == SCOPE_BATCH]
+    # the route attempts are the best evidence; a router that skipped every route
+    # leaves only its own batch rows ("no healthy route for <model>")
+    basis = route_rows or batch_rows
+
+    kinds = Counter(str(row.get("kind") or KIND_OTHER) for row in basis)
+    messages = " ".join(str(row.get("message") or "") for row in basis).lower()
+    batch_text = " ".join(str(row.get("message") or "") for row in batch_rows).lower()
+    evidence: Dict[str, Any] = {
+        "rows": len(recent),
+        "route_rows": len(route_rows),
+        "batch_rows": len(batch_rows),
+        "kinds": dict(kinds.most_common()),
+        "first_ts": min((str(r.get("ts")) for r in recent if r.get("ts")), default=""),
+        "last_ts": max((str(r.get("ts")) for r in recent if r.get("ts")), default=""),
+        "providers": sorted({str(r.get("provider")) for r in basis if r.get("provider")}),
+        "models": sorted({str(r.get("model")) for r in basis if r.get("model")}),
+        "last_message": next(
+            (str(r.get("message") or "") for r in reversed(basis) if r.get("message")), ""
+        )[:MESSAGE_LIMIT],
+    }
+
+    if keys_configured is False:
+        return REASON_NO_KEYS, evidence
+    if not basis:
+        return (REASON_UNKNOWN, evidence)
+
+    # The router skipped every candidate: there is no route attempt to read, only
+    # its own verdict.  This is checked first so a batch row that inherited its
+    # kind from the skipped routes cannot be mistaken for a real provider answer.
+    if not route_rows and "no healthy route" in batch_text:
+        return REASON_NO_ROUTE_FOR_MODEL, evidence
+
+    auth_only = set(kinds) <= {KIND_AUTH}
+    # A WAF challenge is recorded as ``auth`` when the status is known (403) and
+    # as ``http`` when only the HTML body survives, so both kinds qualify here.
+    if any(signal in messages for signal in WAF_SIGNALS) and set(kinds) <= {KIND_AUTH, KIND_HTTP}:
+        return REASON_ALL_PROVIDERS_403_WAF, evidence
+    if auth_only:
+        return REASON_ALL_PROVIDERS_AUTH, evidence
+    if any(signal in messages for signal in _EXHAUSTED_SIGNALS) and kinds.get(KIND_RATE_LIMIT):
+        return REASON_ALL_KEYS_EXHAUSTED, evidence
+    if set(kinds) <= {KIND_RATE_LIMIT}:
+        return REASON_ALL_PROVIDERS_RATE_LIMITED, evidence
+    if set(kinds) <= {KIND_TRANSPORT}:
+        return REASON_ALL_PROVIDERS_TRANSPORT, evidence
+    if "no healthy route" in messages or "no healthy route" in batch_text:
+        return REASON_NO_ROUTE_FOR_MODEL, evidence
+    return REASON_UNKNOWN, evidence
+
+
+def format_reason(code: str) -> str:
+    """``"all_providers_403_waf (every route answered 403 …)"`` for PROGRESS.md."""
+
+    meaning = REASON_MEANINGS.get(str(code))
+    return f"{code} ({meaning})" if meaning else str(code)
 
 
 def summarise(top: int = 20, path: Optional[Path] = None) -> Dict[str, Any]:

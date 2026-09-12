@@ -16,7 +16,18 @@ the request, and flag a debate that only survived because one model had to speak
 for both roles (``same_model_fallback``).
 """
 
+
 from __future__ import annotations
+
+# The suite must never write the repository's own ``state/`` (LESSONS.md L25):
+# imported before any ``agent`` module so ``PYQ_STATE_DIR``/``PYQ_ERRORS_LEDGER``
+# are set first, and importable in both discovery modes (``tests.test_x`` with
+# ``-t .``, the top-level ``test_x`` without).
+try:  # pragma: no cover - the import name depends on the discovery mode
+    from tests import _isolation  # noqa: F401
+except ImportError:  # pragma: no cover
+    import _isolation  # type: ignore[no-redef]  # noqa: F401
+
 
 import json
 import unittest
@@ -34,6 +45,8 @@ QUIET = Log("test", quiet=True)
 
 PROPOSER = "deepseek-v4-flash"
 CRITIC = "gpt-5.6-sol"
+#: the shipped fast route (Groq) — the first candidate of the verification pass
+FAST = "openai/gpt-oss-120b"
 
 
 # ---------------------------------------------------------------------------
@@ -195,14 +208,14 @@ class CandidateConfigTests(unittest.TestCase):
         policy = config.load_settings().debate
         self.assertEqual(
             list(policy.candidates_for("proposer")),
-            [PROPOSER, CRITIC],
+            [FAST, PROPOSER, CRITIC],
         )
         self.assertEqual(
             list(policy.candidates_for("critic")),
-            [CRITIC, PROPOSER],
+            [CRITIC, FAST, PROPOSER],
         )
-        self.assertEqual(policy.all_models()[0], PROPOSER)
-        self.assertEqual(len(policy.all_models()), 2, "two models: one proposer, one judge")
+        self.assertEqual(policy.all_models()[0], FAST, "the fast verifier leads the matrix")
+        self.assertEqual(len(policy.all_models()), 3, "the fast verifier + two fallback models")
         # both roles carry a fallback beyond their primary model: a single model
         # going dark must cost one candidate, not the whole role
         for role in ("proposer", "critic"):
@@ -229,7 +242,8 @@ class CandidateConfigTests(unittest.TestCase):
     def test_environment_overrides_the_declared_candidates(self) -> None:
         with mock.patch.dict("os.environ", {"PYQ_PROPOSER_MODELS": "a-model, b-model"}, clear=False):
             policy = config.load_settings().debate
-        self.assertEqual(list(policy.candidates_for("proposer")), [PROPOSER, "a-model", "b-model"])
+        # the primary model still leads; the environment replaced the *declared* list
+        self.assertEqual(list(policy.candidates_for("proposer")), [FAST, "a-model", "b-model"])
 
     def test_ordered_candidates_moves_first_and_last(self) -> None:
         self.assertEqual(ordered_candidates(["a", "b", "c"], first="c"), ["c", "a", "b"])

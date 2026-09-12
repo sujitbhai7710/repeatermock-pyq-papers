@@ -11,7 +11,18 @@ Every test points ``PYQ_ERRORS_LEDGER`` at a temporary file, so running the
 suite can never append to the real ledger.
 """
 
+
 from __future__ import annotations
+
+# The suite must never write the repository's own ``state/`` (LESSONS.md L25):
+# imported before any ``agent`` module so ``PYQ_STATE_DIR``/``PYQ_ERRORS_LEDGER``
+# are set first, and importable in both discovery modes (``tests.test_x`` with
+# ``-t .``, the top-level ``test_x`` without).
+try:  # pragma: no cover - the import name depends on the discovery mode
+    from tests import _isolation  # noqa: F401
+except ImportError:  # pragma: no cover
+    import _isolation  # type: ignore[no-redef]  # noqa: F401
+
 
 import contextlib
 import io
@@ -339,23 +350,23 @@ class RouterLedgerTests(LedgerTestCase):
 
 
 class LedgerIsolationTests(unittest.TestCase):
-    """The suite itself must not write the real ledger (see ``tests/__init__.py``)."""
+    """The suite itself must not write the real ledger (see ``tests/_isolation.py``)."""
 
     def test_the_test_run_points_the_ledger_away_from_state(self) -> None:
         """A router failure simulated by another test file must not leak here."""
 
         override = os.environ.get("PYQ_ERRORS_LEDGER", "")
-        self.assertTrue(override, "tests/__init__.py must set PYQ_ERRORS_LEDGER")
+        self.assertTrue(override, "tests/_isolation.py must set PYQ_ERRORS_LEDGER")
         self.assertNotEqual(
             Path(override),
-            paths.STATE_DIR / "errors.jsonl",
+            _isolation.REAL_ERRORS_LEDGER,
             "a suite run would append test failures to the real, append-only ledger",
         )
 
     def test_the_redirect_is_where_a_test_failure_lands(self) -> None:
         """With the redirect active, a router failure appends to the temp ledger."""
 
-        real = paths.STATE_DIR / "errors.jsonl"
+        real = _isolation.REAL_ERRORS_LEDGER
         before = real.read_bytes() if real.is_file() else None
         errors.record(
             provider="fixture",
@@ -461,7 +472,7 @@ class SummaryTests(LedgerTestCase):
     def test_the_suite_never_touches_the_real_ledger(self) -> None:
         """The env override keeps the real ledger byte-identical across a test run."""
 
-        real = paths.STATE_DIR / "errors.jsonl"
+        real = _isolation.REAL_ERRORS_LEDGER
         before = real.read_bytes() if real.is_file() else None
         self._seed()
         after = real.read_bytes() if real.is_file() else None

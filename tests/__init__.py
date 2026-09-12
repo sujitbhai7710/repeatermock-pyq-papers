@@ -3,18 +3,23 @@
 Running the suite must never touch the real, append-only AI error ledger: the
 router writes a row for every failed route attempt, so a failover test that
 simulates 300 outages would otherwise append 300 rows to ``state/errors.jsonl``
-and overwrite the record of what actually happened in production.  Importing this
-package therefore redirects the ledger to a temporary file (the tests that assert
-on the ledger's *shape* override this per test).  ``PYQ_ERRORS_LEDGER`` set by the
-caller always wins.
+and overwrite the record of what actually happened in production.
+
+The redirect itself lives in :mod:`tests._isolation`, which sets
+``PYQ_STATE_DIR`` + ``PYQ_ERRORS_LEDGER`` to a temporary directory.  Importing
+this package triggers it, but **that is not enough**::
+
+    python -m unittest discover -s tests        # -t . omitted
+
+makes ``tests/`` the top-level directory, so unittest imports the test modules
+as top-level modules and never imports this package at all.  Every test module
+therefore imports ``tests._isolation`` explicitly as its first import, and
+``tests/test_zz_state_isolation.py`` (which sorts last) asserts that the real
+``state/`` was left untouched.
 """
 
 from __future__ import annotations
 
-import os
-import tempfile
-from pathlib import Path
+from . import _isolation  # noqa: F401  (importing it performs the redirect)
 
-if not os.environ.get("PYQ_ERRORS_LEDGER"):
-    _LEDGER_DIR = Path(tempfile.mkdtemp(prefix="pyq-test-ledger-"))
-    os.environ["PYQ_ERRORS_LEDGER"] = str(_LEDGER_DIR / "state" / "errors.jsonl")
+__all__ = ["_isolation"]

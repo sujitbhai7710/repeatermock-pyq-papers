@@ -14,7 +14,18 @@ The behaviour under test:
   remaining / ETA and the per ``(provider, model)`` route health.
 """
 
+
 from __future__ import annotations
+
+# The suite must never write the repository's own ``state/`` (LESSONS.md L25):
+# imported before any ``agent`` module so ``PYQ_STATE_DIR``/``PYQ_ERRORS_LEDGER``
+# are set first, and importable in both discovery modes (``tests.test_x`` with
+# ``-t .``, the top-level ``test_x`` without).
+try:  # pragma: no cover - the import name depends on the discovery mode
+    from tests import _isolation  # noqa: F401
+except ImportError:  # pragma: no cover
+    import _isolation  # type: ignore[no-redef]  # noqa: F401
+
 
 import argparse
 import json

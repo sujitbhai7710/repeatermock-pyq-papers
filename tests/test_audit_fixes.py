@@ -14,7 +14,18 @@ Covers
   manifest, a compatibility loader and a stable qid digest.
 """
 
+
 from __future__ import annotations
+
+# The suite must never write the repository's own ``state/`` (LESSONS.md L25):
+# imported before any ``agent`` module so ``PYQ_STATE_DIR``/``PYQ_ERRORS_LEDGER``
+# are set first, and importable in both discovery modes (``tests.test_x`` with
+# ``-t .``, the top-level ``test_x`` without).
+try:  # pragma: no cover - the import name depends on the discovery mode
+    from tests import _isolation  # noqa: F401
+except ImportError:  # pragma: no cover
+    import _isolation  # type: ignore[no-redef]  # noqa: F401
+
 
 import hashlib
 import json
@@ -524,14 +535,19 @@ class ShardedIndexTests(unittest.TestCase):
         self.assertEqual(indexer.qid_digest(first), indexer.qid_digest(second))
 
     def test_manifest_present_for_the_real_repository_index(self) -> None:
-        """The committed index must be sharded (no 100 MB single file)."""
-        manifest = indexer.index_manifest()
+        """The committed index must be sharded (no 100 MB single file).
+
+        Read from the *repository's* state dir: the suite redirects its own
+        ``state/`` to a temporary directory (``tests/_isolation.py``), so
+        ``paths.INDEX_MANIFEST_JSON`` would otherwise always be missing here.
+        """
+        manifest = indexer.index_manifest(_isolation.REAL_STATE_DIR / "index" / "manifest.json")
         if manifest is None:
             self.skipTest("index not generated in this checkout")
         self.assertLessEqual(len(manifest["shards"]), 64)
         for entry in manifest["shards"]:
             self.assertLess(entry["bytes"], indexer.SHARD_MAX_BYTES)
-        self.assertFalse((paths.STATE_DIR / "questions_index.jsonl").is_file())
+        self.assertFalse((_isolation.REAL_STATE_DIR / "questions_index.jsonl").is_file())
 
 
 if __name__ == "__main__":

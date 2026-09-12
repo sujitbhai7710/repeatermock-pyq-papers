@@ -15,12 +15,16 @@ Contract
   1. deletes leftover ``.tmp-*.part`` files (:mod:`agent.util` writes through a
      temp file, which a killed run can leave behind — they are gitignored and
      ``git add -f`` would stage them anyway),
-  2. ``git add -f state database`` and, when anything is staged, removes any
-     ``.tmp-*`` / ``*.part`` path that slipped through,
-  3. ``git commit -m "pyq-agent: checkpoint <phase> <done>/<total> [skip ci]"``,
-  4. re-parents the commit onto the existing ``pyq-db`` tip (``fetch --depth=1`` +
+  2. ``git add -f state database`` and, when nothing is staged, stops
+     (``nothing to commit``),
+  3. **prunes the index** to ``state/`` + ``database/`` (:meth:`Publisher._prune_index`)
+     — ``git commit`` writes the whole index, so without this step the branch
+     would also carry a stale copy of every source file in the checkout,
+  4. drops the derived views in :data:`PUBLISH_EXCLUDE_PATHS`,
+  5. ``git commit -m "pyq-agent: checkpoint <phase> <done>/<total> [skip ci]"``,
+  6. re-parents the commit onto the existing ``pyq-db`` tip (``fetch --depth=1`` +
      ``reset --soft`` + re-commit) so the push is always a fast-forward,
-  5. ``git push origin HEAD:pyq-db``.
+  7. ``git push origin HEAD:pyq-db``.
 
 * Credentials come from the checkout (``GITHUB_TOKEN`` persisted by
   ``actions/checkout`` with ``permissions: contents: write``); ``PYQ_PUSH_TOKEN``
@@ -50,6 +54,17 @@ DEFAULT_BRANCH = "pyq-db"
 DEFAULT_REMOTE = "origin"
 #: paths staged by a checkpoint publish
 PUBLISH_PATHS: Tuple[str, ...] = ("state", "database")
+
+#: ``pyq-db`` carries **only** the generated tree, never a copy of the code.
+#:
+#: ``git commit`` writes the whole *index*, not just the staged diff, so a run
+#: whose checkout is ``main`` used to commit every source file too: the branch
+#: then carried an outdated snapshot of ``agent/``, ``tools/`` and the docs
+#: (thousands of lines behind, an older audit tool, no ``errors`` command) and
+#: looked like a second, rotting copy of the project.  Every publish therefore
+#: rebuilds the index from the two published paths (:meth:`Publisher._prune_index`)
+#: before it commits; the code lives on ``main`` and only there.
+PUBLISH_ONLY_NOTE = "pyq-db carries state/ + database/ only; the code lives on main"
 
 #: derived views inside ``PUBLISH_PATHS`` that must never reach the checkpoint
 #: branch.  ``database/english/_analysis`` is the English vocabulary/grammar
@@ -251,8 +266,15 @@ class Publisher:
             else:
                 result.steps.append(f"excluded {rel}")
 
-    def _staged_paths(self) -> List[str]:
-        code, out = self._run(["diff", "--cached", "--name-only", "-z"])
+    def _staged_paths(self, *, exclude_deleted: bool = False) -> List[str]:
+        """Paths staged in the index (``exclude_deleted`` counts only what the
+        branch *gains*: the first publish also deletes the checkout's source
+        files from the branch, and those must not pad the file count)."""
+
+        args = ["diff", "--cached", "--name-only", "-z"]
+        if exclude_deleted:
+            args.append("--diff-filter=d")
+        code, out = self._run(args)
         if code != 0:
             return []
         return [name for name in out.split("\0") if name]
@@ -272,6 +294,32 @@ class Publisher:
         self.log.warn(f"unstaged {len(offenders)} temp path(s): {', '.join(offenders[:5])}")
         if code != 0:
             self.log.warn(f"git reset failed: {out[:200]}")
+
+    def _prune_index(self, result: PublishResult) -> bool:
+        """Rebuild the index from :data:`PUBLISH_PATHS` only (idempotent).
+
+        ``git commit`` snapshots the whole index, so a checkout of ``main`` would
+        otherwise publish the entire source tree onto ``pyq-db``.  Emptying the
+        index and re-adding the two generated paths makes the commit's tree
+        exactly ``state/`` + ``database/``; the working tree is untouched (the
+        source files stay on disk, they are simply not part of this branch).
+
+        Returns ``False`` when the staged tree is empty, which means the publish
+        must be skipped rather than committing a branch with no generated tree.
+        """
+
+        code, out = self._run(["read-tree", "--empty"])
+        if code != 0:  # pragma: no cover - only when the repo is unusable
+            result.steps.append(f"read-tree --empty failed: {out[:120]}")
+            self.log.warn(f"could not prune the publish index: {out[:200]}")
+            return True  # keep the previous index: better a fat publish than none
+        code, out = self._run(["add", "-f", *PUBLISH_PATHS])
+        if code != 0:
+            result.steps.append(f"re-add after prune failed: {out[:120]}")
+            self.log.warn(f"could not re-stage {PUBLISH_PATHS} after the prune: {out[:200]}")
+            return False
+        result.steps.append("index pruned to " + " + ".join(PUBLISH_PATHS))
+        return True
 
     # -- publish -----------------------------------------------------------
     def maybe_publish(self, *, phase: str, done: int = 0, total: int = 0) -> PublishResult:
@@ -319,13 +367,25 @@ class Publisher:
             return self._finish(result, started)
 
         self._unstage_temp_files(result)
-        self._drop_excluded_paths(result)
         staged = self._staged_paths()
         if not staged:
             result.reason = REASON_NOTHING
             self.log.info("checkpoint publish: nothing to commit")
             return self._finish(result, started)
-        result.files = len(staged)
+
+        # `pyq-db` carries the generated tree and nothing else: the commit's tree
+        # comes from the index, so prune it before committing (see PUBLISH_ONLY_NOTE)
+        if not self._prune_index(result):
+            result.reason = REASON_NOTHING
+            self.log.warn("checkpoint publish: nothing staged after pruning the index")
+            return self._finish(result, started)
+        self._drop_excluded_paths(result)
+        published = self._staged_paths(exclude_deleted=True)
+        if not published:  # pragma: no cover - a branch with no files
+            result.reason = REASON_NOTHING
+            return self._finish(result, started)
+        # the file count describes what the branch receives, not the checkout
+        result.files = len(published)
 
         commit = [
             "-c",

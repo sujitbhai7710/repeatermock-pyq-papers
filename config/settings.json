@@ -18,17 +18,21 @@
   },
   "debate": {
     "max_rounds": 1,
-    "proposer_model": "deepseek-v4-flash",
+    "_comment": "proposer_model is the FIRST opinion the verification pass asks for, critic_model the independent judge. Groq (openai/gpt-oss-120b) is the fastest verified route, so it leads the proposer and is the first fallback model for the critic; the judge stays a different model (gpt-5.6-sol) so verification keeps its cross-model check.",
+    "proposer_model": "openai/gpt-oss-120b",
     "critic_model": "gpt-5.6-sol",
     "proposer_models": [
+      "openai/gpt-oss-120b",
       "deepseek-v4-flash",
       "gpt-5.6-sol"
     ],
     "critic_models": [
+      "openai/gpt-oss-120b",
       "gpt-5.6-sol",
       "deepseek-v4-flash"
     ],
     "provider_order": [
+      "groq",
       "justwoker",
       "jw-worker",
       "ar-worker",
@@ -36,6 +40,7 @@
       "agentrouter"
     ],
     "proposer_provider_order": [
+      "groq",
       "justwoker",
       "jw-worker",
       "ar-worker",
@@ -43,6 +48,7 @@
       "agentrouter"
     ],
     "critic_provider_order": [
+      "groq",
       "justwoker",
       "jw-worker",
       "ar-worker",
@@ -50,7 +56,10 @@
       "agentrouter"
     ],
     "model_provider_orders": {
-      "_comment": "Per-model provider order, verified live 2026-09-12: deepseek-v4-flash is only served by ar-worker (justwoker returns 403, jw-worker 503 all_keys_exhausted); gpt-5.6-sol is served by jw-worker and justwoker (ar-worker returns 503). Trying the working route first avoids a burst of failures that trips the consecutive-failure breaker and halts the model.",
+      "_comment": "Per-model provider order, verified live 2026-09-12: openai/gpt-oss-120b is served by groq only; deepseek-v4-flash is only served by ar-worker (justwoker returns 403, jw-worker 503 all_keys_exhausted); gpt-5.6-sol is served by jw-worker and justwoker (ar-worker returns 503). Pinning a model to the routes that actually serve it keeps a request from burning failed attempts on the others, which would otherwise trip the consecutive-failure breaker and halt the model.",
+      "openai/gpt-oss-120b": [
+        "groq"
+      ],
       "deepseek-v4-flash": [
         "ar-worker",
         "justwoker",
@@ -69,6 +78,7 @@
   },
   "providers": {
     "order": [
+      "groq",
       "justwoker",
       "jw-worker",
       "ar-worker",
@@ -93,6 +103,16 @@
         "user_agent": "browser",
         "env_keys": [
           "AR_PROXY_TOKEN"
+        ]
+      },
+      "groq": {
+        "label": "Groq (openai/gpt-oss-120b, fast)",
+        "_comment": "Cloudflare fronts api.groq.com and answers 403 'error code: 1010' to clients without a browser User-Agent, so user_agent MUST stay 'browser'.",
+        "base_url": "https://api.groq.com/openai/v1",
+        "auth_style": "bearer",
+        "user_agent": "browser",
+        "env_keys": [
+          "GROQ_API_KEY"
         ]
       },
       "jw-worker": {

@@ -2,6 +2,10 @@
 
 The project root is auto-detected so the package runs correctly whether it is
 invoked from the repository root, from a parent directory, or from CI.
+
+``PYQ_PROJECT_ROOT`` relocates the whole tree and ``PYQ_STATE_DIR`` relocates
+just the generated ``state/`` artefacts (:func:`find_state_dir`) — the latter is
+how a test or scratch run keeps its writes out of the repository's own state.
 """
 
 from __future__ import annotations
@@ -50,10 +54,34 @@ def find_project_root(start: Optional[Path] = None) -> Path:
     return Path(__file__).resolve().parent.parent
 
 
+def find_state_dir(root: Optional[Path] = None) -> Path:
+    """Return the directory every generated artefact is written to.
+
+    Resolution order:
+
+    1. ``PYQ_STATE_DIR`` environment variable (relative paths are taken from the
+       project root).
+    2. ``<project root>/state``.
+
+    The override exists so a scratch/CI/test run can keep **all** generated
+    state out of the repository instead of only the error ledger: the test suite
+    points it at a temporary directory (see ``tests/_isolation.py``), which is
+    what makes a suite run unable to pollute production ``state/``.
+    """
+
+    env = os.environ.get("PYQ_STATE_DIR", "").strip()
+    if env:
+        candidate = Path(env).expanduser()
+        if not candidate.is_absolute():
+            candidate = (root or PROJECT_ROOT) / candidate
+        return candidate
+    return (root or PROJECT_ROOT) / "state"
+
+
 PROJECT_ROOT: Path = find_project_root()
 
 CONFIG_DIR: Path = PROJECT_ROOT / "config"
-STATE_DIR: Path = PROJECT_ROOT / "state"
+STATE_DIR: Path = find_state_dir()
 DATABASE_DIR: Path = PROJECT_ROOT / "database"
 DOCS_DIR: Path = PROJECT_ROOT / "docs"
 TOOLS_DIR: Path = PROJECT_ROOT / "tools"
@@ -89,6 +117,9 @@ MANIFEST_JSON: Path = STATE_DIR / "manifest.json"
 DISPUTES_JSONL: Path = STATE_DIR / "disputes.jsonl"
 WEBCACHE_JSON: Path = STATE_DIR / "webcache.json"
 VERIFY_STATE_JSON: Path = STATE_DIR / "verify_state.json"
+#: the append-only AI failure ledger (:mod:`agent.errors`; ``PYQ_ERRORS_LEDGER``
+#: overrides it so a test run can redirect the writes of the router itself)
+ERRORS_JSONL: Path = STATE_DIR / "errors.jsonl"
 
 META_DB_DIR: Path = DATABASE_DIR / "_meta"
 #: The English vocabulary/grammar analyses are derived views, not question-tree

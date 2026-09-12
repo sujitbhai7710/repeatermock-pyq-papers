@@ -16,7 +16,18 @@ The live failures these cover:
   used to be reported as a route failure.
 """
 
+
 from __future__ import annotations
+
+# The suite must never write the repository's own ``state/`` (LESSONS.md L25):
+# imported before any ``agent`` module so ``PYQ_STATE_DIR``/``PYQ_ERRORS_LEDGER``
+# are set first, and importable in both discovery modes (``tests.test_x`` with
+# ``-t .``, the top-level ``test_x`` without).
+try:  # pragma: no cover - the import name depends on the discovery mode
+    from tests import _isolation  # noqa: F401
+except ImportError:  # pragma: no cover
+    import _isolation  # type: ignore[no-redef]  # noqa: F401
+
 
 import json
 import unittest
@@ -243,6 +254,33 @@ class ChainConfigTests(unittest.TestCase):
         self.assertEqual(
             llm.provider_from_spec(shipped.provider_by_name("justwoker")).request_path(), "/messages"
         )
+
+    def test_shipped_groq_route_is_wired_for_verification(self) -> None:
+        """The Groq route: browser UA (Cloudflare), bearer key, first in the walk.
+
+        ``api.groq.com`` is fronted by Cloudflare, which answers a client without
+        a browser ``User-Agent`` with ``403 error code: 1010`` instead of the API
+        — so the user agent is part of the contract, not a cosmetic detail.
+        """
+
+        settings = config.load_settings()
+        groq = llm.provider_from_spec(settings.provider_by_name("groq"))
+        self.assertEqual(groq.base_url, "https://api.groq.com/openai/v1")
+        self.assertEqual(groq.auth_style, "bearer")
+        self.assertEqual(groq.user_agent, "browser")
+        self.assertEqual(groq.env_keys, ("GROQ_API_KEY",))
+        self.assertEqual(groq.request_path(), "/chat/completions")
+        self.assertEqual(
+            settings.provider_order[0], "groq", "groq must lead the provider walk order"
+        )
+        self.assertEqual(settings.debate.proposer_provider_order[0], "groq")
+        self.assertEqual(settings.debate.critic_provider_order[0], "groq")
+        # its model is pinned to the only route that serves it, and leads the
+        # proposer candidates (the fast verifier)
+        self.assertEqual(
+            list(settings.debate.model_provider_orders.get("openai/gpt-oss-120b") or []), ["groq"]
+        )
+        self.assertEqual(settings.debate.candidates_for("proposer")[0], "openai/gpt-oss-120b")
 
     def test_shipped_config_is_internally_consistent(self) -> None:
         """Every shipped route / order / model list must line up.

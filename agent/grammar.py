@@ -518,6 +518,21 @@ CAP_LOOSE = 4
 #: a question must reach this to be attached to a rule without the AI pass
 MIN_SCORE = 4
 
+#: …and it must be backed by **strong** evidence: a signal word, a title/topic
+#: term, a rule phrase or a question-type hint.  A match built only from the
+#: rule's loose prose tables (``body`` / ``examples``) is a *guess*: it is how a
+#: question about "The famous author and actor are being honoured…" ended up
+#: under rule 10 (*Nouns Used as Types*) on the strength of the words *famous*
+#: and *which* — the leaf it was filed under had nothing to do with the
+#: question.  Such a question is left to the AI pass (or lands in the subject's
+#: ``_unclassified``): the "100%-or-unassigned" policy (LESSONS L28).
+REQUIRE_STRONG_EVIDENCE = True
+
+#: how sure a *review* verdict must be before it may override the matcher.  The
+#: reviewer may only move a question out of its leaf when it is certain
+#: (:func:`parse_ai_reply`), never on a hunch.
+REVIEW_MIN_CONFIDENCE = 0.75
+
 #: …and must clear the runner-up by this factor.  A sentence like *"Success
 #: depends ___ hard work"* scores on `hard` for Rule 25 and on `work`/`depends`
 #: elsewhere; when two rules read the same question equally well the keyword
@@ -832,7 +847,45 @@ def match_rule(
                 ]
             },
         )
+    if REQUIRE_STRONG_EVIDENCE and not has_strong_evidence(best):
+        # the score came from the rule's loose prose tables only (body/examples):
+        # no signal word, title/topic term, rule phrase or type hint agreed with
+        # it.  That is a guess, not a classification — hand the question to the
+        # AI pass instead of filing it under a leaf nobody can trust.
+        return RuleMatch(
+            rule=None,
+            title="",
+            score=0,
+            matched_terms=[],
+            hint=False,
+            breakdown={
+                "weak": [
+                    {
+                        "rule": candidate.rule,
+                        "title": candidate.title,
+                        "score": candidate.score,
+                        "breakdown": {
+                            key: candidate.breakdown.get(key)
+                            for key in ("strong_score", "loose_score", "body", "examples")
+                        },
+                    }
+                    for _rank, candidate in scored[:3]
+                ]
+            },
+        )
     return best
+
+
+def has_strong_evidence(match: RuleMatch) -> bool:
+    """Whether a keyword match rests on evidence other than loose prose.
+
+    Strong evidence is a signal word, a title/topic term, a rule phrase (all of
+    them counted in ``strong_score``) or a question-type hint.  Everything else
+    is the rule's body/example prose, which mentions neighbouring rules too.
+    """
+
+    breakdown = match.breakdown or {}
+    return bool(breakdown.get("strong_score")) or bool(breakdown.get("hint"))
 
 
 def ranked_matches(
@@ -1037,6 +1090,8 @@ def collect_grammar_questions(
 # ---------------------------------------------------------------------------
 
 AI_TASK = "grammar_rule"
+#: the task name of the *review* pass (see :func:`run_ai_pass`)
+REVIEW_TASK = "grammar_review"
 AI_BATCH_SIZE = 20
 
 STATUS_OK = "ok"
@@ -1051,6 +1106,8 @@ REASON_AI_NOT_ATTEMPTED = "ai_not_attempted"
 REASON_AI_NO_RULE = "ai_no_rule"
 REASON_AI_INVALID = "ai_invalid_rule"
 REASON_AI_UNPARSED = "ai_unparsed_reply"
+#: an AI *review* rejected the matcher's assignment (see REVIEW_MIN_CONFIDENCE)
+REASON_AI_REVIEWED = "ai_review_rejected"
 
 
 @dataclass
@@ -1088,9 +1145,17 @@ def save_ai_state(state: Dict[str, Any], path: Optional[Path] = None) -> Path:
     return write_json(Path(path) if path is not None else ai_state_path(), state)
 
 
-def batch_fingerprint(items: Sequence[GrammarQuestion]) -> str:
+def batch_fingerprint(items: Sequence[GrammarQuestion], *, task: str = AI_TASK) -> str:
+    """Batch id: the question set, salted by the task it is sent for.
+
+    The salt matters for the review pass: the same questions were already sent
+    as an *assignment* batch, and without it the stored batch record would look
+    settled and the review would never run.
+    """
+
     digest = hashlib.sha256()
     digest.update(f"v{SCORE_VERSION}".encode("utf-8"))
+    digest.update(f"|{task}".encode("utf-8"))
     for item in items:
         digest.update(item.qid.encode("utf-8"))
         digest.update(b"\n")
@@ -1110,6 +1175,15 @@ def _ai_payload(items: Sequence[GrammarQuestion]) -> Dict[str, Any]:
             entry["concept"] = str(item.concept_raw)
         if item.qtype:
             entry["question_type"] = item.qtype
+        if item.match.rule is not None:
+            # review mode: the model judges an assignment that already exists, so
+            # it must see the assignment *and* the evidence behind it
+            entry["filed_under_rule"] = item.match.rule
+            entry["filed_under_title"] = item.match.title
+            entry["filed_because"] = {
+                key: item.match.breakdown.get(key)
+                for key in ("source", "signals", "title", "topic", "phrases", "hint")
+            }
         if item.candidates:
             entry["keyword_candidates"] = [candidate.as_dict() for candidate in item.candidates[:3]]
         questions.append(entry)
@@ -1160,10 +1234,39 @@ def parse_ai_reply(final: Dict[str, Any], items: Sequence[GrammarQuestion], rule
             confidence = float(row.get("confidence") or 0.0)
         except (TypeError, ValueError):
             confidence = 0.0
+        confidence = max(0.0, min(1.0, confidence))
+        reason = str(row.get("reason") or "")[:400]
+        keep = row.get("keep")
+        if keep is not None:
+            # a *review* verdict.  The reviewer may only move a question out of
+            # its leaf when it is certain (:data:`REVIEW_MIN_CONFIDENCE`): an
+            # unsure reviewer keeps the assignment, which is what the
+            # "only when the model is certain" rule means.  `keep: false` with a
+            # rule number re-files, without one it unclassifies.
+            accepted = keep is True or str(keep).strip().lower() in {"true", "yes", "keep"}
+            if accepted or confidence < REVIEW_MIN_CONFIDENCE:
+                out[qid] = {
+                    "rule": rule,
+                    "confidence": confidence,
+                    "reason": reason,
+                    "reason_code": "",
+                    "veto": False,
+                    "keep": True,
+                }
+                continue
+            out[qid] = {
+                "rule": rule if rule is not None else None,
+                "confidence": confidence,
+                "reason": reason,
+                "reason_code": REASON_AI_NO_RULE if rule is None else "",
+                "veto": True,
+                "keep": False,
+            }
+            continue
         out[qid] = {
             "rule": rule,
-            "confidence": max(0.0, min(1.0, confidence)),
-            "reason": str(row.get("reason") or "")[:400],
+            "confidence": confidence,
+            "reason": reason,
             "reason_code": REASON_AI_NO_RULE if rule is None else "",
         }
     return out
@@ -1180,14 +1283,21 @@ def run_ai_pass(
     window: Any = None,
     state_path: Optional[Path] = None,
     max_examples: int = 8,
+    task: str = AI_TASK,
+    review: bool = False,
 ) -> AiPassResult:
-    """Ask the two-model debate to place every question the matcher could not.
+    """Ask the two-model debate to place — or to *check* — grammar questions.
 
-    *deepseek-v4-flash* proposes one of the 129 rules per question, *gpt-5.6-sol*
-    confirms or overrides it; the judge's answer is authoritative.  The pass is
-    resumable (``state/grammar_ai_state.json``) and **never fails the run**: when
-    no route can serve a role the status is ``ai_unavailable`` and the questions
-    stay unassigned.
+    The fast model proposes, the second model confirms or overrides it, and the
+    judge's answer is authoritative.  ``review=False`` (the default) places the
+    questions the matcher could not.  ``review=True`` instead audits the
+    questions the matcher *did* place: the model gets the question, the rule it
+    is filed under and the evidence for that filing, and answers ``keep`` true or
+    false.  A rejection is only honoured when the reviewer is certain
+    (:data:`REVIEW_MIN_CONFIDENCE`) — the question then moves to the rule the
+    reviewer named, or back to ``_unclassified``.  The pass is resumable
+    (``state/grammar_ai_state.json``) and **never fails the run**: when no route
+    can serve a role the status is ``ai_unavailable`` and nothing changes.
     """
 
     logger = log or Log("grammar-ai")
@@ -1210,7 +1320,15 @@ def run_ai_pass(
     batches: Dict[str, Any] = dict(state.get("batches") or {})
     vocabulary = rule_vocabulary(rules)
 
-    outstanding = [item for item in pending if item.qid not in decisions]
+    if review:
+        outstanding = [
+            item
+            for item in pending
+            if not isinstance(decisions.get(item.qid), dict)
+            or "keep" not in (decisions.get(item.qid) or {})
+        ]
+    else:
+        outstanding = [item for item in pending if item.qid not in decisions]
     if limit:
         outstanding = outstanding[:limit]
     groups = list(chunked(outstanding, batch_size))
@@ -1230,10 +1348,13 @@ def run_ai_pass(
         except (TypeError, ValueError):
             return True
 
-    todo = [group for group in groups if not _settled(batches.get(batch_fingerprint(group)))]
+    todo = [
+        group for group in groups
+        if not _settled(batches.get(batch_fingerprint(group, task=task)))
+    ]
 
     logger.info(
-        f"grammar AI pass: {len(pending)} pending, {len(pending) - len(outstanding)} already decided, "
+        f"grammar AI {task}: {len(pending)} pending, {len(pending) - len(outstanding)} already decided, "
         f"{len(todo)} batch(es) to send ({batch_size} questions each)"
     )
     if not todo:
@@ -1341,7 +1462,7 @@ def run_ai_pass(
             errors.record(
                 kind=errors.KIND_BAD_JSON,
                 phase="grammar",
-                task=AI_TASK,
+                task=task,
                 batch_id=fingerprint,
                 provider=str(final_call.get("provider") or ""),
                 model=str(final_call.get("model") or critic_model),
@@ -1368,7 +1489,7 @@ def run_ai_pass(
         With several workers each thread builds **its own** router so the breaker /
         cooldown bookkeeping of concurrent calls cannot race on shared state.
         """
-        fingerprint = batch_fingerprint(group)
+        fingerprint = batch_fingerprint(group, task=task)
         if max_workers > 1:
             worker_router = router_mod.get_router(settings, log=logger)
             worker_session = debate_mod.Debate(settings, worker_router, log=logger)
@@ -1384,7 +1505,7 @@ def run_ai_pass(
         ):
             outcome = worker_session.run(
                 item_id=fingerprint,
-                task=AI_TASK,
+                task=task,
                 payload=_ai_payload(group),
                 vocabulary=vocabulary,
                 max_tokens=600 + 160 * len(group),
@@ -1886,11 +2007,53 @@ def build_grammar_db(
     unassigned: List[Dict[str, Any]] = []
     ai_assigned = 0
     ai_used = 0
+    ai_reviewed = 0
 
     for item in pool:
         decision = decisions.get(item.qid) or {}
+        if item.match.rule is not None and decision.get("veto"):
+            # an AI *review* rejected the keyword match: the reviewer is certain
+            # the question does not test the rule it was filed under.  It moves to
+            # the rule the reviewer named, or back to `_unclassified` when the
+            # reviewer named none — never into a second guess.
+            rejected = item.match.rule
+            replacement = decision.get("rule")
+            replacement_leaf = leaves.get(int(replacement)) if replacement is not None else None
+            if replacement_leaf is not None:
+                item.match = RuleMatch(
+                    rule=int(replacement),
+                    title=replacement_leaf.rule.title,
+                    score=int(float(decision.get("confidence") or 0) * 100),
+                    matched_terms=[],
+                    hint=False,
+                    breakdown={
+                        "source": "ai_review",
+                        "moved_from": rejected,
+                        "confidence": decision.get("confidence"),
+                        "reason": decision.get("reason"),
+                        "judge_model": decision.get("judge_model"),
+                    },
+                )
+                ai_assigned += 1
+                ai_used += 1
+            else:
+                item.match = RuleMatch(
+                    rule=None,
+                    title="",
+                    score=0,
+                    matched_terms=[],
+                    hint=False,
+                    breakdown={
+                        "source": "ai_review",
+                        "moved_from": rejected,
+                        "confidence": decision.get("confidence"),
+                        "reason": decision.get("reason"),
+                        "judge_model": decision.get("judge_model"),
+                    },
+                )
+                ai_reviewed += 1
         if item.match.rule is not None:
-            item.match.breakdown["source"] = "keyword"
+            item.match.breakdown["source"] = item.match.breakdown.get("source") or "keyword"
         elif decision.get("rule") is not None:
             rule_number = int(decision["rule"])
             rule = leaves.get(rule_number)
@@ -1917,6 +2080,8 @@ def build_grammar_db(
             leaves[item.match.rule].sources[item.match.breakdown.get("source", "keyword")] += 1
             continue
         reason = str(decision.get("reason_code") or "")
+        if not reason and decision.get("veto"):
+            reason = REASON_AI_REVIEWED
         if not reason:
             reason = REASON_NO_MATCH if not ai_status else (
                 REASON_AI_UNAVAILABLE if ai_status == STATUS_AI_UNAVAILABLE else REASON_AI_NOT_ATTEMPTED
@@ -1932,6 +2097,7 @@ def build_grammar_db(
                 "reason": reason,
                 "detail": str(decision.get("reason") or "")[:400],
                 "ai_rule": decision.get("rule"),
+                "reviewed_from": (item.match.breakdown or {}).get("moved_from"),
                 "top_candidates": [candidate.as_dict() for candidate in item.candidates[:3]],
             }
         )
@@ -2051,6 +2217,9 @@ def build_grammar_db(
         "grammar_questions": len(pool),
         "grammar_questions_matched": len(pool) - len(unassigned),
         "grammar_questions_assigned_by_ai": ai_assigned,
+        #: assignments an AI review rejected (they moved to _unclassified or to
+        #: the rule the reviewer named)
+        "grammar_questions_reviewed_out": ai_reviewed,
         "grammar_questions_unassigned": len(unassigned),
         "rules_with_questions": sum(1 for leaf in leaves.values() if leaf.count),
         "rules_without_questions": sum(1 for leaf in leaves.values() if not leaf.count),
@@ -2154,6 +2323,11 @@ class AiOptions:
     state_path: Optional[Path] = None
     #: run the pass but keep the stored verdicts (nothing new is applied)
     report_only: bool = False
+    #: audit the questions the matcher already placed (``keep``/``veto`` verdicts)
+    review: bool = False
+    #: review only: how many already-placed questions per rule to send (0 = all).
+    #: A rule with thousands of members cannot be audited in full every run.
+    sample_per_rule: int = 0
 
 
 def build_grammar_view(
@@ -2208,15 +2382,28 @@ def build_grammar_view(
             notes.append("AI pass requested without settings – skipped")
             ai_status = STATUS_SKIPPED_NO_KEYS
         else:
+            # a *review* pass audits what the matcher placed (the rule leaves);
+            # an assignment pass fills what it could not place
+            subject_items = (
+                review_sample(pool, per_rule=ai.sample_per_rule, limit=ai.limit)
+                if ai.review
+                else pending
+            )
+            if ai.review:
+                logger.info(
+                    f"grammar review pass: auditing {len(subject_items)} placed question(s)"
+                )
             outcome = run_ai_pass(
                 settings,
                 rules,
-                pending,
+                subject_items,
                 batch_size=ai.batch_size,
                 limit=ai.limit,
                 log=logger,
                 window=window,
                 state_path=ai.state_path,
+                task=REVIEW_TASK if ai.review else AI_TASK,
+                review=bool(ai.review),
             )
             ai_status = outcome.status
             ai_counters = outcome.counters

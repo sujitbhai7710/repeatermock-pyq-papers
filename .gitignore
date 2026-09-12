@@ -7,10 +7,8 @@
 #   pyq-db   = the generated `state/` + `database/` tree.  The workflow copies
 #              it there with an explicit `git add -f state database` (the -f is
 #              required precisely because of the two rules below).
-#
 # Raw data (`SSC-*/**/*.json`, `chapter-and-topic/*.md`) is *not* ignored: it is
 # the repository's source of truth and stays on every branch.
-# ---------------------------------------------------------------------------
 /state/
 /database/
 
@@ -21,21 +19,18 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-
 # agent scratch files (atomic writes use .tmp-*.part next to the target); the
 # checkpoint commit removes leftovers explicitly before `git add -f`
 .tmp-*.part
-
 # editor / OS noise
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
-
 # ── local scratch (never committed) ──
-reports/                    # engine/scratch logs — local only
-**/__pycache__/             # python bytecode
-*.pyc                       # python bytecode
-.env                        # local keys
-*.pre-acceptance-*          # acceptance backups
-*.acceptance-rerun-backup*  # acceptance backups
+reports/
+**/__pycache__/
+*.pyc
+.env
+*.pre-acceptance-*
+*.acceptance-rerun-backup*

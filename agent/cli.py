@@ -265,21 +265,72 @@ def _make_context(settings: Settings, exams: ExamTable, log: Log, classifier: Cl
         llm_available=bool(os_environ_keys()),
     )
 
-def os_environ_keys() -> List[str]:
+def os_environ_keys(settings: Optional[Settings] = None) -> List[str]:
+    """Every supported credential variable that is present in the environment.
+
+    Derived from the *shipped* route table (:func:`agent.llm.keys_env_names` over
+    ``config/settings.json`` ``providers``), so adding a provider cannot silently
+    leave this preflight behind — ``GROQ_API_KEY``, ``ZEN_PROXY_TOKEN``,
+    ``AGENTROUTER_KEYS``, ``JUSTWOKER_KEYS``, ``AR_PROXY_TOKEN`` and
+    ``JW_PROXY_TOKEN`` are all covered — plus the non-provider credentials the
+    agent uses (``MONID_API_KEY`` for web search).
+    """
+
     import os
 
-    found: List[str] = []
-    for name in (
-        "AGENTROUTER_KEYS",
-        "OPENAI_KEYS",
-        "JUSTWOKER_KEYS",
-        "DEEPSEEK_KEYS",
-        "AR_PROXY_TOKEN",
-        "JW_PROXY_TOKEN",
-    ):
-        if os.environ.get(name, "").strip():
-            found.append(name)
-    return found
+    from . import llm
+
+    try:
+        providers = llm.resolve_providers(settings if settings is not None else config.load_settings())
+    except Exception:  # pragma: no cover - a broken settings file must not break preflight
+        providers = None
+    names = list(llm.keys_env_names(providers))
+    for name in ("MONID_API_KEY",):
+        if name not in names:
+            names.append(name)
+    return [name for name in names if os.environ.get(name, "").strip()]
+
+def outage_reason(log: Optional[Log] = None, *, path: Optional[Path] = None) -> str:
+    """The machine-readable reason behind an ``ai_unavailable`` status.
+
+    Derived from the error ledger so ``progress.json`` / ``manifest.json`` /
+    ``PROGRESS.md`` can answer *why* the AI step was skipped instead of only
+    saying that it was.  Best-effort: a broken ledger must not fail a run.
+    """
+
+    from . import errors as errors_mod
+
+    logger = log or Log("cli")
+    try:
+        code, evidence = errors_mod.outage_reason(
+            path, keys_configured=bool(os_environ_keys())
+        )
+    except Exception as error:  # pragma: no cover - defensive: never fail a run here
+        logger.warn(f"could not derive the ai_unavailable reason: {error}")
+        return ""
+    logger.warn(
+        f"ai_unavailable reason: {code} "
+        f"({evidence.get('rows', 0)} ledger row(s), kinds={evidence.get('kinds', {})})"
+    )
+    return code
+
+def record_run_status(
+    status: str,
+    *,
+    note: Optional[str] = None,
+    log: Optional[Log] = None,
+) -> str:
+    """``tracking.record_status`` plus the reason code for an AI outage."""
+
+    from . import errors as errors_mod
+
+    reason = outage_reason(log) if status == checkpoint.STATUS_AI_UNAVAILABLE else ""
+    if reason and note and errors_mod.REASON_MEANINGS.get(reason):
+        note = f"{note} [reason: {reason}]"
+    elif reason:
+        note = f"reason: {errors_mod.format_reason(reason)}"
+    tracking.record_status(status, note=note or None, reason=reason or None)
+    return reason
 
 def cmd_phase(
     number: int,
@@ -539,7 +590,8 @@ def cmd_run(args: argparse.Namespace, settings: Settings, exams: ExamTable, log:
 
     if exit_code == EXIT_OK:
         note = tracking.STATUS_NOTES.get(run_status, "")
-        tracking.record_status(run_status, note=note or None)
+        # an AI outage must say *why*: `status_reason` is derived from the ledger
+        record_run_status(run_status, note=note or None, log=log)
         checkpoint.save_checkpoint(
             checkpoint.new_checkpoint(
                 phases[-1] if phases else "phase0",
@@ -576,7 +628,7 @@ def _save_status(
         paths.CHECKPOINT_JSON,
     )
     tracking.record_phase(phase, status, notes=[note] if note else None)
-    tracking.record_status(status, note=note)
+    record_run_status(status, note=note, log=log)
 
 def _phase_status(phase: str, default: str) -> str:
     """The status the phase last recorded in ``state/progress.json``."""
@@ -608,7 +660,7 @@ def cmd_verify_db(args: argparse.Namespace, settings: Settings, exams: ExamTable
     # a standalone verification run is a run: record its status so the job summary
     # and PROGRESS.md do not keep showing the previous run's outcome
     if result.status not in ("ok", verify.STATUS_SKIPPED):
-        tracking.record_status(result.status, note="; ".join(result.notes[:2]) or None)
+        record_run_status(result.status, note="; ".join(result.notes[:2]) or None, log=log)
         tracking.write_progress_md(extra=_coverage_extra(None))
     # ``skipped_no_keys`` (offline) and ``ai_unavailable`` (every route down) are
     # expected, successful outcomes: the python extraction is kept and the run

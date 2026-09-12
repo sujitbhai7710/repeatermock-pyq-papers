@@ -58,7 +58,12 @@ Raw papers (SSC-*/*.json)  ->  classify by subject/chapter/topic/concept  ->  da
 | Branch | Holds | What you do with it |
 |---|---|---|
 | **`main`** | CODE: `agent/`, `tools/`, `tests/`, `config/`, `docs/`, `README.md`, `MEMORY.md`, `LESSONS.md`, `AGENT-GUIDE.md`, `AI-APIS.txt` + the raw papers and the 4 taxonomy MDs | Develop and commit **code** here. `state/` and `database/` are **gitignored** here on purpose. |
-| **`pyq-db`** | GENERATED OUTPUT: `state/` (index, checkpoints, progress) + `database/` (the deliverable tree: subject leaves, grammar leaves, mocks) | This is where the **pipeline publishes**. Never develop here. |
+| **`pyq-db`** | GENERATED OUTPUT **only**: `state/` (index, checkpoints, progress) + `database/` (the deliverable tree: subject leaves, grammar leaves, mocks) | This is where the **pipeline publishes**. Never develop here. |
+
+**`pyq-db` carries no source code.** Every publish prunes the index to `state/` + `database/`
+(`agent.gitpush.PUBLISH_ONLY_NOTE`, `Publisher._prune_index`) because `git commit` writes the whole
+index — without that step the branch also received a snapshot of `agent/`, `tools/` and the docs, and
+grew a second, rotting copy of the project. Read the code on **`main`**; read the data on `pyq-db`.
 
 **Why two?** The generated tree is ~100 MB and is rewritten every checkpoint. Keeping it off `main`
 keeps the code history readable. A single branch is possible but every checkpoint would add a ~100 MB
@@ -79,24 +84,42 @@ files and twice wiped the whole `database/` tree.
 ### 3.1 Coverage identity — always must balance
 
 ```
-placed 130,020  +  unclassified 8,614  +  skipped_hindi 3,456  +  flagged 0  =  142,090   ✅
+placed + unclassified + skipped_hindi + flagged_papers_questions == 142,090   (scope lock)
 ```
 
-Papers: 1,322 in scope · **1,318 validated** by section-signature · **4 flagged** for AI review.
+`142,090` is the **locked scope** (in-scope questions for papers 2019–2025) and never changes.
+The four *breakdown* numbers move every time classification improves, so they are **not** written
+down here — read them live:
+
+```bash
+python -m agent.cli stats        # prints the four counters + "identity balanced: True"
+```
+
+The same block is written to `database/_meta/coverage.md` and `state/progress.json` by every run.
 
 ### 3.2 The database tree (published on `pyq-db`)
 
-| Path | Files | Meaning |
-|---|---|---|
-| `database/english/` | 461 | vocabulary, grammar (129 rules), verbal-ability + `_unclassified` |
-| `database/english/grammar/` | 399 | **134 rule leaves** (one per rule + index) — each links its questions |
-| `database/maths/` | 285 | 30 chapters → topics → concepts |
-| `database/reasoning/` | 224 | 5 families → 77 topics |
-| `database/gk/` | 1,261 | domains → subdomains (+ `notes.md` per topic **not yet generated**) |
-| `database/computer/` | 35 | CGL Tier-II computer section as its own subject |
-| `database/mocks/` | 1,149 | **1,148 mock packs** (by concept / topic / chapter / subject / exam / year / full) |
-| `database/_meta/` | 6 | `coverage.md`, `distribution.md`, `PROGRESS.md`, `schema.md`, `papers.jsonl`, `flagged_papers.jsonl` |
-| `*/\_unclassified/` | — | placeholder inside every subject for anything unclassifiable |
+**Live counts — never copy them into this file:**
+
+```bash
+python -m agent.cli audit        # directories, files, subject leaves, pointer records, rules 1-11
+python -m agent.cli stats        # questions per exam x subject, top concepts, coverage identity
+```
+
+| Path | Meaning |
+|---|---|
+| `database/english/` | vocabulary, grammar (129 rules), verbal-ability + `_unclassified` |
+| `database/english/grammar/` | **one leaf per rule** (+ index + `_unclassified`) — each links its own questions |
+| `database/maths/` | 30 chapters → topics → concepts |
+| `database/reasoning/` | 5 families → 77 topics |
+| `database/gk/` | domains → subdomains + `notes.md` per topic |
+| `database/computer/` | CGL Tier-II computer section as its own subject |
+| `database/mocks/` | mock packs (by concept / topic / chapter / subject / exam / year / full) |
+| `database/_meta/` | `coverage.md`, `distribution.md`, `PROGRESS.md`, `schema.md`, `papers.jsonl`, `flagged_papers.jsonl` |
+| `*/\_unclassified/` | placeholder inside every subject for anything unclassifiable |
+
+There are **no hard-coded tree totals anywhere in the docs on purpose**: the tree is rebuilt on every
+run, so a copied number is stale the next day (the copy that used to live here was ~700 files behind).
 
 ### 3.3 Trends, importance and priority — **already implemented**
 
@@ -115,41 +138,46 @@ Machine-readable equivalents: `state/distribution.json`.
 
 ### 3.5 Quality gates currently green
 
-- `python -m agent.cli audit` → **VIOLATIONS: 0** (rules 1–11)
-- `python -m unittest discover -s tests -t .` → **231 tests, OK**
-- `python tools/cross_subject_audit.py` → `definitely wrong 0 / ambiguous 11,060 / ok 127,574`
-- `python tools/audit_rule_demo.py` → `4/4 demonstration(s) failed the audit as intended`
+- `python -m agent.cli audit` → **`VIOLATIONS: 0`** (rules 1–11)
+- `python -m unittest discover -s tests -t .` → **OK** (the suite prints its own test count; the count
+  changes with every added test, so it is not written down here)
+- `python tools/cross_subject_audit.py` → prints `definitely wrong / ambiguous / ok` per chapter
+- `python tools/audit_rule_demo.py` → every demonstration must fail the audit, as intended
 
 ### 3.6 Per-subject breakdown (published on `pyq-db`)
 
-Every subject is already built. This is exactly what each one contains today:
+Every subject is built. Ask for the numbers instead of trusting a copy:
 
-| Subject | Taxonomy source | Top-level nodes | Leaf nodes (`index.md`) | `questions.jsonl` | Mocks | Status |
-|---|---|---|---|---|---|---|
-| **English** | `english-grammar-rules.md` (129 rules) | 6 (`grammar`, `vocabulary`, `verbal-ability`, `active-and-passive-voice`, `_analysis`, `_unclassified`) | **162** (of which **134 are the grammar rules**) | 157 | yes | ✅ built |
-| **Maths** | `SSC_CGL_Maths_...Improved.md` (30 chapters) | **32** | **156** | 128 | yes | ✅ built |
-| **Reasoning** | `SSC_Reasoning_Master_Syllabus.md` (77 sections / 5 families) | **32** | **132** | 91 | yes | ✅ built |
-| **GK / GS** | `SSC_GK_GS_Master_Syllabus.md` (domains 0–106) | **49** | **701** | 559 | yes | ✅ built |
-| **Computer** | derived (CGL Tier-II §Computer) | **9** (`computer-fundamentals`, `computer-hardware`, `computer-software`, `internet-and-networking`, `ms-office`, `operating-systems`, …) | **22** | 12 | yes | ✅ built |
+```bash
+python -m agent.cli stats --top 20     # per exam x subject counts + the top concepts
+python -m agent.cli audit              # subject leaves + pointer records
+```
 
-Totals: **947 leaf nodes** (`questions.jsonl` link files), **1,148 mock packs**, **3,421 files** under `database/`.
+| Subject | Taxonomy source | Structure |
+|---|---|---|
+| **English** | `english-grammar-rules.md` (129 rules) | `grammar` (one leaf per rule), `vocabulary`, `verbal-ability`, `active-and-passive-voice`, `_analysis` (derived, never published), `_unclassified` |
+| **Maths** | `SSC_CGL_Maths_...Improved.md` (30 chapters) | chapters → topics → concepts |
+| **Reasoning** | `SSC_Reasoning_Master_Syllabus.md` (77 sections / 5 families) | families → topics → concepts |
+| **GK / GS** | `SSC_GK_GS_Master_Syllabus.md` (domains 0–106) | domains → subdomains (+ notes) |
+| **Computer** | derived (CGL Tier-II §Computer) | 9 top-level nodes (`computer-fundamentals`, `computer-hardware`, …) |
 
 **English inside-out** (the most customised subject):
-- `english/grammar/` — **134 leaves** (all 129 rules + index + `_unclassified`); each rule links its own questions
+- `english/grammar/` — one leaf per rule (+ index + `_unclassified`); each rule links its own questions
 - `english/vocabulary/` — synonym / antonym / OWS / idioms / spelling / homonyms (4-bucket counting)
 - `english/verbal-ability/` — cloze test, para jumbles, reading comprehension, fill-in-the-blanks, etc.
+- `english/active-and-passive-voice/` — voice, with its own rule set (never a grammar rule)
 
 **What is still missing per subject** (same for all five):
 
 | Item | Applies to |
 |---|---|
-| AI verification of that subject's questions (`phase` step) | English (phase1) 440/37,990; GK, Maths, Reasoning, Computer not started |
+| AI verification of that subject's questions (`phase` step) | all subjects — the live counter is in `database/_meta/PROGRESS.md` and `state/progress.json` |
 | Notes — **GK/GS topic notes**, **grammar notes** | GK/GS and English |
 | Anything unclassifiable | lands in `database/<subject>/_unclassified/` (already present for every subject) |
 
 **Where the counts live:** `database/_meta/distribution.md` (per-subject trends + priority),
 `database/_meta/coverage.md` (coverage identity), `state/distribution.json` (machine-readable),
-`python -m agent.cli stats --top 20` (live counts).
+`python -m agent.cli stats --top 20` (live counts), `python -m agent.cli audit` (tree shape).
 
 ---
 
@@ -157,12 +185,12 @@ Totals: **947 leaf nodes** (`questions.jsonl` link files), **1,148 mock packs**,
 
 | # | Gap | Detail |
 |---|---|---|
-| 1 | **AI verification** | `phase1` is at **440 / 37,990** items. The AI ran rarely because providers were unreachable from CI runners. `python -m agent.cli errors` now records exactly why. |
-| 2 | **Grammar AI verdicts** | ~140 of ~7,190 unassigned grammar questions have an AI rule verdict. |
-| 3 | **Notes** | GK/GS notes (**563**) and grammar notes (**134**) now exist. **Maths and Reasoning have none.** |
+| 1 | **AI verification** | The live counter is in `database/_meta/PROGRESS.md` + `state/progress.json` (`agent.cli stats` prints the coverage identity). The AI ran rarely because providers were unreachable from CI runners. `python -m agent.cli errors` records exactly why, and `status=ai_unavailable` now carries a machine-readable `status_reason`. |
+| 2 | **Grammar AI verdicts** | `state/grammar_ai_state.json` holds the per-question rule verdicts; `python -m agent.cli grammar --ai` is resumable, so re-run until the counters stop moving. |
+| 3 | **Notes** | GK/GS topic notes and grammar notes exist. **Maths and Reasoning have none.** |
 | 4 | **Error datastore** | `state/errors.jsonl` **is** implemented (`python -m agent.cli errors`). `state/remaining.json` is the part still missing. |
-| 5 | **Rule 52 marker unverified** — an in-scope CGL 2019/2020 question exists (qid `5e8fbf903ab0500d2e510c26`, *"The famous author and actor are being honoured…"*) whose solution states the article-once/same-person rule; it is currently filed under rule 10. |
-| 5b | **Empty grammar rules** | 5 leaves were empty; 4 now have questions (1, 1, 3, 14). Only **rule 52** still has none — and its "No PYQ" marker is **unverified**: ~42 questions match its pattern, so the AI must confirm. |
+| 5 | **Rule 52 marker** — verified 2026-09-12 (see `LESSONS.md` L26): the "No PYQ in scope" marker was removed after the AI confirmed the pattern matches. |
+| 5b | **Empty grammar rules** | Check with `python -m agent.cli audit` (rule 9: an empty leaf must carry the marker, and a marker on a leaf with questions is a violation). |
 | 6 | **4 flagged papers** | Need AI review (`database/_meta/flagged_papers.jsonl`). |
 
 ---
@@ -212,10 +240,19 @@ never work. Always re-run until the counters stop moving.
 
 **You only need TWO working models.** A debate needs one *proposer* and one *judge*; more is optional.
 
-| Role | Preferred model |
-|---|---|
-| proposer | a **DeepSeek-class** model |
-| judge (final say) | **`gpt-5.6-sol`** |
+| Role | Preferred model | Route |
+|---|---|---|
+| proposer (first opinion, fast) | `openai/gpt-oss-120b` | **`groq`** — verified live 2026-09-12, first in every order |
+| proposer fallback | a **DeepSeek-class** model | `deepseek-v4-flash` @ `ar-worker` |
+| judge (final say) | **`gpt-5.6-sol`** | `jw-worker`, then `justwoker` |
+| judge fallback | `openai/gpt-oss-120b` | `groq` |
+
+`groq` leads `providers.order`, `debate.proposer_provider_order` and `debate.critic_provider_order`, and
+`openai/gpt-oss-120b` is the first proposer candidate — but the **judge stays a different model**
+(`gpt-5.6-sol`) so the verification keeps its cross-model check. `debate.model_provider_orders` pins each
+model to the routes that actually serve it, so a request never burns attempts on a provider that cannot
+serve that model. Groq's endpoint needs a **browser `User-Agent`** like every Cloudflare-fronted route
+(see §7.1) — it answers `403 error code: 1010` without one.
 
 See **`AI-APIS.txt`** for the endpoint table, keys, headers and copy-paste request examples.
 
@@ -293,8 +330,18 @@ See **`AI-APIS.txt`** for the endpoint table, keys, headers and copy-paste reque
     chapter (or, for a chapterless record, a leaf name) that its own subject does
     not declare is wrong — see `tools/cross_subject_audit.py`.
 14. Every AI failure is recorded in `state/errors.jsonl` (append-only, no keys,
-    message ≤ 300 chars); a test run redirects the ledger via `PYQ_ERRORS_LEDGER`
-    and **never** appends to the real one.
+    message ≤ 300 chars). A test run redirects the whole state dir via
+    `PYQ_STATE_DIR` (+ `PYQ_ERRORS_LEDGER`) and **never** touches the real
+    `state/` — in *both* discovery modes (see `tests/_isolation.py`, LESSONS L25).
+15. An `ai_unavailable` status **must carry a reason**: `status_reason` in
+    `state/progress.json` + `state/manifest.json`, derived from the ledger by
+    `agent.errors.outage_reason` (`all_keys_exhausted`, `all_providers_403_waf`,
+    `no_route_for_model`, …). See §11 of `AI-APIS.txt`.
+16. `pyq-db` carries **`state/` + `database/` only** — a publish prunes the index
+    first, so the branch never receives a copy of the source (LESSONS L27).
+17. **Never guess a leaf.** The deterministic classifier places a question only
+    when the signal is unambiguous; anything less confident goes to the subject's
+    `_unclassified` (LESSONS L28).
 
 ---
 
@@ -307,7 +354,7 @@ python -m agent.cli taxonomy          # rebuild taxonomy from the 4 MDs
 python -m agent.cli phase0            # rebuild index + distribution
 python -m agent.cli routes --probe    # see what AI is alive
 python -m agent.cli audit             # expect VIOLATIONS: 0
-python -m unittest discover -s tests -t .   # expect 231 tests OK
+python -m unittest discover -s tests -t .   # expect OK (the suite prints the test count)
 python -m agent.cli stats --top 20    # see the counts
 ```
 Then start the AI work (`grammar --ai`, then `run`), and finish with `audit` → `publish`.

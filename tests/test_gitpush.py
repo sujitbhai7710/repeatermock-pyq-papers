@@ -10,7 +10,18 @@ existing branch tip so the push stays a fast-forward, never staging ``.tmp-*``
 files, ignoring "nothing to commit") are git behaviours, not Python ones.
 """
 
+
 from __future__ import annotations
+
+# The suite must never write the repository's own ``state/`` (LESSONS.md L25):
+# imported before any ``agent`` module so ``PYQ_STATE_DIR``/``PYQ_ERRORS_LEDGER``
+# are set first, and importable in both discovery modes (``tests.test_x`` with
+# ``-t .``, the top-level ``test_x`` without).
+try:  # pragma: no cover - the import name depends on the discovery mode
+    from tests import _isolation  # noqa: F401
+except ImportError:  # pragma: no cover
+    import _isolation  # type: ignore[no-redef]  # noqa: F401
+
 
 import json
 import os
@@ -107,8 +118,11 @@ class EnablePushTests(unittest.TestCase):
                 (0, ""),  # git add -f state database
                 (0, "state/.tmp-abc.json.part\0state/progress.json\0"),  # git diff --cached -z
                 (0, ""),  # git reset -- .tmp-*
+                (0, "state/progress.json\0"),  # git diff --cached -z (gate)
+                (0, ""),  # git read-tree --empty (prune)
+                (0, ""),  # git add -f state database (re-stage)
                 (0, ""),  # git rm -r --cached -- database/english/_analysis
-                (0, "state/progress.json\0"),  # git diff --cached -z (re-check)
+                (0, "state/progress.json\0"),  # git diff --cached -z --diff-filter=d (count)
                 (0, ""),  # commit
                 (0, ""),  # ls-remote
                 (0, ""),  # push
@@ -131,8 +145,11 @@ class EnablePushTests(unittest.TestCase):
             [
                 (0, ""),  # add -f
                 (0, "state/progress.json\0"),  # diff --cached -z (temp-file check)
+                (0, "state/progress.json\0"),  # diff --cached -z (gate)
+                (0, ""),  # read-tree --empty (prune)
+                (0, ""),  # add -f (re-stage)
                 (0, ""),  # git rm -r --cached -- database/english/_analysis
-                (0, "state/progress.json\0"),  # diff --cached -z (staged paths)
+                (0, "state/progress.json\0"),  # diff --cached -z --diff-filter=d (count)
                 (0, ""),  # commit
                 (0, "origin\n"),  # ls-remote --heads origin pyq-db
                 (0, ""),  # fetch --depth=1
@@ -171,8 +188,11 @@ class EnablePushTests(unittest.TestCase):
             [
                 (0, ""),  # add -f
                 (0, "state/progress.json\0"),  # diff --cached -z (temp-file check)
+                (0, "state/progress.json\0"),  # diff --cached -z (gate)
+                (0, ""),  # read-tree --empty (prune the index to state+database)
+                (0, ""),  # add -f (re-stage after the prune)
                 (0, ""),  # git rm -r --cached -- database/english/_analysis
-                (0, "state/progress.json\0"),  # diff --cached -z (staged paths)
+                (0, "state/progress.json\0"),  # diff --cached -z --diff-filter=d (count)
             ]
             + [(0, "")] * 8  # commit, ls-remote, fetch, reset --soft, commit, get-url, push...
         )
@@ -256,15 +276,29 @@ class PublisherGitIntegrationTests(unittest.TestCase):
         self.assertTrue(result.pushed)
         self.assertEqual(result.files, 2)
         files = self.branch_files()
-        self.assertIn("state/checkpoint.json", files)
-        self.assertIn("database/_meta/PROGRESS.md", files)
-        # only the generated tree is *added* by the checkpoint commit
-        changed = git(self.origin, "show", "--name-only", "--pretty=format:", "pyq-db").split()
-        self.assertEqual(
-            sorted(name for name in changed if name),
-            ["database/_meta/PROGRESS.md", "state/checkpoint.json"],
-        )
+        # the branch carries the generated tree and *only* the generated tree:
+        # `git commit` writes the whole index, so without the prune the checkout's
+        # source files (README.md, .gitignore, agent/, tools/) would be published
+        # onto pyq-db as a second, rotting copy of the code
+        self.assertEqual(sorted(files), ["database/_meta/PROGRESS.md", "state/checkpoint.json"])
+        self.assertNotIn("README.md", files)
+        self.assertNotIn(".gitignore", files)
+        changed = git(self.origin, "show", "--name-status", "--pretty=format:", "pyq-db")
+        self.assertIn("A\tdatabase/_meta/PROGRESS.md", changed)
+        self.assertIn("A\tstate/checkpoint.json", changed)
+        self.assertIn("D\tREADME.md", changed, "the branch does not carry the code")
         self.assertIn("phase1 20/1,900", git(self.origin, "log", "-1", "--pretty=%s", "pyq-db"))
+
+    def test_a_publish_never_puts_source_files_on_the_branch(self) -> None:
+        """``agent/`` must not reappear on the data branch after a re-publish."""
+
+        self.publisher().publish(phase="phase1", done=20, total=1900)
+        (self.repo / "state" / "progress.json").write_text('{"phase": "phase2"}\n', encoding="utf-8")
+        self.publisher().publish(phase="phase2", done=40, total=1900)
+        files = self.branch_files()
+        self.assertFalse([name for name in files if name.startswith("agent/")], files)
+        self.assertFalse([name for name in files if name.startswith("tools/")], files)
+        self.assertEqual(sorted(files), sorted(["database/_meta/PROGRESS.md", "state/checkpoint.json", "state/progress.json"]))
 
     def test_second_publish_is_a_fast_forward_on_the_existing_tip(self) -> None:
         first = self.publisher().publish(phase="phase1", done=20, total=1900)

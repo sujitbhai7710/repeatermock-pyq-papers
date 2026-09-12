@@ -115,16 +115,28 @@ def record_status(
     status: str,
     *,
     note: Optional[str] = None,
+    reason: Optional[str] = None,
+    reason_evidence: Optional[Dict[str, Any]] = None,
     progress: Optional[Dict[str, Any]] = None,
     manifest: Optional[Dict[str, Any]] = None,
 ) -> None:
-    """Record the run status in ``progress.json`` and ``manifest.json``."""
+    """Record the run status in ``progress.json`` and ``manifest.json``.
+
+    *reason* is the machine-readable ``ai_unavailable`` code derived from the
+    error ledger (:func:`agent.errors.outage_reason`).  It is stored as
+    ``status_reason`` so a reader never has to guess why the AI step was
+    skipped; *reason_evidence* keeps the (credential-free) rows behind it.
+    """
 
     data = progress if progress is not None else load_progress()
     data["status"] = status
     data["status_at"] = now_iso()
     if note:
         data["status_note"] = note
+    if reason:
+        data["status_reason"] = reason
+        if reason_evidence is not None:
+            data["status_reason_evidence"] = reason_evidence
     if progress is None:
         save_progress(data)
 
@@ -133,6 +145,8 @@ def record_status(
     files["status_at"] = data["status_at"]
     if note:
         files["status_note"] = note
+    if reason:
+        files["status_reason"] = reason
     if manifest is None:
         save_manifest(files)
 
@@ -296,6 +310,20 @@ def render_progress_md(
         note = progress.get("status_note") or STATUS_NOTES.get(str(status))
         if note:
             add(f"- meaning: {note}")
+        if progress.get("status_reason"):
+            from . import errors as errors_mod
+
+            add(f"- reason: `{errors_mod.format_reason(str(progress['status_reason']))}`")
+            evidence = progress.get("status_reason_evidence")
+            if isinstance(evidence, dict) and evidence:
+                add(
+                    "- reason evidence: "
+                    + ", ".join(
+                        f"{key}={evidence[key]}"
+                        for key in ("rows", "route_rows", "kinds", "providers", "last_ts")
+                        if evidence.get(key) not in (None, "", [], {})
+                    )
+                )
         if progress.get("status_at"):
             add(f"- recorded: {progress['status_at']}")
     else:
