@@ -27,8 +27,9 @@
  NOTE     : it emits a `reasoning` field. With max_tokens too small it returns
             content:"" + finish_reason:length — use max_tokens >= 700 (same trap as deepseek).
             Free tier meters ~8,000 tokens/min: space batches (>= ~20 s) and honour the
-            "try again in Ns" hint in the 429 body. A 200 completion whose reasoning
-            *mentions* "rate limit" is still a success (agent.llm.detect_rate_limit).
+            "try again in Ns" hint in the 429 body (a 413 "Request too large … TPM" body is
+            the same quota). A 200 completion whose reasoning *mentions* "rate limit" is
+            still a success (agent.llm.detect_rate_limit).
  VERIFIED : HTTP 200
  curl -X POST https://api.groq.com/openai/v1/chat/completions \
    -H "Authorization: Bearer $GROQ_API_KEY" -H "Content-Type: application/json" \

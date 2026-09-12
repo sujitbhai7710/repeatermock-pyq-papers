@@ -365,7 +365,9 @@ result). Tests: `tests/test_grammar_review.py`.
 1. Cloudflare fronts `api.groq.com`: no browser `User-Agent` ⇒ 403/1010 (same class as L1).
 2. The model emits a **`reasoning` field**; with `max_tokens < ~700` the whole budget goes to
    reasoning and `content` comes back empty. Exactly the deepseek trap (L9), now on Groq.
-3. The free tier meters **8,000 tokens/minute** across input+output: batches back to back trip it.
+3. The free tier meters **8,000 tokens/minute** across input+output: batches back to back trip it
+   (the body may say `429 rate limit` **or** `413 Request too large … TPM: Limit 8000, Requested
+   NNNN` — same cause, different status).
 4. `detect_rate_limit` scanned the *whole* body for signal words — a reply whose reasoning (or a
    question sentence!) contains "rate limit" is a **valid completion**, and it was misread as an
    outage.

@@ -166,7 +166,8 @@ def adjudicate(
         # Groq's free tier meters tokens-per-minute: back off when it says so
         # and re-try a couple of times instead of failing the whole run.
         result = None
-        for attempt in range(4):
+        json_mode = True
+        for attempt in range(5):
             try:
                 result = llm.chat_completion(
                     base_url=base_url,
@@ -176,7 +177,7 @@ def adjudicate(
                     timeout=120,
                     temperature=0.0,
                     max_tokens=max(700, 300 + 150 * len(batch)),
-                    extra={"response_format": {"type": "json_object"}},
+                    extra={"response_format": {"type": "json_object"}} if json_mode else None,
                     truncation_retries=2,
                     auth_style=llm.AUTH_BEARER,
                     user_agent_value=user_agent(),
@@ -187,10 +188,17 @@ def adjudicate(
                 match = re.search(r"try again in (\d+(?:\.\d+)?)s", str(exc))
                 if match:
                     wait = float(match.group(1)) + 2.0
-                if attempt >= 3:
+                if attempt >= 4:
                     raise
                 print(f"  rate-limited – sleeping {wait:.0f}s (attempt {attempt + 1})", flush=True)
                 time.sleep(wait)
+            except llm.LlmError as exc:
+                # json mode answers 400 json_validate_failed on a malformed reply
+                if json_mode and (exc.status == 400):
+                    json_mode = False
+                    print("  json mode rejected the reply – retrying without it", flush=True)
+                    continue
+                raise
         assert result is not None
         parsed = llm.extract_json(result.text)
         items = parsed.get("items") if isinstance(parsed, dict) else None

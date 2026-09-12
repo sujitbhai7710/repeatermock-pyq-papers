@@ -158,7 +158,9 @@ def adjudicate(
             ),
         ]
         result = None
-        for attempt in range(4):
+        batch_verdicts: List[Dict[str, Any]] = []
+        json_mode = True
+        for attempt in range(5):
             try:
                 result = llm.chat_completion(
                     base_url=base_url,
@@ -168,7 +170,7 @@ def adjudicate(
                     timeout=120,
                     temperature=0.0,
                     max_tokens=max(700, 300 + 150 * len(batch)),
-                    extra={"response_format": {"type": "json_object"}},
+                    extra={"response_format": {"type": "json_object"}} if json_mode else None,
                     truncation_retries=2,
                     auth_style=llm.AUTH_BEARER,
                     user_agent_value=user_agent(),
@@ -179,15 +181,24 @@ def adjudicate(
                 match = re.search(r"try again in (\d+(?:\.\d+)?)s", str(exc))
                 if match:
                     wait = float(match.group(1)) + 2.0
-                if attempt >= 3:
+                if attempt >= 4:
                     raise
                 print(f"  rate-limited – sleeping {wait:.0f}s (attempt {attempt + 1})", flush=True)
                 time.sleep(wait)
+            except llm.LlmError as exc:
+                # Groq json mode answers 400 json_validate_failed when the model's
+                # reply is not valid JSON: retry once without the json constraint
+                if json_mode and (exc.status == 400):
+                    json_mode = False
+                    print("  json mode rejected the reply – retrying without it", flush=True)
+                    continue
+                raise
         assert result is not None
         parsed = llm.extract_json(result.text)
         items = parsed.get("items") if isinstance(parsed, dict) else None
         if not isinstance(items, list):
             raise RuntimeError(f"unparsable Groq reply: {result.text[:200]!r}")
+        batch_verdicts = []
         for entry in items:
             if not isinstance(entry, dict) or not entry.get("qid"):
                 continue
@@ -195,7 +206,7 @@ def adjudicate(
                 confidence = max(0.0, min(1.0, float(entry.get("confidence") or 0.0)))
             except (TypeError, ValueError):
                 confidence = 0.0
-            verdicts.append(
+            batch_verdicts.append(
                 {
                     "qid": str(entry["qid"]),
                     "ok": bool(entry.get("ok")),
@@ -209,9 +220,10 @@ def adjudicate(
                     "at": now_iso(),
                 }
             )
+        verdicts.extend(batch_verdicts)
         print(f"  batch done: {len(verdicts)} verdict(s) so far", flush=True)
         if persist is not None:
-            persist()
+            persist(batch_verdicts)
         time.sleep(30.0)
     return verdicts
 
@@ -288,7 +300,9 @@ def main() -> int:
     print(f"pending           : {len(pending)}")
 
     if pending:
-        def persist() -> None:
+        def persist(batch_verdicts) -> None:
+            for verdict in batch_verdicts:
+                by_qid[str(verdict["qid"])] = verdict
             state["verdicts"] = list(by_qid.values())
             state["sample_size"] = len(sample)
             state["updated_at"] = now_iso()
@@ -302,8 +316,8 @@ def main() -> int:
             persist=persist,
         )
         for verdict in new_verdicts:
-            by_qid[verdict["qid"]] = verdict
-        persist()
+            by_qid[str(verdict["qid"])] = verdict
+        persist([])
     print(f"saved {len(by_qid)} verdicts -> {STATE_PATH}")
 
     wrong = [v for v in by_qid.values() if not v.get("ok")]
