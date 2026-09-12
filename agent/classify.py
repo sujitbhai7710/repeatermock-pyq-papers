@@ -362,6 +362,17 @@ class SubjectIndex:
 #: names on purpose (``reasoning`` legitimately discusses *Number System*).
 LEAF_HYGIENE_SUBJECTS: Tuple[str, ...] = ("ENG",)
 
+#: A concept that only another subject's taxonomy owns must never *name a leaf*
+#: of this subject.  For a record without a chapter the concept is the leaf name,
+#: so the label is dropped (it stays in ``concept_raw``) and the question is filed
+#: under ``<subject>/_unclassified`` — the paper's layout decided the subject and
+#: the source label is simply wrong (a reasoning word-pair question tagged
+#: ``General Knowledge`` used to create ``reasoning/_unclassified/static-gk``).
+#: With a chapter present the chapter names the leaf, so the shared label is kept
+#: (``maths/.../speed-time-and-distance`` with the concept *Speed Time & Distance*
+#: is filed correctly even though *Reasoning* also declares that chapter).
+FOREIGN_CONCEPT_HYGIENE_WITHOUT_CHAPTER = True
+
 
 class Classifier:
     """Full classification pipeline for one question."""
@@ -444,24 +455,30 @@ class Classifier:
     def _leaf_hygiene(self, result: Classification, subject: Optional[str]) -> Classification:
         """Keep unusable labels out of the subject tree.
 
-        Two invariants are enforced here (and checked by ``tools/audit_db.py``):
+        The invariants enforced here (and checked by ``tools/audit_db.py`` and
+        ``tools/cross_subject_audit.py``):
 
         * a concept that cannot form a directory name (no ASCII slug at all,
           e.g. a Devanagari label on a question the Hindi detector did not
           catch) is dropped — the raw label stays in ``concept_raw``;
         * for the subjects listed in :data:`LEAF_HYGIENE_SUBJECTS` the concept
           is dropped when only another subject's taxonomy owns that name, so no
-          leaf of the subject is ever named after foreign vocabulary.
+          leaf of the subject is ever named after foreign vocabulary;
+        * for **every** subject the same applies when the record has no chapter:
+          the concept is then the leaf's own name, so another subject's name must
+          not become that leaf (see
+          :data:`FOREIGN_CONCEPT_HYGIENE_WITHOUT_CHAPTER`).
         """
 
         if result.concept and not slugify(result.concept, fallback=""):
             result.concept = None
-        if (
-            subject in self.leaf_hygiene_subjects
-            and result.concept
-            and self.foreign_vocabulary(subject, result.concept)
-        ):
-            result.concept = None
+        if result.concept and self.foreign_vocabulary(subject, result.concept):
+            if subject in self.leaf_hygiene_subjects:
+                result.concept = None
+            elif FOREIGN_CONCEPT_HYGIENE_WITHOUT_CHAPTER and not result.chapter:
+                # the concept would become the leaf name of a subject that does
+                # not own it: drop it, keep it in ``concept_raw``
+                result.concept = None
         return result
 
     def _fallback_chapter(self, subject: Optional[str], text: str) -> Optional[str]:

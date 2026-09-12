@@ -51,6 +51,7 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from . import checkpoint as ckpt
 from . import debate as debate_mod
+from . import errors as errors_mod
 from . import gitpush, indexer, llm, paths, router as router_mod, tracking
 from .checkpoint import WorkWindow
 from .config import Settings
@@ -618,6 +619,16 @@ def verify_database(
         notes.append(
             "python extraction results were kept unchanged; the deterministic "
             "pipeline (database + mocks) still completes (exit 0)"
+        )
+        # the ledger keeps the *reason* a phase degraded to ai_unavailable: the
+        # per-route rows alone cannot say what stopped the phase as a whole
+        errors_mod.record_unavailable(
+            halted_reason or unavailable_reason or "no route could serve the AI step",
+            phase=phase_name,
+            task="verify",
+            scope=errors_mod.SCOPE_PHASE,
+            model=str(getattr(router.stats, "last_model", "") or ""),
+            log=logger,
         )
     if time_reason:
         notes.append(time_reason)

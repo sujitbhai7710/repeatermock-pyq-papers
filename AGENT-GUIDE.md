@@ -90,11 +90,11 @@ Papers: 1,322 in scope · **1,318 validated** by section-signature · **4 flagge
 |---|---|---|
 | `database/english/` | 461 | vocabulary, grammar (129 rules), verbal-ability + `_unclassified` |
 | `database/english/grammar/` | 399 | **134 rule leaves** (one per rule + index) — each links its questions |
-| `database/maths/` | 301 | 30 chapters → topics → concepts |
-| `database/reasoning/` | 242 | 5 families → 77 topics |
-| `database/gk/` | 1,269 | domains → subdomains (+ `notes.md` per topic **not yet generated**) |
-| `database/computer/` | 37 | CGL Tier-II computer section as its own subject |
-| `database/mocks/` | 1,171 | mock packs (by concept / topic / chapter / subject / exam / year / full) |
+| `database/maths/` | 285 | 30 chapters → topics → concepts |
+| `database/reasoning/` | 224 | 5 families → 77 topics |
+| `database/gk/` | 1,261 | domains → subdomains (+ `notes.md` per topic **not yet generated**) |
+| `database/computer/` | 35 | CGL Tier-II computer section as its own subject |
+| `database/mocks/` | 1,149 | **1,148 mock packs** (by concept / topic / chapter / subject / exam / year / full) |
 | `database/_meta/` | 6 | `coverage.md`, `distribution.md`, `PROGRESS.md`, `schema.md`, `papers.jsonl`, `flagged_papers.jsonl` |
 | `*/\_unclassified/` | — | placeholder inside every subject for anything unclassifiable |
 
@@ -115,8 +115,10 @@ Machine-readable equivalents: `state/distribution.json`.
 
 ### 3.5 Quality gates currently green
 
-- `python -m agent.cli audit` → **VIOLATIONS: 0**
-- `python -m unittest discover -s tests -t .` → **192 tests, OK**
+- `python -m agent.cli audit` → **VIOLATIONS: 0** (rules 1–11)
+- `python -m unittest discover -s tests -t .` → **231 tests, OK**
+- `python tools/cross_subject_audit.py` → `definitely wrong 0 / ambiguous 11,060 / ok 127,574`
+- `python tools/audit_rule_demo.py` → `4/4 demonstration(s) failed the audit as intended`
 
 ### 3.6 Per-subject breakdown (published on `pyq-db`)
 
@@ -124,13 +126,13 @@ Every subject is already built. This is exactly what each one contains today:
 
 | Subject | Taxonomy source | Top-level nodes | Leaf nodes (`index.md`) | `questions.jsonl` | Mocks | Status |
 |---|---|---|---|---|---|---|
-| **English** | `english-grammar-rules.md` (129 rules) | 6 (`grammar`, `vocabulary`, `verbal-ability`, `active-and-passive-voice`, `_analysis`, `_unclassified`) | **161** (of which **134 are the grammar rules**) | 158 | yes | ✅ built |
-| **Maths** | `SSC_CGL_Maths_...Improved.md` (30 chapters) | **32** | **163** | 136 | yes | ✅ built |
-| **Reasoning** | `SSC_Reasoning_Master_Syllabus.md` (77 sections / 5 families) | **32** | **140** | 100 | yes | ✅ built |
-| **GK / GS** | `SSC_GK_GS_Master_Syllabus.md` (domains 0–106) | **49** | **704** | 563 | yes | ✅ built |
-| **Computer** | derived (CGL Tier-II §Computer) | **9** (`computer-fundamentals`, `computer-hardware`, `computer-software`, `internet-and-networking`, `ms-office`, `operating-systems`, …) | **22** | 13 | yes | ✅ built |
+| **English** | `english-grammar-rules.md` (129 rules) | 6 (`grammar`, `vocabulary`, `verbal-ability`, `active-and-passive-voice`, `_analysis`, `_unclassified`) | **162** (of which **134 are the grammar rules**) | 157 | yes | ✅ built |
+| **Maths** | `SSC_CGL_Maths_...Improved.md` (30 chapters) | **32** | **156** | 128 | yes | ✅ built |
+| **Reasoning** | `SSC_Reasoning_Master_Syllabus.md` (77 sections / 5 families) | **32** | **132** | 91 | yes | ✅ built |
+| **GK / GS** | `SSC_GK_GS_Master_Syllabus.md` (domains 0–106) | **49** | **701** | 559 | yes | ✅ built |
+| **Computer** | derived (CGL Tier-II §Computer) | **9** (`computer-fundamentals`, `computer-hardware`, `computer-software`, `internet-and-networking`, `ms-office`, `operating-systems`, …) | **22** | 12 | yes | ✅ built |
 
-Totals: **1,190 leaf nodes**, **970 `questions.jsonl` link files**, **1,171 mock packs**.
+Totals: **947 leaf nodes** (`questions.jsonl` link files), **1,148 mock packs**, **3,421 files** under `database/`.
 
 **English inside-out** (the most customised subject):
 - `english/grammar/` — **134 leaves** (all 129 rules + index + `_unclassified`); each rule links its own questions
@@ -193,10 +195,15 @@ never work. Always re-run until the counters stop moving.
 | `python -m agent.cli grammar --ai [--limit N]` | assign grammar questions to the 129 rules (deepseek proposes, gpt-5.6-sol judges) |
 | `python -m agent.cli run [--no-ai] [--fresh]` | full pipeline; `--no-ai` = deterministic only |
 | `python -m agent.cli verify-db --phase phase1 [--limit N]` | run the AI verification for one phase |
-| `python -m agent.cli audit` | structural self-check. **Must print `VIOLATIONS: 0`** |
+| `python -m agent.cli audit` | structural self-check (rules 1–11). **Must print `VIOLATIONS: 0`** |
+| `python -m agent.cli errors --top 20 [--json]` | summarise the append-only AI failure ledger `state/errors.jsonl` (phase/route/kind/why) |
 | `python -m agent.cli stats [--top N]` | counts per exam/subject + top concepts |
 | `python -m agent.cli mocks` | rebuild the mock-pack catalogue |
 | `python -m agent.cli publish` | publish `state/` + `database/` to the `pyq-db` branch (merge) |
+| `python tools/cross_subject_audit.py [--verbose] [--json]` | who owns each chapter, and which leaves are named after *another* subject's vocabulary (`--fix` applies the leaf hygiene) |
+| `python tools/audit_rule_demo.py` | prove rules 8–11 fail when deliberately violated (audits a copy, never the real tree) |
+| `python tools/grammar_pattern_pass.py --apply` | deterministic TF-IDF pre-pass for the grammar rules (writes `state/grammar_ai_state.json`) |
+| `python tools/gen_notes.py` | the per-topic notes generator |
 
 ---
 
@@ -262,13 +269,31 @@ See **`AI-APIS.txt`** for the endpoint table, keys, headers and copy-paste reque
 ## 9. Invariants — breaking any of these is a bug
 
 1. `placed + skipped_hindi + unclassified + flagged_papers_questions == 142090`
-2. `python -m agent.cli audit` → **`VIOLATIONS: 0`**
+2. `python -m agent.cli audit` → **`VIOLATIONS: 0`** (rules 1–11, see below)
 3. `python -m unittest discover -s tests -t .` stays green
 4. Everything is **idempotent** — re-running a phase changes nothing
 5. **No raw-data edits** (`SSC-*/**/*.json`, `chapter-and-topic/*.md`)
 6. **No keys** in logs or commits
 7. A publish to `pyq-db` must **merge**, never delete
 8. Never let a single generated file exceed ~40 MB
+9. One question lives in **one** leaf (rule 5/8). A qid the *source papers reuse*
+   for different questions is a **warning**, never a violation — the ids are not
+   unique in the corpus.
+10. An **empty** `questions.jsonl` must carry the `No PYQ in scope` marker in its
+    `index.md` (rule 9), and a marker on a leaf that has questions is a violation.
+11. A subject files **only chapters its taxonomy declares**, and a chapterless leaf
+    is never named after vocabulary only another subject owns (rule 10) — this is
+    the "cross-subject" class: `gk/_unclassified/verbal-ability` must not exist.
+12. The derived `database/english/_analysis` view is **never published** to
+    `pyq-db` (rule 11 + `agent.gitpush.PUBLISH_EXCLUDE_PATHS`).
+13. **Chapter ownership decides placement.** A shared concept *label* is not a
+    misplacement: a *Reasoning* question with the concept *Ratio & Proportion*
+    under the reasoning chapter *Mathematical Operations* is correct.  Only a
+    chapter (or, for a chapterless record, a leaf name) that its own subject does
+    not declare is wrong — see `tools/cross_subject_audit.py`.
+14. Every AI failure is recorded in `state/errors.jsonl` (append-only, no keys,
+    message ≤ 300 chars); a test run redirects the ledger via `PYQ_ERRORS_LEDGER`
+    and **never** appends to the real one.
 
 ---
 
@@ -281,7 +306,7 @@ python -m agent.cli taxonomy          # rebuild taxonomy from the 4 MDs
 python -m agent.cli phase0            # rebuild index + distribution
 python -m agent.cli routes --probe    # see what AI is alive
 python -m agent.cli audit             # expect VIOLATIONS: 0
-python -m unittest discover -s tests -t .   # expect 192 tests OK
+python -m unittest discover -s tests -t .   # expect 231 tests OK
 python -m agent.cli stats --top 20    # see the counts
 ```
 Then start the AI work (`grammar --ai`, then `run`), and finish with `audit` → `publish`.

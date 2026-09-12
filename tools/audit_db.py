@@ -27,10 +27,34 @@ must never contain:
    case, and the mock catalogue may not contain two packs writing to the same
    file (the second write would silently drop the first pack's questions).
 
+7. **case-only collisions / silent overwrite** — two leaves may not differ only
+   by letter case, a leaf may not hold two concept labels that differ only by
+   case, and the mock catalogue may not contain two packs writing to the same
+   file (the second write would silently drop the first pack's questions);
+8. **one question, one link** — a qid may not be linked from two leaves, and a
+   leaf may not list the same source question twice.  A qid the *source papers
+   reuse for different questions* is a warning, not a violation: it resolves to
+   different questions, each of which still lives in exactly one leaf;
+9. **an empty leaf must say so** — a leaf whose ``questions.jsonl`` holds no
+   record must carry the explicit ``No PYQ in scope`` marker in its
+   ``index.md``, so "the corpus has no such question" can never be confused with
+   "the questions were never written".  The reverse is a violation too: a marker
+   on a leaf that *does* hold questions is stale;
+10. **a subject may only file chapters it declares** — a record whose ``chapter``
+    the filing subject's taxonomy does not declare is misplaced, and a
+    *chapterless* record may not be named after vocabulary only another subject
+    owns (the leaf would then be a foreign slug, e.g.
+    ``gk/_unclassified/verbal-ability``);
+11. **the derived ``_analysis`` view is never published** — the English
+    vocabulary/grammar analysis view repeats questions that already have a home
+    in the tree, so ``agent.gitpush`` must keep it out of the ``pyq-db``
+    checkpoint branch.
+
 Rule 5 keys on the *question identity* (``qid`` + source paper + ordinal).  A
 bare ``qid`` is not unique in this corpus — the source papers reuse a handful of
 ids for different questions — so reused ids that resolve to different questions
-are reported as a warning (with the count) instead of a failure.
+are reported as a warning (with the count) instead of a failure.  Rule 8 is the
+qid-level companion of rule 5 and keeps the same carve-out.
 
 Usage
 -----
@@ -348,12 +372,242 @@ def check_duplicate_questions(database: Path, report: AuditReport) -> None:
         for qid, leaves in qid_homes.items()
         if len(qid_homes[qid]) > 1
     }
+    # the reused-id case is reported once, by rule 8 (the qid-level companion of
+    # this check), so the report never says the same thing twice
+    report.checked["rule5_reused_qids"] = len(reused)
+
+
+def check_question_uniqueness(database: Path, report: AuditReport) -> None:
+    """Rule 8: a question is linked from one leaf, and listed once per leaf.
+
+    The identity is ``qid + paper + ordinal`` (same as rule 5).  A qid the source
+    papers reuse for *different* questions may appear in more than one leaf —
+    that is a warning, because each question still has exactly one home.
+    """
+
+    leaves_by_qid: Dict[str, Set[Tuple[str, str, str]]] = defaultdict(set)
+    leaf_of_qid: Dict[str, Set[str]] = defaultdict(set)
+    seen_in_leaf: Dict[Tuple[str, str], int] = defaultdict(int)
+    for subject_dir in sorted(SUBJECT_LABELS):
+        subject_root = database / subject_dir
+        if not subject_root.is_dir():
+            continue
+        for leaf, _relative in iter_leaves(subject_root):
+            leaf_key = leaf.relative_to(database).as_posix()
+            for record in read_pointers(leaf):
+                qid = str(record.get("qid") or "")
+                if not qid:
+                    continue  # rule 4 already reports a record without a qid
+                identity = (qid, str(record.get("paper_path") or ""), str(record.get("ordinal")))
+                report.checked["rule8_records"] = report.checked.get("rule8_records", 0) + 1
+                seen_in_leaf[(leaf_key, identity)] += 1
+                leaves_by_qid[qid].add(identity)
+                leaf_of_qid[qid].add(leaf_key)
+
+    for (leaf_key, identity), count in sorted(seen_in_leaf.items()):
+        if count > 1:
+            report.issues.append(
+                Issue(
+                    "8",
+                    leaf_key,
+                    f"question {identity[0]} ({identity[1]}#{identity[2]}) is listed "
+                    f"{count} times in the same leaf",
+                )
+            )
+
+    reused: Dict[str, Set[str]] = {}
+    for qid, identities in sorted(leaves_by_qid.items()):
+        homes = leaf_of_qid[qid]
+        if len(homes) > 1:
+            repeated = [
+                identity
+                for identity in identities
+                if sum(
+                    1
+                    for (leaf_key, other) in seen_in_leaf
+                    if leaf_key in homes and other == identity
+                )
+                > 1
+            ]
+            if repeated:
+                report.issues.append(
+                    Issue(
+                        "8",
+                        sorted(homes)[0],
+                        f"question {qid} ({repeated[0][1]}#{repeated[0][2]}) is linked from "
+                        f"{len(homes)} leaves: {', '.join(sorted(homes))}",
+                    )
+                )
+            else:
+                reused[qid] = homes
     if reused:
+        sample = sorted(reused)[0]
+        report.checked["rule8_reused_qids"] = len(reused)
         report.warnings.append(
             f"{len(reused)} qid(s) are reused by the source papers for different questions and "
-            f"therefore appear in more than one leaf (e.g. {sorted(reused)[0]}: "
-            f"{', '.join(sorted(reused[sorted(reused)[0]]))}).  Each question still lives in exactly "
-            f"one leaf; the ids themselves are not unique in the raw corpus."
+            f"therefore appear in more than one leaf (e.g. {sample}: "
+            f"{', '.join(sorted(reused[sample]))}).  Each question still lives in exactly one leaf; "
+            f"the ids themselves are not unique in the raw corpus — a warning by design (rule 8), "
+            f"not a violation."
+        )
+
+
+#: the marker an empty rule/leaf page must carry (see ``agent.grammar.render_rule_leaf``)
+NO_PYQ_MARKER = "No PYQ in scope"
+
+
+def check_empty_leaves(database: Path, report: AuditReport) -> None:
+    """Rule 9: an empty ``questions.jsonl`` must be marked, and a marker must be true."""
+
+    for subject_dir in sorted(SUBJECT_LABELS):
+        subject_root = database / subject_dir
+        if not subject_root.is_dir():
+            continue
+        for leaf, _relative in iter_leaves(subject_root):
+            leaf_key = leaf.relative_to(database).as_posix()
+            count = sum(1 for _ in read_pointers(leaf))
+            report.checked["rule9_leaves"] = report.checked.get("rule9_leaves", 0) + 1
+            index = leaf / "index.md"
+            text = index.read_text(encoding="utf-8", errors="replace") if index.is_file() else ""
+            marked = NO_PYQ_MARKER in text
+            if count == 0 and not marked:
+                report.issues.append(
+                    Issue(
+                        "9",
+                        leaf_key,
+                        f"empty questions.jsonl without the '{NO_PYQ_MARKER}' marker in "
+                        f"{'index.md' if index.is_file() else '(missing) index.md'} — an empty "
+                        f"leaf must state that the corpus has no such question",
+                    )
+                )
+            elif count and marked:
+                report.issues.append(
+                    Issue(
+                        "9",
+                        leaf_key,
+                        f"index.md claims '{NO_PYQ_MARKER}' but the leaf holds {count} question(s); "
+                        f"the marker is stale and hides real coverage",
+                    )
+                )
+
+
+def subject_vocabulary(taxonomy: Dict[str, Any]) -> Tuple[Dict[str, Set[str]], Dict[str, Set[str]]]:
+    """``(declared chapters, every owned name)`` per subject.
+
+    The name map uses :func:`agent.classify._subject_names` — the classifier's
+    own definition — so rule 10 and
+    :meth:`agent.classify.Classifier.foreign_vocabulary` cannot drift apart.
+    """
+
+    from agent.classify import _subject_names
+
+    chapters: Dict[str, Set[str]] = {}
+    names: Dict[str, Set[str]] = {}
+    for subject, body in (taxonomy.get("subjects") or {}).items():
+        chapters[subject] = {
+            norm_key(chapter.get("name")) for chapter in body.get("chapters") or [] if chapter.get("name")
+        }
+        names[subject] = {norm_key(name) for name in _subject_names(body) if norm_key(name)}
+    return chapters, names
+
+
+def check_subject_chapter_ownership(
+    database: Path, report: AuditReport, taxonomy: Dict[str, Any]
+) -> None:
+    """Rule 10: a subject files only chapters it declares (and owns its leaf names).
+
+    Two defects are reported:
+
+    * ``chapter`` present but not declared by the filing subject's taxonomy — the
+      question sits in the wrong subject's tree;
+    * ``chapter`` absent and the concept is vocabulary **only another subject
+      owns** — the concept names the leaf, so the leaf is a foreign slug
+      (``gk/_unclassified/verbal-ability``).  A name both subjects declare is
+      fine: shared names are normal in this corpus.
+    """
+
+    chapters, names = subject_vocabulary(taxonomy)
+    if not chapters:
+        return
+    for subject_dir, subject in sorted(SUBJECT_LABELS.items()):
+        subject_root = database / subject_dir
+        if not subject_root.is_dir():
+            continue
+        declared = chapters.get(subject, set())
+        owned = names.get(subject, set())
+        foreign = set().union(*(names.get(other, set()) for other in chapters if other != subject))
+        for leaf, _relative in iter_leaves(subject_root):
+            leaf_key = leaf.relative_to(database).as_posix()
+            for record in read_pointers(leaf):
+                report.checked["rule10_records"] = report.checked.get("rule10_records", 0) + 1
+                chapter = record.get("chapter")
+                if chapter:
+                    key = norm_key(chapter)
+                    if declared and key not in declared:
+                        owners = sorted(
+                            other for other, other_chapters in chapters.items() if key in other_chapters
+                        )
+                        report.issues.append(
+                            Issue(
+                                "10",
+                                leaf_key,
+                                f"{record.get('qid')}: chapter {chapter!r} is not declared by "
+                                f"{subject}"
+                                + (f" (declared by {', '.join(owners)})" if owners else ""),
+                            )
+                        )
+                    continue
+                concept = record.get("concept")
+                if not concept:
+                    continue
+                key = norm_key(concept)
+                if key in foreign and key not in owned:
+                    report.issues.append(
+                        Issue(
+                            "10",
+                            leaf_key,
+                            f"{record.get('qid')}: concept {concept!r} is another subject's "
+                            f"vocabulary, not {subject}'s — a leaf must not be named after it",
+                        )
+                    )
+
+
+def check_analysis_view_not_published(report: AuditReport) -> None:
+    """Rule 11: the derived ``_analysis`` view never reaches the ``pyq-db`` branch.
+
+    ``database/english/_analysis`` repeats every grammar question that already has
+    a home under ``database/english/grammar/<rule>/``; publishing it duplicated
+    5,318 links in the browsable tree.  ``agent.gitpush`` therefore drops it from
+    the index after ``git add -f`` — this rule asserts that the exclusion is still
+    declared *and* that the publisher still applies it, so a refactor cannot
+    silently start publishing the view again.
+    """
+
+    from agent import gitpush
+
+    analysis = paths.rel(paths.ANALYSIS_DB_DIR)
+    report.checked["rule11_paths"] = len(gitpush.PUBLISH_EXCLUDE_PATHS)
+    excluded = [
+        entry
+        for entry in gitpush.PUBLISH_EXCLUDE_PATHS
+        if analysis == entry or analysis.startswith(entry.rstrip("/") + "/")
+    ]
+    if not excluded:
+        report.issues.append(
+            Issue(
+                "11",
+                analysis,
+                "the derived analysis view is not in agent.gitpush.PUBLISH_EXCLUDE_PATHS, so a "
+                "publish would ship it to pyq-db (it duplicates the rule leaves' questions)",
+            )
+        )
+    if not hasattr(gitpush.Publisher, "_drop_excluded_paths"):
+        report.issues.append(
+            Issue(
+                "11",
+                "agent/gitpush.py",
+                "the publisher no longer has the step that un-stages PUBLISH_EXCLUDE_PATHS",
+            )
         )
 
 
@@ -533,8 +787,12 @@ def run_audit(
     check_cross_subject_leakage(base, report, vocabulary)
     check_slugs(base, report)
     check_duplicate_questions(base, report)
+    check_question_uniqueness(base, report)
+    check_empty_leaves(base, report)
     check_parent_consistency(base, report, scope)
     check_case_stability(base, report)
+    check_subject_chapter_ownership(base, report, tax)
+    check_analysis_view_not_published(report)
     return report
 
 
@@ -570,6 +828,10 @@ def format_report(report: AuditReport) -> str:
     add("  5 a question filed in two concept leaves")
     add("  6 leaf concept not declared by its chapter (and not under _other/)")
     add("  7 case-only leaf collisions and silently overwritten packs")
+    add("  8 one question linked from one leaf (a reused source qid is a warning)")
+    add("  9 an empty leaf must carry the 'No PYQ in scope' marker (and no stale marker)")
+    add(" 10 a subject files only chapters it declares / owns its leaf names")
+    add(" 11 the derived english/_analysis view is excluded from the publish")
     add("")
     if report.warnings:
         add("warnings")

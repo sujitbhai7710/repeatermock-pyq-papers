@@ -87,7 +87,7 @@ import threading
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
-from . import llm
+from . import errors, llm
 from .config import Settings
 from .util import Log, monotonic, now_iso
 
@@ -703,6 +703,14 @@ class Router:
                 if self.policy.halt_on_any_rate_limit_signal:
                     self._trip_route(name, model, detail)
                 self._record_failure(name, model, True, detail)
+                errors.record_failure(
+                    exc,
+                    provider=name,
+                    model=model,
+                    attempt=len(attempted),
+                    message=detail,
+                    scope=errors.SCOPE_ROUTE,
+                )
                 self.log.warn(
                     f"route {name}/{model}: rate-limited ({detail[:160]}) – failing over"
                 )
@@ -715,6 +723,14 @@ class Router:
                 self._reopen_probe(name, model)
                 self._strike_error(name, model, detail)
                 self._record_failure(name, model, False, detail)
+                errors.record_failure(
+                    exc,
+                    provider=name,
+                    model=model,
+                    attempt=len(attempted),
+                    message=detail,
+                    scope=errors.SCOPE_ROUTE,
+                )
                 self.log.warn(
                     f"route {name}/{model}: failed ({detail[:160]}) – failing over"
                 )
@@ -743,6 +759,13 @@ class Router:
 
         if self.is_halted(model):
             reason = self.halt_reason(model) or f"{model} halted"
+            errors.record_unavailable(
+                reason,
+                model=model,
+                provider=",".join(attempted) or ",".join(skipped),
+                scope=errors.SCOPE_BATCH,
+                log=self.log,
+            )
             return ModelAttempt(
                 model=model,
                 halted=True,
@@ -756,6 +779,13 @@ class Router:
         summary, should_halt = self._no_route_reason(model, order, unavailable, attempted)
         if should_halt:
             self.halt(summary, model=model)
+            errors.record_unavailable(
+                summary,
+                model=model,
+                provider=",".join(attempted) or ",".join(skipped),
+                scope=errors.SCOPE_BATCH,
+                log=self.log,
+            )
             return ModelAttempt(
                 model=model,
                 halted=True,
@@ -769,6 +799,13 @@ class Router:
         # not a halt: either credentials are missing entirely (an unconfigured
         # environment must not look like a provider outage) or a route is still
         # healthy and the caller may retry
+        errors.record_unavailable(
+            summary,
+            model=model,
+            provider=",".join(attempted) or ",".join(skipped),
+            scope=errors.SCOPE_BATCH,
+            log=self.log,
+        )
         return ModelAttempt(
             model=model,
             halted=False,

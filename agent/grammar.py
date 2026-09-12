@@ -40,6 +40,7 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 from . import build_db
 from . import debate as debate_mod
+from . import errors
 from . import grammar_rules, llm, paths, router as router_mod
 from .config import Settings
 from .grammar_rules import RuleText
@@ -1249,6 +1250,14 @@ def run_ai_pass(
             if not entry["healthy"]
         )
         logger.warn(f"grammar AI unavailable – no healthy route for the {', '.join(missing)} role(s): {reasons}")
+        errors.record_unavailable(
+            f"no healthy route for the {', '.join(missing)} role(s): {reasons}",
+            phase="grammar",
+            task=AI_TASK,
+            item_ids=[item.qid for item in outstanding],
+            scope=errors.SCOPE_PHASE,
+            log=logger,
+        )
         return AiPassResult(
             STATUS_AI_UNAVAILABLE,
             {"batches_total": len(todo), "batches_done": 0},
@@ -1325,6 +1334,27 @@ def run_ai_pass(
             f"grammar AI pass: batch {done}/{len(todo)} — {served['proposer']} proposed, "
             f"{served['judge']} judged, {len(parsed)}/{len(group)} answered"
         )
+        if not parsed:
+            # every route answered, yet no verdict came back: a reply the parser
+            # could not read (or a judge that never ran).  Without this row the
+            # batch looks like a plain "left unassigned" with no reason.
+            errors.record(
+                kind=errors.KIND_BAD_JSON,
+                phase="grammar",
+                task=AI_TASK,
+                batch_id=fingerprint,
+                provider=str(final_call.get("provider") or ""),
+                model=str(final_call.get("model") or critic_model),
+                attempt=int(outcome.rounds or 0),
+                message=(
+                    f"no verdict parsed for {len(group)} question(s); "
+                    f"verdict={outcome.verdict} served_by={served['judge']}"
+                ),
+                retryable=True,
+                item_ids=[item.qid for item in group],
+                scope=errors.SCOPE_BATCH,
+                log=logger,
+            )
 
     def _persist() -> None:
         state["questions"] = decisions
@@ -1344,13 +1374,21 @@ def run_ai_pass(
             worker_session = debate_mod.Debate(settings, worker_router, log=logger)
         else:
             worker_session = session
-        outcome = worker_session.run(
-            item_id=fingerprint,
+        # bind the batch before the call: every row the router appends to the
+        # error ledger then carries the phase, batch fingerprint and item ids
+        with errors.ai_context(
+            phase="grammar",
             task=AI_TASK,
-            payload=_ai_payload(group),
-            vocabulary=vocabulary,
-            max_tokens=600 + 160 * len(group),
-        )
+            batch_id=fingerprint,
+            item_ids=[item.qid for item in group],
+        ):
+            outcome = worker_session.run(
+                item_id=fingerprint,
+                task=AI_TASK,
+                payload=_ai_payload(group),
+                vocabulary=vocabulary,
+                max_tokens=600 + 160 * len(group),
+            )
         return fingerprint, outcome
 
     def _guards(group):
@@ -1493,8 +1531,15 @@ def recent_years(all_years: Iterable[int], span: int = 2) -> List[int]:
     return years[-span:] if len(years) >= span else years
 
 
-def render_rule_leaf(leaf: RuleLeaf, recent: Sequence[int]) -> str:
-    """One browsable rule node: the rule text + its questions."""
+def render_rule_leaf(leaf: RuleLeaf, recent: Sequence[int], span: Sequence[int] = ()) -> str:
+    """One browsable rule node: the rule text + its questions.
+
+    *span* is the corpus year span (``(2019, 2025)``).  A rule the corpus never
+    asks about gets an explicit ``No PYQ in scope`` marker instead of a silently
+    empty ``questions.jsonl`` — ``tools/audit_db.py`` (rule 9) fails an empty leaf
+    without that marker, so "no question exists" and "the questions were never
+    written" can never be confused again.
+    """
 
     rule = leaf.rule
     out: List[str] = []
@@ -1508,6 +1553,14 @@ def render_rule_leaf(leaf: RuleLeaf, recent: Sequence[int]) -> str:
         add(f"- **Source**: {rule.text.sources}")
     add("- **Analysis view**: `database/english/_analysis/grammar/questions.jsonl` (field `rule`)")
     add("")
+    if leaf.count == 0:
+        years = f" {min(span)}–{max(span)}" if len(span or ()) >= 2 else ""
+        add(f"**No PYQ in scope{years}** — the corpus contains no question for this rule.")
+        add(
+            "The empty `questions.jsonl` is intentional: this leaf is kept so the rule "
+            "matrix stays complete, and the marker tells the audit it is not a missing write."
+        )
+        add("")
     if rule.text and rule.text.body:
         add("## Rule")
         add("")
@@ -1724,11 +1777,12 @@ def _write_rule_leaf(
     base: Optional[Path],
     recent: Sequence[int],
     files: List[Path],
+    span: Sequence[int] = (),
 ) -> None:
     directory = rule_leaf_dir(leaf.rule, base)
     paths.ensure_dir(directory)
     index = directory / "index.md"
-    write_text(index, render_rule_leaf(leaf, recent))
+    write_text(index, render_rule_leaf(leaf, recent, span))
     files.append(index)
 
     records = []
@@ -1883,6 +1937,9 @@ def build_grammar_db(
         )
 
     recent = recent_years(item.year for item in pool)
+    # the corpus year span, so an empty rule leaf can say "No PYQ in scope 2019–2025"
+    pool_years = sorted({int(item.year) for item in pool if getattr(item, "year", None)})
+    span = (pool_years[0], pool_years[-1]) if pool_years else ()
     for leaf in leaves.values():
         leaf.questions.sort(key=lambda q: (q.exam, q.year, str(q.ordinal), q.qid))
 
@@ -1969,7 +2026,7 @@ def build_grammar_db(
     base = Path(rules_dir) if rules_dir is not None else paths.GRAMMAR_RULES_DB_DIR
     _prune_rule_leaves(base, {rule.slug for rule in rules})
     for rule in rules:
-        _write_rule_leaf(leaves[rule.number], base=base, recent=recent, files=files)
+        _write_rule_leaf(leaves[rule.number], base=base, recent=recent, files=files, span=span)
 
     # --- the chapter page carries the matrix ---------------------------
     index_md = Path(chapter_index) if chapter_index is not None else paths.GRAMMAR_CHAPTER_INDEX

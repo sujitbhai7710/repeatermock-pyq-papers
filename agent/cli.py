@@ -125,6 +125,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--database", default=None, help="audit another database directory"
     )
 
+    p_errors = sub.add_parser(
+        "errors", help="summarise the AI failure ledger (state/errors.jsonl)"
+    )
+    p_errors.add_argument("--top", type=int, default=20, help="how many groups to list")
+    p_errors.add_argument("--json", action="store_true", help="machine-readable summary")
+    p_errors.add_argument(
+        "--ledger", default=None, help="read another ledger file (default: state/errors.jsonl)"
+    )
+
     p_mocks = sub.add_parser("mocks", help="regenerate the mock catalogue")
     p_mocks.add_argument("--min-size", type=int, default=None)
     p_mocks.add_argument("--max-packs", type=int, default=0)
@@ -979,6 +988,28 @@ def cmd_audit(args: argparse.Namespace, settings: Settings, exams: ExamTable, lo
     )
     return EXIT_OK if report.ok else EXIT_ERROR
 
+def cmd_errors(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
+    """``errors`` — summarise the append-only AI failure ledger.
+
+    Exit code 0 whether or not the ledger has rows: an AI outage is a degraded
+    (not failed) run, and this command only reports.  A missing ledger prints the
+    "no AI failure recorded" report.
+    """
+
+    from . import errors as errors_mod
+
+    ledger = Path(args.ledger) if getattr(args, "ledger", None) else None
+    summary = errors_mod.summarise(top=int(getattr(args, "top", 20) or 20), path=ledger)
+    if getattr(args, "json", False):
+        print(json.dumps(summary, indent=2, ensure_ascii=False))
+    else:
+        print(errors_mod.format_summary(summary))
+    tracking.journal(
+        "errors.summary",
+        {"total": summary["total"], "groups": summary["groups"], "path": summary["path"]},
+    )
+    return EXIT_OK
+
 def cmd_stats(args: argparse.Namespace, settings: Settings, exams: ExamTable, log: Log) -> int:
     from . import indexer
 
@@ -1195,6 +1226,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             return cmd_verify_db(args, settings, exams, log, run_id)
         if args.command == "audit":
             return cmd_audit(args, settings, exams, log)
+        if args.command == "errors":
+            return cmd_errors(args, settings, exams, log)
         if args.command == "stats":
             return cmd_stats(args, settings, exams, log)
         if args.command == "mocks":

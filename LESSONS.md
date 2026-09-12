@@ -280,6 +280,61 @@ Rules:
 - Recover with `reset --hard origin/<branch>`, never `git push --force`.
 - Publish is the only thing that should stage `state/` and `database/`.
 
+## L25. A cross-subject audit that compares *labels* finds 4,150 false positives
+
+Symptom: `tools/cross_subject_audit.py` reported "cross-subject concept hits: 4150", led by
+`math -> reasoning 'Ratio & Proportion'` (1,223) and `'Speed Time and Distance'` (1,524) — but the
+tree was correct.
+
+Cause: the check compared the raw **concept string** with the taxonomy's owning subject. SSC reuses
+names across subjects on purpose: *Mathematical Operations* is a **Reasoning** chapter, so a
+reasoning question with the concept *Ratio & Proportion* under it is filed correctly even though
+"Ratio & Proportion" is also maths vocabulary. The label is shared; the **chapter** is owned.
+
+Rules:
+- Placement is decided by **chapter/topic ownership**, never by label text. A leaf is wrong only
+  when its chapter is not declared by the filing subject (or, for a chapterless record, when the
+  concept naming the leaf is vocabulary only another subject owns).
+- Measure it the way the classifier does: the single source of truth is
+  `agent.classify._subject_names` (via `Classifier.foreign_vocabulary`). If audit and classifier
+  disagree, the next rebuild silently undoes a manual fix.
+- Report `definitely wrong / ambiguous / ok`. On this corpus: **165 → 0 wrong**, ~11,000
+  "ambiguous" (correct chapter, shared label) out of 138,634 records. Never bulk-move the ambiguous
+  set — it is nearly all good data.
+- A chapterless record such as `gk/_unclassified/verbal-ability` looks wrong but usually has the
+  *subject* right and the **source label** wrong: read the question text first ("What best describes
+  bulimia?" is GK, whatever the paper's tag says). The fix is to drop the bogus concept (keep
+  `concept_raw`), never to re-file the subject.
+
+## L26. Tests wrote 334 rows into the real AI error ledger
+
+Symptom: after a test run, `state/errors.jsonl` (append-only, 104 real rows) had 438 rows with
+`phase: "-"` — the failover tests simulate hundreds of route outages and the router records one
+ledger row per failed route attempt.
+
+Rules:
+- `tests/__init__.py` points `PYQ_ERRORS_LEDGER` at a temp file, so a suite run can never append to
+  the real ledger; `tests/test_error_ledger.py` asserts the real file is byte-identical afterwards.
+- Any new writer of a shared append-only file needs the same isolation **and** a test that proves it.
+
+## L27. An empty `questions.jsonl` is indistinguishable from a failed write
+
+Symptom: 5 grammar rule leaves (`19-correlative-conjunctions`, `52-articles-with-joined-nouns`,
+`100-even-if-vs-even-though`, `116-because-of-vs-due-to`, `128-emphatic-pronouns`) shipped an empty
+`questions.jsonl` with no explanation — nobody could tell "the corpus never asks this" from "the
+pass never ran".
+
+Rules:
+- An empty leaf must carry the marker `No PYQ in scope` in its `index.md`; `audit` rule 9 fails an
+  unmarked empty leaf *and* a stale marker on a leaf that does have questions.
+- The marker is emitted by the generator (`agent.grammar.render_rule_leaf`), so a regeneration
+  cannot drop it.
+- Before declaring a rule empty, search the residual pool with its own patterns: 4 of the 5 had
+  free questions (19 → 14, 128 → 3, 100 → 1, 116 → 1). Rule 52's only real question is owned by the
+  **keyword matcher** (rule 10), and a stored AI decision cannot override a matcher assignment
+  (`agent/grammar.py`, the `item.match.rule is not None` branch) — that is a rules change, not a
+  leaf fix.
+
 ## Quick troubleshooting index
 
 | Symptom | Go to |
@@ -306,14 +361,20 @@ Rules:
 | `not a git repository` / `Not a valid object name pyq-db` | L22 |
 | Published `database/` looks emptied | L23 |
 | `main` lost its history / push non-fast-forward | L24 |
+| Cross-subject audit floods you with "wrong" leaves | L25 |
+| `state/errors.jsonl` grows after a test run | L26 |
+| A rule leaf has 0 questions and nobody knows why | L27 |
 
 ## Conventions that keep this project healthy
 
 1. Run `python -m agent.cli audit` after **every** change to the DB writer or classifier. It must print
-   `VIOLATIONS: 0`.
-2. Run the unit tests: `python -m unittest discover -s tests -t .` (123 tests).
+   `VIOLATIONS: 0` (rules 1–11; rules 8–11 cover question uniqueness, empty-leaf markers,
+   subject/chapter ownership and the unpublished `_analysis` view).
+2. Run the unit tests: `python -m unittest discover -s tests -t .` (231 tests).
 3. Keep the coverage identity at **142,090**; if a bucket moves, report the old and new numbers and why.
 4. Never edit raw data. If the taxonomy is missing a concept, propose `config/chapter_aliases.json` for
    a human to review.
 5. Never log keys. Never commit keys. Rotate anything that has been pasted into a chat.
 6. Delegate repository-scale changes to the coding executor and then **verify independently** (L16).
+7. Before moving a question, ask *who owns the chapter* — not what the label looks like (L25).
+8. An AI failure must be explainable from `state/errors.jsonl` (`python -m agent.cli errors --top 20`).
